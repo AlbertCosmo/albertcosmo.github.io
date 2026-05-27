@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-[#ffffff]">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Albert Le Thanh Nhan 黎清仁</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;display=swap');
+    
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+
+    .section-title {
+      font-size: 0.75rem;
+      letter-spacing: 0.125em;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: #111111;
+    }
+
+    .academic-text {
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      color: #111111;
+    }
+
+    .nav-link {
+      transition: color 0.1s ease;
+    }
+    
+    .nav-link:hover {
+      color: #000000;
+    }
+
+    .cv-item {
+      transition: all 0.1s ease;
+    }
+
+    .subtle-shadow {
+      box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.04);
+    }
+
+    /* Black & white theme */
+    .text-zinc-600 {
+      color: #222222 !important;
+    }
+
+    .text-zinc-500 {
+      color: #444444 !important;
+    }
+
+    .text-zinc-400 {
+      color: #666666 !important;
+    }
+
+    .border-zinc-100,
+    .border-zinc-200 {
+      border-color: #e5e5e5 !important;
+    }
+  </style>
+</head>
+<body class="bg-[#ffffff] text-[#111111] antialiased">
+  <!-- Navigation -->
+  <nav class="border-b border-zinc-200 bg-[#ffffff] sticky top-0 z-50">
+    <div class="max-w-5xl mx-auto px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-x-3">
+        <span class="font-semibold tracking-tight text-xl">Albert Le Thanh Nhan</span>
+        <span class="text-xl font-light">黎清仁</span>
+      </div>
+      <div class="hidden md:flex items-center gap-x-8 text-sm font-medium text-zinc-600">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#teaching" class="nav-link">Teaching</a>
+        <a href="#research" class="nav-link">Research</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+      <div class="md:hidden">
+        <a href="#contact" class="text-sm font-medium px-4 py-2 border border-zinc-200 rounded-full hover:bg-[#f5f5f5] transition-colors">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="max-w-5xl mx-auto px-8 pt-16 pb-20">
+    <div class="grid md:grid-cols-12 gap-x-12 items-center">
+      <!-- Photo -->
+      <div class="md:col-span-5">
+        <div class="relative">
+          <img 
+            src="assets/albert-photo.jpg" 
+            alt="Albert Le Thanh Nhan"
+            class="w-full h-auto rounded-2xl subtle-shadow border border-zinc-100"
+          >
+        </div>
+      </div>
+
+      <!-- Intro -->
+      <div class="md:col-span-7 mt-8 md:mt-0">
+        <div class="max-w-xl">
+          <div class="uppercase tracking-[2px] text-2xl font-medium mb-3">Doctoral Research Fellow &amp; University Lecturer</div>
+          
+          <h1 class="text-3xl md:text-4xl lg:text-5xl leading-[1.05] font-semibold tracking-tighter whitespace-nowrap">
+            Albert Lê Thành Nhân <span class="font-medium">黎清仁</span>
+          </h1>
+          
+          <div class="mt-6 text-xl text-zinc-600 leading-tight">
+            Educator and scholar working at the intersection of literature, language, and cross-cultural studies.
+          </div>
+
+          <div class="mt-8 flex flex-wrap items-center gap-x-4 gap-y-3 text-sm">
+            <div class="flex items-center gap-x-2 text-zinc-600">
+              <i class="fa-solid fa-map-marker-alt w-4 text-zinc-400"></i>
+              <span>Taiwan</span>
+            </div>
+            <div class="flex items-center gap-x-2 text-zinc-600">
+              <i class="fa-solid fa-envelope w-4 text-zinc-400"></i>
+              <a href="mailto:leenhan143@gmail.com" class="hover:text-zinc-900 transition-colors">leenhan143@gmail.com</a>
+            </div>
+            <div class="text-zinc-400">•</div>
+            <a href="#contact" class="inline-flex items-center gap-x-2 text-sm font-medium text-zinc-700 hover:text-zinc-950 transition-colors">
+              Get in touch <i class="fa-solid fa-arrow-right ml-0.5"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section id="about" class="max-w-5xl mx-auto px-8 py-16 border-t border-zinc-100">
+    <div class="grid md:grid-cols-12 gap-x-12">
+      <div class="md:col-span-3">
+        <div class="section-title mb-4">About</div>
+      </div>
+      <div class="md:col-span-9 max-w-3xl academic-text">
+        <p class="mb-5">I am a Doctoral Research Fellow in Comparative Literature and Cross-Cultural Studies at Fu Jen Catholic University, where I also serve as a university lecturer. My work centers on literature, language education, identity, and the role of narrative in cross-cultural understanding.</p>
+        <p>Previously, I taught English and Vietnamese at Dalat University in Vietnam and coordinated high-profile international academic and diplomatic visits. My research and teaching are grounded in a commitment to empathy, rigorous scholarship, and the transformative power of education.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education" class="max-w-5xl mx-auto px-8 py-16 border-t border-zinc-100">
+    <div class="grid md:grid-cols-12 gap-x-12">
+      <div class="md:col-span-3">
+        <div class="section-title mb-4">Education</div>
+      </div>
+      <div class="md:col-span-9 space-y-10">
+        
+        <div>
+          <div class="flex justify-between items-baseline">
+            <div>
+              <div class="font-semibold">Ph.D. in Comparative Literature and Cross-Cultural Studies</div>
+              <div class="text-zinc-600">Fu Jen Catholic University, Taiwan</div>
+            </div>
+            <div class="text-right text-sm text-zinc-500 whitespace-nowrap">2024-present</div>
+          </div>
+          <div class="text-sm text-zinc-500 mt-1">Graduate Institute of Cross-Cultural Studies • NSTC Doctoral Research Fellow</div>
+        </div>
+
+        <div>
+          <div class="flex justify-between items-baseline">
+            <div>
+              <div class="font-semibold">M.A. in English</div>
+              <div class="text-zinc-600">National Taipei University of Technology, Taiwan</div>
+            </div>
+            <div class="text-right text-sm text-zinc-500 whitespace-nowrap">2020-2024</div>
+          </div>
+          <div class="text-sm text-zinc-500 mt-1">GPA: 3.90/4.00 (Department Rank 2/17) • Thesis: <em>How a Child Helps Save an Adult’s Life: An Analysis of Defense Mechanisms in The Fall</em> (2006)</div>
+        </div>
+
+        <div>
+          <div class="flex justify-between items-baseline">
+            <div>
+              <div class="font-semibold">B.A. in English</div>
+              <div class="text-zinc-600">Dalat University, Vietnam</div>
+            </div>
+            <div class="text-right text-sm text-zinc-500 whitespace-nowrap">2010-2014</div>
+          </div>
+          <div class="text-sm text-zinc-500 mt-1">GPA: 3.37/4.00 • Graduated as Salutatorian</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Teaching -->
+  <section id="teaching" class="max-w-5xl mx-auto px-8 py-16 border-t border-zinc-100">
+    <div class="grid md:grid-cols-12 gap-x-12">
+      <div class="md:col-span-3">
+        <div class="section-title mb-4">Teaching</div>
+      </div>
+      <div class="md:col-span-9">
+        
+        <div class="mb-8">
+          <div class="flex justify-between items-baseline mb-2">
+            <div class="font-semibold">University Lecturer</div>
+            <div class="text-sm text-zinc-500">Sep 2025 - present</div>
+          </div>
+          <div class="text-zinc-600">Fu Jen Catholic University, Taiwan</div>
+          <ul class="mt-3 text-[15px] text-zinc-600 space-y-1.5">
+            <li>English: TV and Film Appreciation (Sophomore)</li>
+            <li>Vietnamese Language &amp; Culture (New course, Fall)</li>
+            <li>Freshman Advanced English (Fall &amp; Spring)</li>
+            <li>Intermediate English (Fall &amp; Spring)</li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="flex justify-between items-baseline mb-2">
+            <div class="font-semibold">Lecturer of English &amp; Vietnamese</div>
+            <div class="text-sm text-zinc-500">Aug 2014 - Jan 2017</div>
+          </div>
+          <div class="text-zinc-600">Dalat University, Vietnam</div>
+          <ul class="mt-3 text-[15px] text-zinc-600 space-y-1.5">
+            <li>General English 1, 2, and 3 (required for non-English majors)</li>
+            <li>English Pronunciation Practice (English-major freshmen)</li>
+            <li>Vietnamese 1 and 2 (EMI courses for Korean students)</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Research & Publications -->
+  <section id="research" class="max-w-5xl mx-auto px-8 py-16 border-t border-zinc-100">
+    <div class="grid md:grid-cols-12 gap-x-12">
+      <div class="md:col-span-3">
+        <div class="section-title mb-4">Research &amp; Scholarship</div>
+      </div>
+      <div class="md:col-span-9 space-y-10">
+        
+        <!-- Current Focus -->
+        <div>
+          <div class="font-medium mb-3">Current Research Focus</div>
+          <div class="academic-text text-zinc-600">
+            Cross-cultural identity, narrative and memory in literature and film, Vietnamese-Taiwanese diaspora, and the intersection of language education and technology.
+          </div>
+        </div>
+
+        <!-- Publications -->
+        <div>
+          <div class="font-medium mb-4">Publications &amp; Book Chapters</div>
+          <div class="space-y-5 text-[14.5px] leading-relaxed text-zinc-600">
+            <div class="flex gap-x-4">
+              <div class="w-12 flex-shrink-0 text-zinc-400 text-sm pt-px">2026</div>
+              <div>Le, Thi-Thach-Thao, and Thanh-Nhan Le. “From Warfare to Peace: Transforming Environmental Education through Metaphor.” In <em>Language for Peace and Education: Perspectives from Japan and East Asia</em>, edited by Fred E. Anderson, John C. Maher, and Jelisava Dobovšek Sethna. Candlin &amp; Mynard ePublishing. <a href="https://www.candlinandmynard.com/languageforpeace.html" target="_blank" class="text-zinc-400 hover:text-zinc-600 underline underline-offset-2">Link</a></div>
+            </div>
+            <div class="flex gap-x-4">
+              <div class="w-12 flex-shrink-0 text-zinc-400 text-sm pt-px">2026-27</div>
+              <div>Le, Thi-Thach-Thao, and Thanh-Nhan Le. “Empowering Voices: Vietnamese Mothers’ Agency in Multilingual Heritage Preservation in Taiwan.” In <em>Language Research: Current Perspectives</em>, edited by Debbita Tan Ai Lin, Shaidatul Akma Adi Kasuma, and Mansour Amini. UPM Press (forthcoming).</div>
+            </div>
+            <div class="flex gap-x-4">
+              <div class="w-12 flex-shrink-0 text-zinc-400 text-sm pt-px">Under review</div>
+              <div>Le, Thi-Thach-Thao and Thanh-Nhan Le. “Conversational Intimacy in Political Oratory: A Corpus-Based Analysis of Direct Address Strategies in U.S. Presidential Campaign Discourse.” <em>Text and Talk</em>.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Conferences -->
+        <div>
+          <div class="font-medium mb-4">Conference Presentations &amp; Thesis</div>
+          <div class="space-y-4 text-[14.5px] leading-relaxed text-zinc-600">
+            <div class="flex gap-x-4">
+              <div class="w-12 flex-shrink-0 text-zinc-400 text-sm pt-px">2026</div>
+              <div>Le, Thi-Thach-Thao, Tran-Duy Bao, and Thanh-Nhan Le. “‘I Don’t Know Where My Ability Stands’: When AI Mechanisms Backfire in Exam-Centred EFL Reading.” TERA Conference &amp; WERA Focal Meeting, National Sun Yat-sen University, Kaohsiung, Taiwan (Corresponding Author).</div>
+            </div>
+            <div class="flex gap-x-4">
+              <div class="w-12 flex-shrink-0 text-zinc-400 text-sm pt-px">2025</div>
+              <div>Le, Thi-Thach-Thao, and Thanh-Nhan Le. “Asian-Pacific Indigenous and Minority Language Preservation through Generative AI: A Systematic Review.” Linguistic Society of New Zealand Annual Conference, Massey University, Wellington.</div>
+            </div>
+            <div class="flex gap-x-4">
+              <div class="w-12 flex-shrink-0 text-zinc-400 text-sm pt-px">2025</div>
+              <div>Le, Thanh-Nhan. “Documentary as Contested Memory: Cross-Cultural Commemorations of the Vietnam/American War.” 10th International Language Learning Conference, Penang, Malaysia.</div>
+            </div>
+            <div class="flex gap-x-4">
+              <div class="w-12 flex-shrink-0 text-zinc-400 text-sm pt-px">2025</div>
+              <div>Le, Thanh-Nhan and Thi-Thach-Thao Le. “The Perception-Preference Paradox in AI Platform Adoption.” 10th International Language Learning Conference, Penang, Malaysia.</div>
+            </div>
+            <div class="flex gap-x-4">
+              <div class="w-12 flex-shrink-0 text-zinc-400 text-sm pt-px">2025</div>
+              <div>Le, Thi-Thach-Thao, and Thanh-Nhan Le. “University Students’ Perceptions of ChatGPT and Deepseek: An Extended TAM Study.” 51st LACUS Annual Conference, Western University, London, ON, Canada.</div>
+            </div>
+            <div class="flex gap-x-4">
+              <div class="w-12 flex-shrink-0 text-zinc-400 text-sm pt-px">2025</div>
+              <div>Le, Thanh-Nhan. “‘We Will Live!’: (Just) Forgetting for (Self) Liberation in <em>The Sympathizer</em>.” ACLA Annual Meeting (virtual).</div>
+            </div>
+            <div class="flex gap-x-4">
+              <div class="w-12 flex-shrink-0 text-zinc-400 text-sm pt-px">2025</div>
+              <div>Le, Thi-Thach-Thao, and Thanh-Nhan Le. “Unraveling the Intercultural Identity of Vietnamese-Taiwanese Children.” AAAL Annual Conference, Denver, CO (accepted; unable to attend).</div>
+            </div>
+            <div class="flex gap-x-4">
+              <div class="w-12 flex-shrink-0 text-zinc-400 text-sm pt-px">2024</div>
+              <div>Le, Thanh-Nhan. “Resilience Through Narrative: Alexandria’s Linguistic Agency in Healing Roy in <em>The Fall</em> (2006).” LINGUAPAX ASIA, Eikei University of Hiroshima (poster).</div>
+            </div>
+            <div class="flex gap-x-4">
+              <div class="w-12 flex-shrink-0 text-zinc-400 text-sm pt-px">2024</div>
+              <div>Le, Thi-Thach-Thao, and Thanh-Nhan Le. “War on Waste: Metaphorical Warfare in Environmental Advertising.” LINGUAPAX ASIA, Eikei University of Hiroshima.</div>
+            </div>
+            <div class="flex gap-x-4">
+              <div class="w-12 flex-shrink-0 text-zinc-400 text-sm pt-px">2024</div>
+              <div>Le, Thanh-Nhan. “Unveiling Love Through the Eyes of Youth: Altruism in <em>The Fall</em> (2006) and Its Cross-Generational Appeal.” TCLRA International Conference, Taipei.</div>
+            </div>
+            <div class="flex gap-x-4">
+              <div class="w-12 flex-shrink-0 text-zinc-400 text-sm pt-px">2024</div>
+              <div>Le, Thi-Thach-Thao, and Thanh-Nhan Le. “Artificial Intelligence’s Impacts on English Language Learning: A Systematic Review.” TESOL International Convention, Tampa, FL.</div>
+            </div>
+            <div class="flex gap-x-4">
+              <div class="w-12 flex-shrink-0 text-zinc-400 text-sm pt-px">2024</div>
+              <div>Le, Thanh-Nhan. <em>How a Child Helps Save an Adult’s Life: An Analysis of Defense Mechanisms in The Fall (2006)</em>. M.A. Thesis, National Taipei University of Technology.</div>
+            </div>
+            <div class="flex gap-x-4">
+              <div class="w-12 flex-shrink-0 text-zinc-400 text-sm pt-px">2023</div>
+              <div>Le, Thi-Thach-Thao, Thanh-Nhan Le, and Shi-Jen Huang. “Analyzing Generic Moves and Lexical Bundles in TED Talks.” JALT 49th International Conference, Tsukuba, Japan.</div>
+            </div>
+            <div class="flex gap-x-4">
+              <div class="w-12 flex-shrink-0 text-zinc-400 text-sm pt-px">2014</div>
+              <div>Le, Thanh-Nhan et al. “Problems and Recommendations to Improve the English-Speaking Skill of English Majors at Dalat University.” Dalat University Student Academic Conference (Project Leader &amp; Co-PI).</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Grants -->
+        <div>
+          <div class="font-medium mb-3">Fellowships &amp; Grants</div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-2 text-sm text-zinc-600">
+            <div>• NSTC Doctoral Research Fellowship (2024-present)</div>
+            <div>• Fu Jen International Ph.D. Scholarship (2024-present)</div>
+            <div>• NSTC Travel Grant for International Conferences (2025)</div>
+            <div>• FJCU GICCS Grant for Publication (2025)</div>
+            <div>• Presidents’ Prize, 51st LACUS Forum (2025, co-winner)</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Leadership & Awards -->
+  <section class="max-w-5xl mx-auto px-8 py-16 border-t border-zinc-100">
+    <div class="grid md:grid-cols-12 gap-x-12">
+      <div class="md:col-span-3">
+        <div class="section-title mb-4">Experience</div>
+      </div>
+      <div class="md:col-span-9">
+        <div class="academic-text text-zinc-600 space-y-3">
+          <div><span class="font-medium text-zinc-800">Doctoral Research Assistant</span>, College of Business Management, Chihlee University of Technology, Oct 2025 - July 2026.</div>
+          <div><span class="font-medium text-zinc-800">Project Adviser</span>, Future Seeds Project (Call Over Ridges Organization). Secured funding and delivered educational support to children in rural Vietnam during the pandemic (2021-2022).</div>
+          <div><span class="font-medium text-zinc-800">Coordinator for International Affairs</span>, Dalat University (2014-2019). Organized 199+ international events and facilitated visits by ambassadors and senior academics from the U.S., Japan, Korea, and Australia.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="max-w-5xl mx-auto px-8 py-20 border-t border-zinc-100">
+    <div class="grid md:grid-cols-12 gap-x-12">
+      <div class="md:col-span-3">
+        <div class="section-title mb-4">Contact</div>
+      </div>
+      <div class="md:col-span-9">
+        <div class="max-w-md">
+          <div class="space-y-3 text-[15px]">
+            <div class="flex justify-between border-b border-zinc-100 pb-3">
+              <div class="text-zinc-500">Email</div>
+              <a href="mailto:leenhan143@gmail.com" class="font-medium hover:underline">leenhan143@gmail.com</a>
+            </div>
+            <div class="flex justify-between border-b border-zinc-100 pb-3">
+              <div class="text-zinc-500">LinkedIn</div>
+              <a href="https://www.linkedin.com/in/nhan-lee?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank" class="font-medium hover:underline">nhan-lee</a>
+            </div>
+            <div class="flex justify-between border-b border-zinc-100 pb-3">
+              <div class="text-zinc-500">Location</div>
+              <div class="font-medium">Taiwan</div>
+            </div>
+            <div class="flex justify-between pt-2">
+              <div class="text-zinc-500">Current</div>
+              <div class="font-medium">Doctoral Research Fellow &amp; Lecturer<br>Fu Jen Catholic University</div>
+            </div>
+          </div>
+
+          <div class="mt-10 text-xs text-zinc-400">
+            References available upon request.<br>
+            Curriculum vitae available for download.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t border-zinc-100 py-8">
+    <div class="max-w-5xl mx-auto px-8 text-center text-xs text-zinc-400">
+      © Albert Le Thanh Nhan. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    // Tailwind script
+    function initializeTailwind() {
+      document.documentElement.style.setProperty('--accent', '#18181b');
+    }
+    
+    // Smooth scroll for nav links
+    function setupSmoothScroll() {
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+    }
+
+    window.onload = function() {
+      initializeTailwind();
+      setupSmoothScroll();
+    };
+  </script>
+</body>
+</html>
