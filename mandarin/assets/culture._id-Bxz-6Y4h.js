@@ -1,0 +1,2 @@
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["assets/culture._id-C15gzYMD.js","assets/cn-DIYE9_Ld.js","assets/progress-C5QeIrbM.js","assets/button-CfqhEnjD.js"])))=>i.map(i=>d[i]);
+import{n as e,r as t,t as n}from"./preload-helper-eBR7TG4I.js";var r=t(`/culture/$id`)({component:e(()=>n(()=>import(`./culture._id-C15gzYMD.js`),__vite__mapDeps([0,1,2,3])),`component`)});export{r as t};
