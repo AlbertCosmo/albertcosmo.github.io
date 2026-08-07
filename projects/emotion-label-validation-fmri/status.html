@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Status · Emotion label validation fMRI</title>
+  <title>Status · Emotion label validation fMRI | Jessica & Albert</title>
+  <meta name="description" content="Honest gap table: affective ROIs, multi-item, physio done; multimodal partial; manuscript next." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/site.css" />
 </head>
@@ -18,29 +19,59 @@
         <a href="data.html">Data</a>
         <a class="active" href="status.html">Status</a>
         <a href="reproduce.html">Reproduce</a>
+        <a href="https://github.com/AlbertCosmo/emotion-label-validation-fmri" target="_blank" rel="noopener">Code</a>
       </nav>
     </div>
   </header>
   <main>
-    <h1>Status &amp; roadmap</h1>
+    <h1>Status & roadmap</h1>
+    <p class="authors meta sans">
+      <strong>Jessica Thach Thao Le</strong> & <strong>Albert Le Thanh Nhan</strong> · last project site polish 2026-08-07
+    </p>
+
     <table>
       <thead><tr><th>Gap</th><th>Status</th><th>Notes</th></tr></thead>
       <tbody>
-        <tr><td>Affective ROIs</td><td><span class="badge ok">Done</span></td><td>PleasantOther + residualization</td></tr>
-        <tr><td>Multi-item (50)</td><td><span class="badge ok">Done</span></td><td>Extract + text + brain</td></tr>
-        <tr><td>Physio agreement</td><td><span class="badge ok">Done</span></td><td>HR / EDA / RESP</td></tr>
-        <tr><td>Multi-film text pool</td><td><span class="badge ok">Done</span></td><td>12 films</td></tr>
-        <tr><td>Publication tables &amp; figures</td><td><span class="badge ok">Done</span></td><td><code>figures/pub/</code></td></tr>
+        <tr><td>Affective ROIs</td><td><span class="badge ok">Done</span></td><td>PleasantOther + residualization + multi-item</td></tr>
+        <tr><td>Multi-item (50 GRID)</td><td><span class="badge ok">Done</span></td><td>Extract + text pool + brain hit rates</td></tr>
+        <tr><td>Physio agreement</td><td><span class="badge ok">Done</span></td><td>HR / EDA / RESP vs items</td></tr>
+        <tr><td>Multi-film text pool</td><td><span class="badge ok">Done</span></td><td>12 films, film-block CI</td></tr>
+        <tr><td>Publication tables & figures</td><td><span class="badge ok">Done</span></td><td><code>figures/pub/</code> + <code>results/publication_tables/</code></td></tr>
         <tr><td>This project website</td><td><span class="badge ok">Done</span></td><td>albertcosmo.github.io/projects/…</td></tr>
-        <tr><td>Multimodal (all films)</td><td><span class="badge warn">Partial</span></td><td>ToS audio yes; Payload needs exp cut</td></tr>
-        <tr><td>Manuscript draft</td><td><span class="badge warn">Next</span></td><td>See MANUSCRIPT_STRATEGY.md</td></tr>
+        <tr><td>Multimodal (all films)</td><td><span class="badge warn">Partial</span></td><td>ToS audio+vis+text; Payload needs exp cut</td></tr>
+        <tr><td>Cross-linguistic (VN)</td><td><span class="badge">Out of scope</span></td><td>Not blocking Paper 1</td></tr>
+        <tr><td>Manuscript draft</td><td><span class="badge warn">Next</span></td><td>Strategy + outline ready; prose not drafted</td></tr>
       </tbody>
     </table>
+
+    <h2>Recommended next scientific step</h2>
+    <p>
+      Draft the <strong>integrated</strong> paper (LLM multi-item validation + gated multi-subject brain decode)
+      targeting Imaging Neuroscience / NeuroImage class venues. Do not split text vs brain until that package is under review.
+      See repo <code>docs/MANUSCRIPT_STRATEGY.md</code> and <code>docs/MANUSCRIPT_OUTLINE.md</code>.
+    </p>
+
     <h2>Not this site</h2>
-    <p>Presentation-only deck remains at
+    <div class="callout warn">
+      The presentation-only deck remains at
       <a href="https://jessicathao.github.io/emotion-label-validation-fmri/">jessicathao.github.io/emotion-label-validation-fmri</a>
-      and should not be treated as the project homepage.</p>
+      and must <strong>not</strong> be treated as the project homepage or citation landing page.
+    </div>
+
+    <h2>Limits we state on every talk / paper</h2>
+    <ul class="tight">
+      <li>Brain <em>n</em> = 5 × 2 films; small affective <em>r</em>.</li>
+      <li>Dialogue-only text channel; silent frames NaN.</li>
+      <li>No classical <em>p</em>-values for continuous autocorrelated ratings.</li>
+      <li>Multimodal audio complete for Tears of Steel only among free CC downloads we used.</li>
+    </ul>
   </main>
-  <footer class="site"><div class="inner"><a href="index.html">Overview</a></div></footer>
+  <footer class="site">
+    <div class="inner">
+      <span>Jessica Thach Thao Le & Albert Le Thanh Nhan · 2026</span>
+      <span><a href="index.html">Overview</a></span>
+    </div>
+  </footer>
+  <script src="js/site.js"></script>
 </body>
 </html>

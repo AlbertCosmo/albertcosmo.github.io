@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Reproduce · Emotion label validation fMRI</title>
+  <title>Reproduce · Emotion label validation fMRI | Jessica & Albert</title>
+  <meta name="description" content="Real commands to clone, download OpenNeuro subset, run stats, figures, and brain decode pipelines." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/site.css" />
 </head>
@@ -18,36 +19,72 @@
         <a href="data.html">Data</a>
         <a href="status.html">Status</a>
         <a class="active" href="reproduce.html">Reproduce</a>
+        <a href="https://github.com/AlbertCosmo/emotion-label-validation-fmri" target="_blank" rel="noopener">Code</a>
       </nav>
     </div>
   </header>
   <main>
     <h1>Reproduce</h1>
+    <p class="authors meta sans">
+      <strong>Jessica Thach Thao Le</strong> & <strong>Albert Le Thanh Nhan</strong> ·
+      code: <a href="https://github.com/AlbertCosmo/emotion-label-validation-fmri">AlbertCosmo/emotion-label-validation-fmri</a>
+    </p>
+    <p class="lead">Environment: Python 3.11–3.12, scientific stack below. Large BOLD stays local; scripts download what they need.</p>
+
+    <h2>Setup + tables + figures</h2>
     <pre>git clone https://github.com/AlbertCosmo/emotion-label-validation-fmri.git
 cd emotion-label-validation-fmri
-# Python 3.11–3.12 recommended
 python -m venv .venv && source .venv/bin/activate
 pip install numpy scipy pandas scikit-learn nibabel nilearn matplotlib
 
 # Annotations + minimal BOLD subset (~9 GB)
 bash scripts/download_openneuro_subset.sh
 
-# Optional: CC Tears of Steel
+# Optional: CC Tears of Steel film
 bash scripts/download_films_cc.sh
 
+# 50-item series (if regenerating from OpenNeuro)
 python src/analysis/extract_multi_item.py --all-items
-python src/analysis/run_all_stats.py
-python src/figures/make_publication_figures.py
 
-# Brain (requires local BOLD under ~/ds004892)
+# Aggregate publication tables
+python src/analysis/run_all_stats.py
+python src/figures/make_publication_figures.py</pre>
+
+    <h2>Brain decode (requires local BOLD under ~/ds004892)</h2>
+    <pre># Occipital extract + decode (subjects pre-specified by FD)
 python src/analysis/decode_brain.py extract Payload sub-S08 sub-S05 sub-S11 sub-S15 sub-S06
 python src/analysis/decode_brain.py extract TearsOfSteel sub-S31 sub-S08 sub-S11 sub-S25 sub-S04
+python src/analysis/decode_brain.py decode Payload
+python src/analysis/decode_brain.py decode TearsOfSteel
+
+# Affective ROIs
 python src/analysis/extract_affective_rois.py
 python src/analysis/decode_affective.py
+
+# Multi-item brain
 python src/analysis/decode_multi_item_brain.py --rois network --items all
+
+# Physio agreement
 python src/analysis/analyze_physio.py</pre>
-    <p class="meta sans">Full handoff notes live in the repo under <code>docs/SESSION_NOTES.md</code> and <code>docs/WEBSITE_HANDOFF.md</code>.</p>
+
+    <h2>What you should not need</h2>
+    <ul class="tight">
+      <li>Full 131&nbsp;GB ds004892 tree for the analyses reported here (subset is enough).</li>
+      <li>Sci-Hub or other illegal article downloads — primary paper is open access.</li>
+      <li>The presentation site at jessicathao.github.io as a data source.</li>
+    </ul>
+
+    <p class="meta sans">
+      Handoff notes: repo <code>docs/SESSION_NOTES.md</code>, <code>docs/WEBSITE_HANDOFF.md</code>,
+      <code>docs/ANALYSIS_STATUS.md</code>. NOTICE applies to reuse of this reanalysis code.
+    </p>
   </main>
-  <footer class="site"><div class="inner"><a href="index.html">Overview</a></div></footer>
+  <footer class="site">
+    <div class="inner">
+      <span>Jessica Thach Thao Le & Albert Le Thanh Nhan · 2026</span>
+      <span><a href="index.html">Overview</a> · <a href="data.html">Data</a></span>
+    </div>
+  </footer>
+  <script src="js/site.js"></script>
 </body>
 </html>

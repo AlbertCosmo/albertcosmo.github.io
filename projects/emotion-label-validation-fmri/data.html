@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Data · Emotion label validation fMRI</title>
+  <title>Data · Emotion label validation fMRI | Jessica & Albert</title>
+  <meta name="description" content="Emo-FilM OpenNeuro ds004872 and ds004892; what is in git vs local-only; film media." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/site.css" />
 </head>
@@ -18,37 +19,60 @@
         <a class="active" href="data.html">Data</a>
         <a href="status.html">Status</a>
         <a href="reproduce.html">Reproduce</a>
+        <a href="https://github.com/AlbertCosmo/emotion-label-validation-fmri" target="_blank" rel="noopener">Code</a>
       </nav>
     </div>
   </header>
   <main>
     <h1>Data</h1>
+    <p class="authors meta sans">
+      <strong>Jessica Thach Thao Le</strong> & <strong>Albert Le Thanh Nhan</strong>
+    </p>
+
     <h2>Primary dataset (not ours)</h2>
-    <p><strong>Emo-FilM</strong> (Morgenroth et al., 2025): 14 short CC films, continuous emotion annotations, fMRI, physio.</p>
+    <p><strong>Emo-FilM</strong> (Morgenroth et al., 2025, <em>Scientific Data</em>): 14 short Creative Commons films, continuous multi-item emotion annotations, fMRI, respiration, heart rate, EDA.</p>
     <ul class="tight">
       <li>Annotations: <a href="https://openneuro.org/datasets/ds004872">OpenNeuro ds004872</a> (CC0)</li>
-      <li>fMRI / physio: <a href="https://openneuro.org/datasets/ds004892">OpenNeuro ds004892</a> (CC0)</li>
+      <li>fMRI / physio: <a href="https://openneuro.org/datasets/ds004892">OpenNeuro ds004892</a> (CC0; full release ~131&nbsp;GB)</li>
+      <li>Paper DOI: <a href="https://doi.org/10.1038/s41597-025-04803-5">10.1038/s41597-025-04803-5</a></li>
     </ul>
 
     <h2>What this project keeps in git</h2>
     <ul class="tight">
-      <li>Processed text signals and <strong>50-item human series</strong> (JSON under <code>data/transcripts/</code>).</li>
-      <li>1&nbsp;Hz visual features for Payload &amp; TearsOfSteel; audio features for TearsOfSteel.</li>
-      <li>Result tables and publication figures (not raw BOLD).</li>
-      <li>Analysis code and download scripts.</li>
+      <li>Processed text signals and <strong>50-item human series</strong> (JSON under <code>data/transcripts/</code>; 14 films × 50 items).</li>
+      <li>1&nbsp;Hz visual features for Payload & TearsOfSteel; audio features for TearsOfSteel.</li>
+      <li>Result tables under <code>results/</code> and <code>results/publication_tables/</code>; publication figures under <code>figures/pub/</code>.</li>
+      <li>Analysis code, download scripts, documentation (including this site’s source numbers).</li>
     </ul>
 
-    <h2>What is local-only (not redistributed here)</h2>
+    <h2>What is local-only (not redistributed)</h2>
     <ul class="tight">
-      <li>Preprocessed BOLD NIfTIs (~9&nbsp;GB subset; full set ~131&nbsp;GB) — obtain via OpenNeuro / script.</li>
-      <li>ROI decode caches (<code>*.npz</code> voxel matrices).</li>
-      <li>Experiment film cuts (<code>*_exp.mp4</code>) — not on OpenNeuro; restore from original media archive if available.</li>
+      <li>Preprocessed BOLD NIfTIs — obtain via OpenNeuro / <code>scripts/download_openneuro_subset.sh</code> (~9&nbsp;GB subset for the 10 runs we use).</li>
+      <li>ROI decode caches (<code>data/decode_cache*</code>, <code>*.npz</code> voxel matrices) — gitignored.</li>
+      <li>Experiment film cuts (<code>*_exp.mp4</code> / <code>Movies_cut</code>) — not on OpenNeuro; needed only for full multimodal on non-CC titles.</li>
     </ul>
 
     <h2>Film media</h2>
-    <p>Tears of Steel is freely downloadable (Blender Open Movie, CC-BY). Script: <code>scripts/download_films_cc.sh</code>.
-       Other titles need the Emo-FilM experiment cuts for exact duration alignment.</p>
+    <p>
+      Tears of Steel is freely downloadable (Blender Open Movie, CC-BY). Script: <code>scripts/download_films_cc.sh</code>.
+      Other titles in Emo-FilM are CC-licensed but experiment-specific cuts (credits removed, exact onsets) may differ from public masters — restore from the original media archive if you need bit-identical stimuli.
+    </p>
+
+    <h2>Tables mirrored on this site</h2>
+    <p class="meta sans">For offline reading without cloning the analysis repo:</p>
+    <ul class="tight">
+      <li><a href="data/PUBLICATION_TABLES.md">PUBLICATION_TABLES.md</a></li>
+      <li><a href="data/multi_film_pool.json">multi_film_pool.json</a> · <a href="data/brain_consolidated.json">brain_consolidated.json</a></li>
+      <li><a href="data/text_multi_item_full.json">text_multi_item_full.json</a> · <a href="data/physio_summary.json">physio_summary.json</a></li>
+      <li><a href="data/index.json">index.json</a></li>
+    </ul>
   </main>
-  <footer class="site"><div class="inner"><a href="index.html">Overview</a></div></footer>
+  <footer class="site">
+    <div class="inner">
+      <span>Jessica Thach Thao Le & Albert Le Thanh Nhan · 2026</span>
+      <span><a href="index.html">Overview</a> · <a href="reproduce.html">Reproduce</a></span>
+    </div>
+  </footer>
+  <script src="js/site.js"></script>
 </body>
 </html>
