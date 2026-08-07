@@ -40,7 +40,7 @@
       data: {
         labels,
         datasets: [{
-          label: model === "gemini" ? "Gemini pooled r" : "BERT pooled r",
+          label: ({ bert: "BERT", gemini: "Gemini", grok: "Grok" }[model] || model) + " pooled r",
           data: vals,
           backgroundColor: colors,
           borderWidth: 0,
@@ -72,10 +72,15 @@
         },
       },
     });
-    el("text-interp").innerHTML =
-      model === "gemini"
-        ? "<strong>Interpretation.</strong> Gemini’s strongest absolute associations are a mix of positive valence/social items (PleasantOther, Happiness, SocialNorms) and anti-correlations with oppositional/action items (Oppose, Tackle). Absolute |r| stays modest (≲0.22): dialogue transformers track continuous human affect only weakly and unevenly. Film-block CIs that exclude 0 are more trustworthy than single-film peaks."
-        : "<strong>Interpretation.</strong> BERT |r| stays near the noise floor for almost every item (top |r| ≲ 0.10). Per-segment bag-of-segment classifiers do not recover continuous human consensus under this naturalistic, dialogue-only pipeline—consistent with the multi-film pool near zero for PleasantOther.";
+    const interps = {
+      gemini:
+        "<strong>Interpretation.</strong> Gemini’s strongest absolute associations mix valence/social items (PleasantOther, Happiness) with anti-correlations to oppositional items. |r| stays modest (≲0.22). On the full 12-film set Gemini leads the pack for PleasantOther (pooled r≈+0.21).",
+      bert:
+        "<strong>Interpretation.</strong> BERT |r| stays near the noise floor (top |r| ≲ 0.10). Per-segment classifiers do not recover continuous human consensus under this dialogue-only pipeline.",
+      grok:
+        "<strong>Interpretation.</strong> Grok (grok-4.5) was scored on the 5 films with segment transcripts. Fair 5-film PleasantOther pooled r≈+0.12 — essentially tied with Gemini on that set (+0.11), both well above BERT (~0). TearsOfSteel is the strong shared hit (Grok ≈ Gemini ≈ +0.47). Still far from replacing human continuous labels.",
+    };
+    el("text-interp").innerHTML = interps[model] || interps.gemini;
   }
 
   // --- Per-film text for selected item ---

@@ -37,16 +37,53 @@
 
     <p class="meta sans">Effect sizes only. No classical <em>p</em>-values (annotation autocorrelation ~30–55&nbsp;s 1/e lag).</p>
 
-    <h2>Text · multi-item agreement</h2>
-    <p>Pooled Pearson <em>r</em> across 12 dialogue films; 95% CI from film-block bootstrap.</p>
+    <h2>Text · three-way (BERT · Gemini · Grok)</h2>
+    <p>
+      Isolation scoring (one dialogue segment → valence → 1&nbsp;Hz).
+      <strong>Fair head-to-head</strong> uses the 5 films with segment transcripts in-repo.
+      Gemini/BERT also have 12-film tables (Grok lacks transcripts for the other 7).
+    </p>
     <table>
-      <thead><tr><th>Model</th><th>Item</th><th class="num">pooled r</th><th>95% CI</th></tr></thead>
+      <thead>
+        <tr>
+          <th>Scope</th><th>Model</th><th>Item</th>
+          <th class="num">pooled r</th><th>95% film-block CI</th><th class="num">films</th>
+        </tr>
+      </thead>
       <tbody>
-        <tr><td>Gemini</td><td>PleasantOther</td><td class="num">+0.211</td><td>[0.134, 0.258]</td></tr>
-        <tr><td>BERT</td><td>PleasantOther</td><td class="num">+0.013</td><td>[−0.063, 0.081]</td></tr>
-        <tr><td>Gemini</td><td>Oppose</td><td class="num">−0.217</td><td>[−0.275, −0.124]</td></tr>
-        <tr><td>Gemini</td><td>Happiness</td><td class="num">+0.188</td><td>[0.127, 0.243]</td></tr>
-        <tr><td>Gemini</td><td>SocialNorms</td><td class="num">+0.201</td><td>[0.110, 0.259]</td></tr>
+        <tr><td>Fair 5-film</td><td>BERT</td><td>PleasantOther</td><td class="num">+0.018</td><td>[−0.119, 0.213]</td><td class="num">5</td></tr>
+        <tr><td>Fair 5-film</td><td>Gemini</td><td>PleasantOther</td><td class="num">+0.113</td><td>[0.045, 0.217]</td><td class="num">5</td></tr>
+        <tr class="hit"><td>Fair 5-film</td><td><strong>Grok</strong></td><td>PleasantOther</td><td class="num"><strong>+0.117</strong></td><td>[0.064, 0.231]</td><td class="num">5</td></tr>
+        <tr><td>Full 12-film</td><td>BERT</td><td>PleasantOther</td><td class="num">+0.013</td><td>[−0.063, 0.081]</td><td class="num">12</td></tr>
+        <tr><td>Full 12-film</td><td>Gemini</td><td>PleasantOther</td><td class="num">+0.211</td><td>[0.134, 0.258]</td><td class="num">12</td></tr>
+        <tr><td>Full 12-film</td><td>Gemini</td><td>Happiness</td><td class="num">+0.188</td><td>[0.127, 0.243]</td><td class="num">12</td></tr>
+        <tr><td>Fair 5-film</td><td>Grok</td><td>Happiness</td><td class="num">+0.135</td><td>[0.004, 0.327]</td><td class="num">5</td></tr>
+      </tbody>
+    </table>
+    <div class="interp">
+      <strong>Read:</strong> On matched films, <em>Grok ≈ Gemini</em> for continuous PleasantOther and both beat BERT.
+      Tears of Steel is the shared strong film (all three positive; Grok/Gemini ≈ +0.47).
+      No dialogue LLM replaces human continuous annotation at scale.
+    </div>
+    <figure class="figure">
+      <img src="assets/figures/three_way_pleasantother.png" alt="Three-way PleasantOther" />
+      <figcaption>BERT · Gemini · Grok vs PleasantOther (fair 5-film set).</figcaption>
+    </figure>
+    <figure class="figure">
+      <img src="assets/figures/three_way_selected_items.png" alt="Three-way selected items" />
+      <figcaption>Selected human items, same 5-film set.</figcaption>
+    </figure>
+
+    <h2>Text · multi-item agreement (detail)</h2>
+    <p>Pooled Pearson <em>r</em>; 95% CI from film-block bootstrap. Switch models in <a href="explore.html">Explore</a>.</p>
+    <table>
+      <thead><tr><th>Model</th><th>Item</th><th class="num">pooled r</th><th>95% CI</th><th class="num">films</th></tr></thead>
+      <tbody>
+        <tr><td>Gemini</td><td>PleasantOther</td><td class="num">+0.211</td><td>[0.134, 0.258]</td><td class="num">12</td></tr>
+        <tr><td>Grok</td><td>PleasantOther</td><td class="num">+0.117</td><td>[0.064, 0.231]</td><td class="num">5</td></tr>
+        <tr><td>BERT</td><td>PleasantOther</td><td class="num">+0.013</td><td>[−0.063, 0.081]</td><td class="num">12</td></tr>
+        <tr><td>Gemini</td><td>Happiness</td><td class="num">+0.188</td><td>[0.127, 0.243]</td><td class="num">12</td></tr>
+        <tr><td>Grok</td><td>Happiness</td><td class="num">+0.135</td><td>[0.004, 0.327]</td><td class="num">5</td></tr>
       </tbody>
     </table>
     <figure class="figure">

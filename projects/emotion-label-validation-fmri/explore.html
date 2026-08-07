@@ -43,12 +43,29 @@
     </p>
     <div id="load-status" class="loading">Loading explore_bundle.json…</div>
 
+    <div class="callout">
+      <strong>Three-way text models:</strong> BERT · Gemini · <strong>Grok (grok-4.5)</strong>.
+      Grok was scored with the same isolation design as Gemini (one dialogue segment → 0–1 valence → 1&nbsp;Hz grid).
+      Segment transcripts exist in-repo for <strong>5 films</strong> (AfterTheRain, LessonLearned, Payload, Sintel, TearsOfSteel);
+      fair head-to-head uses that set. BERT/Gemini also keep the original 12-film tables.
+      See <a href="assets/figures/three_way_pleasantother.png">three-way figure</a>.
+    </div>
+    <figure class="figure">
+      <img src="assets/figures/three_way_pleasantother.png" alt="BERT Gemini Grok PleasantOther" />
+      <figcaption>Fair 5-film head-to-head vs human PleasantOther (pooled + per film). Grok ≈ Gemini; both &gt; BERT.</figcaption>
+    </figure>
+    <figure class="figure">
+      <img src="assets/figures/three_way_selected_items.png" alt="Selected items three-way" />
+      <figcaption>Selected human items, same 5-film set for all three models.</figcaption>
+    </figure>
+
     <h2>1 · Text × 50 human items (pooled)</h2>
     <div class="controls">
       <label>Model
         <select id="text-model">
           <option value="gemini" selected>Gemini</option>
           <option value="bert">BERT</option>
+          <option value="grok">Grok</option>
         </select>
       </label>
       <label>Sort
@@ -70,6 +87,7 @@
         <select id="film-model">
           <option value="gemini" selected>Gemini</option>
           <option value="bert">BERT</option>
+          <option value="grok">Grok</option>
         </select>
       </label>
       <span class="meta" id="film-pool"></span>
