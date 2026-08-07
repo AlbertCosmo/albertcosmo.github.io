@@ -3,103 +3,87 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Results · Emotion label validation fMRI | Jessica & Albert</title>
-  <meta name="description" content="Effect-size results: multi-item text agreement, multi-film pool, occipital null, affective ROI decoding, residualization, multi-item brain hit rates, physio." />
+  <title>Results · Emotion label validation fMRI</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/site.css" />
 </head>
 <body>
-  <header class="site sans">
+    <header class="site">
     <div class="inner">
-      <a class="brand" href="index.html">Emotion labels · fMRI</a>
+      <div>
+        <a class="brand" href="index.html">Emotion labels · fMRI · <em>Albert &amp; Jessica</em></a>
+        <div class="collab">A joint research project</div>
+      </div>
       <nav class="site">
         <a href="index.html">Overview</a>
         <a class="active" href="results.html">Results</a>
+        <a href="explore.html">Explore</a>
+        <a href="publication.html">Publication</a>
         <a href="methods.html">Methods</a>
         <a href="data.html">Data</a>
         <a href="status.html">Status</a>
         <a href="reproduce.html">Reproduce</a>
-        <a href="https://github.com/AlbertCosmo/emotion-label-validation-fmri" target="_blank" rel="noopener">Code</a>
+        <a href="https://github.com/AlbertCosmo/emotion-label-validation-fmri">Code</a>
       </nav>
     </div>
   </header>
-  <main class="wide">
+  <main>
+    <p class="meta"><span class="badge duo">Albert &amp; Jessica’s project</span></p>
+
     <h1>Results</h1>
-    <p class="authors meta sans">
-      <strong>Jessica Thach Thao Le</strong> & <strong>Albert Le Thanh Nhan</strong> ·
-      Numbers locked from <code>docs/PUBLICATION_TABLES.md</code> / <code>results/publication_tables/</code>.
-    </p>
-    <p class="meta sans">Effect sizes only. No classical <em>p</em>-values (annotation autocorrelation; median 1/e lag often 30–55&nbsp;s on short films).</p>
+    <p class="meta"><a href="explore.html"><strong>Interactive charts &amp; filterable tables →</strong></a>
+    · <a href="publication.html">Interpretations &amp; journal odds</a></p>
 
-    <nav class="toc sans" aria-label="On this page">
-      <span>Jump:</span>
-      <a href="#text">Text</a>
-      <a href="#occipital">Occipital</a>
-      <a href="#affective">Affective ROIs</a>
-      <a href="#multi-item-brain">Multi-item brain</a>
-      <a href="#physio">Physio</a>
-      <a href="#tables">JSON tables</a>
-    </nav>
+    <p class="meta sans">Effect sizes only. No classical <em>p</em>-values (annotation autocorrelation ~30–55&nbsp;s 1/e lag).</p>
 
-    <h2 id="text">Text · multi-item agreement</h2>
-    <p>Pooled Pearson <em>r</em> across 12 dialogue films; 95% CI from film-block bootstrap (film as block). Dialogue only — silent seconds are NaN.</p>
+    <h2>Text · multi-item agreement</h2>
+    <p>Pooled Pearson <em>r</em> across 12 dialogue films; 95% CI from film-block bootstrap.</p>
     <table>
-      <thead><tr><th>Model</th><th>Item</th><th class="num">pooled r</th><th>95% CI</th><th class="num">n films</th></tr></thead>
+      <thead><tr><th>Model</th><th>Item</th><th class="num">pooled r</th><th>95% CI</th></tr></thead>
       <tbody>
-        <tr class="highlight"><td>Gemini</td><td>PleasantOther</td><td class="num">+0.211</td><td>[0.134, 0.258]</td><td class="num">12</td></tr>
-        <tr><td>BERT</td><td>PleasantOther</td><td class="num">+0.013</td><td>[−0.063, 0.081]</td><td class="num">12</td></tr>
-        <tr><td>Gemini</td><td>Oppose</td><td class="num">−0.217</td><td>[−0.275, −0.124]</td><td class="num">12</td></tr>
-        <tr><td>Gemini</td><td>SocialNorms</td><td class="num">+0.201</td><td>[0.110, 0.259]</td><td class="num">12</td></tr>
-        <tr><td>Gemini</td><td>Satisfaction</td><td class="num">+0.195</td><td>[0.115, 0.258]</td><td class="num">12</td></tr>
-        <tr><td>Gemini</td><td>Happiness</td><td class="num">+0.188</td><td>[0.127, 0.243]</td><td class="num">12</td></tr>
+        <tr><td>Gemini</td><td>PleasantOther</td><td class="num">+0.211</td><td>[0.134, 0.258]</td></tr>
+        <tr><td>BERT</td><td>PleasantOther</td><td class="num">+0.013</td><td>[−0.063, 0.081]</td></tr>
+        <tr><td>Gemini</td><td>Oppose</td><td class="num">−0.217</td><td>[−0.275, −0.124]</td></tr>
+        <tr><td>Gemini</td><td>Happiness</td><td class="num">+0.188</td><td>[0.127, 0.243]</td></tr>
+        <tr><td>Gemini</td><td>SocialNorms</td><td class="num">+0.201</td><td>[0.110, 0.259]</td></tr>
       </tbody>
     </table>
-    <p class="meta sans">Multi-film pool (PleasantOther, same 12 films, 4278&nbsp;s): Gemini <em>r</em> = +0.211 CI [0.141, 0.260]; BERT <em>r</em> = +0.013 CI [−0.052, 0.092].</p>
     <figure class="figure">
       <img src="assets/figures/text_multi_item_top20.png" alt="Top 20 multi-item text correlations" />
-      <figcaption>Top 20 human items by |Gemini pooled r|; BERT overlaid. Valence/social-positive structure dominates.</figcaption>
-    </figure>
-    <figure class="figure">
-      <img src="assets/figures/text_pleasantother_pool.png" alt="Multi-film pool BERT vs Gemini" />
-      <figcaption>Multi-film pool summary for PleasantOther.</figcaption>
+      <figcaption>Top 20 human items by |Gemini pooled r|; BERT overlaid.</figcaption>
     </figure>
     <figure class="figure">
       <img src="assets/figures/forest_bert_vs_gemini.png" alt="Forest plot BERT vs Gemini" />
-      <figcaption>Per-film forest: BERT vs Gemini vs human valence (prior figure set).</figcaption>
+      <figcaption>Per-film forest (prior figure): BERT vs Gemini vs human valence.</figcaption>
     </figure>
     <figure class="figure">
       <img src="assets/figures/context_slopegraph_iso_to_ctx.png" alt="Context condition slopegraph" />
-      <figcaption>Context condition (±3 segments): dialogue window helps Gemini more than per-segment BERT on dialogue-driven films.</figcaption>
-    </figure>
-    <figure class="figure">
-      <img src="assets/figures/spaceman_decontam_mechanism.png" alt="Spaceman decontamination" />
-      <figcaption>Contamination / decontamination example (Spaceman): non-dialogue audio mis-scored as sentiment.</figcaption>
+      <figcaption>Context condition: dialogue window helps Gemini more than per-segment BERT.</figcaption>
     </figure>
 
-    <h2 id="occipital">Brain · occipital controlled null</h2>
-    <p>Five lowest-motion subjects per film (pre-specified by FD). LOSO ridge (α = 10 000). Gate 1: planted-signal positive control at ~100&nbsp;s valence timescale. Gate 2: real mean clears its own circular-shift null by >1 null SD. Verdict on both Payload and Tears of Steel: <span class="verdict-null">null</span> for human PleasantOther; occipital tracks low-level visual dynamics.</p>
+    <h2>Brain · occipital controlled null</h2>
     <figure class="figure">
       <img src="assets/figures/brain_decode_two_film_null.png" alt="Two-film occipital null" />
-      <figcaption>Two-film occipital null with positive control and shift-null.</figcaption>
+      <figcaption>Canonical two-film occipital null with positive control and shift-null.</figcaption>
     </figure>
     <figure class="figure">
       <img src="assets/figures/visual_decomposition_two_film.png" alt="Visual decomposition" />
-      <figcaption>Visual-feature decomposition: occipital tracks motion and related features, not valence.</figcaption>
+      <figcaption>Visual-feature decomposition: occipital tracks motion/visual dynamics, not valence.</figcaption>
     </figure>
 
-    <h2 id="affective">Brain · affective ROIs (PleasantOther)</h2>
-    <p>A priori network = insula ∪ vmPFC ∪ amygdala (Harvard–Oxford). Small effect sizes; film-dependent.</p>
+    <h2>Brain · affective ROIs (PleasantOther)</h2>
     <table>
       <thead><tr><th>ROI</th><th>Film</th><th class="num">real</th><th class="num">null±sd</th><th>Verdict</th></tr></thead>
       <tbody>
-        <tr class="highlight"><td>network</td><td>Payload</td><td class="num">+0.067</td><td class="num">+0.004±0.034</td><td><span class="verdict-decodes">DECODES</span></td></tr>
-        <tr class="highlight"><td>insula</td><td>Payload</td><td class="num">+0.082</td><td class="num">+0.010±0.014</td><td><span class="verdict-decodes">DECODES</span></td></tr>
-        <tr class="highlight"><td>vmPFC</td><td>Payload</td><td class="num">+0.056</td><td class="num">−0.000±0.025</td><td><span class="verdict-decodes">DECODES</span></td></tr>
-        <tr class="highlight"><td>amygdala</td><td>Payload</td><td class="num">+0.070</td><td class="num">−0.007±0.021</td><td><span class="verdict-decodes">DECODES</span></td></tr>
-        <tr><td>network</td><td>TearsOfSteel</td><td class="num">+0.058</td><td class="num">+0.092±0.028</td><td><span class="verdict-null">null</span></td></tr>
-        <tr><td>insula</td><td>TearsOfSteel</td><td class="num">+0.023</td><td class="num">+0.066±0.038</td><td><span class="verdict-null">null</span></td></tr>
-        <tr><td>vmPFC</td><td>TearsOfSteel</td><td class="num">+0.083</td><td class="num">+0.080±0.044</td><td><span class="verdict-null">null</span></td></tr>
-        <tr><td>amygdala</td><td>TearsOfSteel</td><td class="num">−0.057</td><td class="num">+0.010±0.028</td><td><span class="verdict-null">null</span></td></tr>
+        <tr><td>network</td><td>Payload</td><td class="num">+0.067</td><td class="num">+0.004±0.034</td><td>DECODES</td></tr>
+        <tr><td>insula</td><td>Payload</td><td class="num">+0.082</td><td class="num">+0.010±0.014</td><td>DECODES</td></tr>
+        <tr><td>vmPFC</td><td>Payload</td><td class="num">+0.056</td><td class="num">−0.000±0.025</td><td>DECODES</td></tr>
+        <tr><td>amygdala</td><td>Payload</td><td class="num">+0.070</td><td class="num">−0.007±0.021</td><td>DECODES</td></tr>
+        <tr><td>network</td><td>TearsOfSteel</td><td class="num">+0.058</td><td class="num">+0.092±0.028</td><td>null</td></tr>
+        <tr><td>insula</td><td>TearsOfSteel</td><td class="num">+0.023</td><td class="num">+0.066±0.038</td><td>null</td></tr>
+        <tr><td>vmPFC</td><td>TearsOfSteel</td><td class="num">+0.083</td><td class="num">+0.080±0.044</td><td>null</td></tr>
+        <tr><td>amygdala</td><td>TearsOfSteel</td><td class="num">−0.057</td><td class="num">+0.010±0.028</td><td>null</td></tr>
       </tbody>
     </table>
     <figure class="figure">
@@ -108,66 +92,66 @@
     </figure>
     <figure class="figure">
       <img src="assets/figures/brain_affective_residual.png" alt="Residualization" />
-      <figcaption>Valence vs valence residualized on low-level visual features — Payload affective hits survive (not pure visual confound of the target).</figcaption>
+      <figcaption>Valence vs valence residualized on low-level visual features — Payload hits survive.</figcaption>
     </figure>
 
-    <h2 id="multi-item-brain">Brain · multi-item hit rates</h2>
-    <p>Same gated pipeline over annotation items. Network tested on all 50; sub-ROIs on a curated high-variance subset (18) plus network full set.</p>
+    <h2>Brain · multi-item hit rates</h2>
     <table>
       <thead><tr><th>ROI</th><th>Film</th><th class="num">DECODES</th><th class="num">rate</th></tr></thead>
       <tbody>
-        <tr class="highlight"><td>network</td><td>Payload</td><td class="num">30/50</td><td class="num">60%</td></tr>
+        <tr><td>network</td><td>Payload</td><td class="num">30/50</td><td class="num">60%</td></tr>
         <tr><td>network</td><td>TearsOfSteel</td><td class="num">5/50</td><td class="num">10%</td></tr>
         <tr><td>insula</td><td>Payload</td><td class="num">11/18</td><td class="num">61%</td></tr>
         <tr><td>vmPFC</td><td>Payload</td><td class="num">12/18</td><td class="num">67%</td></tr>
         <tr><td>amygdala</td><td>Payload</td><td class="num">13/18</td><td class="num">72%</td></tr>
-        <tr><td>insula</td><td>TearsOfSteel</td><td class="num">2/18</td><td class="num">11%</td></tr>
-        <tr><td>vmPFC</td><td>TearsOfSteel</td><td class="num">1/18</td><td class="num">6%</td></tr>
-        <tr><td>amygdala</td><td>TearsOfSteel</td><td class="num">3/18</td><td class="num">17%</td></tr>
       </tbody>
     </table>
-    <p class="meta sans">Largest Payload network margins (real − null): Muscle +0.142, Guilt +0.138, Urgency +0.115, Surprise +0.099, PleasantSelf +0.084.</p>
     <figure class="figure">
       <img src="assets/figures/brain_multi_item_hit_rates.png" alt="Multi-item hit rates" />
-      <figcaption>Percent of items that clear their own shift-null by >1 null SD (and pass pos-control).</figcaption>
+      <figcaption>Percent of items that clear their own shift-null by &gt;1 null SD (and pass pos-control).</figcaption>
     </figure>
 
-    <h2 id="physio">Physio & multimodal (supporting)</h2>
+    <h2>Physio &amp; multimodal (supporting)</h2>
     <p>Subject-mean <strong>RESP</strong> shows the strongest coupling to several consensus series; HR/EDA mixed.
-       Tears of Steel <strong>audio energy (RMS)</strong> tracks arousal-like items (IntenseEmotion ≈ +0.47, Calm ≈ −0.52);
-       text still owns valence on that film (Gemini PleasantOther ≈ +0.46). Payload audio not yet local (experiment cut missing).</p>
-    <table>
-      <thead><tr><th>Film</th><th>Channel</th><th>Item</th><th class="num">r</th><th class="num">n sub</th></tr></thead>
-      <tbody>
-        <tr><td>TearsOfSteel</td><td>resp</td><td>Muscle</td><td class="num">−0.796</td><td class="num">5</td></tr>
-        <tr><td>TearsOfSteel</td><td>resp</td><td>Heartrate</td><td class="num">−0.742</td><td class="num">5</td></tr>
-        <tr><td>TearsOfSteel</td><td>resp</td><td>IntenseEmotion</td><td class="num">−0.698</td><td class="num">5</td></tr>
-        <tr><td>Payload</td><td>resp</td><td>PleasantOther</td><td class="num">+0.497</td><td class="num">5</td></tr>
-        <tr><td>TearsOfSteel</td><td>resp</td><td>Calm</td><td class="num">+0.475</td><td class="num">5</td></tr>
-      </tbody>
-    </table>
+       Tears of Steel <strong>audio energy</strong> tracks arousal-like items (e.g. IntenseEmotion ≈ +0.47, Calm ≈ −0.52);
+       text still owns valence on that film. Payload audio not yet local (experiment cut missing).</p>
     <figure class="figure">
       <img src="assets/figures/physio_top_agreement.png" alt="Physio top correlations" />
       <figcaption>Top |r| physio (subject-mean) vs human items.</figcaption>
     </figure>
     <figure class="figure">
       <img src="assets/figures/annotation_item_variance.png" alt="Annotation item variance" />
-      <figcaption>Most dynamic annotation items (mean variance; labels show autocorr lag). Motivates effect-size reporting.</figcaption>
+      <figcaption>Most dynamic annotation items (mean variance; labels show autocorr lag).</figcaption>
     </figure>
 
-    <h2 id="tables">Machine-readable tables</h2>
-    <p class="meta sans">
-      Embedded on site: <a href="data/">data/</a> ·
-      Full MD: repo <code>docs/PUBLICATION_TABLES.md</code> ·
-      Source JSON: <code>results/publication_tables/</code>.
-    </p>
+    <p class="meta sans">Machine-readable tables: <a href="data/">data/</a> · full MD in repo <code>docs/PUBLICATION_TABLES.md</code>.</p>
+  
+    <h2>More publication figures</h2>
+    <figure class="figure">
+      <img src="assets/figures/text_multi_item_top20.png" alt="Multi-item text" />
+      <figcaption>Top-20 human items by |Gemini pooled r|; BERT overlaid.</figcaption>
+    </figure>
+    <div class="interp"><strong>Read:</strong> Gemini’s best absolute associations stay modest (≲0.22). BERT hugs zero. Continuous human affect is only weakly recoverable from dialogue alone.</div>
+    <figure class="figure">
+      <img src="assets/figures/brain_multi_item_hit_rates.png" alt="Hit rates" />
+      <figcaption>Multi-item DECODES rates by ROI × film.</figcaption>
+    </figure>
+    <div class="interp"><strong>Read:</strong> Payload carries many constructs under the dual gate; Tears of Steel mostly does not—film character is the effect, not a failed decoder (pos-controls pass).</div>
+    <figure class="figure">
+      <img src="assets/figures/brain_affective_residual.png" alt="Residual" />
+      <figcaption>Valence vs valence residualized on low-level visual features.</figcaption>
+    </figure>
+    <div class="interp"><strong>Read:</strong> Payload affective signals survive residualization of the target → not a trivial visual confound of the annotation stream.</div>
+    <figure class="figure">
+      <img src="assets/figures/physio_top_agreement.png" alt="Physio" />
+      <figcaption>Physio subject-mean vs human items (top |r|).</figcaption>
+    </figure>
+    <div class="interp"><strong>Read:</strong> RESP dominates coupling; treat as supporting peripheral evidence on the same small subject set.</div>
+
   </main>
-  <footer class="site">
-    <div class="inner">
-      <span>Jessica Thach Thao Le & Albert Le Thanh Nhan · 2026</span>
-      <span><a href="index.html">Overview</a> · <a href="methods.html">Methods</a></span>
-    </div>
+    <footer class="site">
+    <div class="inner"><strong>Albert &amp; Jessica’s project</strong> · <a href="index.html">Overview</a> · <a href="explore.html">Explore</a> · <a href="publication.html">Publication</a></div>
   </footer>
-  <script src="js/site.js"></script>
+  <script src="js/nav.js"></script>
 </body>
 </html>

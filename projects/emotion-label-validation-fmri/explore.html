@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Interactive explore · Albert &amp; Jessica</title>
+  <meta name="description" content="Interactive charts for Albert & Jessica's emotion-label-validation-fmri project." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/site.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <header class="site">
+    <div class="inner">
+      <div>
+        <a class="brand" href="index.html">Emotion labels · fMRI · <em>Albert &amp; Jessica</em></a>
+        <div class="collab">A joint research project</div>
+      </div>
+      <nav class="site">
+        <a href="index.html">Overview</a>
+        <a href="results.html">Results</a>
+        <a class="active" href="explore.html">Explore</a>
+        <a href="publication.html">Publication</a>
+        <a href="methods.html">Methods</a>
+        <a href="data.html">Data</a>
+        <a href="status.html">Status</a>
+        <a href="reproduce.html">Reproduce</a>
+        <a href="https://github.com/AlbertCosmo/emotion-label-validation-fmri">Code</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wide">
+    <p class="meta">
+      <span class="badge duo">Albert &amp; Jessica’s project</span>
+      <span class="badge ok">Interactive</span>
+      <span class="badge">Effect sizes only</span>
+    </p>
+    <h1>Interactive results explorer</h1>
+    <p class="lead">
+      All charts load from the publication JSON bundle (no invented numbers).
+      Hover for CIs / counts. Interpretations sit under each panel.
+    </p>
+    <div id="load-status" class="loading">Loading explore_bundle.json…</div>
+
+    <h2>1 · Text × 50 human items (pooled)</h2>
+    <div class="controls">
+      <label>Model
+        <select id="text-model">
+          <option value="gemini" selected>Gemini</option>
+          <option value="bert">BERT</option>
+        </select>
+      </label>
+      <label>Sort
+        <select id="text-sort">
+          <option value="abs" selected>|r| descending</option>
+          <option value="signed">signed r descending</option>
+        </select>
+      </label>
+    </div>
+    <div class="chart-box">
+      <div class="chart-wrap" style="min-height:520px"><canvas id="chart-text"></canvas></div>
+    </div>
+    <div class="interp" id="text-interp"></div>
+
+    <h2>2 · Per-film text agreement (pick an item)</h2>
+    <div class="controls">
+      <label>Item <select id="film-item"></select></label>
+      <label>Model
+        <select id="film-model">
+          <option value="gemini" selected>Gemini</option>
+          <option value="bert">BERT</option>
+        </select>
+      </label>
+      <span class="meta" id="film-pool"></span>
+    </div>
+    <div class="chart-box">
+      <div class="chart-wrap"><canvas id="chart-film"></canvas></div>
+    </div>
+    <div class="interp" id="film-interp"></div>
+
+    <h2>3 · Affective ROIs — PleasantOther (gated LOSO)</h2>
+    <div class="chart-box">
+      <div class="chart-wrap"><canvas id="chart-aff"></canvas></div>
+    </div>
+    <div class="interp">
+      <strong>Interpretation.</strong> On Payload (dialogue-dense), real LOSO means sit above their own shift-nulls → descriptive <em>DECODES</em>.
+      On Tears of Steel (visual / dialogue-light), real sits inside or below an elevated null → <em>null</em>.
+      Positive controls pass on all ROIs; this is not “decoder broken.” Film character is part of the finding.
+    </div>
+
+    <h2>4 · Multi-item brain hit rates</h2>
+    <div class="chart-box">
+      <div class="chart-wrap"><canvas id="chart-hits"></canvas></div>
+    </div>
+    <div class="interp">
+      <strong>Interpretation.</strong> Payload: majority of tested items clear the dual gate in affective ROIs (~60–72%).
+      Tears of Steel: ~6–17%. Expanding beyond PleasantOther shows bodily/appraisal targets (Muscle, Urgency, Surprise…) often rival valence — continuous annotation is multi-dimensional in cortex too.
+    </div>
+
+    <h2>5 · Multi-item brain table (filterable)</h2>
+    <div class="controls">
+      <label>Film
+        <select id="brain-film">
+          <option value="all">all</option>
+          <option value="Payload" selected>Payload</option>
+          <option value="TearsOfSteel">TearsOfSteel</option>
+        </select>
+      </label>
+      <label>ROI
+        <select id="brain-roi">
+          <option value="all">all</option>
+          <option value="network" selected>network</option>
+          <option value="insula">insula</option>
+          <option value="vmpfc">vmpfc</option>
+          <option value="amygdala">amygdala</option>
+        </select>
+      </label>
+      <label><input type="checkbox" id="brain-only-hit" /> DECODES only</label>
+      <span class="meta" id="brain-count"></span>
+    </div>
+    <div style="overflow-x:auto">
+      <table>
+        <thead>
+          <tr>
+            <th>ROI</th><th>Film</th><th>Item</th>
+            <th class="num">real</th><th class="num">null±sd</th>
+            <th class="num">margin</th><th>Verdict</th>
+          </tr>
+        </thead>
+        <tbody id="brain-table-body"></tbody>
+      </table>
+    </div>
+    <p class="note">DECODES = pos-control pass AND real mean clears own shift-null by &gt;1 null SD. Sorted by margin (real − null).</p>
+
+    <h2>6 · Visual residualization of the target</h2>
+    <div class="controls">
+      <label>Film
+        <select id="resid-film">
+          <option value="Payload" selected>Payload</option>
+          <option value="TearsOfSteel">TearsOfSteel</option>
+        </select>
+      </label>
+    </div>
+    <div class="chart-box">
+      <div class="chart-wrap"><canvas id="chart-resid"></canvas></div>
+    </div>
+    <div class="interp" id="resid-interp"></div>
+
+    <h2>7 · Physio (subject-mean) top |r|</h2>
+    <div class="chart-box">
+      <div class="chart-wrap" style="min-height:420px"><canvas id="chart-phys"></canvas></div>
+    </div>
+    <div class="interp">
+      <strong>Interpretation.</strong> Respiration (RESP) dominates top |r| against several consensus series (often arousal-related).
+      HR/EDA are mixed and film-dependent. Treat as convergent peripheral evidence, not a second brain arm.
+      Sample is the same 5 subjects × 2 films as the BOLD subset.
+    </div>
+
+    <h2>8 · Multimodal snapshot (Tears of Steel)</h2>
+    <div class="chart-box">
+      <div class="chart-wrap"><canvas id="chart-mm"></canvas></div>
+    </div>
+    <div class="interp">
+      <strong>Interpretation.</strong> On ToS, <em>text</em> still owns valence (Gemini PleasantOther high positive);
+      <em>audio energy</em> tracks arousal-like structure (IntenseEmotion up, Calm down);
+      <em>visual motion</em> aligns with fear/anxiety-like series. Channels are complementary, not redundant.
+      Payload audio missing until experiment cuts are restored.
+    </div>
+
+    <h2>9 · Annotation dynamics (top variance)</h2>
+    <div class="chart-box">
+      <div class="chart-wrap" style="min-height:420px"><canvas id="chart-annot"></canvas></div>
+    </div>
+    <div class="interp">
+      <strong>Interpretation.</strong> PleasantOther is among the most dynamic items — justifying its historical use as primary valence —
+      but Fear, Anxiety, Stomach, Urgency, etc. are comparably variable. Median autocorrelation 1/e lags of ~30–55&nbsp;s on short films
+      motivate effect-size reporting and film-block inference, not second-level NHST stars.
+    </div>
+
+    <p class="meta" style="margin-top:2rem">
+      Data file: <a href="data/explore_bundle.json"><code>data/explore_bundle.json</code></a> ·
+      Static figures: <a href="results.html">Results</a> ·
+      Paper targets: <a href="publication.html">Publication</a>
+    </p>
+  </main>
+
+  <footer class="site">
+    <div class="inner">
+      <strong>Albert &amp; Jessica’s project</strong> ·
+      Jessica Thach Thao Le &amp; Albert Le Thanh Nhan · 2026 ·
+      <a href="index.html">Overview</a>
+    </div>
+  </footer>
+  <script src="js/nav.js"></script>
+  <script src="js/explore.js"></script>
+</body>
+</html>

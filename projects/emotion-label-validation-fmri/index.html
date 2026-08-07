@@ -3,45 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Emotion label validation · naturalistic film fMRI | Jessica & Albert</title>
-  <meta name="description" content="Validating dialogue-based transformer emotion labels against 50 continuous human annotations and gated multi-subject affective-ROI decoding in Emo-FilM (OpenNeuro)." />
-  <meta name="authors" content="Jessica Thach Thao Le, Albert Le Thanh Nhan" />
-  <link rel="canonical" href="https://albertcosmo.github.io/projects/emotion-label-validation-fmri/" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <title>Albert &amp; Jessica · Emotion label validation fMRI</title>
+  <meta name="description" content="Albert & Jessica's joint project: validating transformer emotion labels against human continuous annotations and gated affective-ROI decoding in naturalistic film fMRI (Emo-FilM)." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/site.css" />
 </head>
 <body>
-  <header class="site sans">
+  <header class="site">
     <div class="inner">
-      <a class="brand" href="../../">Albert Le · <span>Projects</span></a>
+      <div>
+        <a class="brand" href="index.html">Emotion labels · fMRI · <em>Albert &amp; Jessica</em></a>
+        <div class="collab">A joint research project</div>
+      </div>
       <nav class="site">
         <a class="active" href="index.html">Overview</a>
         <a href="results.html">Results</a>
+        <a href="explore.html">Explore</a>
+        <a href="publication.html">Publication</a>
         <a href="methods.html">Methods</a>
         <a href="data.html">Data</a>
         <a href="status.html">Status</a>
         <a href="reproduce.html">Reproduce</a>
-        <a href="https://github.com/AlbertCosmo/emotion-label-validation-fmri" target="_blank" rel="noopener">Code</a>
+        <a href="https://github.com/AlbertCosmo/emotion-label-validation-fmri">Code</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <p class="meta sans">
+    <p class="meta">
+      <span class="badge duo">Albert &amp; Jessica’s project</span>
       <span class="badge ok">Public reanalysis</span>
       <span class="badge">Emo-FilM · OpenNeuro</span>
       <span class="badge">Effect sizes only</span>
-      <span class="badge">2026</span>
     </p>
     <h1>Validating language-model emotion labels against human consensus in naturalistic film fMRI</h1>
-    <p class="authors meta sans">
-      <strong>Jessica Thach Thao Le</strong> (Thao) · PhD student, Linguistics, National Taiwan University ·
-      <a href="https://github.com/jessicathao">@jessicathao</a><br />
-      <strong>Albert Le Thanh Nhan</strong> (黎清仁) ·
-      <a href="https://github.com/AlbertCosmo">@AlbertCosmo</a> ·
-      <a href="../../">albertcosmo.github.io</a>
-    </p>
+    <div class="duo-banner">
+      <div>
+        <strong>Jessica Thach Thao Le</strong> (Thao) · PhD student, Linguistics, NTU ·
+        <a href="https://github.com/jessicathao">@jessicathao</a><br />
+        <strong>Albert Le Thanh Nhan</strong> (黎清仁) ·
+        <a href="https://github.com/AlbertCosmo">@AlbertCosmo</a> ·
+        <a href="../../">albertcosmo.github.io</a>
+      </div>
+    </div>
     <p class="lead">
       Continuous human emotion ratings for naturalistic film are <em>not interchangeable</em> with dialogue-based transformer scores.
       Under a gated multi-subject pipeline, <strong>occipital cortex does not decode valence</strong>, while
@@ -50,40 +54,42 @@
     </p>
 
     <div class="callout">
-      This is the <strong>dedicated research project site</strong> (methods, results, data, reproduce).
+      This is <strong>Albert &amp; Jessica’s dedicated research project site</strong> (methods, interactive stats, publication path).
       It is <em>not</em> the Brainhack presentation deck at
       <a href="https://jessicathao.github.io/emotion-label-validation-fmri/">jessicathao.github.io/…</a>.
     </div>
 
-    <div class="grid3" style="margin:1.4rem 0">
-      <div class="card">
-        <strong class="sans">Gemini pooled r</strong>
-        <div class="stat">+0.211 <span class="unit">vs PleasantOther</span></div>
-        <p class="meta" style="margin:0.4rem 0 0">12 films · CI [0.14, 0.26] · BERT ≈ +0.013</p>
+    <div class="grid3" style="margin:1.5rem 0">
+      <div class="stat">
+        <div class="n">+0.211</div>
+        <div class="l">Gemini pooled r vs PleasantOther · 12 films · BERT ≈ +0.013</div>
       </div>
-      <div class="card">
-        <strong class="sans">Occipital valence</strong>
-        <div class="stat">null <span class="unit">both films</span></div>
-        <p class="meta" style="margin:0.4rem 0 0">LOSO ridge · pos-control pass · shift-null gate</p>
+      <div class="stat">
+        <div class="n">null</div>
+        <div class="l">Occipital valence · both films · pos-control passes</div>
       </div>
-      <div class="card">
-        <strong class="sans">Affective network</strong>
-        <div class="stat">30/50 <span class="unit">Payload DECODES</span></div>
-        <p class="meta" style="margin:0.4rem 0 0">ToS 5/50 · residualization survives on Payload</p>
+      <div class="stat">
+        <div class="n">30/50</div>
+        <div class="l">Network multi-item DECODES on Payload · ToS 5/50</div>
       </div>
     </div>
+
+    <p>
+      <a href="explore.html"><strong>→ Open interactive explorer</strong></a>
+      (filterable multi-item brain table, Chart.js dashboards) ·
+      <a href="publication.html"><strong>Publication titles &amp; journal odds</strong></a>
+    </p>
 
     <h2>Four findings worth a paper</h2>
     <div class="grid2">
       <div class="card">
         <strong>1 · Text ≠ general human labels</strong>
-        Gemini pooled <em>r</em> ≈ <strong>+0.21</strong> vs PleasantOther across 12 films
-        (film-block 95% CI [0.14, 0.26]); BERT ≈ <strong>0</strong>. Multi-item map: models track valence/social-positive structure more than pure fear/arousal.
+        Gemini pooled <em>r</em> ≈ <strong>+0.21</strong> vs PleasantOther (film-block 95% CI [0.14, 0.26]); BERT ≈ <strong>0</strong>.
+        Multi-item map: valence/social-positive structure more than pure fear/arousal.
       </div>
       <div class="card">
         <strong>2 · Occipital controlled null</strong>
-        Leave-one-subject-out ridge with planted-signal positive control + circular-shift null:
-        posterior occipital BOLD does <em>not</em> clear its own null for valence on Payload or Tears of Steel; it tracks low-level visual features.
+        LOSO ridge + planted-signal control + circular-shift null: posterior occipital does <em>not</em> clear its own null for valence; it tracks low-level visual dynamics.
       </div>
       <div class="card">
         <strong>3 · Affective ROIs, film-dependent</strong>
@@ -93,22 +99,26 @@
       <div class="card">
         <strong>4 · Multi-item brain map</strong>
         Affective network × 50 items: Payload <strong>30/50</strong> DECODES; Tears of Steel <strong>5/50</strong>.
-        Bodily/appraisal items (Muscle, Urgency, …) often rival valence.
+        Bodily/appraisal items often rival valence.
       </div>
     </div>
 
-    <h2>At a glance</h2>
+    <h2>Figures at a glance</h2>
     <figure class="figure">
-      <img src="assets/figures/pipeline_schematic.png" alt="Analysis pipeline schematic" />
-      <figcaption>Figure 1. Analysis pipeline: dialogue → transformer labels → 1&nbsp;Hz human series; BOLD branch with occipital vs affective ROIs, positive control, and shift-null. Significance withheld project-wide.</figcaption>
+      <img src="assets/figures/pipeline_schematic.png" alt="Analysis pipeline" />
+      <figcaption>Figure · Pipeline (effect sizes; gated nulls).</figcaption>
     </figure>
     <figure class="figure">
-      <img src="assets/figures/text_pleasantother_pool.png" alt="Multi-film pool BERT vs Gemini" />
-      <figcaption>Figure 2. Multi-film pool: text valence vs human PleasantOther (12 films, film-block bootstrap).</figcaption>
+      <img src="assets/figures/text_pleasantother_pool.png" alt="Multi-film pool" />
+      <figcaption>Figure · Multi-film pool: text vs PleasantOther.</figcaption>
     </figure>
     <figure class="figure">
-      <img src="assets/figures/brain_affective_pleasantother.png" alt="Affective ROI decode" />
-      <figcaption>Figure 3. Affective ROI LOSO means vs circular-shift null (PleasantOther).</figcaption>
+      <img src="assets/figures/brain_affective_pleasantother.png" alt="Affective ROIs" />
+      <figcaption>Figure · Affective ROI LOSO vs shift-null.</figcaption>
+    </figure>
+    <figure class="figure">
+      <img src="assets/figures/brain_multi_item_hit_rates.png" alt="Hit rates" />
+      <figcaption>Figure · Multi-item DECODES hit rates by ROI × film.</figcaption>
     </figure>
 
     <h2>Why this is publishable</h2>
@@ -116,37 +126,31 @@
       <li>Open primary data (Emo-FilM; Morgenroth et al., 2025, <em>Scientific Data</em>).</li>
       <li>Pre-specified low-motion subjects and a priori affective ROIs.</li>
       <li>Positive control + shift-null (not naïve <em>p</em>-values on autocorrelated series).</li>
-      <li>50-item expansion of both NLP and brain arms — rare in film-fMRI + LLM work.</li>
-      <li>Honest nulls (occipital; ToS affective) are findings, not failures.</li>
-    </ul>
-    <p class="meta sans">Claim ladder: repo <code>docs/PUBLICATION_VALUE.md</code>. Manuscript positioning: <code>docs/MANUSCRIPT_STRATEGY.md</code> · outline: <code>docs/MANUSCRIPT_OUTLINE.md</code>.</p>
-
-    <h2>Links</h2>
-    <ul class="tight">
-      <li><a href="results.html">Results</a> (text · brain · physio · multimodal)</li>
-      <li><a href="methods.html">Methods</a> · <a href="data.html">Data</a> · <a href="reproduce.html">Reproduce</a> · <a href="status.html">Status</a></li>
-      <li><a href="https://github.com/AlbertCosmo/emotion-label-validation-fmri">GitHub repository</a></li>
-      <li>OpenNeuro: <a href="https://openneuro.org/datasets/ds004872">ds004872</a> (annotations), <a href="https://openneuro.org/datasets/ds004892">ds004892</a> (fMRI)</li>
+      <li>50-item expansion of both NLP and brain arms.</li>
+      <li>Honest nulls are findings.</li>
+      <li><strong>Joint Albert &amp; Jessica project</strong> — code, analyses, and site.</li>
     </ul>
 
-    <h2>Cite this project</h2>
-    <div class="cite-box">
-      <p style="margin:0 0 0.5rem"><strong>Primary dataset</strong></p>
-      <p style="margin:0">Morgenroth, E., et al. (2025). Emo-FilM: A multimodal dataset for affective neuroscience using naturalistic stimuli. <em>Scientific Data</em> 12, 684. <a href="https://doi.org/10.1038/s41597-025-04803-5">doi:10.1038/s41597-025-04803-5</a>.</p>
-      <p style="margin:1rem 0 0.5rem"><strong>This reanalysis (code + tables + site)</strong></p>
-      <p style="margin:0">Le, T. T. (Jessica) & Le Thanh Nhan, A. (2026). <em>emotion-label-validation-fmri</em>. GitHub + project site.</p>
-      <code>Le, T. T., & Le Thanh Nhan, A. (2026). emotion-label-validation-fmri [Code and results].
-https://github.com/AlbertCosmo/emotion-label-validation-fmri
-https://albertcosmo.github.io/projects/emotion-label-validation-fmri/</code>
-    </div>
+    <h2>Cite</h2>
+    <p>
+      Dataset: Morgenroth et al. (2025), <em>Scientific Data</em> 12, 684.
+      <a href="https://doi.org/10.1038/s41597-025-04803-5">doi:10.1038/s41597-025-04803-5</a>.
+    </p>
+    <p>
+      This project: Le, T. T. (Jessica) &amp; Le Thanh Nhan, A. (2026).
+      <em>emotion-label-validation-fmri</em>.
+      <a href="https://github.com/AlbertCosmo/emotion-label-validation-fmri">GitHub</a> ·
+      <a href="https://albertcosmo.github.io/projects/emotion-label-validation-fmri/">Project site</a>.
+    </p>
   </main>
 
   <footer class="site">
     <div class="inner">
-      <span>Jessica Thach Thao Le & Albert Le Thanh Nhan · 2026</span>
-      <span>Not the presentation site · <a href="../../">Portfolio</a> · <a href="https://github.com/AlbertCosmo/emotion-label-validation-fmri">Code</a></span>
+      <strong>Albert &amp; Jessica’s project</strong> · 2026 ·
+      Not the presentation site ·
+      <a href="../../">Portfolio</a>
     </div>
   </footer>
-  <script src="js/site.js"></script>
+  <script src="js/nav.js"></script>
 </body>
 </html>

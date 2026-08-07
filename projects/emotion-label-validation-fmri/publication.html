@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Publication path · Albert &amp; Jessica</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+  <header class="site">
+    <div class="inner">
+      <div>
+        <a class="brand" href="index.html">Emotion labels · fMRI · <em>Albert &amp; Jessica</em></a>
+        <div class="collab">A joint research project</div>
+      </div>
+      <nav class="site">
+        <a href="index.html">Overview</a>
+        <a href="results.html">Results</a>
+        <a href="explore.html">Explore</a>
+        <a class="active" href="publication.html">Publication</a>
+        <a href="methods.html">Methods</a>
+        <a href="data.html">Data</a>
+        <a href="status.html">Status</a>
+        <a href="reproduce.html">Reproduce</a>
+        <a href="https://github.com/AlbertCosmo/emotion-label-validation-fmri">Code</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <p class="meta">
+      <span class="badge duo">Albert &amp; Jessica</span>
+      <span class="badge">Manuscript strategy</span>
+      <span class="badge warn">Odds are informed estimates, not guarantees</span>
+    </p>
+    <h1>Interpretations, paper titles &amp; journal targets</h1>
+    <div class="duo-banner">
+      <strong>Joint project.</strong>
+      Conceptual framing, analyses, and public site are co-owned by
+      <strong>Jessica Thach Thao Le</strong> and <strong>Albert Le Thanh Nhan</strong>.
+      Cite both. Authorship order for the formal manuscript should be agreed before submission (suggested default: Jessica first if she led design/analysis write-up; Albert corresponding for code/site/data engineering — finalize together).
+    </div>
+
+    <h2>How to read the stats (plain language)</h2>
+    <div class="grid2">
+      <div class="card">
+        <strong>Text arm</strong>
+        Gemini’s pooled r≈+0.21 vs human PleasantOther means shared variance is still modest (~4% if you square it).
+        BERT near zero means classical per-segment sentiment is not a continuous film-emotion labeler here.
+        Multi-item maps show models latch onto valence/social language more than pure bodily fear dynamics.
+      </div>
+      <div class="card">
+        <strong>Brain arm</strong>
+        Occipital “null” is strong: the decoder can recover planted signals but not real valence.
+        Affective DECODES on Payload are real under the pre-registered gate but <em>small</em> (r~0.06–0.08)—useful as existence under control, not as a large effect to oversell.
+        Tears of Steel null + residualization together say: film matter; Payload hits aren’t just visual leakage into the target.
+      </div>
+      <div class="card">
+        <strong>Multi-item brain</strong>
+        30/50 network items DECODES on Payload vs 5/50 on ToS reframes the project from “one valence item” to “which continuous constructs the cortex carries under naturalistic viewing.”
+      </div>
+      <div class="card">
+        <strong>Why no p-values</strong>
+        Annotations autocorrelate for tens of seconds on short films; liberal second-level tests overstate precision.
+        Film-block CIs (text) and shift-null gates (brain) are the honest inferential language of this design.
+      </div>
+    </div>
+
+    <h2>Recommended paper strategy</h2>
+    <p class="lead">
+      <strong>One integrated paper first</strong> (LLM multi-item validation + gated multi-subject brain decode).
+      Trendy intersection for 2025–26; splitting weakens both halves (text alone = modest LM paper; brain alone = n=5×2).
+    </p>
+
+    <h3>Candidate titles (pick one spine)</h3>
+    <ol>
+      <li><strong>Primary:</strong> <em>Dialogue-based language models are weak continuous emotion labels for naturalistic film: multi-item human agreement and gated multi-subject BOLD decoding in Emo-FilM</em></li>
+      <li><em>Validating transformer valence labels against 50 continuous human ratings and affective-cortex decoding in open film fMRI</em></li>
+      <li><em>Where automatic emotion labels fail—and where small affective BOLD signals survive—in continuous naturalistic annotation</em></li>
+      <li><em>Effect-size reporting for continuous film emotion: transformers, multi-item GRID annotations, and controlled ROI decoding</em> (methods-leaning)</li>
+      <li><em>Not just valence: multi-item continuous annotation changes both NLP agreement and affective BOLD maps in Emo-FilM</em> (multi-item lean)</li>
+    </ol>
+
+    <h2>Journal targets &amp; estimated odds</h2>
+    <p class="note">
+      “Odds” = rough probability of eventual acceptance after typical revision path, assuming clean write-up, honest limitations, and no new fatal bugs—not desk-reject-only odds.
+      SSCI vs SCIE: many top neuro journals are SCIE; several dual-indexed. We flag indexing family.
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Venue</th>
+          <th>Index / tier</th>
+          <th>Fit</th>
+          <th>Est. odds</th>
+          <th>Why</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Imaging Neuroscience</strong> (MIT Press)</td>
+          <td>SCIE · Q1 imaging methods</td>
+          <td>Naturalistic fMRI + gated decoding</td>
+          <td><span class="odds mid">~35–45%</span></td>
+          <td>Best methods home; n=5×2 still scrutinized</td>
+        </tr>
+        <tr>
+          <td><strong>NeuroImage</strong></td>
+          <td>SCIE · Q1</td>
+          <td>Film fMRI + multi-modal annotations</td>
+          <td><span class="odds mid">~30–40%</span></td>
+          <td>Classic fit; competitive; need tight limits</td>
+        </tr>
+        <tr>
+          <td><strong>Human Brain Mapping</strong></td>
+          <td>SCIE · Q1</td>
+          <td>Continuous emotion + film</td>
+          <td><span class="odds mid">~35–45%</span></td>
+          <td>Strong tradition; slightly less LLM cachet</td>
+        </tr>
+        <tr>
+          <td><strong>SCAN</strong> (Social Cognitive &amp; Affective Neuroscience)</td>
+          <td>SCIE / SSCI dual often · Q1 affect</td>
+          <td>Affect theory + continuous ratings</td>
+          <td><span class="odds mid">~30–40%</span></td>
+          <td>Needs sharper affective framing</td>
+        </tr>
+        <tr>
+          <td><strong>Behavior Research Methods</strong></td>
+          <td>SSCI · Q1 methods</td>
+          <td>Annotation + effect-size reporting standard</td>
+          <td><span class="odds hi">~40–55%</span></td>
+          <td>If reframed as methods/validation package; less “brain story”</td>
+        </tr>
+        <tr>
+          <td><strong>IEEE Trans. Affective Computing</strong></td>
+          <td>SCIE · Q1 AC</td>
+          <td>LLM labels vs human continuous</td>
+          <td><span class="odds mid">~35–50%</span></td>
+          <td>Text-heavy cut; brain as secondary</td>
+        </tr>
+        <tr>
+          <td><strong>Cognition &amp; Emotion</strong></td>
+          <td>SSCI · Q1/Q2 psych</td>
+          <td>Emotion measurement validity</td>
+          <td><span class="odds mid">~25–40%</span></td>
+          <td>Less fMRI-native; theory needed</td>
+        </tr>
+        <tr>
+          <td><strong>Scientific Reports</strong></td>
+          <td>SCIE · broad</td>
+          <td>Open multi-arm empirical package</td>
+          <td><span class="odds hi">~50–65%</span></td>
+          <td>Lower prestige; solid if rigorous</td>
+        </tr>
+        <tr>
+          <td><strong>Nature Human Behaviour / Nat. Commun.</strong></td>
+          <td>SCIE · very high</td>
+          <td>Big claim + scale</td>
+          <td><span class="odds lo">~5–15%</span></td>
+          <td>Brain n too small; effects modest—aspirational only</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <strong>Recommended first submission:</strong> Imaging Neuroscience <em>or</em> NeuroImage with the integrated title #1,
+      full limitations box (n=5×2, small r, dialogue-only text, no p-values), multi-item + residualization as differentiators.
+      Parallel “plan B” draft for BRM or IEEE TAC if neuro venues desk-reject on sample size.
+    </div>
+
+    <h2>What raises odds (do before submit)</h2>
+    <ul class="tight">
+      <li>One crystal-clear figure of merit narrative (text floor + brain gates).</li>
+      <li>Pre-registration language for FD subjects + ROI set + DECODES rule (even if post-hoc documented).</li>
+      <li>SI: full 50-item tables, per-film forests, all ROI multi-item hits (already in repo JSON).</li>
+      <li>Do not claim population generalizability from 2 films.</li>
+      <li>Dual-author contribution statement (Jessica / Albert roles).</li>
+    </ul>
+
+    <h2>What lowers odds (avoid)</h2>
+    <ul class="tight">
+      <li>Selling r≈0.07 as a large “emotion decoder.”</li>
+      <li>p-hacking continuous series.</li>
+      <li>Omitting Tears of Steel nulls.</li>
+      <li>Presenting as single-author when it is jointly Albert &amp; Jessica’s project.</li>
+    </ul>
+
+    <p class="meta">
+      Full strategy doc in code repo: <code>docs/MANUSCRIPT_STRATEGY.md</code> ·
+      Numbers: <a href="explore.html">Explore</a> · <a href="results.html">Results</a>
+    </p>
+  </main>
+
+  <footer class="site">
+    <div class="inner">
+      <strong>Albert &amp; Jessica’s project</strong> · joint public research ·
+      <a href="index.html">Overview</a>
+    </div>
+  </footer>
+  <script src="js/nav.js"></script>
+</body>
+</html>
