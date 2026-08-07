@@ -1,0 +1,57 @@
+{
+  "description": "Multi-film pool text vs PleasantOther",
+  "rows": [
+    {
+      "model": "bert",
+      "item": "PleasantOther",
+      "films": [
+        "Payload",
+        "TearsOfSteel",
+        "Spaceman",
+        "AfterTheRain",
+        "Chatter",
+        "Sintel",
+        "LessonLearned",
+        "Superhero",
+        "YouAgain",
+        "TheSecretNumber",
+        "BetweenViewings",
+        "ToClaireFromSonny"
+      ],
+      "n_films": 12,
+      "n_seconds": 4278,
+      "pooled_r": 0.0129,
+      "block_boot_mean": 0.0171,
+      "block_boot_ci95": [
+        -0.0515,
+        0.092
+      ]
+    },
+    {
+      "model": "gemini",
+      "item": "PleasantOther",
+      "films": [
+        "Payload",
+        "TearsOfSteel",
+        "Spaceman",
+        "AfterTheRain",
+        "Chatter",
+        "Sintel",
+        "LessonLearned",
+        "Superhero",
+        "YouAgain",
+        "TheSecretNumber",
+        "BetweenViewings",
+        "ToClaireFromSonny"
+      ],
+      "n_films": 12,
+      "n_seconds": 4278,
+      "pooled_r": 0.2112,
+      "block_boot_mean": 0.2042,
+      "block_boot_ci95": [
+        0.1411,
+        0.2595
+      ]
+    }
+  ]
+}

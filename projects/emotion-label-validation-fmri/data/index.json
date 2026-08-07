@@ -1,0 +1,38 @@
+{
+  "title": "Local reanalysis complete stats index",
+  "date": "2026-08-07",
+  "tables_dir": "results/publication_tables/",
+  "files": [
+    "PUBLICATION_TABLES.md",
+    "annotation_psychometrics.json",
+    "brain_consolidated.json",
+    "index.json",
+    "multi_film_pool.json",
+    "multimodal_summary.json",
+    "physio_summary.json",
+    "text_multi_item_full.json"
+  ],
+  "raw_results": [
+    "brain_decode_Payload.json",
+    "brain_decode_TearsOfSteel.json",
+    "brain_decode_affective_amygdala_Payload.json",
+    "brain_decode_affective_amygdala_TearsOfSteel.json",
+    "brain_decode_affective_insula_Payload.json",
+    "brain_decode_affective_insula_TearsOfSteel.json",
+    "brain_decode_affective_network_Payload.json",
+    "brain_decode_affective_network_TearsOfSteel.json",
+    "brain_decode_affective_residual.json",
+    "brain_decode_affective_vmpfc_Payload.json",
+    "brain_decode_affective_vmpfc_TearsOfSteel.json",
+    "brain_decode_multi_item.json",
+    "brain_decode_multi_item_amygdala.json",
+    "brain_decode_multi_item_network.json",
+    "brain_decode_multi_item_vmpfc.json",
+    "local_data_pipeline_status.json",
+    "multi_item_text_agreement.json",
+    "multimodal_agreement.json",
+    "physio_item_agreement.json",
+    "visual_decomposition_Payload.json",
+    "visual_decomposition_TearsOfSteel.json"
+  ]
+}

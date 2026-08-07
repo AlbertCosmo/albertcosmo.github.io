@@ -1,0 +1,2565 @@
+{
+  "occipital_Payload": {
+    "film": "Payload",
+    "analysis_date": "2026-06-19",
+    "target": "PleasantOther consensus (annotation col 3), HRF-convolved, placed at film onset",
+    "mask": "posterior MNI gray matter, y < -60 mm, 43683 voxels",
+    "estimator": "within-fold Pearson (single subject); leave-one-subject-out Ridge (pooled)",
+    "alpha": 10000,
+    "significance": "withheld project-wide; descriptive effect sizes only",
+    "subjects": [
+      "sub-S08",
+      "sub-S05",
+      "sub-S11",
+      "sub-S15",
+      "sub-S06"
+    ],
+    "subject_fd_mean": {
+      "sub-S08": 0.091,
+      "sub-S05": 0.121,
+      "sub-S11": 0.121,
+      "sub-S15": 0.128,
+      "sub-S06": 0.129
+    },
+    "n_volumes_total": 3873,
+    "qc_note": "five lowest-motion Payload runs, pre-registered by mriqc fd_mean BEFORE any decode; sub-S07 (the June-7 PoC subject) ranked 28/30 at fd_mean 0.346 and is excluded",
+    "positive_control_pooled": {
+      "description": "signal planted at each timescale, recovered via leave-one-subject-out; a valid estimator must recover the ~100s valence timescale",
+      "timescales_s": [
+        250,
+        150,
+        100,
+        60,
+        30
+      ],
+      "valence_timescale_s": 100,
+      "recovery_r_snr1": [
+        0.326,
+        0.281,
+        0.276,
+        0.302,
+        0.319
+      ],
+      "recovery_r_snr0_3": [
+        0.09,
+        0.081,
+        0.074,
+        0.109,
+        0.107
+      ],
+      "verdict": "PASS - strong and uniform across timescales; the estimator can detect signal at the valence timescale"
+    },
+    "real_valence_pooled": {
+      "description": "real human PleasantOther valence, leave-one-subject-out, scored within each held-out subject",
+      "loso_r_per_subject": [
+        0.079,
+        -0.108,
+        0.177,
+        0.02,
+        -0.002
+      ],
+      "loso_mean": 0.033,
+      "shift_null_means": [
+        0.058,
+        0.032,
+        0.025,
+        0.048,
+        0.056
+      ],
+      "shift_null_mean": 0.044,
+      "shift_null_sd": 0.013,
+      "verdict": "NULL - the real decode sits below/inside its own circular-shift null"
+    },
+    "single_subject_summary": {
+      "estimator": "within-fold Pearson, alpha=10000",
+      "runs": [
+        {
+          "subject": "sub-S07",
+          "film": "TearsOfSteel",
+          "fd_mean": 0.554,
+          "r": 0.206,
+          "note": "highest-motion run in the dataset; the retracted June-7 PoC"
+        },
+        {
+          "subject": "sub-S31",
+          "film": "TearsOfSteel",
+          "fd_mean": 0.093,
+          "r": -0.161,
+          "note": "lowest-motion ToS run; opposite sign to S07 on the SAME film"
+        },
+        {
+          "subject": "sub-S08",
+          "film": "Payload",
+          "fd_mean": 0.091,
+          "r": -0.161,
+          "note": "lowest-motion Payload run"
+        }
+      ],
+      "single_subject_positive_control_100s_snr2": 0.147,
+      "verdict": "single-subject estimation FAILS the positive control at the valence timescale (recovers only +0.147 with a planted signal at SNR 2.0); single-subject estimates are unstable and non-replicating"
+    },
+    "conclusion": "Controlled null. Occipital decoding of PleasantOther valence is not estimable above chance on Emo-FilM, single-subject or pooled across five subjects. The positive control passes on the pooled estimator while the real decode is at chance (+0.033 vs null +0.044 +/- 0.013). This is the same ~80-110s autocorrelation-vs-duration wall the label and inference arms reach, from the neural side."
+  },
+  "occipital_TearsOfSteel": {
+    "film": "TearsOfSteel",
+    "analysis_date": "2026-06-19",
+    "target": "PleasantOther consensus (annotation col 3), HRF-convolved, placed at film onset",
+    "mask": "posterior MNI gray matter, y < -60 mm, 43683 voxels",
+    "estimator": "leave-one-subject-out Ridge (pooled)",
+    "alpha": 10000,
+    "significance": "withheld project-wide; descriptive effect sizes only",
+    "subjects": [
+      "sub-S31",
+      "sub-S08",
+      "sub-S11",
+      "sub-S25",
+      "sub-S04"
+    ],
+    "subject_fd_mean": {
+      "sub-S31": 0.093,
+      "sub-S08": 0.105,
+      "sub-S11": 0.105,
+      "sub-S25": 0.126,
+      "sub-S04": 0.137
+    },
+    "n_volumes_total": 2257,
+    "qc_note": "five lowest-motion Tears of Steel runs, pre-registered by mriqc fd_mean BEFORE any decode; sub-S07 (the retracted June-7 PoC subject) ranks last 30/30 at fd_mean 0.554 and is excluded",
+    "positive_control_pooled": {
+      "description": "signal planted at each timescale, recovered via leave-one-subject-out; a valid estimator must recover the ~100s valence timescale",
+      "timescales_s": [
+        250,
+        150,
+        100,
+        60,
+        30
+      ],
+      "valence_timescale_s": 100,
+      "recovery_r_snr1": [
+        0.204,
+        0.203,
+        0.249,
+        0.213,
+        0.244
+      ],
+      "recovery_r_snr0_3": [
+        0.063,
+        0.109,
+        0.154,
+        0.103,
+        0.125
+      ],
+      "verdict": "PASS - recovers the planted signal at the valence timescale and uniformly across timescales; the estimator can detect signal"
+    },
+    "real_valence_pooled": {
+      "description": "real human PleasantOther valence, leave-one-subject-out, scored within each held-out subject",
+      "loso_r_per_subject": [
+        0.021,
+        0.075,
+        0.178,
+        0.07,
+        0.102
+      ],
+      "loso_mean": 0.089,
+      "shift_null_mean": 0.127,
+      "shift_null_sd": 0.042,
+      "verdict": "NULL - the real decode (+0.089) sits BELOW its own circular-shift null (+0.127 +/- 0.042)"
+    },
+    "elevated_null_note": "The Tears of Steel shift-null is elevated (+0.127) and wider (sd 0.042) than Payload's (+0.044, sd 0.013) because ToS is dialogue-light and visually intense: occipital BOLD carries strong stimulus-locked visual structure that even a brain-decoupled, film-autocorrelated target partly correlates with. A naive test against zero would have called the real +0.089 a positive hit; the circular-shift null catches it. This is the effect-sizes-not-p-values thesis reaching the brain arm from the neural side.",
+    "conclusion": "Controlled null, replicating Payload. Occipital decoding of PleasantOther valence is not estimable above chance on Tears of Steel either: the positive control passes (+0.249 at the valence timescale) while the real decode (+0.089) sits below its own shift-null (+0.127 +/- 0.042). The two-film null (dialogue-dense Payload AND dialogue-light Tears of Steel), each with a passing positive control, removes the 'just a Payload thing' objection and demonstrates the naive-zero-test false positive."
+  },
+  "affective_pleasantother": [
+    {
+      "roi": "amygdala",
+      "film": "Payload",
+      "subjects": [
+        "sub-S08",
+        "sub-S05",
+        "sub-S11",
+        "sub-S15",
+        "sub-S06"
+      ],
+      "alpha": 10000.0,
+      "nvox_kept": 672,
+      "nvox_dropped": 0,
+      "n_volumes_total": 3873,
+      "positive_control": {
+        "250": {
+          "snr1.0": 0.8853272611509414,
+          "snr0.3": 0.181884761069604
+        },
+        "150": {
+          "snr1.0": 0.8938200509890193,
+          "snr0.3": 0.25325600596110287
+        },
+        "100": {
+          "snr1.0": 0.8781906425552064,
+          "snr0.3": 0.22314897784715654
+        },
+        "60": {
+          "snr1.0": 0.9039053060834229,
+          "snr0.3": 0.24323394962603118
+        },
+        "30": {
+          "snr1.0": 0.8795407234422882,
+          "snr0.3": 0.26969533969041276
+        }
+      },
+      "positive_control_valence_timescale_snr1": 0.878,
+      "positive_control_pass": true,
+      "real_valence_pooled": {
+        "loso_r_per_subject": [
+          0.079,
+          0.047,
+          0.03,
+          0.096,
+          0.096
+        ],
+        "loso_mean": 0.07,
+        "shift_null_mean": -0.007,
+        "shift_null_sd": 0.021,
+        "clears_null_by_1sd": true
+      },
+      "alpha_stability_real_mean": {
+        "alpha_1000": 0.074,
+        "alpha_10000": 0.07,
+        "alpha_100000": 0.056
+      },
+      "verdict": "DECODES"
+    },
+    {
+      "roi": "amygdala",
+      "film": "TearsOfSteel",
+      "subjects": [
+        "sub-S31",
+        "sub-S08",
+        "sub-S11",
+        "sub-S25",
+        "sub-S04"
+      ],
+      "alpha": 10000.0,
+      "nvox_kept": 672,
+      "nvox_dropped": 0,
+      "n_volumes_total": 2257,
+      "positive_control": {
+        "250": {
+          "snr1.0": 0.7795723608722928,
+          "snr0.3": 0.1581743572886297
+        },
+        "150": {
+          "snr1.0": 0.6187529399796132,
+          "snr0.3": 0.10105461285432202
+        },
+        "100": {
+          "snr1.0": 0.7144333701430317,
+          "snr0.3": 0.12129502902018305
+        },
+        "60": {
+          "snr1.0": 0.7576656953826493,
+          "snr0.3": 0.13259621279354947
+        },
+        "30": {
+          "snr1.0": 0.7872380627656025,
+          "snr0.3": 0.18220332757711938
+        }
+      },
+      "positive_control_valence_timescale_snr1": 0.714,
+      "positive_control_pass": true,
+      "real_valence_pooled": {
+        "loso_r_per_subject": [
+          -0.168,
+          0.056,
+          -0.092,
+          -0.035,
+          -0.044
+        ],
+        "loso_mean": -0.057,
+        "shift_null_mean": 0.01,
+        "shift_null_sd": 0.028,
+        "clears_null_by_1sd": false
+      },
+      "alpha_stability_real_mean": {
+        "alpha_1000": -0.045,
+        "alpha_10000": -0.057,
+        "alpha_100000": -0.05
+      },
+      "verdict": "null"
+    },
+    {
+      "roi": "insula",
+      "film": "Payload",
+      "subjects": [
+        "sub-S08",
+        "sub-S05",
+        "sub-S11",
+        "sub-S15",
+        "sub-S06"
+      ],
+      "alpha": 10000.0,
+      "nvox_kept": 2341,
+      "nvox_dropped": 0,
+      "n_volumes_total": 3873,
+      "positive_control": {
+        "250": {
+          "snr1.0": 0.831502322460674,
+          "snr0.3": 0.19795825593733515
+        },
+        "150": {
+          "snr1.0": 0.8102230639099058,
+          "snr0.3": 0.13410447179352855
+        },
+        "100": {
+          "snr1.0": 0.7792320501081903,
+          "snr0.3": 0.18578845020813456
+        },
+        "60": {
+          "snr1.0": 0.7921648906868188,
+          "snr0.3": 0.16398543548245964
+        },
+        "30": {
+          "snr1.0": 0.8237482257784716,
+          "snr0.3": 0.18410945505329482
+        }
+      },
+      "positive_control_valence_timescale_snr1": 0.779,
+      "positive_control_pass": true,
+      "real_valence_pooled": {
+        "loso_r_per_subject": [
+          0.008,
+          0.104,
+          0.08,
+          0.107,
+          0.112
+        ],
+        "loso_mean": 0.082,
+        "shift_null_mean": 0.01,
+        "shift_null_sd": 0.014,
+        "clears_null_by_1sd": true
+      },
+      "alpha_stability_real_mean": {
+        "alpha_1000": 0.062,
+        "alpha_10000": 0.082,
+        "alpha_100000": 0.103
+      },
+      "verdict": "DECODES"
+    },
+    {
+      "roi": "insula",
+      "film": "TearsOfSteel",
+      "subjects": [
+        "sub-S31",
+        "sub-S08",
+        "sub-S11",
+        "sub-S25",
+        "sub-S04"
+      ],
+      "alpha": 10000.0,
+      "nvox_kept": 2341,
+      "nvox_dropped": 0,
+      "n_volumes_total": 2257,
+      "positive_control": {
+        "250": {
+          "snr1.0": 0.7224787768944049,
+          "snr0.3": 0.07256037657894476
+        },
+        "150": {
+          "snr1.0": 0.5574633210439436,
+          "snr0.3": 0.18801671286302574
+        },
+        "100": {
+          "snr1.0": 0.5656643746861987,
+          "snr0.3": 0.17334107116644976
+        },
+        "60": {
+          "snr1.0": 0.6165541731611075,
+          "snr0.3": 0.09394202734802701
+        },
+        "30": {
+          "snr1.0": 0.6634878662850897,
+          "snr0.3": 0.11219655670745377
+        }
+      },
+      "positive_control_valence_timescale_snr1": 0.566,
+      "positive_control_pass": true,
+      "real_valence_pooled": {
+        "loso_r_per_subject": [
+          -0.008,
+          0.017,
+          0.007,
+          0.021,
+          0.076
+        ],
+        "loso_mean": 0.023,
+        "shift_null_mean": 0.066,
+        "shift_null_sd": 0.038,
+        "clears_null_by_1sd": false
+      },
+      "alpha_stability_real_mean": {
+        "alpha_1000": -0.003,
+        "alpha_10000": 0.023,
+        "alpha_100000": 0.024
+      },
+      "verdict": "null"
+    },
+    {
+      "roi": "network",
+      "film": "Payload",
+      "subjects": [
+        "sub-S08",
+        "sub-S05",
+        "sub-S11",
+        "sub-S15",
+        "sub-S06"
+      ],
+      "alpha": 10000.0,
+      "nvox_kept": 8235,
+      "nvox_dropped": 0,
+      "n_volumes_total": 3873,
+      "positive_control": {
+        "250": {
+          "snr1.0": 0.6024493256678731,
+          "snr0.3": 0.08642663917855213
+        },
+        "150": {
+          "snr1.0": 0.5578945823672151,
+          "snr0.3": 0.08345392692452519
+        },
+        "100": {
+          "snr1.0": 0.563778953243577,
+          "snr0.3": 0.06751361884915269
+        },
+        "60": {
+          "snr1.0": 0.6011788253644414,
+          "snr0.3": 0.08344988935044291
+        },
+        "30": {
+          "snr1.0": 0.6288243472000953,
+          "snr0.3": 0.12360441905350697
+        }
+      },
+      "positive_control_valence_timescale_snr1": 0.564,
+      "positive_control_pass": true,
+      "real_valence_pooled": {
+        "loso_r_per_subject": [
+          0.041,
+          0.043,
+          0.003,
+          0.1,
+          0.149
+        ],
+        "loso_mean": 0.067,
+        "shift_null_mean": 0.004,
+        "shift_null_sd": 0.034,
+        "clears_null_by_1sd": true
+      },
+      "alpha_stability_real_mean": {
+        "alpha_1000": 0.05,
+        "alpha_10000": 0.067,
+        "alpha_100000": 0.087
+      },
+      "verdict": "DECODES"
+    },
+    {
+      "roi": "network",
+      "film": "TearsOfSteel",
+      "subjects": [
+        "sub-S31",
+        "sub-S08",
+        "sub-S11",
+        "sub-S25",
+        "sub-S04"
+      ],
+      "alpha": 10000.0,
+      "nvox_kept": 8235,
+      "nvox_dropped": 0,
+      "n_volumes_total": 2257,
+      "positive_control": {
+        "250": {
+          "snr1.0": 0.38341154913190195,
+          "snr0.3": 0.05357617300990982
+        },
+        "150": {
+          "snr1.0": 0.39609403588285924,
+          "snr0.3": 0.1686613146595633
+        },
+        "100": {
+          "snr1.0": 0.4155376755986951,
+          "snr0.3": 0.15560137660359136
+        },
+        "60": {
+          "snr1.0": 0.369479133727789,
+          "snr0.3": 0.055824607230449
+        },
+        "30": {
+          "snr1.0": 0.43688056016201227,
+          "snr0.3": 0.12129147970209202
+        }
+      },
+      "positive_control_valence_timescale_snr1": 0.416,
+      "positive_control_pass": true,
+      "real_valence_pooled": {
+        "loso_r_per_subject": [
+          -0.102,
+          0.112,
+          0.096,
+          0.068,
+          0.115
+        ],
+        "loso_mean": 0.058,
+        "shift_null_mean": 0.092,
+        "shift_null_sd": 0.028,
+        "clears_null_by_1sd": false
+      },
+      "alpha_stability_real_mean": {
+        "alpha_1000": 0.049,
+        "alpha_10000": 0.058,
+        "alpha_100000": 0.075
+      },
+      "verdict": "null"
+    },
+    {
+      "roi": "vmpfc",
+      "film": "Payload",
+      "subjects": [
+        "sub-S08",
+        "sub-S05",
+        "sub-S11",
+        "sub-S15",
+        "sub-S06"
+      ],
+      "alpha": 10000.0,
+      "nvox_kept": 5222,
+      "nvox_dropped": 0,
+      "n_volumes_total": 3873,
+      "positive_control": {
+        "250": {
+          "snr1.0": 0.6867801868380548,
+          "snr0.3": 0.10858454080868611
+        },
+        "150": {
+          "snr1.0": 0.6386135006715621,
+          "snr0.3": 0.09117223874242368
+        },
+        "100": {
+          "snr1.0": 0.6400023229667802,
+          "snr0.3": 0.04093962746939002
+        },
+        "60": {
+          "snr1.0": 0.6904588389277346,
+          "snr0.3": 0.11210949723716808
+        },
+        "30": {
+          "snr1.0": 0.710022366921448,
+          "snr0.3": 0.1358070206584215
+        }
+      },
+      "positive_control_valence_timescale_snr1": 0.64,
+      "positive_control_pass": true,
+      "real_valence_pooled": {
+        "loso_r_per_subject": [
+          0.03,
+          0.01,
+          -0.007,
+          0.087,
+          0.159
+        ],
+        "loso_mean": 0.056,
+        "shift_null_mean": -0.0,
+        "shift_null_sd": 0.025,
+        "clears_null_by_1sd": true
+      },
+      "alpha_stability_real_mean": {
+        "alpha_1000": 0.049,
+        "alpha_10000": 0.056,
+        "alpha_100000": 0.066
+      },
+      "verdict": "DECODES"
+    },
+    {
+      "roi": "vmpfc",
+      "film": "TearsOfSteel",
+      "subjects": [
+        "sub-S31",
+        "sub-S08",
+        "sub-S11",
+        "sub-S25",
+        "sub-S04"
+      ],
+      "alpha": 10000.0,
+      "nvox_kept": 5222,
+      "nvox_dropped": 0,
+      "n_volumes_total": 2257,
+      "positive_control": {
+        "250": {
+          "snr1.0": 0.46391418309096916,
+          "snr0.3": 0.07957079504551745
+        },
+        "150": {
+          "snr1.0": 0.4578937962757984,
+          "snr0.3": 0.15665165270016157
+        },
+        "100": {
+          "snr1.0": 0.4658626316767215,
+          "snr0.3": 0.14739862541535198
+        },
+        "60": {
+          "snr1.0": 0.42182203133660234,
+          "snr0.3": 0.03478865348375382
+        },
+        "30": {
+          "snr1.0": 0.5200384116821211,
+          "snr0.3": 0.1229447827326906
+        }
+      },
+      "positive_control_valence_timescale_snr1": 0.466,
+      "positive_control_pass": true,
+      "real_valence_pooled": {
+        "loso_r_per_subject": [
+          -0.069,
+          0.125,
+          0.14,
+          0.1,
+          0.118
+        ],
+        "loso_mean": 0.083,
+        "shift_null_mean": 0.08,
+        "shift_null_sd": 0.044,
+        "clears_null_by_1sd": false
+      },
+      "alpha_stability_real_mean": {
+        "alpha_1000": 0.08,
+        "alpha_10000": 0.083,
+        "alpha_100000": 0.094
+      },
+      "verdict": "null"
+    }
+  ],
+  "affective_residual": [
+    {
+      "roi": "network",
+      "film": "Payload",
+      "nvox": 8235,
+      "pc100": 0.564,
+      "dropped": 0,
+      "valence": {
+        "real": 0.067,
+        "null": 0.004,
+        "sd": 0.034,
+        "clears": 1.87
+      },
+      "resid": {
+        "real": 0.063,
+        "null": 0.007,
+        "sd": 0.027,
+        "clears": 2.03
+      }
+    },
+    {
+      "roi": "insula",
+      "film": "Payload",
+      "nvox": 2341,
+      "pc100": 0.779,
+      "dropped": 0,
+      "valence": {
+        "real": 0.082,
+        "null": 0.01,
+        "sd": 0.014,
+        "clears": 4.97
+      },
+      "resid": {
+        "real": 0.082,
+        "null": 0.016,
+        "sd": 0.017,
+        "clears": 3.83
+      }
+    },
+    {
+      "roi": "vmpfc",
+      "film": "Payload",
+      "nvox": 5222,
+      "pc100": 0.64,
+      "dropped": 0,
+      "valence": {
+        "real": 0.056,
+        "null": -0.0,
+        "sd": 0.025,
+        "clears": 2.23
+      },
+      "resid": {
+        "real": 0.05,
+        "null": -0.002,
+        "sd": 0.027,
+        "clears": 1.93
+      }
+    },
+    {
+      "roi": "vmpfc_strict",
+      "film": "Payload",
+      "nvox": 2102,
+      "pc100": 0.77,
+      "dropped": 0,
+      "valence": {
+        "real": 0.06,
+        "null": 0.012,
+        "sd": 0.023,
+        "clears": 2.03
+      },
+      "resid": {
+        "real": 0.059,
+        "null": 0.004,
+        "sd": 0.021,
+        "clears": 2.62
+      }
+    },
+    {
+      "roi": "amygdala",
+      "film": "Payload",
+      "nvox": 672,
+      "pc100": 0.878,
+      "dropped": 0,
+      "valence": {
+        "real": 0.07,
+        "null": -0.007,
+        "sd": 0.021,
+        "clears": 3.66
+      },
+      "resid": {
+        "real": 0.064,
+        "null": 0.002,
+        "sd": 0.017,
+        "clears": 3.8
+      }
+    },
+    {
+      "roi": "network",
+      "film": "TearsOfSteel",
+      "nvox": 8235,
+      "pc100": 0.416,
+      "dropped": 0,
+      "valence": {
+        "real": 0.058,
+        "null": 0.092,
+        "sd": 0.028,
+        "clears": -1.2
+      },
+      "resid": {
+        "real": 0.082,
+        "null": 0.089,
+        "sd": 0.035,
+        "clears": -0.2
+      }
+    },
+    {
+      "roi": "insula",
+      "film": "TearsOfSteel",
+      "nvox": 2341,
+      "pc100": 0.566,
+      "dropped": 0,
+      "valence": {
+        "real": 0.023,
+        "null": 0.066,
+        "sd": 0.038,
+        "clears": -1.13
+      },
+      "resid": {
+        "real": 0.023,
+        "null": 0.063,
+        "sd": 0.036,
+        "clears": -1.11
+      }
+    },
+    {
+      "roi": "vmpfc",
+      "film": "TearsOfSteel",
+      "nvox": 5222,
+      "pc100": 0.466,
+      "dropped": 0,
+      "valence": {
+        "real": 0.083,
+        "null": 0.08,
+        "sd": 0.044,
+        "clears": 0.06
+      },
+      "resid": {
+        "real": 0.102,
+        "null": 0.078,
+        "sd": 0.057,
+        "clears": 0.42
+      }
+    },
+    {
+      "roi": "vmpfc_strict",
+      "film": "TearsOfSteel",
+      "nvox": 2102,
+      "pc100": 0.556,
+      "dropped": 0,
+      "valence": {
+        "real": 0.014,
+        "null": 0.047,
+        "sd": 0.033,
+        "clears": -0.99
+      },
+      "resid": {
+        "real": 0.033,
+        "null": 0.055,
+        "sd": 0.039,
+        "clears": -0.58
+      }
+    },
+    {
+      "roi": "amygdala",
+      "film": "TearsOfSteel",
+      "nvox": 672,
+      "pc100": 0.714,
+      "dropped": 0,
+      "valence": {
+        "real": -0.057,
+        "null": 0.01,
+        "sd": 0.028,
+        "clears": -2.41
+      },
+      "resid": {
+        "real": -0.032,
+        "null": 0.008,
+        "sd": 0.018,
+        "clears": -2.27
+      }
+    }
+  ],
+  "multi_item_summary": {
+    "n_tests": 208,
+    "n_decodes": 77,
+    "decodes": [
+      {
+        "roi": "network",
+        "film": "Payload",
+        "item": "PleasantOther",
+        "real": 0.067,
+        "null": 0.004,
+        "null_sd": 0.034
+      },
+      {
+        "roi": "network",
+        "film": "Payload",
+        "item": "Agent",
+        "real": 0.075,
+        "null": 0.008,
+        "null_sd": 0.03
+      },
+      {
+        "roi": "network",
+        "film": "Payload",
+        "item": "Anger",
+        "real": 0.028,
+        "null": -0.0,
+        "null_sd": 0.024
+      },
+      {
+        "roi": "network",
+        "film": "Payload",
+        "item": "AtEase",
+        "real": 0.086,
+        "null": 0.006,
+        "null_sd": 0.034
+      },
+      {
+        "roi": "network",
+        "film": "Payload",
+        "item": "Bad",
+        "real": 0.084,
+        "null": -0.023,
+        "null_sd": 0.035
+      },
+      {
+        "roi": "network",
+        "film": "Payload",
+        "item": "Calm",
+        "real": 0.072,
+        "null": -0.002,
+        "null_sd": 0.031
+      },
+      {
+        "roi": "network",
+        "film": "Payload",
+        "item": "Controlled",
+        "real": 0.044,
+        "null": -0.004,
+        "null_sd": 0.03
+      },
+      {
+        "roi": "network",
+        "film": "Payload",
+        "item": "Eyebrows",
+        "real": 0.084,
+        "null": 0.022,
+        "null_sd": 0.037
+      },
+      {
+        "roi": "network",
+        "film": "Payload",
+        "item": "Fear",
+        "real": 0.071,
+        "null": 0.005,
+        "null_sd": 0.023
+      },
+      {
+        "roi": "network",
+        "film": "Payload",
+        "item": "GoalsOther",
+        "real": 0.044,
+        "null": 0.008,
+        "null_sd": 0.023
+      },
+      {
+        "roi": "network",
+        "film": "Payload",
+        "item": "Good",
+        "real": 0.039,
+        "null": -0.019,
+        "null_sd": 0.03
+      },
+      {
+        "roi": "network",
+        "film": "Payload",
+        "item": "Guilt",
+        "real": 0.105,
+        "null": -0.033,
+        "null_sd": 0.042
+      },
+      {
+        "roi": "network",
+        "film": "Payload",
+        "item": "IntenseEmotion",
+        "real": 0.076,
+        "null": 0.018,
+        "null_sd": 0.043
+      },
+      {
+        "roi": "network",
+        "film": "Payload",
+        "item": "Love",
+        "real": 0.074,
+        "null": 0.047,
+        "null_sd": 0.018
+      },
+      {
+        "roi": "network",
+        "film": "Payload",
+        "item": "Muscle",
+        "real": 0.139,
+        "null": -0.003,
+        "null_sd": 0.024
+      },
+      {
+        "roi": "network",
+        "film": "Payload",
+        "item": "PleasantSelf",
+        "real": 0.079,
+        "null": -0.005,
+        "null_sd": 0.04
+      },
+      {
+        "roi": "network",
+        "film": "Payload",
+        "item": "Predictable",
+        "real": 0.065,
+        "null": 0.028,
+        "null_sd": 0.028
+      },
+      {
+        "roi": "network",
+        "film": "Payload",
+        "item": "Pride",
+        "real": 0.09,
+        "null": 0.006,
+        "null_sd": 0.033
+      },
+      {
+        "roi": "network",
+        "film": "Payload",
+        "item": "Repeat",
+        "real": 0.098,
+        "null": -0.004,
+        "null_sd": 0.037
+      },
+      {
+        "roi": "network",
+        "film": "Payload",
+        "item": "Satisfaction",
+        "real": 0.069,
+        "null": -0.008,
+        "null_sd": 0.045
+      },
+      {
+        "roi": "network",
+        "film": "Payload",
+        "item": "Smile",
+        "real": 0.098,
+        "null": 0.041,
+        "null_sd": 0.026
+      },
+      {
+        "roi": "network",
+        "film": "Payload",
+        "item": "SocialNorms",
+        "real": 0.073,
+        "null": 0.011,
+        "null_sd": 0.049
+      },
+      {
+        "roi": "network",
+        "film": "Payload",
+        "item": "Stomach",
+        "real": 0.081,
+        "null": 0.008,
+        "null_sd": 0.043
+      },
+      {
+        "roi": "network",
+        "film": "Payload",
+        "item": "Stop",
+        "real": 0.075,
+        "null": 0.01,
+        "null_sd": 0.03
+      },
+      {
+        "roi": "network",
+        "film": "Payload",
+        "item": "Suddenly",
+        "real": 0.119,
+        "null": 0.055,
+        "null_sd": 0.048
+      },
+      {
+        "roi": "network",
+        "film": "Payload",
+        "item": "Surprise",
+        "real": 0.123,
+        "null": 0.024,
+        "null_sd": 0.044
+      },
+      {
+        "roi": "network",
+        "film": "Payload",
+        "item": "Tears",
+        "real": 0.064,
+        "null": 0.011,
+        "null_sd": 0.05
+      },
+      {
+        "roi": "network",
+        "film": "Payload",
+        "item": "Throat",
+        "real": 0.101,
+        "null": 0.012,
+        "null_sd": 0.033
+      },
+      {
+        "roi": "network",
+        "film": "Payload",
+        "item": "Undo",
+        "real": 0.068,
+        "null": 0.009,
+        "null_sd": 0.045
+      },
+      {
+        "roi": "network",
+        "film": "Payload",
+        "item": "Urgency",
+        "real": 0.127,
+        "null": 0.012,
+        "null_sd": 0.035
+      },
+      {
+        "roi": "network",
+        "film": "TearsOfSteel",
+        "item": "Alert",
+        "real": 0.129,
+        "null": 0.058,
+        "null_sd": 0.04
+      },
+      {
+        "roi": "network",
+        "film": "TearsOfSteel",
+        "item": "Anger",
+        "real": 0.153,
+        "null": 0.096,
+        "null_sd": 0.029
+      },
+      {
+        "roi": "network",
+        "film": "TearsOfSteel",
+        "item": "Lips",
+        "real": 0.117,
+        "null": 0.07,
+        "null_sd": 0.034
+      },
+      {
+        "roi": "network",
+        "film": "TearsOfSteel",
+        "item": "Standards",
+        "real": 0.086,
+        "null": 0.056,
+        "null_sd": 0.027
+      },
+      {
+        "roi": "network",
+        "film": "TearsOfSteel",
+        "item": "WarmHeartedness",
+        "real": 0.157,
+        "null": 0.089,
+        "null_sd": 0.043
+      },
+      {
+        "roi": "insula",
+        "film": "Payload",
+        "item": "PleasantOther",
+        "real": 0.082,
+        "null": 0.01,
+        "null_sd": 0.014
+      },
+      {
+        "roi": "insula",
+        "film": "Payload",
+        "item": "PleasantSelf",
+        "real": 0.07,
+        "null": 0.007,
+        "null_sd": 0.038
+      },
+      {
+        "roi": "insula",
+        "film": "Payload",
+        "item": "Fear",
+        "real": 0.069,
+        "null": 0.028,
+        "null_sd": 0.031
+      },
+      {
+        "roi": "insula",
+        "film": "Payload",
+        "item": "Anger",
+        "real": 0.038,
+        "null": -0.001,
+        "null_sd": 0.02
+      },
+      {
+        "roi": "insula",
+        "film": "Payload",
+        "item": "Calm",
+        "real": 0.073,
+        "null": 0.026,
+        "null_sd": 0.019
+      },
+      {
+        "roi": "insula",
+        "film": "Payload",
+        "item": "Good",
+        "real": 0.055,
+        "null": 0.008,
+        "null_sd": 0.009
+      },
+      {
+        "roi": "insula",
+        "film": "Payload",
+        "item": "Bad",
+        "real": 0.055,
+        "null": 0.001,
+        "null_sd": 0.02
+      },
+      {
+        "roi": "insula",
+        "film": "Payload",
+        "item": "Urgency",
+        "real": 0.061,
+        "null": 0.036,
+        "null_sd": 0.005
+      },
+      {
+        "roi": "insula",
+        "film": "Payload",
+        "item": "Strong",
+        "real": 0.067,
+        "null": 0.022,
+        "null_sd": 0.017
+      },
+      {
+        "roi": "insula",
+        "film": "Payload",
+        "item": "Controlled",
+        "real": 0.055,
+        "null": 0.023,
+        "null_sd": 0.023
+      },
+      {
+        "roi": "insula",
+        "film": "Payload",
+        "item": "Stomach",
+        "real": 0.093,
+        "null": 0.014,
+        "null_sd": 0.03
+      },
+      {
+        "roi": "insula",
+        "film": "TearsOfSteel",
+        "item": "Surprise",
+        "real": 0.093,
+        "null": 0.054,
+        "null_sd": 0.023
+      },
+      {
+        "roi": "insula",
+        "film": "TearsOfSteel",
+        "item": "Heartrate",
+        "real": 0.071,
+        "null": 0.046,
+        "null_sd": 0.018
+      },
+      {
+        "roi": "vmpfc",
+        "film": "Payload",
+        "item": "PleasantOther",
+        "real": 0.056,
+        "null": -0.0,
+        "null_sd": 0.025
+      },
+      {
+        "roi": "vmpfc",
+        "film": "Payload",
+        "item": "PleasantSelf",
+        "real": 0.081,
+        "null": -0.009,
+        "null_sd": 0.036
+      },
+      {
+        "roi": "vmpfc",
+        "film": "Payload",
+        "item": "Fear",
+        "real": 0.045,
+        "null": -0.006,
+        "null_sd": 0.022
+      },
+      {
+        "roi": "vmpfc",
+        "film": "Payload",
+        "item": "Anger",
+        "real": 0.04,
+        "null": -0.005,
+        "null_sd": 0.026
+      },
+      {
+        "roi": "vmpfc",
+        "film": "Payload",
+        "item": "Surprise",
+        "real": 0.113,
+        "null": -0.004,
+        "null_sd": 0.06
+      },
+      {
+        "roi": "vmpfc",
+        "film": "Payload",
+        "item": "IntenseEmotion",
+        "real": 0.095,
+        "null": 0.015,
+        "null_sd": 0.048
+      },
+      {
+        "roi": "vmpfc",
+        "film": "Payload",
+        "item": "Calm",
+        "real": 0.07,
+        "null": -0.017,
+        "null_sd": 0.028
+      },
+      {
+        "roi": "vmpfc",
+        "film": "Payload",
+        "item": "Good",
+        "real": 0.032,
+        "null": -0.027,
+        "null_sd": 0.037
+      },
+      {
+        "roi": "vmpfc",
+        "film": "Payload",
+        "item": "Bad",
+        "real": 0.093,
+        "null": -0.029,
+        "null_sd": 0.031
+      },
+      {
+        "roi": "vmpfc",
+        "film": "Payload",
+        "item": "Urgency",
+        "real": 0.136,
+        "null": 0.002,
+        "null_sd": 0.051
+      },
+      {
+        "roi": "vmpfc",
+        "film": "Payload",
+        "item": "Stomach",
+        "real": 0.067,
+        "null": 0.009,
+        "null_sd": 0.033
+      },
+      {
+        "roi": "vmpfc",
+        "film": "Payload",
+        "item": "Heartrate",
+        "real": 0.091,
+        "null": 0.038,
+        "null_sd": 0.046
+      },
+      {
+        "roi": "vmpfc",
+        "film": "TearsOfSteel",
+        "item": "Anger",
+        "real": 0.133,
+        "null": 0.072,
+        "null_sd": 0.035
+      },
+      {
+        "roi": "amygdala",
+        "film": "Payload",
+        "item": "PleasantOther",
+        "real": 0.07,
+        "null": -0.007,
+        "null_sd": 0.021
+      },
+      {
+        "roi": "amygdala",
+        "film": "Payload",
+        "item": "PleasantSelf",
+        "real": 0.016,
+        "null": -0.022,
+        "null_sd": 0.024
+      },
+      {
+        "roi": "amygdala",
+        "film": "Payload",
+        "item": "Happiness",
+        "real": 0.035,
+        "null": -0.01,
+        "null_sd": 0.024
+      },
+      {
+        "roi": "amygdala",
+        "film": "Payload",
+        "item": "Sad",
+        "real": 0.004,
+        "null": -0.019,
+        "null_sd": 0.012
+      },
+      {
+        "roi": "amygdala",
+        "film": "Payload",
+        "item": "Surprise",
+        "real": 0.155,
+        "null": 0.026,
+        "null_sd": 0.024
+      },
+      {
+        "roi": "amygdala",
+        "film": "Payload",
+        "item": "IntenseEmotion",
+        "real": 0.018,
+        "null": -0.019,
+        "null_sd": 0.025
+      },
+      {
+        "roi": "amygdala",
+        "film": "Payload",
+        "item": "Calm",
+        "real": 0.028,
+        "null": 0.003,
+        "null_sd": 0.012
+      },
+      {
+        "roi": "amygdala",
+        "film": "Payload",
+        "item": "Good",
+        "real": 0.049,
+        "null": -0.028,
+        "null_sd": 0.031
+      },
+      {
+        "roi": "amygdala",
+        "film": "Payload",
+        "item": "Bad",
+        "real": 0.039,
+        "null": -0.027,
+        "null_sd": 0.025
+      },
+      {
+        "roi": "amygdala",
+        "film": "Payload",
+        "item": "Urgency",
+        "real": 0.045,
+        "null": 0.004,
+        "null_sd": 0.028
+      },
+      {
+        "roi": "amygdala",
+        "film": "Payload",
+        "item": "Controlled",
+        "real": 0.037,
+        "null": 0.007,
+        "null_sd": 0.019
+      },
+      {
+        "roi": "amygdala",
+        "film": "Payload",
+        "item": "Stomach",
+        "real": 0.036,
+        "null": -0.027,
+        "null_sd": 0.032
+      },
+      {
+        "roi": "amygdala",
+        "film": "Payload",
+        "item": "Heartrate",
+        "real": 0.072,
+        "null": -0.003,
+        "null_sd": 0.056
+      },
+      {
+        "roi": "amygdala",
+        "film": "TearsOfSteel",
+        "item": "Surprise",
+        "real": 0.102,
+        "null": 0.016,
+        "null_sd": 0.021
+      },
+      {
+        "roi": "amygdala",
+        "film": "TearsOfSteel",
+        "item": "Calm",
+        "real": 0.047,
+        "null": 0.009,
+        "null_sd": 0.037
+      },
+      {
+        "roi": "amygdala",
+        "film": "TearsOfSteel",
+        "item": "Heartrate",
+        "real": 0.062,
+        "null": 0.007,
+        "null_sd": 0.035
+      }
+    ],
+    "by_item_mean_abs_real": {
+      "Smile": 0.118,
+      "WarmHeartedness": 0.111,
+      "Pride": 0.104,
+      "Surprise": 0.102,
+      "Muscle": 0.097,
+      "Throat": 0.097,
+      "AtEase": 0.093,
+      "Lips": 0.081,
+      "Heartrate": 0.081,
+      "Support": 0.08,
+      "Predictable": 0.079,
+      "Guilt": 0.079,
+      "Urgency": 0.078,
+      "Standards": 0.073,
+      "Alert": 0.071,
+      "Agent": 0.07,
+      "Anger": 0.068,
+      "Suddenly": 0.066,
+      "Eyebrows": 0.064,
+      "PleasantOther": 0.062,
+      "Calm": 0.06,
+      "Love": 0.059,
+      "PleasantSelf": 0.059,
+      "Move": 0.058,
+      "Repeat": 0.058,
+      "Tackle": 0.058,
+      "Fear": 0.057,
+      "Bad": 0.056,
+      "Strong": 0.054,
+      "Stop": 0.053,
+      "Tears": 0.053,
+      "Attention": 0.052,
+      "SocialNorms": 0.051,
+      "Undo": 0.049,
+      "Good": 0.047,
+      "GoalsOther": 0.046,
+      "Disgust": 0.044,
+      "Stomach": 0.044,
+      "Anxiety": 0.04,
+      "Oppose": 0.038,
+      "Satisfaction": 0.037,
+      "Warm": 0.036,
+      "IntenseEmotion": 0.036,
+      "Frown": 0.031,
+      "Sad": 0.03,
+      "Command": 0.026,
+      "Controlled": 0.022,
+      "Care": 0.022,
+      "Happiness": 0.021,
+      "Regard": 0.011
+    }
+  },
+  "multi_item_hits": [
+    {
+      "roi": "network",
+      "film": "Payload",
+      "item": "Muscle",
+      "real": 0.139,
+      "null": -0.003,
+      "null_sd": 0.024,
+      "margin": 0.142
+    },
+    {
+      "roi": "network",
+      "film": "Payload",
+      "item": "Guilt",
+      "real": 0.105,
+      "null": -0.033,
+      "null_sd": 0.042,
+      "margin": 0.138
+    },
+    {
+      "roi": "vmpfc",
+      "film": "Payload",
+      "item": "Urgency",
+      "real": 0.136,
+      "null": 0.002,
+      "null_sd": 0.051,
+      "margin": 0.134
+    },
+    {
+      "roi": "amygdala",
+      "film": "Payload",
+      "item": "Surprise",
+      "real": 0.155,
+      "null": 0.026,
+      "null_sd": 0.024,
+      "margin": 0.129
+    },
+    {
+      "roi": "vmpfc",
+      "film": "Payload",
+      "item": "Bad",
+      "real": 0.093,
+      "null": -0.029,
+      "null_sd": 0.031,
+      "margin": 0.122
+    },
+    {
+      "roi": "vmpfc",
+      "film": "Payload",
+      "item": "Surprise",
+      "real": 0.113,
+      "null": -0.004,
+      "null_sd": 0.06,
+      "margin": 0.117
+    },
+    {
+      "roi": "network",
+      "film": "Payload",
+      "item": "Urgency",
+      "real": 0.127,
+      "null": 0.012,
+      "null_sd": 0.035,
+      "margin": 0.115
+    },
+    {
+      "roi": "network",
+      "film": "Payload",
+      "item": "Bad",
+      "real": 0.084,
+      "null": -0.023,
+      "null_sd": 0.035,
+      "margin": 0.107
+    },
+    {
+      "roi": "network",
+      "film": "Payload",
+      "item": "Repeat",
+      "real": 0.098,
+      "null": -0.004,
+      "null_sd": 0.037,
+      "margin": 0.102
+    },
+    {
+      "roi": "network",
+      "film": "Payload",
+      "item": "Surprise",
+      "real": 0.123,
+      "null": 0.024,
+      "null_sd": 0.044,
+      "margin": 0.099
+    },
+    {
+      "roi": "vmpfc",
+      "film": "Payload",
+      "item": "PleasantSelf",
+      "real": 0.081,
+      "null": -0.009,
+      "null_sd": 0.036,
+      "margin": 0.09
+    },
+    {
+      "roi": "network",
+      "film": "Payload",
+      "item": "Throat",
+      "real": 0.101,
+      "null": 0.012,
+      "null_sd": 0.033,
+      "margin": 0.089
+    },
+    {
+      "roi": "vmpfc",
+      "film": "Payload",
+      "item": "Calm",
+      "real": 0.07,
+      "null": -0.017,
+      "null_sd": 0.028,
+      "margin": 0.087
+    },
+    {
+      "roi": "amygdala",
+      "film": "TearsOfSteel",
+      "item": "Surprise",
+      "real": 0.102,
+      "null": 0.016,
+      "null_sd": 0.021,
+      "margin": 0.086
+    },
+    {
+      "roi": "network",
+      "film": "Payload",
+      "item": "PleasantSelf",
+      "real": 0.079,
+      "null": -0.005,
+      "null_sd": 0.04,
+      "margin": 0.084
+    },
+    {
+      "roi": "network",
+      "film": "Payload",
+      "item": "Pride",
+      "real": 0.09,
+      "null": 0.006,
+      "null_sd": 0.033,
+      "margin": 0.084
+    },
+    {
+      "roi": "network",
+      "film": "Payload",
+      "item": "AtEase",
+      "real": 0.086,
+      "null": 0.006,
+      "null_sd": 0.034,
+      "margin": 0.08
+    },
+    {
+      "roi": "vmpfc",
+      "film": "Payload",
+      "item": "IntenseEmotion",
+      "real": 0.095,
+      "null": 0.015,
+      "null_sd": 0.048,
+      "margin": 0.08
+    },
+    {
+      "roi": "insula",
+      "film": "Payload",
+      "item": "Stomach",
+      "real": 0.093,
+      "null": 0.014,
+      "null_sd": 0.03,
+      "margin": 0.079
+    },
+    {
+      "roi": "network",
+      "film": "Payload",
+      "item": "Satisfaction",
+      "real": 0.069,
+      "null": -0.008,
+      "null_sd": 0.045,
+      "margin": 0.077
+    },
+    {
+      "roi": "amygdala",
+      "film": "Payload",
+      "item": "PleasantOther",
+      "real": 0.07,
+      "null": -0.007,
+      "null_sd": 0.021,
+      "margin": 0.077
+    },
+    {
+      "roi": "amygdala",
+      "film": "Payload",
+      "item": "Good",
+      "real": 0.049,
+      "null": -0.028,
+      "null_sd": 0.031,
+      "margin": 0.077
+    },
+    {
+      "roi": "amygdala",
+      "film": "Payload",
+      "item": "Heartrate",
+      "real": 0.072,
+      "null": -0.003,
+      "null_sd": 0.056,
+      "margin": 0.075
+    },
+    {
+      "roi": "network",
+      "film": "Payload",
+      "item": "Calm",
+      "real": 0.072,
+      "null": -0.002,
+      "null_sd": 0.031,
+      "margin": 0.074
+    },
+    {
+      "roi": "network",
+      "film": "Payload",
+      "item": "Stomach",
+      "real": 0.081,
+      "null": 0.008,
+      "null_sd": 0.043,
+      "margin": 0.073
+    },
+    {
+      "roi": "insula",
+      "film": "Payload",
+      "item": "PleasantOther",
+      "real": 0.082,
+      "null": 0.01,
+      "null_sd": 0.014,
+      "margin": 0.072
+    },
+    {
+      "roi": "network",
+      "film": "TearsOfSteel",
+      "item": "Alert",
+      "real": 0.129,
+      "null": 0.058,
+      "null_sd": 0.04,
+      "margin": 0.071
+    },
+    {
+      "roi": "network",
+      "film": "TearsOfSteel",
+      "item": "WarmHeartedness",
+      "real": 0.157,
+      "null": 0.089,
+      "null_sd": 0.043,
+      "margin": 0.068
+    },
+    {
+      "roi": "network",
+      "film": "Payload",
+      "item": "Agent",
+      "real": 0.075,
+      "null": 0.008,
+      "null_sd": 0.03,
+      "margin": 0.067
+    },
+    {
+      "roi": "network",
+      "film": "Payload",
+      "item": "Fear",
+      "real": 0.071,
+      "null": 0.005,
+      "null_sd": 0.023,
+      "margin": 0.066
+    },
+    {
+      "roi": "amygdala",
+      "film": "Payload",
+      "item": "Bad",
+      "real": 0.039,
+      "null": -0.027,
+      "null_sd": 0.025,
+      "margin": 0.066
+    },
+    {
+      "roi": "network",
+      "film": "Payload",
+      "item": "Stop",
+      "real": 0.075,
+      "null": 0.01,
+      "null_sd": 0.03,
+      "margin": 0.065
+    },
+    {
+      "roi": "network",
+      "film": "Payload",
+      "item": "Suddenly",
+      "real": 0.119,
+      "null": 0.055,
+      "null_sd": 0.048,
+      "margin": 0.064
+    },
+    {
+      "roi": "network",
+      "film": "Payload",
+      "item": "PleasantOther",
+      "real": 0.067,
+      "null": 0.004,
+      "null_sd": 0.034,
+      "margin": 0.063
+    },
+    {
+      "roi": "insula",
+      "film": "Payload",
+      "item": "PleasantSelf",
+      "real": 0.07,
+      "null": 0.007,
+      "null_sd": 0.038,
+      "margin": 0.063
+    },
+    {
+      "roi": "amygdala",
+      "film": "Payload",
+      "item": "Stomach",
+      "real": 0.036,
+      "null": -0.027,
+      "null_sd": 0.032,
+      "margin": 0.063
+    },
+    {
+      "roi": "network",
+      "film": "Payload",
+      "item": "Eyebrows",
+      "real": 0.084,
+      "null": 0.022,
+      "null_sd": 0.037,
+      "margin": 0.062
+    },
+    {
+      "roi": "network",
+      "film": "Payload",
+      "item": "SocialNorms",
+      "real": 0.073,
+      "null": 0.011,
+      "null_sd": 0.049,
+      "margin": 0.062
+    },
+    {
+      "roi": "vmpfc",
+      "film": "TearsOfSteel",
+      "item": "Anger",
+      "real": 0.133,
+      "null": 0.072,
+      "null_sd": 0.035,
+      "margin": 0.061
+    },
+    {
+      "roi": "network",
+      "film": "Payload",
+      "item": "Undo",
+      "real": 0.068,
+      "null": 0.009,
+      "null_sd": 0.045,
+      "margin": 0.059
+    },
+    {
+      "roi": "vmpfc",
+      "film": "Payload",
+      "item": "Good",
+      "real": 0.032,
+      "null": -0.027,
+      "null_sd": 0.037,
+      "margin": 0.059
+    },
+    {
+      "roi": "network",
+      "film": "Payload",
+      "item": "Good",
+      "real": 0.039,
+      "null": -0.019,
+      "null_sd": 0.03,
+      "margin": 0.058
+    },
+    {
+      "roi": "network",
+      "film": "Payload",
+      "item": "IntenseEmotion",
+      "real": 0.076,
+      "null": 0.018,
+      "null_sd": 0.043,
+      "margin": 0.058
+    },
+    {
+      "roi": "vmpfc",
+      "film": "Payload",
+      "item": "Stomach",
+      "real": 0.067,
+      "null": 0.009,
+      "null_sd": 0.033,
+      "margin": 0.058
+    },
+    {
+      "roi": "network",
+      "film": "Payload",
+      "item": "Smile",
+      "real": 0.098,
+      "null": 0.041,
+      "null_sd": 0.026,
+      "margin": 0.057
+    },
+    {
+      "roi": "network",
+      "film": "TearsOfSteel",
+      "item": "Anger",
+      "real": 0.153,
+      "null": 0.096,
+      "null_sd": 0.029,
+      "margin": 0.057
+    },
+    {
+      "roi": "vmpfc",
+      "film": "Payload",
+      "item": "PleasantOther",
+      "real": 0.056,
+      "null": -0.0,
+      "null_sd": 0.025,
+      "margin": 0.056
+    },
+    {
+      "roi": "amygdala",
+      "film": "TearsOfSteel",
+      "item": "Heartrate",
+      "real": 0.062,
+      "null": 0.007,
+      "null_sd": 0.035,
+      "margin": 0.055
+    },
+    {
+      "roi": "insula",
+      "film": "Payload",
+      "item": "Bad",
+      "real": 0.055,
+      "null": 0.001,
+      "null_sd": 0.02,
+      "margin": 0.054
+    },
+    {
+      "roi": "network",
+      "film": "Payload",
+      "item": "Tears",
+      "real": 0.064,
+      "null": 0.011,
+      "null_sd": 0.05,
+      "margin": 0.053
+    },
+    {
+      "roi": "vmpfc",
+      "film": "Payload",
+      "item": "Heartrate",
+      "real": 0.091,
+      "null": 0.038,
+      "null_sd": 0.046,
+      "margin": 0.053
+    },
+    {
+      "roi": "vmpfc",
+      "film": "Payload",
+      "item": "Fear",
+      "real": 0.045,
+      "null": -0.006,
+      "null_sd": 0.022,
+      "margin": 0.051
+    },
+    {
+      "roi": "network",
+      "film": "Payload",
+      "item": "Controlled",
+      "real": 0.044,
+      "null": -0.004,
+      "null_sd": 0.03,
+      "margin": 0.048
+    },
+    {
+      "roi": "network",
+      "film": "TearsOfSteel",
+      "item": "Lips",
+      "real": 0.117,
+      "null": 0.07,
+      "null_sd": 0.034,
+      "margin": 0.047
+    },
+    {
+      "roi": "insula",
+      "film": "Payload",
+      "item": "Calm",
+      "real": 0.073,
+      "null": 0.026,
+      "null_sd": 0.019,
+      "margin": 0.047
+    },
+    {
+      "roi": "insula",
+      "film": "Payload",
+      "item": "Good",
+      "real": 0.055,
+      "null": 0.008,
+      "null_sd": 0.009,
+      "margin": 0.047
+    },
+    {
+      "roi": "insula",
+      "film": "Payload",
+      "item": "Strong",
+      "real": 0.067,
+      "null": 0.022,
+      "null_sd": 0.017,
+      "margin": 0.045
+    },
+    {
+      "roi": "vmpfc",
+      "film": "Payload",
+      "item": "Anger",
+      "real": 0.04,
+      "null": -0.005,
+      "null_sd": 0.026,
+      "margin": 0.045
+    },
+    {
+      "roi": "amygdala",
+      "film": "Payload",
+      "item": "Happiness",
+      "real": 0.035,
+      "null": -0.01,
+      "null_sd": 0.024,
+      "margin": 0.045
+    },
+    {
+      "roi": "insula",
+      "film": "Payload",
+      "item": "Fear",
+      "real": 0.069,
+      "null": 0.028,
+      "null_sd": 0.031,
+      "margin": 0.041
+    },
+    {
+      "roi": "amygdala",
+      "film": "Payload",
+      "item": "Urgency",
+      "real": 0.045,
+      "null": 0.004,
+      "null_sd": 0.028,
+      "margin": 0.041
+    },
+    {
+      "roi": "insula",
+      "film": "Payload",
+      "item": "Anger",
+      "real": 0.038,
+      "null": -0.001,
+      "null_sd": 0.02,
+      "margin": 0.039
+    },
+    {
+      "roi": "insula",
+      "film": "TearsOfSteel",
+      "item": "Surprise",
+      "real": 0.093,
+      "null": 0.054,
+      "null_sd": 0.023,
+      "margin": 0.039
+    },
+    {
+      "roi": "amygdala",
+      "film": "Payload",
+      "item": "PleasantSelf",
+      "real": 0.016,
+      "null": -0.022,
+      "null_sd": 0.024,
+      "margin": 0.038
+    },
+    {
+      "roi": "amygdala",
+      "film": "TearsOfSteel",
+      "item": "Calm",
+      "real": 0.047,
+      "null": 0.009,
+      "null_sd": 0.037,
+      "margin": 0.038
+    },
+    {
+      "roi": "network",
+      "film": "Payload",
+      "item": "Predictable",
+      "real": 0.065,
+      "null": 0.028,
+      "null_sd": 0.028,
+      "margin": 0.037
+    },
+    {
+      "roi": "amygdala",
+      "film": "Payload",
+      "item": "IntenseEmotion",
+      "real": 0.018,
+      "null": -0.019,
+      "null_sd": 0.025,
+      "margin": 0.037
+    },
+    {
+      "roi": "network",
+      "film": "Payload",
+      "item": "GoalsOther",
+      "real": 0.044,
+      "null": 0.008,
+      "null_sd": 0.023,
+      "margin": 0.036
+    },
+    {
+      "roi": "insula",
+      "film": "Payload",
+      "item": "Controlled",
+      "real": 0.055,
+      "null": 0.023,
+      "null_sd": 0.023,
+      "margin": 0.032
+    },
+    {
+      "roi": "network",
+      "film": "TearsOfSteel",
+      "item": "Standards",
+      "real": 0.086,
+      "null": 0.056,
+      "null_sd": 0.027,
+      "margin": 0.03
+    },
+    {
+      "roi": "amygdala",
+      "film": "Payload",
+      "item": "Controlled",
+      "real": 0.037,
+      "null": 0.007,
+      "null_sd": 0.019,
+      "margin": 0.03
+    },
+    {
+      "roi": "network",
+      "film": "Payload",
+      "item": "Anger",
+      "real": 0.028,
+      "null": -0.0,
+      "null_sd": 0.024,
+      "margin": 0.028
+    },
+    {
+      "roi": "network",
+      "film": "Payload",
+      "item": "Love",
+      "real": 0.074,
+      "null": 0.047,
+      "null_sd": 0.018,
+      "margin": 0.027
+    },
+    {
+      "roi": "insula",
+      "film": "Payload",
+      "item": "Urgency",
+      "real": 0.061,
+      "null": 0.036,
+      "null_sd": 0.005,
+      "margin": 0.025
+    },
+    {
+      "roi": "insula",
+      "film": "TearsOfSteel",
+      "item": "Heartrate",
+      "real": 0.071,
+      "null": 0.046,
+      "null_sd": 0.018,
+      "margin": 0.025
+    },
+    {
+      "roi": "amygdala",
+      "film": "Payload",
+      "item": "Calm",
+      "real": 0.028,
+      "null": 0.003,
+      "null_sd": 0.012,
+      "margin": 0.025
+    },
+    {
+      "roi": "amygdala",
+      "film": "Payload",
+      "item": "Sad",
+      "real": 0.004,
+      "null": -0.019,
+      "null_sd": 0.012,
+      "margin": 0.023
+    }
+  ],
+  "multi_item_hit_rates": {
+    "network|Payload": {
+      "decodes": 30,
+      "total": 50,
+      "rate": 0.6
+    },
+    "network|TearsOfSteel": {
+      "decodes": 5,
+      "total": 50,
+      "rate": 0.1
+    },
+    "insula|Payload": {
+      "decodes": 11,
+      "total": 18,
+      "rate": 0.611
+    },
+    "insula|TearsOfSteel": {
+      "decodes": 2,
+      "total": 18,
+      "rate": 0.111
+    },
+    "vmpfc|Payload": {
+      "decodes": 12,
+      "total": 18,
+      "rate": 0.667
+    },
+    "vmpfc|TearsOfSteel": {
+      "decodes": 1,
+      "total": 18,
+      "rate": 0.056
+    },
+    "amygdala|Payload": {
+      "decodes": 13,
+      "total": 18,
+      "rate": 0.722
+    },
+    "amygdala|TearsOfSteel": {
+      "decodes": 3,
+      "total": 18,
+      "rate": 0.167
+    }
+  },
+  "visual_decomp_Payload": {
+    "film": "Payload",
+    "subjects": [
+      "sub-S08",
+      "sub-S05",
+      "sub-S11",
+      "sub-S15",
+      "sub-S06"
+    ],
+    "n_volumes_total": 3873,
+    "alpha": 10000.0,
+    "roi": "posterior occipital (y < -60 mm)",
+    "positive_control_pooled": {
+      "timescales_s": [
+        250,
+        150,
+        100,
+        60,
+        30
+      ],
+      "recovery_r_snr1": [
+        0.3257520015147394,
+        0.28112632458162196,
+        0.2755466453561898,
+        0.3021251415407016,
+        0.3190100415548218
+      ],
+      "recovery_r_snr0_3": [
+        0.08950022197281078,
+        0.08148848897464397,
+        0.07378473312648468,
+        0.10884897794745758,
+        0.10663844632379724
+      ],
+      "valence_timescale_s": 100
+    },
+    "targets": {
+      "valence": {
+        "loso_r_per_subject": [
+          0.079,
+          -0.104,
+          0.177,
+          0.021,
+          0.008
+        ],
+        "loso_mean": 0.036,
+        "shift_null_mean": 0.045,
+        "shift_null_sd": 0.014,
+        "beats_null": -0.008,
+        "verdict": "null"
+      },
+      "luminance": {
+        "loso_r_per_subject": [
+          0.066,
+          0.09,
+          0.068,
+          0.129,
+          0.054
+        ],
+        "loso_mean": 0.081,
+        "shift_null_mean": 0.061,
+        "shift_null_sd": 0.036,
+        "beats_null": 0.021,
+        "verdict": "null"
+      },
+      "rms_contrast": {
+        "loso_r_per_subject": [
+          0.061,
+          0.076,
+          0.083,
+          0.107,
+          0.068
+        ],
+        "loso_mean": 0.079,
+        "shift_null_mean": 0.064,
+        "shift_null_sd": 0.051,
+        "beats_null": 0.015,
+        "verdict": "null"
+      },
+      "motion": {
+        "loso_r_per_subject": [
+          0.179,
+          0.219,
+          0.208,
+          0.274,
+          0.253
+        ],
+        "loso_mean": 0.227,
+        "shift_null_mean": 0.094,
+        "shift_null_sd": 0.027,
+        "beats_null": 0.132,
+        "verdict": "decodes"
+      },
+      "edges": {
+        "loso_r_per_subject": [
+          0.107,
+          0.066,
+          0.086,
+          0.155,
+          0.128
+        ],
+        "loso_mean": 0.108,
+        "shift_null_mean": 0.065,
+        "shift_null_sd": 0.02,
+        "beats_null": 0.044,
+        "verdict": "decodes"
+      },
+      "cuts": {
+        "loso_r_per_subject": [
+          0.094,
+          0.062,
+          0.143,
+          0.099,
+          0.19
+        ],
+        "loso_mean": 0.117,
+        "shift_null_mean": 0.067,
+        "shift_null_sd": 0.026,
+        "beats_null": 0.05,
+        "verdict": "decodes"
+      },
+      "saturation": {
+        "loso_r_per_subject": [
+          -0.039,
+          0.185,
+          0.055,
+          -0.024,
+          -0.057
+        ],
+        "loso_mean": 0.024,
+        "shift_null_mean": 0.08,
+        "shift_null_sd": 0.05,
+        "beats_null": -0.056,
+        "verdict": "null"
+      },
+      "valence_resid_visual": {
+        "loso_r_per_subject": [
+          0.117,
+          -0.041,
+          0.192,
+          0.048,
+          0.024
+        ],
+        "loso_mean": 0.068,
+        "shift_null_mean": 0.045,
+        "shift_null_sd": 0.015,
+        "beats_null": 0.023,
+        "verdict": "decodes"
+      }
+    },
+    "stimulus_side": {
+      "visual_set_R2_predicting_valence": 0.056,
+      "feature_corr_with_valence_1hz": {
+        "luminance": 0.099,
+        "rms_contrast": 0.128,
+        "motion": 0.208,
+        "edges": 0.124,
+        "cuts": -0.027,
+        "saturation": -0.034
+      }
+    },
+    "note": "Real-feature positive control: occipital should decode visual features (beats their own elevated nulls) while valence does not. valence_resid_visual tests whether any occipital valence survives removing the visual confound. Effect sizes only; each target judged against its own shift-null, never zero."
+  },
+  "visual_decomp_TearsOfSteel": {
+    "film": "TearsOfSteel",
+    "subjects": [
+      "sub-S31",
+      "sub-S08",
+      "sub-S11",
+      "sub-S25",
+      "sub-S04"
+    ],
+    "n_volumes_total": 2257,
+    "alpha": 10000.0,
+    "roi": "posterior occipital (y < -60 mm)",
+    "positive_control_pooled": {
+      "timescales_s": [
+        250,
+        150,
+        100,
+        60,
+        30
+      ],
+      "recovery_r_snr1": [
+        0.20369986166400628,
+        0.2027823069941271,
+        0.2485068660460415,
+        0.21273141017979064,
+        0.24403322028589303
+      ],
+      "recovery_r_snr0_3": [
+        0.06333725897189665,
+        0.10927910527532288,
+        0.1543840608233266,
+        0.10258489814044111,
+        0.12543018846555248
+      ],
+      "valence_timescale_s": 100
+    },
+    "targets": {
+      "valence": {
+        "loso_r_per_subject": [
+          0.021,
+          0.075,
+          0.178,
+          0.07,
+          0.102
+        ],
+        "loso_mean": 0.089,
+        "shift_null_mean": 0.127,
+        "shift_null_sd": 0.042,
+        "beats_null": -0.038,
+        "verdict": "null"
+      },
+      "luminance": {
+        "loso_r_per_subject": [
+          0.277,
+          0.274,
+          0.312,
+          0.299,
+          0.251
+        ],
+        "loso_mean": 0.282,
+        "shift_null_mean": 0.172,
+        "shift_null_sd": 0.044,
+        "beats_null": 0.111,
+        "verdict": "decodes"
+      },
+      "rms_contrast": {
+        "loso_r_per_subject": [
+          0.212,
+          0.304,
+          0.276,
+          0.265,
+          0.207
+        ],
+        "loso_mean": 0.253,
+        "shift_null_mean": 0.164,
+        "shift_null_sd": 0.047,
+        "beats_null": 0.089,
+        "verdict": "decodes"
+      },
+      "motion": {
+        "loso_r_per_subject": [
+          0.393,
+          0.47,
+          0.427,
+          0.396,
+          0.445
+        ],
+        "loso_mean": 0.426,
+        "shift_null_mean": 0.168,
+        "shift_null_sd": 0.036,
+        "beats_null": 0.259,
+        "verdict": "decodes"
+      },
+      "edges": {
+        "loso_r_per_subject": [
+          0.201,
+          0.264,
+          0.295,
+          0.322,
+          0.158
+        ],
+        "loso_mean": 0.248,
+        "shift_null_mean": 0.156,
+        "shift_null_sd": 0.03,
+        "beats_null": 0.092,
+        "verdict": "decodes"
+      },
+      "cuts": {
+        "loso_r_per_subject": [
+          0.203,
+          0.357,
+          0.217,
+          0.184,
+          0.232
+        ],
+        "loso_mean": 0.238,
+        "shift_null_mean": 0.169,
+        "shift_null_sd": 0.058,
+        "beats_null": 0.069,
+        "verdict": "decodes"
+      },
+      "saturation": {
+        "loso_r_per_subject": [
+          0.328,
+          0.429,
+          0.303,
+          0.284,
+          0.257
+        ],
+        "loso_mean": 0.32,
+        "shift_null_mean": 0.142,
+        "shift_null_sd": 0.057,
+        "beats_null": 0.178,
+        "verdict": "decodes"
+      },
+      "valence_resid_visual": {
+        "loso_r_per_subject": [
+          0.07,
+          0.099,
+          0.225,
+          0.08,
+          0.134
+        ],
+        "loso_mean": 0.122,
+        "shift_null_mean": 0.148,
+        "shift_null_sd": 0.054,
+        "beats_null": -0.026,
+        "verdict": "null"
+      }
+    },
+    "stimulus_side": {
+      "visual_set_R2_predicting_valence": 0.15,
+      "feature_corr_with_valence_1hz": {
+        "luminance": -0.16,
+        "rms_contrast": -0.269,
+        "motion": -0.233,
+        "edges": -0.166,
+        "cuts": -0.149,
+        "saturation": 0.208
+      }
+    },
+    "note": "Real-feature positive control: occipital should decode visual features (beats their own elevated nulls) while valence does not. valence_resid_visual tests whether any occipital valence survives removing the visual confound. Effect sizes only; each target judged against its own shift-null, never zero."
+  }
+}

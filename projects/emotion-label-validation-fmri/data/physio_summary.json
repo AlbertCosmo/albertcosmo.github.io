@@ -1,0 +1,378 @@
+{
+  "description": "Physio subject-mean vs human items (top |r|)",
+  "n_runs": 10,
+  "top30_pooled": [
+    {
+      "film": "TearsOfSteel",
+      "channel": "resp",
+      "item": "Muscle",
+      "n_subjects": 5,
+      "r": -0.7965,
+      "n": 588
+    },
+    {
+      "film": "TearsOfSteel",
+      "channel": "resp",
+      "item": "Heartrate",
+      "n_subjects": 5,
+      "r": -0.7423,
+      "n": 588
+    },
+    {
+      "film": "TearsOfSteel",
+      "channel": "resp",
+      "item": "IntenseEmotion",
+      "n_subjects": 5,
+      "r": -0.6984,
+      "n": 588
+    },
+    {
+      "film": "TearsOfSteel",
+      "channel": "resp",
+      "item": "Fear",
+      "n_subjects": 5,
+      "r": -0.6718,
+      "n": 588
+    },
+    {
+      "film": "TearsOfSteel",
+      "channel": "resp",
+      "item": "Anxiety",
+      "n_subjects": 5,
+      "r": -0.6473,
+      "n": 588
+    },
+    {
+      "film": "TearsOfSteel",
+      "channel": "resp",
+      "item": "Stomach",
+      "n_subjects": 5,
+      "r": -0.5286,
+      "n": 588
+    },
+    {
+      "film": "Payload",
+      "channel": "resp",
+      "item": "IntenseEmotion",
+      "n_subjects": 5,
+      "r": -0.508,
+      "n": 1008
+    },
+    {
+      "film": "Payload",
+      "channel": "resp",
+      "item": "Stomach",
+      "n_subjects": 5,
+      "r": -0.5017,
+      "n": 1008
+    },
+    {
+      "film": "Payload",
+      "channel": "resp",
+      "item": "PleasantOther",
+      "n_subjects": 5,
+      "r": 0.4966,
+      "n": 1008
+    },
+    {
+      "film": "TearsOfSteel",
+      "channel": "resp",
+      "item": "Calm",
+      "n_subjects": 5,
+      "r": 0.4755,
+      "n": 588
+    },
+    {
+      "film": "TearsOfSteel",
+      "channel": "ppg_env",
+      "item": "Muscle",
+      "n_subjects": 5,
+      "r": -0.4736,
+      "n": 588
+    },
+    {
+      "film": "Payload",
+      "channel": "resp",
+      "item": "Fear",
+      "n_subjects": 5,
+      "r": -0.4474,
+      "n": 1008
+    },
+    {
+      "film": "TearsOfSteel",
+      "channel": "ppg_env",
+      "item": "IntenseEmotion",
+      "n_subjects": 5,
+      "r": -0.4234,
+      "n": 588
+    },
+    {
+      "film": "TearsOfSteel",
+      "channel": "eda",
+      "item": "IntenseEmotion",
+      "n_subjects": 5,
+      "r": 0.4188,
+      "n": 588
+    },
+    {
+      "film": "TearsOfSteel",
+      "channel": "resp",
+      "item": "PleasantOther",
+      "n_subjects": 5,
+      "r": 0.3893,
+      "n": 588
+    },
+    {
+      "film": "Payload",
+      "channel": "resp",
+      "item": "Muscle",
+      "n_subjects": 5,
+      "r": -0.386,
+      "n": 1008
+    },
+    {
+      "film": "Payload",
+      "channel": "ppg_env",
+      "item": "Calm",
+      "n_subjects": 5,
+      "r": 0.3714,
+      "n": 1008
+    },
+    {
+      "film": "TearsOfSteel",
+      "channel": "ppg_env",
+      "item": "Heartrate",
+      "n_subjects": 5,
+      "r": -0.3648,
+      "n": 588
+    },
+    {
+      "film": "TearsOfSteel",
+      "channel": "eda",
+      "item": "Muscle",
+      "n_subjects": 5,
+      "r": 0.3564,
+      "n": 588
+    },
+    {
+      "film": "Payload",
+      "channel": "ppg_env",
+      "item": "Stomach",
+      "n_subjects": 5,
+      "r": -0.3456,
+      "n": 1008
+    },
+    {
+      "film": "Payload",
+      "channel": "hr_bpm",
+      "item": "Stomach",
+      "n_subjects": 5,
+      "r": 0.3451,
+      "n": 1008
+    },
+    {
+      "film": "TearsOfSteel",
+      "channel": "eda",
+      "item": "Fear",
+      "n_subjects": 5,
+      "r": 0.3444,
+      "n": 588
+    },
+    {
+      "film": "TearsOfSteel",
+      "channel": "ppg_env",
+      "item": "Anxiety",
+      "n_subjects": 5,
+      "r": -0.3421,
+      "n": 588
+    },
+    {
+      "film": "TearsOfSteel",
+      "channel": "ppg_env",
+      "item": "Fear",
+      "n_subjects": 5,
+      "r": -0.3344,
+      "n": 588
+    },
+    {
+      "film": "Payload",
+      "channel": "ppg_env",
+      "item": "Anxiety",
+      "n_subjects": 5,
+      "r": -0.3272,
+      "n": 1008
+    },
+    {
+      "film": "Payload",
+      "channel": "eda",
+      "item": "Stomach",
+      "n_subjects": 5,
+      "r": 0.323,
+      "n": 1008
+    },
+    {
+      "film": "Payload",
+      "channel": "ppg_env",
+      "item": "IntenseEmotion",
+      "n_subjects": 5,
+      "r": -0.2861,
+      "n": 1008
+    },
+    {
+      "film": "Payload",
+      "channel": "ppg_env",
+      "item": "Heartrate",
+      "n_subjects": 5,
+      "r": -0.2833,
+      "n": 1008
+    },
+    {
+      "film": "TearsOfSteel",
+      "channel": "eda",
+      "item": "PleasantOther",
+      "n_subjects": 5,
+      "r": -0.2604,
+      "n": 588
+    },
+    {
+      "film": "TearsOfSteel",
+      "channel": "eda",
+      "item": "Stomach",
+      "n_subjects": 5,
+      "r": 0.2552,
+      "n": 588
+    }
+  ],
+  "pleasantother": [
+    {
+      "film": "Payload",
+      "channel": "resp",
+      "item": "PleasantOther",
+      "n_subjects": 5,
+      "r": 0.4966,
+      "n": 1008
+    },
+    {
+      "film": "TearsOfSteel",
+      "channel": "resp",
+      "item": "PleasantOther",
+      "n_subjects": 5,
+      "r": 0.3893,
+      "n": 588
+    },
+    {
+      "film": "TearsOfSteel",
+      "channel": "eda",
+      "item": "PleasantOther",
+      "n_subjects": 5,
+      "r": -0.2604,
+      "n": 588
+    },
+    {
+      "film": "TearsOfSteel",
+      "channel": "hr_bpm",
+      "item": "PleasantOther",
+      "n_subjects": 5,
+      "r": 0.1962,
+      "n": 588
+    },
+    {
+      "film": "Payload",
+      "channel": "eda",
+      "item": "PleasantOther",
+      "n_subjects": 5,
+      "r": 0.1799,
+      "n": 1008
+    },
+    {
+      "film": "Payload",
+      "channel": "hr_bpm",
+      "item": "PleasantOther",
+      "n_subjects": 5,
+      "r": -0.1796,
+      "n": 1008
+    },
+    {
+      "film": "Payload",
+      "channel": "ppg_env",
+      "item": "PleasantOther",
+      "n_subjects": 5,
+      "r": 0.083,
+      "n": 1008
+    },
+    {
+      "film": "TearsOfSteel",
+      "channel": "ppg_env",
+      "item": "PleasantOther",
+      "n_subjects": 5,
+      "r": 0.0325,
+      "n": 588
+    }
+  ],
+  "heartrate_item": [
+    {
+      "film": "TearsOfSteel",
+      "channel": "resp",
+      "item": "Heartrate",
+      "n_subjects": 5,
+      "r": -0.7423,
+      "n": 588
+    },
+    {
+      "film": "TearsOfSteel",
+      "channel": "ppg_env",
+      "item": "Heartrate",
+      "n_subjects": 5,
+      "r": -0.3648,
+      "n": 588
+    },
+    {
+      "film": "Payload",
+      "channel": "ppg_env",
+      "item": "Heartrate",
+      "n_subjects": 5,
+      "r": -0.2833,
+      "n": 1008
+    },
+    {
+      "film": "TearsOfSteel",
+      "channel": "eda",
+      "item": "Heartrate",
+      "n_subjects": 5,
+      "r": 0.2419,
+      "n": 588
+    },
+    {
+      "film": "Payload",
+      "channel": "eda",
+      "item": "Heartrate",
+      "n_subjects": 5,
+      "r": -0.221,
+      "n": 1008
+    },
+    {
+      "film": "Payload",
+      "channel": "hr_bpm",
+      "item": "Heartrate",
+      "n_subjects": 5,
+      "r": 0.1192,
+      "n": 1008
+    },
+    {
+      "film": "TearsOfSteel",
+      "channel": "hr_bpm",
+      "item": "Heartrate",
+      "n_subjects": 5,
+      "r": 0.0663,
+      "n": 588
+    },
+    {
+      "film": "Payload",
+      "channel": "resp",
+      "item": "Heartrate",
+      "n_subjects": 5,
+      "r": -0.0278,
+      "n": 1008
+    }
+  ]
+}

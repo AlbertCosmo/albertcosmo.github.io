@@ -1,0 +1,656 @@
+{
+  "description": "50-item annotation psychometrics (variance, autocorr, inter-item, PCA)",
+  "item_summary": [
+    {
+      "item": "PleasantOther",
+      "n_films": 14,
+      "mean_var": 0.6083,
+      "mean_mean": 0.0226,
+      "median_acf_1e_lag_s": 48,
+      "mean_acf_1e_lag_s": 51.4
+    },
+    {
+      "item": "Stomach",
+      "n_films": 14,
+      "mean_var": 0.5958,
+      "mean_mean": 0.0142,
+      "median_acf_1e_lag_s": 45,
+      "mean_acf_1e_lag_s": 45.6
+    },
+    {
+      "item": "Fear",
+      "n_films": 14,
+      "mean_var": 0.5952,
+      "mean_mean": 0.0125,
+      "median_acf_1e_lag_s": 34,
+      "mean_acf_1e_lag_s": 45.4
+    },
+    {
+      "item": "Anxiety",
+      "n_films": 14,
+      "mean_var": 0.593,
+      "mean_mean": 0.0079,
+      "median_acf_1e_lag_s": 29,
+      "mean_acf_1e_lag_s": 33.2
+    },
+    {
+      "item": "Strong",
+      "n_films": 14,
+      "mean_var": 0.5907,
+      "mean_mean": -0.0172,
+      "median_acf_1e_lag_s": 47,
+      "mean_acf_1e_lag_s": 55.0
+    },
+    {
+      "item": "PleasantSelf",
+      "n_films": 14,
+      "mean_var": 0.585,
+      "mean_mean": -0.0002,
+      "median_acf_1e_lag_s": 51,
+      "mean_acf_1e_lag_s": 53.4
+    },
+    {
+      "item": "Stop",
+      "n_films": 14,
+      "mean_var": 0.5727,
+      "mean_mean": -0.025,
+      "median_acf_1e_lag_s": 41,
+      "mean_acf_1e_lag_s": 48.4
+    },
+    {
+      "item": "Urgency",
+      "n_films": 14,
+      "mean_var": 0.565,
+      "mean_mean": -0.0243,
+      "median_acf_1e_lag_s": 55,
+      "mean_acf_1e_lag_s": 60.4
+    },
+    {
+      "item": "Undo",
+      "n_films": 14,
+      "mean_var": 0.5579,
+      "mean_mean": 0.0018,
+      "median_acf_1e_lag_s": 54,
+      "mean_acf_1e_lag_s": 60.5
+    },
+    {
+      "item": "Controlled",
+      "n_films": 14,
+      "mean_var": 0.5422,
+      "mean_mean": 0.02,
+      "median_acf_1e_lag_s": 54,
+      "mean_acf_1e_lag_s": 60.2
+    },
+    {
+      "item": "Tears",
+      "n_films": 14,
+      "mean_var": 0.5297,
+      "mean_mean": 0.0067,
+      "median_acf_1e_lag_s": 39,
+      "mean_acf_1e_lag_s": 48.8
+    },
+    {
+      "item": "Good",
+      "n_films": 14,
+      "mean_var": 0.5228,
+      "mean_mean": -0.0019,
+      "median_acf_1e_lag_s": 51,
+      "mean_acf_1e_lag_s": 63.1
+    },
+    {
+      "item": "IntenseEmotion",
+      "n_films": 14,
+      "mean_var": 0.5192,
+      "mean_mean": -0.0095,
+      "median_acf_1e_lag_s": 50,
+      "mean_acf_1e_lag_s": 52.9
+    },
+    {
+      "item": "Repeat",
+      "n_films": 14,
+      "mean_var": 0.505,
+      "mean_mean": 0.0051,
+      "median_acf_1e_lag_s": 38,
+      "mean_acf_1e_lag_s": 42.1
+    },
+    {
+      "item": "Oppose",
+      "n_films": 14,
+      "mean_var": 0.5045,
+      "mean_mean": 0.0028,
+      "median_acf_1e_lag_s": 40,
+      "mean_acf_1e_lag_s": 49.0
+    },
+    {
+      "item": "Move",
+      "n_films": 14,
+      "mean_var": 0.5038,
+      "mean_mean": 0.0261,
+      "median_acf_1e_lag_s": 28,
+      "mean_acf_1e_lag_s": 33.4
+    },
+    {
+      "item": "Pride",
+      "n_films": 14,
+      "mean_var": 0.5027,
+      "mean_mean": 0.0219,
+      "median_acf_1e_lag_s": 39,
+      "mean_acf_1e_lag_s": 46.1
+    },
+    {
+      "item": "Suddenly",
+      "n_films": 14,
+      "mean_var": 0.4982,
+      "mean_mean": 0.015,
+      "median_acf_1e_lag_s": 11,
+      "mean_acf_1e_lag_s": 11.4
+    },
+    {
+      "item": "Bad",
+      "n_films": 14,
+      "mean_var": 0.4978,
+      "mean_mean": -0.0233,
+      "median_acf_1e_lag_s": 61,
+      "mean_acf_1e_lag_s": 67.4
+    },
+    {
+      "item": "SocialNorms",
+      "n_films": 14,
+      "mean_var": 0.4947,
+      "mean_mean": -0.0235,
+      "median_acf_1e_lag_s": 29,
+      "mean_acf_1e_lag_s": 30.9
+    },
+    {
+      "item": "Surprise",
+      "n_films": 14,
+      "mean_var": 0.4812,
+      "mean_mean": -0.0037,
+      "median_acf_1e_lag_s": 12,
+      "mean_acf_1e_lag_s": 14.1
+    },
+    {
+      "item": "Happiness",
+      "n_films": 14,
+      "mean_var": 0.4808,
+      "mean_mean": -0.014,
+      "median_acf_1e_lag_s": 48,
+      "mean_acf_1e_lag_s": 51.8
+    },
+    {
+      "item": "Eyebrows",
+      "n_films": 14,
+      "mean_var": 0.4705,
+      "mean_mean": 0.0168,
+      "median_acf_1e_lag_s": 29,
+      "mean_acf_1e_lag_s": 32.2
+    },
+    {
+      "item": "Sad",
+      "n_films": 14,
+      "mean_var": 0.4685,
+      "mean_mean": -0.012,
+      "median_acf_1e_lag_s": 69,
+      "mean_acf_1e_lag_s": 67.4
+    },
+    {
+      "item": "Standards",
+      "n_films": 14,
+      "mean_var": 0.467,
+      "mean_mean": -0.0024,
+      "median_acf_1e_lag_s": 28,
+      "mean_acf_1e_lag_s": 33.1
+    },
+    {
+      "item": "WarmHeartedness",
+      "n_films": 14,
+      "mean_var": 0.4665,
+      "mean_mean": 0.0006,
+      "median_acf_1e_lag_s": 31,
+      "mean_acf_1e_lag_s": 37.8
+    },
+    {
+      "item": "Muscle",
+      "n_films": 14,
+      "mean_var": 0.465,
+      "mean_mean": 0.0045,
+      "median_acf_1e_lag_s": 66,
+      "mean_acf_1e_lag_s": 65.4
+    },
+    {
+      "item": "Lips",
+      "n_films": 14,
+      "mean_var": 0.4491,
+      "mean_mean": 0.0141,
+      "median_acf_1e_lag_s": 41,
+      "mean_acf_1e_lag_s": 42.4
+    },
+    {
+      "item": "Command",
+      "n_films": 14,
+      "mean_var": 0.446,
+      "mean_mean": -0.0042,
+      "median_acf_1e_lag_s": 31,
+      "mean_acf_1e_lag_s": 35.4
+    },
+    {
+      "item": "Anger",
+      "n_films": 14,
+      "mean_var": 0.4451,
+      "mean_mean": -0.0378,
+      "median_acf_1e_lag_s": 46,
+      "mean_acf_1e_lag_s": 52.6
+    },
+    {
+      "item": "Frown",
+      "n_films": 14,
+      "mean_var": 0.4409,
+      "mean_mean": 0.0083,
+      "median_acf_1e_lag_s": 36,
+      "mean_acf_1e_lag_s": 38.1
+    },
+    {
+      "item": "Tackle",
+      "n_films": 14,
+      "mean_var": 0.4397,
+      "mean_mean": 0.0002,
+      "median_acf_1e_lag_s": 40,
+      "mean_acf_1e_lag_s": 52.0
+    },
+    {
+      "item": "Calm",
+      "n_films": 14,
+      "mean_var": 0.4359,
+      "mean_mean": 0.0007,
+      "median_acf_1e_lag_s": 57,
+      "mean_acf_1e_lag_s": 57.1
+    },
+    {
+      "item": "Smile",
+      "n_films": 14,
+      "mean_var": 0.4356,
+      "mean_mean": -0.0021,
+      "median_acf_1e_lag_s": 20,
+      "mean_acf_1e_lag_s": 30.4
+    },
+    {
+      "item": "Disgust",
+      "n_films": 14,
+      "mean_var": 0.4306,
+      "mean_mean": -0.0205,
+      "median_acf_1e_lag_s": 25,
+      "mean_acf_1e_lag_s": 32.4
+    },
+    {
+      "item": "Guilt",
+      "n_films": 14,
+      "mean_var": 0.4285,
+      "mean_mean": -0.0242,
+      "median_acf_1e_lag_s": 52,
+      "mean_acf_1e_lag_s": 59.9
+    },
+    {
+      "item": "Regard",
+      "n_films": 14,
+      "mean_var": 0.4282,
+      "mean_mean": -0.009,
+      "median_acf_1e_lag_s": 49,
+      "mean_acf_1e_lag_s": 54.0
+    },
+    {
+      "item": "Satisfaction",
+      "n_films": 14,
+      "mean_var": 0.424,
+      "mean_mean": -0.0232,
+      "median_acf_1e_lag_s": 55,
+      "mean_acf_1e_lag_s": 52.3
+    },
+    {
+      "item": "AtEase",
+      "n_films": 14,
+      "mean_var": 0.4133,
+      "mean_mean": -0.01,
+      "median_acf_1e_lag_s": 39,
+      "mean_acf_1e_lag_s": 45.1
+    },
+    {
+      "item": "Throat",
+      "n_films": 14,
+      "mean_var": 0.4083,
+      "mean_mean": 0.0313,
+      "median_acf_1e_lag_s": 62,
+      "mean_acf_1e_lag_s": 66.3
+    },
+    {
+      "item": "Support",
+      "n_films": 14,
+      "mean_var": 0.397,
+      "mean_mean": -0.018,
+      "median_acf_1e_lag_s": 47,
+      "mean_acf_1e_lag_s": 55.1
+    },
+    {
+      "item": "Warm",
+      "n_films": 14,
+      "mean_var": 0.3937,
+      "mean_mean": -0.0337,
+      "median_acf_1e_lag_s": 47,
+      "mean_acf_1e_lag_s": 60.9
+    },
+    {
+      "item": "Care",
+      "n_films": 14,
+      "mean_var": 0.3926,
+      "mean_mean": -0.0073,
+      "median_acf_1e_lag_s": 46,
+      "mean_acf_1e_lag_s": 57.2
+    },
+    {
+      "item": "GoalsOther",
+      "n_films": 14,
+      "mean_var": 0.3887,
+      "mean_mean": 0.0101,
+      "median_acf_1e_lag_s": 55,
+      "mean_acf_1e_lag_s": 55.1
+    },
+    {
+      "item": "Heartrate",
+      "n_films": 14,
+      "mean_var": 0.3825,
+      "mean_mean": -0.02,
+      "median_acf_1e_lag_s": 62,
+      "mean_acf_1e_lag_s": 72.3
+    },
+    {
+      "item": "Love",
+      "n_films": 14,
+      "mean_var": 0.3759,
+      "mean_mean": -0.0038,
+      "median_acf_1e_lag_s": 54,
+      "mean_acf_1e_lag_s": 66.9
+    },
+    {
+      "item": "Alert",
+      "n_films": 14,
+      "mean_var": 0.3589,
+      "mean_mean": 0.0348,
+      "median_acf_1e_lag_s": 68,
+      "mean_acf_1e_lag_s": 63.6
+    },
+    {
+      "item": "Attention",
+      "n_films": 14,
+      "mean_var": 0.3555,
+      "mean_mean": 0.0013,
+      "median_acf_1e_lag_s": 72,
+      "mean_acf_1e_lag_s": 82.0
+    },
+    {
+      "item": "Agent",
+      "n_films": 14,
+      "mean_var": 0.3549,
+      "mean_mean": 0.0087,
+      "median_acf_1e_lag_s": 51,
+      "mean_acf_1e_lag_s": 62.9
+    },
+    {
+      "item": "Predictable",
+      "n_films": 14,
+      "mean_var": 0.3373,
+      "mean_mean": -0.0031,
+      "median_acf_1e_lag_s": 24,
+      "mean_acf_1e_lag_s": 26.0
+    }
+  ],
+  "inter_item_top20_abs_r": [
+    {
+      "item_a": "Bad",
+      "item_b": "Good",
+      "mean_r": -0.834
+    },
+    {
+      "item_a": "Good",
+      "item_b": "PleasantSelf",
+      "mean_r": 0.834
+    },
+    {
+      "item_a": "Oppose",
+      "item_b": "Stop",
+      "mean_r": 0.822
+    },
+    {
+      "item_a": "Bad",
+      "item_b": "PleasantSelf",
+      "mean_r": -0.813
+    },
+    {
+      "item_a": "Good",
+      "item_b": "PleasantOther",
+      "mean_r": 0.809
+    },
+    {
+      "item_a": "PleasantSelf",
+      "item_b": "Undo",
+      "mean_r": -0.804
+    },
+    {
+      "item_a": "Good",
+      "item_b": "Happiness",
+      "mean_r": 0.794
+    },
+    {
+      "item_a": "Good",
+      "item_b": "Undo",
+      "mean_r": -0.79
+    },
+    {
+      "item_a": "Happiness",
+      "item_b": "PleasantSelf",
+      "mean_r": 0.789
+    },
+    {
+      "item_a": "PleasantOther",
+      "item_b": "PleasantSelf",
+      "mean_r": 0.787
+    },
+    {
+      "item_a": "Good",
+      "item_b": "Strong",
+      "mean_r": 0.778
+    },
+    {
+      "item_a": "PleasantOther",
+      "item_b": "Repeat",
+      "mean_r": 0.777
+    },
+    {
+      "item_a": "Happiness",
+      "item_b": "PleasantOther",
+      "mean_r": 0.775
+    },
+    {
+      "item_a": "Bad",
+      "item_b": "Undo",
+      "mean_r": 0.772
+    },
+    {
+      "item_a": "PleasantSelf",
+      "item_b": "Repeat",
+      "mean_r": 0.771
+    },
+    {
+      "item_a": "PleasantOther",
+      "item_b": "Undo",
+      "mean_r": -0.763
+    },
+    {
+      "item_a": "Repeat",
+      "item_b": "Undo",
+      "mean_r": -0.761
+    },
+    {
+      "item_a": "Stop",
+      "item_b": "Undo",
+      "mean_r": 0.753
+    },
+    {
+      "item_a": "Bad",
+      "item_b": "Calm",
+      "mean_r": -0.752
+    },
+    {
+      "item_a": "Bad",
+      "item_b": "PleasantOther",
+      "mean_r": -0.751
+    }
+  ],
+  "inter_item_bottom10_abs_r": [
+    {
+      "item_a": "Love",
+      "item_b": "Tackle",
+      "mean_r": 0.001
+    },
+    {
+      "item_a": "Attention",
+      "item_b": "Predictable",
+      "mean_r": 0.004
+    },
+    {
+      "item_a": "Bad",
+      "item_b": "Love",
+      "mean_r": -0.004
+    },
+    {
+      "item_a": "Agent",
+      "item_b": "Strong",
+      "mean_r": -0.011
+    },
+    {
+      "item_a": "Anger",
+      "item_b": "Attention",
+      "mean_r": -0.013
+    },
+    {
+      "item_a": "Love",
+      "item_b": "Urgency",
+      "mean_r": 0.014
+    },
+    {
+      "item_a": "Alert",
+      "item_b": "GoalsOther",
+      "mean_r": 0.015
+    },
+    {
+      "item_a": "Alert",
+      "item_b": "Love",
+      "mean_r": 0.016
+    },
+    {
+      "item_a": "Care",
+      "item_b": "WarmHeartedness",
+      "mean_r": -0.016
+    },
+    {
+      "item_a": "Regard",
+      "item_b": "Support",
+      "mean_r": -0.017
+    }
+  ],
+  "pca_payload": {
+    "film": "Payload",
+    "n_seconds": 1008,
+    "n_items": 50,
+    "variance_explained_top5": [
+      0.363,
+      0.1365,
+      0.1087,
+      0.0534,
+      0.0465
+    ],
+    "pc1_top_loadings": [
+      {
+        "item": "Stop",
+        "loading": 0.205
+      },
+      {
+        "item": "Oppose",
+        "loading": 0.196
+      },
+      {
+        "item": "Repeat",
+        "loading": -0.195
+      },
+      {
+        "item": "PleasantSelf",
+        "loading": -0.194
+      },
+      {
+        "item": "Undo",
+        "loading": 0.191
+      },
+      {
+        "item": "Bad",
+        "loading": 0.189
+      },
+      {
+        "item": "Guilt",
+        "loading": 0.185
+      },
+      {
+        "item": "Frown",
+        "loading": 0.184
+      },
+      {
+        "item": "Good",
+        "loading": -0.18
+      },
+      {
+        "item": "Stomach",
+        "loading": 0.178
+      }
+    ],
+    "pc2_top_loadings": [
+      {
+        "item": "Sad",
+        "loading": 0.319
+      },
+      {
+        "item": "Tears",
+        "loading": 0.318
+      },
+      {
+        "item": "Love",
+        "loading": 0.299
+      },
+      {
+        "item": "Regard",
+        "loading": 0.294
+      },
+      {
+        "item": "GoalsOther",
+        "loading": 0.277
+      },
+      {
+        "item": "Controlled",
+        "loading": 0.24
+      },
+      {
+        "item": "WarmHeartedness",
+        "loading": 0.214
+      },
+      {
+        "item": "Agent",
+        "loading": 0.194
+      },
+      {
+        "item": "Pride",
+        "loading": 0.191
+      },
+      {
+        "item": "Predictable",
+        "loading": 0.182
+      }
+    ]
+  },
+  "n_films_in_corr": 14
+}

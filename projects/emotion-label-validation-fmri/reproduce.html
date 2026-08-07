@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reproduce · Emotion label validation fMRI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+  <header class="site sans">
+    <div class="inner">
+      <a class="brand" href="index.html">Emotion labels · fMRI</a>
+      <nav class="site">
+        <a href="index.html">Overview</a>
+        <a href="results.html">Results</a>
+        <a href="methods.html">Methods</a>
+        <a href="data.html">Data</a>
+        <a href="status.html">Status</a>
+        <a class="active" href="reproduce.html">Reproduce</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <h1>Reproduce</h1>
+    <pre>git clone https://github.com/AlbertCosmo/emotion-label-validation-fmri.git
+cd emotion-label-validation-fmri
+# Python 3.11–3.12 recommended
+python -m venv .venv && source .venv/bin/activate
+pip install numpy scipy pandas scikit-learn nibabel nilearn matplotlib
+
+# Annotations + minimal BOLD subset (~9 GB)
+bash scripts/download_openneuro_subset.sh
+
+# Optional: CC Tears of Steel
+bash scripts/download_films_cc.sh
+
+python src/analysis/extract_multi_item.py --all-items
+python src/analysis/run_all_stats.py
+python src/figures/make_publication_figures.py
+
+# Brain (requires local BOLD under ~/ds004892)
+python src/analysis/decode_brain.py extract Payload sub-S08 sub-S05 sub-S11 sub-S15 sub-S06
+python src/analysis/decode_brain.py extract TearsOfSteel sub-S31 sub-S08 sub-S11 sub-S25 sub-S04
+python src/analysis/extract_affective_rois.py
+python src/analysis/decode_affective.py
+python src/analysis/decode_multi_item_brain.py --rois network --items all
+python src/analysis/analyze_physio.py</pre>
+    <p class="meta sans">Full handoff notes live in the repo under <code>docs/SESSION_NOTES.md</code> and <code>docs/WEBSITE_HANDOFF.md</code>.</p>
+  </main>
+  <footer class="site"><div class="inner"><a href="index.html">Overview</a></div></footer>
+</body>
+</html>

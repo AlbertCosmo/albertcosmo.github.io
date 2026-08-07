@@ -1,0 +1,185 @@
+{
+  "description": "Multimodal univariate highlights",
+  "rows": [
+    {
+      "film": "TearsOfSteel",
+      "item": "PleasantOther",
+      "text_gemini": 0.4633,
+      "text_bert": 0.3405,
+      "vis_motion": -0.2327,
+      "aud_rms_energy": -0.225,
+      "fusion_all": -0.0323
+    },
+    {
+      "film": "TearsOfSteel",
+      "item": "Fear",
+      "text_gemini": -0.3268,
+      "text_bert": -0.1782,
+      "vis_motion": 0.3338,
+      "aud_rms_energy": 0.3445,
+      "fusion_all": -0.1066
+    },
+    {
+      "film": "TearsOfSteel",
+      "item": "Anxiety",
+      "text_gemini": -0.3416,
+      "text_bert": -0.2081,
+      "vis_motion": 0.2956,
+      "aud_rms_energy": 0.3358,
+      "fusion_all": -0.0593
+    },
+    {
+      "film": "TearsOfSteel",
+      "item": "Happiness",
+      "text_gemini": 0.4373,
+      "text_bert": 0.2057,
+      "vis_motion": -0.0229,
+      "aud_rms_energy": -0.0241,
+      "fusion_all": 0.0615
+    },
+    {
+      "film": "TearsOfSteel",
+      "item": "IntenseEmotion",
+      "text_gemini": -0.3246,
+      "text_bert": -0.097,
+      "vis_motion": 0.2556,
+      "aud_rms_energy": 0.4685,
+      "fusion_all": 0.1005
+    },
+    {
+      "film": "TearsOfSteel",
+      "item": "Calm",
+      "text_gemini": 0.344,
+      "text_bert": 0.2313,
+      "vis_motion": -0.3102,
+      "aud_rms_energy": -0.519,
+      "fusion_all": 0.0877
+    },
+    {
+      "film": "TearsOfSteel",
+      "item": "Anger",
+      "text_gemini": -0.2556,
+      "text_bert": -0.1236,
+      "vis_motion": 0.0741,
+      "aud_rms_energy": -0.0458,
+      "fusion_all": -0.2949
+    },
+    {
+      "film": "TearsOfSteel",
+      "item": "Sad",
+      "text_gemini": -0.4674,
+      "text_bert": -0.3589,
+      "vis_motion": 0.0489,
+      "aud_rms_energy": 0.0718,
+      "fusion_all": -0.3845
+    },
+    {
+      "film": "TearsOfSteel",
+      "item": "Surprise",
+      "text_gemini": -0.228,
+      "text_bert": -0.0958,
+      "vis_motion": -0.0371,
+      "aud_rms_energy": 0.0301,
+      "fusion_all": -0.0024
+    },
+    {
+      "film": "TearsOfSteel",
+      "item": "Heartrate",
+      "text_gemini": -0.2538,
+      "text_bert": -0.1106,
+      "vis_motion": 0.2244,
+      "aud_rms_energy": 0.3334,
+      "fusion_all": -0.442
+    },
+    {
+      "film": "Payload",
+      "item": "PleasantOther",
+      "text_gemini": 0.1106,
+      "text_bert": 0.1535,
+      "vis_motion": 0.2082,
+      "aud_rms_energy": null,
+      "fusion_all": -0.3858
+    },
+    {
+      "film": "Payload",
+      "item": "Fear",
+      "text_gemini": -0.1137,
+      "text_bert": -0.1686,
+      "vis_motion": -0.2361,
+      "aud_rms_energy": null,
+      "fusion_all": 0.3038
+    },
+    {
+      "film": "Payload",
+      "item": "Anxiety",
+      "text_gemini": 0.0508,
+      "text_bert": 0.0541,
+      "vis_motion": -0.0736,
+      "aud_rms_energy": null,
+      "fusion_all": 0.066
+    },
+    {
+      "film": "Payload",
+      "item": "Happiness",
+      "text_gemini": 0.0708,
+      "text_bert": 0.1427,
+      "vis_motion": 0.2998,
+      "aud_rms_energy": null,
+      "fusion_all": -0.1865
+    },
+    {
+      "film": "Payload",
+      "item": "IntenseEmotion",
+      "text_gemini": -0.0034,
+      "text_bert": 0.0695,
+      "vis_motion": -0.1395,
+      "aud_rms_energy": null,
+      "fusion_all": 0.2081
+    },
+    {
+      "film": "Payload",
+      "item": "Calm",
+      "text_gemini": 0.0556,
+      "text_bert": 0.1706,
+      "vis_motion": 0.0484,
+      "aud_rms_energy": null,
+      "fusion_all": -0.0735
+    },
+    {
+      "film": "Payload",
+      "item": "Anger",
+      "text_gemini": -0.1201,
+      "text_bert": -0.1422,
+      "vis_motion": -0.1147,
+      "aud_rms_energy": null,
+      "fusion_all": -0.2137
+    },
+    {
+      "film": "Payload",
+      "item": "Sad",
+      "text_gemini": 0.0327,
+      "text_bert": 0.0285,
+      "vis_motion": -0.2526,
+      "aud_rms_energy": null,
+      "fusion_all": -0.1062
+    },
+    {
+      "film": "Payload",
+      "item": "Surprise",
+      "text_gemini": -0.0749,
+      "text_bert": -0.0372,
+      "vis_motion": -0.0898,
+      "aud_rms_energy": null,
+      "fusion_all": 0.114
+    },
+    {
+      "film": "Payload",
+      "item": "Heartrate",
+      "text_gemini": -0.1076,
+      "text_bert": -0.012,
+      "vis_motion": 0.1221,
+      "aud_rms_energy": null,
+      "fusion_all": -0.3464
+    }
+  ]
+}
