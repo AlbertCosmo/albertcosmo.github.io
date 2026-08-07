@@ -41,63 +41,58 @@
       All charts load from the publication JSON bundle (no invented numbers).
       Hover for CIs / counts. Interpretations sit under each panel.
     </p>
-    <div id="load-status" class="loading">Loading explore_bundle.json…</div>
+    <div id="load-status" class="loading">Loading explore_bundle.json?v=3way2…</div>
 
-    <div class="callout">
-      <strong>Three-way text models:</strong> BERT · Gemini · <strong>Grok (grok-4.5)</strong>.
-      Grok was scored with the same isolation design as Gemini (one dialogue segment → 0–1 valence → 1&nbsp;Hz grid).
-      Segment transcripts exist in-repo for <strong>5 films</strong> (AfterTheRain, LessonLearned, Payload, Sintel, TearsOfSteel);
-      fair head-to-head uses that set. BERT/Gemini also keep the original 12-film tables.
-      See <a href="assets/figures/three_way_pleasantother.png">three-way figure</a>.
+        <div class="callout">
+      <strong>Always three models:</strong> <span style="color:#4a4a4a;font-weight:600">BERT</span> ·
+      <span style="color:#1a5f7a;font-weight:600">Gemini</span> ·
+      <span style="color:#7c3aed;font-weight:600">Grok</span>.
+      Every text chart below plots all three together (fair 5-film head-to-head where Grok has transcripts).
+      Isolation scoring · film-block CIs · effect sizes only.
+    </div>
+
+    <h2>0 · Head-to-head (BERT · Gemini · Grok)</h2>
+    <div class="chart-box">
+      <div class="chart-wrap" style="min-height:320px"><canvas id="chart-hero"></canvas></div>
+    </div>
+    <div class="chart-box">
+      <div class="chart-wrap" style="min-height:340px"><canvas id="chart-hero-film"></canvas></div>
+    </div>
+    <div class="interp">
+      <strong>Read this first.</strong> Fair 5-film PleasantOther: BERT ≈ +0.018 · Gemini ≈ +0.113 · <strong>Grok ≈ +0.117</strong>.
+      Grok matches Gemini; both beat BERT. None replaces continuous human labels.
     </div>
     <figure class="figure">
-      <img src="assets/figures/three_way_pleasantother.png" alt="BERT Gemini Grok PleasantOther" />
-      <figcaption>Fair 5-film head-to-head vs human PleasantOther (pooled + per film). Grok ≈ Gemini; both &gt; BERT.</figcaption>
-    </figure>
-    <figure class="figure">
-      <img src="assets/figures/three_way_selected_items.png" alt="Selected items three-way" />
-      <figcaption>Selected human items, same 5-film set for all three models.</figcaption>
+      <img src="assets/figures/three_way_hero.png" alt="BERT Gemini Grok hero" />
+      <figcaption>Static publication figure (same numbers as the interactive bars above).</figcaption>
     </figure>
 
-    <h2>1 · Text × 50 human items (pooled)</h2>
+    <h2>1 · GRID items — all three models side-by-side</h2>
     <div class="controls">
-      <label>Model
-        <select id="text-model">
-          <option value="gemini" selected>Gemini</option>
-          <option value="bert">BERT</option>
-          <option value="grok">Grok</option>
-        </select>
-      </label>
       <label>Sort
         <select id="text-sort">
           <option value="abs" selected>|r| descending</option>
           <option value="signed">signed r descending</option>
         </select>
       </label>
+      <span class="meta">Grouped bars: grey=BERT · teal=Gemini · purple=Grok</span>
     </div>
     <div class="chart-box">
       <div class="chart-wrap" style="min-height:520px"><canvas id="chart-text"></canvas></div>
     </div>
     <div class="interp" id="text-interp"></div>
 
-    <h2>2 · Per-film text agreement (pick an item)</h2>
+    <h2>2 · Per-film (pick item) — always three bars per film</h2>
     <div class="controls">
       <label>Item <select id="film-item"></select></label>
-      <label>Model
-        <select id="film-model">
-          <option value="gemini" selected>Gemini</option>
-          <option value="bert">BERT</option>
-          <option value="grok">Grok</option>
-        </select>
-      </label>
       <span class="meta" id="film-pool"></span>
     </div>
     <div class="chart-box">
-      <div class="chart-wrap"><canvas id="chart-film"></canvas></div>
+      <div class="chart-wrap" style="min-height:360px"><canvas id="chart-film"></canvas></div>
     </div>
     <div class="interp" id="film-interp"></div>
 
-    <h2>3 · Affective ROIs — PleasantOther (gated LOSO)</h2>
+<h2>3 · Affective ROIs — PleasantOther (gated LOSO)</h2>
     <div class="chart-box">
       <div class="chart-wrap"><canvas id="chart-aff"></canvas></div>
     </div>
@@ -197,7 +192,7 @@
     </div>
 
     <p class="meta" style="margin-top:2rem">
-      Data file: <a href="data/explore_bundle.json"><code>data/explore_bundle.json</code></a> ·
+      Data file: <a href="data/explore_bundle.json?v=3way2"><code>data/explore_bundle.json?v=3way2</code></a> ·
       Static figures: <a href="results.html">Results</a> ·
       Paper targets: <a href="publication.html">Publication</a>
     </p>
@@ -211,6 +206,6 @@
     </div>
   </footer>
   <script src="js/nav.js"></script>
-  <script src="js/explore.js"></script>
+  <script src="js/explore.js?v=3way2"></script>
 </body>
 </html>
