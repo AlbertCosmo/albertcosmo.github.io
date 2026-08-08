@@ -45,32 +45,39 @@
     </figure>
 
     <p>
-      Isolation scoring (one dialogue segment → valence → 1&nbsp;Hz).
-      <strong>Fair head-to-head</strong> uses the 5 films with segment transcripts in-repo.
-      Gemini/BERT also have 12-film tables (Grok lacks transcripts for the other 7).
+      <strong>Primary</strong> is the fair <strong>5-film</strong> segment table (lag&nbsp;2&nbsp;s, n=435, BERT · Gemini · Grok exploratory).
+      <strong>Secondary</strong> expands to all <strong>12 dialogue films</strong> at the same segment unit (BERT · Gemini only;
+      remaining-7 boundaries reconstructed from 1&nbsp;Hz BERT runs — no re-scoring).
+      Legacy 1&nbsp;Hz 12-film raw Gemini +0.211 is not the multi-model headline.
     </p>
     <table>
       <thead>
         <tr>
-          <th>Scope</th><th>Model</th><th>Item</th>
-          <th class="num">pooled r</th><th>95% film-block CI</th><th class="num">films</th>
+          <th>Scope</th><th>Unit</th><th>Model</th><th>Item</th>
+          <th class="num">pooled r</th><th>95% film-block CI</th><th class="num">n</th>
         </tr>
       </thead>
       <tbody>
-        <tr><td>Fair 5-film</td><td>BERT</td><td>PleasantOther</td><td class="num">+0.018</td><td>[−0.119, 0.213]</td><td class="num">5</td></tr>
-        <tr><td>Fair 5-film</td><td>Gemini</td><td>PleasantOther</td><td class="num">+0.113</td><td>[0.045, 0.217]</td><td class="num">5</td></tr>
-        <tr class="hit"><td>Fair 5-film</td><td><strong>Grok</strong></td><td>PleasantOther</td><td class="num"><strong>+0.117</strong></td><td>[0.064, 0.231]</td><td class="num">5</td></tr>
-        <tr><td>Full 12-film</td><td>BERT</td><td>PleasantOther</td><td class="num">+0.013</td><td>[−0.063, 0.081]</td><td class="num">12</td></tr>
-        <tr><td>Full 12-film</td><td>Gemini</td><td>PleasantOther</td><td class="num">+0.168</td><td>[+0.060, +0.297] segment lag2</td><td class="num">12</td></tr>
-        <tr><td>Full 12-film</td><td>Gemini</td><td>Happiness</td><td class="num">+0.188</td><td>[0.127, 0.243]</td><td class="num">12</td></tr>
-        <tr><td>Fair 5-film</td><td>Grok</td><td>Happiness</td><td class="num">+0.135</td><td>[0.004, 0.327]</td><td class="num">5</td></tr>
+        <tr class="hit"><td><strong>PRIMARY · fair 5</strong></td><td>segment lag&nbsp;2&nbsp;s</td><td>BERT</td><td>PleasantOther</td><td class="num"><strong>+0.021</strong></td><td>[−0.105, +0.166]</td><td class="num">435 segs</td></tr>
+        <tr class="hit"><td><strong>PRIMARY · fair 5</strong></td><td>segment lag&nbsp;2&nbsp;s</td><td>Gemini</td><td>PleasantOther</td><td class="num"><strong>+0.168</strong></td><td>[+0.060, +0.297]</td><td class="num">435 segs</td></tr>
+        <tr class="hit"><td><strong>PRIMARY · fair 5</strong></td><td>segment lag&nbsp;2&nbsp;s</td><td>Grok (expl.)</td><td>PleasantOther</td><td class="num"><strong>+0.152</strong></td><td>[+0.053, +0.292]</td><td class="num">435 segs</td></tr>
+        <tr><td>Secondary · dialogue 12</td><td>segment lag&nbsp;2&nbsp;s</td><td>BERT</td><td>PleasantOther</td><td class="num">+0.043</td><td>[−0.024, +0.121]</td><td class="num">1261 segs</td></tr>
+        <tr><td>Secondary · dialogue 12</td><td>segment lag&nbsp;2&nbsp;s</td><td>Gemini</td><td>PleasantOther</td><td class="num">+0.180</td><td>[+0.120, +0.241]</td><td class="num">1261 segs</td></tr>
+        <tr><td>Legacy 1&nbsp;Hz · 12 films</td><td>1&nbsp;Hz centered</td><td>Gemini</td><td>PleasantOther</td><td class="num">+0.184</td><td>see multi_film_pool</td><td class="num">4278 s</td></tr>
+        <tr><td>Legacy 1&nbsp;Hz · 12 films</td><td>1&nbsp;Hz raw concat</td><td>Gemini</td><td>PleasantOther</td><td class="num">+0.211</td><td>not headline</td><td class="num">4278 s</td></tr>
       </tbody>
     </table>
     <div class="interp">
-      <strong>Read:</strong> On matched films, <em>Grok ≈ Gemini</em> for continuous PleasantOther and both beat BERT.
-      Tears of Steel is the shared strong film (all three positive; Grok/Gemini ≈ +0.47).
-      No dialogue LLM replaces human continuous annotation at scale.
+      <strong>Read:</strong> Primary stays fair-5. Expanding to 12 dialogue films at segment level (secondary)
+      gives Gemini +0.180 vs BERT +0.043 (gap +0.137); the gap still does not collapse when TearsOfSteel is dropped.
+      Remaining-7 segment boundaries are reconstructed (text unavailable); Spaceman/YouAgain/Chatter/Superhero/ToClaireFromSonny
+      are contamination-tagged (documented second-ranges only for Spaceman, sensitivity table in repo).
+      Film-block CIs remain optimistic under within-film segment dependence (φ≈0.92).
     </div>
+    <figure class="figure">
+      <img src="assets/figures/forest_segment_12.png?v=seg12" alt="FILMS_12 segment forest" />
+      <figcaption><strong>Secondary forest</strong> — 12 dialogue films, segment lag 2&nbsp;s, BERT vs Gemini (fair 5 above the dashed line).</figcaption>
+    </figure>
     <figure class="figure">
       <img src="assets/figures/three_way_pleasantother.png?v=8fb7ddc" alt="Three-way PleasantOther" />
       <figcaption>BERT · Gemini · Grok vs PleasantOther (fair 5-film set).</figcaption>
@@ -85,7 +92,8 @@
     <table>
       <thead><tr><th>Model</th><th>Item</th><th class="num">pooled r</th><th>95% CI</th><th class="num">films</th></tr></thead>
       <tbody>
-        <tr><td>Gemini</td><td>PleasantOther</td><td class="num">+0.168</td><td>[+0.060, +0.297] segment lag2</td><td class="num">12</td></tr>
+        <tr><td>Gemini</td><td>PleasantOther</td><td class="num">+0.168</td><td>[+0.060, +0.297] fair-5 segment lag2 primary</td><td class="num">5 · 435 segs</td></tr>
+        <tr><td>Gemini</td><td>PleasantOther</td><td class="num">+0.180</td><td>[+0.120, +0.241] dialogue-12 segment lag2 secondary</td><td class="num">12 · 1261 segs</td></tr>
         <tr><td>Grok</td><td>PleasantOther</td><td class="num">+0.117</td><td>[0.064, 0.231]</td><td class="num">5</td></tr>
         <tr><td>BERT</td><td>PleasantOther</td><td class="num">+0.013</td><td>[−0.063, 0.081]</td><td class="num">12</td></tr>
         <tr><td>Gemini</td><td>Happiness</td><td class="num">+0.188</td><td>[0.127, 0.243]</td><td class="num">12</td></tr>

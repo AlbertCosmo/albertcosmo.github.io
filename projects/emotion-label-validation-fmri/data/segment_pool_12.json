@@ -1,0 +1,147 @@
+{
+  "description": "SECONDARY segment-level pool for dialogue FILMS_12. Primary fair-5 remains long_text_segment.csv / MIXED_MODEL_TEXT.md.",
+  "role": "secondary",
+  "git_sha": "8147bb2",
+  "csv": "results/publication_tables/long_text_segment_12.csv",
+  "unit": "segment",
+  "lag_s": 2,
+  "item": "PleasantOther",
+  "films": [
+    "AfterTheRain",
+    "BetweenViewings",
+    "Chatter",
+    "LessonLearned",
+    "Payload",
+    "Sintel",
+    "Spaceman",
+    "Superhero",
+    "TearsOfSteel",
+    "TheSecretNumber",
+    "ToClaireFromSonny",
+    "YouAgain"
+  ],
+  "models": [
+    "bert",
+    "gemini"
+  ],
+  "uncertainty_note": "Film-block bootstrap CIs. Segment residual \u03c6\u22480.92 on fair-5; CIs remain optimistic for within-film dependence. More film blocks (12) than fair-5 does not remove that caveat.",
+  "limits": [
+    "Remaining-7 segment boundaries reconstructed from BERT 1 Hz.",
+    "Grok excluded.",
+    "Contaminated films tagged; Spaceman ranges only if CSV is long_text_segment_12_spaceman_clean.csv."
+  ],
+  "full_set": [
+    {
+      "drop": null,
+      "model": "bert",
+      "pooled_r_centered": 0.0433,
+      "fisher_z_mean_r": 0.0923,
+      "n_segments": 1261,
+      "n_films": 12,
+      "per_film_r": {
+        "AfterTheRain": -0.2133,
+        "BetweenViewings": 0.1433,
+        "Chatter": 0.5697,
+        "LessonLearned": -0.0725,
+        "Payload": 0.0547,
+        "Sintel": 0.177,
+        "Spaceman": -0.0881,
+        "Superhero": 0.0253,
+        "TearsOfSteel": 0.2529,
+        "TheSecretNumber": 0.1928,
+        "ToClaireFromSonny": 0.0363,
+        "YouAgain": -0.0522
+      },
+      "block_boot_ci95_centered": [
+        -0.0242,
+        0.1211
+      ],
+      "block_boot_ci95_fisher": [
+        -0.0217,
+        0.2245
+      ],
+      "n_film_blocks": 12
+    },
+    {
+      "drop": null,
+      "model": "gemini",
+      "pooled_r_centered": 0.18,
+      "fisher_z_mean_r": 0.188,
+      "n_segments": 1261,
+      "n_films": 12,
+      "per_film_r": {
+        "AfterTheRain": 0.0304,
+        "BetweenViewings": 0.2662,
+        "Chatter": 0.4563,
+        "LessonLearned": 0.1743,
+        "Payload": 0.1127,
+        "Sintel": -0.0199,
+        "Spaceman": 0.0636,
+        "Superhero": 0.2677,
+        "TearsOfSteel": 0.4118,
+        "TheSecretNumber": 0.2128,
+        "ToClaireFromSonny": 0.1484,
+        "YouAgain": 0.0761
+      },
+      "block_boot_ci95_centered": [
+        0.1196,
+        0.2411
+      ],
+      "block_boot_ci95_fisher": [
+        0.1094,
+        0.2752
+      ],
+      "n_film_blocks": 12
+    }
+  ],
+  "fair5_subset_same_csv": [
+    {
+      "drop": "fair5_subset_of_12csv",
+      "model": "bert",
+      "pooled_r_centered": 0.0213,
+      "fisher_z_mean_r": 0.0406,
+      "n_segments": 435,
+      "n_films": 5,
+      "per_film_r": {
+        "AfterTheRain": -0.2133,
+        "LessonLearned": -0.0725,
+        "Payload": 0.0547,
+        "Sintel": 0.177,
+        "TearsOfSteel": 0.2529
+      },
+      "block_boot_ci95_centered": [
+        -0.0924,
+        0.166
+      ],
+      "block_boot_ci95_fisher": [
+        -0.1076,
+        0.1838
+      ],
+      "n_film_blocks": 5
+    },
+    {
+      "drop": "fair5_subset_of_12csv",
+      "model": "gemini",
+      "pooled_r_centered": 0.1677,
+      "fisher_z_mean_r": 0.1465,
+      "n_segments": 435,
+      "n_films": 5,
+      "per_film_r": {
+        "AfterTheRain": 0.0304,
+        "LessonLearned": 0.1743,
+        "Payload": 0.1127,
+        "Sintel": -0.0199,
+        "TearsOfSteel": 0.4118
+      },
+      "block_boot_ci95_centered": [
+        0.0592,
+        0.2971
+      ],
+      "block_boot_ci95_fisher": [
+        0.0269,
+        0.295
+      ],
+      "n_film_blocks": 5
+    }
+  ]
+}

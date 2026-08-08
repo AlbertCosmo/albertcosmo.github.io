@@ -1,0 +1,1626 @@
+{
+  "description": "SECONDARY segment LOFO for FILMS_12. Does not replace leave_one_film_out_segment.json (fair-5 primary).",
+  "role": "secondary",
+  "git_sha": "8147bb2",
+  "csv": "results/publication_tables/long_text_segment_12.csv",
+  "unit": "segment",
+  "lag_s": 2,
+  "films": [
+    "AfterTheRain",
+    "BetweenViewings",
+    "Chatter",
+    "LessonLearned",
+    "Payload",
+    "Sintel",
+    "Spaceman",
+    "Superhero",
+    "TearsOfSteel",
+    "TheSecretNumber",
+    "ToClaireFromSonny",
+    "YouAgain"
+  ],
+  "models": [
+    "bert",
+    "gemini"
+  ],
+  "uncertainty_note": "Film-block bootstrap CIs. Segment residual \u03c6\u22480.92 on fair-5; CIs remain optimistic for within-film dependence. More film blocks (12) than fair-5 does not remove that caveat.",
+  "rows": [
+    {
+      "drop": null,
+      "model": "bert",
+      "pooled_r_centered": 0.0433,
+      "fisher_z_mean_r": 0.0923,
+      "n_segments": 1261,
+      "n_films": 12,
+      "per_film_r": {
+        "AfterTheRain": -0.2133,
+        "BetweenViewings": 0.1433,
+        "Chatter": 0.5697,
+        "LessonLearned": -0.0725,
+        "Payload": 0.0547,
+        "Sintel": 0.177,
+        "Spaceman": -0.0881,
+        "Superhero": 0.0253,
+        "TearsOfSteel": 0.2529,
+        "TheSecretNumber": 0.1928,
+        "ToClaireFromSonny": 0.0363,
+        "YouAgain": -0.0522
+      },
+      "block_boot_ci95_centered": [
+        -0.0242,
+        0.1211
+      ],
+      "block_boot_ci95_fisher": [
+        -0.0217,
+        0.2245
+      ],
+      "n_film_blocks": 12
+    },
+    {
+      "drop": null,
+      "model": "gemini",
+      "pooled_r_centered": 0.18,
+      "fisher_z_mean_r": 0.188,
+      "n_segments": 1261,
+      "n_films": 12,
+      "per_film_r": {
+        "AfterTheRain": 0.0304,
+        "BetweenViewings": 0.2662,
+        "Chatter": 0.4563,
+        "LessonLearned": 0.1743,
+        "Payload": 0.1127,
+        "Sintel": -0.0199,
+        "Spaceman": 0.0636,
+        "Superhero": 0.2677,
+        "TearsOfSteel": 0.4118,
+        "TheSecretNumber": 0.2128,
+        "ToClaireFromSonny": 0.1484,
+        "YouAgain": 0.0761
+      },
+      "block_boot_ci95_centered": [
+        0.1196,
+        0.2411
+      ],
+      "block_boot_ci95_fisher": [
+        0.1094,
+        0.2752
+      ],
+      "n_film_blocks": 12
+    },
+    {
+      "drop": "AfterTheRain",
+      "model": "bert",
+      "pooled_r_centered": 0.0545,
+      "fisher_z_mean_r": 0.1201,
+      "n_segments": 1208,
+      "n_films": 11,
+      "per_film_r": {
+        "BetweenViewings": 0.1433,
+        "Chatter": 0.5697,
+        "LessonLearned": -0.0725,
+        "Payload": 0.0547,
+        "Sintel": 0.177,
+        "Spaceman": -0.0881,
+        "Superhero": 0.0253,
+        "TearsOfSteel": 0.2529,
+        "TheSecretNumber": 0.1928,
+        "ToClaireFromSonny": 0.0363,
+        "YouAgain": -0.0522
+      },
+      "block_boot_ci95_centered": [
+        -0.0104,
+        0.1352
+      ],
+      "block_boot_ci95_fisher": [
+        0.0205,
+        0.2478
+      ],
+      "n_film_blocks": 11
+    },
+    {
+      "drop": "AfterTheRain",
+      "model": "gemini",
+      "pooled_r_centered": 0.1865,
+      "fisher_z_mean_r": 0.202,
+      "n_segments": 1208,
+      "n_films": 11,
+      "per_film_r": {
+        "BetweenViewings": 0.2662,
+        "Chatter": 0.4563,
+        "LessonLearned": 0.1743,
+        "Payload": 0.1127,
+        "Sintel": -0.0199,
+        "Spaceman": 0.0636,
+        "Superhero": 0.2677,
+        "TearsOfSteel": 0.4118,
+        "TheSecretNumber": 0.2128,
+        "ToClaireFromSonny": 0.1484,
+        "YouAgain": 0.0761
+      },
+      "block_boot_ci95_centered": [
+        0.1294,
+        0.2526
+      ],
+      "block_boot_ci95_fisher": [
+        0.1227,
+        0.2929
+      ],
+      "n_film_blocks": 11
+    },
+    {
+      "drop": "BetweenViewings",
+      "model": "bert",
+      "pooled_r_centered": 0.0252,
+      "fisher_z_mean_r": 0.0876,
+      "n_segments": 1068,
+      "n_films": 11,
+      "per_film_r": {
+        "AfterTheRain": -0.2133,
+        "Chatter": 0.5697,
+        "LessonLearned": -0.0725,
+        "Payload": 0.0547,
+        "Sintel": 0.177,
+        "Spaceman": -0.0881,
+        "Superhero": 0.0253,
+        "TearsOfSteel": 0.2529,
+        "TheSecretNumber": 0.1928,
+        "ToClaireFromSonny": 0.0363,
+        "YouAgain": -0.0522
+      },
+      "block_boot_ci95_centered": [
+        -0.0406,
+        0.1138
+      ],
+      "block_boot_ci95_fisher": [
+        -0.0379,
+        0.2345
+      ],
+      "n_film_blocks": 11
+    },
+    {
+      "drop": "BetweenViewings",
+      "model": "gemini",
+      "pooled_r_centered": 0.1644,
+      "fisher_z_mean_r": 0.1807,
+      "n_segments": 1068,
+      "n_films": 11,
+      "per_film_r": {
+        "AfterTheRain": 0.0304,
+        "Chatter": 0.4563,
+        "LessonLearned": 0.1743,
+        "Payload": 0.1127,
+        "Sintel": -0.0199,
+        "Spaceman": 0.0636,
+        "Superhero": 0.2677,
+        "TearsOfSteel": 0.4118,
+        "TheSecretNumber": 0.2128,
+        "ToClaireFromSonny": 0.1484,
+        "YouAgain": 0.0761
+      },
+      "block_boot_ci95_centered": [
+        0.1051,
+        0.2364
+      ],
+      "block_boot_ci95_fisher": [
+        0.095,
+        0.2762
+      ],
+      "n_film_blocks": 11
+    },
+    {
+      "drop": "Chatter",
+      "model": "bert",
+      "pooled_r_centered": 0.0344,
+      "fisher_z_mean_r": 0.0421,
+      "n_segments": 1240,
+      "n_films": 11,
+      "per_film_r": {
+        "AfterTheRain": -0.2133,
+        "BetweenViewings": 0.1433,
+        "LessonLearned": -0.0725,
+        "Payload": 0.0547,
+        "Sintel": 0.177,
+        "Spaceman": -0.0881,
+        "Superhero": 0.0253,
+        "TearsOfSteel": 0.2529,
+        "TheSecretNumber": 0.1928,
+        "ToClaireFromSonny": 0.0363,
+        "YouAgain": -0.0522
+      },
+      "block_boot_ci95_centered": [
+        -0.0375,
+        0.1083
+      ],
+      "block_boot_ci95_fisher": [
+        -0.0436,
+        0.1255
+      ],
+      "n_film_blocks": 11
+    },
+    {
+      "drop": "Chatter",
+      "model": "gemini",
+      "pooled_r_centered": 0.1753,
+      "fisher_z_mean_r": 0.1613,
+      "n_segments": 1240,
+      "n_films": 11,
+      "per_film_r": {
+        "AfterTheRain": 0.0304,
+        "BetweenViewings": 0.2662,
+        "LessonLearned": 0.1743,
+        "Payload": 0.1127,
+        "Sintel": -0.0199,
+        "Spaceman": 0.0636,
+        "Superhero": 0.2677,
+        "TearsOfSteel": 0.4118,
+        "TheSecretNumber": 0.2128,
+        "ToClaireFromSonny": 0.1484,
+        "YouAgain": 0.0761
+      },
+      "block_boot_ci95_centered": [
+        0.1114,
+        0.2379
+      ],
+      "block_boot_ci95_fisher": [
+        0.0897,
+        0.2385
+      ],
+      "n_film_blocks": 11
+    },
+    {
+      "drop": "LessonLearned",
+      "model": "bert",
+      "pooled_r_centered": 0.0585,
+      "fisher_z_mean_r": 0.1072,
+      "n_segments": 1115,
+      "n_films": 11,
+      "per_film_r": {
+        "AfterTheRain": -0.2133,
+        "BetweenViewings": 0.1433,
+        "Chatter": 0.5697,
+        "Payload": 0.0547,
+        "Sintel": 0.177,
+        "Spaceman": -0.0881,
+        "Superhero": 0.0253,
+        "TearsOfSteel": 0.2529,
+        "TheSecretNumber": 0.1928,
+        "ToClaireFromSonny": 0.0363,
+        "YouAgain": -0.0522
+      },
+      "block_boot_ci95_centered": [
+        -0.0155,
+        0.1376
+      ],
+      "block_boot_ci95_fisher": [
+        -0.0082,
+        0.2447
+      ],
+      "n_film_blocks": 11
+    },
+    {
+      "drop": "LessonLearned",
+      "model": "gemini",
+      "pooled_r_centered": 0.1807,
+      "fisher_z_mean_r": 0.1892,
+      "n_segments": 1115,
+      "n_films": 11,
+      "per_film_r": {
+        "AfterTheRain": 0.0304,
+        "BetweenViewings": 0.2662,
+        "Chatter": 0.4563,
+        "Payload": 0.1127,
+        "Sintel": -0.0199,
+        "Spaceman": 0.0636,
+        "Superhero": 0.2677,
+        "TearsOfSteel": 0.4118,
+        "TheSecretNumber": 0.2128,
+        "ToClaireFromSonny": 0.1484,
+        "YouAgain": 0.0761
+      },
+      "block_boot_ci95_centered": [
+        0.1192,
+        0.2523
+      ],
+      "block_boot_ci95_fisher": [
+        0.1061,
+        0.2836
+      ],
+      "n_film_blocks": 11
+    },
+    {
+      "drop": "Payload",
+      "model": "bert",
+      "pooled_r_centered": 0.0419,
+      "fisher_z_mean_r": 0.0957,
+      "n_segments": 1127,
+      "n_films": 11,
+      "per_film_r": {
+        "AfterTheRain": -0.2133,
+        "BetweenViewings": 0.1433,
+        "Chatter": 0.5697,
+        "LessonLearned": -0.0725,
+        "Sintel": 0.177,
+        "Spaceman": -0.0881,
+        "Superhero": 0.0253,
+        "TearsOfSteel": 0.2529,
+        "TheSecretNumber": 0.1928,
+        "ToClaireFromSonny": 0.0363,
+        "YouAgain": -0.0522
+      },
+      "block_boot_ci95_centered": [
+        -0.0313,
+        0.1289
+      ],
+      "block_boot_ci95_fisher": [
+        -0.0273,
+        0.2429
+      ],
+      "n_film_blocks": 11
+    },
+    {
+      "drop": "Payload",
+      "model": "gemini",
+      "pooled_r_centered": 0.188,
+      "fisher_z_mean_r": 0.1947,
+      "n_segments": 1127,
+      "n_films": 11,
+      "per_film_r": {
+        "AfterTheRain": 0.0304,
+        "BetweenViewings": 0.2662,
+        "Chatter": 0.4563,
+        "LessonLearned": 0.1743,
+        "Sintel": -0.0199,
+        "Spaceman": 0.0636,
+        "Superhero": 0.2677,
+        "TearsOfSteel": 0.4118,
+        "TheSecretNumber": 0.2128,
+        "ToClaireFromSonny": 0.1484,
+        "YouAgain": 0.0761
+      },
+      "block_boot_ci95_centered": [
+        0.1269,
+        0.2556
+      ],
+      "block_boot_ci95_fisher": [
+        0.1153,
+        0.2867
+      ],
+      "n_film_blocks": 11
+    },
+    {
+      "drop": "Sintel",
+      "model": "bert",
+      "pooled_r_centered": 0.0405,
+      "fisher_z_mean_r": 0.0845,
+      "n_segments": 1235,
+      "n_films": 11,
+      "per_film_r": {
+        "AfterTheRain": -0.2133,
+        "BetweenViewings": 0.1433,
+        "Chatter": 0.5697,
+        "LessonLearned": -0.0725,
+        "Payload": 0.0547,
+        "Spaceman": -0.0881,
+        "Superhero": 0.0253,
+        "TearsOfSteel": 0.2529,
+        "TheSecretNumber": 0.1928,
+        "ToClaireFromSonny": 0.0363,
+        "YouAgain": -0.0522
+      },
+      "block_boot_ci95_centered": [
+        -0.0284,
+        0.1195
+      ],
+      "block_boot_ci95_fisher": [
+        -0.0362,
+        0.2337
+      ],
+      "n_film_blocks": 11
+    },
+    {
+      "drop": "Sintel",
+      "model": "gemini",
+      "pooled_r_centered": 0.1842,
+      "fisher_z_mean_r": 0.2063,
+      "n_segments": 1235,
+      "n_films": 11,
+      "per_film_r": {
+        "AfterTheRain": 0.0304,
+        "BetweenViewings": 0.2662,
+        "Chatter": 0.4563,
+        "LessonLearned": 0.1743,
+        "Payload": 0.1127,
+        "Spaceman": 0.0636,
+        "Superhero": 0.2677,
+        "TearsOfSteel": 0.4118,
+        "TheSecretNumber": 0.2128,
+        "ToClaireFromSonny": 0.1484,
+        "YouAgain": 0.0761
+      },
+      "block_boot_ci95_centered": [
+        0.1283,
+        0.2459
+      ],
+      "block_boot_ci95_fisher": [
+        0.1346,
+        0.2919
+      ],
+      "n_film_blocks": 11
+    },
+    {
+      "drop": "Spaceman",
+      "model": "bert",
+      "pooled_r_centered": 0.0574,
+      "fisher_z_mean_r": 0.1086,
+      "n_segments": 1139,
+      "n_films": 11,
+      "per_film_r": {
+        "AfterTheRain": -0.2133,
+        "BetweenViewings": 0.1433,
+        "Chatter": 0.5697,
+        "LessonLearned": -0.0725,
+        "Payload": 0.0547,
+        "Sintel": 0.177,
+        "Superhero": 0.0253,
+        "TearsOfSteel": 0.2529,
+        "TheSecretNumber": 0.1928,
+        "ToClaireFromSonny": 0.0363,
+        "YouAgain": -0.0522
+      },
+      "block_boot_ci95_centered": [
+        -0.0171,
+        0.1375
+      ],
+      "block_boot_ci95_fisher": [
+        -0.0065,
+        0.2529
+      ],
+      "n_film_blocks": 11
+    },
+    {
+      "drop": "Spaceman",
+      "model": "gemini",
+      "pooled_r_centered": 0.1924,
+      "fisher_z_mean_r": 0.1991,
+      "n_segments": 1139,
+      "n_films": 11,
+      "per_film_r": {
+        "AfterTheRain": 0.0304,
+        "BetweenViewings": 0.2662,
+        "Chatter": 0.4563,
+        "LessonLearned": 0.1743,
+        "Payload": 0.1127,
+        "Sintel": -0.0199,
+        "Superhero": 0.2677,
+        "TearsOfSteel": 0.4118,
+        "TheSecretNumber": 0.2128,
+        "ToClaireFromSonny": 0.1484,
+        "YouAgain": 0.0761
+      },
+      "block_boot_ci95_centered": [
+        0.1319,
+        0.2562
+      ],
+      "block_boot_ci95_fisher": [
+        0.1145,
+        0.2944
+      ],
+      "n_film_blocks": 11
+    },
+    {
+      "drop": "Superhero",
+      "model": "bert",
+      "pooled_r_centered": 0.0458,
+      "fisher_z_mean_r": 0.0983,
+      "n_segments": 1106,
+      "n_films": 11,
+      "per_film_r": {
+        "AfterTheRain": -0.2133,
+        "BetweenViewings": 0.1433,
+        "Chatter": 0.5697,
+        "LessonLearned": -0.0725,
+        "Payload": 0.0547,
+        "Sintel": 0.177,
+        "Spaceman": -0.0881,
+        "TearsOfSteel": 0.2529,
+        "TheSecretNumber": 0.1928,
+        "ToClaireFromSonny": 0.0363,
+        "YouAgain": -0.0522
+      },
+      "block_boot_ci95_centered": [
+        -0.0352,
+        0.1317
+      ],
+      "block_boot_ci95_fisher": [
+        -0.0165,
+        0.2455
+      ],
+      "n_film_blocks": 11
+    },
+    {
+      "drop": "Superhero",
+      "model": "gemini",
+      "pooled_r_centered": 0.1677,
+      "fisher_z_mean_r": 0.1806,
+      "n_segments": 1106,
+      "n_films": 11,
+      "per_film_r": {
+        "AfterTheRain": 0.0304,
+        "BetweenViewings": 0.2662,
+        "Chatter": 0.4563,
+        "LessonLearned": 0.1743,
+        "Payload": 0.1127,
+        "Sintel": -0.0199,
+        "Spaceman": 0.0636,
+        "TearsOfSteel": 0.4118,
+        "TheSecretNumber": 0.2128,
+        "ToClaireFromSonny": 0.1484,
+        "YouAgain": 0.0761
+      },
+      "block_boot_ci95_centered": [
+        0.11,
+        0.2337
+      ],
+      "block_boot_ci95_fisher": [
+        0.0975,
+        0.2783
+      ],
+      "n_film_blocks": 11
+    },
+    {
+      "drop": "TearsOfSteel",
+      "model": "bert",
+      "pooled_r_centered": 0.0298,
+      "fisher_z_mean_r": 0.0773,
+      "n_segments": 1185,
+      "n_films": 11,
+      "per_film_r": {
+        "AfterTheRain": -0.2133,
+        "BetweenViewings": 0.1433,
+        "Chatter": 0.5697,
+        "LessonLearned": -0.0725,
+        "Payload": 0.0547,
+        "Sintel": 0.177,
+        "Spaceman": -0.0881,
+        "Superhero": 0.0253,
+        "TheSecretNumber": 0.1928,
+        "ToClaireFromSonny": 0.0363,
+        "YouAgain": -0.0522
+      },
+      "block_boot_ci95_centered": [
+        -0.0389,
+        0.1082
+      ],
+      "block_boot_ci95_fisher": [
+        -0.0409,
+        0.2261
+      ],
+      "n_film_blocks": 11
+    },
+    {
+      "drop": "TearsOfSteel",
+      "model": "gemini",
+      "pooled_r_centered": 0.1651,
+      "fisher_z_mean_r": 0.1662,
+      "n_segments": 1185,
+      "n_films": 11,
+      "per_film_r": {
+        "AfterTheRain": 0.0304,
+        "BetweenViewings": 0.2662,
+        "Chatter": 0.4563,
+        "LessonLearned": 0.1743,
+        "Payload": 0.1127,
+        "Sintel": -0.0199,
+        "Spaceman": 0.0636,
+        "Superhero": 0.2677,
+        "TheSecretNumber": 0.2128,
+        "ToClaireFromSonny": 0.1484,
+        "YouAgain": 0.0761
+      },
+      "block_boot_ci95_centered": [
+        0.1075,
+        0.222
+      ],
+      "block_boot_ci95_fisher": [
+        0.0905,
+        0.2535
+      ],
+      "n_film_blocks": 11
+    },
+    {
+      "drop": "TheSecretNumber",
+      "model": "bert",
+      "pooled_r_centered": 0.0307,
+      "fisher_z_mean_r": 0.083,
+      "n_segments": 1163,
+      "n_films": 11,
+      "per_film_r": {
+        "AfterTheRain": -0.2133,
+        "BetweenViewings": 0.1433,
+        "Chatter": 0.5697,
+        "LessonLearned": -0.0725,
+        "Payload": 0.0547,
+        "Sintel": 0.177,
+        "Spaceman": -0.0881,
+        "Superhero": 0.0253,
+        "TearsOfSteel": 0.2529,
+        "ToClaireFromSonny": 0.0363,
+        "YouAgain": -0.0522
+      },
+      "block_boot_ci95_centered": [
+        -0.0394,
+        0.107
+      ],
+      "block_boot_ci95_fisher": [
+        -0.0316,
+        0.2252
+      ],
+      "n_film_blocks": 11
+    },
+    {
+      "drop": "TheSecretNumber",
+      "model": "gemini",
+      "pooled_r_centered": 0.1772,
+      "fisher_z_mean_r": 0.1857,
+      "n_segments": 1163,
+      "n_films": 11,
+      "per_film_r": {
+        "AfterTheRain": 0.0304,
+        "BetweenViewings": 0.2662,
+        "Chatter": 0.4563,
+        "LessonLearned": 0.1743,
+        "Payload": 0.1127,
+        "Sintel": -0.0199,
+        "Spaceman": 0.0636,
+        "Superhero": 0.2677,
+        "TearsOfSteel": 0.4118,
+        "ToClaireFromSonny": 0.1484,
+        "YouAgain": 0.0761
+      },
+      "block_boot_ci95_centered": [
+        0.1155,
+        0.242
+      ],
+      "block_boot_ci95_fisher": [
+        0.1017,
+        0.2819
+      ],
+      "n_film_blocks": 11
+    },
+    {
+      "drop": "ToClaireFromSonny",
+      "model": "bert",
+      "pooled_r_centered": 0.0437,
+      "fisher_z_mean_r": 0.0974,
+      "n_segments": 1193,
+      "n_films": 11,
+      "per_film_r": {
+        "AfterTheRain": -0.2133,
+        "BetweenViewings": 0.1433,
+        "Chatter": 0.5697,
+        "LessonLearned": -0.0725,
+        "Payload": 0.0547,
+        "Sintel": 0.177,
+        "Spaceman": -0.0881,
+        "Superhero": 0.0253,
+        "TearsOfSteel": 0.2529,
+        "TheSecretNumber": 0.1928,
+        "YouAgain": -0.0522
+      },
+      "block_boot_ci95_centered": [
+        -0.036,
+        0.1215
+      ],
+      "block_boot_ci95_fisher": [
+        -0.0189,
+        0.2345
+      ],
+      "n_film_blocks": 11
+    },
+    {
+      "drop": "ToClaireFromSonny",
+      "model": "gemini",
+      "pooled_r_centered": 0.1818,
+      "fisher_z_mean_r": 0.1916,
+      "n_segments": 1193,
+      "n_films": 11,
+      "per_film_r": {
+        "AfterTheRain": 0.0304,
+        "BetweenViewings": 0.2662,
+        "Chatter": 0.4563,
+        "LessonLearned": 0.1743,
+        "Payload": 0.1127,
+        "Sintel": -0.0199,
+        "Spaceman": 0.0636,
+        "Superhero": 0.2677,
+        "TearsOfSteel": 0.4118,
+        "TheSecretNumber": 0.2128,
+        "YouAgain": 0.0761
+      },
+      "block_boot_ci95_centered": [
+        0.1215,
+        0.2455
+      ],
+      "block_boot_ci95_fisher": [
+        0.1047,
+        0.2869
+      ],
+      "n_film_blocks": 11
+    },
+    {
+      "drop": "YouAgain",
+      "model": "bert",
+      "pooled_r_centered": 0.0581,
+      "fisher_z_mean_r": 0.1053,
+      "n_segments": 1092,
+      "n_films": 11,
+      "per_film_r": {
+        "AfterTheRain": -0.2133,
+        "BetweenViewings": 0.1433,
+        "Chatter": 0.5697,
+        "LessonLearned": -0.0725,
+        "Payload": 0.0547,
+        "Sintel": 0.177,
+        "Spaceman": -0.0881,
+        "Superhero": 0.0253,
+        "TearsOfSteel": 0.2529,
+        "TheSecretNumber": 0.1928,
+        "ToClaireFromSonny": 0.0363
+      },
+      "block_boot_ci95_centered": [
+        -0.0243,
+        0.138
+      ],
+      "block_boot_ci95_fisher": [
+        -0.011,
+        0.242
+      ],
+      "n_film_blocks": 11
+    },
+    {
+      "drop": "YouAgain",
+      "model": "gemini",
+      "pooled_r_centered": 0.1961,
+      "fisher_z_mean_r": 0.198,
+      "n_segments": 1092,
+      "n_films": 11,
+      "per_film_r": {
+        "AfterTheRain": 0.0304,
+        "BetweenViewings": 0.2662,
+        "Chatter": 0.4563,
+        "LessonLearned": 0.1743,
+        "Payload": 0.1127,
+        "Sintel": -0.0199,
+        "Spaceman": 0.0636,
+        "Superhero": 0.2677,
+        "TearsOfSteel": 0.4118,
+        "TheSecretNumber": 0.2128,
+        "ToClaireFromSonny": 0.1484
+      },
+      "block_boot_ci95_centered": [
+        0.133,
+        0.2583
+      ],
+      "block_boot_ci95_fisher": [
+        0.1107,
+        0.2877
+      ],
+      "n_film_blocks": 11
+    }
+  ],
+  "pivot_drop_by_model": {
+    "NONE": {
+      "bert": {
+        "drop": null,
+        "model": "bert",
+        "pooled_r_centered": 0.0433,
+        "fisher_z_mean_r": 0.0923,
+        "n_segments": 1261,
+        "n_films": 12,
+        "per_film_r": {
+          "AfterTheRain": -0.2133,
+          "BetweenViewings": 0.1433,
+          "Chatter": 0.5697,
+          "LessonLearned": -0.0725,
+          "Payload": 0.0547,
+          "Sintel": 0.177,
+          "Spaceman": -0.0881,
+          "Superhero": 0.0253,
+          "TearsOfSteel": 0.2529,
+          "TheSecretNumber": 0.1928,
+          "ToClaireFromSonny": 0.0363,
+          "YouAgain": -0.0522
+        },
+        "block_boot_ci95_centered": [
+          -0.0242,
+          0.1211
+        ],
+        "block_boot_ci95_fisher": [
+          -0.0217,
+          0.2245
+        ],
+        "n_film_blocks": 12
+      },
+      "gemini": {
+        "drop": null,
+        "model": "gemini",
+        "pooled_r_centered": 0.18,
+        "fisher_z_mean_r": 0.188,
+        "n_segments": 1261,
+        "n_films": 12,
+        "per_film_r": {
+          "AfterTheRain": 0.0304,
+          "BetweenViewings": 0.2662,
+          "Chatter": 0.4563,
+          "LessonLearned": 0.1743,
+          "Payload": 0.1127,
+          "Sintel": -0.0199,
+          "Spaceman": 0.0636,
+          "Superhero": 0.2677,
+          "TearsOfSteel": 0.4118,
+          "TheSecretNumber": 0.2128,
+          "ToClaireFromSonny": 0.1484,
+          "YouAgain": 0.0761
+        },
+        "block_boot_ci95_centered": [
+          0.1196,
+          0.2411
+        ],
+        "block_boot_ci95_fisher": [
+          0.1094,
+          0.2752
+        ],
+        "n_film_blocks": 12
+      }
+    },
+    "AfterTheRain": {
+      "bert": {
+        "drop": "AfterTheRain",
+        "model": "bert",
+        "pooled_r_centered": 0.0545,
+        "fisher_z_mean_r": 0.1201,
+        "n_segments": 1208,
+        "n_films": 11,
+        "per_film_r": {
+          "BetweenViewings": 0.1433,
+          "Chatter": 0.5697,
+          "LessonLearned": -0.0725,
+          "Payload": 0.0547,
+          "Sintel": 0.177,
+          "Spaceman": -0.0881,
+          "Superhero": 0.0253,
+          "TearsOfSteel": 0.2529,
+          "TheSecretNumber": 0.1928,
+          "ToClaireFromSonny": 0.0363,
+          "YouAgain": -0.0522
+        },
+        "block_boot_ci95_centered": [
+          -0.0104,
+          0.1352
+        ],
+        "block_boot_ci95_fisher": [
+          0.0205,
+          0.2478
+        ],
+        "n_film_blocks": 11
+      },
+      "gemini": {
+        "drop": "AfterTheRain",
+        "model": "gemini",
+        "pooled_r_centered": 0.1865,
+        "fisher_z_mean_r": 0.202,
+        "n_segments": 1208,
+        "n_films": 11,
+        "per_film_r": {
+          "BetweenViewings": 0.2662,
+          "Chatter": 0.4563,
+          "LessonLearned": 0.1743,
+          "Payload": 0.1127,
+          "Sintel": -0.0199,
+          "Spaceman": 0.0636,
+          "Superhero": 0.2677,
+          "TearsOfSteel": 0.4118,
+          "TheSecretNumber": 0.2128,
+          "ToClaireFromSonny": 0.1484,
+          "YouAgain": 0.0761
+        },
+        "block_boot_ci95_centered": [
+          0.1294,
+          0.2526
+        ],
+        "block_boot_ci95_fisher": [
+          0.1227,
+          0.2929
+        ],
+        "n_film_blocks": 11
+      }
+    },
+    "BetweenViewings": {
+      "bert": {
+        "drop": "BetweenViewings",
+        "model": "bert",
+        "pooled_r_centered": 0.0252,
+        "fisher_z_mean_r": 0.0876,
+        "n_segments": 1068,
+        "n_films": 11,
+        "per_film_r": {
+          "AfterTheRain": -0.2133,
+          "Chatter": 0.5697,
+          "LessonLearned": -0.0725,
+          "Payload": 0.0547,
+          "Sintel": 0.177,
+          "Spaceman": -0.0881,
+          "Superhero": 0.0253,
+          "TearsOfSteel": 0.2529,
+          "TheSecretNumber": 0.1928,
+          "ToClaireFromSonny": 0.0363,
+          "YouAgain": -0.0522
+        },
+        "block_boot_ci95_centered": [
+          -0.0406,
+          0.1138
+        ],
+        "block_boot_ci95_fisher": [
+          -0.0379,
+          0.2345
+        ],
+        "n_film_blocks": 11
+      },
+      "gemini": {
+        "drop": "BetweenViewings",
+        "model": "gemini",
+        "pooled_r_centered": 0.1644,
+        "fisher_z_mean_r": 0.1807,
+        "n_segments": 1068,
+        "n_films": 11,
+        "per_film_r": {
+          "AfterTheRain": 0.0304,
+          "Chatter": 0.4563,
+          "LessonLearned": 0.1743,
+          "Payload": 0.1127,
+          "Sintel": -0.0199,
+          "Spaceman": 0.0636,
+          "Superhero": 0.2677,
+          "TearsOfSteel": 0.4118,
+          "TheSecretNumber": 0.2128,
+          "ToClaireFromSonny": 0.1484,
+          "YouAgain": 0.0761
+        },
+        "block_boot_ci95_centered": [
+          0.1051,
+          0.2364
+        ],
+        "block_boot_ci95_fisher": [
+          0.095,
+          0.2762
+        ],
+        "n_film_blocks": 11
+      }
+    },
+    "Chatter": {
+      "bert": {
+        "drop": "Chatter",
+        "model": "bert",
+        "pooled_r_centered": 0.0344,
+        "fisher_z_mean_r": 0.0421,
+        "n_segments": 1240,
+        "n_films": 11,
+        "per_film_r": {
+          "AfterTheRain": -0.2133,
+          "BetweenViewings": 0.1433,
+          "LessonLearned": -0.0725,
+          "Payload": 0.0547,
+          "Sintel": 0.177,
+          "Spaceman": -0.0881,
+          "Superhero": 0.0253,
+          "TearsOfSteel": 0.2529,
+          "TheSecretNumber": 0.1928,
+          "ToClaireFromSonny": 0.0363,
+          "YouAgain": -0.0522
+        },
+        "block_boot_ci95_centered": [
+          -0.0375,
+          0.1083
+        ],
+        "block_boot_ci95_fisher": [
+          -0.0436,
+          0.1255
+        ],
+        "n_film_blocks": 11
+      },
+      "gemini": {
+        "drop": "Chatter",
+        "model": "gemini",
+        "pooled_r_centered": 0.1753,
+        "fisher_z_mean_r": 0.1613,
+        "n_segments": 1240,
+        "n_films": 11,
+        "per_film_r": {
+          "AfterTheRain": 0.0304,
+          "BetweenViewings": 0.2662,
+          "LessonLearned": 0.1743,
+          "Payload": 0.1127,
+          "Sintel": -0.0199,
+          "Spaceman": 0.0636,
+          "Superhero": 0.2677,
+          "TearsOfSteel": 0.4118,
+          "TheSecretNumber": 0.2128,
+          "ToClaireFromSonny": 0.1484,
+          "YouAgain": 0.0761
+        },
+        "block_boot_ci95_centered": [
+          0.1114,
+          0.2379
+        ],
+        "block_boot_ci95_fisher": [
+          0.0897,
+          0.2385
+        ],
+        "n_film_blocks": 11
+      }
+    },
+    "LessonLearned": {
+      "bert": {
+        "drop": "LessonLearned",
+        "model": "bert",
+        "pooled_r_centered": 0.0585,
+        "fisher_z_mean_r": 0.1072,
+        "n_segments": 1115,
+        "n_films": 11,
+        "per_film_r": {
+          "AfterTheRain": -0.2133,
+          "BetweenViewings": 0.1433,
+          "Chatter": 0.5697,
+          "Payload": 0.0547,
+          "Sintel": 0.177,
+          "Spaceman": -0.0881,
+          "Superhero": 0.0253,
+          "TearsOfSteel": 0.2529,
+          "TheSecretNumber": 0.1928,
+          "ToClaireFromSonny": 0.0363,
+          "YouAgain": -0.0522
+        },
+        "block_boot_ci95_centered": [
+          -0.0155,
+          0.1376
+        ],
+        "block_boot_ci95_fisher": [
+          -0.0082,
+          0.2447
+        ],
+        "n_film_blocks": 11
+      },
+      "gemini": {
+        "drop": "LessonLearned",
+        "model": "gemini",
+        "pooled_r_centered": 0.1807,
+        "fisher_z_mean_r": 0.1892,
+        "n_segments": 1115,
+        "n_films": 11,
+        "per_film_r": {
+          "AfterTheRain": 0.0304,
+          "BetweenViewings": 0.2662,
+          "Chatter": 0.4563,
+          "Payload": 0.1127,
+          "Sintel": -0.0199,
+          "Spaceman": 0.0636,
+          "Superhero": 0.2677,
+          "TearsOfSteel": 0.4118,
+          "TheSecretNumber": 0.2128,
+          "ToClaireFromSonny": 0.1484,
+          "YouAgain": 0.0761
+        },
+        "block_boot_ci95_centered": [
+          0.1192,
+          0.2523
+        ],
+        "block_boot_ci95_fisher": [
+          0.1061,
+          0.2836
+        ],
+        "n_film_blocks": 11
+      }
+    },
+    "Payload": {
+      "bert": {
+        "drop": "Payload",
+        "model": "bert",
+        "pooled_r_centered": 0.0419,
+        "fisher_z_mean_r": 0.0957,
+        "n_segments": 1127,
+        "n_films": 11,
+        "per_film_r": {
+          "AfterTheRain": -0.2133,
+          "BetweenViewings": 0.1433,
+          "Chatter": 0.5697,
+          "LessonLearned": -0.0725,
+          "Sintel": 0.177,
+          "Spaceman": -0.0881,
+          "Superhero": 0.0253,
+          "TearsOfSteel": 0.2529,
+          "TheSecretNumber": 0.1928,
+          "ToClaireFromSonny": 0.0363,
+          "YouAgain": -0.0522
+        },
+        "block_boot_ci95_centered": [
+          -0.0313,
+          0.1289
+        ],
+        "block_boot_ci95_fisher": [
+          -0.0273,
+          0.2429
+        ],
+        "n_film_blocks": 11
+      },
+      "gemini": {
+        "drop": "Payload",
+        "model": "gemini",
+        "pooled_r_centered": 0.188,
+        "fisher_z_mean_r": 0.1947,
+        "n_segments": 1127,
+        "n_films": 11,
+        "per_film_r": {
+          "AfterTheRain": 0.0304,
+          "BetweenViewings": 0.2662,
+          "Chatter": 0.4563,
+          "LessonLearned": 0.1743,
+          "Sintel": -0.0199,
+          "Spaceman": 0.0636,
+          "Superhero": 0.2677,
+          "TearsOfSteel": 0.4118,
+          "TheSecretNumber": 0.2128,
+          "ToClaireFromSonny": 0.1484,
+          "YouAgain": 0.0761
+        },
+        "block_boot_ci95_centered": [
+          0.1269,
+          0.2556
+        ],
+        "block_boot_ci95_fisher": [
+          0.1153,
+          0.2867
+        ],
+        "n_film_blocks": 11
+      }
+    },
+    "Sintel": {
+      "bert": {
+        "drop": "Sintel",
+        "model": "bert",
+        "pooled_r_centered": 0.0405,
+        "fisher_z_mean_r": 0.0845,
+        "n_segments": 1235,
+        "n_films": 11,
+        "per_film_r": {
+          "AfterTheRain": -0.2133,
+          "BetweenViewings": 0.1433,
+          "Chatter": 0.5697,
+          "LessonLearned": -0.0725,
+          "Payload": 0.0547,
+          "Spaceman": -0.0881,
+          "Superhero": 0.0253,
+          "TearsOfSteel": 0.2529,
+          "TheSecretNumber": 0.1928,
+          "ToClaireFromSonny": 0.0363,
+          "YouAgain": -0.0522
+        },
+        "block_boot_ci95_centered": [
+          -0.0284,
+          0.1195
+        ],
+        "block_boot_ci95_fisher": [
+          -0.0362,
+          0.2337
+        ],
+        "n_film_blocks": 11
+      },
+      "gemini": {
+        "drop": "Sintel",
+        "model": "gemini",
+        "pooled_r_centered": 0.1842,
+        "fisher_z_mean_r": 0.2063,
+        "n_segments": 1235,
+        "n_films": 11,
+        "per_film_r": {
+          "AfterTheRain": 0.0304,
+          "BetweenViewings": 0.2662,
+          "Chatter": 0.4563,
+          "LessonLearned": 0.1743,
+          "Payload": 0.1127,
+          "Spaceman": 0.0636,
+          "Superhero": 0.2677,
+          "TearsOfSteel": 0.4118,
+          "TheSecretNumber": 0.2128,
+          "ToClaireFromSonny": 0.1484,
+          "YouAgain": 0.0761
+        },
+        "block_boot_ci95_centered": [
+          0.1283,
+          0.2459
+        ],
+        "block_boot_ci95_fisher": [
+          0.1346,
+          0.2919
+        ],
+        "n_film_blocks": 11
+      }
+    },
+    "Spaceman": {
+      "bert": {
+        "drop": "Spaceman",
+        "model": "bert",
+        "pooled_r_centered": 0.0574,
+        "fisher_z_mean_r": 0.1086,
+        "n_segments": 1139,
+        "n_films": 11,
+        "per_film_r": {
+          "AfterTheRain": -0.2133,
+          "BetweenViewings": 0.1433,
+          "Chatter": 0.5697,
+          "LessonLearned": -0.0725,
+          "Payload": 0.0547,
+          "Sintel": 0.177,
+          "Superhero": 0.0253,
+          "TearsOfSteel": 0.2529,
+          "TheSecretNumber": 0.1928,
+          "ToClaireFromSonny": 0.0363,
+          "YouAgain": -0.0522
+        },
+        "block_boot_ci95_centered": [
+          -0.0171,
+          0.1375
+        ],
+        "block_boot_ci95_fisher": [
+          -0.0065,
+          0.2529
+        ],
+        "n_film_blocks": 11
+      },
+      "gemini": {
+        "drop": "Spaceman",
+        "model": "gemini",
+        "pooled_r_centered": 0.1924,
+        "fisher_z_mean_r": 0.1991,
+        "n_segments": 1139,
+        "n_films": 11,
+        "per_film_r": {
+          "AfterTheRain": 0.0304,
+          "BetweenViewings": 0.2662,
+          "Chatter": 0.4563,
+          "LessonLearned": 0.1743,
+          "Payload": 0.1127,
+          "Sintel": -0.0199,
+          "Superhero": 0.2677,
+          "TearsOfSteel": 0.4118,
+          "TheSecretNumber": 0.2128,
+          "ToClaireFromSonny": 0.1484,
+          "YouAgain": 0.0761
+        },
+        "block_boot_ci95_centered": [
+          0.1319,
+          0.2562
+        ],
+        "block_boot_ci95_fisher": [
+          0.1145,
+          0.2944
+        ],
+        "n_film_blocks": 11
+      }
+    },
+    "Superhero": {
+      "bert": {
+        "drop": "Superhero",
+        "model": "bert",
+        "pooled_r_centered": 0.0458,
+        "fisher_z_mean_r": 0.0983,
+        "n_segments": 1106,
+        "n_films": 11,
+        "per_film_r": {
+          "AfterTheRain": -0.2133,
+          "BetweenViewings": 0.1433,
+          "Chatter": 0.5697,
+          "LessonLearned": -0.0725,
+          "Payload": 0.0547,
+          "Sintel": 0.177,
+          "Spaceman": -0.0881,
+          "TearsOfSteel": 0.2529,
+          "TheSecretNumber": 0.1928,
+          "ToClaireFromSonny": 0.0363,
+          "YouAgain": -0.0522
+        },
+        "block_boot_ci95_centered": [
+          -0.0352,
+          0.1317
+        ],
+        "block_boot_ci95_fisher": [
+          -0.0165,
+          0.2455
+        ],
+        "n_film_blocks": 11
+      },
+      "gemini": {
+        "drop": "Superhero",
+        "model": "gemini",
+        "pooled_r_centered": 0.1677,
+        "fisher_z_mean_r": 0.1806,
+        "n_segments": 1106,
+        "n_films": 11,
+        "per_film_r": {
+          "AfterTheRain": 0.0304,
+          "BetweenViewings": 0.2662,
+          "Chatter": 0.4563,
+          "LessonLearned": 0.1743,
+          "Payload": 0.1127,
+          "Sintel": -0.0199,
+          "Spaceman": 0.0636,
+          "TearsOfSteel": 0.4118,
+          "TheSecretNumber": 0.2128,
+          "ToClaireFromSonny": 0.1484,
+          "YouAgain": 0.0761
+        },
+        "block_boot_ci95_centered": [
+          0.11,
+          0.2337
+        ],
+        "block_boot_ci95_fisher": [
+          0.0975,
+          0.2783
+        ],
+        "n_film_blocks": 11
+      }
+    },
+    "TearsOfSteel": {
+      "bert": {
+        "drop": "TearsOfSteel",
+        "model": "bert",
+        "pooled_r_centered": 0.0298,
+        "fisher_z_mean_r": 0.0773,
+        "n_segments": 1185,
+        "n_films": 11,
+        "per_film_r": {
+          "AfterTheRain": -0.2133,
+          "BetweenViewings": 0.1433,
+          "Chatter": 0.5697,
+          "LessonLearned": -0.0725,
+          "Payload": 0.0547,
+          "Sintel": 0.177,
+          "Spaceman": -0.0881,
+          "Superhero": 0.0253,
+          "TheSecretNumber": 0.1928,
+          "ToClaireFromSonny": 0.0363,
+          "YouAgain": -0.0522
+        },
+        "block_boot_ci95_centered": [
+          -0.0389,
+          0.1082
+        ],
+        "block_boot_ci95_fisher": [
+          -0.0409,
+          0.2261
+        ],
+        "n_film_blocks": 11
+      },
+      "gemini": {
+        "drop": "TearsOfSteel",
+        "model": "gemini",
+        "pooled_r_centered": 0.1651,
+        "fisher_z_mean_r": 0.1662,
+        "n_segments": 1185,
+        "n_films": 11,
+        "per_film_r": {
+          "AfterTheRain": 0.0304,
+          "BetweenViewings": 0.2662,
+          "Chatter": 0.4563,
+          "LessonLearned": 0.1743,
+          "Payload": 0.1127,
+          "Sintel": -0.0199,
+          "Spaceman": 0.0636,
+          "Superhero": 0.2677,
+          "TheSecretNumber": 0.2128,
+          "ToClaireFromSonny": 0.1484,
+          "YouAgain": 0.0761
+        },
+        "block_boot_ci95_centered": [
+          0.1075,
+          0.222
+        ],
+        "block_boot_ci95_fisher": [
+          0.0905,
+          0.2535
+        ],
+        "n_film_blocks": 11
+      }
+    },
+    "TheSecretNumber": {
+      "bert": {
+        "drop": "TheSecretNumber",
+        "model": "bert",
+        "pooled_r_centered": 0.0307,
+        "fisher_z_mean_r": 0.083,
+        "n_segments": 1163,
+        "n_films": 11,
+        "per_film_r": {
+          "AfterTheRain": -0.2133,
+          "BetweenViewings": 0.1433,
+          "Chatter": 0.5697,
+          "LessonLearned": -0.0725,
+          "Payload": 0.0547,
+          "Sintel": 0.177,
+          "Spaceman": -0.0881,
+          "Superhero": 0.0253,
+          "TearsOfSteel": 0.2529,
+          "ToClaireFromSonny": 0.0363,
+          "YouAgain": -0.0522
+        },
+        "block_boot_ci95_centered": [
+          -0.0394,
+          0.107
+        ],
+        "block_boot_ci95_fisher": [
+          -0.0316,
+          0.2252
+        ],
+        "n_film_blocks": 11
+      },
+      "gemini": {
+        "drop": "TheSecretNumber",
+        "model": "gemini",
+        "pooled_r_centered": 0.1772,
+        "fisher_z_mean_r": 0.1857,
+        "n_segments": 1163,
+        "n_films": 11,
+        "per_film_r": {
+          "AfterTheRain": 0.0304,
+          "BetweenViewings": 0.2662,
+          "Chatter": 0.4563,
+          "LessonLearned": 0.1743,
+          "Payload": 0.1127,
+          "Sintel": -0.0199,
+          "Spaceman": 0.0636,
+          "Superhero": 0.2677,
+          "TearsOfSteel": 0.4118,
+          "ToClaireFromSonny": 0.1484,
+          "YouAgain": 0.0761
+        },
+        "block_boot_ci95_centered": [
+          0.1155,
+          0.242
+        ],
+        "block_boot_ci95_fisher": [
+          0.1017,
+          0.2819
+        ],
+        "n_film_blocks": 11
+      }
+    },
+    "ToClaireFromSonny": {
+      "bert": {
+        "drop": "ToClaireFromSonny",
+        "model": "bert",
+        "pooled_r_centered": 0.0437,
+        "fisher_z_mean_r": 0.0974,
+        "n_segments": 1193,
+        "n_films": 11,
+        "per_film_r": {
+          "AfterTheRain": -0.2133,
+          "BetweenViewings": 0.1433,
+          "Chatter": 0.5697,
+          "LessonLearned": -0.0725,
+          "Payload": 0.0547,
+          "Sintel": 0.177,
+          "Spaceman": -0.0881,
+          "Superhero": 0.0253,
+          "TearsOfSteel": 0.2529,
+          "TheSecretNumber": 0.1928,
+          "YouAgain": -0.0522
+        },
+        "block_boot_ci95_centered": [
+          -0.036,
+          0.1215
+        ],
+        "block_boot_ci95_fisher": [
+          -0.0189,
+          0.2345
+        ],
+        "n_film_blocks": 11
+      },
+      "gemini": {
+        "drop": "ToClaireFromSonny",
+        "model": "gemini",
+        "pooled_r_centered": 0.1818,
+        "fisher_z_mean_r": 0.1916,
+        "n_segments": 1193,
+        "n_films": 11,
+        "per_film_r": {
+          "AfterTheRain": 0.0304,
+          "BetweenViewings": 0.2662,
+          "Chatter": 0.4563,
+          "LessonLearned": 0.1743,
+          "Payload": 0.1127,
+          "Sintel": -0.0199,
+          "Spaceman": 0.0636,
+          "Superhero": 0.2677,
+          "TearsOfSteel": 0.4118,
+          "TheSecretNumber": 0.2128,
+          "YouAgain": 0.0761
+        },
+        "block_boot_ci95_centered": [
+          0.1215,
+          0.2455
+        ],
+        "block_boot_ci95_fisher": [
+          0.1047,
+          0.2869
+        ],
+        "n_film_blocks": 11
+      }
+    },
+    "YouAgain": {
+      "bert": {
+        "drop": "YouAgain",
+        "model": "bert",
+        "pooled_r_centered": 0.0581,
+        "fisher_z_mean_r": 0.1053,
+        "n_segments": 1092,
+        "n_films": 11,
+        "per_film_r": {
+          "AfterTheRain": -0.2133,
+          "BetweenViewings": 0.1433,
+          "Chatter": 0.5697,
+          "LessonLearned": -0.0725,
+          "Payload": 0.0547,
+          "Sintel": 0.177,
+          "Spaceman": -0.0881,
+          "Superhero": 0.0253,
+          "TearsOfSteel": 0.2529,
+          "TheSecretNumber": 0.1928,
+          "ToClaireFromSonny": 0.0363
+        },
+        "block_boot_ci95_centered": [
+          -0.0243,
+          0.138
+        ],
+        "block_boot_ci95_fisher": [
+          -0.011,
+          0.242
+        ],
+        "n_film_blocks": 11
+      },
+      "gemini": {
+        "drop": "YouAgain",
+        "model": "gemini",
+        "pooled_r_centered": 0.1961,
+        "fisher_z_mean_r": 0.198,
+        "n_segments": 1092,
+        "n_films": 11,
+        "per_film_r": {
+          "AfterTheRain": 0.0304,
+          "BetweenViewings": 0.2662,
+          "Chatter": 0.4563,
+          "LessonLearned": 0.1743,
+          "Payload": 0.1127,
+          "Sintel": -0.0199,
+          "Spaceman": 0.0636,
+          "Superhero": 0.2677,
+          "TearsOfSteel": 0.4118,
+          "TheSecretNumber": 0.2128,
+          "ToClaireFromSonny": 0.1484
+        },
+        "block_boot_ci95_centered": [
+          0.133,
+          0.2583
+        ],
+        "block_boot_ci95_fisher": [
+          0.1107,
+          0.2877
+        ],
+        "n_film_blocks": 11
+      }
+    }
+  },
+  "llm_lexical_gap_centered": {
+    "full": 0.1367,
+    "drop_TearsOfSteel": 0.1353,
+    "delta": -0.0014
+  }
+}

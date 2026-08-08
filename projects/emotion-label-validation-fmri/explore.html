@@ -79,8 +79,10 @@
       <span style="color:#1F2937;font-weight:700">BERT (lexical)</span> ·
       <span style="color:#0F766E;font-weight:700">Gemini (LLM)</span> ·
       <span style="color:#9D174D;font-weight:700">Grok (exploratory)</span>.
-      Primary pooled r: BERT <strong>+0.021</strong> · Gemini <strong>+0.168</strong> · Grok <strong>+0.152</strong>.
-      Static publication figures with the same numbers: <a href="results.html">Results</a> ·
+      <strong>Primary</strong> (fair 5, segment lag&nbsp;2&nbsp;s, n=435): BERT <strong>+0.021</strong> · Gemini <strong>+0.168</strong> · Grok <strong>+0.152</strong>.
+      <strong>Secondary</strong> (dialogue 12, segment lag&nbsp;2&nbsp;s, n=1261, BERT·Gemini only): BERT <strong>+0.043</strong> · Gemini <strong>+0.180</strong>
+      (remaining-7 boundaries reconstructed from 1&nbsp;Hz; see <a href="results.html">Results</a>).
+      Static publication figures: <a href="results.html">Results</a> ·
       <a href="https://github.com/AlbertCosmo/emotion-label-validation-fmri/blob/main/docs/FIGURE_INDEX.md">Fig. 1–15 index</a>.
     </div>
 
@@ -135,7 +137,11 @@
     <div class="interp" id="film-interp"></div>
     <figure class="figure fig-static">
       <img src="assets/figures/forest_segment_lag2.png?v=8fb7ddc" alt="Fig 3 forest" />
-      <figcaption><strong>Fig. 3 (static, R)</strong> — per-film forest + pooled diamonds (segment lag 2 s).</figcaption>
+      <figcaption><strong>Fig. 3 (static, R)</strong> — per-film forest + pooled diamonds (segment lag 2 s, fair 5 primary).</figcaption>
+    </figure>
+    <figure class="figure fig-static">
+      <img src="assets/figures/forest_segment_12.png?v=seg12" alt="FILMS_12 forest" />
+      <figcaption><strong>Secondary · FILMS_12</strong> — segment lag 2&nbsp;s, n=1261, BERT +0.043 · Gemini +0.180 (film-block CI on diamonds). Fair 5 above the dashed line; remaining 7 use reconstructed boundaries.</figcaption>
     </figure>
 
     <h2>Fig. E5 · Lag profile (common sample)</h2>
