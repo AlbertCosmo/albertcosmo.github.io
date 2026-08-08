@@ -4,10 +4,41 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Interactive explore · Albert &amp; Jessica</title>
-  <meta name="description" content="Interactive charts for Albert & Jessica's emotion-label-validation-fmri project." />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet" />
+  <meta name="description" content="Interactive charts for Albert & Jessica's emotion-label-validation-fmri project. Segment-level primary; LLM vs lexical." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/site.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.6/dist/chart.umd.min.js"></script>
+  <style>
+    /* Explore-specific polish */
+    body { background: #F4F1EA; }
+    main.wide h2 {
+      font-size: 1.15rem;
+      margin-top: 2.25rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 2px solid #0B1220;
+      letter-spacing: -0.01em;
+    }
+    .chart-box {
+      background: #FFFcf7;
+      border: 1px solid #D9D2C5;
+      border-radius: 10px;
+      padding: 1rem 1rem 0.5rem;
+      margin: 0.75rem 0 0.5rem;
+      box-shadow: 0 1px 0 rgba(11,18,32,0.04);
+    }
+    .interp {
+      font-size: 0.92rem;
+      color: #5C6578;
+      margin: 0.35rem 0 1rem;
+      line-height: 1.45;
+    }
+    .callout {
+      background: #FFFcf7;
+      border-left: 4px solid #0F766E;
+      border-radius: 0 8px 8px 0;
+    }
+    .fig-static img { border-radius: 8px; border: 1px solid #D9D2C5; }
+  </style>
 </head>
 <body>
   <header class="site">
@@ -16,7 +47,7 @@
         <a class="brand" href="index.html">Emotion labels · fMRI · <em>Albert &amp; Jessica</em></a>
         <div class="collab">A joint research project</div>
       </div>
-            <nav class="site">
+      <nav class="site">
         <a href="index.html">Overview</a>
         <a href="results.html">Results</a>
         <a class="active" href="explore.html">Explore</a>
@@ -32,25 +63,28 @@
   <main class="wide">
     <p class="meta">
       <span class="badge duo">Albert &amp; Jessica’s project</span>
-      <span class="badge ok">Interactive</span>
-      <span class="badge">Effect sizes only</span>
+      <span class="badge ok">Interactive · Fig. E1–E11</span>
+      <span class="badge">Segment primary · lag 2 s</span>
     </p>
     <h1>Interactive results explorer</h1>
     <p class="lead">
-      All charts load from the publication JSON bundle (no invented numbers).
-      Hover for CIs / counts. Interpretations sit under each panel.
+      Charts load from the publication JSON bundle. <strong>Primary text arm:</strong>
+      segment-level PleasantOther, lag 2&nbsp;s, n=435, film-block CI.
+      Frame: <strong>LLM vs lexical</strong> (Grok exploratory). Hover for CIs / counts.
     </p>
-    <div id="load-status" class="loading">Loading explore_bundle.json?v=3way2…</div>
+    <div id="load-status" class="loading">Loading explore_bundle.json…</div>
 
-        <div class="callout">
-      <strong>Always three models:</strong> <span style="color:#4a4a4a;font-weight:600">BERT</span> ·
-      <span style="color:#1a5f7a;font-weight:600">Gemini</span> ·
-      <span style="color:#7c3aed;font-weight:600">Grok</span>.
-      Every text chart below plots all three together (fair 5-film head-to-head where Grok has transcripts).
-      Isolation scoring · film-block CIs · effect sizes only.
+    <div class="callout">
+      <strong>Models:</strong>
+      <span style="color:#1F2937;font-weight:700">BERT (lexical)</span> ·
+      <span style="color:#0F766E;font-weight:700">Gemini (LLM)</span> ·
+      <span style="color:#9D174D;font-weight:700">Grok (exploratory)</span>.
+      Primary pooled r: BERT <strong>+0.021</strong> · Gemini <strong>+0.168</strong> · Grok <strong>+0.152</strong>.
+      Static publication figures with the same numbers: <a href="results.html">Results</a> ·
+      <a href="https://github.com/AlbertCosmo/emotion-label-validation-fmri/blob/main/docs/FIGURE_INDEX.md">Fig. 1–15 index</a>.
     </div>
 
-    <h2>0 · Head-to-head (BERT · Gemini · Grok)</h2>
+    <h2>Fig. E1–E2 · Head-to-head (segment PleasantOther)</h2>
     <div class="chart-box">
       <div class="chart-wrap" style="min-height:320px"><canvas id="chart-hero"></canvas></div>
     </div>
@@ -58,15 +92,20 @@
       <div class="chart-wrap" style="min-height:340px"><canvas id="chart-hero-film"></canvas></div>
     </div>
     <div class="interp">
-      <strong>Read this first.</strong> Fair 5-film PleasantOther: BERT ≈ +0.018 · Gemini ≈ +0.113 · <strong>Grok ≈ +0.117</strong>.
-      Grok matches Gemini; both beat BERT. None replaces continuous human labels.
+      <strong>Read this first.</strong> Segment lag 2&nbsp;s: BERT +0.021 · Gemini <strong>+0.168</strong> · Grok +0.152 (exploratory).
+      LLM−lexical gap is lag-robust and survives dropping TearsOfSteel; absolute LLM r still ToS-sensitive.
+      Film-block CIs are optimistic (segment φ ≈ 0.92).
     </div>
-    <figure class="figure">
-      <img src="assets/figures/three_way_hero.png" alt="BERT Gemini Grok hero" />
-      <figcaption>Static publication figure (same numbers as the interactive bars above).</figcaption>
+    <figure class="figure fig-static">
+      <img src="assets/figures/three_way_hero.png?v=8fb7ddc" alt="Fig 2 LLM vs lexical lollipop" />
+      <figcaption><strong>Fig. 2 (static, R)</strong> — same primary numbers as E1 (editorial ggplot).</figcaption>
+    </figure>
+    <figure class="figure fig-static">
+      <img src="assets/figures/lofo_gap_centered_fisher.png?v=8fb7ddc" alt="Fig 5 LOFO gap" />
+      <figcaption><strong>Fig. 5 (static, R)</strong> — leave-one-film-out gap (centered + Fisher-z); gap holds without TearsOfSteel.</figcaption>
     </figure>
 
-    <h2>1 · GRID items — all three models side-by-side</h2>
+    <h2>Fig. E3 · GRID items — three arms side-by-side</h2>
     <div class="controls">
       <label>Sort
         <select id="text-sort">
@@ -74,14 +113,18 @@
           <option value="signed">signed r descending</option>
         </select>
       </label>
-      <span class="meta">Grouped bars: grey=BERT · teal=Gemini · purple=Grok</span>
+      <span class="meta">Within-film-centered pooled r · Grok exploratory</span>
     </div>
     <div class="chart-box">
       <div class="chart-wrap" style="min-height:520px"><canvas id="chart-text"></canvas></div>
     </div>
     <div class="interp" id="text-interp"></div>
+    <figure class="figure fig-static">
+      <img src="assets/figures/text_multi_item_top20.png?v=8fb7ddc" alt="Fig 7 multi-item" />
+      <figcaption><strong>Fig. 7 (static, R)</strong> — top 20 by human variance (arm-independent rank).</figcaption>
+    </figure>
 
-    <h2>2 · Per-film (pick item) — always three bars per film</h2>
+    <h2>Fig. E4 · Per-film (pick item)</h2>
     <div class="controls">
       <label>Item <select id="film-item"></select></label>
       <span class="meta" id="film-pool"></span>
@@ -90,27 +133,50 @@
       <div class="chart-wrap" style="min-height:360px"><canvas id="chart-film"></canvas></div>
     </div>
     <div class="interp" id="film-interp"></div>
+    <figure class="figure fig-static">
+      <img src="assets/figures/forest_segment_lag2.png?v=8fb7ddc" alt="Fig 3 forest" />
+      <figcaption><strong>Fig. 3 (static, R)</strong> — per-film forest + pooled diamonds (segment lag 2 s).</figcaption>
+    </figure>
 
-<h2>3 · Affective ROIs — PleasantOther (gated LOSO)</h2>
+    <h2>Fig. E5 · Lag profile (common sample)</h2>
     <div class="chart-box">
-      <div class="chart-wrap"><canvas id="chart-aff"></canvas></div>
+      <div class="chart-wrap" style="min-height:360px"><canvas id="chart-lag"></canvas></div>
     </div>
     <div class="interp">
-      <strong>Interpretation.</strong> On Payload (dialogue-dense), real LOSO means sit above their own shift-nulls → descriptive <em>DECODES</em>.
-      On Tears of Steel (visual / dialogue-light), real sits inside or below an elevated null → <em>null</em>.
-      Positive controls pass on all ROIs; this is not “decoder broken.” Film character is part of the finding.
+      <strong>Read.</strong> Fixed n at every lag. Gemini &gt; BERT at all L = 0…8.
+      Primary lag = 2 s (pre-specified), not Gemini’s peak.
     </div>
+    <figure class="figure fig-static">
+      <img src="assets/figures/lag_profile_common.png?v=8fb7ddc" alt="Fig 4 lag" />
+      <figcaption><strong>Fig. 4 (static, R)</strong> — lag profile on common sample.</figcaption>
+    </figure>
 
-    <h2>4 · Multi-item brain hit rates</h2>
+    <h2>Fig. E6 · Affective ROIs — PleasantOther (gated LOSO)</h2>
     <div class="chart-box">
-      <div class="chart-wrap"><canvas id="chart-hits"></canvas></div>
+      <div class="chart-wrap" style="min-height:320px"><canvas id="chart-aff"></canvas></div>
     </div>
     <div class="interp">
-      <strong>Interpretation.</strong> Payload: majority of tested items clear the dual gate in affective ROIs (~60–72%).
-      Tears of Steel: ~6–17%. Expanding beyond PleasantOther shows bodily/appraisal targets (Muscle, Urgency, Surprise…) often rival valence — continuous annotation is multi-dimensional in cortex too.
+      <strong>Read.</strong> Payload: real LOSO above own shift-null → DECODES.
+      Tears of Steel: null. Positive controls pass — film character is part of the finding.
     </div>
+    <figure class="figure fig-static">
+      <img src="assets/figures/brain_affective_pleasantother.png?v=8fb7ddc" alt="Fig 9 brain" />
+      <figcaption><strong>Fig. 9 (static, R)</strong> — affective ROIs real vs shift-null.</figcaption>
+    </figure>
 
-    <h2>5 · Multi-item brain table (filterable)</h2>
+    <h2>Fig. E7 · Multi-item brain hit rates</h2>
+    <div class="chart-box">
+      <div class="chart-wrap" style="min-height:300px"><canvas id="chart-hits"></canvas></div>
+    </div>
+    <div class="interp">
+      <strong>Read.</strong> Payload ~60–72% of tested items DECODES in affective ROIs; Tears of Steel ~6–17%.
+    </div>
+    <figure class="figure fig-static">
+      <img src="assets/figures/brain_multi_item_hit_rates.png?v=8fb7ddc" alt="Fig 10 hits" />
+      <figcaption><strong>Fig. 10 (static, R)</strong> — multi-item hit rates.</figcaption>
+    </figure>
+
+    <h2>Fig. E7b · Multi-item brain table (filterable)</h2>
     <div class="controls">
       <label>Film
         <select id="brain-film">
@@ -145,7 +211,7 @@
     </div>
     <p class="note">DECODES = pos-control pass AND real mean clears own shift-null by &gt;1 null SD. Sorted by margin (real − null).</p>
 
-    <h2>6 · Visual residualization of the target</h2>
+    <h2>Fig. E8 · Visual residualization of the target</h2>
     <div class="controls">
       <label>Film
         <select id="resid-film">
@@ -155,46 +221,52 @@
       </label>
     </div>
     <div class="chart-box">
-      <div class="chart-wrap"><canvas id="chart-resid"></canvas></div>
+      <div class="chart-wrap" style="min-height:300px"><canvas id="chart-resid"></canvas></div>
     </div>
     <div class="interp" id="resid-interp"></div>
+    <figure class="figure fig-static">
+      <img src="assets/figures/brain_affective_residual.png?v=8fb7ddc" alt="Fig 11 residual" />
+      <figcaption><strong>Fig. 11 (static, R)</strong> — valence vs valence−visual.</figcaption>
+    </figure>
 
-    <h2>7 · Physio (subject-mean) top |r|</h2>
+    <h2>Fig. E9 · Physio (subject-mean) top |r|</h2>
     <div class="chart-box">
       <div class="chart-wrap" style="min-height:420px"><canvas id="chart-phys"></canvas></div>
     </div>
     <div class="interp">
-      <strong>Interpretation.</strong> Respiration (RESP) dominates top |r| against several consensus series (often arousal-related).
-      HR/EDA are mixed and film-dependent. Treat as convergent peripheral evidence, not a second brain arm.
-      Sample is the same 5 subjects × 2 films as the BOLD subset.
+      <strong>Read.</strong> Respiration dominates top |r| against several consensus series.
+      Same 5 subjects × 2 films as the BOLD subset.
     </div>
+    <figure class="figure fig-static">
+      <img src="assets/figures/physio_top_agreement.png?v=8fb7ddc" alt="Fig 13 physio" />
+      <figcaption><strong>Fig. 13 (static, R)</strong> — physio top |r|.</figcaption>
+    </figure>
 
-    <h2>8 · Multimodal snapshot (Tears of Steel)</h2>
+    <h2>Fig. E10 · Multimodal snapshot (Tears of Steel)</h2>
     <div class="chart-box">
-      <div class="chart-wrap"><canvas id="chart-mm"></canvas></div>
+      <div class="chart-wrap" style="min-height:320px"><canvas id="chart-mm"></canvas></div>
     </div>
     <div class="interp">
-      <strong>Interpretation.</strong> On ToS, <em>text</em> still owns valence (Gemini PleasantOther high positive);
-      <em>audio energy</em> tracks arousal-like structure (IntenseEmotion up, Calm down);
-      <em>visual motion</em> aligns with fear/anxiety-like series. Channels are complementary, not redundant.
-      Payload audio missing until experiment cuts are restored.
+      <strong>Read.</strong> Text owns valence; audio energy tracks arousal-like structure; visual motion aligns with fear/anxiety-like series.
     </div>
 
-    <h2>9 · Annotation dynamics (top variance)</h2>
+    <h2>Fig. E11 · Annotation dynamics (top variance)</h2>
     <div class="chart-box">
       <div class="chart-wrap" style="min-height:420px"><canvas id="chart-annot"></canvas></div>
     </div>
     <div class="interp">
-      <strong>Interpretation.</strong> PleasantOther is among the most dynamic items — justifying its historical use as primary valence —
-      but Fear, Anxiety, Stomach, Urgency, etc. are comparably variable. Median autocorrelation 1/e lags of ~30–55&nbsp;s on short films
-      motivate effect-size reporting and film-block inference, not second-level NHST stars.
+      <strong>Read.</strong> PleasantOther is highly dynamic; median autocorr lags ~30–55 s motivate film-block inference.
     </div>
+    <figure class="figure fig-static">
+      <img src="assets/figures/annotation_item_variance.png?v=8fb7ddc" alt="Fig 8 annot" />
+      <figcaption><strong>Fig. 8 (static, R)</strong> — top-15 item variance.</figcaption>
+    </figure>
 
     <p class="meta" style="margin-top:2rem">
-      Data file: <a href="data/explore_bundle.json?v=3way2"><code>data/explore_bundle.json?v=3way2</code></a> ·
-      Static figures: <a href="results.html">Results</a> ·
-      
-</p>
+      Data: <a href="data/explore_bundle.json?v=seg3"><code>data/explore_bundle.json?v=seg3</code></a> ·
+      Static suite: <a href="results.html">Results</a> ·
+      Figure map: <a href="https://github.com/AlbertCosmo/emotion-label-validation-fmri/blob/main/docs/FIGURE_INDEX.md">FIGURE_INDEX.md</a>
+    </p>
   </main>
 
   <footer class="site">
@@ -205,6 +277,6 @@
     </div>
   </footer>
   <script src="js/nav.js"></script>
-  <script src="js/explore.js?v=3way2"></script>
+  <script src="js/explore.js?v=seg3"></script>
 </body>
 </html>

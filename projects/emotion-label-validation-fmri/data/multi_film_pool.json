@@ -1,5 +1,6 @@
 {
-  "description": "Multi-film pool text vs PleasantOther",
+  "description": "Multi-film pool text vs PleasantOther. D1: on films with all three model signals, seconds are the \u2229 of bert\u2229gemini\u2229grok\u2229human. D2: pooled_r_centered = within-film z-score then concat; fisher_z_mean_r = equal-film Fisher-z mean. Prefer these over pooled_r. Proper fix is Phase 4 mixed model (film as RE).",
+  "git_sha": "d0d8c6e",
   "rows": [
     {
       "model": "bert",
@@ -21,11 +22,15 @@
       "n_films": 12,
       "n_seconds": 4278,
       "pooled_r": 0.0129,
-      "block_boot_mean": 0.0171,
+      "pooled_r_centered": 0.0214,
+      "fisher_z_mean_r": 0.0649,
+      "block_boot_mean": 0.0251,
       "block_boot_ci95": [
-        -0.0515,
-        0.092
-      ]
+        -0.0527,
+        0.1118
+      ],
+      "block_boot_ci_on": "within_film_zscore",
+      "coverage": "three_model_intersection_where_available"
     },
     {
       "model": "gemini",
@@ -47,11 +52,38 @@
       "n_films": 12,
       "n_seconds": 4278,
       "pooled_r": 0.2112,
-      "block_boot_mean": 0.2042,
+      "pooled_r_centered": 0.1842,
+      "fisher_z_mean_r": 0.2041,
+      "block_boot_mean": 0.1833,
       "block_boot_ci95": [
-        0.1411,
-        0.2595
-      ]
+        0.1028,
+        0.2483
+      ],
+      "block_boot_ci_on": "within_film_zscore",
+      "coverage": "three_model_intersection_where_available"
+    },
+    {
+      "model": "grok",
+      "item": "PleasantOther",
+      "films": [
+        "Payload",
+        "TearsOfSteel",
+        "AfterTheRain",
+        "Sintel",
+        "LessonLearned"
+      ],
+      "n_films": 5,
+      "n_seconds": 1414,
+      "pooled_r": 0.1151,
+      "pooled_r_centered": 0.0977,
+      "fisher_z_mean_r": 0.1353,
+      "block_boot_mean": 0.1007,
+      "block_boot_ci95": [
+        0.0112,
+        0.2262
+      ],
+      "block_boot_ci_on": "within_film_zscore",
+      "coverage": "three_model_intersection_where_available"
     }
   ]
 }
