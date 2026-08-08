@@ -75,8 +75,8 @@
       Film-block CIs remain optimistic under within-film segment dependence (φ≈0.92).
     </div>
     <figure class="figure">
-      <img src="assets/figures/forest_segment_12.png?v=seg12" alt="FILMS_12 segment forest" />
-      <figcaption><strong>Secondary forest</strong> — 12 dialogue films, segment lag 2&nbsp;s, BERT vs Gemini (fair 5 above the dashed line).</figcaption>
+      <img src="assets/figures/forest_segment_12.png?v=seg12b" alt="FILMS_12 segment forest" />
+      <figcaption><strong>Secondary forest</strong> — 12 dialogue films, segment lag 2&nbsp;s, BERT vs Gemini (fair 5 <em>below</em> the dashed line; remaining 7 above, reconstructed boundaries).</figcaption>
     </figure>
     <figure class="figure">
       <img src="assets/figures/three_way_pleasantother.png?v=8fb7ddc" alt="Three-way PleasantOther" />
@@ -92,12 +92,12 @@
     <table>
       <thead><tr><th>Model</th><th>Item</th><th class="num">pooled r</th><th>95% CI</th><th class="num">films</th></tr></thead>
       <tbody>
-        <tr><td>Gemini</td><td>PleasantOther</td><td class="num">+0.168</td><td>[+0.060, +0.297] fair-5 segment lag2 primary</td><td class="num">5 · 435 segs</td></tr>
-        <tr><td>Gemini</td><td>PleasantOther</td><td class="num">+0.180</td><td>[+0.120, +0.241] dialogue-12 segment lag2 secondary</td><td class="num">12 · 1261 segs</td></tr>
-        <tr><td>Grok</td><td>PleasantOther</td><td class="num">+0.117</td><td>[0.064, 0.231]</td><td class="num">5</td></tr>
-        <tr><td>BERT</td><td>PleasantOther</td><td class="num">+0.013</td><td>[−0.063, 0.081]</td><td class="num">12</td></tr>
-        <tr><td>Gemini</td><td>Happiness</td><td class="num">+0.188</td><td>[0.127, 0.243]</td><td class="num">12</td></tr>
-        <tr><td>Grok</td><td>Happiness</td><td class="num">+0.135</td><td>[0.004, 0.327]</td><td class="num">5</td></tr>
+        <tr><td>Gemini</td><td>PleasantOther</td><td class="num">+0.168</td><td>[+0.060, +0.297] fair-5 <strong>segment</strong> lag2 primary</td><td class="num">5 · 435 segs</td></tr>
+        <tr><td>Gemini</td><td>PleasantOther</td><td class="num">+0.180</td><td>[+0.120, +0.241] dialogue-12 <strong>segment</strong> lag2 secondary</td><td class="num">12 · 1261 segs</td></tr>
+        <tr><td>Grok</td><td>PleasantOther</td><td class="num">+0.117</td><td>[0.064, 0.231] <strong>1&nbsp;Hz</strong> fair-5 (legacy multi-item row)</td><td class="num">5</td></tr>
+        <tr><td>BERT</td><td>PleasantOther</td><td class="num">+0.013</td><td>[−0.063, 0.081] <strong>1&nbsp;Hz</strong> 12-film (legacy raw)</td><td class="num">12</td></tr>
+        <tr><td>Gemini</td><td>Happiness</td><td class="num">+0.188</td><td>[0.127, 0.243] <strong>1&nbsp;Hz</strong> 12-film</td><td class="num">12</td></tr>
+        <tr><td>Grok</td><td>Happiness</td><td class="num">+0.135</td><td>[0.004, 0.327] <strong>1&nbsp;Hz</strong> fair-5</td><td class="num">5</td></tr>
       </tbody>
     </table>
     <figure class="figure">
