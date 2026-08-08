@@ -1,3 +1,7 @@
+# Publication tables
+
+> **Superseded for multi-model headline:** segment lag 2 s, 5 films: Gemini +0.168 · BERT +0.021 · Grok +0.152 exploratory. +0.211 below is legacy 12-film 1 Hz raw.
+
 # Publication tables (auto-generated)
 
 Effect sizes only. No p-values (annotation autocorrelation).
