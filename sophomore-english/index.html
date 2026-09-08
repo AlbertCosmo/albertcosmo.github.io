@@ -80,18 +80,35 @@
   .hour ul li{font-size:16.5px; margin-bottom:7px}
   .hour ul li:last-child{margin-bottom:0}
 
+  .band{display:flex; justify-content:space-between; align-items:baseline; gap:16px;
+        margin:38px 0 0; padding-bottom:9px; border-bottom:1px solid var(--rule)}
+  .band .lbl{font-size:12px; letter-spacing:.16em; text-transform:uppercase;
+             color:var(--faint); font-weight:600}
+  .band .tot{font-size:12px; letter-spacing:.08em; color:var(--faint); font-weight:600}
   .grade{display:grid; grid-template-columns:74px 1fr; gap:22px; align-items:baseline;
-         padding:20px 0; border-top:1px solid var(--rule)}
-  .grade:last-of-type{border-bottom:1px solid var(--rule)}
+         padding:19px 0; border-bottom:1px solid var(--rule)}
   .grade .pct{font-size:26px; font-weight:600; color:var(--accent); letter-spacing:-.02em}
   .grade h3{margin:0 0 6px; font-size:19px; font-weight:600}
   .grade p{margin:0; font-size:16.5px; color:var(--mute)}
+
+  .week{display:grid; grid-template-columns:66px 1fr; gap:22px;
+        padding:17px 0; border-bottom:1px solid var(--rule)}
+  .week:first-of-type{border-top:1px solid var(--rule)}
+  .week .wk{font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:var(--accent);
+            font-weight:600; padding-top:5px}
+  .week h3{margin:0 0 5px; font-size:18.5px; font-weight:600}
+  .week p{margin:0; font-size:16.5px; color:var(--mute)}
+  .week .due{display:inline-block; margin-top:7px; font-size:13px; font-weight:600;
+             letter-spacing:.03em; color:var(--accent); border:1px solid currentColor;
+             border-radius:4px; padding:2px 9px}
+  .note{margin-top:26px; font-size:15.5px; color:var(--faint); line-height:1.6}
 
   @media (max-width:560px){
     .wrap{padding:52px 22px 72px}
     h1{font-size:30px}
     .hour{grid-template-columns:1fr; gap:7px}
-    .grade{grid-template-columns:1fr; gap:4px}
+    .grade, .week{grid-template-columns:1fr; gap:4px}
+    .week .wk{padding-top:0}
   }
   footer{margin-top:68px; padding-top:24px; border-top:1px solid var(--rule);
          font-size:14.5px; color:var(--faint)}
@@ -195,29 +212,136 @@
   <section>
     <div class="num">05</div>
     <h2>Grading</h2>
-    <p class="lead">Most of your grade is earned week by week rather than on two days of the semester. Turning up prepared is the largest single thing you can do for it.</p>
+    <p class="lead">Seventy per cent of your grade is earned week by week rather than on two days of the semester. Turning up, prepared, is the largest single thing you can do for it.</p>
+
+    <div class="band"><span class="lbl">Coursework</span><span class="tot">70%</span></div>
 
     <div class="grade">
-      <div class="pct">70%</div>
+      <div class="pct">20%</div>
       <div>
-        <h3>Participation, assignments &amp; attendance</h3>
-        <p>Speaking in class, e-book work, and everything submitted across the semester.</p>
+        <h3>Attendance</h3>
+        <p>Being in the room, on time, for both hours.</p>
+      </div>
+    </div>
+    <div class="grade">
+      <div class="pct">20%</div>
+      <div>
+        <h3>Participation</h3>
+        <p>Speaking in the first hour, working through the e-book in the second, and peer review when it is scheduled.</p>
+      </div>
+    </div>
+    <div class="grade">
+      <div class="pct">20%</div>
+      <div>
+        <h3>Five group recordings</h3>
+        <p>Five oral recordings across the semester. The fixed deadlines are marked in the plan below; any remaining one will be announced in class.</p>
+      </div>
+    </div>
+    <div class="grade">
+      <div class="pct">10%</div>
+      <div>
+        <h3>Final reflective essay</h3>
+        <p>The written essay together with an individual recording of you reading it aloud. Both due in Week 18.</p>
+      </div>
+    </div>
+
+    <div class="band"><span class="lbl">Presentations</span><span class="tot">30%</span></div>
+
+    <div class="grade">
+      <div class="pct">15%</div>
+      <div>
+        <h3>Midterm group presentation</h3>
+        <p>Proposed in Week 7, presented in Week 8.</p>
       </div>
     </div>
     <div class="grade">
       <div class="pct">15%</div>
       <div>
-        <h3>Midterm</h3>
-        <p>Details given in class in good time.</p>
+        <h3>Final project report</h3>
+        <p>Proposed in Weeks 11 and 13, presented in Weeks 15 and 16.</p>
       </div>
     </div>
-    <div class="grade">
-      <div class="pct">15%</div>
-      <div>
-        <h3>Final</h3>
-        <p>Details given in class in good time.</p>
-      </div>
+  </section>
+
+  <section>
+    <div class="num">06</div>
+    <h2>Semester Plan</h2>
+    <p class="lead">Eighteen weeks, as filed in the official syllabus. Anything marked <b>Due</b> is a submission deadline; watch this space rather than your memory.</p>
+
+    <div class="week">
+      <div class="wk">Week 1</div>
+      <div><h3>Course Overview</h3><p>TED Talk: <i>Do Schools Kill Creativity?</i></p></div>
     </div>
+    <div class="week">
+      <div class="wk">Week 2</div>
+      <div><h3>Personal Branding</h3><p>SWOT analysis. Jordan Peterson on personal responsibility — interview and lecture.</p><span class="due">Due: Oral Recording 1</span></div>
+    </div>
+    <div class="week">
+      <div class="wk">Week 3</div>
+      <div><h3>Mental Health I</h3><p>Causes and effects of anxiety. TED Talk: <i>This Could Be Why You&rsquo;re Depressed</i>.</p></div>
+    </div>
+    <div class="week">
+      <div class="wk">Week 4</div>
+      <div><h3>Social Media Influence I</h3><p>Watch <i>The Social Media Beauty Cult</i> before class. Beauty standards and mental health.</p></div>
+    </div>
+    <div class="week">
+      <div class="wk">Week 5</div>
+      <div><h3>Life</h3><p>Watch <i>Money, Happiness and Eternal Life &mdash; Greed</i> (Director&rsquo;s Cut) before class. Consumerism and ethics.</p><span class="due">Due: Oral Recording 2</span></div>
+    </div>
+    <div class="week">
+      <div class="wk">Week 6</div>
+      <div><h3>Cyber Bullying</h3><p>TED Talk: <i>The Price of Shame</i>. Causes, effects, and proposed solutions.</p></div>
+    </div>
+    <div class="week">
+      <div class="wk">Week 7</div>
+      <div><h3>Midterm Prep</h3><p>Five minutes per group on your midterm topic. Peer review 1.</p><span class="due">Due: Oral Recording 3</span></div>
+    </div>
+    <div class="week">
+      <div class="wk">Week 8</div>
+      <div><h3>Midterm Group Presentation</h3><p>Peer review 2.</p></div>
+    </div>
+    <div class="week">
+      <div class="wk">Week 9</div>
+      <div><h3>Analytical Skills</h3><p>Watch the Jordan Peterson debate on the gender pay gap, campus protests and postmodernism before class. Arguments and rhetorical strategies.</p></div>
+    </div>
+    <div class="week">
+      <div class="wk">Week 10</div>
+      <div><h3>Are We Lazy?</h3><p>TED Talk: <i>Inside the Mind of a Master Procrastinator</i>. Causes, effects, and proposed solutions.</p></div>
+    </div>
+    <div class="week">
+      <div class="wk">Week 11</div>
+      <div><h3>Final Project Proposal</h3><p>Group presentations on your final topics and methods. Peer review.</p></div>
+    </div>
+    <div class="week">
+      <div class="wk">Week 12</div>
+      <div><h3>Social Media Influence II</h3><p>TED Talk: <i>Looks Aren&rsquo;t Everything. Believe Me, I&rsquo;m a Model</i>.</p><span class="due">Due: Oral Recording 5</span></div>
+    </div>
+    <div class="week">
+      <div class="wk">Week 13</div>
+      <div><h3>Final Project Proposal</h3><p>Continued. Group presentations and peer review.</p></div>
+    </div>
+    <div class="week">
+      <div class="wk">Week 14</div>
+      <div><h3>Mental Health II</h3><p>TED Talk: <i>Why We All Need to Practice Emotional First Aid</i>.</p></div>
+    </div>
+    <div class="week">
+      <div class="wk">Week 15</div>
+      <div><h3>Final Project Report</h3><p>Group presentation. Peer review 3.</p></div>
+    </div>
+    <div class="week">
+      <div class="wk">Week 16</div>
+      <div><h3>Final Project Report</h3><p>Continued. Group presentation and peer review 3.</p></div>
+    </div>
+    <div class="week">
+      <div class="wk">Week 17</div>
+      <div><h3>Autonomous Learning Week</h3><p>No class meeting.</p></div>
+    </div>
+    <div class="week">
+      <div class="wk">Week 18</div>
+      <div><h3>Autonomous Learning Week</h3><p>No class meeting.</p><span class="due">Due: all recordings &amp; the final reflective essay</span></div>
+    </div>
+
+    <p class="note">Please follow the regulations on Intellectual Property Rights. Do not make illegal copies.</p>
   </section>
 
   <footer>
