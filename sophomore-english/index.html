@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sophomore English (I) — Fall 2026</title>
+<meta name="description" content="Course introduction for Sophomore English (I), Ming Chuan University, Fall 2026. Instructor: Albert Le Thanh Nhan.">
+<style>
+  :root{
+    --bg:#fbfaf8; --ink:#1a1a1a; --mute:#6b6b6b; --faint:#9a9a9a;
+    --rule:#e3e0db; --accent:#7a1f2b; --card:#ffffff;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#141414; --ink:#eceae7; --mute:#a3a3a3; --faint:#7d7d7d;
+           --rule:#2e2e2e; --accent:#d98a94; --card:#1c1c1c; }
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font:19px/1.68 ui-sans-serif,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans TC",sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:770px; margin:0 auto; padding:76px 30px 100px}
+
+  header{padding-bottom:34px; border-bottom:1px solid var(--rule)}
+  h1{margin:0 0 5px; font-size:38px; line-height:1.2; font-weight:600; letter-spacing:-.015em}
+  .han{font-weight:500; opacity:.72; margin-left:.18em}
+  .role{margin:0 0 18px; color:var(--mute); font-size:17.5px}
+  .site{display:inline-block; color:var(--accent); text-decoration:none;
+        border-bottom:1px solid currentColor; padding-bottom:1px; font-size:17px}
+  .site:hover{opacity:.7}
+  .course{margin-top:24px; font-size:14px; color:var(--faint); letter-spacing:.04em; text-transform:uppercase}
+
+  .facts{display:grid; grid-template-columns:repeat(auto-fit,minmax(212px,1fr)); gap:1px;
+         margin-top:34px; background:var(--rule); border:1px solid var(--rule); border-radius:10px;
+         overflow:hidden}
+  .facts div{background:var(--card); padding:16px 18px}
+  .facts dt{font-size:11.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--faint);
+            font-weight:600; margin-bottom:5px}
+  .facts dd{margin:0; font-size:17px; color:var(--ink)}
+  .facts dd a{color:var(--accent); text-decoration:none; border-bottom:1px solid currentColor;
+              word-break:break-all}
+  .facts dd a:hover{opacity:.7}
+  .facts dd span{color:var(--mute); font-size:15.5px}
+
+  section{padding-top:50px}
+  .num{font-size:12px; letter-spacing:.16em; color:var(--accent); font-weight:600; margin-bottom:9px}
+  h2{margin:0 0 18px; font-size:25px; font-weight:600; letter-spacing:-.01em}
+  p{margin:0 0 16px; color:var(--ink)}
+  .lead{color:var(--mute); font-size:17.5px}
+
+  ul{margin:0; padding:0; list-style:none}
+  ul li{position:relative; padding-left:21px; margin-bottom:11px; color:var(--mute); font-size:17.5px}
+  ul li::before{content:""; position:absolute; left:0; top:.78em; width:8px; height:1px; background:var(--faint)}
+  ul li b{color:var(--ink); font-weight:600}
+
+  .qr{display:flex; gap:26px; align-items:center; flex-wrap:wrap;
+      background:var(--card); border:1px solid var(--rule); border-radius:10px; padding:22px}
+  .qr img{width:178px; height:178px; display:block; border-radius:4px; background:#fff}
+  .qr .txt{flex:1 1 240px; min-width:0}
+  .qr .txt p{margin:0 0 14px; font-size:17.5px; color:var(--mute)}
+  .qr a{color:var(--accent); text-decoration:none; border-bottom:1px solid currentColor;
+        word-break:break-all; font-size:16px}
+  .qr a:hover{opacity:.7}
+
+  a.btn, .qr a.btn{display:inline-block; margin-top:2px; padding:13px 24px; border-radius:7px;
+       background:var(--accent); color:#fff; text-decoration:none; border-bottom:0;
+       font-size:17px; font-weight:500; word-break:normal}
+  a.btn:hover{opacity:.88}
+  @media (prefers-color-scheme: dark){ a.btn, .qr a.btn{color:#1a1a1a} }
+
+  .hour{display:grid; grid-template-columns:104px 1fr; gap:22px;
+        padding:23px 0; border-top:1px solid var(--rule)}
+  .hour:last-child{border-bottom:1px solid var(--rule)}
+  .hour .h{font-size:13px; letter-spacing:.08em; text-transform:uppercase; color:var(--accent);
+           font-weight:600; padding-top:3px}
+  .hour h3{margin:0 0 8px; font-size:19.5px; font-weight:600}
+  .hour p{margin:0; font-size:17px; color:var(--mute)}
+  .hour ul li{font-size:16.5px; margin-bottom:7px}
+  .hour ul li:last-child{margin-bottom:0}
+
+  .grade{display:grid; grid-template-columns:74px 1fr; gap:22px; align-items:baseline;
+         padding:20px 0; border-top:1px solid var(--rule)}
+  .grade:last-of-type{border-bottom:1px solid var(--rule)}
+  .grade .pct{font-size:26px; font-weight:600; color:var(--accent); letter-spacing:-.02em}
+  .grade h3{margin:0 0 6px; font-size:19px; font-weight:600}
+  .grade p{margin:0; font-size:16.5px; color:var(--mute)}
+
+  @media (max-width:560px){
+    .wrap{padding:52px 22px 72px}
+    h1{font-size:30px}
+    .hour{grid-template-columns:1fr; gap:7px}
+    .grade{grid-template-columns:1fr; gap:4px}
+  }
+  footer{margin-top:68px; padding-top:24px; border-top:1px solid var(--rule);
+         font-size:14.5px; color:var(--faint)}
+  @media print{
+    body{background:#fff}
+    .wrap{padding:0; max-width:none}
+    section{page-break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>Sophomore English (I)</h1>
+    <p class="role">Albert Le Thanh Nhan<span class="han">黎清仁</span>, Instructor</p>
+    <a class="site" href="https://albertcosmo.github.io" target="_blank" rel="noopener">albertcosmo.github.io</a>
+    <p class="course">Ming Chuan University &nbsp;·&nbsp; Fall 2026</p>
+
+    <dl class="facts">
+      <div><dt>Meeting time</dt><dd>14:50 – 16:40</dd></div>
+      <div><dt>Room</dt><dd>CC505</dd></div>
+      <div><dt>Class number</dt><dd>84202</dd></div>
+      <div><dt>Course number</dt><dd>01215</dd></div>
+      <div><dt>Email</dt><dd><a href="mailto:albert.lethanhnhan@gmail.com">albert.lethanhnhan@gmail.com</a></dd></div>
+      <div><dt>Office hours</dt><dd>By appointment <span>— email me and we will find a time</span></dd></div>
+    </dl>
+  </header>
+
+  <section>
+    <div class="num">01</div>
+    <h2>Who I Am</h2>
+    <p class="lead">A few minutes on whose class this is, and then the same from you.</p>
+    <ul>
+      <li><b>Background</b>: PhD candidate in Comparative Literature and Cross-Cultural Studies, Fu Jen Catholic University; MA in English, National Taipei University of Technology.</li>
+      <li><b>Teaching</b>: university English in Vietnam and Taiwan — academic English, film and media English, and culture courses taught in English.</li>
+      <li><b>Research</b>: food, memory and language in Vietnamese American fiction.</li>
+      <li><b>Languages</b>: Vietnamese, English, Mandarin.</li>
+      <li><b>Your turn</b>: your name, your department, one thing you want to be able to do in English by January, and one thing you would rather not do in class.</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="num">02</div>
+    <h2>First Survey</h2>
+    <p class="lead">Five minutes. Your answers decide how we spend our two hours each week, so please answer honestly rather than politely.</p>
+    <div class="qr">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQgAAAEICAIAAAAslP2oAAAFBElEQVR4nO3dQW5kJxRA0TjKLrz/pfU6KuNIlwESBLDPGUZO+XfZV0g8U3x9Pp+/gP/6+/QDwI2EAUEYEIQBQRgQhAFBGBCEAUEYEIQBQRgQhAFBGBCEAUEYEP6Z/R++v793PMdyf/78yf8+ev7R14+sep3Z1z9l9v28zezPxYoBQRgQhAFBGBCEAUEYEIQBYXqOMbJq/37Wqn302bnEqXnF7nnLqvfz9d8HKwYEYUAQBgRhQBAGBGFAEAaEZXOMkdv2xVft35+aD6yy+zzJ7Pedtfs5rRgQhAFBGBCEAUEYEIQBQRgQts8xbnNqH/3U+YTZucqp+cZtrBgQhAFBGBCEAUEYEIQBQRgQft0c49R5idvu0/htc4lZVgwIwoAgDAjCgCAMCMKAIAwI2+cYr+yX737O3feOv3Lu4pXfBysGBGFAEAYEYUAQBgRhQBAGhGVzjNvufxhZda/F7rnEyKm5x6r7xV9hxYAgDAjCgCAMCMKAIAwIwoDw9fl8Tj/D/2rV5y/t3qe/bW7wyjmKVawYEIQBQRgQhAFBGBCEAUEYEKbPY6w6nzCye25w6vOXVj3/qXvKR3a/P7t/r0asGBCEAUEYEIQBQRgQhAFBGBCm5xi7/y5/97747v3yU3OPn/r8s1+/as5jxYAgDAjCgCAMCMKAIAwIwoDwzOdK7d4XP3Xv9anvO/LK84ysek4rBgRhQBAGBGFAEAYEYUAQBoRl93yPnPq7/FVuu6/6lXnLqp/7qXmUFQOCMCAIA4IwIAgDgjAgCAPC9HmM285F3Hb/xuz3XWX3fOPU64/sfj+tGBCEAUEYEIQBQRgQhAFBGBCWzTFu26e/bS5x6j7sV15n9vVnOY8BCwgDgjAgCAOCMCAIA4IwIGz/XKmR2f3v3ecxZu0+B3LbHOCVuccqVgwIwoAgDAjCgCAMCMKAIAwIy+75fmV/euT1z2VaZff5h1fmIVYMCMKAIAwIwoAgDAjCgCAMCM+cx3j9vvBT84rd+/0/dc5jxYAgDAjCgCAMCMKAIAwIwoCw7DzGyG2f+/TKPRK/7T6QU/dgjFgxIAgDgjAgCAOCMCAIA4IwIEyfxzh1r8Xueciq55l9H2a9Pg8ZOXV/yIgVA4IwIAgDgjAgCAOCMCAIA8J15zFGbrs/Yff3fWWesOp1zDHgAcKAIAwIwoAgDAjCgCAMCNvv+R75qfv6p/bjX5+fzDLHgAOEAUEYEIQBQRgQhAFBGBC2n8e4zSv7/a/PQ2Zff7fZ57diQBAGBGFAEAYEYUAQBgRhQFh2P8Ztdv+9/uz3vW3+sOrnuPvfder9tGJAEAYEYUAQBgRhQBAGBGFAmJ5jjJyaG+zejx85tb/+yrmR11kxIAgDgjAgCAOCMCAIA4IwICybY4ycuud79nVmn3P351Pd9jq3fY7WblYMCMKAIAwIwoAgDAjCgCAMCNvnGLc5dT/G7q+ftXu+9PpcyIoBQRgQhAFBGBCEAUEYEIQB4dfNMWbddi/1bedbdn/f3Z/TNWLFgCAMCMKAIAwIwoAgDAjCgLB9jnHb/Qmzz7NqnjD7Oqf271fdF757XuGebzhAGBCEAUEYEIQBQRgQhAFh2Rzj1LmFWavmD7v311e9/iv3fN8277JiQBAGBGFAEAYEYUAQBgRhQPj6fD6nnwGuY8WAIAwIwoAgDAjCgCAMCMKAIAwIwoAgDAjCgCAMCMKAIAwIwoDwL2CCOudK+cyoAAAAAElFTkSuQmCC" alt="QR code linking to the first-day survey form">
+      <div class="txt">
+        <p>Scan the code, or open the link directly:</p>
+        <a href="https://forms.gle/DfJXoUbmy1cpmwbHA" target="_blank" rel="noopener">forms.gle/DfJXoUbmy1cpmwbHA</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="num">03</div>
+    <h2>Course Drive</h2>
+    <p class="lead">Everything for this course lives in one shared folder: the e-book chapters, speaking prompts, handouts, and anything I hand back to you.</p>
+    <div class="qr">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUgAAAFICAIAAAC9dvBkAAAHOUlEQVR4nO3dQY7dthJA0TjILrz/pXkdncmfCh8EWCB5c87Ylp7bfaFBvaJ+/fz8/AW0/H36AwD7CRuChA1BwoYgYUOQsCFI2BAkbAgSNgQJG4KEDUHChiBhQ5CwIUjYEPTP6l/4/fv3xOfY7s+fP1uus/rvnb7v1/Wn//yqU59n131vs/pz8MSGIGFDkLAhSNgQJGwIEjYECRuClufYX3bNP1ftmkO+Ms/cNe+9bV69ev1pr/8+e2JDkLAhSNgQJGwIEjYECRuChA1B2+bYX3bN5U7tV3+Z3u89NWdevc5t952eP9/2//vFExuChA1BwoYgYUOQsCFI2BAkbAgan2O/4tS507fNq79Mn2fOXp7YECRsCBI2BAkbgoQNQcKGIGFDkDn2/0yfd31qn3x6f3jXvPqVef4rPLEhSNgQJGwIEjYECRuChA1Bwoag8Tn2K/PD1/eNp+fA03PpV/a0X/l99sSGIGFDkLAhSNgQJGwIEjYECRuCts2xX5lD3mZ6f3jX9XfN7Xd9L2D6ewSv/z57YkOQsCFI2BAkbAgSNgQJG4KEDUHLc+xX9lGnvTLnPDV/Xv08p9z2eXbxxIYgYUOQsCFI2BAkbAgSNgQJG4KW59ivn7M9/T7n6fO3d+0tr9p1Tvip94RPX2fV9PzcExuChA1BwoYgYUOQsCFI2BAkbAgafz/2l+l57PRc+tQcdXU+v8up92Pfti992377F09sCBI2BAkbgoQNQcKGIGFDkLAh6NfPz8/SX5ieM09fZ3r/9tS+8W17ztPfO1i976nrn9rb98SGIGFDkLAhSNgQJGwIEjYECRuCtr0f+5U96tvm7V+m93533feV7x1Mz5+nz4df5YkNQcKGIGFDkLAhSNgQJGwIEjYEbdvH/nLbfnJ1H/vLqfPGb/v5v/L788U+NiBsKBI2BAkbgoQNQcKGIGFD0Lb3Y0/vr67ed5dd782+7XNOO7XnfNv++RfvxwaWCRuChA1BwoYgYUOQsCFI2BC0vI+96rZ93VWn3vM87bZ57Ctz71WnzrH3xIYgYUOQsCFI2BAkbAgSNgQJG4K2zbFPnTf+ZfrznLr+K+eWn9pLf+Xcb/vYwDJhQ5CwIUjYECRsCBI2BAkbgpbPFb9tfju9731q3/jU9U/tz9/2PYhdTv2+eWJDkLAhSNgQJGwIEjYECRuChA1B4/vYt71/+Mv0XPe2P7/LbfvYX/5rn8cTG4KEDUHChiBhQ5CwIUjYECRsCFqeY992HvVt51ff9t7p1++76tT+/zT72ICwoUjYECRsCBI2BAkbgoQNQdftY6/adf3bPufre+y73LZHPc254sAnYUOQsCFI2BAkbAgSNgQJG4K2zbG/nJonn9qLfmWveJfXfz6r179tzv/FExuChA1BwoYgYUOQsCFI2BAkbAj6Z/UvrM4tzTP32nXfXT+HV/bMp68z/f9iHxsQNhQJG4KEDUHChiBhQ5CwIWh5jv1leq47Pf88NY/9+vPT8/bbvl/w5bbz53eZvq8nNgQJG4KEDUHChiBhQ5CwIUjYEPTMueK73Pa+5emfz6k57apTe/Wnrr96X/vYgLChSNgQJGwIEjYECRuChA1B43PsL/+19xWf2iue/rmd2ve+zanz0r94YkOQsCFI2BAkbAgSNgQJG4KEDUHb3o/9ZXped2o/+dRc/fW58W1z+C/T59VP88SGIGFDkLAhSNgQJGwIEjYECRuCtr0fe9e87tTc8tQceNf1p/erp/eKX5nDf7ltDu+JDUHChiBhQ5CwIUjYECRsCBI2BC2fK75rXndqP/bUeea7vPJ+7NfPb1/l/djAOGFDkLAhSNgQJGwIEjYECRuCtu1jrzr1fuZT+8O3nad96nsBr+xXr7rtvHdPbAgSNgQJG4KEDUHChiBhQ5CwIWh5H/t10+/H3nXf6X3mU3PX2+b5q155L7cnNgQJG4KEDUHChiBhQ5CwIUjYELS8j/3KPu3qPvb0v2vX+6h3Xf/UfPjUPPzLrrnxbefPe2JDkLAhSNgQJGwIEjYECRuChA1B284Vf+V9yLfNh6t73V9O7Sd/ue291rt4YkOQsCFI2BAkbAgSNgQJG4KEDUHj78c+dY531fScfNd9v0x/j2DXfVedOo/9iyc2BAkbgoQNQcKGIGFDkLAhSNgQND7Hft2p90h/md7rfn3/fJfpc9en/12e2BAkbAgSNgQJG4KEDUHChiBhQ5A59v9x6vzqU++1fmW+fep88lfm8J7YECRsCBI2BAkbgoQNQcKGIGFD0Pgc+7bzwKfnn6/MV1fd9v7nL7vOG5/+vsDq51nliQ1BwoYgYUOQsCFI2BAkbAgSNgRtm2Of2jtddepc7i/Te86r9z31c6juS9vHBrYRNgQJG4KEDUHChiBhQ5CwIejXz8/P6c8AbOaJDUHChiBhQ5CwIUjYECRsCBI2BAkbgoQNQcKGIGFDkLAhSNgQJGwIEjYE/QsUYNPFSCWktwAAAABJRU5ErkJggg==" alt="QR code linking to the course Drive folder">
+      <div class="txt">
+        <p>Scan the code, or use the button:</p>
+        <a class="btn" href="https://drive.google.com/drive/folders/1iVHG8fDG-r9ArdwZ01gJnk0eEqVl6kqe?usp=sharing" target="_blank" rel="noopener">Open the course folder</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="num">04</div>
+    <h2>Every Meeting</h2>
+    <p class="lead">The same two hours, in the same order, every week. You will always know what is coming, so you can spend your attention on the English rather than on the schedule.</p>
+
+    <div class="hour">
+      <div class="h">Hour 1</div>
+      <div>
+        <h3>Conversational Practice</h3>
+        <ul>
+          <li>Warm-up questions on this week&rsquo;s theme.</li>
+          <li>Speaking in pairs and small groups, with partners changing week to week.</li>
+          <li>A short individual turn in front of the group.</li>
+          <li>Collect the words you needed but did not have.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="hour">
+      <div class="h">Hour 2</div>
+      <div>
+        <h3>E-book Practice</h3>
+        <ul>
+          <li>Work through this week&rsquo;s unit in the e-book.</li>
+          <li>Listening and reading tasks done here in class, under time.</li>
+          <li>Check answers together, then find where in the text each answer was.</li>
+          <li>Carry the unit&rsquo;s language back into next week&rsquo;s first hour.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="num">05</div>
+    <h2>Grading</h2>
+    <p class="lead">Most of your grade is earned week by week rather than on two days of the semester. Turning up prepared is the largest single thing you can do for it.</p>
+
+    <div class="grade">
+      <div class="pct">70%</div>
+      <div>
+        <h3>Participation, assignments &amp; attendance</h3>
+        <p>Speaking in class, e-book work, and everything submitted across the semester.</p>
+      </div>
+    </div>
+    <div class="grade">
+      <div class="pct">15%</div>
+      <div>
+        <h3>Midterm</h3>
+        <p>Details given in class in good time.</p>
+      </div>
+    </div>
+    <div class="grade">
+      <div class="pct">15%</div>
+      <div>
+        <h3>Final</h3>
+        <p>Details given in class in good time.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    Sophomore English (I), Fall 2026 &nbsp;·&nbsp; Ming Chuan University &nbsp;·&nbsp;
+    <a class="site" href="https://albertcosmo.github.io" target="_blank" rel="noopener">albertcosmo.github.io</a>
+  </footer>
+
+</div>
+</body>
+</html>
