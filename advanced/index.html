@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Advanced English (F26): Course Introduction</title>
+<meta name="description" content="Course introduction for Advanced English (English Reading), Fu Jen Catholic University, Fall 2026. Instructor: Albert Le Thanh Nhan.">
+<style>
+  :root{
+    --bg:#fbfaf8; --ink:#0d0d0d; --mute:#3f3e3b; --faint:#67655f;
+    --rule:#ddd9d3; --accent:#6b1723; --card:#ffffff;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#141414; --ink:#f5f3f0; --mute:#c8c6c2; --faint:#a09e9a;
+           --rule:#343434; --accent:#eb9ba5; --card:#1c1c1c; }
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font:21px/1.66 ui-sans-serif,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans TC",sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:820px; margin:0 auto; padding:76px 30px 100px}
+
+  header{padding-bottom:34px; border-bottom:1px solid var(--rule)}
+  h1{margin:0 0 6px; font-size:44px; line-height:1.16; font-weight:650; letter-spacing:-.018em}
+  .han{font-weight:500; opacity:.78; margin-left:.18em}
+  .role{margin:0 0 18px; color:var(--mute); font-size:20px}
+  .site{display:inline-block; color:var(--accent); text-decoration:none;
+        border-bottom:1px solid currentColor; padding-bottom:1px; font-size:19px; font-weight:500}
+  .site:hover{opacity:.7}
+  .course{margin-top:24px; font-size:15px; color:var(--faint); letter-spacing:.05em;
+          text-transform:uppercase; font-weight:600}
+
+  .facts{display:grid; grid-template-columns:repeat(auto-fit,minmax(224px,1fr)); gap:1px;
+         margin-top:34px; background:var(--rule); border:1px solid var(--rule); border-radius:10px;
+         overflow:hidden}
+  .facts div{background:var(--card); padding:17px 19px}
+  .facts dt{font-size:13px; letter-spacing:.13em; text-transform:uppercase; color:var(--faint);
+            font-weight:700; margin-bottom:6px}
+  .facts dd{margin:0; font-size:20px; color:var(--ink); font-weight:500}
+  .facts dd a{color:var(--accent); text-decoration:none; border-bottom:1px solid currentColor;
+              word-break:break-all}
+  .facts dd a:hover{opacity:.7}
+  .facts dd span{color:var(--mute); font-size:17px; font-weight:400}
+
+  section{padding-top:52px}
+  .num{font-size:14px; letter-spacing:.16em; color:var(--accent); font-weight:700; margin-bottom:10px}
+  h2{margin:0 0 18px; font-size:29px; font-weight:650; letter-spacing:-.012em}
+  p{margin:0 0 16px; color:var(--ink)}
+  .lead{color:var(--mute); font-size:19.5px}
+
+  ul{margin:0; padding:0; list-style:none}
+  ul li{position:relative; padding-left:23px; margin-bottom:12px; color:var(--mute); font-size:19.5px}
+  ul li::before{content:""; position:absolute; left:0; top:.78em; width:9px; height:1.5px; background:var(--faint)}
+  ul li b{color:var(--ink); font-weight:650}
+
+  .qr{display:flex; gap:26px; align-items:center; flex-wrap:wrap;
+      background:var(--card); border:1px solid var(--rule); border-radius:10px; padding:24px}
+  .qr img{width:186px; height:186px; display:block; border-radius:4px; background:#fff}
+  .qr .txt{flex:1 1 240px; min-width:0}
+  .qr .txt p{margin:0 0 14px; font-size:19.5px; color:var(--mute)}
+  .qr a{color:var(--accent); text-decoration:none; border-bottom:1px solid currentColor;
+        word-break:break-all; font-size:18px; font-weight:500}
+  .qr a:hover{opacity:.7}
+
+  a.btn, .qr a.btn{display:inline-block; margin-top:2px; padding:14px 26px; border-radius:7px;
+       background:var(--accent); color:#fff; text-decoration:none; border-bottom:0;
+       font-size:19px; font-weight:600; word-break:normal}
+  a.btn:hover{opacity:.88}
+  @media (prefers-color-scheme: dark){ a.btn, .qr a.btn{color:#141414} }
+
+  .hour{display:grid; grid-template-columns:132px 1fr; gap:22px;
+        padding:24px 0; border-top:1px solid var(--rule)}
+  .hour:last-of-type{border-bottom:1px solid var(--rule)}
+  .hour .h{font-size:14.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--accent);
+           font-weight:700; padding-top:4px}
+  .hour h3{margin:0 0 9px; font-size:22px; font-weight:650}
+  .hour p{margin:0; font-size:19px; color:var(--mute)}
+  .hour ul li{font-size:18.5px; margin-bottom:8px}
+  .hour ul li:last-child{margin-bottom:0}
+
+  .band{display:flex; justify-content:space-between; align-items:baseline; gap:16px;
+        margin:40px 0 0; padding-bottom:10px; border-bottom:1px solid var(--rule)}
+  .band .lbl{font-size:14px; letter-spacing:.15em; text-transform:uppercase;
+             color:var(--faint); font-weight:700}
+  .band .tot{font-size:14px; letter-spacing:.06em; color:var(--faint); font-weight:700}
+  .grade{display:grid; grid-template-columns:96px 1fr; gap:22px; align-items:baseline;
+         padding:20px 0; border-bottom:1px solid var(--rule)}
+  .grade .pct{font-size:30px; font-weight:650; color:var(--accent); letter-spacing:-.022em}
+  .grade h3{margin:0 0 7px; font-size:21px; font-weight:650}
+  .grade p{margin:0; font-size:18.5px; color:var(--mute)}
+
+  .fmt{background:var(--card); border:1px solid var(--rule); border-radius:10px;
+       padding:24px 26px; margin-bottom:18px}
+  .fmt h3{margin:0 0 10px; font-size:21px; font-weight:650}
+  .fmt p{margin:0 0 14px; font-size:18.5px; color:var(--mute)}
+  .fmt p:last-child{margin-bottom:0}
+  .fmt code{display:block; font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+            font-size:19px; font-weight:600; color:var(--ink); background:var(--bg);
+            border:1px solid var(--rule); border-radius:6px; padding:13px 16px;
+            margin-bottom:14px; overflow-x:auto; white-space:nowrap; letter-spacing:.01em}
+  .fmt .eg{font-size:17px; color:var(--faint)}
+  .fmt .eg b{color:var(--mute); font-weight:650}
+  .fmt ul{margin-top:2px}
+  .fmt ul li{font-size:18.5px}
+  .fmt ul li:last-child{margin-bottom:0}
+  .fmt a{color:var(--accent); text-decoration:none; border-bottom:1px solid currentColor;
+         word-break:break-all}
+  .fmt a:hover{opacity:.7}
+  .fmt.warn{border-color:var(--accent)}
+
+  .week{display:grid; grid-template-columns:96px 1fr; gap:22px;
+        padding:18px 0; border-bottom:1px solid var(--rule)}
+  .week:first-of-type{border-top:1px solid var(--rule)}
+  .week .wk{font-size:14px; letter-spacing:.08em; text-transform:uppercase; color:var(--accent);
+            font-weight:700; padding-top:5px}
+  .week .wk span{display:block; margin-top:3px; color:var(--faint); letter-spacing:.04em;
+                 font-weight:600; font-size:15px; text-transform:none}
+  .week h3{margin:0 0 6px; font-size:20.5px; font-weight:650}
+  .week p{margin:0; font-size:18.5px; color:var(--mute)}
+  .week .bits{margin:9px 0 0}
+  .week .bits li{font-size:17.5px; margin-bottom:6px; padding-left:0}
+  .week .bits li::before{display:none}
+  .week .bits li b{color:var(--faint); font-weight:700; font-size:13.5px; letter-spacing:.1em;
+                   text-transform:uppercase}
+  .week .bits li:last-child{margin-bottom:0}
+  .week .due{display:inline-block; margin-top:11px; font-size:15px; font-weight:700;
+             letter-spacing:.02em; color:var(--accent); border:1.5px solid currentColor;
+             border-radius:5px; padding:3px 11px}
+  .note{margin-top:28px; font-size:17px; color:var(--faint); line-height:1.6}
+
+  @media (max-width:600px){
+    body{font-size:19.5px}
+    .wrap{padding:52px 22px 72px}
+    h1{font-size:33px}
+    h2{font-size:25px}
+    .hour{grid-template-columns:1fr; gap:8px}
+    .grade, .week{grid-template-columns:1fr; gap:5px}
+    .week .wk{padding-top:0}
+    .week .wk span{display:inline; margin-left:8px}
+    .fmt{padding:20px}
+    .fmt code{font-size:16px; white-space:normal; word-break:break-all}
+  }
+  footer{margin-top:70px; padding-top:26px; border-top:1px solid var(--rule);
+         font-size:16.5px; color:var(--faint)}
+  @media print{
+    body{background:#fff; font-size:12pt}
+    .wrap{padding:0; max-width:none}
+    section{page-break-inside:avoid}
+    .week{page-break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>Advanced English (F26)</h1>
+    <p class="role">Albert Le Thanh Nhan<span class="han">黎清仁</span>, Instructor</p>
+    <a class="site" href="https://albertcosmo.github.io" target="_blank" rel="noopener">albertcosmo.github.io</a>
+    <p class="course">Fu Jen Catholic University &nbsp;·&nbsp; Fall 2026</p>
+
+    <dl class="facts">
+      <div><dt>Course</dt><dd>English Reading <span>(talks, interviews, documentaries)</span></dd></div>
+      <div><dt>Meeting time</dt><dd>Tuesday, 08:10 – 10:00</dd></div>
+      <div><dt>Room</dt><dd>LA211</dd></div>
+      <div><dt>First class</dt><dd>15 September 2026</dd></div>
+      <div><dt>Email</dt><dd><a href="mailto:albert.lethanhnhan@gmail.com">albert.lethanhnhan@gmail.com</a></dd></div>
+      <div><dt>Office hours</dt><dd>By appointment <span>(email me and we will find a time)</span></dd></div>
+    </dl>
+  </header>
+
+  <section>
+    <div class="num">01</div>
+    <h2>Initial Survey</h2>
+    <p class="lead">Five minutes. Your answers tell me what you already listen to in English, which topics you want to argue about, and how you feel about speaking in front of the room, so please answer honestly rather than politely.</p>
+    <div class="qr">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAWgAAAFoAQMAAABAK/OWAAAABlBMVEUNDQ3///8TvZBvAAACGklEQVR42u2bS27DQAxDhd7/ziqajEjKTRYB6EULOoDzsVbPCkVpxtWfHJXoRP+16Hoefc4/7+fCI0Ai+qs+ORL94pgbVIP3Sf7BvXs+n1sTghbe5It/BxJ9UQ9BI++uw7xHXUA7vO/I71FriMuBHt636PcT9+E+rBV+eHt4F5zJu1f8iZH3azNZNCy8HIIePdkOfNfMamh8eNv05NiQnuo4Nvy4xIp+G3l3rd6SOlK9qmh4m/wghLuu3Y+W0vC26UlLxzOJrd3l+RqCHj05NZPIkeTHnlR4W/vLXs6k2VzCpKReGv336IrMYDm+KuZ5CLr6eSoHW07teyr5bayXKJeUchpBuPDw9ul3E3wzv0VSkt/Ofr6BfdbTZCxIAx6CNj0ZqLUY6wglvG3+RBYX6EiwVEyLGIIO3mCr01cOTeTHEPTwhkRDXyjpCAlvl54gsUvtNoaxDRMTgp75icoITGIXp4eZx3r9oA5Sun8l/sSFoEdPNu7d55T0QSHo6S9b+0qRENnWlnrpnVfJxgcOqKgw8YPOenmZVKGCEn/mJ1Z/0hfZ1uwu8g9Bmx/Uzqe4qLYrawha5ye7ncdyPTduhqAlvyHThc6y16aI1Eu3P9FdsJxbSX7HDxr9N58fQXnU4gnhCUEr77VCrIPY6YpC0Mi75VRr3QGWMQSN+i2PpLFqtmIPb68/0SdJeC+qsx/iDv+dZ4AT/e+ivwFmZ4A/HJZjPAAAAABJRU5ErkJggg==" alt="QR code linking to the initial survey form">
+      <div class="txt">
+        <p>Scan the code, or use the button:</p>
+        <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLScWnnyiModIIowVMyjCUpO07ieu_wFnoP-Vjnj2CJgvKMqIHg/viewform" target="_blank" rel="noopener">Open the survey</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="num">02</div>
+    <h2>Course Drive</h2>
+    <p class="lead">There is no required textbook. Everything for this course lives in one shared folder: handouts, links to the talks and documentaries, discussion questions, and the folders where you upload your recordings.</p>
+    <div class="qr">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUgAAAFIAQMAAAAI2vVwAAAABlBMVEUNDQ3///8TvZBvAAABzklEQVR42u2bS27EMAxDid7/zho0tih60IWlWbRAmX6QTIwuHmySslzE7QWP9MjfGIl1xb6L7+/nzfNX+PYLt9d/HomE/9wsnvsZx5N53vNc3BLf+rU+qbfmOeC5Wdb8NM8PeD7zMRUz8p15DvUTYmT7yfo54ZkT8ucv+3uTZ0Wn9KPYn0ODl3l29BNIogl2mTzfmef1/ETFzSSajpRP5tnWTwYlOlG5vPWzp5+MRszxyLKVpM3zPi9RK5NfptJg0jfPe/2UqqjkMxc/nD+7611snGVmFfLbpMyz4+9c6DQgTVLm2fR3qTRJkhpq/ezm+eCklJ07uXP+7Oknzp9KSrB+DtY7LYk7SmL53l/q66c2i879ZC5382zMz6NOkmmq3T3zbNRHeK84M0JZP0f1u+zKawe5NpzMs6WfUlnKhkgOsX4213v6uXbgdP6aZy/PI0ICPM7qaKurebb8qGJS6MmQ2jExz9Z6fys0q7Npfx/3N+tIA9seW1vNs7e/hNq4q5NLEknNs7fe4zjDoF2P3CExz46/8yQYG0oamXx+acQT50nQsinr5wfzsyrMs0tnnk39DHV7aFve+XPi73J6SaKT89I0f/q/Njzyz418AXpkPzrtCIk+AAAAAElFTkSuQmCC" alt="QR code linking to the course Drive folder">
+      <div class="txt">
+        <p>Scan the code, or use the button:</p>
+        <a class="btn" href="https://drive.google.com/drive/folders/1E2XeK8fGD3M1SrCSzA-STRep64pftcyx?usp=sharing" target="_blank" rel="noopener">Open the course folder</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="num">03</div>
+    <h2>Objectives</h2>
+    <p class="lead">This course builds vocabulary and public English usage through popular TED Talks, celebrity interviews, and documentaries. Over the semester you will:</p>
+    <ul>
+      <li><b>Improve speaking and listening.</b> Follow an argument delivered at speed, and answer it.</li>
+      <li><b>Learn practical colloquial English.</b> The expressions people actually use, not only the ones in textbooks.</li>
+      <li><b>Build confidence in short speeches.</b> Stand up, speak for a few minutes, and be understood.</li>
+      <li><b>Understand American and British cultures.</b> The context that makes an argument land, or fail to.</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="num">04</div>
+    <h2>Every Meeting</h2>
+    <p class="lead">The same three moves, in the same order, every week. You will always know what is coming, so you can spend your attention on the English rather than on the schedule.</p>
+
+    <div class="hour">
+      <div class="h">Move 1</div>
+      <div>
+        <h3>Watch</h3>
+        <ul>
+          <li>The week's talk, interview, or documentary clip.</li>
+          <li>Some weeks the viewing is set before class. Those are marked below.</li>
+          <li>Take notes on the claim, the evidence, and the words you did not have.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="hour">
+      <div class="h">Move 2</div>
+      <div>
+        <h3>Analyse</h3>
+        <ul>
+          <li>Work out causes and effects, not just the topic.</li>
+          <li>Name the rhetorical moves the speaker uses on you.</li>
+          <li>Decide whether the evidence actually supports the claim.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="hour">
+      <div class="h">Move 3</div>
+      <div>
+        <h3>Speak</h3>
+        <ul>
+          <li>Discuss, debate, or propose a solution, in English.</li>
+          <li>Use the new vocabulary out loud while it is still fresh.</li>
+          <li>This is the rehearsal for your midterm and your capstone.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="num">05</div>
+    <h2>Requirements and Grading</h2>
+    <p class="lead">You are expected to take an active part in class: watching the clips, debating, presenting in English, and taking notes. Participation is not a bonus here, it is a fifth of the grade.</p>
+
+    <div class="band">
+      <span class="lbl">Breakdown</span>
+      <span class="tot">100% plus 5% bonus</span>
+    </div>
+
+    <div class="grade">
+      <div class="pct">20%</div>
+      <div>
+        <h3>Oral Recordings</h3>
+        <p>Record yourself speaking for about three minutes on the material covered in class. Five recordings in total, each worth 4%. Each one should show real engagement with the talk or documentary, not a summary read aloud.</p>
+      </div>
+    </div>
+    <div class="grade">
+      <div class="pct">30%</div>
+      <div>
+        <h3>Midterm Essay</h3>
+        <p>Submit and present a proposal for your capstone. State your topic, explain why it belongs in this course, and set out a preliminary plan for your research or analysis.</p>
+      </div>
+    </div>
+    <div class="grade">
+      <div class="pct">30%</div>
+      <div>
+        <h3>Capstone Presentation</h3>
+        <p>In pairs or groups of three, choose a topic related to the course and deliver a final presentation in English that pulls your research or analysis together. Slides and other aids are welcome.</p>
+      </div>
+    </div>
+    <div class="grade">
+      <div class="pct">20%</div>
+      <div>
+        <h3>Attendance and Discussion</h3>
+        <p>Being in the room, and speaking while you are in it.</p>
+      </div>
+    </div>
+    <div class="grade">
+      <div class="pct">+5%</div>
+      <div>
+        <h3>Final Reflective Essay <span style="font-weight:500; color:var(--faint); font-size:16px">(optional bonus)</span></h3>
+        <p>Reflect on your semester: what you learned, what you enjoyed, and how the capstone changed your understanding or your skills. Worth up to 5 bonus points on your final grade.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="num">06</div>
+    <h2>How to Name Your Files</h2>
+    <p class="lead">Files that are not named correctly are hard to return to you. Use your own student number and your own English name.</p>
+
+    <div class="fmt">
+      <h3>Oral recordings</h3>
+      <code>413000001_Albert_1</code>
+      <p class="eg">Student number, then <b>English name</b>, then the number of the recording (1 to 5).</p>
+    </div>
+
+    <div class="fmt">
+      <h3>Final reflective essay</h3>
+      <code>413000001_Albert_Extra</code>
+      <p class="eg">Same pattern, with <b>Extra</b> in place of the number.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="num">07</div>
+    <h2>Class Rules and Policies</h2>
+
+    <div class="fmt">
+      <h3>Attendance</h3>
+      <p>Unexcused absences are cumulative:</p>
+      <ul>
+        <li><b>First unexcused absence:</b> 10% deducted from your total score.</li>
+        <li><b>Second:</b> a further 10% deducted.</li>
+        <li><b>Third:</b> you fail the course.</li>
+      </ul>
+      <p style="margin-top:14px">To avoid these penalties, report the absence through the school system <b>and</b> email me at least 24 hours before the class, with valid documentation.</p>
+    </div>
+
+    <div class="fmt warn">
+      <h3>Plagiarism and generative AI</h3>
+      <p>Plagiarism results in failure of this course.</p>
+      <p>AI-generated content may not be used in essays, writing assignments, or speeches for this course. Submitting AI-generated content counts as academic dishonesty: it means an automatic failure of that assignment, and repeated cases can mean failure of the course. Your work must begin as your own writing, not as an AI draft you then edit.</p>
+      <p>For the university guidelines on generative AI and AI-assisted technologies, see <a href="https://english.fju.edu.tw/faculty_area_detail.asp?OFT_No=34" target="_blank" rel="noopener">english.fju.edu.tw/faculty_area_detail.asp?OFT_No=34</a>.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="num">08</div>
+    <h2>Semester Plan</h2>
+    <p class="lead">Eighteen weeks. Anything marked <b>Due</b> is a submission deadline; watch this page rather than your memory. Where a week says <b>Before class</b>, watch it before you arrive. The schedule may be revised by the instructor.</p>
+
+    <div class="week">
+      <div class="wk">Week 1<span>09/15</span></div>
+      <div>
+        <h3>Course Overview</h3>
+        <p>How the course runs and what is expected of you.</p>
+        <ul class="bits">
+          <li><b>Watch:</b> TED Talk, "Do Schools Kill Creativity?"</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="wk">Week 2<span>09/22</span></div>
+      <div>
+        <h3>Personal Branding</h3>
+        <p>SWOT analysis of yourself.</p>
+        <ul class="bits">
+          <li><b>Watch:</b> Jordan Peterson's interview and lecture on personal responsibility.</li>
+          <li><b>Speak:</b> analyse how he builds his case, and whether you accept it.</li>
+        </ul>
+        <span class="due">Due: Oral Recording 1</span>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="wk">Week 3<span>09/29</span></div>
+      <div>
+        <h3>Mental Health I</h3>
+        <p>The causes and effects of anxiety.</p>
+        <ul class="bits">
+          <li><b>Watch:</b> TED Talk, "This Could Be Why You're Depressed."</li>
+          <li><b>Speak:</b> discuss what the talk claims and what it leaves out.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="wk">Week 4<span>10/06</span></div>
+      <div>
+        <h3>Social Media Influence I</h3>
+        <p>Beauty standards and their effect on mental health.</p>
+        <ul class="bits">
+          <li><b>Before class:</b> watch "The social media beauty cult."</li>
+          <li><b>Speak:</b> discuss where these standards come from and who profits from them.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="wk">Week 5<span>10/13</span></div>
+      <div>
+        <h3>Life</h3>
+        <p>Consumerism and ethics.</p>
+        <ul class="bits">
+          <li><b>Before class:</b> watch "Money, happiness and eternal life: Greed" (Director's Cut).</li>
+          <li><b>Speak:</b> discuss what a good life costs, and who pays for it.</li>
+        </ul>
+        <span class="due">Due: Oral Recording 2</span>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="wk">Week 6<span>10/20</span></div>
+      <div>
+        <h3>Cyber Bullying</h3>
+        <p>Causes, effects, and what can be done.</p>
+        <ul class="bits">
+          <li><b>Watch:</b> TED Talk, "The Price of Shame."</li>
+          <li><b>Speak:</b> propose solutions and defend them.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="wk">Week 7<span>10/27</span></div>
+      <div>
+        <h3>Midterm Prep</h3>
+        <p>Present your midterm topic briefly, five minutes per group. Peer review 1.</p>
+        <span class="due">Due: Oral Recording 3</span>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="wk">Week 8<span>11/03</span></div>
+      <div>
+        <h3>Group presentation</h3>
+        <p>Midterm presentations. Peer review 2.</p>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="wk">Week 9<span>11/10</span></div>
+      <div>
+        <h3>Analytical Skills</h3>
+        <p>Arguments and rhetorical strategies.</p>
+        <ul class="bits">
+          <li><b>Before class:</b> watch Jordan Peterson's debate on the gender pay gap, campus protests, and postmodernism.</li>
+          <li><b>Speak:</b> take apart how each side argues, separately from whether you agree.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="wk">Week 10<span>11/17</span></div>
+      <div>
+        <h3>College Survival</h3>
+        <p>Learning, working, and living with AI.</p>
+        <ul class="bits">
+          <li><b>Watch:</b> TED Talk, "Grit."</li>
+          <li><b>Speak:</b> discuss what persistence is worth when the tools keep changing.</li>
+        </ul>
+        <span class="due">Due: Oral Recording 4</span>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="wk">Week 11<span>11/24</span></div>
+      <div>
+        <h3>Are We Lazy?</h3>
+        <p>Procrastination: causes, effects, and solutions.</p>
+        <ul class="bits">
+          <li><b>Watch:</b> TED Talk, "Inside the Mind of a Master Procrastinator."</li>
+          <li><b>Speak:</b> propose solutions and defend them.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="wk">Week 12<span>12/01</span></div>
+      <div>
+        <h3>Final Project Proposal</h3>
+        <p>Group presentations on your capstone topics and methods. Peer review.</p>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="wk">Week 13<span>12/08</span></div>
+      <div>
+        <h3>Social Media Influence II</h3>
+        <p>Whether looks are everything.</p>
+        <ul class="bits">
+          <li><b>Watch:</b> TED Talk, "Looks aren't everything. Believe me, I'm a model."</li>
+          <li><b>Speak:</b> test the speaker's claim against your own experience.</li>
+        </ul>
+        <span class="due">Due: Oral Recording 5</span>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="wk">Week 14<span>12/15</span></div>
+      <div>
+        <h3>Mental Health II</h3>
+        <p>Looking after yourself, in practice.</p>
+        <ul class="bits">
+          <li><b>Watch:</b> TED Talk, "Why We All Need to Practice Emotional First Aid."</li>
+          <li><b>Speak:</b> discuss the main points and what you would actually use.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="wk">Week 15<span>12/22</span></div>
+      <div>
+        <h3>Final Project Report</h3>
+        <p>Capstone presentations. Peer review 3.</p>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="wk">Week 16<span>12/29</span></div>
+      <div>
+        <h3>Final Project Report</h3>
+        <p>Capstone presentations. Peer review 3.</p>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="wk">Week 17<span>01/05</span></div>
+      <div>
+        <h3>Self-study</h3>
+        <p>No scheduled class.</p>
+      </div>
+    </div>
+
+    <div class="week">
+      <div class="wk">Week 18<span>01/12</span></div>
+      <div>
+        <h3>Self-study</h3>
+        <p>No scheduled class.</p>
+        <span class="due">Due: all recordings and the final reflective essay</span>
+      </div>
+    </div>
+
+    <p class="note">Please follow the regulations on Intellectual Property Rights. Do not make illegal copies.</p>
+  </section>
+
+  <footer>
+    Advanced English (F26) &nbsp;·&nbsp; Fu Jen Catholic University &nbsp;·&nbsp;
+    <a class="site" href="https://albertcosmo.github.io" target="_blank" rel="noopener">albertcosmo.github.io</a>
+  </footer>
+
+</div>
+</body>
+</html>
