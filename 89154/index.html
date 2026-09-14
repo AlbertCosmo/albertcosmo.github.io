@@ -133,6 +133,83 @@
     .fmt{padding:20px}
     .fmt code{font-size:16px; white-space:normal; word-break:break-all}
   }
+  /* Week 2 self-check quizzes */
+  .wk2 > summary, .quiz > summary{cursor:pointer; list-style:none}
+  .wk2 > summary::-webkit-details-marker, .quiz > summary::-webkit-details-marker{display:none}
+  .wk2 > summary:focus-visible, .quiz > summary:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:4px}
+  .wk2 > .week{border-top:0}
+  .wk2[open] > .week{border-bottom:0}
+  .wk2 > summary:hover .tap{opacity:.7}
+  .tap{display:inline-flex; align-items:center; gap:9px; margin-top:9px; font-size:15px; font-weight:700;
+       letter-spacing:.02em; color:var(--accent); border:1.5px solid currentColor; border-radius:5px; padding:3px 11px}
+  .tap::after{content:""; width:7px; height:7px; margin-top:-3px; border-right:1.5px solid currentColor;
+              border-bottom:1.5px solid currentColor; transform:rotate(45deg); transition:transform .15s}
+  .wk2[open] .tap::after{margin-top:3px; transform:rotate(-135deg)}
+  .wk2-body{padding:2px 0 26px 100px; border-bottom:1px solid var(--rule)}
+  .wk2-body > p{margin:0 0 16px; font-size:18.5px; color:var(--mute)}
+  .quiz{--ok:#1e7a3c; --okbg:rgba(30,122,60,.08); --bad:#b42318; --badbg:rgba(180,35,24,.07);
+        background:var(--card); border:1px solid var(--rule); border-radius:10px;
+        padding:20px 26px; margin-bottom:14px}
+  @media (prefers-color-scheme: dark){
+    .quiz{--ok:#7ed49b; --okbg:rgba(126,212,155,.12); --bad:#f28b82; --badbg:rgba(242,139,130,.12)}
+  }
+  .quiz:last-child{margin-bottom:0}
+  .quiz > summary{display:flex; align-items:center; gap:14px}
+  .quiz[open] > summary{padding-bottom:16px; border-bottom:1px solid var(--rule)}
+  .quiz > summary:hover h3{color:var(--accent)}
+  .quiz > summary::after{content:""; flex:0 0 auto; width:9px; height:9px; margin:-4px 4px 0 2px;
+                         border-right:2px solid var(--faint); border-bottom:2px solid var(--faint);
+                         transform:rotate(45deg); transition:transform .15s}
+  .quiz[open] > summary::after{margin-top:4px; transform:rotate(-135deg)}
+  .quiz h3{flex:1 1 auto; min-width:0; margin:0; font-size:21px; font-weight:650}
+  .score{flex:0 0 auto; white-space:nowrap; font-size:14px; letter-spacing:.08em; text-transform:uppercase;
+         color:var(--faint); font-weight:700}
+  .score b{color:var(--accent); font-size:18px; letter-spacing:0; margin-left:6px}
+  .q{padding:18px 0; border-bottom:1px solid var(--rule); break-inside:avoid}
+  .qt{margin:0 0 12px; font-size:19px; color:var(--ink); font-weight:500}
+  .qt .qn{font-size:14px; letter-spacing:.08em; text-transform:uppercase; color:var(--accent);
+          font-weight:700; margin-right:10px}
+  .opts{display:grid; gap:8px}
+  .opt{display:flex; align-items:flex-start; gap:12px; width:100%; margin:0; text-align:left;
+       font:inherit; font-size:18px; line-height:1.45; color:var(--ink); background:var(--bg);
+       border:1.5px solid var(--rule); border-radius:7px; padding:10px 14px; cursor:pointer;
+       -webkit-appearance:none; appearance:none; touch-action:manipulation}
+  .opt:hover:not(:disabled){border-color:var(--faint)}
+  .opt:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+  .opt:disabled{cursor:default; color:var(--mute)}
+  .opt .k{flex:0 0 auto; width:26px; height:26px; margin-top:2px; border-radius:50%;
+          border:1.5px solid var(--faint); color:var(--mute); font-size:14px; font-weight:700;
+          display:inline-flex; align-items:center; justify-content:center}
+  .opt .t{flex:1 1 0; min-width:0}
+  .opt .mk{flex:0 0 auto; margin-left:auto; padding-top:3px; font-size:14.5px; font-weight:700;
+           letter-spacing:.02em; white-space:nowrap}
+  .opt.ok{border-color:var(--ok); background:var(--okbg); color:var(--ink)}
+  .opt.ok .k{border-color:var(--ok); color:var(--ok)}
+  .opt.ok .mk{color:var(--ok)}
+  .opt.bad{border-color:var(--bad); background:var(--badbg); color:var(--ink)}
+  .opt.bad .k{border-color:var(--bad); color:var(--bad)}
+  .opt.bad .mk{color:var(--bad)}
+  .fb{margin:12px 0 0; font-size:17.5px; line-height:1.55; color:var(--mute)}
+  .fb[hidden]{display:none}
+  .fb:focus{outline:none}
+  .fb b{color:var(--ink); font-weight:650}
+  .quiz-ctl{display:flex; flex-wrap:wrap; gap:12px; padding-top:18px}
+  .ctl{font:inherit; font-size:16px; font-weight:600; padding:9px 18px; border-radius:7px; cursor:pointer;
+       background:var(--bg); color:var(--ink); border:1.5px solid var(--rule);
+       -webkit-appearance:none; appearance:none; touch-action:manipulation}
+  .ctl.show{color:var(--accent); border-color:currentColor}
+  .ctl:hover{opacity:.8}
+  .ctl:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+  @media (max-width:600px){
+    .wk2-body{padding-left:0}
+    .quiz{padding:18px}
+    .quiz h3{font-size:19px}
+    .score .lbl{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
+    .score b{margin-left:0}
+    .opt{font-size:17px; padding:10px 12px; gap:10px; flex-wrap:wrap}
+    .opt .mk{flex:0 0 100%; margin-left:0; padding:2px 0 0 36px}
+  }
+
   footer{margin-top:70px; padding-top:26px; border-top:1px solid var(--rule);
          font-size:16.5px; color:var(--faint)}
   @media print{
@@ -242,10 +319,195 @@
       <div class="wk">Week 1</div>
       <div><h3>Dish It Out but Can&rsquo;t Take It</h3><p>Unit 1.</p></div>
     </div>
-    <div class="week">
-      <div class="wk">Week 2</div>
-      <div><h3>Pie in the Sky</h3><p>Unit 2.</p></div>
-    </div>
+    <details class="wk2" id="week-2">
+      <summary class="week">
+        <div class="wk">Week 2</div>
+        <div><h3>Pie in the Sky</h3><p>Unit 2.</p><span class="tap">Self-check quizzes</span></div>
+      </summary>
+      <div class="wk2-body">
+        <p>Three short quizzes on this week&rsquo;s idioms. Open a quiz and click an answer to check it: you will see whether it is right, which option is correct, and why. Nothing is recorded, so guess freely, then reset and try again.</p>
+        <details class="quiz">
+          <summary>
+            <h3>Quiz 1: Pie in the Sky</h3>
+            <span class="score" aria-live="polite" aria-atomic="true"><span class="lbl">Score</span> <b>0 / 5</b></span>
+          </summary>
+          <div class="q" data-a="b">
+            <p class="qt" id="q1-1"><span class="qn">Q1</span>What does <i>pie in the sky</i> mean?</p>
+            <div class="opts" role="group" aria-labelledby="q1-1">
+              <button type="button" class="opt" data-k="a"><span class="k">a</span> <span class="t">A dessert served on a plane</span></button>
+              <button type="button" class="opt" data-k="b"><span class="k">b</span> <span class="t">Something that probably won&rsquo;t happen</span></button>
+              <button type="button" class="opt" data-k="c"><span class="k">c</span> <span class="t">A plan that is already finished</span></button>
+              <button type="button" class="opt" data-k="d"><span class="k">d</span> <span class="t">A very sweet idea</span></button>
+            </div>
+            <p class="fb" hidden tabindex="-1"><b class="fb-r"></b> Pie in the sky describes something that could be great but is unlikely to become reality.</p>
+          </div>
+          <div class="q" data-a="c">
+            <p class="qt" id="q1-2"><span class="qn">Q2</span>What part of speech is <i>pie in the sky</i> in this clip?</p>
+            <div class="opts" role="group" aria-labelledby="q1-2">
+              <button type="button" class="opt" data-k="a"><span class="k">a</span> <span class="t">Noun</span></button>
+              <button type="button" class="opt" data-k="b"><span class="k">b</span> <span class="t">Verb</span></button>
+              <button type="button" class="opt" data-k="c"><span class="k">c</span> <span class="t">Adjective</span></button>
+              <button type="button" class="opt" data-k="d"><span class="k">d</span> <span class="t">Adverb</span></button>
+            </div>
+            <p class="fb" hidden tabindex="-1"><b class="fb-r"></b> The host says it describes dreams, plans or goals, so it works as an adjective.</p>
+          </div>
+          <div class="q" data-a="b">
+            <p class="qt" id="q1-3"><span class="qn">Q3</span>Why does the man say Pedro&rsquo;s plans are pie in the sky?</p>
+            <div class="opts" role="group" aria-labelledby="q1-3">
+              <button type="button" class="opt" data-k="a"><span class="k">a</span> <span class="t">Pedro hates acting</span></button>
+              <button type="button" class="opt" data-k="b"><span class="k">b</span> <span class="t">Pedro has been talking about it for years without doing it</span></button>
+              <button type="button" class="opt" data-k="c"><span class="k">c</span> <span class="t">Pedro has no money</span></button>
+              <button type="button" class="opt" data-k="d"><span class="k">d</span> <span class="t">Pedro is moving away</span></button>
+            </div>
+            <p class="fb" hidden tabindex="-1"><b class="fb-r"></b> The man&rsquo;s point is that Pedro has talked about the plan for years and never acted on it.</p>
+          </div>
+          <div class="q" data-a="b">
+            <p class="qt" id="q1-4"><span class="qn">Q4</span>What makes the man change his mind at the end?</p>
+            <div class="opts" role="group" aria-labelledby="q1-4">
+              <button type="button" class="opt" data-k="a"><span class="k">a</span> <span class="t">Pedro already has a film role</span></button>
+              <button type="button" class="opt" data-k="b"><span class="k">b</span> <span class="t">Pedro&rsquo;s YouTube channel has four million subscribers</span></button>
+              <button type="button" class="opt" data-k="c"><span class="k">c</span> <span class="t">The woman gets angry</span></button>
+              <button type="button" class="opt" data-k="d"><span class="k">d</span> <span class="t">Pedro is moving to Hollywood</span></button>
+            </div>
+            <p class="fb" hidden tabindex="-1"><b class="fb-r"></b> Four million subscribers is real evidence, so the dream starts to look possible after all.</p>
+          </div>
+          <div class="q" data-a="b">
+            <p class="qt" id="q1-5"><span class="qn">Q5</span>Which sentence uses the idiom correctly?</p>
+            <div class="opts" role="group" aria-labelledby="q1-5">
+              <button type="button" class="opt" data-k="a"><span class="k">a</span> <span class="t">I ate pie in the sky for dessert last night.</span></button>
+              <button type="button" class="opt" data-k="b"><span class="k">b</span> <span class="t">Paying for university by winning the lottery is a pie in the sky plan.</span></button>
+              <button type="button" class="opt" data-k="c"><span class="k">c</span> <span class="t">The plane flew pie in the sky over the city.</span></button>
+              <button type="button" class="opt" data-k="d"><span class="k">d</span> <span class="t">She was pie in the sky after the long trip.</span></button>
+            </div>
+            <p class="fb" hidden tabindex="-1"><b class="fb-r"></b> The idiom describes a plan that is unlikely to happen, not a real pie and not a feeling.</p>
+          </div>
+          <div class="quiz-ctl">
+            <button type="button" class="ctl show">Show all answers</button>
+            <button type="button" class="ctl reset">Reset</button>
+          </div>
+        </details>
+        <details class="quiz">
+          <summary>
+            <h3>Quiz 2: Up in the Air</h3>
+            <span class="score" aria-live="polite" aria-atomic="true"><span class="lbl">Score</span> <b>0 / 5</b></span>
+          </summary>
+          <div class="q" data-a="c">
+            <p class="qt" id="q2-1"><span class="qn">Q1</span>What does <i>up in the air</i> mean?</p>
+            <div class="opts" role="group" aria-labelledby="q2-1">
+              <button type="button" class="opt" data-k="a"><span class="k">a</span> <span class="t">Flying</span></button>
+              <button type="button" class="opt" data-k="b"><span class="k">b</span> <span class="t">Floating above the ground</span></button>
+              <button type="button" class="opt" data-k="c"><span class="k">c</span> <span class="t">Undecided and uncertain</span></button>
+              <button type="button" class="opt" data-k="d"><span class="k">d</span> <span class="t">Very exciting</span></button>
+            </div>
+            <p class="fb" hidden tabindex="-1"><b class="fb-r"></b> If something is up in the air, no decision has been made yet.</p>
+          </div>
+          <div class="q" data-a="b">
+            <p class="qt" id="q2-2"><span class="qn">Q2</span>Does the expression mean a person is really floating in the sky?</p>
+            <div class="opts" role="group" aria-labelledby="q2-2">
+              <button type="button" class="opt" data-k="a"><span class="k">a</span> <span class="t">Yes, always</span></button>
+              <button type="button" class="opt" data-k="b"><span class="k">b</span> <span class="t">No, it is used about decisions, not position</span></button>
+              <button type="button" class="opt" data-k="c"><span class="k">c</span> <span class="t">Yes, but only about planes</span></button>
+              <button type="button" class="opt" data-k="d"><span class="k">d</span> <span class="t">Only in American English</span></button>
+            </div>
+            <p class="fb" hidden tabindex="-1"><b class="fb-r"></b> The literal image is only where the idiom comes from; the meaning is about uncertainty.</p>
+          </div>
+          <div class="q" data-a="a">
+            <p class="qt" id="q2-3"><span class="qn">Q3</span>What is up in the air in the conversation?</p>
+            <div class="opts" role="group" aria-labelledby="q2-3">
+              <button type="button" class="opt" data-k="a"><span class="k">a</span> <span class="t">The cousin&rsquo;s college plans</span></button>
+              <button type="button" class="opt" data-k="b"><span class="k">b</span> <span class="t">The graduation date</span></button>
+              <button type="button" class="opt" data-k="c"><span class="k">c</span> <span class="t">The plane ticket</span></button>
+              <button type="button" class="opt" data-k="d"><span class="k">d</span> <span class="t">The man&rsquo;s new job</span></button>
+            </div>
+            <p class="fb" hidden tabindex="-1"><b class="fb-r"></b> The cousin has not chosen a college or a subject to study.</p>
+          </div>
+          <div class="q" data-a="b">
+            <p class="qt" id="q2-4"><span class="qn">Q4</span>Where does the expression come from?</p>
+            <div class="opts" role="group" aria-labelledby="q2-4">
+              <button type="button" class="opt" data-k="a"><span class="k">a</span> <span class="t">From airplanes</span></button>
+              <button type="button" class="opt" data-k="b"><span class="k">b</span> <span class="t">From a floating object, because you cannot tell where it will go</span></button>
+              <button type="button" class="opt" data-k="c"><span class="k">c</span> <span class="t">From weather reports</span></button>
+              <button type="button" class="opt" data-k="d"><span class="k">d</span> <span class="t">From birds in flight</span></button>
+            </div>
+            <p class="fb" hidden tabindex="-1"><b class="fb-r"></b> An object floating through the air has no clear destination, which is the source of the image.</p>
+          </div>
+          <div class="q" data-a="a">
+            <p class="qt" id="q2-5"><span class="qn">Q5</span>How did the expression change in the mid-1900s?</p>
+            <div class="opts" role="group" aria-labelledby="q2-5">
+              <button type="button" class="opt" data-k="a"><span class="k">a</span> <span class="t"><i>In the air</i> became <i>up in the air</i></span></button>
+              <button type="button" class="opt" data-k="b"><span class="k">b</span> <span class="t"><i>Up in the air</i> became <i>in the air</i></span></button>
+              <button type="button" class="opt" data-k="c"><span class="k">c</span> <span class="t"><i>On the air</i> became <i>up in the air</i></span></button>
+              <button type="button" class="opt" data-k="d"><span class="k">d</span> <span class="t">It has never changed</span></button>
+            </div>
+            <p class="fb" hidden tabindex="-1"><b class="fb-r"></b> People originally said &ldquo;in the air&rdquo;; &ldquo;up&rdquo; was added in the mid-1900s.</p>
+          </div>
+          <div class="quiz-ctl">
+            <button type="button" class="ctl show">Show all answers</button>
+            <button type="button" class="ctl reset">Reset</button>
+          </div>
+        </details>
+        <details class="quiz">
+          <summary>
+            <h3>Quiz 3: Burned Out</h3>
+            <span class="score" aria-live="polite" aria-atomic="true"><span class="lbl">Score</span> <b>0 / 5</b></span>
+          </summary>
+          <div class="q" data-a="b">
+            <p class="qt" id="q3-1"><span class="qn">Q1</span>What does <i>burned out</i> mean?</p>
+            <div class="opts" role="group" aria-labelledby="q3-1">
+              <button type="button" class="opt" data-k="a"><span class="k">a</span> <span class="t">On fire</span></button>
+              <button type="button" class="opt" data-k="b"><span class="k">b</span> <span class="t">Very tired and no longer interested</span></button>
+              <button type="button" class="opt" data-k="c"><span class="k">c</span> <span class="t">Angry</span></button>
+              <button type="button" class="opt" data-k="d"><span class="k">d</span> <span class="t">Finished cooking</span></button>
+            </div>
+            <p class="fb" hidden tabindex="-1"><b class="fb-r"></b> Burned out means exhausted and no longer interested, usually after doing too much of one thing.</p>
+          </div>
+          <div class="q" data-a="b">
+            <p class="qt" id="q3-2"><span class="qn">Q2</span>Why did Sarah get burned out?</p>
+            <div class="opts" role="group" aria-labelledby="q3-2">
+              <button type="button" class="opt" data-k="a"><span class="k">a</span> <span class="t">She had an accident</span></button>
+              <button type="button" class="opt" data-k="b"><span class="k">b</span> <span class="t">She spent too much time volunteering at the hospital</span></button>
+              <button type="button" class="opt" data-k="c"><span class="k">c</span> <span class="t">She lost her job</span></button>
+              <button type="button" class="opt" data-k="d"><span class="k">d</span> <span class="t">She travelled too much</span></button>
+            </div>
+            <p class="fb" hidden tabindex="-1"><b class="fb-r"></b> Too much of the same activity is exactly what causes burnout.</p>
+          </div>
+          <div class="q" data-a="b">
+            <p class="qt" id="q3-3"><span class="qn">Q3</span>What does the man say Sarah needs?</p>
+            <div class="opts" role="group" aria-labelledby="q3-3">
+              <button type="button" class="opt" data-k="a"><span class="k">a</span> <span class="t">A new job</span></button>
+              <button type="button" class="opt" data-k="b"><span class="k">b</span> <span class="t">A vacation</span></button>
+              <button type="button" class="opt" data-k="c"><span class="k">c</span> <span class="t">A doctor</span></button>
+              <button type="button" class="opt" data-k="d"><span class="k">d</span> <span class="t">More volunteers</span></button>
+            </div>
+            <p class="fb" hidden tabindex="-1"><b class="fb-r"></b> He says she is really going to need a vacation.</p>
+          </div>
+          <div class="q" data-a="b">
+            <p class="qt" id="q3-4"><span class="qn">Q4</span>What image does the host use to explain the phrase?</p>
+            <div class="opts" role="group" aria-labelledby="q3-4">
+              <button type="button" class="opt" data-k="a"><span class="k">a</span> <span class="t">A candle</span></button>
+              <button type="button" class="opt" data-k="b"><span class="k">b</span> <span class="t">A light bulb that has stopped shining</span></button>
+              <button type="button" class="opt" data-k="c"><span class="k">c</span> <span class="t">A campfire</span></button>
+              <button type="button" class="opt" data-k="d"><span class="k">d</span> <span class="t">The setting sun</span></button>
+            </div>
+            <p class="fb" hidden tabindex="-1"><b class="fb-r"></b> The bulb has stopped shining because all its energy is used up inside.</p>
+          </div>
+          <div class="q" data-a="b">
+            <p class="qt" id="q3-5"><span class="qn">Q5</span>Which sentence uses <i>burned out</i> correctly?</p>
+            <div class="opts" role="group" aria-labelledby="q3-5">
+              <button type="button" class="opt" data-k="a"><span class="k">a</span> <span class="t">The fire burned out the whole building last night.</span></button>
+              <button type="button" class="opt" data-k="b"><span class="k">b</span> <span class="t">After six months of double shifts, he felt completely burned out.</span></button>
+              <button type="button" class="opt" data-k="c"><span class="k">c</span> <span class="t">She burned out the candle before dinner.</span></button>
+              <button type="button" class="opt" data-k="d"><span class="k">d</span> <span class="t">The lamp was burned out of the room.</span></button>
+            </div>
+            <p class="fb" hidden tabindex="-1"><b class="fb-r"></b> Used about a person, burned out means exhausted; the other options use it literally or ungrammatically.</p>
+          </div>
+          <div class="quiz-ctl">
+            <button type="button" class="ctl show">Show all answers</button>
+            <button type="button" class="ctl reset">Reset</button>
+          </div>
+        </details>
+      </div>
+    </details>
     <div class="week">
       <div class="wk">Week 3</div>
       <div><h3>On the Ball</h3><p>Unit 3.</p></div>
@@ -320,5 +582,87 @@
   </footer>
 
 </div>
+<script>
+(function(){
+  // Open the Week 2 row when the page is linked to as #week-2.
+  if (location.hash === '#week-2'){
+    var wk = document.getElementById('week-2');
+    if (wk) wk.open = true;
+  }
+
+  document.querySelectorAll('.quiz').forEach(function(quiz){
+    var qs = quiz.querySelectorAll('.q');
+    var score = quiz.querySelector('.score b');
+
+    function mark(btn, cls, text){
+      var m = document.createElement('span');
+      m.className = 'mk';
+      m.textContent = text;
+      btn.classList.add(cls);
+      btn.appendChild(m);
+    }
+
+    function reveal(q, picked){
+      var a = q.getAttribute('data-a');
+      var right = q.querySelector('.opt[data-k="' + a + '"]');
+      var fb = q.querySelector('.fb');
+      var r = fb.querySelector('.fb-r');
+      if (picked === right){
+        mark(right, 'ok', '\u2713 Correct');
+        r.textContent = 'Correct.';
+        q.setAttribute('data-r', '1');
+      } else {
+        if (picked){
+          mark(picked, 'bad', '\u2717 Incorrect');
+          r.textContent = 'Not quite. The answer is ' + a + '.';
+        } else {
+          r.textContent = 'The answer is ' + a + '.';
+        }
+        mark(right, 'ok', '\u2713 Correct answer');
+      }
+      q.classList.add('done');
+      q.querySelectorAll('.opt').forEach(function(b){ b.disabled = true; });
+      fb.hidden = false;
+    }
+
+    function updateScore(){
+      score.textContent = quiz.querySelectorAll('.q[data-r="1"]').length + ' / ' + qs.length;
+    }
+
+    function reset(){
+      qs.forEach(function(q){
+        q.classList.remove('done');
+        q.removeAttribute('data-r');
+        q.querySelectorAll('.opt').forEach(function(b){
+          b.disabled = false;
+          b.classList.remove('ok', 'bad');
+          var m = b.querySelector('.mk');
+          if (m) m.remove();
+        });
+        var fb = q.querySelector('.fb');
+        fb.hidden = true;
+        fb.querySelector('.fb-r').textContent = '';
+      });
+      updateScore();
+    }
+
+    quiz.addEventListener('click', function(e){
+      var btn = e.target.closest('button');
+      if (!btn || btn.disabled || !quiz.contains(btn)) return;
+      if (btn.classList.contains('opt')){
+        var q = btn.closest('.q');
+        if (q.classList.contains('done')) return;
+        reveal(q, btn);
+        updateScore();
+        q.querySelector('.fb').focus();
+      } else if (btn.classList.contains('show')){
+        qs.forEach(function(q){ if (!q.classList.contains('done')) reveal(q, null); });
+      } else if (btn.classList.contains('reset')){
+        reset();
+      }
+    });
+  });
+})();
+</script>
 </body>
 </html>
