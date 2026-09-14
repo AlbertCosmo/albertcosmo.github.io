@@ -200,8 +200,12 @@
   .ctl.show{color:var(--accent); border-color:currentColor}
   .ctl:hover{opacity:.8}
   .ctl:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+  .rdl{background:var(--card); border:1px solid var(--rule); border-radius:10px; padding:20px 26px}
+  .rdl h3{margin:0 0 8px; font-size:21px; font-weight:650}
+  .rdl p{margin:0 0 16px; font-size:18px; color:var(--mute)}
   @media (max-width:600px){
     .wk2-body{padding-left:0}
+    .rdl{padding:18px}
     .quiz{padding:18px}
     .quiz h3{font-size:19px}
     .score .lbl{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
@@ -322,10 +326,10 @@
     <details class="wk2" id="week-2">
       <summary class="week">
         <div class="wk">Week 2</div>
-        <div><h3>Pie in the Sky</h3><p>Unit 2.</p><span class="tap">Self-check quizzes</span></div>
+        <div><h3>Pie in the Sky</h3><p>Unit 2.</p><span class="tap">Self-check quizzes and reading</span></div>
       </summary>
       <div class="wk2-body">
-        <p>Three short quizzes on this week&rsquo;s idioms. Open a quiz and click an answer to check it: you will see whether it is right, which option is correct, and why. Nothing is recorded, so guess freely, then reset and try again.</p>
+        <p>Three short quizzes on this week&rsquo;s idioms, then the reading task. Open a quiz and click an answer to check it: you will see whether it is right, which option is correct, and why. Nothing is recorded, so guess freely, then reset and try again.</p>
         <details class="quiz">
           <summary>
             <h3>Quiz 1: Pie in the Sky</h3>
@@ -506,6 +510,11 @@
             <button type="button" class="ctl reset">Reset</button>
           </div>
         </details>
+        <div class="rdl">
+          <h3>Reading: Museum Blockbuster</h3>
+          <p>Academic Reading practice: one passage, thirteen questions, twenty minutes. Answer in the task, submit, then review the answers and the key vocabulary. Opens in a new tab.</p>
+          <a class="btn" href="https://gemini.google.com/share/f8b2a15efcd1" target="_blank" rel="noopener">Open the reading task</a>
+        </div>
       </div>
     </details>
     <div class="week">
