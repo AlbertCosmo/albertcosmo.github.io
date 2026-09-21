@@ -133,7 +133,7 @@
     .fmt{padding:20px}
     .fmt code{font-size:16px; white-space:normal; word-break:break-all}
   }
-  /* Week 2 self-check quizzes */
+  /* Collapsible week rows: self-check quizzes, reading and writing */
   .wk2 > summary, .quiz > summary{cursor:pointer; list-style:none}
   .wk2 > summary::-webkit-details-marker, .quiz > summary::-webkit-details-marker{display:none}
   .wk2 > summary:focus-visible, .quiz > summary:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:4px}
@@ -527,10 +527,19 @@
         </div>
       </div>
     </details>
-    <div class="week">
-      <div class="wk">Week 3</div>
-      <div><h3>On the Ball</h3><p>Unit 3.</p></div>
-    </div>
+    <details class="wk2" id="week-3">
+      <summary class="week">
+        <div class="wk">Week 3</div>
+        <div><h3>On the Ball</h3><p>Unit 3.</p><span class="tap">Writing</span></div>
+      </summary>
+      <div class="wk2-body">
+        <div class="rdl">
+          <h3>Think Writing</h3>
+          <p>This week&rsquo;s writing task. Opens in a new tab.</p>
+          <a class="btn" href="https://drive.google.com/file/d/1foQVDguM0wR9WdZ3Wt5swkGJWF8luYaA/view?usp=sharing" target="_blank" rel="noopener">Open the writing task</a>
+        </div>
+      </div>
+    </details>
     <div class="week">
       <div class="wk">Week 4</div>
       <div><h3>Teachers&rsquo; Day</h3><p>Holiday. No class.</p></div>
@@ -603,10 +612,10 @@
 </div>
 <script>
 (function(){
-  // Open the Week 2 row when the page is linked to as #week-2.
-  if (location.hash === '#week-2'){
-    var wk = document.getElementById('week-2');
-    if (wk) wk.open = true;
+  // Open a week row when the page is linked to as #week-N.
+  if (/^#week-\d+$/.test(location.hash)){
+    var wk = document.getElementById(location.hash.slice(1));
+    if (wk && wk.tagName === 'DETAILS') wk.open = true;
   }
 
   document.querySelectorAll('.quiz').forEach(function(quiz){
