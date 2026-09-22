@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The generations of Genesis (KJV)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;1,400&family=Alegreya+Sans:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F3F4F1;--paper:#FFFFFF;--ink:#1E2430;--muted:#5E6573;--faint:#8A909B;--rule:#D6D9DE;--lapis:#2F4B8A;--lapis-soft:#E4E9F4;--ochre:#9A5F14;--hit:#F6E3B4;
+ --serif:'Alegreya',Georgia,'Times New Roman',serif;--sans:'Alegreya Sans','Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+ box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14171D;--paper:#1C2029;--ink:#E6E8EC;--muted:#A9AFBA;--faint:#7D8490;--rule:#343A46;--lapis:#9DB4EE;--lapis-soft:#26304A;--ochre:#E0A45A;--hit:#5A4516}}
+:root[data-theme="dark"]{--bg:#14171D;--paper:#1C2029;--ink:#E6E8EC;--muted:#A9AFBA;--faint:#7D8490;--rule:#343A46;--lapis:#9DB4EE;--lapis-soft:#26304A;--ochre:#E0A45A;--hit:#5A4516}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.5}
+main{max-width:720px;margin:0 auto;padding:28px 16px 48px}
+h1{font-family:var(--serif);font-weight:500;font-size:clamp(30px,8vw,44px);line-height:1.1;margin:0 0 10px;letter-spacing:-0.01em}
+.lede{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:18px;margin:0 0 6px}
+.src{font-size:13px;color:var(--faint);margin:0 0 22px}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:2;background:var(--bg);padding:10px 0 12px;border-bottom:1px solid var(--rule);margin-bottom:12px}
+input[type=search]{width:100%;font:inherit;font-size:16px;padding:10px 12px;border:1px solid var(--rule);border-radius:10px;background:var(--paper);color:var(--ink)}
+input[type=search]:focus-visible,button:focus-visible{outline:2px solid var(--lapis);outline-offset:2px}
+.btns{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+button{font:inherit;font-size:14px;padding:8px 12px;min-height:40px;border:1px solid var(--rule);border-radius:10px;background:var(--paper);color:var(--ink);cursor:pointer}
+button[aria-pressed=true]{background:var(--lapis-soft);border-color:var(--lapis);color:var(--lapis)}
+.legend{font-size:13px;color:var(--muted);margin:10px 0 0;display:flex;gap:8px;align-items:flex-start}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--lapis);flex:none;margin-top:5px}
+.row{display:flex;gap:6px;padding:9px 0;align-items:flex-start}
+.tog{border:none;background:none;padding:0;min-height:0;width:28px;height:28px;flex:none;display:flex;align-items:center;justify-content:center;color:var(--muted)}
+.tog svg{transition:transform .15s}
+.tog.open svg{transform:rotate(90deg)}
+.tog.leaf{visibility:hidden}
+.body{min-width:0;flex:1}
+.nm{font-family:var(--serif);font-size:19px;font-weight:500;background:none;border:none;padding:0;min-height:0;color:var(--ink);text-align:left;cursor:pointer}
+.nm.leaf{cursor:default}
+.nm.m{color:var(--lapis)}
+.nm.hit{background:var(--hit);border-radius:3px}
+.g{font-size:12px;color:var(--faint);margin-left:6px}
+.meta{font-size:15px;color:var(--muted)}
+.pl{font-size:15px;color:var(--ink);display:flex;gap:5px}
+.pl svg{flex:none;margin-top:4px;color:var(--ochre)}
+.ref{font-size:13px;color:var(--faint)}
+.kb{font-size:13px;padding:2px 8px;min-height:26px;margin-left:6px;border-radius:999px;color:var(--lapis);border-color:var(--lapis-soft);vertical-align:2px}
+.kq{font-family:var(--serif);font-size:17px;line-height:1.6;border-left:2px solid var(--lapis);padding:2px 0 2px 12px;margin:6px 0}
+.kids{margin-left:13px;padding-left:12px;border-left:1px solid var(--rule)}
+footer{margin-top:32px;font-size:13px;color:var(--faint);border-top:1px solid var(--rule);padding-top:14px}
+@media (prefers-reduced-motion:reduce){.tog svg{transition:none}}
+</style>
+</head>
+<body>
+<main>
+<h1>The generations of Genesis</h1>
+<p class="lede">“In the beginning God created the heaven and the earth.” (Gen 1:1)</p>
+<p class="src">Names, ages, places and verses from the King James Version. Tap a name to open its line, or tap KJV verse to read the text.</p>
+<div class="bar">
+<input id="q" type="search" placeholder="Search a name, e.g. Methuselah" aria-label="Search names">
+<div class="btns"><button id="bMain" aria-pressed="true">Main line</button><button id="bAll" aria-pressed="false">Expand all</button><button id="bNone" aria-pressed="false">Collapse all</button></div>
+<p class="legend"><span class="dot"></span><span>Blue names trace the line from God through Adam, Seth, Noah, Shem, Abraham and Isaac to Jacob. G is the generation counted from Adam.</span></p>
+</div>
+<div id="tree"></div>
+<footer>Toledot headings in the KJV: 2:4; 5:1; 6:9; 10:1; 11:10; 11:27; 25:12; 25:19; 36:1; 37:2. Text checked against the Project Gutenberg KJV.</footer>
+</main>
+<script>
+const N=(n,i,p,r,c,m,k)=>({n,i,p,r,c:c||[],m:!!m,k});
+const L=(n,i,p,r,k)=>N(n,i,p,r,null,0,k);
+const chain=(list,tail)=>{let node=tail;for(let i=list.length-1;i>=0;i--){const [n,i2,p,r,m,k]=list[i];node=N(n,i2,p,r,node?[node]:[],m,k)}return node};
+const lamechCain=N('Lamech','wives Adah and Zillah','','4:19–24',[L('Jabal','by Adah; father of such as dwell in tents and have cattle','','4:20'),L('Jubal','by Adah; father of such as handle the harp and organ','','4:21'),L('Tubalcain','by Zillah; instructer in brass and iron','','4:22'),L('Naamah','by Zillah; sister of Tubalcain','','4:22')]);
+const cain=chain([
+ ['Cain','tiller of the ground; slew Abel','land of Nod, on the east of Eden; builded a city','4:2, 8, 16–17',0,'4:16 And Cain went out from the presence of the LORD, and dwelt in the land of Nod, on the east of Eden.'],
+ ['Enoch','city called after his name','','4:17'],['Irad','','','4:18'],['Mehujael','','','4:18'],['Methusael','','','4:18']],lamechCain);
+const jacobSons=[
+ L('Reuben','by Leah; firstborn','born in Padanaram','29:32; 35:23, 26'),L('Simeon','by Leah','born in Padanaram','29:33'),L('Levi','by Leah','born in Padanaram','29:34'),
+ N('Judah','by Leah; wife the daughter of Shuah, a Canaanite','near Hirah the Adullamite; Timnath','29:35; 38:1–12',[L('Er, Onan','by Shuah\'s daughter; both slain by the LORD','','38:3–10'),L('Shelah','by Shuah\'s daughter','Chezib','38:5'),L('Pharez','twin, by Tamar','','38:29'),L('Zarah','twin, by Tamar; the scarlet thread','','38:30')]),
+ L('Dan','by Bilhah','born in Padanaram','30:6'),L('Naphtali','by Bilhah','born in Padanaram','30:8'),L('Gad','by Zilpah','born in Padanaram','30:11'),L('Asher','by Zilpah','born in Padanaram','30:13'),L('Issachar','by Leah','born in Padanaram','30:18'),L('Zebulun','by Leah','born in Padanaram','30:20'),L('Dinah','daughter, by Leah','Shechem (ch. 34)','30:21; 34:2'),
+ N('Joseph','110 years; by Rachel; named Zaphnathpaaneah; wife Asenath, daughter of Potipherah priest of On','found his brethren in Dothan; sold to the Ishmeelites; Egypt (Potiphar); died in Egypt','30:24; 37:17, 28; 39:1; 41:45; 50:26',[L('Manasseh','firstborn','Egypt','41:51'),L('Ephraim','','Egypt','41:52')]),
+ L('Benjamin','by Rachel, who named him Benoni as she died','in the way to Ephrath, which is Bethlehem','35:16–19','35:19 And Rachel died, and was buried in the way to Ephrath, which is Bethlehem.')];
+const jacob=N('Jacob / Israel','147 years; wives Leah and Rachel; handmaids Bilhah and Zilpah','Bethel (formerly Luz) → Haran, Padanaram → Mahanaim → Peniel → Succoth → Shalem, a city of Shechem → Bethel → Mamre (Hebron) → Goshen in Egypt; buried in Machpelah','28:19; 29:4; 32:2, 30; 33:17–18; 35:6, 27; 47:27–28; 50:13',jacobSons,1,'35:26 … these are the sons of Jacob, which were born to him in Padanaram.');
+const esau=N('Esau / Edom','wives Judith, Bashemath, Mahalath (26:34; 28:9); listed as Adah, Aholibamah, Bashemath in 36:2–3','mount Seir','25:25; 36:1–8',[L('Eliphaz','by Adah; his concubine Timna bare Amalek','','36:4, 12'),L('Reuel','by Bashemath','','36:4'),L('Jeush, Jaalam, Korah','by Aholibamah','born in the land of Canaan','36:5')],0,'36:8 Thus dwelt Esau in mount Seir: Esau is Edom.');
+const isaac=N('Isaac','180 years; mother Sarah; wife Rebekah','land of Moriah; well Lahairoi; Gerar; Beersheba; Mamre (Hebron)','22:2; 25:11; 26:6, 23; 35:27–29',[esau,jacob],1);
+const ishmael=N('Ishmael','137 years; mother Hagar the Egyptian','Beerlahairoi (Hagar); wilderness of Paran; his sons dwelt from Havilah unto Shur','16:14; 21:21; 25:12–18',[L('Twelve princes','Nebajoth, Kedar, Adbeel, Mibsam, Mishma, Dumah, Massa, Hadar, Tema, Jetur, Naphish, Kedemah','','25:13–16')]);
+const abraham=N('Abram / Abraham','175 years; wives Sarai/Sarah, Hagar, Keturah','Ur → Haran → Sichem (plain of Moreh) → between Bethel and Hai → Egypt → plain of Mamre in Hebron → Gerar → Beersheba; buried in the cave of Machpelah','11:31; 12:6–10; 13:18; 20:1; 21:31–33; 25:7–10',[ishmael,isaac,L("Keturah's sons",'Zimran, Jokshan, Medan, Midian, Ishbak, Shuah','sent eastward, unto the east country','25:1–6')],1,'13:18 Then Abram removed his tent, and came and dwelt in the plain of Mamre, which is in Hebron, and built there an altar unto the LORD.');
+const nahorB=N('Nahor','wife Milcah, daughter of Haran','Mesopotamia, unto the city of Nahor','11:29; 22:20–24; 24:10',[L('Huz, Buz, Kemuel, Chesed, Hazo, Pildash, Jidlaph','by Milcah; by his concubine Reumah: Tebah, Gaham, Thahash, Maachah','','22:21–24'),N('Bethuel','by Milcah; the Syrian of Padanaram','Padanaram','22:22–23; 25:20',[L('Rebekah','wife of Isaac','Padanaram → Canaan','22:23; 24:67'),L('Laban','the Syrian; father of Leah and Rachel','Haran','24:29; 29:4–16')])]);
+const haran=N('Haran','died before his father','in Ur of the Chaldees','11:27–28',[N('Lot','','cities of the plain, toward Sodom; Zoar; a cave in the mountain','13:12; 19:22, 30',[L('Moab','father of the Moabites','','19:37'),L('Benammi','father of the children of Ammon','','19:38')]),L('Milcah','wife of Nahor','','11:29'),L('Iscah','','','11:29')]);
+const terah=N('Terah','205 years','Ur of the Chaldees → Haran; died in Haran','11:26–32',[abraham,nahorB,haran],1,'11:31 … they went forth with them from Ur of the Chaldees, to go into the land of Canaan; and they came unto Haran, and dwelt there.');
+const peleg=chain([['Peleg','239 years','','10:25; 11:18–19',1],['Reu','239 years','','11:20–21',1],['Serug','230 years','','11:22–23',1],['Nahor','148 years','','11:24–25',1]],terah);
+const eber=N('Eber','464 years','','11:16–17',[peleg,N('Joktan','thirteen sons (Almodad … Jobab)','dwelling from Mesha unto Sephar, a mount of the east','10:25–30')],1,'10:25 … the name of one was Peleg; for in his days was the earth divided; and his brother\'s name was Joktan.');
+const arphaxad=chain([['Arphaxad','438 years','','10:22, 24; 11:12–13',1],['Salah','433 years','','11:14–15',1]],eber);
+const shem=N('Shem','600 years','','10:21–31; 11:10–11',[L('Elam','','','10:22'),L('Asshur','','','10:22'),arphaxad,L('Lud','','','10:22'),L('Aram','sons Uz, Hul, Gether, Mash','','10:23')],1);
+const ham=N('Ham','','','9:18–25; 10:6–20',[N('Cush','sons Seba, Havilah, Sabtah, Raamah, Sabtechah','','10:7–8',[L('Nimrod','a mighty hunter before the LORD','kingdom began at Babel, Erech, Accad, Calneh in Shinar','10:8–10','10:10 And the beginning of his kingdom was Babel, and Erech, and Accad, and Calneh, in the land of Shinar.')]),L('Mizraim','Casluhim, out of whom came Philistim','Egypt','10:13–14'),L('Phut','','','10:6'),N('Canaan','cursed by Noah','from Sidon to Gerar, unto Gaza; unto Sodom, Gomorrah, Admah, Zeboim, even unto Lasha','9:25; 10:15–19',[L('Sidon','firstborn','','10:15'),L('Heth','with the Jebusite, Amorite, Girgasite, Hivite and other families','','10:15–18')])]);
+const japheth=N('Japheth','','by these were the isles of the Gentiles divided','10:2–5',[L('Gomer','sons Ashkenaz, Riphath, Togarmah','','10:3'),L('Magog','','','10:2'),L('Madai','','','10:2'),L('Javan','sons Elishah, Tarshish, Kittim, Dodanim','','10:4'),L('Tubal','','','10:2'),L('Meshech','','','10:2'),L('Tiras','','','10:2')]);
+const noah=N('Noah','950 years; the flood','ark rested upon the mountains of Ararat','5:32; 8:4; 9:29',[shem,ham,japheth],1,'8:4 And the ark rested in the seventh month, on the seventeenth day of the month, upon the mountains of Ararat.');
+const seth=chain([['Seth','912 years','','4:25; 5:3–8',1],['Enos','905 years','','4:26; 5:6–11',1],['Cainan','910 years','','5:9–14',1],['Mahalaleel','895 years','','5:12–17',1],['Jared','962 years','','5:15–20',1],['Enoch','365 years; walked with God','','5:18–24',1,'5:24 And Enoch walked with God: and he was not; for God took him.'],['Methuselah','969 years','','5:21–27',1],['Lamech','777 years','','5:25–31',1]],noah);
+const adam=N('Adam','formed of the dust of the ground; wife Eve, mother of all living; 930 years','garden eastward in Eden; driven out, cherubims placed at the east of the garden','2:7–8; 2:22; 3:20, 24; 5:5',[cain,L('Abel','keeper of sheep; slain by Cain','in the field','4:2, 8'),seth],1,'2:8 And the LORD God planted a garden eastward in Eden; and there he put the man whom he had formed.');
+const data=N('God','the LORD God, Creator of the heaven and the earth','in the beginning; formed man and breathed into his nostrils the breath of life','1:1, 27; 2:7',[adam],1,'1:27 So God created man in his own image, in the image of God created he him; male and female created he them.');
+const CHEV='<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>';
+const PIN='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>';
+let Q='';
+const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+function setOpen(n,f){n.o=f(n);n.c.forEach(k=>setOpen(k,f))}
+function mark(n){const self=!!Q&&n.n.toLowerCase().includes(Q);let sub=false;n.c.forEach(k=>{if(mark(k))sub=true});n.h=self;if(sub)n.o=true;return self||sub}
+function render(n,g){
+ const w=document.createElement('div');const r=document.createElement('div');r.className='row';
+ const has=n.c.length>0;
+ const t=document.createElement('button');t.className='tog'+(has?'':' leaf')+(n.o?' open':'');t.innerHTML=CHEV;
+ if(has){t.setAttribute('aria-label',(n.o?'Close ':'Open ')+n.n);t.setAttribute('aria-expanded',n.o?'true':'false');t.onclick=()=>{n.o=!n.o;draw()}}else{t.tabIndex=-1;t.setAttribute('aria-hidden','true')}
+ const b=document.createElement('div');b.className='body';
+ const hd=document.createElement('div');
+ const nm=document.createElement('button');nm.className='nm'+(n.m?' m':'')+(n.h?' hit':'')+(has?'':' leaf');nm.textContent=n.n;if(has)nm.onclick=()=>{n.o=!n.o;draw()};else nm.tabIndex=-1;
+ const gg=document.createElement('span');gg.className='g';gg.textContent=g>0?'G'+g:'';
+ hd.append(nm,gg);
+ if(n.k){const kb=document.createElement('button');kb.className='kb';kb.textContent=n.s?'Hide verse':'KJV verse';kb.onclick=()=>{n.s=!n.s;draw()};hd.append(kb)}
+ b.append(hd);
+ let h='';if(n.i)h+='<div class="meta">'+esc(n.i)+'</div>';if(n.p)h+='<div class="pl">'+PIN+'<span>'+esc(n.p)+'</span></div>';if(n.s&&n.k)h+='<div class="kq">'+esc(n.k)+'</div>';h+='<div class="ref">Genesis '+n.r+'</div>';
+ b.insertAdjacentHTML('beforeend',h);r.append(t,b);w.append(r);
+ if(has&&n.o){const k=document.createElement('div');if(n.c.length>1)k.className='kids';n.c.forEach(c=>k.append(render(c,g+1)));w.append(k)}
+ return w}
+function draw(){const el=document.getElementById('tree');el.innerHTML='';el.append(render(data,0))}
+function press(id){['bMain','bAll','bNone'].forEach(x=>document.getElementById(x).setAttribute('aria-pressed',x===id?'true':'false'))}
+document.getElementById('bMain').onclick=()=>{setOpen(data,n=>n.m);press('bMain');draw()};
+document.getElementById('bAll').onclick=()=>{setOpen(data,()=>true);press('bAll');draw()};
+document.getElementById('bNone').onclick=()=>{setOpen(data,()=>false);press('bNone');draw()};
+document.getElementById('q').addEventListener('input',e=>{Q=e.target.value.trim().toLowerCase();if(Q){setOpen(data,()=>false);mark(data);data.o=true;press('')}else{mark(data);setOpen(data,n=>n.m);press('bMain')}draw()});
+setOpen(data,n=>n.m);draw();
+</script>
+</body>
+</html>
