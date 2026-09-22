@@ -134,7 +134,20 @@
   /* Week 2: SWOT explainer */
   .swot{margin-top:18px; background:var(--card); border:1px solid var(--rule); border-radius:10px;
         padding:22px 24px}
-  .week .swot h4{margin:0 0 8px; font-size:19px; font-weight:650; color:var(--ink)}
+  .swot > summary{cursor:pointer; list-style:none; display:flex; align-items:center; gap:14px;
+                  font-size:19px; font-weight:650; color:var(--ink)}
+  .swot > summary::-webkit-details-marker{display:none}
+  .swot > summary:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:4px}
+  .swot > summary .sw{margin-left:auto; flex:0 0 auto; display:inline-flex; align-items:center; gap:9px;
+                      font-size:15px; font-weight:700; letter-spacing:.02em; color:var(--accent);
+                      border:1.5px solid currentColor; border-radius:5px; padding:3px 11px}
+  .swot > summary .sw::before{content:"Show"}
+  .swot[open] > summary .sw::before{content:"Hide"}
+  .swot > summary .sw::after{content:""; width:7px; height:7px; margin-top:-3px; border-right:1.5px solid currentColor;
+                             border-bottom:1.5px solid currentColor; transform:rotate(45deg); transition:transform .15s}
+  .swot[open] > summary .sw::after{margin-top:3px; transform:rotate(-135deg)}
+  .swot > summary:hover .sw{opacity:.7}
+  .swot[open] > summary{padding-bottom:14px; margin-bottom:14px; border-bottom:1px solid var(--rule)}
   .week .swot p{margin:0 0 12px; font-size:17.5px}
   .week .swot p:last-child{margin-bottom:0}
   .swot-grid{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:14px 0}
@@ -383,8 +396,8 @@
           <li><b>Speak:</b> analyse how he builds his case, and whether you accept it.</li>
         </ul>
         <span class="due">Due: Oral Recording 1</span>
-        <div class="swot">
-          <h4>What is a SWOT analysis?</h4>
+        <details class="swot">
+          <summary>What is a SWOT analysis? <span class="sw"></span></summary>
           <p>A SWOT analysis looks at a person, a plan or a company from four sides: <b>S</b>trengths, <b>W</b>eaknesses, <b>O</b>pportunities and <b>T</b>hreats. The first two are <i>internal</i>, things about you. The last two are <i>external</i>, things in your situation that you do not control. Companies use it to plan strategy; this week you use it on yourself.</p>
           <div class="swot-grid">
             <div>
@@ -414,7 +427,7 @@
           </div>
           <p class="eg"><b>The same grid for a business:</b> a bubble-tea shop near campus. Strength: loyal regulars. Weakness: only one branch. Opportunity: a new dormitory opening next door. Threat: a chain opening across the street.</p>
           <p>Write two or three points in each box, in full sentences, and be specific: not &ldquo;I am bad at English&rdquo; but &ldquo;I freeze when I have to answer without preparation.&rdquo; Then pair the boxes. Use a strength to take an opportunity; fix a weakness before a threat exposes it. That pairing is where the plan comes from.</p>
-        </div>
+        </details>
       </div>
     </div>
 
