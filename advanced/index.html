@@ -131,25 +131,32 @@
              border-radius:5px; padding:3px 11px}
   .note{margin-top:28px; font-size:17px; color:var(--faint); line-height:1.6}
 
-  /* Week 2: SWOT explainer */
-  .swot{margin-top:18px; background:var(--card); border:1px solid var(--rule); border-radius:10px;
+  /* Week 2: collapsible cards (SWOT explainer, discussion questions) */
+  .fold{margin-top:18px; background:var(--card); border:1px solid var(--rule); border-radius:10px;
         padding:22px 24px}
-  .swot > summary{cursor:pointer; list-style:none; display:flex; align-items:center; gap:14px;
+  .fold > summary{cursor:pointer; list-style:none; display:flex; align-items:center; gap:14px;
                   font-size:19px; font-weight:650; color:var(--ink)}
-  .swot > summary::-webkit-details-marker{display:none}
-  .swot > summary:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:4px}
-  .swot > summary .sw{margin-left:auto; flex:0 0 auto; display:inline-flex; align-items:center; gap:9px;
+  .fold > summary::-webkit-details-marker{display:none}
+  .fold > summary:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:4px}
+  .fold > summary .sw{margin-left:auto; flex:0 0 auto; display:inline-flex; align-items:center; gap:9px;
                       font-size:15px; font-weight:700; letter-spacing:.02em; color:var(--accent);
                       border:1.5px solid currentColor; border-radius:5px; padding:3px 11px}
-  .swot > summary .sw::before{content:"Show"}
-  .swot[open] > summary .sw::before{content:"Hide"}
-  .swot > summary .sw::after{content:""; width:7px; height:7px; margin-top:-3px; border-right:1.5px solid currentColor;
+  .fold > summary .sw::before{content:"Show"}
+  .fold[open] > summary .sw::before{content:"Hide"}
+  .fold > summary .sw::after{content:""; width:7px; height:7px; margin-top:-3px; border-right:1.5px solid currentColor;
                              border-bottom:1.5px solid currentColor; transform:rotate(45deg); transition:transform .15s}
-  .swot[open] > summary .sw::after{margin-top:3px; transform:rotate(-135deg)}
-  .swot > summary:hover .sw{opacity:.7}
-  .swot[open] > summary{padding-bottom:14px; margin-bottom:14px; border-bottom:1px solid var(--rule)}
-  .week .swot p{margin:0 0 12px; font-size:17.5px}
-  .week .swot p:last-child{margin-bottom:0}
+  .fold[open] > summary .sw::after{margin-top:3px; transform:rotate(-135deg)}
+  .fold > summary:hover .sw{opacity:.7}
+  .fold[open] > summary{padding-bottom:14px; margin-bottom:14px; border-bottom:1px solid var(--rule)}
+  .week .fold p{margin:0 0 12px; font-size:17.5px}
+  .week .fold p:last-child{margin-bottom:0}
+  .fold + .fold{margin-top:12px}
+  .fold ol{margin:0; padding:0; list-style:none; counter-reset:q}
+  .week .fold ol li{position:relative; padding-left:36px; margin-bottom:14px; font-size:17.5px; color:var(--mute)}
+  .week .fold ol li::before{counter-increment:q; content:counter(q); position:absolute; left:2px; top:-3px;
+                            font-size:22px; font-weight:750; color:var(--accent)}
+  .week .fold ol li:last-child{margin-bottom:0}
+  .week .fold ol li b{color:var(--ink); font-weight:650}
   .swot-grid{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:14px 0}
   .swot-grid div{border:1px solid var(--rule); border-radius:8px; padding:14px 16px; background:var(--bg)}
   .swot-grid .l{display:inline-block; font-size:22px; font-weight:750; color:var(--accent); margin-right:8px}
@@ -158,7 +165,7 @@
                    text-transform:uppercase; color:var(--faint); font-weight:700}
   .week .swot-grid p{font-size:16.5px; margin:0 0 8px}
   .week .swot-grid p.eg{color:var(--faint); font-style:italic; margin:0}
-  .swot .eg b{color:var(--mute); font-weight:650; font-style:normal}
+  .fold .eg b{color:var(--mute); font-weight:650; font-style:normal}
 
   @media (max-width:600px){
     body{font-size:19.5px}
@@ -172,7 +179,7 @@
     .week .wk span{display:inline; margin-left:8px}
     .fmt{padding:20px}
     .fmt code{font-size:16px; white-space:normal; word-break:break-all}
-    .swot{padding:18px}
+    .fold{padding:18px}
     .swot-grid{grid-template-columns:1fr}
   }
   footer{margin-top:70px; padding-top:26px; border-top:1px solid var(--rule);
@@ -396,7 +403,7 @@
           <li><b>Speak:</b> analyse how he builds his case, and whether you accept it.</li>
         </ul>
         <span class="due">Due: Oral Recording 1</span>
-        <details class="swot">
+        <details class="fold">
           <summary>What is a SWOT analysis? <span class="sw"></span></summary>
           <p>A SWOT analysis looks at a person, a plan or a company from four sides: <b>S</b>trengths, <b>W</b>eaknesses, <b>O</b>pportunities and <b>T</b>hreats. The first two are <i>internal</i>, things about you. The last two are <i>external</i>, things in your situation that you do not control. Companies use it to plan strategy; this week you use it on yourself.</p>
           <div class="swot-grid">
@@ -427,6 +434,15 @@
           </div>
           <p class="eg"><b>The same grid for a business:</b> a bubble-tea shop near campus. Strength: loyal regulars. Weakness: only one branch. Opportunity: a new dormitory opening next door. Threat: a chain opening across the street.</p>
           <p>Write two or three points in each box, in full sentences, and be specific: not &ldquo;I am bad at English&rdquo; but &ldquo;I freeze when I have to answer without preparation.&rdquo; Then pair the boxes. Use a strength to take an opportunity; fix a weakness before a threat exposes it. That pairing is where the plan comes from.</p>
+        </details>
+        <details class="fold">
+          <summary>Discussion: responsibility <span class="sw"></span></summary>
+          <p>Three questions for the Speak hour. Start from what Peterson actually says in the interview, then test it against your own life.</p>
+          <ol>
+            <li><b>Rights without responsibilities.</b> Peterson says young people are constantly told about their rights and freedoms and almost never told to take on responsibility, and that audiences of twenty-year-olds are hungry for exactly that message. Does that describe you and the people you grew up with? Who, if anyone, taught you to take responsibility, and how?</li>
+            <li><b>The heavy load.</b> He argues that meaning does not come from happiness or comfort but from carrying a heavy load: pick up the heaviest responsibility you can bear and carry it. What is the heaviest thing you carry right now, and does it give your life meaning or just stress? Where is the line between a load that builds you and one that breaks you?</li>
+            <li><b>Clean your room first.</b> One of his rules is to set your own house in order before you criticise the world. Is that good advice for a twenty-year-old in Taiwan, or a way of telling young people to stay quiet about problems bigger than themselves? Look at how he supports the claim: what evidence does he give, and what would count against it?</li>
+          </ol>
         </details>
       </div>
     </div>
