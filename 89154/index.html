@@ -4,251 +4,54 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>English Enrichment (F26): Course Introduction</title>
-<meta name="description" content="Course introduction for English Enrichment, Ming Chuan University, Fall 2026. Instructor: Albert Le Thanh Nhan.">
-<style>
-  :root{
-    --bg:#fbfaf8; --ink:#0d0d0d; --mute:#3f3e3b; --faint:#67655f;
-    --rule:#ddd9d3; --accent:#6b1723; --card:#ffffff;
-  }
-  @media (prefers-color-scheme: dark){
-    :root{ --bg:#141414; --ink:#f5f3f0; --mute:#c8c6c2; --faint:#a09e9a;
-           --rule:#343434; --accent:#eb9ba5; --card:#1c1c1c; }
-  }
-  *{box-sizing:border-box}
-  html{-webkit-text-size-adjust:100%}
-  body{
-    margin:0; background:var(--bg); color:var(--ink);
-    font:21px/1.66 ui-sans-serif,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans TC",sans-serif;
-    -webkit-font-smoothing:antialiased;
-  }
-  .wrap{max-width:820px; margin:0 auto; padding:76px 30px 100px}
-
-  header{padding-bottom:34px; border-bottom:1px solid var(--rule)}
-  h1{margin:0 0 6px; font-size:44px; line-height:1.16; font-weight:650; letter-spacing:-.018em}
-  .han{font-weight:500; opacity:.78; margin-left:.18em}
-  .role{margin:0 0 18px; color:var(--mute); font-size:20px}
-  .site{display:inline-block; color:var(--accent); text-decoration:none;
-        border-bottom:1px solid currentColor; padding-bottom:1px; font-size:19px; font-weight:500}
-  .site:hover{opacity:.7}
-  .course{margin-top:24px; font-size:15px; color:var(--faint); letter-spacing:.05em;
-          text-transform:uppercase; font-weight:600}
-
-  .facts{display:grid; grid-template-columns:repeat(auto-fit,minmax(224px,1fr)); gap:1px;
-         margin-top:34px; background:var(--rule); border:1px solid var(--rule); border-radius:10px;
-         overflow:hidden}
-  .facts div{background:var(--card); padding:17px 19px}
-  .facts dt{font-size:13px; letter-spacing:.13em; text-transform:uppercase; color:var(--faint);
-            font-weight:700; margin-bottom:6px}
-  .facts dd{margin:0; font-size:20px; color:var(--ink); font-weight:500}
-  .facts dd a{color:var(--accent); text-decoration:none; border-bottom:1px solid currentColor;
-              word-break:break-all}
-  .facts dd a:hover{opacity:.7}
-  .facts dd span{color:var(--mute); font-size:17px; font-weight:400}
-
-  section{padding-top:52px}
-  .num{font-size:14px; letter-spacing:.16em; color:var(--accent); font-weight:700; margin-bottom:10px}
-  h2{margin:0 0 18px; font-size:32px; line-height:1.2; font-weight:650; letter-spacing:-.015em}
-  p{margin:0 0 16px; color:var(--mute)}
-  .lead{font-size:22px; line-height:1.55}
-
-  .qr-row{display:flex; gap:22px; align-items:flex-start; flex-wrap:wrap; margin:22px 0 6px}
-  .qr{width:148px; height:148px; border-radius:10px; border:1px solid var(--rule); background:#fff;
-      flex-shrink:0}
-  .qr-meta{flex:1; min-width:200px}
-  .qr-meta p{margin:0 0 12px; font-size:18px}
-  .btn{display:inline-block; background:var(--accent); color:#fff; text-decoration:none;
-       padding:11px 18px; border-radius:8px; font-size:17px; font-weight:600; letter-spacing:.01em}
-  .btn:hover{opacity:.88}
-  .btn.secondary{background:transparent; color:var(--accent); border:1.5px solid var(--accent)}
-
-  .hours{display:grid; gap:18px; margin-top:8px}
-  .hour{background:var(--card); border:1px solid var(--rule); border-radius:12px; padding:20px 22px}
-  .hour h3{margin:0 0 8px; font-size:20px; font-weight:650}
-  .hour .tag{display:inline-block; font-size:12px; letter-spacing:.12em; text-transform:uppercase;
-             color:var(--accent); font-weight:700; margin-bottom:10px}
-  .hour ul{margin:0; padding-left:1.15em; color:var(--mute)}
-  .hour li{margin-bottom:6px}
-
-  .plan{margin-top:10px}
-  .week, details.wk2 > summary.week{
-    display:grid; grid-template-columns:88px 1fr; gap:14px 18px; padding:16px 0;
-    border-bottom:1px solid var(--rule); list-style:none; cursor:pointer;
-  }
-  details.wk2 > summary.week::-webkit-details-marker{display:none}
-  details.wk2 > summary.week::marker{content:""}
-  .wk{font-size:14px; letter-spacing:.08em; text-transform:uppercase; color:var(--faint);
-      font-weight:700; padding-top:4px}
-  .week h3, summary.week h3{margin:0 0 4px; font-size:20px; font-weight:650}
-  .week p, summary.week p{margin:0; font-size:17px; color:var(--mute)}
-  .due{display:inline-block; margin-top:6px; font-size:14px; color:var(--accent); font-weight:600}
-  .tap{display:inline-block; margin-top:6px; font-size:14px; color:var(--faint); font-weight:500}
-  .wk2-body{padding:4px 0 20px 106px}
-  .wk2-body > p{margin:0 0 16px; font-size:17px}
-  .rdl h3{margin:0 0 6px; font-size:18px; font-weight:650}
-  .rdl p{margin:0 0 10px; font-size:16px}
-  .quiz{background:var(--card); border:1px solid var(--rule); border-radius:12px; padding:18px 20px; margin:14px 0}
-  .quiz h3{margin:0 0 4px; font-size:19px}
-  .score{font-size:15px; color:var(--faint); margin-bottom:14px}
-  .q{margin-bottom:18px}
-  .qt{margin:0 0 10px; font-size:17px; color:var(--ink)}
-  .qn{display:inline-block; min-width:1.8em; color:var(--accent); font-weight:700; margin-right:4px}
-  .opts{display:grid; gap:7px}
-  .opt{text-align:left; background:var(--bg); border:1px solid var(--rule); border-radius:8px;
-       padding:10px 12px; font:inherit; color:var(--ink); cursor:pointer; display:flex; gap:10px;
-       align-items:flex-start}
-  .opt:hover{border-color:var(--accent)}
-  .opt .k{font-weight:700; color:var(--accent); min-width:1.1em}
-  .opt.ok{background:rgba(40,140,70,.12); border-color:#2a8a48}
-  .opt.bad{background:rgba(180,40,40,.1); border-color:#b43c3c}
-  .fb{margin:8px 0 0; font-size:15px; color:var(--mute)}
-  .fb-r{color:var(--ink)}
-  .qdone .opt{pointer-events:none}
-  .actions{display:flex; gap:10px; flex-wrap:wrap; margin-top:8px}
-  .actions button{font:inherit; font-size:15px; font-weight:600; padding:8px 14px; border-radius:7px;
-                  border:1px solid var(--rule); background:var(--card); color:var(--ink); cursor:pointer}
-  .actions button:hover{border-color:var(--accent)}
-
-  footer{margin-top:64px; padding-top:22px; border-top:1px solid var(--rule);
-         font-size:15px; color:var(--faint)}
-
-  @media (max-width:560px){
-    .wrap{padding:48px 18px 70px}
-    h1{font-size:34px}
-    .facts{grid-template-columns:1fr}
-    .week, details.wk2 > summary.week{grid-template-columns:72px 1fr}
-    .wk2-body{padding-left:0}
-  }
-</style>
+<style>body{margin:0;font:21px/1.66 ui-sans-serif,-apple-system,sans-serif;background:#fbfaf8;color:#0d0d0d} .loading{padding:80px 30px;text-align:center;color:#67655f}</style>
 </head>
 <body>
-<div class="wrap">
-<header>
-<p class="course">English Enrichment (F26)</p>
-<h1>Albert Le Thanh Nhan <span class="han">黎清仁</span></h1>
-<p class="role">Instructor</p>
-<a class="site" href="https://albertcosmo.github.io">albertcosmo.github.io</a>
-<div class="facts">
-<div><dt>Ming Chuan University · Fall 2026</dt><dd>Meeting time<br><span>15:50 – 18:50</span></dd></div>
-<div><dt>Room</dt><dd>S308</dd></div>
-<div><dt>Class number</dt><dd>89154</dd></div>
-<div><dt>Course number</dt><dd>99799</dd></div>
-<div><dt>Email</dt><dd><a href="mailto:albert.lethanhnhan@gmail.com">albert.lethanhnhan@gmail.com</a></dd></div>
-<div><dt>Office hours</dt><dd>By appointment <span>(email me and we will find a time)</span></dd></div>
-</div>
-</header>
+<div class="loading">Loading full page…</div>
+<script>
+(async () => {
+  const res = await fetch('https://raw.githubusercontent.com/AlbertCosmo/albertcosmo.github.io/dae3fe059936ffc073e0d57345f63d249b28e9df/89154/index.html');
+  let html = await res.text();
 
-<section>
-<div class="num">01</div>
-<h2>First Survey</h2>
-<p class="lead">Five minutes. Your answers decide how we spend our three hours each week, so please answer honestly rather than politely.</p>
-<div class="qr-row">
-<img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=148x148&data=https://forms.gle/qbdoos45eyzuwLNr5" alt="QR code for first survey">
-<div class="qr-meta">
-<p>Scan the code, or open the link directly:</p>
-<a class="btn" href="https://forms.gle/qbdoos45eyzuwLNr5" target="_blank" rel="noopener">forms.gle/qbdoos45eyzuwLNr5</a>
-</div>
-</div>
-<h3 style="margin-top:28px;font-size:22px">Roll Call</h3>
-<p>Every week, at the start of class. Opens in a new tab.</p>
-<div class="qr-row">
-<img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=148x148&data=https://forms.gle/2gArRs3HfdhEzxLk9" alt="QR code for roll call">
-<div class="qr-meta">
-<p>Scan the code, or use the button:</p>
-<a class="btn secondary" href="https://forms.gle/2gArRs3HfdhEzxLk9" target="_blank" rel="noopener">Open the roll call form</a>
-</div>
-</div>
-</section>
+  const old = `    <div class="week">
+      <div class="wk">Week 6</div>
+      <div><h3>No Brainer</h3><p>Unit 6.</p></div>
+    </div>`;
 
-<section>
-<div class="num">02</div>
-<h2>Course Drive</h2>
-<p class="lead">Everything for this course lives in one shared folder: weekly vocabulary sets, reading and listening materials, writing tasks, and your returned scripts.</p>
-<div class="qr-row">
-<img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=148x148&data=https://drive.google.com/drive/folders/11EATH86sE_fUmLKuP8yLEKtpYtwmjsK0?usp=sharing" alt="QR code for course drive">
-<div class="qr-meta">
-<p>Scan the code, or use the button:</p>
-<a class="btn" href="https://drive.google.com/drive/folders/11EATH86sE_fUmLKuP8yLEKtpYtwmjsK0?usp=sharing" target="_blank" rel="noopener">Open the course folder</a>
-</div>
-</div>
-</section>
+  const neu = `    <details class="wk2" id="week-6">
+      <summary class="week">
+        <div class="wk">Week 6</div>
+        <div><h3>No Brainer</h3><p>Unit 6.</p><span class="tap">Reading and writing</span></div>
+      </summary>
+      <div class="wk2-body">
+        <p>This week&rsquo;s two reading tasks and the writing task. Each opens in a new tab.</p>
+        <div class="rdl">
+          <h3>Reading 1</h3>
+          <p>Academic Reading practice. Answer in the task, submit, then review the answers and the key vocabulary.</p>
+          <a class="btn" href="https://gemini.google.com/share/2f91fa886bf3" target="_blank" rel="noopener">Open reading task 1</a>
+        </div>
+        <div class="rdl" style="margin-top:14px">
+          <h3>Reading 2</h3>
+          <p>Academic Reading practice. Answer in the task, submit, then review the answers and the key vocabulary.</p>
+          <a class="btn" href="https://gemini.google.com/share/fb5ab3bd1162" target="_blank" rel="noopener">Open reading task 2</a>
+        </div>
+        <div class="rdl" style="margin-top:14px">
+          <h3>Think Writing</h3>
+          <p>This week&rsquo;s writing task.</p>
+          <a class="btn" href="https://drive.google.com/file/d/1UJ2RvheRM1XJy47EDvxApb8FJEbNHZBN/view" target="_blank" rel="noopener">Open the writing task</a>
+        </div>
+      </div>
+    </details>`;
 
-<section>
-<div class="num">03</div>
-<h2>Every Meeting</h2>
-<p class="lead">The same three hours, in the same order, every week. You will always know what is coming, so you can spend your attention on the English rather than on the schedule.</p>
-<div class="hours">
-<div class="hour">
-<span class="tag">Hour 1</span>
-<h3>Speaking & Listening</h3>
-<ul>
-<li>Warm-up questions on this week’s theme.</li>
-<li>A full two-minute individual long turn, recorded.</li>
-<li>Listen back, then deliver it a second time.</li>
-<li>Collect the words you needed but did not have.</li>
-</ul>
-</div>
-<div class="hour">
-<span class="tag">Hour 2</span>
-<h3>Reading</h3>
-<ul>
-<li>Read the passage here in class, under time.</li>
-<li>Check answers together.</li>
-<li>Find where in the text each answer was.</li>
-<li>Match the words in the question to the words in the text.</li>
-</ul>
-</div>
-<div class="hour">
-<span class="tag">Hour 3</span>
-<h3>Writing</h3>
-<ul>
-<li>Take the prompt apart together.</li>
-<li>Write under time.</li>
-<li>Scripts returned marked within the week.</li>
-<li>Every script rewritten once.</li>
-</ul>
-</div>
-</div>
-</section>
-
-<section>
-<div class="num">04</div>
-<h2>Semester Plan</h2>
-<p class="lead">Eighteen weeks, one idiom unit a week. Anything marked <strong>Due</strong> is a submission deadline; watch this page rather than your memory.</p>
-<div class="plan">
-
-<!-- The full original weeks 1-5 with quizzes, then Week 6 updated, then the rest. Content is complete in the local file; this is the structure. -->
-
-<details class="wk2" id="week-6">
-<summary class="week">
-<div class="wk">Week 6</div>
-<div><h3>No Brainer</h3><p>Unit 6.</p><span class="tap">Reading and writing</span></div>
-</summary>
-<div class="wk2-body">
-<p>This week’s two reading tasks and the writing task. Each opens in a new tab.</p>
-<div class="rdl">
-<h3>Reading 1</h3>
-<p>Academic Reading practice. Answer in the task, submit, then review the answers and the key vocabulary.</p>
-<a class="btn" href="https://gemini.google.com/share/2f91fa886bf3" target="_blank" rel="noopener">Open reading task 1</a>
-</div>
-<div class="rdl" style="margin-top:14px">
-<h3>Reading 2</h3>
-<p>Academic Reading practice. Answer in the task, submit, then review the answers and the key vocabulary.</p>
-<a class="btn" href="https://gemini.google.com/share/fb5ab3bd1162" target="_blank" rel="noopener">Open reading task 2</a>
-</div>
-<div class="rdl" style="margin-top:14px">
-<h3>Think Writing</h3>
-<p>This week’s writing task.</p>
-<a class="btn" href="https://drive.google.com/file/d/1UJ2RvheRM1XJy47EDvxApb8FJEbNHZBN/view" target="_blank" rel="noopener">Open the writing task</a>
-</div>
-</div>
-</details>
-
-</div>
-</section>
-
-<footer>
-Please follow the regulations on Intellectual Property Rights. Do not make illegal copies.
-</footer>
-</div>
+  if (html.includes(old)) {
+    html = html.replace(old, neu);
+  }
+  document.open();
+  document.write(html);
+  document.close();
+})().catch(e => {
+  document.body.innerHTML = '<div class="loading">Failed to load. <a href="https://raw.githubusercontent.com/AlbertCosmo/albertcosmo.github.io/dae3fe059936ffc073e0d57345f63d249b28e9df/89154/index.html">Open original</a></div>';
+});
+</script>
 </body>
 </html>
