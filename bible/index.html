@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bible · Presentations</title>
+<meta name="description" content="Presentations for the Bible course by Albert Le Thanh Nhan.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,500;0,700;1,400&family=Alegreya+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F3F4F1;--paper:#FFFFFF;--ink:#1E2430;--muted:#5E6573;--faint:#8A909B;--rule:#D6D9DE;
+ --sea:#2F4B8A;--sea-soft:#E4E9F4;--land:#9A5F14;--land-soft:#F4E9D8;--hit:#F6E3B4;
+ --serif:'Alegreya',Georgia,'Times New Roman',serif;--sans:'Alegreya Sans','Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14171D;--paper:#1C2029;--ink:#E6E8EC;--muted:#A9AFBA;--faint:#7D8490;--rule:#343A46;--sea:#9DB4EE;--sea-soft:#26304A;--land:#E0A45A;--land-soft:#3A2D1A;--hit:#5A4516}}
+:root[data-theme="dark"]{--bg:#14171D;--paper:#1C2029;--ink:#E6E8EC;--muted:#A9AFBA;--faint:#7D8490;--rule:#343A46;--sea:#9DB4EE;--sea-soft:#26304A;--land:#E0A45A;--land-soft:#3A2D1A;--hit:#5A4516}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.5;padding-bottom:env(safe-area-inset-bottom,0px)}
+main{max-width:860px;margin:0 auto;padding:32px 16px 56px}
+a{color:var(--sea)}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--sea);outline-offset:2px}
+.crumb{font-size:14px;color:var(--faint);margin:0 0 18px}
+.crumb a{color:var(--muted);text-decoration:none}
+.crumb a:hover{text-decoration:underline}
+h1{font-family:var(--serif);font-weight:500;font-size:clamp(34px,8vw,48px);line-height:1.05;margin:0 0 8px;letter-spacing:-0.01em}
+.lede{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:18px;margin:0 0 28px}
+.list-head{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin:0 0 10px;font-weight:500}
+
+/* ---------- presentation list ---------- */
+.deck{background:var(--paper);border:1px solid var(--rule);border-radius:14px;margin:0 0 14px;overflow:hidden}
+.deck h2{margin:0}
+.deck-toggle{display:flex;gap:14px;align-items:flex-start;width:100%;text-align:left;background:none;border:0;padding:18px 18px 18px 16px}
+.deck-toggle:hover .deck-title{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
+.chev{flex:none;width:28px;height:28px;margin-top:2px;border-radius:50%;border:1px solid var(--rule);display:flex;align-items:center;justify-content:center;color:var(--muted);transition:transform .15s}
+.deck-toggle[aria-expanded="true"] .chev{transform:rotate(90deg)}
+.deck-title{display:block;font-family:var(--serif);font-weight:500;font-size:clamp(20px,4.4vw,25px);line-height:1.2}
+.deck-meta{display:block;font-size:14px;color:var(--muted);margin-top:6px}
+.deck-hint{display:block;font-size:13px;color:var(--faint);margin-top:2px}
+.deck-body{border-top:1px solid var(--rule);background:var(--bg);padding:16px}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+.btn{display:inline-flex;align-items:center;gap:6px;font-size:14px;padding:8px 14px;min-height:40px;border:1px solid var(--rule);border-radius:10px;background:var(--paper);color:var(--ink);text-decoration:none}
+.btn.primary{background:var(--sea);border-color:var(--sea);color:var(--paper)}
+
+/* ---------- slides ---------- */
+.slide{position:relative;background:var(--paper);border:1px solid var(--rule);border-radius:14px;padding:clamp(20px,4.5vw,44px);margin:0 0 14px;font-size:clamp(15.5px,2.2vw,18px)}
+.slide .no{position:absolute;top:12px;right:16px;font-size:.72em;color:var(--faint);font-variant-numeric:tabular-nums}
+.kicker{font-size:.72em;letter-spacing:.12em;text-transform:uppercase;color:var(--land);font-weight:700;margin:0 0 .5em}
+.slide h3{font-family:var(--serif);font-weight:500;font-size:1.75em;line-height:1.15;margin:0 0 .6em;letter-spacing:-.005em}
+.slide p{margin:0 0 .8em}
+.slide p:last-child{margin-bottom:0}
+.slide ul{margin:0 0 .8em;padding-left:1.2em}
+.slide li{margin:0 0 .35em}
+.q{font-family:var(--serif);font-size:1.12em;line-height:1.5;border-left:3px solid var(--sea);padding:.1em 0 .1em .9em;margin:0 0 .9em}
+.q.land{border-left-color:var(--land)}
+.q cite{display:block;font-family:var(--sans);font-style:normal;font-size:.78em;color:var(--muted);margin-top:.25em}
+.vi{font-style:italic}
+.claim{font-family:var(--serif);font-size:1.3em;line-height:1.35;margin:.2em 0 .8em}
+.takeaway{background:var(--hit);border-radius:10px;padding:.7em .95em;font-family:var(--serif);font-size:1.08em;line-height:1.45}
+.muted{color:var(--muted)}
+.small{font-size:.85em}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,3vw,28px);align-items:start;margin:0 0 .9em}
+.cols.wide-left{grid-template-columns:1.35fr 1fr}
+@media (max-width:640px){.cols,.cols.wide-left{grid-template-columns:1fr}}
+.tag{display:inline-block;font-size:.72em;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border-radius:999px;padding:.15em .6em;vertical-align:.15em}
+.tag.land{background:var(--land-soft);color:var(--land)}
+.tag.sea{background:var(--sea-soft);color:var(--sea)}
+.tag.ink{background:var(--rule);color:var(--ink)}
+svg.fig{display:block;width:100%;height:auto;margin:.2em 0 .6em}
+svg.fig text{font-family:var(--sans);fill:var(--ink)}
+svg.fig .t-muted{fill:var(--muted)}
+svg.fig .t-sea{fill:var(--sea)}
+svg.fig .t-land{fill:var(--land)}
+svg.fig .serif{font-family:var(--serif)}
+.figcap{font-size:.8em;color:var(--muted);margin:-.2em 0 .8em}
+svg.fig.narrow{max-width:560px;margin-left:auto;margin-right:auto}
+.only-narrow{display:none!important}
+@media (max-width:640px){.only-wide{display:none!important}.only-narrow{display:block!important}}
+
+/* artwork */
+figure.art{margin:0}
+figure.art img{display:block;width:100%;height:auto;max-height:420px;object-fit:contain;background:var(--bg);border-radius:10px}
+figure.art figcaption{font-size:.78em;color:var(--muted);margin-top:.45em;line-height:1.4}
+figure.art .fallback{display:none;border:1px dashed var(--rule);border-radius:10px;padding:1em;font-size:.85em;color:var(--muted)}
+figure.art.img-missing img{display:none}
+figure.art.img-missing .fallback{display:block}
+
+/* timeline */
+.tl{list-style:none;margin:0;padding:0;border-left:2px solid var(--rule)}
+.tl li{position:relative;padding:0 0 .75em 1.1em;margin:0}
+.tl li::before{content:"";position:absolute;left:-7px;top:.45em;width:12px;height:12px;border-radius:50%;background:var(--paper);border:2px solid var(--muted)}
+.tl li.up::before{border-color:var(--sea);background:var(--sea)}
+.tl li.down::before{border-color:var(--land);background:var(--land)}
+.tl .ref{font-size:.78em;color:var(--faint);font-variant-numeric:tabular-nums;display:block}
+
+/* bride price ledger */
+.ledger{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin:0 0 .9em}
+.item{border:1px solid var(--rule);border-radius:10px;padding:.65em .75em;background:var(--paper)}
+.item b{display:block;font-family:var(--serif);font-weight:500;font-size:1.02em;line-height:1.25;margin:.35em 0 0}
+.tally{display:grid;grid-template-columns:auto 1fr auto;gap:.4em .7em;align-items:center;font-size:.92em;margin:0 0 .9em}
+.bar{height:14px;border-radius:7px;background:var(--rule);overflow:hidden}
+.bar span{display:block;height:100%}
+
+/* comparison table */
+.tw{overflow-x:auto;margin:0 0 .9em}
+table.cmp{border-collapse:collapse;width:100%;min-width:520px;font-size:.9em}
+table.cmp th,table.cmp td{border-bottom:1px solid var(--rule);padding:.55em .6em;text-align:left;vertical-align:top}
+table.cmp thead th{font-size:.8em;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700}
+table.cmp tbody th{font-weight:500;color:var(--muted);width:24%}
+table.cmp td.hl{background:var(--hit)}
+
+/* flow */
+.flow{display:grid;gap:8px}
+.flow .step{border:1px solid var(--rule);border-radius:10px;padding:.55em .75em;background:var(--paper);font-size:.92em}
+.flow .arrow{text-align:center;color:var(--faint);line-height:1;font-size:.9em}
+.flow .step.end-sea{border-color:var(--sea);background:var(--sea-soft)}
+.flow .step.end-land{border-color:var(--land);background:var(--land-soft)}
+.flow h4{margin:0 0 .3em;font-family:var(--serif);font-weight:500;font-size:1.15em}
+
+ol.qs{padding-left:1.3em;margin:0}
+ol.qs li{margin:0 0 .7em}
+.wc p{padding-left:2em;text-indent:-2em;margin:0 0 .6em}
+
+/* ---------- presenting mode ---------- */
+.present-nav{display:none}
+.deck.presenting{position:fixed;inset:0;z-index:100;margin:0;border:0;border-radius:0;background:var(--paper);overflow:hidden}
+.deck.presenting h2,.deck.presenting .toolbar{display:none}
+.deck.presenting .deck-body{position:absolute;inset:0;border:0;padding:0;background:var(--paper);overflow:auto}
+.deck.presenting .slide{display:none;border:0;border-radius:0;margin:0;min-height:100%;
+ padding:clamp(24px,5vh,64px) clamp(20px,6vw,96px) 88px;font-size:clamp(16px,calc(.9vw + 1.1vh),30px)}
+.deck.presenting .slide.current{display:flex;flex-direction:column;justify-content:center}
+.deck.presenting .slide.current > *{width:100%;max-width:1200px;margin-left:auto;margin-right:auto}
+.deck.presenting .slide .no{display:none}
+.deck.presenting figure.art img{max-height:52vh}
+.deck.presenting .present-nav{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:101;justify-content:center;align-items:center;gap:10px;padding:12px 12px calc(12px + env(safe-area-inset-bottom,0px));background:linear-gradient(to top,var(--paper) 55%,transparent)}
+.present-nav .count{font-size:14px;color:var(--muted);min-width:64px;text-align:center;font-variant-numeric:tabular-nums}
+body.locked{overflow:hidden}
+
+footer{margin-top:36px;font-size:13px;color:var(--faint);border-top:1px solid var(--rule);padding-top:14px}
+@media (prefers-reduced-motion:reduce){.chev{transition:none}}
+@media print{.deck-body[hidden]{display:block!important}.toolbar,.chev{display:none}.slide{break-inside:avoid}}
+</style>
+</head>
+<body>
+<main>
+<p class="crumb"><a href="/">Albert Le Thanh Nhan</a> / Bible</p>
+<h1>Bible</h1>
+<p class="lede">Presentations for the course. Select a title to open the full presentation.</p>
+
+<p class="list-head">Presentations</p>
+
+<!-- ===================================================================
+     PRESENTATION 1 — Rigged Contests
+     To add another presentation, copy this <article> block, give it a
+     new id, and replace the slides.
+     =================================================================== -->
+<article class="deck" id="rigged-contests">
+<h2><button class="deck-toggle" aria-expanded="false" aria-controls="rigged-contests-body">
+  <span class="chev" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M4 2l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  <span>
+    <span class="deck-title">Rigged Contests: Reading David and Goliath through “Sơn Tinh, Thuỷ Tinh”</span>
+    <span class="deck-meta">Albert Le Thanh Nhan · 16 October 2026 · 1 Samuel 16–18, 31; 1 Chronicles 10</span>
+    <span class="deck-hint">17 slides + works cited</span>
+  </span>
+</button></h2>
+
+<div class="deck-body" id="rigged-contests-body" hidden>
+<div class="toolbar">
+  <button class="btn primary" data-act="present" type="button">▶ Present</button>
+  <button class="btn" data-act="collapse" type="button">Close</button>
+</div>
+
+<!-- 1 -->
+<section class="slide" aria-label="Slide 1">
+  <span class="no">1</span>
+  <p class="kicker">Bible · Comparative reading</p>
+  <h3>Rigged Contests</h3>
+  <p class="claim">Reading David and Goliath through “Sơn Tinh, Thuỷ Tinh”</p>
+  <svg class="fig" viewBox="0 0 640 176" role="img" aria-label="Two contests: a giant against a youth, and a mountain against the waters">
+    <!-- left: giant vs youth -->
+    <line x1="20" y1="140" x2="300" y2="140" stroke="var(--rule)" stroke-width="2"/>
+    <rect x="70" y="30" width="56" height="110" rx="6" fill="var(--muted)" opacity=".85"/>
+    <rect x="200" y="100" width="30" height="40" rx="5" fill="var(--sea)"/>
+    <circle cx="170" cy="70" r="6" fill="var(--ink)"/>
+    <path d="M215 98 Q 195 70 176 70" fill="none" stroke="var(--ink)" stroke-width="1.5" stroke-dasharray="3 4"/>
+    <text x="98" y="166" text-anchor="middle" font-size="20">Goliath</text>
+    <text x="215" y="166" text-anchor="middle" font-size="20">David</text>
+    <!-- right: mountain vs water -->
+    <line x1="340" y1="140" x2="620" y2="140" stroke="var(--rule)" stroke-width="2"/>
+    <path d="M360 140 L420 40 L480 140 Z" fill="var(--land)"/>
+    <path d="M500 140 C 515 70, 545 70, 555 105 C 560 125, 585 125, 595 95 L 605 140 Z" fill="var(--sea)"/>
+    <text x="420" y="166" text-anchor="middle" font-size="20">Sơn Tinh</text>
+    <text x="552" y="166" text-anchor="middle" font-size="20">Thuỷ Tinh</text>
+  </svg>
+  <p class="muted">Albert Le Thanh Nhan<br><span class="small">Sources: 1 Samuel 9–18, 31 and 1 Chronicles 10 (KJV); “Sơn Tinh, Thuỷ Tinh” and “Con Rồng cháu Tiên,” <span class="vi">Ngữ văn 6</span>, vol. 1</span></p>
+</section>
+
+<!-- 2 -->
+<section class="slide" aria-label="Slide 2">
+  <span class="no">2</span>
+  <p class="kicker">Starting point</p>
+  <h3>Two stories, one troubled word: <em>underdog</em></h3>
+  <div class="cols">
+    <div>
+      <p><span class="tag ink">1 Samuel 17</span></p>
+      <p>For most readers, the archetypal underdog story: a shepherd boy with a sling fells an armored giant.</p>
+    </div>
+    <div>
+      <p><span class="tag land">Vietnamese legend</span></p>
+      <p>Schoolchildren learn “Sơn Tinh, Thuỷ Tinh” as an explanation of floods that also “exalts and praises” the Hùng kings’ founding of the nation.</p>
+    </div>
+  </div>
+  <p class="takeaway">Read side by side, the two tales unsettle the word <em>underdog</em>. David is the obvious physical underdog, yet the only arbiter who matters has already chosen him. Thuỷ Tinh is Sơn Tinh’s divine equal, and becomes an underdog only through the terms a king sets.</p>
+</section>
+
+<!-- 3 -->
+<section class="slide" aria-label="Slide 3">
+  <span class="no">3</span>
+  <p class="kicker">Thesis</p>
+  <h3>The underdog is made by whoever sets the terms</h3>
+  <p class="claim">In both narratives, the underdog is made by whoever sets the terms of the contest, and each tale reserves its harshest judgment for the king who sets or resists those terms.</p>
+  <div class="cols">
+    <div class="q"><strong>Saul</strong> falls for disobedience and for opposing God’s chosen one.</div>
+    <div class="q land"><strong>The eighteenth Hùng king</strong> falls even though he sided with a deity: his partiality breaks the pact on which his dragon-and-immortal lineage rests.</div>
+  </div>
+  <p class="takeaway">Neither anointing nor ancestry protects a king who rigs the contest.</p>
+</section>
+
+<!-- 4 -->
+<section class="slide" aria-label="Slide 4">
+  <span class="no">4</span>
+  <p class="kicker">Part I · David and Goliath</p>
+  <h3>A mismatch staged with care</h3>
+  <div class="cols wide-left">
+    <div>
+      <div class="q">“a coat of mail; and the weight of the coat was five thousand shekels of brass”<cite>1 Sam. 17.5</cite></div>
+      <div class="q">“thou [art but] a youth”<cite>Saul to David, 1 Sam. 17.33</cite></div>
+      <div class="q">“disdained him: for he was [but] a youth”<cite>Goliath, 1 Sam. 17.42</cite></div>
+    </div>
+    <figure class="art">
+      <img loading="lazy" decoding="async" referrerpolicy="no-referrer"
+           src="https://commons.wikimedia.org/wiki/Special:FilePath/David_with_the_Head_of_Goliath-Caravaggio_%281610%29.jpg?width=800"
+           alt="Caravaggio's painting of the young David holding up the severed head of Goliath">
+      <div class="fallback">Image unavailable: Caravaggio, <em>David with the Head of Goliath</em>, c. 1605–1610, Galleria Borghese, Rome. <a href="https://commons.wikimedia.org/wiki/File:David_with_the_Head_of_Goliath-Caravaggio_(1610).jpg" target="_blank" rel="noopener">View on Wikimedia Commons</a></div>
+      <figcaption>Caravaggio, <em>David with the Head of Goliath</em>, c. 1605–1610. Galleria Borghese, Rome. Public domain, via Wikimedia Commons.</figcaption>
+    </figure>
+  </div>
+  <p class="takeaway">Every human witness in the story reads the odds by size.</p>
+</section>
+
+<!-- 5 -->
+<section class="slide" aria-label="Slide 5">
+  <span class="no">5</span>
+  <p class="kicker">Part I · David and Goliath</p>
+  <h3>The arbiter has already chosen</h3>
+  <div class="cols wide-left">
+    <div>
+      <div class="q">“and the Spirit of the LORD came upon David from that day forward”<cite>1 Sam. 16.13</cite></div>
+      <div class="q">“man looketh on the outward appearance, but the LORD looketh on the heart”<cite>1 Sam. 16.7</cite></div>
+      <div class="q">“the LORD saveth not with sword and spear: for the battle is the LORD’s”<cite>David, 1 Sam. 17.47</cite></div>
+    </div>
+    <figure class="art">
+      <img loading="lazy" decoding="async" referrerpolicy="no-referrer"
+           src="https://commons.wikimedia.org/wiki/Special:FilePath/Dura_Synagogue_WC3_David_anointed_by_Samuel.jpg?width=800"
+           alt="Wall painting from the Dura-Europos synagogue showing Samuel anointing David among his brothers">
+      <div class="fallback">Image unavailable: <em>Samuel anoints David</em>, wall painting, Dura-Europos synagogue, mid-3rd century CE; now in the National Museum of Damascus. <a href="https://commons.wikimedia.org/wiki/File:Dura_Synagogue_WC3_David_anointed_by_Samuel.jpg" target="_blank" rel="noopener">View on Wikimedia Commons</a></div>
+      <figcaption><em>Samuel anoints David</em>, Dura-Europos synagogue, mid-3rd century CE. National Museum of Damascus. Via Wikimedia Commons.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- 6 -->
+<section class="slide" aria-label="Slide 6">
+  <span class="no">6</span>
+  <p class="kicker">Part I · David and Goliath</p>
+  <h3>Two vantages on the same contest</h3>
+  <div class="cols" role="img" aria-label="Chart: by outward appearance Goliath far outweighs David; by the LORD's choice only David is chosen">
+    <svg class="fig" viewBox="0 0 320 250" aria-hidden="true">
+      <text x="160" y="22" text-anchor="middle" font-size="16" font-weight="700">Human vantage</text>
+      <text x="160" y="42" text-anchor="middle" font-size="13" class="t-muted">“the outward appearance” (16.7)</text>
+      <line x1="40" y1="210" x2="280" y2="210" stroke="var(--rule)" stroke-width="2"/>
+      <rect x="80" y="66" width="60" height="144" rx="4" fill="var(--muted)"/>
+      <rect x="180" y="175" width="60" height="35" rx="4" fill="var(--sea)"/>
+      <text x="110" y="58" text-anchor="middle" font-size="12" class="t-muted">armored giant</text>
+      <text x="210" y="167" text-anchor="middle" font-size="12" class="t-muted">“a youth”</text>
+      <text x="110" y="232" text-anchor="middle" font-size="14">Goliath</text>
+      <text x="210" y="232" text-anchor="middle" font-size="14">David</text>
+    </svg>
+    <svg class="fig" viewBox="0 0 320 250" aria-hidden="true">
+      <text x="160" y="22" text-anchor="middle" font-size="16" font-weight="700">The arbiter’s vantage</text>
+      <text x="160" y="42" text-anchor="middle" font-size="13" class="t-muted">“the LORD looketh on the heart” (16.7)</text>
+      <line x1="40" y1="210" x2="280" y2="210" stroke="var(--rule)" stroke-width="2"/>
+      <rect x="80" y="206" width="60" height="4" rx="2" fill="var(--muted)"/>
+      <rect x="180" y="66" width="60" height="144" rx="4" fill="var(--sea)"/>
+      <text x="110" y="196" text-anchor="middle" font-size="12" class="t-muted">not chosen</text>
+      <text x="210" y="58" text-anchor="middle" font-size="12" class="t-sea">anointed (16.13)</text>
+      <text x="110" y="232" text-anchor="middle" font-size="14">Goliath</text>
+      <text x="210" y="232" text-anchor="middle" font-size="14">David</text>
+    </svg>
+  </div>
+  <p class="figcap">Schematic, not to scale: the first panel shows the odds as Saul, Israel and Goliath read them; the second shows the arrangement the reader already knows from chapter 16.</p>
+  <p>Within the story, only David reads the odds correctly, and he announces the arrangement aloud (17.47). The mismatch is staged so that David’s victory may be glorious in the name of God.</p>
+  <p class="takeaway">Outmatched in body and unbeatable in theology, David is an underdog only from a human vantage.</p>
+</section>
+
+<!-- 7 -->
+<section class="slide" aria-label="Slide 7">
+  <span class="no">7</span>
+  <p class="kicker">Part I · The other loser</p>
+  <h3>Saul, Israel’s own giant</h3>
+  <div class="cols">
+    <ol class="tl" aria-label="Saul's arc in 1 Samuel">
+      <li><span class="ref">1 Sam. 9.2</span>“higher than any of the people” from the shoulders up: the very “outward appearance” God discounts (16.7)</li>
+      <li class="up"><span class="ref">1 Sam. 9.21</span>Once a chosen underdog himself: a Benjamite “of the smallest of the tribes of Israel”</li>
+      <li class="down"><span class="ref">1 Sam. 15.23</span>“Because thou hast rejected the word of the LORD, he hath also rejected thee from [being] king”</li>
+      <li class="down"><span class="ref">1 Sam. 17.11</span>Saul and all Israel “were dismayed, and greatly afraid”</li>
+      <li class="down"><span class="ref">1 Sam. 17.39</span>The king’s armor is useless to the chosen boy: “I cannot go with these; for I have not proved them”</li>
+    </ol>
+    <div>
+      <p>The tallest man in Israel stands among the frightened, and his equipment cannot be worn by the one God has chosen.</p>
+      <p class="takeaway">In Samuel, chosenness is a relation that can be broken, not a possession that can be kept.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 8 -->
+<section class="slide" aria-label="Slide 8">
+  <span class="no">8</span>
+  <p class="kicker">Part II · Sơn Tinh, Thuỷ Tinh</p>
+  <h3>Thuỷ Tinh does not look like an underdog at all</h3>
+  <div class="cols">
+    <div>
+      <p>The legend insists on parity. Sơn Tinh raises hills with a wave of his hand; Thuỷ Tinh, “no less talented,” summons wind and rain.</p>
+      <div class="q land">“One is lord of the high mountains [<span class="vi">non cao</span>], the other lord of the deep waters [<span class="vi">nước thẳm</span>], and both are worthy to be the Hùng king’s son-in-law.”<cite>“Sơn Tinh, Thuỷ Tinh”</cite></div>
+      <div class="q land">“both young men please me”<cite>The Hùng king, after conferring with his highest officials</cite></div>
+    </div>
+    <svg class="fig" viewBox="0 0 300 220" role="img" aria-label="A balance scale held level between mountain and water">
+      <line x1="150" y1="40" x2="150" y2="190" stroke="var(--muted)" stroke-width="3"/>
+      <path d="M115 195 L185 195" stroke="var(--muted)" stroke-width="4" stroke-linecap="round"/>
+      <line x1="40" y1="60" x2="260" y2="60" stroke="var(--ink)" stroke-width="3" stroke-linecap="round"/>
+      <circle cx="150" cy="60" r="6" fill="var(--ink)"/>
+      <line x1="60" y1="60" x2="45" y2="120" stroke="var(--muted)"/><line x1="60" y1="60" x2="95" y2="120" stroke="var(--muted)"/>
+      <line x1="240" y1="60" x2="205" y2="120" stroke="var(--muted)"/><line x1="240" y1="60" x2="255" y2="120" stroke="var(--muted)"/>
+      <path d="M35 120 h70 a35 14 0 0 1 -70 0z" fill="var(--rule)"/>
+      <path d="M195 120 h70 a35 14 0 0 1 -70 0z" fill="var(--rule)"/>
+      <path d="M48 118 L70 82 L92 118 Z" fill="var(--land)"/>
+      <path d="M205 118 C 212 92, 228 92, 233 106 C 237 116, 250 114, 256 100 L 258 118 Z" fill="var(--sea)"/>
+      <text x="70" y="160" text-anchor="middle" font-size="13" class="t-land">non cao</text>
+      <text x="230" y="160" text-anchor="middle" font-size="13" class="t-sea">nước thẳm</text>
+      <text x="150" y="215" text-anchor="middle" font-size="12" class="t-muted">“both are worthy”</text>
+    </svg>
+  </div>
+  <p class="takeaway">The king affirms the parity, then dissolves it.</p>
+</section>
+
+<!-- 9 -->
+<section class="slide" aria-label="Slide 9">
+  <span class="no">9</span>
+  <p class="kicker">Part II · The terms</p>
+  <h3>The bride-price (<span class="vi">sính lễ</span>): whoever brings it first marries Mị Nương</h3>
+  <div class="ledger">
+    <div class="item"><span class="tag land">Land</span><b>A hundred trays of sticky rice</b></div>
+    <div class="item"><span class="tag land">Land</span><b>A hundred bundles of <span class="vi">bánh chưng</span></b></div>
+    <div class="item"><span class="tag land">Land</span><b>An elephant with nine tusks</b></div>
+    <div class="item"><span class="tag land">Land</span><b>A rooster with nine spurs</b></div>
+    <div class="item"><span class="tag land">Land</span><b>A horse with nine red manes</b></div>
+  </div>
+  <p class="small muted">The animals are required in pairs: “a pair of each.”</p>
+  <div class="tally" role="img" aria-label="Five of five items come from the land; none come from the sea">
+    <span class="tag land">From the land</span><div class="bar"><span style="width:100%;background:var(--land)"></span></div><strong>5 of 5</strong>
+    <span class="tag sea">From the sea</span><div class="bar"><span style="width:0"></span></div><strong>0 of 5</strong>
+  </div>
+  <p class="takeaway">Every single item comes from the land; nothing comes from the sea. The rule is formally neutral and substantively partial.</p>
+</section>
+
+<!-- 10 -->
+<section class="slide" aria-label="Slide 10">
+  <span class="no">10</span>
+  <p class="kicker">Part II · The race</p>
+  <h3>Not impossible, only slower, and in a race slower is enough</h3>
+  <svg class="fig narrow" viewBox="0 0 360 200" role="img" aria-label="Race diagram: Sơn Tinh reaches the finish line first while Thuỷ Tinh, whose gifts must come from a list drawn from the land, is still on the way">
+    <text x="0" y="22" font-size="14" class="t-land" font-weight="700">Sơn Tinh</text>
+    <rect x="0" y="32" width="300" height="18" rx="9" fill="var(--land)"/>
+    <text x="300" y="68" text-anchor="end" font-size="12" class="t-land">arrives first</text>
+    <text x="0" y="102" font-size="14" class="t-sea" font-weight="700">Thuỷ Tinh</text>
+    <rect x="0" y="112" width="300" height="18" rx="9" fill="var(--sea-soft)"/>
+    <rect x="0" y="112" width="190" height="18" rx="9" fill="var(--sea)"/>
+    <text x="0" y="148" font-size="12" class="t-sea">a list drawn from the land: slower</text>
+    <line x1="312" y1="10" x2="312" y2="160" stroke="var(--ink)" stroke-width="2.5" stroke-dasharray="6 5"/>
+    <text x="360" y="184" text-anchor="end" font-size="12" class="t-muted">the bride-price delivered</text>
+  </svg>
+  <p class="figcap">Schematic: the bar lengths are illustrative and are not measured from the text.</p>
+  <p>Sơn Tinh arrives first. Thuỷ Tinh never lacked the gifts. A list drawn from the land need not make the sea god’s task impossible, only slower.</p>
+</section>
+
+<!-- 11 -->
+<section class="slide" aria-label="Slide 11">
+  <span class="no">11</span>
+  <p class="kicker">Part II · The floods</p>
+  <h3><span class="vi">Oán nặng, thù sâu</span>: a heavy grievance and a deep enmity</h3>
+  <div class="cols">
+    <div>
+      <p>The narrator frames Thuỷ Tinh’s response as rage and an attempt to “seize” Mị Nương, yet also names the motive behind the yearly floods.</p>
+      <p><strong><span class="vi">Oán</span></strong> is resentment of a wrong suffered, and the king’s terms supply one.</p>
+    </div>
+    <div>
+      <p><span class="tag ink">Caveat</span> This reading does not make Thuỷ Tinh just: his waters drown the fields and houses of people who set no terms.</p>
+      <p><span class="tag sea">What changes</span> In collective causality, the origin of the annual catastrophe moves from a god’s temper to a king’s decree.</p>
+    </div>
+  </div>
+  <div class="q">Even Phong Châu, the capital founded by the first Hùng king, seems to float “on a sea of water.”<cite>“Sơn Tinh, Thuỷ Tinh”; “Con Rồng cháu Tiên”</cite></div>
+</section>
+
+<!-- 12 -->
+<section class="slide" aria-label="Slide 12">
+  <span class="no">12</span>
+  <p class="kicker">Part III · The same instrument</p>
+  <h3>Two fathers price a daughter to fix the outcome</h3>
+  <div class="tw">
+  <table class="cmp">
+    <thead><tr><th scope="col"></th><th scope="col">Saul (1 Sam. 17–18)</th><th scope="col">The Hùng king</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">The prize</th><td>The king’s daughter, advertised for killing Goliath (17.25); Merab given to another man (18.19); Michal offered “that she may be a snare to him” (18.21)</td><td>Mị Nương</td></tr>
+      <tr><th scope="row">The price</th><td>“but an hundred foreskins of the Philistines” (18.25)</td><td>A bride-price drawn wholly from the land</td></tr>
+      <tr><th scope="row">The aim</th><td>“make David fall by the hand of the Philistines” (18.25)</td><td>A preference disguised as a fair race</td></tr>
+      <tr><th scope="row">Rigged against</th><td>The man God has chosen</td><td>A god he has not chosen</td></tr>
+      <tr><th scope="row">Result</th><td>He fails: David kills “two hundred men” (18.27)</td><td class="hl">He succeeds, and his success is the problem</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="takeaway">Both fathers treat a daughter as a stake rather than a person.</p>
+</section>
+
+<!-- 13 -->
+<section class="slide" aria-label="Slide 13">
+  <span class="no">13</span>
+  <p class="kicker">Part III · Where the cost falls</p>
+  <h3>When no higher arbiter overrules, the cost falls downward</h3>
+  <div class="cols">
+    <div class="flow">
+      <h4>Saul</h4>
+      <div class="step">Sets a price to destroy God’s chosen</div>
+      <div class="arrow" aria-hidden="true">↓</div>
+      <div class="step">A higher arbiter stands behind David</div>
+      <div class="arrow" aria-hidden="true">↓</div>
+      <div class="step end-sea">The rigging fails: David pays the price twice over (18.27)</div>
+    </div>
+    <div class="flow">
+      <h4>The Hùng king</h4>
+      <div class="step">Sets a price that favors the land</div>
+      <div class="arrow" aria-hidden="true">↓</div>
+      <div class="step">No higher arbiter is mentioned in the legend</div>
+      <div class="arrow" aria-hidden="true">↓</div>
+      <div class="step end-land">The rigging succeeds: the people pay, every flood season</div>
+    </div>
+  </div>
+</section>
+
+<!-- 14 -->
+<section class="slide" aria-label="Slide 14">
+  <span class="no">14</span>
+  <p class="kicker">Part IV · The fall of kings</p>
+  <h3>Only Saul’s fall is narrated and moralized</h3>
+  <div class="cols">
+    <div>
+      <p><span class="tag ink">Saul</span></p>
+      <div class="q">At Gilboa the wounded king “took a sword, and fell upon it”<cite>1 Sam. 31.4</cite></div>
+      <div class="q">“the Philistines came and dwelt in” the cities Israel abandoned<cite>1 Sam. 31.7</cite></div>
+      <div class="q">His death follows from “his transgression which he committed against the LORD . . . therefore he slew him, and turned the kingdom unto David the son of Jesse”<cite>1 Chron. 10.13–14</cite></div>
+    </div>
+    <div>
+      <p><span class="tag land">The Hùng king</span></p>
+      <p>His end appears in neither textbook tale.</p>
+      <ul>
+        <li>“Con Rồng cháu Tiên” records a throne handed down for 18 generations under one title without change.</li>
+        <li>“Sơn Tinh, Thuỷ Tinh” opens on the eighteenth of these kings.</li>
+        <li>Vietnamese historical tradition makes him the last: the ruler whose Văn Lang fell to Thục Phán.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 15 -->
+<section class="slide" aria-label="Slide 15">
+  <span class="no">15</span>
+  <p class="kicker">Part IV · The founding pact</p>
+  <h3>He failed the pact his bloodline embodies</h3>
+  <svg class="fig only-wide" viewBox="0 0 640 300" role="img" aria-label="Lineage diagram: Lạc Long Quân of the deep waters and Âu Cơ of the high mountains have a hundred children who part between sea and mountain under a pact of mutual help; the eldest son founds the Hùng line, whose eighteenth king faces suitors from the same two realms">
+    <rect x="30" y="14" width="250" height="56" rx="10" fill="var(--sea-soft)" stroke="var(--sea)"/>
+    <text x="155" y="38" text-anchor="middle" font-size="15" font-weight="700" class="t-sea">Lạc Long Quân</text>
+    <text x="155" y="58" text-anchor="middle" font-size="12" class="t-sea">dragon race · <tspan font-style="italic">nước thẳm</tspan></text>
+    <rect x="360" y="14" width="250" height="56" rx="10" fill="var(--land-soft)" stroke="var(--land)"/>
+    <text x="485" y="38" text-anchor="middle" font-size="15" font-weight="700" class="t-land">Âu Cơ</text>
+    <text x="485" y="58" text-anchor="middle" font-size="12" class="t-land">immortal line · <tspan font-style="italic">non cao</tspan></text>
+    <path d="M155 70 V92 H485 V70" fill="none" stroke="var(--muted)" stroke-width="1.5"/>
+    <line x1="320" y1="92" x2="320" y2="110" stroke="var(--muted)" stroke-width="1.5"/>
+    <rect x="200" y="110" width="240" height="34" rx="8" fill="var(--paper)" stroke="var(--muted)"/>
+    <text x="320" y="132" text-anchor="middle" font-size="13">A hundred children</text>
+    <path d="M260 144 L155 172 M380 144 L485 172" stroke="var(--muted)" stroke-width="1.5" fill="none"/>
+    <text x="155" y="190" text-anchor="middle" font-size="13" class="t-sea">fifty to the sea</text>
+    <text x="485" y="190" text-anchor="middle" font-size="13" class="t-land">fifty to the mountains</text>
+    <text x="320" y="178" text-anchor="middle" font-size="11.5" class="t-muted" font-style="italic">pact: help one another</text>
+    <line x1="485" y1="198" x2="485" y2="216" stroke="var(--land)" stroke-width="1.5"/>
+    <rect x="345" y="216" width="280" height="34" rx="8" fill="var(--land-soft)" stroke="var(--land)"/>
+    <text x="485" y="238" text-anchor="middle" font-size="12.5">eldest son → Hùng kings, 18 generations</text>
+    <line x1="485" y1="250" x2="485" y2="262" stroke="var(--land)" stroke-width="1.5"/>
+    <text x="485" y="282" text-anchor="middle" font-size="13" font-weight="700">the eighteenth Hùng king</text>
+    <text x="30" y="236" font-size="12.5" class="t-sea">Thuỷ Tinh, lord of <tspan font-style="italic">nước thẳm</tspan></text>
+    <text x="30" y="258" font-size="12.5" class="t-land">Sơn Tinh, lord of <tspan font-style="italic">non cao</tspan></text>
+    <text x="30" y="280" font-size="11.5" class="t-muted">the suitors rule the same two realms,</text>
+    <text x="30" y="296" font-size="11.5" class="t-muted">named in the same words</text>
+  </svg>
+  <svg class="fig only-narrow" viewBox="0 0 340 400" role="img" aria-label="Lineage diagram: Lạc Long Quân of the deep waters and Âu Cơ of the high mountains have a hundred children who part between sea and mountain under a pact of mutual help; the eldest son founds the Hùng line, whose eighteenth king faces suitors from the same two realms">
+    <rect x="6" y="8" width="158" height="58" rx="10" fill="var(--sea-soft)" stroke="var(--sea)"/>
+    <text x="85" y="32" text-anchor="middle" font-size="15" font-weight="700" class="t-sea">Lạc Long Quân</text>
+    <text x="85" y="53" text-anchor="middle" font-size="12.5" class="t-sea">dragon · <tspan font-style="italic">nước thẳm</tspan></text>
+    <rect x="176" y="8" width="158" height="58" rx="10" fill="var(--land-soft)" stroke="var(--land)"/>
+    <text x="255" y="32" text-anchor="middle" font-size="15" font-weight="700" class="t-land">Âu Cơ</text>
+    <text x="255" y="53" text-anchor="middle" font-size="12.5" class="t-land">immortal · <tspan font-style="italic">non cao</tspan></text>
+    <path d="M85 66 V82 H255 V66" fill="none" stroke="var(--muted)" stroke-width="1.5"/>
+    <line x1="170" y1="82" x2="170" y2="96" stroke="var(--muted)" stroke-width="1.5"/>
+    <rect x="80" y="96" width="180" height="32" rx="8" fill="var(--paper)" stroke="var(--muted)"/>
+    <text x="170" y="117" text-anchor="middle" font-size="13.5">A hundred children</text>
+    <path d="M130 128 L85 152 M210 128 L255 152" stroke="var(--muted)" stroke-width="1.5" fill="none"/>
+    <text x="85" y="168" text-anchor="middle" font-size="13" class="t-sea">fifty to the sea</text>
+    <text x="255" y="168" text-anchor="middle" font-size="13" class="t-land">fifty to the mountains</text>
+    <text x="170" y="192" text-anchor="middle" font-size="12.5" class="t-muted" font-style="italic">pact: help one another</text>
+    <line x1="255" y1="176" x2="255" y2="206" stroke="var(--land)" stroke-width="1.5"/>
+    <rect x="150" y="206" width="184" height="46" rx="8" fill="var(--land-soft)" stroke="var(--land)"/>
+    <text x="242" y="226" text-anchor="middle" font-size="13">eldest son → Hùng kings</text>
+    <text x="242" y="244" text-anchor="middle" font-size="13">18 generations</text>
+    <line x1="242" y1="252" x2="242" y2="266" stroke="var(--land)" stroke-width="1.5"/>
+    <text x="242" y="284" text-anchor="middle" font-size="13.5" font-weight="700">the eighteenth Hùng king</text>
+    <line x1="6" y1="304" x2="334" y2="304" stroke="var(--rule)"/>
+    <text x="6" y="326" font-size="12.5" class="t-muted">His suitors rule the same two realms,</text>
+    <text x="6" y="344" font-size="12.5" class="t-muted">named in the same words:</text>
+    <text x="6" y="368" font-size="13.5" class="t-sea">Thuỷ Tinh, lord of <tspan font-style="italic">nước thẳm</tspan></text>
+    <text x="6" y="390" font-size="13.5" class="t-land">Sơn Tinh, lord of <tspan font-style="italic">non cao</tspan></text>
+  </svg>
+  <div class="cols">
+    <div class="q"><span class="vi">“Ta vốn nòi rồng ở miền nước thẳm, nàng là dòng tiên ở chốn non cao.”</span><br>“I am of the dragon race of the deep waters; you are of the immortal line of the high mountains.”<cite>“Con Rồng cháu Tiên”</cite></div>
+    <div class="q land"><span class="vi">“Kẻ miền núi, người miền biển, khi có việc gì thì giúp đỡ lẫn nhau, đừng quên lời hẹn.”</span><br>“Mountain folk and sea folk, whenever there is need, must help one another; do not forget the pledge.”<cite>“Con Rồng cháu Tiên”</cite></div>
+  </div>
+  <p class="takeaway">He professes equal regard for both suitors, sets terms that favor the land, and turns the water into his kingdom’s yearly enemy. His bloodline did not fail him; he failed the pact his bloodline embodies.</p>
+</section>
+
+<!-- 16 -->
+<section class="slide" aria-label="Slide 16">
+  <span class="no">16</span>
+  <p class="kicker">Part IV · An objection</p>
+  <h3>Was the king only sparing his daughter?</h3>
+  <div class="cols">
+    <div>
+      <p><span class="tag ink">Objection</span></p>
+      <p>The founding tale itself declares land and water “hard to live together in one place for long” (“Con Rồng cháu Tiên”), so the king merely spares his daughter the separation her ancestors endured.</p>
+    </div>
+    <div>
+      <p><span class="tag sea">Reply</span></p>
+      <p>The founding tale answers that incompatibility with <strong>separation and mutual aid</strong>, not with a contest in which one side is quietly disqualified.</p>
+    </div>
+  </div>
+  <p class="takeaway">The king could have refused both suitors. Instead he disguised a preference as a fair race, and his people paid for the disguise.</p>
+</section>
+
+<!-- 17 -->
+<section class="slide" aria-label="Slide 17">
+  <span class="no">17</span>
+  <p class="kicker">Conclusion</p>
+  <h3>A position assigned, not a measure of strength</h3>
+  <p>Saul’s anointing does not survive his disobedience, and the line of the dragon and the immortal ends with the king who broke its pact. In both tales, <em>underdog</em> names a position assigned by whoever sets the terms, and severe judgment falls not only on the losing champion but also on the king who set the terms or fought them.</p>
+  <div class="cols">
+    <div class="q">Read through “Sơn Tinh, Thuỷ Tinh,” the story of David looks less like the triumph of the weak than like <strong>a contest rigged by grace</strong>.</div>
+    <div class="q land">Read through 1 Samuel, the legend learned as praise of the Hùng kings becomes <strong>a record of the last king’s injustice</strong>, paid for by his people every rainy season.</div>
+  </div>
+  <p class="kicker" style="margin-top:1.2em">For discussion</p>
+  <ol class="qs">
+    <li>If the terms of a contest make the underdog, who sets the terms in 1 Samuel 17, and who sets them in 1 Samuel 18?</li>
+    <li>Thuỷ Tinh has a real grievance, yet his floods fall on people who set no terms. How should a reader weigh grievance against harm?</li>
+    <li>Is a contest “rigged by grace” still a contest? What does the phrase claim about how 1 Samuel understands divine choice?</li>
+  </ol>
+</section>
+
+<section class="slide wc" aria-label="Works cited">
+  <p class="kicker">Works cited</p>
+  <p><em>The Bible</em>. Authorized King James Version, Oxford UP, 1998.</p>
+  <p>“Con Rồng cháu Tiên.” <em>Ngữ văn 6</em>, vol. 1. <em>GiaiBaiTap123.com</em>, <a href="https://giaibaitap123.com/sach-giao-khoa-ngu-van-6-tap-1/con-rong-chau-tien/" target="_blank" rel="noopener">giaibaitap123.com/sach-giao-khoa-ngu-van-6-tap-1/con-rong-chau-tien/</a>.</p>
+  <p>“Sơn Tinh, Thuỷ Tinh.” <em>Ngữ văn 6</em>, vol. 1. <em>GiaiBaiTap123.com</em>, <a href="https://giaibaitap123.com/sach-giao-khoa-ngu-van-6-tap-1/son-tinh-thuy-tinh/" target="_blank" rel="noopener">giaibaitap123.com/sach-giao-khoa-ngu-van-6-tap-1/son-tinh-thuy-tinh/</a>.</p>
+  <p class="kicker" style="margin-top:1.2em">Images</p>
+  <p class="small">Caravaggio, <em>David with the Head of Goliath</em>, c. 1605–1610, Galleria Borghese, Rome; public domain, via <a href="https://commons.wikimedia.org/wiki/File:David_with_the_Head_of_Goliath-Caravaggio_(1610).jpg" target="_blank" rel="noopener">Wikimedia Commons</a>.</p>
+  <p class="small"><em>Samuel anoints David</em>, Dura-Europos synagogue wall painting, mid-3rd century CE, National Museum of Damascus; via <a href="https://commons.wikimedia.org/wiki/File:Dura_Synagogue_WC3_David_anointed_by_Samuel.jpg" target="_blank" rel="noopener">Wikimedia Commons</a>.</p>
+  <p class="small">All diagrams were drawn for this presentation.</p>
+</section>
+
+<div class="present-nav">
+  <button class="btn" data-act="prev" type="button" aria-label="Previous slide">←</button>
+  <span class="count" aria-live="polite"></span>
+  <button class="btn" data-act="next" type="button" aria-label="Next slide">→</button>
+  <button class="btn" data-act="exit" type="button">Exit</button>
+</div>
+</div>
+</article>
+
+<footer>Bible course · Albert Le Thanh Nhan · Bible quotations from the King James Version.</footer>
+</main>
+
+<script>
+(function () {
+  var decks = Array.prototype.slice.call(document.querySelectorAll('.deck'));
+
+  function setOpen(deck, open, updateHash) {
+    var btn = deck.querySelector('.deck-toggle');
+    var body = deck.querySelector('.deck-body');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    body.hidden = !open;
+    if (updateHash && history.replaceState) {
+      history.replaceState(null, '', open ? '#' + deck.id : location.pathname + location.search);
+    }
+  }
+
+  // Presenting mode
+  var active = null, idx = 0;
+  function slidesOf(deck) { return Array.prototype.slice.call(deck.querySelectorAll('.slide')); }
+  function show(i) {
+    var s = slidesOf(active);
+    idx = Math.max(0, Math.min(s.length - 1, i));
+    s.forEach(function (el, k) { el.classList.toggle('current', k === idx); });
+    active.querySelector('.deck-body').scrollTop = 0;
+    active.querySelector('.present-nav .count').textContent = (idx + 1) + ' / ' + s.length;
+  }
+  function present(deck) {
+    active = deck;
+    deck.classList.add('presenting');
+    document.body.classList.add('locked');
+    show(0);
+    if (deck.requestFullscreen) { deck.requestFullscreen().catch(function () {}); }
+  }
+  function exitPresent() {
+    if (!active) return;
+    var deck = active;
+    active = null;
+    deck.classList.remove('presenting');
+    document.body.classList.remove('locked');
+    slidesOf(deck).forEach(function (el) { el.classList.remove('current'); });
+    if (document.fullscreenElement && document.exitFullscreen) { document.exitFullscreen().catch(function () {}); }
+    var target = slidesOf(deck)[idx];
+    if (target) target.scrollIntoView({ block: 'start' });
+  }
+
+  decks.forEach(function (deck) {
+    deck.querySelector('.deck-toggle').addEventListener('click', function () {
+      setOpen(deck, deck.querySelector('.deck-body').hidden, true);
+    });
+    deck.addEventListener('click', function (e) {
+      var b = e.target.closest('[data-act]');
+      if (!b) return;
+      var act = b.getAttribute('data-act');
+      if (act === 'present') present(deck);
+      else if (act === 'collapse') { setOpen(deck, false, true); deck.scrollIntoView({ block: 'start' }); }
+      else if (act === 'next') show(idx + 1);
+      else if (act === 'prev') show(idx - 1);
+      else if (act === 'exit') exitPresent();
+    });
+    // swipe
+    var x0 = null;
+    deck.addEventListener('touchstart', function (e) { if (active && !e.target.closest('.tw')) x0 = e.touches[0].clientX; }, { passive: true });
+    deck.addEventListener('touchend', function (e) {
+      if (!active || x0 === null) return;
+      var dx = e.changedTouches[0].clientX - x0; x0 = null;
+      if (Math.abs(dx) > 50) show(idx + (dx < 0 ? 1 : -1));
+    });
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (!active) return;
+    var k = e.key;
+    if (k === 'ArrowRight' || k === 'PageDown' || k === ' ') { e.preventDefault(); show(idx + 1); }
+    else if (k === 'ArrowLeft' || k === 'PageUp') { e.preventDefault(); show(idx - 1); }
+    else if (k === 'Home') { e.preventDefault(); show(0); }
+    else if (k === 'End') { e.preventDefault(); show(1e9); }
+    else if (k === 'Escape') { exitPresent(); }
+  });
+  document.addEventListener('fullscreenchange', function () {
+    if (!document.fullscreenElement && active) exitPresent();
+  });
+
+  // Images: show a caption-and-link fallback if a remote image fails to load
+  Array.prototype.forEach.call(document.querySelectorAll('figure.art img'), function (img) {
+    function fail() { img.closest('figure').classList.add('img-missing'); }
+    img.addEventListener('error', fail);
+    if (img.complete && img.naturalWidth === 0 && img.getAttribute('src')) fail();
+  });
+
+  // Deep link: /bible/#rigged-contests opens that presentation
+  function openFromHash() {
+    var id = decodeURIComponent(location.hash.slice(1));
+    var deck = id && document.getElementById(id);
+    if (deck && deck.classList.contains('deck')) {
+      setOpen(deck, true, false);
+      deck.scrollIntoView({ block: 'start' });
+    }
+  }
+  window.addEventListener('hashchange', openFromHash);
+  openFromHash();
+})();
+</script>
+</body>
+</html>
