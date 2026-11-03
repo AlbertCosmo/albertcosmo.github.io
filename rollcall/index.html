@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Roll Call</title>
+<meta name="theme-color" content="#fbfaf8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141414" media="(prefers-color-scheme: dark)">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Roll Call">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon-180.png">
+<link rel="icon" type="image/png" href="icon-192.png">
+<style>
+  :root{
+    --bg:#fbfaf8; --ink:#0d0d0d; --mute:#57554f; --faint:#7a776f;
+    --rule:#ddd9d3; --card:#ffffff; --accent:#6b1723;
+    --on:#1f6f43; --on-bg:#e5f3ea; --on-ink:#0f3d24;
+    --off-bg:#fff4f2; --off:#a3281a;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#141414; --ink:#f5f3f0; --mute:#c8c6c2; --faint:#9a9893;
+           --rule:#343434; --card:#1c1c1c; --accent:#eb9ba5;
+           --on:#6fd39a; --on-bg:#18301f; --on-ink:#c9f0d7;
+           --off-bg:#2a1a18; --off:#ff9c8c; }
+  }
+  *{box-sizing:border-box}
+  [hidden]{display:none !important}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0; background:var(--bg); color:var(--ink);
+       font:16px/1.4 ui-sans-serif,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans TC",sans-serif;
+       -webkit-font-smoothing:antialiased}
+  button{font:inherit; color:inherit}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 16px}
+
+  header.top{position:sticky; top:0; z-index:5; background:var(--bg);
+             border-bottom:1px solid var(--rule); padding-top:env(safe-area-inset-top)}
+  .bar{display:flex; flex-wrap:wrap; align-items:center; gap:10px 16px; padding:12px 0}
+  h1{margin:0; font-size:19px; font-weight:650; letter-spacing:-.01em; margin-right:auto}
+  .tabs{display:flex; gap:6px; flex-wrap:wrap}
+  .tab{border:1px solid var(--rule); background:var(--card); border-radius:999px;
+       padding:7px 14px; cursor:pointer; font-weight:600; font-size:15px}
+  .tab small{font-weight:500; color:var(--faint); margin-left:6px}
+  .tab[aria-selected="true"]{background:var(--accent); border-color:var(--accent); color:#fff}
+  .tab[aria-selected="true"] small{color:rgba(255,255,255,.8)}
+  @media (prefers-color-scheme: dark){ .tab[aria-selected="true"]{color:#141414} .tab[aria-selected="true"] small{color:rgba(0,0,0,.65)} }
+  .meta{display:flex; flex-wrap:wrap; align-items:center; gap:8px 14px; padding:0 0 12px;
+        color:var(--mute); font-size:14px}
+  .meta input[type=date]{font:inherit; color:var(--ink); background:var(--card);
+        border:1px solid var(--rule); border-radius:8px; padding:5px 8px}
+  .count{margin-left:auto; font-variant-numeric:tabular-nums; color:var(--ink); font-weight:600}
+  .count span{color:var(--faint); font-weight:500}
+
+  main{padding:16px 0 120px}
+  .groups{display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); gap:14px}
+  .group{background:var(--card); border:1px solid var(--rule); border-radius:12px; overflow:hidden}
+  .group.done{border-color:var(--on)}
+  .ghead{display:flex; align-items:center; gap:10px; padding:9px 12px;
+         border-bottom:1px solid var(--rule)}
+  .gname{font-weight:700; font-size:15px}
+  .gcount{color:var(--faint); font-size:13px; font-variant-numeric:tabular-nums}
+  .allbtn{margin-left:auto; border:1px solid var(--rule); background:transparent;
+          border-radius:7px; padding:4px 10px; font-size:13px; cursor:pointer; color:var(--mute)}
+  .allbtn:hover{border-color:var(--mute)}
+  .st{display:flex; align-items:center; gap:10px; width:100%; min-height:48px;
+      padding:7px 12px; border:0; border-top:1px solid var(--rule); background:transparent;
+      text-align:left; cursor:pointer; -webkit-tap-highlight-color:transparent; user-select:none}
+  .st:first-of-type{border-top:0}
+  .st .no{width:22px; flex:none; text-align:right; font-size:12px; color:var(--faint);
+          font-variant-numeric:tabular-nums}
+  .st .who{flex:1; min-width:0}
+  .st .nm{display:block; font-size:15px; font-weight:550; overflow-wrap:anywhere}
+  .st .nm.unl{font-style:italic; font-weight:400; color:var(--faint)}
+  .st .id{display:block; font-size:12px; color:var(--faint); font-variant-numeric:tabular-nums;
+          letter-spacing:.02em}
+  .st .box{flex:none; width:26px; height:26px; border-radius:7px; border:2px solid var(--rule);
+           display:grid; place-items:center}
+  .st .box svg{width:16px; height:16px; opacity:0}
+  .st[aria-pressed="true"]{background:var(--on-bg)}
+  .st[aria-pressed="true"] .nm{color:var(--on-ink)}
+  .st[aria-pressed="true"] .box{background:var(--on); border-color:var(--on)}
+  .st[aria-pressed="true"] .box svg{opacity:1}
+  .st:focus-visible,.tab:focus-visible,.allbtn:focus-visible,.btn:focus-visible{outline:2px solid var(--accent); outline-offset:-2px}
+
+  footer.act{position:fixed; left:0; right:0; bottom:0; z-index:5; background:var(--bg);
+             border-top:1px solid var(--rule); padding-bottom:env(safe-area-inset-bottom)}
+  .actrow{display:flex; gap:10px; align-items:center; padding:12px 16px}
+  .btn{border:1px solid var(--rule); background:var(--card); border-radius:10px;
+       padding:11px 16px; cursor:pointer; font-weight:600; font-size:15px}
+  .btn.primary{flex:1; background:var(--accent); border-color:var(--accent); color:#fff; font-size:16px}
+  @media (prefers-color-scheme: dark){ .btn.primary{color:#141414} }
+  .btn.ghost{background:transparent; color:var(--mute); font-weight:500}
+
+  .menubtn{border:1px solid var(--rule); background:var(--card); border-radius:999px;
+           padding:7px 12px; cursor:pointer; font-size:14px; color:var(--mute)}
+  .setup{max-width:620px; margin:8px auto 0}
+  .setup h2{margin:0 0 6px; font-size:22px}
+  .setup p{margin:0 0 12px; color:var(--mute)}
+  .setup ol{margin:0 0 14px; padding-left:22px; color:var(--mute)}
+  .setup ol li{margin:4px 0}
+  .panel{background:var(--card); border:1px solid var(--rule); border-radius:12px; padding:16px; margin:14px 0}
+  .panel h3{margin:0 0 8px; font-size:16px}
+  .note{font-size:14px; color:var(--faint)}
+  .warn{background:var(--off-bg); border-color:var(--off); color:var(--ink)}
+  .ok{color:var(--on); font-weight:600}
+  .err{color:var(--off); font-weight:600}
+  .filebtn{display:inline-block; position:relative; overflow:hidden}
+  .filebtn input{position:absolute; inset:0; opacity:0; cursor:pointer}
+  textarea{width:100%; min-height:110px; font:13px/1.4 ui-monospace,Menlo,monospace; color:var(--ink);
+           background:var(--bg); border:1px solid var(--rule); border-radius:8px; padding:8px; margin:8px 0}
+  details summary{cursor:pointer; color:var(--mute); font-size:14px}
+  .btnrow{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+  .btn.danger{color:var(--off); border-color:var(--off); background:transparent}
+
+  /* absent view */
+    .abshead{display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 14px; margin-bottom:12px}
+  .abshead h2{margin:0; font-size:22px}
+  .abshead .sub{color:var(--mute); font-size:14px}
+  .sortbar{display:flex; gap:6px; margin-left:auto; font-size:13px; color:var(--faint); align-items:center}
+  .sortbar button{border:1px solid var(--rule); background:var(--card); border-radius:999px; padding:4px 10px; cursor:pointer; font-size:13px}
+  .sortbar button[aria-pressed="true"]{border-color:var(--ink); font-weight:600}
+  table.abs{width:100%; border-collapse:collapse; background:var(--card);
+            border:1px solid var(--rule); border-radius:12px; overflow:hidden}
+  .abs th,.abs td{padding:10px 12px; text-align:left; border-top:1px solid var(--rule); vertical-align:top}
+  .abs th{font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--faint); font-weight:600; border-top:0}
+  .abs td.sid{font-size:18px; font-weight:700; font-variant-numeric:tabular-nums; letter-spacing:.03em; white-space:nowrap}
+  .abs td.n{color:var(--faint); font-variant-numeric:tabular-nums; width:1%}
+  .abs td.g{color:var(--mute); white-space:nowrap; width:1%}
+  .abs tr.back td{background:var(--off-bg)}
+  .abs .undo{border:1px solid var(--rule); background:transparent; border-radius:7px; padding:4px 9px; cursor:pointer; font-size:13px; color:var(--mute); white-space:nowrap}
+  .empty{padding:40px 16px; text-align:center; color:var(--on); font-weight:600; font-size:18px;
+         background:var(--card); border:1px solid var(--rule); border-radius:12px}
+  .toast{position:fixed; left:50%; bottom:90px; transform:translateX(-50%); background:var(--ink); color:var(--bg);
+         padding:8px 14px; border-radius:8px; font-size:14px; opacity:0; transition:opacity .2s; pointer-events:none; z-index:9}
+  .toast.show{opacity:1}
+  @media (max-width:560px){
+    .bar{padding:10px 0 8px}
+    h1{font-size:17px}
+    .tabs{width:100%; flex-wrap:nowrap}
+    .tab{flex:1; padding:6px 4px; border-radius:10px; text-align:center; line-height:1.25}
+    .tab small{display:block; margin:0; font-size:11.5px}
+    #classInfo{display:none}
+    .meta{padding-bottom:10px}
+    .abs{table-layout:fixed}
+    .abs th,.abs td{padding:9px 8px}
+    .abs td.g, .abs th.g, .abs td.n, .abs th.n{display:none}
+    .abs th.sid{width:96px}
+    .abs th.act{width:80px}
+    .abs td:last-child{padding-left:0; text-align:right}
+    .abs .undo{padding:4px 7px}
+    .abs td.sid{font-size:16px}
+    .abs td.nmc{overflow-wrap:anywhere}
+    .undo .long{display:none}
+  }
+  @media print{
+    header.top, footer.act, .sortbar, .abs .undo, .abs th:last-child, .abs td:last-child{display:none}
+    main{padding:0}
+  }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="bar">
+      <h1>Roll Call</h1>
+      <button class="menubtn" type="button" id="menuBtn" hidden>Rosters</button>
+      <div class="tabs" role="tablist" id="tabs"></div>
+    </div>
+    <div class="meta" id="metaRow">
+      <span id="classInfo"></span>
+      <label>Date <input type="date" id="date"></label>
+      <span class="count" id="count"></span>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="setupView" hidden>
+    <div class="setup">
+      <div class="panel warn" id="installHint" hidden>
+        <h3>First, add this to your Home Screen</h3>
+        <ol>
+          <li>In Safari, tap <b>Share</b> (the square with an arrow).</li>
+          <li>Tap <b>Add to Home Screen</b>, then <b>Add</b>.</li>
+          <li>Open <b>Roll Call</b> from the new icon and import your rosters there.</li>
+        </ol>
+        <p class="note">The Home Screen app keeps its own storage, separate from Safari. Rosters imported in a Safari tab won't carry over, and Safari may clear site data after 7 days without a visit.</p>
+      </div>
+      <h2 id="setupTitle">Import your rosters</h2>
+      <p id="setupLead">Class rosters are not stored on this website. Import your roster file once on each device; it stays only on this device and the app then works offline.</p>
+      <div class="panel">
+        <h3>From a file</h3>
+        <p class="note">Choose <b>rollcall-rosters.json</b> (for example from the Files app, iCloud Drive or AirDrop).</p>
+        <span class="btn primary filebtn">Choose roster file<input type="file" id="fileIn"></span>
+        <p id="importMsg" class="note" aria-live="polite"></p>
+      </div>
+      <details class="panel">
+        <summary>Or paste the file's contents</summary>
+        <textarea id="pasteIn" spellcheck="false" placeholder='[{"section":"19203", ...}]'></textarea>
+        <button class="btn" type="button" id="pasteBtn">Import pasted text</button>
+      </details>
+      <div class="panel" id="manage" hidden>
+        <h3>On this device</h3>
+        <p class="note" id="loadedInfo"></p>
+        <div class="btnrow">
+          <button class="btn" type="button" id="doneBtn">Back to roll call</button>
+          <button class="btn danger" type="button" id="wipeBtn">Delete rosters and attendance</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="rollView"><div class="groups" id="groups"></div></section>
+  <section id="absentView" hidden>
+    <div class="abshead">
+      <h2 id="absTitle">Absent</h2>
+      <span class="sub" id="absSub"></span>
+      <div class="sortbar">Sort
+        <button type="button" data-sort="no" aria-pressed="true">Sheet order</button>
+        <button type="button" data-sort="id" aria-pressed="false">Student ID</button>
+      </div>
+    </div>
+    <div id="absList"></div>
+  </section>
+</main>
+
+<footer class="act">
+  <div class="wrap actrow" id="actRoll">
+    <button class="btn ghost" type="button" id="resetBtn">Clear</button>
+    <button class="btn primary" type="button" id="showAbsent">Show absent</button>
+  </div>
+  <div class="wrap actrow" id="actAbs" hidden>
+    <button class="btn" type="button" id="backBtn">&larr; Back</button>
+    <button class="btn primary" type="button" id="copyBtn">Copy absent IDs</button>
+  </div>
+</footer>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const ROSTER_KEY = 'rollcall:rosters';
+let CLASSES = [];
+
+const $ = s => document.querySelector(s);
+const CHECK = '<svg viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 8.5l3 3 6-7"/></svg>';
+const store = {
+  get(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } },
+  set(k,v){ try{ localStorage.setItem(k,v); }catch(e){} },
+  del(k){ try{ localStorage.removeItem(k); }catch(e){} }
+};
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const today = () => { const d = new Date(); d.setMinutes(d.getMinutes() - d.getTimezoneOffset()); return d.toISOString().slice(0,10); };
+const groupLabel = g => /^\d+$/.test(g) ? 'Group ' + g : g;
+
+let cls = null;
+let date = today();
+let present = new Set();
+let sortBy = 'no';
+
+const key = () => `rollcall:v1:${cls.section}:${date}`;
+function load(){ const v = store.get(key()); present = new Set(v ? JSON.parse(v) : []); }
+function save(){ present.size ? store.set(key(), JSON.stringify([...present])) : store.del(key()); }
+
+function groupsOf(c){
+  const out = [];
+  for (const s of c.students){
+    let g = out[out.length - 1];
+    if (!g || g.name !== s.g){ g = {name: s.g, students: []}; out.push(g); }
+    g.students.push(s);
+  }
+  return out;
+}
+
+function renderTabs(){
+  $('#tabs').innerHTML = CLASSES.map(c =>
+    `<button class="tab" role="tab" type="button" data-sec="${c.section}" aria-selected="${c === cls}">${c.section}<small>${esc(c.time.split(' ')[0])} · ${esc(c.room)}</small></button>`
+  ).join('');
+}
+
+function studentRow(s){
+  const on = present.has(s.id);
+  const nm = s.name ? `<span class="nm">${esc(s.name)}</span>` : `<span class="nm unl">Name not on enrollment list</span>`;
+  return `<button type="button" class="st" data-id="${s.id}" aria-pressed="${on}">
+    <span class="no">${s.no}</span><span class="who">${nm}<span class="id">${s.id}</span></span>
+    <span class="box">${CHECK}</span></button>`;
+}
+
+function renderRoll(){
+  $('#classInfo').textContent = `${cls.title} · ${cls.time} · ${cls.room}`;
+  $('#groups').innerHTML = groupsOf(cls).map(g => {
+    const n = g.students.filter(s => present.has(s.id)).length;
+    return `<div class="group${n === g.students.length ? ' done' : ''}" data-g="${esc(g.name)}">
+      <div class="ghead"><span class="gname">${esc(groupLabel(g.name))}</span>
+        <span class="gcount">${n}/${g.students.length}</span>
+        <button type="button" class="allbtn" data-all="${esc(g.name)}">${n === g.students.length ? 'Unmark all' : 'All here'}</button></div>
+      ${g.students.map(studentRow).join('')}</div>`;
+  }).join('');
+  updateCount();
+}
+
+function updateCount(){
+  const total = cls.students.length, p = cls.students.filter(s => present.has(s.id)).length;
+  $('#count').innerHTML = `${p} present <span>/ ${total}</span> · ${total - p} absent`;
+  $('#showAbsent').textContent = `Show absent (${total - p})`;
+}
+
+function refreshGroup(gname){
+  const card = [...document.querySelectorAll('.group')].find(el => el.dataset.g === gname);
+  const g = groupsOf(cls).find(x => x.name === gname);
+  const n = g.students.filter(s => present.has(s.id)).length;
+  card.classList.toggle('done', n === g.students.length);
+  card.querySelector('.gcount').textContent = `${n}/${g.students.length}`;
+  card.querySelector('.allbtn').textContent = n === g.students.length ? 'Unmark all' : 'All here';
+  g.students.forEach(s => card.querySelector(`[data-id="${s.id}"]`).setAttribute('aria-pressed', present.has(s.id)));
+}
+
+function absentList(){
+  const list = cls.students.filter(s => !present.has(s.id));
+  return sortBy === 'id' ? list.slice().sort((a,b) => a.id.localeCompare(b.id)) : list;
+}
+
+function renderAbsent(){
+  const list = absentList();
+  $('#absTitle').textContent = `Absent: ${list.length}`;
+  const d = new Date(date + 'T00:00');
+  $('#absSub').textContent = `${cls.section} · ${d.toLocaleDateString(undefined,{weekday:'short', year:'numeric', month:'short', day:'numeric'})} · ${cls.students.length - list.length} present of ${cls.students.length}`;
+  document.querySelectorAll('.sortbar button').forEach(b => b.setAttribute('aria-pressed', b.dataset.sort === sortBy));
+  $('#absList').innerHTML = list.length ? `<table class="abs"><thead><tr><th class="n">No.</th><th class="sid">Student ID</th><th>Name</th><th class="g">Group</th><th class="act"></th></tr></thead><tbody>
+    ${list.map(s => `<tr><td class="n">${s.no}</td><td class="sid">${s.id}</td><td class="nmc">${s.name ? esc(s.name) : '<em>Name not on enrollment list</em>'}</td><td class="g">${esc(groupLabel(s.g))}</td>
+      <td><button type="button" class="undo" data-present="${s.id}"><span class="long">Mark </span>present</button></td></tr>`).join('')}
+    </tbody></table>` : `<div class="empty">Everyone is present.</div>`;
+  $('#copyBtn').disabled = !list.length;
+}
+
+function showView(absent){
+  $('#setupView').hidden = true; $('#metaRow').hidden = false; $('#tabs').hidden = false; $('#menuBtn').hidden = false;
+  $('#rollView').hidden = absent; $('#absentView').hidden = !absent;
+  $('#actRoll').hidden = absent; $('#actAbs').hidden = !absent;
+  if (absent) renderAbsent(); else renderRoll();
+  window.scrollTo(0,0);
+}
+
+function toast(msg){ const t = $('#toast'); t.textContent = msg; t.classList.add('show'); clearTimeout(toast.t); toast.t = setTimeout(() => t.classList.remove('show'), 1600); }
+
+// rosters: validation, import, setup screen
+function validate(data){
+  if (!Array.isArray(data) || !data.length) throw new Error('Expected a list of classes.');
+  const seen = new Set();
+  return data.map(c => {
+    if (!c || typeof c.section !== 'string' || !Array.isArray(c.students) || !c.students.length) throw new Error('Each class needs a section and students.');
+    if (seen.has(c.section)) throw new Error('Section ' + c.section + ' appears twice.');
+    seen.add(c.section);
+    return {
+      section: c.section, title: String(c.title || ''), time: String(c.time || ''), room: String(c.room || ''),
+      students: c.students.map((s, i) => {
+        if (!s || !s.id) throw new Error('A student in ' + c.section + ' has no ID.');
+        return { no: Number(s.no) || i + 1, g: String(s.g ?? ''), id: String(s.id), name: String(s.name || '') };
+      })
+    };
+  });
+}
+function useRosters(list){
+  CLASSES = list;
+  cls = CLASSES.find(c => c.section === store.get('rollcall:class')) || CLASSES[0];
+}
+function importText(text){
+  const msg = $('#importMsg');
+  try {
+    const list = validate(JSON.parse(text.replace(/^﻿/, '')));
+    store.set(ROSTER_KEY, JSON.stringify(list));
+    if (store.get(ROSTER_KEY) === null) throw new Error('This browser would not save data (private browsing?).');
+    useRosters(list);
+    msg.className = 'ok';
+    msg.textContent = 'Imported ' + list.length + ' classes, ' + list.reduce((n, c) => n + c.students.length, 0) + ' students.';
+    if (navigator.storage && navigator.storage.persist) navigator.storage.persist().catch(() => {});
+    setTimeout(() => { load(); renderTabs(); showView(false); }, 700);
+  } catch (e) {
+    msg.className = 'err';
+    msg.textContent = 'Could not import: ' + (e instanceof SyntaxError ? 'that is not a roster file.' : e.message);
+  }
+}
+const isStandalone = () => window.navigator.standalone === true || matchMedia('(display-mode: standalone)').matches;
+const isIOS = () => /iP(hone|ad|od)/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+function showSetup(){
+  $('#setupView').hidden = false;
+  $('#rollView').hidden = true; $('#absentView').hidden = true;
+  $('#actRoll').hidden = true; $('#actAbs').hidden = true;
+  $('#metaRow').hidden = true; $('#tabs').hidden = true; $('#menuBtn').hidden = true;
+  $('#installHint').hidden = !(isIOS() && !isStandalone());
+  $('#importMsg').textContent = '';
+  const has = CLASSES.length > 0;
+  $('#manage').hidden = !has;
+  $('#setupTitle').textContent = has ? 'Rosters' : 'Import your rosters';
+  $('#setupLead').hidden = has;
+  if (has) $('#loadedInfo').textContent = 'Loaded: ' + CLASSES.map(c => c.section + ' (' + c.students.length + ')').join(', ') + '. Importing a new file replaces these rosters; attendance already taken is kept.';
+  window.scrollTo(0, 0);
+}
+$('#fileIn').addEventListener('change', e => {
+  const f = e.target.files && e.target.files[0]; if (!f) return;
+  const r = new FileReader();
+  r.onload = () => importText(String(r.result));
+  r.onerror = () => { $('#importMsg').className = 'err'; $('#importMsg').textContent = 'Could not read that file.'; };
+  r.readAsText(f); e.target.value = '';
+});
+$('#pasteBtn').addEventListener('click', () => importText($('#pasteIn').value));
+$('#menuBtn').addEventListener('click', showSetup);
+$('#doneBtn').addEventListener('click', () => { load(); renderTabs(); showView(false); });
+$('#wipeBtn').addEventListener('click', () => {
+  if (!confirm('Delete all rosters and all attendance records from this device?')) return;
+  try { Object.keys(localStorage).filter(k => k.startsWith('rollcall:')).forEach(k => localStorage.removeItem(k)); } catch (e) {}
+  CLASSES = []; cls = null; showSetup();
+});
+
+// events
+$('#tabs').addEventListener('click', e => {
+  const b = e.target.closest('.tab'); if (!b) return;
+  cls = CLASSES.find(c => c.section === b.dataset.sec); store.set('rollcall:class', cls.section);
+  load(); renderTabs(); showView(false);
+});
+$('#groups').addEventListener('click', e => {
+  const st = e.target.closest('.st'), all = e.target.closest('.allbtn');
+  if (st){
+    const id = st.dataset.id; present.has(id) ? present.delete(id) : present.add(id);
+    save(); refreshGroup(st.closest('.group').dataset.g); updateCount();
+  } else if (all){
+    const g = groupsOf(cls).find(x => x.name === all.dataset.all);
+    const allOn = g.students.every(s => present.has(s.id));
+    g.students.forEach(s => allOn ? present.delete(s.id) : present.add(s.id));
+    save(); refreshGroup(g.name); updateCount();
+  }
+});
+$('#date').addEventListener('change', e => { date = e.target.value || today(); e.target.value = date; load(); showView(false); });
+$('#showAbsent').addEventListener('click', () => showView(true));
+$('#backBtn').addEventListener('click', () => showView(false));
+$('#resetBtn').addEventListener('click', () => {
+  if (!present.size || !confirm(`Clear all marks for ${cls.section} on ${date}?`)) return;
+  present.clear(); save(); renderRoll();
+});
+document.querySelector('.sortbar').addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return; sortBy = b.dataset.sort; renderAbsent();
+});
+$('#absList').addEventListener('click', e => {
+  const b = e.target.closest('[data-present]'); if (!b) return;
+  present.add(b.dataset.present); save(); renderAbsent(); updateCount();
+});
+$('#copyBtn').addEventListener('click', async () => {
+  const text = absentList().map(s => s.id).join('\n');
+  try { await navigator.clipboard.writeText(text); }
+  catch(e){ const ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta); ta.select(); try{ document.execCommand('copy'); }catch(_){} ta.remove(); }
+  toast('Absent IDs copied');
+});
+
+$('#date').value = date;
+try { const saved = store.get(ROSTER_KEY); if (saved) useRosters(validate(JSON.parse(saved))); } catch (e) { CLASSES = []; }
+if (CLASSES.length) { load(); renderTabs(); showView(false); } else showSetup();
+
+if ('serviceWorker' in navigator && location.protocol !== 'file:') {
+  navigator.serviceWorker.register('sw.js').catch(() => {});
+}
+</script>
+</body>
+</html>
