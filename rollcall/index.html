@@ -575,7 +575,7 @@ try { const saved = store.get(ROSTER_KEY); if (saved) useRosters(validate(JSON.p
 })();
 
 if ('serviceWorker' in navigator && location.protocol !== 'file:') {
-  navigator.serviceWorker.register('sw.js').catch(() => {});
+  navigator.serviceWorker.register('sw.js', { updateViaCache: 'none' }).catch(() => {});
 }
 </script>
 </body>
