@@ -1,7 +1,7 @@
 // Offline cache for Roll Call. Bump VERSION whenever any cached file changes.
 // Roster and attendance data never pass through here: they live in the
 // device's local storage and are never sent to the network.
-const VERSION = 'rollcall-v2';
+const VERSION = 'rollcall-v3';
 const ASSETS = ['./', './index.html', './manifest.webmanifest', './icon-180.png', './icon-192.png', './icon-512.png'];
 
 self.addEventListener('install', e => {
