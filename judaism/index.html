@@ -191,6 +191,21 @@ ol.num li::before{content:counter(n);position:absolute;left:0;top:0;width:1.45em
 .appx .note{color:var(--muted);font-size:.92em}
 footer{margin-top:28px;font-size:13px;color:var(--faint);border-top:1px solid var(--rule);padding-top:14px}
 
+
+/* photos (hotlinked from Wikimedia Commons; credits in the appendix) */
+figure.photo{margin:0 0 .9em}
+.ph{display:block;width:100%;position:relative;border-radius:10px;overflow:hidden;background:var(--accent-soft);color:var(--muted);text-decoration:none}
+.ph img{display:block;width:100%;height:100%;object-fit:cover}
+.ph.missing img{display:none}
+.ph.missing::after{content:attr(data-alt) " (open photo on Wikimedia Commons)";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;padding:1em;font-size:.8em}
+figure.photo figcaption{font-size:.68em;color:var(--faint);margin-top:.35em;line-height:1.35}
+.with-photo{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(12px,2.6vw,26px);align-items:start}
+@media (max-width:700px){.with-photo{grid-template-columns:1fr}}
+.node .ph{border-radius:6px;margin:0 0 .45em;aspect-ratio:3/2}
+.node .ph.missing::after{content:attr(data-alt);font-size:.75em;padding:.3em}
+.node-credit{font-size:.62em;color:var(--faint);margin:.1em 0 0}
+.hero{margin:1.1em 0 .2em}
+
 /* ---------- presenting mode ---------- */
 .present-nav{display:none}
 body.presenting{overflow:hidden}
@@ -202,6 +217,9 @@ body.presenting .slide.current > *{width:100%;max-width:min(100%,clamp(820px,cal
 body.presenting .slide.dense{font-size:clamp(15px,min(calc(.85vw + 1vh),2.45vh),30px)}
 body.presenting .slide .no{display:none}
 body.presenting .slide .src{margin-top:1.4em}
+body.presenting .hero .ph{aspect-ratio:auto!important;height:24vh}
+body.presenting figure.photo:not(.hero) .ph{max-height:30vh}
+body.presenting .slide.dense figure.photo .ph{max-height:25vh}
 body.presenting .notes{display:none}
 body.presenting.show-notes .slide.current .notes{display:block;position:fixed;left:0;right:0;bottom:64px;z-index:102;max-height:38vh;overflow:auto;margin:0;border-radius:12px 12px 0 0;border:1px solid var(--rule);box-shadow:0 -6px 24px rgba(0,0,0,.12);font-size:15px;max-width:none;padding:12px 18px}
 body.presenting .present-nav{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:103;justify-content:center;align-items:center;gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));background:linear-gradient(to top,var(--paper) 60%,transparent)}
@@ -234,7 +252,7 @@ body.presenting .present-nav{display:flex;position:fixed;left:0;right:0;bottom:0
   <p class="kicker">Opening</p>
   <h2>“‘Jewish Meditation Reconsidered’: Hitbodedut as a Meditative Practice and Its Transmission from the Egyptian Pietists to the Hasidic Masters”</h2>
   <p class="by">Matan Weil, Independent Researcher, Jerusalem · <em>Religions</em> 15 (2024): 1232</p>
-  <div class="motif" aria-hidden="true"><span style="left:2%"></span><span style="left:26%"></span><span style="left:50%"></span><span style="left:74%"></span><span style="left:98%"></span></div>
+<figure class="photo hero"><a class="ph" href="https://commons.wikimedia.org/wiki/File:A_night_in_Egyptian_desert.jpg" target="_blank" rel="noopener" style="aspect-ratio:3/1" data-alt="Star trails over the White Desert, Egypt"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/A_night_in_Egyptian_desert.jpg?width=1600" alt="Star trails over the White Desert, Egypt" loading="lazy" decoding="async"></a><figcaption>Star trails over the White Desert, Egypt. Photo: Esraa Farahat, CC BY-SA 4.0, via Wikimedia Commons.</figcaption></figure>
   <p class="muted">Presented by Albert Le Thanh Nhan · November 2026</p>
   <p class="src">Weil 2024, p. 1.</p>
   <aside class="notes"><div class="nh"><span>Speaker notes</span><span>0:30 · cum. 0:30</span></div>
@@ -408,11 +426,16 @@ body.presenting .present-nav{display:flex;position:fixed;left:0;right:0;bottom:0
     <div class="ar" aria-hidden="true">→</div>
     <div class="st end"><b>Wusul</b><span>“Encounter”: degrees, including Ruach HaKodesh</span></div>
   </div>
+  <div class="with-photo">
+  <div>
   <ul>
     <li>Abraham Maimoni (1186–1237), son of Maimonides, belonged to the circle of Egyptian Jewish pietists.</li>
     <li><em>Kitab Kifayat al-Abidin</em> (<em>The Guide for Serving God</em>) is “the earliest and most comprehensive manual” on Hitbodedut, earlier than Abulafia.</li>
     <li>Hitbodedut is the last step on the path of the Pious: “the way of the greatest Hasidim,” by which the prophets reached Encounter.</li>
   </ul>
+  </div>
+  <figure class="photo"><a class="ph" href="https://commons.wikimedia.org/wiki/File:Ben_ezra_synagogue_%282638677965%29.jpg" target="_blank" rel="noopener" style="aspect-ratio:4/3" data-alt="Ben Ezra Synagogue, Cairo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ben_ezra_synagogue_%282638677965%29.jpg?width=1280" alt="Ben Ezra Synagogue, Cairo" loading="lazy" decoding="async"></a><figcaption>Egypt today: Ben Ezra Synagogue, Cairo. Photo: kmf164, CC BY-SA 2.0, via Wikimedia Commons.</figcaption></figure>
+  </div>
   <p class="src">Weil 2024, pp. 4–7, 15 (n. 48).</p>
   <aside class="notes"><div class="nh"><span>Speaker notes</span><span>2:00 · cum. 12:00</span></div>
     <ul>
@@ -453,17 +476,18 @@ body.presenting .present-nav{display:flex;position:fixed;left:0;right:0;bottom:0
   <p class="kicker">Evidence</p>
   <h2>The Proposed Chain of Transmission</h2>
   <div class="chainx" aria-label="Timeline of the proposed transmission; each link labelled with its type of evidence">
-    <div class="node"><b>Egypt</b>Abraham Maimoni (1186–1237), Egyptian pietists</div>
+    <div class="node"><a class="ph" href="https://commons.wikimedia.org/wiki/File:Ben_ezra_synagogue_%282638677965%29.jpg" target="_blank" rel="noopener" data-alt="Cairo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ben_ezra_synagogue_%282638677965%29.jpg?width=640" alt="Cairo" loading="lazy" decoding="async"></a><b>Egypt</b>Abraham Maimoni (1186–1237), Egyptian pietists</div>
     <div class="link"><span>personal proximity</span><span class="arrowhead" aria-hidden="true">▸</span></div>
-    <div class="node"><b>Acre, 13th c.</b>David HaNagid (1212–1300), Maimoni’s son; Isaac of Acre (1250–1340); Maimonidean Controversy of 1288</div>
+    <div class="node"><a class="ph" href="https://commons.wikimedia.org/wiki/File:View_over_Akko_%28Acre%29_from_Old_City_Walls_-_Akko_-_Israel_%285693252457%29.jpg" target="_blank" rel="noopener" data-alt="Acre"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/View_over_Akko_%28Acre%29_from_Old_City_Walls_-_Akko_-_Israel_%285693252457%29.jpg?width=640" alt="Acre" loading="lazy" decoding="async"></a><b>Acre, 13th c.</b>David HaNagid (1212–1300), Maimoni’s son; Isaac of Acre (1250–1340); Maimonidean Controversy of 1288</div>
     <div class="link"><span>citation + manuscript testimony</span><span class="arrowhead" aria-hidden="true">▸</span></div>
-    <div class="node"><b>Safed, 16th c.</b>Azkiri, Vital (1542–1620), and de Vidas cite Isaac; the <em>Kifayat</em> is still read in Safed (1571)</div>
+    <div class="node"><a class="ph" href="https://commons.wikimedia.org/wiki/File:Buildings_in_Tzfat%2C_Israel_-_panoramio.jpg" target="_blank" rel="noopener" data-alt="Safed"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Buildings_in_Tzfat%2C_Israel_-_panoramio.jpg?width=640" alt="Safed" loading="lazy" decoding="async"></a><b>Safed, 16th c.</b>Azkiri, Vital (1542–1620), and de Vidas cite Isaac; the <em>Kifayat</em> is still read in Safed (1571)</div>
     <div class="link"><span>scholarly demonstration (Koch)</span><span class="arrowhead" aria-hidden="true">▸</span></div>
     <div class="node"><b>Ramchal</b>(1707–1746): influenced by Vital (Koch 2023)</div>
     <div class="link weak"><span>resemblance noted by scholars</span><span class="arrowhead" aria-hidden="true">▸</span></div>
     <div class="node"><b>18th-century Hasidism</b>Rabbi Nachman of Breslov</div>
   </div>
   <p class="cap">Solid line: documented link. Dashed line: the link rests on resemblance alone.</p>
+  <p class="node-credit">Photos (present-day places): Cairo, kmf164, CC BY-SA 2.0; Acre, Adam Jones, CC BY-SA 2.0; Safed, yfrimer, CC BY-SA 3.0; all via Wikimedia Commons.</p>
   <p class="src">Weil 2024, pp. 4, 8–9, 12, 14 (nn. 27, 29).</p>
   <aside class="notes"><div class="nh"><span>Speaker notes</span><span>1:30 · cum. 15:00</span></div>
     <ul>
@@ -563,7 +587,7 @@ body.presenting .present-nav{display:flex;position:fixed;left:0;right:0;bottom:0
 </section>
 
 <!-- 14 · Posture -->
-<section class="slide" aria-label="Slide 14: Posture: The Head Between the Knees">
+<section class="slide dense" aria-label="Slide 14: Posture: The Head Between the Knees">
   <span class="no">14</span>
   <p class="kicker">Evidence</p>
   <h2>Posture: The Head Between the Knees</h2>
@@ -573,6 +597,7 @@ body.presenting .present-nav{display:flex;position:fixed;left:0;right:0;bottom:0
         <li>None of the Hitbodedut teachings examined give postural instructions.</li>
         <li>Weil’s hypothesis: practitioners followed the tradition reported by Rav Hai Gaon (10th c.), with the posture left unstated for reasons of secrecy or because it was self-evident.</li>
       </ul>
+      <figure class="photo"><a class="ph" href="https://commons.wikimedia.org/wiki/File:Jerusalem_from_mt_olives.jpg" target="_blank" rel="noopener" style="aspect-ratio:16/9" data-alt="Jerusalem from the Mount of Olives"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Jerusalem_from_mt_olives.jpg?width=1280" alt="Jerusalem from the Mount of Olives" loading="lazy" decoding="async"></a><figcaption>Jerusalem, linked in the article with Yosef Even Tziah. Photo: Wayne McLean (Jgritz), CC BY 2.0, via Wikimedia Commons.</figcaption></figure>
     </div>
     <div>
       <p class="small muted" style="margin-bottom:.4em">Testimonies (via Fenton 1994)</p>
@@ -734,6 +759,16 @@ body.presenting .present-nav{display:flex;position:fixed;left:0;right:0;bottom:0
     <p class="wc">Schäfer, Peter. <em>The Origins of Jewish Mysticism</em>. Princeton UP, 2011.</p>
   </div>
   <p class="note">Tables on Slides 9, 11 and 12 are adapted from Weil (2024), Tables 1 and 2, published under CC BY 4.0.</p>
+  <h2 style="margin-top:1.2em">Photo Credits</h2>
+  <p class="note">The photographs are the presenter’s illustrations of present-day places. They are not taken from or referenced in Weil’s article. All are loaded from Wikimedia Commons; follow each link for the full file record.</p>
+  <ul class="small">
+    <li>Slide 1: <a href="https://commons.wikimedia.org/wiki/File:A_night_in_Egyptian_desert.jpg" target="_blank" rel="noopener">A night in Egyptian desert</a> (star trails, White Desert, Egypt), Esraa Farahat, <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</li>
+    <li>Slides 8, 10: <a href="https://commons.wikimedia.org/wiki/File:Ben_ezra_synagogue_%282638677965%29.jpg" target="_blank" rel="noopener">Ben ezra synagogue</a>, kmf164 (Flickr), <a href="https://creativecommons.org/licenses/by-sa/2.0/" target="_blank" rel="noopener">CC BY-SA 2.0</a>.</li>
+    <li>Slide 10: <a href="https://commons.wikimedia.org/wiki/File:View_over_Akko_%28Acre%29_from_Old_City_Walls_-_Akko_-_Israel_%285693252457%29.jpg" target="_blank" rel="noopener">View over Akko (Acre) from Old City Walls</a>, Adam Jones, <a href="https://creativecommons.org/licenses/by-sa/2.0/" target="_blank" rel="noopener">CC BY-SA 2.0</a>.</li>
+    <li>Slide 10: <a href="https://commons.wikimedia.org/wiki/File:Buildings_in_Tzfat%2C_Israel_-_panoramio.jpg" target="_blank" rel="noopener">Buildings in Tzfat, Israel</a>, yfrimer (Panoramio), <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>.</li>
+    <li>Slide 14: <a href="https://commons.wikimedia.org/wiki/File:Jerusalem_from_mt_olives.jpg" target="_blank" rel="noopener">Jerusalem from mt olives</a>, Wayne McLean (Jgritz), <a href="https://creativecommons.org/licenses/by/2.0/" target="_blank" rel="noopener">CC BY 2.0</a>.</li>
+  </ul>
+
 </section>
 
 <footer>Albert Le Thanh Nhan · November 2026 · Page references follow the journal pagination of <em>Religions</em> 15 (2024): 1232, pp. 1–18.</footer>
@@ -817,6 +852,13 @@ body.presenting .present-nav{display:flex;position:fixed;left:0;right:0;bottom:0
   });
   document.addEventListener('fullscreenchange', function () {
     if (!document.fullscreenElement && presenting) exitPresent();
+  });
+
+  // Photos: if a Commons image cannot load, show a labelled link instead
+  Array.prototype.forEach.call(document.querySelectorAll('.ph img'), function (img) {
+    function fail() { img.parentNode.classList.add('missing'); }
+    img.addEventListener('error', fail);
+    if (img.complete && img.naturalWidth === 0) fail();
   });
 
   var saved = null;
