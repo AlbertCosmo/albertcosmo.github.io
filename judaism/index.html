@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jewish Meditation Reconsidered · Presentation</title>
+<meta name="description" content="Presentation on Matan Weil, “‘Jewish Meditation Reconsidered’: Hitbodedut as a Meditative Practice and Its Transmission from the Egyptian Pietists to the Hasidic Masters,” Religions 15 (2024): 1232. By Albert Le Thanh Nhan.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F2F3F5;--paper:#FFFFFF;--ink:#16202C;--muted:#4F5B69;--faint:#7C8693;--rule:#D5DAE0;
+ --accent:#1F4E79;--accent-soft:#E3ECF5;--accent-ink:#FFFFFF;
+ --serif:'Source Serif 4',Georgia,'Times New Roman',serif;--sans:'Source Sans 3','Segoe UI',Roboto,Helvetica,Arial,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#11161D;--paper:#19202A;--ink:#E7EBF0;--muted:#A9B3BF;--faint:#7F8995;--rule:#323C49;--accent:#8DB8E6;--accent-soft:#1F2D3D;--accent-ink:#0E1520}}
+:root[data-theme="dark"]{--bg:#11161D;--paper:#19202A;--ink:#E7EBF0;--muted:#A9B3BF;--faint:#7F8995;--rule:#323C49;--accent:#8DB8E6;--accent-soft:#1F2D3D;--accent-ink:#0E1520}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.5;padding-bottom:env(safe-area-inset-bottom,0px)}
+main{max-width:960px;margin:0 auto;padding:32px 16px 56px}
+a{color:var(--accent)}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+em,i{font-style:italic}
+
+/* ---------- page header ---------- */
+.crumb{font-size:14px;color:var(--faint);margin:0 0 18px}
+.crumb a{color:var(--muted);text-decoration:none}
+.crumb a:hover{text-decoration:underline}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(28px,6vw,40px);line-height:1.12;margin:0 0 8px;letter-spacing:-0.01em}
+.lede{font-family:var(--serif);font-style:italic;color:var(--muted);font-size:17px;margin:0 0 18px}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 22px}
+.btn{display:inline-flex;align-items:center;gap:6px;font-size:14px;padding:8px 14px;min-height:40px;border:1px solid var(--rule);border-radius:10px;background:var(--paper);color:var(--ink);text-decoration:none}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn[aria-pressed="true"]{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+.keys{font-size:13px;color:var(--faint);margin:-12px 0 22px}
+kbd{font-family:var(--sans);font-size:.9em;border:1px solid var(--rule);border-bottom-width:2px;border-radius:4px;padding:0 .35em;background:var(--paper)}
+
+/* ---------- slides ---------- */
+.slide{position:relative;background:var(--paper);border:1px solid var(--rule);border-radius:14px;padding:clamp(20px,4.5vw,44px) clamp(18px,4.5vw,44px) clamp(16px,3vw,26px);margin:0 0 14px;font-size:clamp(15.5px,2.1vw,18.5px)}
+.slide .no{position:absolute;top:12px;right:16px;font-size:.72em;color:var(--faint);font-variant-numeric:tabular-nums}
+.kicker{font-size:.7em;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:0 0 .45em}
+.slide h2{font-family:var(--serif);font-weight:600;font-size:1.7em;line-height:1.15;margin:0 0 .65em;letter-spacing:-.005em}
+.slide p{margin:0 0 .75em}
+.slide ul,.slide ol{margin:0 0 .8em;padding-left:1.2em}
+.slide li{margin:0 0 .4em}
+.slide li::marker{color:var(--accent)}
+.src{margin:1em 0 0;padding-top:.55em;border-top:1px solid var(--rule);font-size:.72em;color:var(--faint)}
+.muted{color:var(--muted)}
+.small{font-size:.86em}
+.q{font-family:var(--serif)}
+.lead{font-family:var(--serif);font-size:1.16em;line-height:1.4;margin:0 0 .8em}
+.cap{font-size:.78em;color:var(--muted);margin:.4em 0 0}
+
+/* speaker notes */
+.notes{display:none;margin:1em 0 0;border:1px dashed var(--rule);border-radius:10px;padding:.7em .9em;background:var(--bg);font-size:.86em;color:var(--ink)}
+.notes .nh{display:flex;justify-content:space-between;gap:1em;font-size:.82em;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:0 0 .4em}
+.notes .nh span:last-child{letter-spacing:0;text-transform:none;font-weight:600;font-variant-numeric:tabular-nums;color:var(--muted)}
+.notes ul{margin:0;padding-left:1.1em}
+.notes li{margin:0 0 .3em}
+.notes p{margin:0}
+body.show-notes .notes{display:block}
+
+/* layout helpers */
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,2.6vw,24px);margin:0 0 .9em}
+@media (max-width:640px){.cols{grid-template-columns:1fr}}
+.panel{border:1px solid var(--rule);border-radius:10px;padding:.7em .9em;background:var(--paper)}
+.panel h3{font-family:var(--sans);font-size:.78em;letter-spacing:.12em;text-transform:uppercase;margin:0 0 .4em;color:var(--muted)}
+.panel.hi{border-color:var(--accent);background:var(--accent-soft)}
+.panel.hi h3{color:var(--accent)}
+.panel p:last-child,.panel ul:last-child{margin-bottom:0}
+.banner{border-left:4px solid var(--accent);background:var(--accent-soft);border-radius:0 10px 10px 0;padding:.55em .9em;font-family:var(--serif);font-size:1.04em;margin:0 0 .9em}
+
+/* title slide */
+.title-slide h2{font-size:1.85em;line-height:1.18;margin-bottom:.5em}
+.title-slide .by{font-size:1.05em;margin:0 0 .25em}
+.motif{position:relative;height:28px;margin:1.6em 0 1.4em;opacity:.55}
+.motif::before{content:"";position:absolute;left:0;right:0;top:50%;border-top:2px solid var(--accent)}
+.motif span{position:absolute;top:50%;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;background:var(--paper);border:2px solid var(--accent)}
+
+/* roadmap */
+.slide .roadmap{display:grid;padding:0;grid-template-columns:repeat(6,minmax(0,1fr));gap:4px;margin:.4em 0 .9em;counter-reset:rm}
+.roadmap li{list-style:none;margin:0;background:var(--accent-soft);color:var(--ink);padding:.55em .6em;font-size:.86em;line-height:1.3;counter-increment:rm}
+.roadmap li::before{content:counter(rm);display:block;font-weight:700;color:var(--accent);font-size:.9em}
+.roadmap li:first-child{border-radius:8px 0 0 8px}.roadmap li:last-child{border-radius:0 8px 8px 0}
+@media (max-width:640px){.slide .roadmap{grid-template-columns:repeat(2,minmax(0,1fr))}.roadmap li{border-radius:8px!important}}
+.rq{font-family:var(--serif);font-size:1.25em;line-height:1.35;margin:0 0 .7em}
+
+/* glossary grid */
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0 0 .9em}
+@media (max-width:820px){.grid3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.grid3{grid-template-columns:1fr}}
+.card{border:1px solid var(--rule);border-radius:10px;padding:.6em .8em;background:var(--paper)}
+.card b{display:block;font-family:var(--serif);font-weight:600;font-size:1.06em;margin:0 0 .15em}
+.card span{display:block;font-size:.88em;color:var(--muted);line-height:1.38}
+.card .n{display:inline-block;font-weight:700;color:var(--accent);margin-right:.3em}
+
+/* horizontal timeline */
+.slide .htl{display:flex;list-style:none;margin:.3em 0 1em;padding:0;position:relative}
+.htl::before{content:"";position:absolute;left:0;right:0;top:9px;border-top:2px solid var(--rule)}
+.htl li{flex:1;position:relative;padding:26px .3em 0 0;margin:0;font-size:.84em;line-height:1.3}
+.htl li::before{content:"";position:absolute;left:0;top:3px;width:14px;height:14px;border-radius:50%;background:var(--paper);border:2px solid var(--muted)}
+.htl li b{display:block;font-variant-numeric:tabular-nums}
+.htl li.on::before{background:var(--accent);border-color:var(--accent)}
+.htl li.on{color:var(--accent);font-weight:600}
+@media (max-width:640px){
+ .htl{flex-direction:column;padding-left:0}
+ .htl::before{left:6px;right:auto;top:0;bottom:0;border-top:0;border-left:2px solid var(--rule)}
+ .htl li{padding:0 0 .7em 26px}
+ .htl li::before{top:2px}
+}
+
+/* vertical timeline */
+.slide .vtl{list-style:none;margin:0 0 .9em;padding:0;border-left:2px solid var(--rule)}
+.vtl li{position:relative;padding:0 0 .55em 1.1em;margin:0}
+.vtl li::before{content:"";position:absolute;left:-7px;top:.42em;width:12px;height:12px;border-radius:50%;background:var(--paper);border:2px solid var(--accent)}
+.vtl .when{display:inline-block;min-width:5.6em;font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums}
+.vtl .when.none{color:var(--faint);font-weight:400}
+
+/* flow */
+.flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:.5em;align-items:stretch;margin:.2em 0 1em}
+.flow .st{border:1px solid var(--rule);border-radius:10px;padding:.6em .8em;background:var(--paper)}
+.flow .st b{display:block;font-family:var(--serif);font-weight:600;font-size:1.06em}
+.flow .st span{display:block;font-size:.86em;color:var(--muted);line-height:1.35}
+.flow .st.end{border-color:var(--accent);background:var(--accent-soft)}
+.flow .ar{align-self:center;color:var(--accent);font-size:1.3em}
+@media (max-width:640px){.flow{grid-template-columns:1fr}.flow .ar{transform:rotate(90deg);justify-self:center}}
+
+/* bands (table 1) */
+.bands{display:grid;gap:6px;margin:0 0 .9em}
+.band{display:grid;grid-template-columns:11em minmax(0,1.5fr) minmax(0,1fr);gap:.4em 1em;align-items:baseline;background:var(--accent-soft);border-radius:8px;padding:.6em .85em}
+.band .s{font-weight:700;color:var(--accent)}
+.band .i{font-family:var(--serif)}
+.band .g{font-size:.86em;color:var(--muted)}
+@media (max-width:700px){.band{grid-template-columns:1fr}}
+.defbox{border:1px solid var(--accent);border-radius:10px;padding:.65em .9em;font-family:var(--serif);font-size:1.02em;line-height:1.42;margin:0 0 .5em}
+.defbox .lbl{display:block;font-family:var(--sans);font-size:.72em;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:0 0 .25em}
+.attr{font-size:.74em;color:var(--faint);margin:0}
+
+/* chain of transmission */
+.chainx{display:grid;grid-template-columns:minmax(0,1fr) repeat(4,6.4em minmax(0,1fr));align-items:stretch;gap:0;margin:.3em 0 1em}
+.node{border:1px solid var(--accent);border-radius:10px;padding:.55em .65em;background:var(--accent-soft);font-size:.82em;line-height:1.3;min-width:0}
+.node b{display:block;font-size:1.05em;color:var(--accent)}
+.link{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:0 .3em;font-size:.68em;line-height:1.25;color:var(--muted);font-style:italic}
+.link::after{content:"";display:block;width:100%;min-width:2.2em;border-top:2px solid var(--accent);margin-top:.35em;position:relative}
+.link.weak::after{border-top-style:dashed;opacity:.7}
+.link .arrowhead{color:var(--accent);font-style:normal;font-size:1.3em;line-height:1;order:2;margin-top:-.62em;align-self:flex-end}
+@media (max-width:860px){
+ .chainx{grid-template-columns:1fr}
+ .link{flex-direction:row;gap:.5em;padding:.35em 0 .35em 1em;justify-content:flex-start;text-align:left;border-left:2px solid var(--accent);margin-left:1em}
+ .link.weak{border-left-style:dashed}
+ .link::after,.link .arrowhead{display:none}
+}
+
+/* tables */
+.tw{overflow-x:auto;margin:0 0 .9em;-webkit-overflow-scrolling:touch}
+table.mx{border-collapse:collapse;width:100%;min-width:600px;font-size:.84em}
+table.mx th,table.mx td{border-bottom:1px solid var(--rule);padding:.5em .55em;text-align:left;vertical-align:top}
+table.mx thead th{background:var(--accent);color:var(--accent-ink);font-weight:600;font-size:.92em}
+table.mx thead th:first-child{border-radius:8px 0 0 0}table.mx thead th:last-child{border-radius:0 8px 0 0}
+table.mx tbody th{font-weight:700;width:15%;white-space:nowrap}
+table.mx td{font-family:var(--serif)}
+table.mx tbody tr:nth-child(2) td,table.mx tbody tr:nth-child(2) th{background:var(--accent-soft)}
+table.mx.two{min-width:520px}
+
+/* motif strip */
+.strip{display:flex;align-items:center;flex-wrap:wrap;gap:.4em;margin:.2em 0 .4em}
+.strip .nm{border:1px solid var(--accent);border-radius:999px;padding:.25em .85em;font-weight:600;color:var(--accent);background:var(--accent-soft)}
+.strip .ln{flex:1;min-width:1.2em;border-top:2px solid var(--accent)}
+.strip-cap{text-align:center;font-family:var(--serif);font-style:italic;color:var(--muted);margin:0 0 .9em}
+
+/* three-way columns */
+.three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0 0 .9em}
+@media (max-width:700px){.three{grid-template-columns:1fr}}
+.icon{display:block;width:1.8em;height:1.8em;color:var(--accent);margin:0 0 .3em}
+.converge{display:flex;justify-content:center;color:var(--accent);margin:-.1em 0 .4em;font-size:1.3em;letter-spacing:2.5em;padding-left:2.5em}
+@media (max-width:700px){.converge{letter-spacing:0;padding-left:0}}
+
+/* numbered list */
+.slide ol.num{list-style:none;padding:0;counter-reset:n;margin:0 0 .9em}
+ol.num li{counter-increment:n;position:relative;padding-left:2em;margin:0 0 .6em}
+ol.num li::before{content:counter(n);position:absolute;left:0;top:0;width:1.45em;height:1.45em;border-radius:50%;background:var(--accent);color:var(--accent-ink);font-size:.82em;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:.12em}
+
+.label-pa{display:inline-block;border:1.5px solid var(--accent);color:var(--accent);border-radius:999px;padding:.12em .75em;font-size:.72em;letter-spacing:.12em;text-transform:uppercase;font-weight:700;margin:0 0 .6em}
+.thanks{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:.4em 1em;border-top:1px solid var(--rule);padding-top:.7em;margin-top:.4em}
+.thanks b{font-family:var(--serif);font-size:1.4em;font-weight:600}
+
+/* appendix */
+.appx{background:var(--paper);border:1px solid var(--rule);border-radius:14px;padding:clamp(20px,4.5vw,40px);margin:28px 0 14px;font-size:15px}
+.appx h2{font-family:var(--serif);font-weight:600;font-size:1.4em;margin:0 0 .6em}
+.appx .wc{padding-left:2em;text-indent:-2em;margin:0 0 .6em}
+.appx .note{color:var(--muted);font-size:.92em}
+footer{margin-top:28px;font-size:13px;color:var(--faint);border-top:1px solid var(--rule);padding-top:14px}
+
+/* ---------- presenting mode ---------- */
+.present-nav{display:none}
+body.presenting{overflow:hidden}
+body.presenting .deck{position:fixed;inset:0;z-index:100;background:var(--paper);overflow:auto}
+body.presenting .slide{display:none;border:0;border-radius:0;margin:0;min-height:100%;
+ padding:clamp(24px,5vh,64px) clamp(20px,6vw,96px) 92px;font-size:clamp(16px,min(calc(.95vw + 1.15vh),2.75vh),34px)}
+body.presenting .slide.current{display:flex;flex-direction:column;justify-content:center}
+body.presenting .slide.current > *{width:100%;max-width:min(100%,clamp(820px,calc(44vw + 58vh),1600px));margin-left:auto;margin-right:auto}
+body.presenting .slide.dense{font-size:clamp(15px,min(calc(.85vw + 1vh),2.45vh),30px)}
+body.presenting .slide .no{display:none}
+body.presenting .slide .src{margin-top:1.4em}
+body.presenting .notes{display:none}
+body.presenting.show-notes .slide.current .notes{display:block;position:fixed;left:0;right:0;bottom:64px;z-index:102;max-height:38vh;overflow:auto;margin:0;border-radius:12px 12px 0 0;border:1px solid var(--rule);box-shadow:0 -6px 24px rgba(0,0,0,.12);font-size:15px;max-width:none;padding:12px 18px}
+body.presenting .present-nav{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:103;justify-content:center;align-items:center;gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));background:linear-gradient(to top,var(--paper) 60%,transparent)}
+.present-nav .count{font-size:14px;color:var(--muted);min-width:64px;text-align:center;font-variant-numeric:tabular-nums}
+
+@media print{
+ @page{size:landscape;margin:12mm}
+ body{background:#fff}
+ .toolbar,.keys,.crumb,.present-nav{display:none!important}
+ .slide{break-inside:avoid;page-break-after:always;border:0}
+}
+</style>
+</head>
+<body>
+<main>
+<p class="crumb"><a href="/">Albert Le Thanh Nhan</a> / Judaism</p>
+<h1>Jewish Meditation Reconsidered</h1>
+<p class="lede">A presentation on Matan Weil, <em>Religions</em> 15 (2024): 1232 · 19 slides · about 25 minutes</p>
+<div class="toolbar">
+  <button class="btn primary" type="button" data-act="present">▶ Present</button>
+  <button class="btn" type="button" data-act="notes" aria-pressed="false">Speaker notes</button>
+</div>
+<p class="keys">While presenting: <kbd>→</kbd>/<kbd>←</kbd> or swipe to move, <kbd>N</kbd> notes, <kbd>Esc</kbd> exit.</p>
+
+<div class="deck" id="deck">
+
+<!-- 1 · Title -->
+<section class="slide title-slide" aria-label="Slide 1: Title">
+  <span class="no">1</span>
+  <p class="kicker">Opening</p>
+  <h2>“‘Jewish Meditation Reconsidered’: Hitbodedut as a Meditative Practice and Its Transmission from the Egyptian Pietists to the Hasidic Masters”</h2>
+  <p class="by">Matan Weil, Independent Researcher, Jerusalem · <em>Religions</em> 15 (2024): 1232</p>
+  <div class="motif" aria-hidden="true"><span style="left:2%"></span><span style="left:26%"></span><span style="left:50%"></span><span style="left:74%"></span><span style="left:98%"></span></div>
+  <p class="muted">Presented by Albert Le Thanh Nhan · November 2026</p>
+  <p class="src">Weil 2024, p. 1.</p>
+  <aside class="notes"><div class="nh"><span>Speaker notes</span><span>0:30 · cum. 0:30</span></div>
+    <p>An open-access 2024 article that challenges a consensus in the academic study of Jewish meditation. Preview the arc: the claim, the method, the textual evidence, and an evaluation.</p>
+  </aside>
+</section>
+
+<!-- 2 · Question and roadmap -->
+<section class="slide" aria-label="Slide 2: The Question and Roadmap">
+  <span class="no">2</span>
+  <p class="kicker">Opening</p>
+  <h2>The Question and Roadmap</h2>
+  <p class="rq"><strong>Research question:</strong> Is there a continuous tradition of meditative practice in Jewish history, and if so, what is it?</p>
+  <p><strong>Weil’s answer:</strong> yes — Hitbodedut, practised “since at least the 12th century, possibly much earlier.”</p>
+  <ol class="roadmap" aria-label="Roadmap">
+    <li>The consensus and its origin</li>
+    <li>Method</li>
+    <li>Reconstructing Hitbodedut</li>
+    <li>Comparative evidence</li>
+    <li>Posture and ethos</li>
+    <li>Evaluation</li>
+  </ol>
+  <p class="src">Weil 2024, pp. 1–2.</p>
+  <aside class="notes"><div class="nh"><span>Speaker notes</span><span>1:00 · cum. 1:30</span></div>
+    <ul>
+      <li>Weil states the aim as addressing “whether a continuous tradition of meditative practice exists within Jewish history, and, if so, to elucidate its nature” (p. 1).</li>
+      <li>The article has two parts: a critical reassessment of earlier scholarship (Section 2) and a reconstruction of the ritual plus a systematic comparison (Section 3) (p. 2).</li>
+    </ul>
+  </aside>
+</section>
+
+<!-- 3 · Context -->
+<section class="slide" aria-label="Slide 3: Context: Rising Interest, Skeptical Consensus">
+  <span class="no">3</span>
+  <p class="kicker">The problem</p>
+  <h2>Context: Rising Interest, Skeptical Consensus</h2>
+  <ul>
+    <li>Judaism is usually associated with Halacha rather than contemplative practice, so “Jewish meditation” meets skepticism.</li>
+    <li>Popular literature is growing: Kaplan (1978, 1982, 1985), Pinson (2004), Verman (1996).</li>
+    <li>Scholarly treatments: Scholem (1974), Verman and Shapiro (1996), Persico (2016, 2019).</li>
+  </ul>
+  <div class="cols">
+    <div class="panel hi"><h3>Primary sources</h3><p>Mention an ancient practice handed down through generations.</p></div>
+    <div class="panel"><h3>Scholarship</h3><p>Consensus: no longstanding tradition, only “a collection of independent and unrelated techniques.”</p><p class="q">Persico (2019): “There is no one meditative stem in the Jewish tradition.”</p></div>
+  </div>
+  <p class="src">Weil 2024, pp. 1, 10, 13 (n. 1). Persico quoted in Weil, p. 10.</p>
+  <aside class="notes"><div class="nh"><span>Speaker notes</span><span>2:00 · cum. 3:30</span></div>
+    <ul>
+      <li>Persico’s fuller claim, as quoted by Weil: techniques were taken up “by unique individuals setting their own course, often with no knowledge of their predecessors and usually being inspired by non-Jewish practices in their surroundings” (p. 10).</li>
+      <li>Weil’s counter-observation: the primary literature itself mentions an ancient practice passed down through generations (p. 1).</li>
+      <li>Scope (n. 1): Weil means indigenous Jewish practices, not contemporary “Jewish mindfulness.”</li>
+    </ul>
+  </aside>
+</section>
+
+<!-- 4 · Key terms -->
+<section class="slide" aria-label="Slide 4: Key Terms">
+  <span class="no">4</span>
+  <p class="kicker">The problem</p>
+  <h2>Key Terms</h2>
+  <div class="grid3">
+    <div class="card"><b>Hitbodedut</b><span>Literally “self-seclusion”; for Weil, a three-step solitary meditation technique.</span></div>
+    <div class="card"><b>Devekut</b><span>“Cleaving” to God; the goal of the practice.</span></div>
+    <div class="card"><b>Ruach HaKodesh</b><span>The Holy Spirit; divine inspiration.</span></div>
+    <div class="card"><b>Wusul</b><span>Arabic “Encounter” in Maimoni; close to Devekut.</span></div>
+    <div class="card"><b>Khalwah</b><span>The Arabic term in the <em>Kifayat</em> that Weil renders as Hitbodedut.</span></div>
+    <div class="card"><b>Ma’aseh Merkabah</b><span>Esoteric tradition; the Pardes (“orchard”) story of Ben Azzai and Rabbi Akiva.</span></div>
+  </div>
+  <p class="src">Weil 2024, pp. 1, 5–6, 15 (n. 45).</p>
+  <aside class="notes"><div class="nh"><span>Speaker notes</span><span>1:30 · cum. 5:00</span></div>
+    <ul>
+      <li>Devekut: following Afterman, the pinnacle of a spiritual quest, its central aspect or ultimate goal, sometimes to the point of unification with the Divine (p. 6).</li>
+      <li>Ruach HaKodesh (Weil’s working definition): the faculty that generates degrees of divine inspiration, yielding new knowledge, insight, or intuition. If the recipient is unconscious, the result is “prophecy”; if conscious, it is “sub-prophetic inspiration” (pp. 5–6). Weil says a full treatment is outside his scope.</li>
+      <li>Khalwah: the English translation of the <em>Kifayat</em> renders it as “Retreat”; Weil substitutes Hitbodedut for uniformity with the Hebrew translation (n. 45).</li>
+    </ul>
+  </aside>
+</section>
+
+<!-- 5 · Concentration -->
+<section class="slide" aria-label="Slide 5: How Hitbodedut Became Concentration">
+  <span class="no">5</span>
+  <p class="kicker">The problem</p>
+  <h2>How Hitbodedut Became “Concentration”</h2>
+  <ol class="htl" aria-label="Timeline of scholarship">
+    <li><b>1974</b>Scholem</li>
+    <li><b>1982</b>Kaplan</li>
+    <li class="on"><b>1985</b>Idel</li>
+    <li><b>1988b</b>Idel</li>
+    <li><b>1996</b>Verman and Shapiro</li>
+    <li><b>2016/2019</b>Persico</li>
+  </ol>
+  <ul>
+    <li>Idel (1985), “‘Hitbodedut’ qua ‘Concentration’ in Ecstatic Kabbalah”: Hitbodedut as “mental concentration within a defined mystical technique.”</li>
+    <li>This article became the <em>locus classicus</em>; later scholars kept the term “concentration.”</li>
+    <li>Idel’s later work (1988b) appears to accept the meditative meaning, but the 1985 framing persisted.</li>
+    <li>Persico (2016): Breslov Hitbodedut is meditative; earlier “mystical” Hitbodedut is concentration.</li>
+    <li>Kaplan (1982) read Hitbodedut as meditation but was “mostly overlooked or rejected by scholars.”</li>
+  </ul>
+  <p class="src">Weil 2024, pp. 1–3, 13–14 (nn. 7, 16). Idel 1985, p. 38, quoted in Weil, p. 3.</p>
+  <aside class="notes"><div class="nh"><span>Speaker notes</span><span>1:30 · cum. 6:30</span></div>
+    <ul>
+      <li>Scholem’s 1974 chapter in <em>Kabbalah</em> neither mentions Hitbodedut nor defines meditation (p. 3).</li>
+      <li>Verman and Shapiro (1996) mention Hitbodedut only in a footnote (p. 3).</li>
+      <li>Scholars who follow Idel 1985 (n. 16): Klein-Braslavy 1997; Afterman 2011; Persico 2014, 2016.</li>
+      <li>Weil names Tsvi Langermann as the rare scholar who rejects the academic dismissal of Kaplan (n. 7).</li>
+    </ul>
+  </aside>
+</section>
+
+<!-- 6 · Six limitations -->
+<section class="slide" aria-label="Slide 6: Six Limitations of Prior Research">
+  <span class="no">6</span>
+  <p class="kicker">The problem</p>
+  <h2>Six Limitations of Prior Research</h2>
+  <div class="grid3">
+    <div class="card"><span><b class="n">1</b>Reframing Hitbodedut as “concentration”</span></div>
+    <div class="card"><span><b class="n">2</b>No technical working definition against which to measure teachings</span></div>
+    <div class="card"><span><b class="n">3</b>Comparisons focused on differences, with no systematic search for similarities</span></div>
+    <div class="card"><span><b class="n">4</b>Influence on Ramchal and Rabbi Nachman suggested but never tested by comparison</span></div>
+    <div class="card"><span><b class="n">5</b>A “needless” split into separate Hitbodedut traditions</span></div>
+    <div class="card"><span><b class="n">6</b>Neglect of Vital’s distinction between contemplative Hitbodedut and letter permutations</span></div>
+  </div>
+  <p class="banner">… and the <em>Kifayat</em> was consciously excluded.</p>
+  <p class="src">Weil 2024, pp. 3–4, 14 (n. 19), 15 (n. 59).</p>
+  <aside class="notes"><div class="nh"><span>Speaker notes</span><span>1:30 · cum. 8:00</span></div>
+    <ul>
+      <li>Weil attributes these problems to “a strict phenomenological approach to text analysis” (p. 3), which sets up Slide 7.</li>
+      <li>On point 5 (n. 19): earlier research implies a “theoretical” Hitbodedut among Bible commentators and separate practical ones among the Egyptian pietists and the Kabbalists. Weil argues that no source signals a departure from earlier usage.</li>
+      <li>On point 6: Vital regards letter permutation, used to “force” inspiration, as potentially dangerous (p. 3; n. 59).</li>
+      <li>Maimoni’s <em>Kifayat</em> “was consciously excluded” from early Hitbodedut research and therefore from meditation research (p. 4; citing Idel 1985, p. 38, and Persico 2016, p. 400 n. 2).</li>
+    </ul>
+  </aside>
+</section>
+
+<!-- 7 · Method -->
+<section class="slide" aria-label="Slide 7: Method: From Text to Context">
+  <span class="no">7</span>
+  <p class="kicker">Method</p>
+  <h2>Method: From Text to Context</h2>
+  <div class="cols">
+    <div class="panel"><h3>Text-centred</h3><p>Content extracted from the text; differences foregrounded.</p></div>
+    <div class="panel hi"><h3>Context-centred</h3><p>History, biography, transmission networks; similarities reconstructed.</p></div>
+  </div>
+  <ul>
+    <li><strong>Critique:</strong> Idel’s “phenomenological” method puts textual content ahead of historical context.</li>
+    <li><strong>Ally:</strong> Schäfer (2011) — this approach “runs the risk of dehistoricizing” its phenomena.</li>
+    <li><strong>Alternative:</strong> a context-centred reading built on Jan Assmann’s “cultural memory.”</li>
+    <li>Culture travels through texts, symbols, oral transmission, and esoteric initiation.</li>
+    <li>Esoteric “restricted knowledge” explains why the textual record is thin.</li>
+  </ul>
+  <p class="src">Weil 2024, pp. 2, 3–5, 14 (n. 21). Schäfer 2011, pp. 25–26, and Assmann 2011a, p. 21, quoted in Weil.</p>
+  <aside class="notes"><div class="nh"><span>Speaker notes</span><span>2:00 · cum. 10:00</span></div>
+    <ul>
+      <li>Idel, in a 2023 “Seekers of Unity” interview quoted in n. 21, says it is more important to deal with the content of a text than with its history or background.</li>
+      <li>Assmann’s three tiers in Judaism, as cited by Weil: general participation (Torah reading), specialized participation (Talmud study), and esoteric Kabbalah for select adepts (p. 5). The concept derives from Halbwachs’s “collective memory” (p. 4).</li>
+      <li>Weil cites Azkiri (<em>Sefer Haredim</em>) and Vital (via Idel) as explicitly mentioning an oral tradition (p. 4).</li>
+      <li>Note for evaluation: Weil openly chooses to focus on “reconstructing the similarities” rather than “deconstructing their obvious differences” (p. 2). Return to this on Slide 18.</li>
+    </ul>
+  </aside>
+</section>
+
+<!-- 8 · Kifayat -->
+<section class="slide" aria-label="Slide 8: The Earliest Manual: Abraham Maimoni’s Kifayat">
+  <span class="no">8</span>
+  <p class="kicker">Reconstruction</p>
+  <h2>The Earliest Manual: Abraham Maimoni’s <em>Kifayat</em></h2>
+  <div class="flow" aria-label="Flow diagram">
+    <div class="st"><b>Outward Hitbodedut</b><span>physical seclusion</span></div>
+    <div class="ar" aria-hidden="true">→</div>
+    <div class="st"><b>Inward Hitbodedut</b><span>complete focus of the heart</span></div>
+    <div class="ar" aria-hidden="true">→</div>
+    <div class="st end"><b>Wusul</b><span>“Encounter”: degrees, including Ruach HaKodesh</span></div>
+  </div>
+  <ul>
+    <li>Abraham Maimoni (1186–1237), son of Maimonides, belonged to the circle of Egyptian Jewish pietists.</li>
+    <li><em>Kitab Kifayat al-Abidin</em> (<em>The Guide for Serving God</em>) is “the earliest and most comprehensive manual” on Hitbodedut, earlier than Abulafia.</li>
+    <li>Hitbodedut is the last step on the path of the Pious: “the way of the greatest Hasidim,” by which the prophets reached Encounter.</li>
+  </ul>
+  <p class="src">Weil 2024, pp. 4–7, 15 (n. 48).</p>
+  <aside class="notes"><div class="nh"><span>Speaker notes</span><span>2:00 · cum. 12:00</span></div>
+    <ul>
+      <li>It moves from <strong>outward</strong> Hitbodedut (physical seclusion) to <strong>inward</strong> Hitbodedut (complete focus of the heart).</li>
+      <li>Inward Hitbodedut means emptying “the heart and mind of all besides God” and filling “and occupy[ing] them with Him” (p. 6).</li>
+      <li>The five faculties of the soul, drawn from Maimonides (n. 48): nutritive, sensitive, imaginative, appetitive (desiring), and rational. Slide 9 builds on these.</li>
+      <li>Setting: the practice is preferably done at night and in complete darkness (p. 7).</li>
+      <li>Danger motif: Maimoni cites “Ben Azai gazed (at the Divine) and was Harmed” (p. 6), linking the practice to <em>Ma’aseh Merkabah</em> (Slide 13).</li>
+    </ul>
+  </aside>
+</section>
+
+<!-- 9 · Table 1 -->
+<section class="slide dense" aria-label="Slide 9: A Three-Step Definition (Table 1)">
+  <span class="no">9</span>
+  <p class="kicker">Reconstruction</p>
+  <h2>A Three-Step Definition (Table 1)</h2>
+  <div class="bands">
+    <div class="band"><span class="s">1. Quieting the senses</span><span class="i">“totally or partially quieting the sensitive soul”</span><span class="g">Outward seclusion; night; darkness</span></div>
+    <div class="band"><span class="s">2. Directing the awareness</span><span class="i">“detaching the appetitive (i.e., desiring) soul from the rest of one’s worldly occupations, and reorienting it toward God”</span><span class="g">Turning attention away from the mundane</span></div>
+    <div class="band"><span class="s">3. Concentration on God</span><span class="i">“filling the rational soul with God”; imagination assists contemplation of creation</span><span class="g">Inward Hitbodedut; aimed at Devekut</span></div>
+  </div>
+  <div class="defbox"><span class="lbl">Weil’s definition (p. 7)</span>“a meditative practice comprising three key elements—withdrawal from physical stimuli, directing awareness toward the Divine, and applying focused concentration to cleave to God and potentially attain Divine inspiration”</div>
+  <p class="attr">Adapted from Weil (2024), Table 1, CC BY 4.0. Middle column: Maimoni’s practical instruction (p. 6).</p>
+  <p class="src">Weil 2024, pp. 6–7 (Table 1).</p>
+  <aside class="notes"><div class="nh"><span>Speaker notes</span><span>1:30 · cum. 13:30</span></div>
+    <ul>
+      <li>This definition is the yardstick for the whole comparison on Slides 11–12.</li>
+      <li>Weil’s own caveats (p. 7): following Idel, Hitbodedut does not always require physical seclusion; Fenton identifies three aspects — “physical retreat,” “ritual technique,” and a resulting “vacuity of the mind.”</li>
+      <li>“Lehitboded” can therefore mean the whole ritual, mere physical seclusion, or the concentration technique alone, depending on context (p. 7).</li>
+    </ul>
+  </aside>
+</section>
+
+<!-- 10 · Chain -->
+<section class="slide dense" aria-label="Slide 10: The Proposed Chain of Transmission">
+  <span class="no">10</span>
+  <p class="kicker">Evidence</p>
+  <h2>The Proposed Chain of Transmission</h2>
+  <div class="chainx" aria-label="Timeline of the proposed transmission; each link labelled with its type of evidence">
+    <div class="node"><b>Egypt</b>Abraham Maimoni (1186–1237), Egyptian pietists</div>
+    <div class="link"><span>personal proximity</span><span class="arrowhead" aria-hidden="true">▸</span></div>
+    <div class="node"><b>Acre, 13th c.</b>David HaNagid (1212–1300), Maimoni’s son; Isaac of Acre (1250–1340); Maimonidean Controversy of 1288</div>
+    <div class="link"><span>citation + manuscript testimony</span><span class="arrowhead" aria-hidden="true">▸</span></div>
+    <div class="node"><b>Safed, 16th c.</b>Azkiri, Vital (1542–1620), and de Vidas cite Isaac; the <em>Kifayat</em> is still read in Safed (1571)</div>
+    <div class="link"><span>scholarly demonstration (Koch)</span><span class="arrowhead" aria-hidden="true">▸</span></div>
+    <div class="node"><b>Ramchal</b>(1707–1746): influenced by Vital (Koch 2023)</div>
+    <div class="link weak"><span>resemblance noted by scholars</span><span class="arrowhead" aria-hidden="true">▸</span></div>
+    <div class="node"><b>18th-century Hasidism</b>Rabbi Nachman of Breslov</div>
+  </div>
+  <p class="cap">Solid line: documented link. Dashed line: the link rests on resemblance alone.</p>
+  <p class="src">Weil 2024, pp. 4, 8–9, 12, 14 (nn. 27, 29).</p>
+  <aside class="notes"><div class="nh"><span>Speaker notes</span><span>1:30 · cum. 15:00</span></div>
+    <ul>
+      <li>David HaNagid publicly defended his grandfather’s (Maimonides’) teachings against Solomon Petit, in whose yeshiva Isaac studied. Together with the resemblance between their descriptions, this “suggests a likely connection” (p. 4), which Weil says later scholars accept (n. 27: Fishbane 2009).</li>
+      <li>Evidence for the <em>Kifayat</em> in Safed: a testimony by Issachar ben Mordecai ibn Susan in his manuscript Torah commentary, written in Safed in 1571 (n. 29, via Fenton 1987a).</li>
+      <li>Azkiri says the practice was transmitted to him by his teacher Yossef Sagis (p. 8).</li>
+      <li>For Nachman, the link rests on resemblance noted by Fenton (1995), alluded to by Idel (1988b), and to some extent by Mark (2003) (p. 9). Flag this as the weakest link in the chain.</li>
+    </ul>
+  </aside>
+</section>
+
+<!-- 11 · Comparative I -->
+<section class="slide dense" aria-label="Slide 11: Comparative Analysis I: 13th–16th Centuries">
+  <span class="no">11</span>
+  <p class="kicker">Evidence</p>
+  <h2>Comparative Analysis I: 13th–16th Centuries</h2>
+  <div class="tw" tabindex="0">
+  <table class="mx">
+    <thead><tr><th scope="col">Step</th><th scope="col">Maimoni</th><th scope="col">Isaac of Acre</th><th scope="col">Azkiri</th><th scope="col">Vital</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Quiet senses</th><td>“quieting the sensitive soul”</td><td>“withdraw from the material and tangible”</td><td>“when they were alone”</td><td>“enter a house alone” … “after midnight” … “close his eyes”</td></tr>
+      <tr><th scope="row">Direct awareness</th><td>“detaching the appetitive … soul”</td><td>“remove all the intellectual inquiries”</td><td>“separating worldly matters from their minds”</td><td>“clear his thought from all worldly matters”</td></tr>
+      <tr><th scope="row">Concentrate on God</th><td>“filling the rational soul with God”</td><td>“contemplating the Divine”</td><td>“attaching their thoughts with the Lord of all”</td><td>“contemplate the higher worlds”</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="attr">Adapted from Weil (2024), Table 2, CC BY 4.0. Primary-source wording as translated in Weil.</p>
+  <p class="src">Weil 2024, pp. 7–8, 10 (Table 2), 15 (n. 59).</p>
+  <aside class="notes"><div class="nh"><span>Speaker notes</span><span>2:00 · cum. 17:00</span></div>
+    <ul>
+      <li>Isaac of Acre: from his commentary on <em>Pirkei De-Rabbi Eliezer</em>. Weil chose the instance that “strikes a close resemblance to the Kifayat’s Hitbodedut more than any other” (p. 7).</li>
+      <li>Azkiri (<em>Sefer Haredim</em>, Safed): Weil concedes that the quieting of the senses is only “implied” by “when they were alone” (p. 8).</li>
+      <li>Vital (<em>Sha’arei Kedusha</em>, part three): seclusion away from “human voices and bird chirps”; the practitioner clears his thought “as if the soul has left the body, like a dead body that feels nothing,” then imagines ascending to the higher worlds (p. 8). Weil excludes the letter-permutation practice of the fourth part (n. 59).</li>
+    </ul>
+  </aside>
+</section>
+
+<!-- 12 · Comparative II -->
+<section class="slide dense" aria-label="Slide 12: Comparative Analysis II: 18th Century">
+  <span class="no">12</span>
+  <p class="kicker">Evidence</p>
+  <h2>Comparative Analysis II: 18th Century</h2>
+  <div class="tw" tabindex="0">
+  <table class="mx two">
+    <thead><tr><th scope="col">Step</th><th scope="col">Ramchal, <em>Mesilat Yesharim</em></th><th scope="col">Nachman, <em>Likutey Moharan</em> 52</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Quiet senses</th><td>“seclusion (Hitbodedut) and much abstinence”</td><td>“a special place and time” … “at night” … “on a secluded road”</td></tr>
+      <tr><th scope="row">Direct awareness</th><td>“in the absence of distractions one’s soul may gather strength”</td><td>“empty his heart”; “a bitul of all corporeality”</td></tr>
+      <tr><th scope="row">Concentrate on God</th><td>“conjoin (LeHitdabek) with its Creator”</td><td>“encompassed in the oneness of God”</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="panel hi"><h3>Shared features (Weil, p. 9)</h3>
+    <ul>
+      <li>Same goal (cleaving to God)</li>
+      <li>Practised alone and at night</li>
+      <li>Awareness turned away from the mundane</li>
+      <li>The heart emptied and then either filled with God (Maimoni) or encompassed in His unity (Nachman)</li>
+    </ul>
+  </div>
+  <p class="attr" style="margin-top:.6em">Adapted from Weil (2024), Table 2, CC BY 4.0.</p>
+  <p class="src">Weil 2024, pp. 8–10 (Table 2), 12, 16 (n. 71).</p>
+  <aside class="notes"><div class="nh"><span>Speaker notes</span><span>1:30 · cum. 18:30</span></div>
+    <ul>
+      <li>Ramchal: Weil calls the instructions “short and vague” (p. 8) and fills them out from other passages of <em>Mesilat Yesharim</em> on Devekut and on contemplation in seclusion (pp. 8–9). Weil also notes that Ramchal censored himself under threat of excommunication (p. 12).</li>
+      <li>Nachman: Weil uses the closing words of <em>Likutey Moharan</em> 52 because, according to Rabbi Nathan, Nachman wrote them himself; much other Breslov material was reproduced by Nathan (p. 9). Persico also treats this lesson as a main Hitbodedut passage.</li>
+      <li>Nachman equates cleaving to God with self-negation (<em>bitul</em>); following Elior, Weil notes that in first-generation Hasidism the two concepts were almost inseparable (n. 71).</li>
+    </ul>
+  </aside>
+</section>
+
+<!-- 13 · Danger -->
+<section class="slide" aria-label="Slide 13: A Recurring Signal: Danger and Ma’aseh Merkabah">
+  <span class="no">13</span>
+  <p class="kicker">Evidence</p>
+  <h2>A Recurring Signal: Danger and <em>Ma’aseh Merkabah</em></h2>
+  <div class="strip" aria-label="Four teachers linked by one motif">
+    <span class="nm">Maimoni</span><span class="ln" aria-hidden="true"></span>
+    <span class="nm">Isaac of Acre</span><span class="ln" aria-hidden="true"></span>
+    <span class="nm">Vital</span><span class="ln" aria-hidden="true"></span>
+    <span class="nm">Yosef Even Tziah</span>
+  </div>
+  <p class="strip-cap">Shared motif: “gazing” at the Divine as dangerous</p>
+  <ul>
+    <li>Maimoni, Isaac of Acre, Vital, and Yosef Even Tziah tie Hitbodedut to the Pardes story.</li>
+    <li>Isaac of Acre: Ben Azzai “gazed and died”; Rabbi Akiva “entered in peace and left in peace.”</li>
+    <li>Vital: the spirit received may be the <em>Sitra Achra</em>, or a mixture of evil and good.</li>
+    <li>Weil reads this association as a mark of esoteric “restricted knowledge” (Assmann).</li>
+  </ul>
+  <p class="src">Weil 2024, pp. 5–6, 8, 13 (n. 3).</p>
+  <aside class="notes"><div class="nh"><span>Speaker notes</span><span>1:00 · cum. 19:30</span></div>
+    <ul>
+      <li>Weil concedes (n. 3) that the <em>Hekhalot</em> literature describes a technique linked to the four who entered the orchard, but that the evidence is insufficient to tie it directly to Hitbodedut.</li>
+      <li>Following Afterman, Weil notes that the idea of Devekut as a means to Ruach HaKodesh goes back at least to the second-century students of Rabbi Akiva (p. 6).</li>
+    </ul>
+  </aside>
+</section>
+
+<!-- 14 · Posture -->
+<section class="slide" aria-label="Slide 14: Posture: The Head Between the Knees">
+  <span class="no">14</span>
+  <p class="kicker">Evidence</p>
+  <h2>Posture: The Head Between the Knees</h2>
+  <div class="cols">
+    <div>
+      <ul>
+        <li>None of the Hitbodedut teachings examined give postural instructions.</li>
+        <li>Weil’s hypothesis: practitioners followed the tradition reported by Rav Hai Gaon (10th c.), with the posture left unstated for reasons of secrecy or because it was self-evident.</li>
+      </ul>
+    </div>
+    <div>
+      <p class="small muted" style="margin-bottom:.4em">Testimonies (via Fenton 1994)</p>
+      <ul class="vtl">
+        <li><span class="when none">—</span> Elijah (1 Kings 18:42)</li>
+        <li><span class="when none">—</span> Hanina ben Dosa (<em>Berakhot</em> 34b)</li>
+        <li><span class="when">10th c.</span> Hai Gaon</li>
+        <li><span class="when">12th c.</span> Hananel ben Shemuel</li>
+        <li><span class="when">16th c.</span> Yosef Even Tziah</li>
+        <li><span class="when">17th c.</span> Aaron Berechiah of Modena</li>
+        <li><span class="when">20th c.</span> Solomon Eliezer Alfandari <span class="muted small">(as reported by Margaliot)</span></li>
+      </ul>
+    </div>
+  </div>
+  <p class="src">Weil 2024, pp. 10–11.</p>
+  <aside class="notes"><div class="nh"><span>Speaker notes</span><span>1:00 · cum. 20:30</span></div>
+    <ul>
+      <li>Hananel ben Shemuel Ha-dayan, Maimoni’s father-in-law, says of Elijah’s posture: “The nations [=Sufis] have taken this practice over from us” (p. 11). This raises the question of direction of influence (Slide 19).</li>
+      <li>Even Tziah’s text is the strongest link: it combines <em>LeHitboded</em>, “bowing the head like a bulrush between the knees,” and the nullifying of the senses (p. 11).</li>
+      <li>Weil presents this section as a “plausible perspective” (p. 10); state it as a hypothesis.</li>
+    </ul>
+  </aside>
+</section>
+
+<!-- 15 · Differences -->
+<section class="slide" aria-label="Slide 15: Explaining the Differences">
+  <span class="no">15</span>
+  <p class="kicker">Interpretation</p>
+  <h2>Explaining the Differences</h2>
+  <p class="lead">Steps 1–2 are fairly similar across teachers; step 3 (concentration) is “rather distinct.”</p>
+  <div class="three">
+    <div class="panel">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h9a3 3 0 0 1 3 3v3a3 3 0 0 1-3 3H9l-4 3v-3H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/><path d="M16 9h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1v2.5L15 16h-2"/></svg>
+      <h3>Language</h3><p>Arabic (Maimoni, Isaac); Spanish or Italian (Azkiri, Vital, Ramchal); Eastern European (Nachman).</p></div>
+    <div class="panel">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4l6 6-10 10H4v-6z"/><path d="M12 6l6 6"/></svg>
+      <h3>Individual description</h3><p>Vital and Azkiri belonged to the same Safed circle yet describe the practice differently.</p></div>
+    <div class="panel">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.8" fill="currentColor"/></svg>
+      <h3>Authorial intention</h3><p>Esoteric versus public writing; the printing press; Ramchal’s self-censorship.</p></div>
+  </div>
+  <p class="src">Weil 2024, pp. 11–12.</p>
+  <aside class="notes"><div class="nh"><span>Speaker notes</span><span>1:00 · cum. 21:30</span></div>
+    <ul>
+      <li>Audience by author (p. 12): Maimoni and Isaac probably did not intend their teachings for the masses; Vital’s intentions are vague; Azkiri wrote for the public; Nachman, as a Hasidic master, aimed at wide diffusion.</li>
+      <li>Weil concludes that Idel’s phenomenological approach “could be crippling” in the study of Jewish meditation (p. 12).</li>
+    </ul>
+  </aside>
+</section>
+
+<!-- 16 · Ethos -->
+<section class="slide dense" aria-label="Slide 16: A Broader Path: The Hasidim HaRishonim Ethos">
+  <span class="no">16</span>
+  <p class="kicker">Interpretation</p>
+  <h2>A Broader Path: The <em>Hasidim HaRishonim</em> Ethos</h2>
+  <p>Meditation is one element of a wider path, as in the yogic path, the Buddhist eightfold path, and the Sufi tariqa.</p>
+  <div class="three">
+    <div class="card"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h11a2 2 0 0 1 2 2v14H7a2 2 0 0 1-2-2z"/><path d="M5 18a2 2 0 0 1 2-2h11"/></svg><b><em>Kifayat</em></b><span>Maimoni, 1186–1237</span></div>
+    <div class="card"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h11a2 2 0 0 1 2 2v14H7a2 2 0 0 1-2-2z"/><path d="M5 18a2 2 0 0 1 2-2h11"/></svg><b><em>Sha’arei Kedusha</em></b><span>Vital, 1542–1620</span></div>
+    <div class="card"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h11a2 2 0 0 1 2 2v14H7a2 2 0 0 1-2-2z"/><path d="M5 18a2 2 0 0 1 2-2h11"/></svg><b><em>Mesilat Yesharim</em></b><span>Ramchal, 1707–1746</span></div>
+  </div>
+  <div class="converge" aria-hidden="true"><span>↘</span><span>↓</span><span>↙</span></div>
+  <div class="panel hi"><h3>Shared features</h3>
+    <ul>
+      <li>All three trace their tradition to the <em>Hasidim HaRishonim</em> and the prophets, and distinguish the path of the Tsadik from the path of the Hasid.</li>
+      <li>Each combines ethical effort, awareness of the divine presence, and Hitbodedut, aimed at Devekut and Ruach HaKodesh.</li>
+    </ul>
+  </div>
+  <p class="src">Weil 2024, p. 12; p. 15 (n. 50).</p>
+  <aside class="notes"><div class="nh"><span>Speaker notes</span><span>1:00 · cum. 22:30</span></div>
+    <ul>
+      <li>Weil announces a full comparison of the three manuals as future research (p. 12), so present it as a proposal, not a finding.</li>
+      <li>In n. 50 Weil suggests parallels with Hindu yogic meditation (via Wernicke-Olesen); breath control is the main element absent from Maimoni’s Hitbodedut.</li>
+    </ul>
+  </aside>
+</section>
+
+<!-- 17 · Conclusions -->
+<section class="slide" aria-label="Slide 17: Weil’s Conclusions">
+  <span class="no">17</span>
+  <p class="kicker">Interpretation</p>
+  <h2>Weil’s Conclusions</h2>
+  <p class="banner">Hitbodedut is a ritual of solitary meditation, practised “since at least the 12th century.”</p>
+  <ul>
+    <li>Proposed transmission: Egyptian pietists → Acre → Safed → Hasidic masters.</li>
+    <li>Methodological lesson: the limits of a strict phenomenology; reconstruct meaning within historical, sociological, and biographical context.</li>
+    <li>Posture and ethos are offered as further, suggestive evidence.</li>
+    <li>Stated application: the contemporary practice of “Indigenous Jewish meditation.”</li>
+  </ul>
+  <p class="src">Weil 2024, pp. 12–13.</p>
+  <aside class="notes"><div class="nh"><span>Speaker notes</span><span>0:45 · cum. 23:15</span></div>
+    <p>Present these as Weil’s claims, in his terms, before turning to evaluation.</p>
+  </aside>
+</section>
+
+<!-- 18 · Presenter's assessment -->
+<section class="slide dense" aria-label="Slide 18: Presenter’s Assessment">
+  <span class="no">18</span>
+  <p class="kicker">Evaluation</p>
+  <h2>Presenter’s Assessment</h2>
+  <span class="label-pa">Presenter’s assessment · not Weil’s claims</span>
+  <div class="cols">
+    <div class="panel hi"><h3>Contribution</h3>
+      <p>Brings Fenton’s work and the <em>Kifayat</em> into meditation studies, and offers an explicit definition that makes systematic comparison possible.</p>
+    </div>
+    <div class="panel"><h3>Open questions</h3>
+      <ul>
+        <li><strong>Uneven chain:</strong> the Egypt→Acre→Safed links are documented; Ramchal rests on Koch; Nachman rests on resemblance.</li>
+        <li><strong>Circularity risk:</strong> the yardstick comes from Maimoni, passages were selected for resemblance, and the three-step template is broad.</li>
+        <li><strong>Falsifiability:</strong> the esoteric/oral argument explains away the very absence of evidence.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="src">Presenter’s evaluation, based on Weil 2024, pp. 1–4, 10–13.</p>
+  <aside class="notes"><div class="nh"><span>Speaker notes</span><span>1:30 · cum. 24:45</span></div>
+    <ul>
+      <li>Weil himself uses hedged language: “potential transmission” (abstract), “likely connection” (p. 4).</li>
+      <li>The most distinctive element, step 3, is also the one that varies most, as Weil concedes (p. 11).</li>
+      <li>Dating tension: Weil places the Egyptian pietists in the 12th century, but his principal source, Maimoni, is given as 1186–1237, and Table 2 is headed “13, 16, and 18th centuries” (p. 10). The only figure the article explicitly calls “12th-century” is Hananel, cited for posture rather than for a Hitbodedut teaching.</li>
+      <li>The posture link is inferential, since Weil concedes that the examined texts are silent on posture (p. 10).</li>
+      <li>“Meditation” versus “concentration” may be partly terminological, because Weil adopts Persico’s broad definition: “an intentional action initiated to bring about personal mental transformation of a therapeutic or soteriological nature” (p. 2).</li>
+      <li>The conclusion links the findings to contemporary practice (p. 13); note this neutrally as a stated aim.</li>
+    </ul>
+  </aside>
+</section>
+
+<!-- 19 · Questions -->
+<section class="slide" aria-label="Slide 19: Questions for Discussion">
+  <span class="no">19</span>
+  <p class="kicker">Evaluation</p>
+  <h2>Questions for Discussion</h2>
+  <ol class="num">
+    <li>What evidence would establish <em>transmission</em> rather than <em>resemblance</em>?</li>
+    <li>Is “meditation versus concentration” a substantive or a terminological dispute?</li>
+    <li>Does “cultural memory” explain the textual silence, or license reading into it?</li>
+    <li>Hananel says the Sufis took the practice “from us”; Persico says Jewish techniques were usually inspired by non-Jewish practice. How should claims about the direction of influence be weighed?</li>
+  </ol>
+  <div class="thanks"><b>Thank you</b><a href="https://doi.org/10.3390/rel15101232" target="_blank" rel="noopener">https://doi.org/10.3390/rel15101232</a></div>
+  <p class="src">Weil 2024, pp. 10–11; Persico quoted in Weil, p. 10.</p>
+  <aside class="notes"><div class="nh"><span>Speaker notes</span><span>0:30 · cum. 25:15</span></div>
+    <p>Pick one or two questions to open the Q&amp;A, depending on the time left.</p>
+  </aside>
+</section>
+
+</div><!-- /deck -->
+
+<section class="appx" aria-label="Works cited">
+  <h2>Works Cited</h2>
+  <p class="wc">Weil, Matan. “‘Jewish Meditation Reconsidered’: Hitbodedut as a Meditative Practice and Its Transmission from the Egyptian Pietists to the Hasidic Masters.” <em>Religions</em>, vol. 15, no. 10, 2024, article 1232, <a href="https://doi.org/10.3390/rel15101232" target="_blank" rel="noopener">https://doi.org/10.3390/rel15101232</a>.</p>
+  <p class="note">All other works named on the slides are cited <em>as quoted in Weil</em>. If any are cited directly, consult the originals first; the details below are transcribed from Weil’s reference list and notes.</p>
+  <div class="small">
+    <p class="wc">Assmann, Jan. <em>Cultural Memory and Early Civilization: Writing, Remembrance, and Political Imagination</em>. Cambridge UP, 2011.</p>
+    <p class="wc">Fenton, Paul. “The Head Between the Knees.” <em>Daat</em>, vols. 32–33, 1994, pp. 19–29.</p>
+    <p class="wc">Fenton, Paul. “La ‘Hitbodedut’ chez les premiers kabbalistes en Orient et chez les soufis.” <em>Prière, mystique et judaïsme</em>, edited by Roland Goetschel, Presses Universitaires de France, 1987. [Pages not given in Weil.]</p>
+    <p class="wc">Idel, Moshe. “‘Hitbodedut’ qua ‘Concentration’ in Ecstatic Kabbalah.” <em>Daat</em>, vol. 14, 1985, pp. 35–82.</p>
+    <p class="wc">Koch, Patrick Benjamin. “‘All My Thinking Has but One Focus’: Contemplative Seclusion in (Early) Modern Jewish Spirituality.” <em>Entangled Religions</em>, vol. 14, no. 4, 2023.</p>
+    <p class="wc">Maimon, Abraham ben Moses [Abraham Maimoni]. <em>The Guide to Serving God (Kitab Kifayat al-Abidin)</em>. Feldheim, 2008. [Translator not named in Weil.]</p>
+    <p class="wc">Persico, Tomer. “Judaism and Meditation.” <em>The Oxford Handbook of Meditation</em>, [editors garbled in Weil; verify], Oxford UP, 2019, pp. 125–43.</p>
+    <p class="wc">Schäfer, Peter. <em>The Origins of Jewish Mysticism</em>. Princeton UP, 2011.</p>
+  </div>
+  <p class="note">Tables on Slides 9, 11 and 12 are adapted from Weil (2024), Tables 1 and 2, published under CC BY 4.0.</p>
+</section>
+
+<footer>Albert Le Thanh Nhan · November 2026 · Page references follow the journal pagination of <em>Religions</em> 15 (2024): 1232, pp. 1–18.</footer>
+</main>
+
+<nav class="present-nav" aria-label="Slide navigation">
+  <button class="btn" type="button" data-act="prev" aria-label="Previous slide">←</button>
+  <span class="count" aria-live="polite">1 / 19</span>
+  <button class="btn" type="button" data-act="next" aria-label="Next slide">→</button>
+  <button class="btn" type="button" data-act="notes" aria-pressed="false">Notes</button>
+  <button class="btn" type="button" data-act="exit">Exit</button>
+</nav>
+
+<script>
+(function () {
+  var deck = document.getElementById('deck');
+  var slides = Array.prototype.slice.call(deck.querySelectorAll('.slide'));
+  var count = document.querySelector('.present-nav .count');
+  var presenting = false, idx = 0;
+
+  function setNotes(on) {
+    document.body.classList.toggle('show-notes', on);
+    Array.prototype.forEach.call(document.querySelectorAll('[data-act="notes"]'), function (b) {
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+    try { localStorage.setItem('judaism-notes', on ? '1' : '0'); } catch (e) {}
+  }
+  function show(i) {
+    idx = Math.max(0, Math.min(slides.length - 1, i));
+    slides.forEach(function (el, k) { el.classList.toggle('current', k === idx); });
+    deck.scrollTop = 0;
+    count.textContent = (idx + 1) + ' / ' + slides.length;
+    if (history.replaceState) history.replaceState(null, '', '#' + (idx + 1));
+  }
+  function present(start) {
+    presenting = true;
+    document.body.classList.add('presenting');
+    show(start || 0);
+    if (document.documentElement.requestFullscreen) { document.documentElement.requestFullscreen().catch(function () {}); }
+  }
+  function exitPresent() {
+    if (!presenting) return;
+    presenting = false;
+    document.body.classList.remove('presenting');
+    slides.forEach(function (el) { el.classList.remove('current'); });
+    if (document.fullscreenElement && document.exitFullscreen) { document.exitFullscreen().catch(function () {}); }
+    if (history.replaceState) history.replaceState(null, '', location.pathname + location.search);
+    slides[idx].scrollIntoView({ block: 'start' });
+  }
+
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-act]');
+    if (!b) return;
+    var act = b.getAttribute('data-act');
+    if (act === 'present') present(0);
+    else if (act === 'next') show(idx + 1);
+    else if (act === 'prev') show(idx - 1);
+    else if (act === 'exit') exitPresent();
+    else if (act === 'notes') setNotes(!document.body.classList.contains('show-notes'));
+  });
+  // Double-click a slide in the scrolling view to present from it
+  slides.forEach(function (el, k) {
+    el.addEventListener('dblclick', function () { if (!presenting) present(k); });
+  });
+  var x0 = null;
+  deck.addEventListener('touchstart', function (e) { if (presenting && !e.target.closest('.tw')) x0 = e.touches[0].clientX; }, { passive: true });
+  deck.addEventListener('touchend', function (e) {
+    if (!presenting || x0 === null) return;
+    var dx = e.changedTouches[0].clientX - x0; x0 = null;
+    if (Math.abs(dx) > 50) show(idx + (dx < 0 ? 1 : -1));
+  });
+  document.addEventListener('keydown', function (e) {
+    if (!presenting) return;
+    var k = e.key;
+    if (k === 'ArrowRight' || k === 'PageDown' || k === ' ') { e.preventDefault(); show(idx + 1); }
+    else if (k === 'ArrowLeft' || k === 'PageUp') { e.preventDefault(); show(idx - 1); }
+    else if (k === 'Home') { e.preventDefault(); show(0); }
+    else if (k === 'End') { e.preventDefault(); show(1e9); }
+    else if (k === 'n' || k === 'N') { setNotes(!document.body.classList.contains('show-notes')); }
+    else if (k === 'Escape') { exitPresent(); }
+  });
+  document.addEventListener('fullscreenchange', function () {
+    if (!document.fullscreenElement && presenting) exitPresent();
+  });
+
+  var saved = null;
+  try { saved = localStorage.getItem('judaism-notes'); } catch (e) {}
+  if (saved === '1') setNotes(true);
+  // Deep link: /judaism/#7 presents from slide 7
+  var n = parseInt(location.hash.slice(1), 10);
+  if (n >= 1 && n <= slides.length) present(n - 1);
+})();
+</script>
+</body>
+</html>
