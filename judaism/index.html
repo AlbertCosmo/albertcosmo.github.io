@@ -136,21 +136,6 @@ body.show-notes .notes{display:block}
 .defbox .lbl{display:block;font-family:var(--sans);font-size:.72em;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:700;margin:0 0 .25em}
 .attr{font-size:.74em;color:var(--faint);margin:0}
 
-/* chain of transmission */
-.chainx{display:grid;grid-template-columns:minmax(0,1fr) repeat(4,6.4em minmax(0,1fr));align-items:stretch;gap:0;margin:.3em 0 1em}
-.node{border:1px solid var(--accent);border-radius:10px;padding:.55em .65em;background:var(--accent-soft);font-size:.82em;line-height:1.3;min-width:0}
-.node b{display:block;font-size:1.05em;color:var(--accent)}
-.link{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:0 .3em;font-size:.68em;line-height:1.25;color:var(--muted);font-style:italic}
-.link::after{content:"";display:block;width:100%;min-width:2.2em;border-top:2px solid var(--accent);margin-top:.35em;position:relative}
-.link.weak::after{border-top-style:dashed;opacity:.7}
-.link .arrowhead{color:var(--accent);font-style:normal;font-size:1.3em;line-height:1;order:2;margin-top:-.62em;align-self:flex-end}
-@media (max-width:860px){
- .chainx{grid-template-columns:1fr}
- .link{flex-direction:row;gap:.5em;padding:.35em 0 .35em 1em;justify-content:flex-start;text-align:left;border-left:2px solid var(--accent);margin-left:1em}
- .link.weak{border-left-style:dashed}
- .link::after,.link .arrowhead{display:none}
-}
-
 /* tables */
 .tw{overflow-x:auto;margin:0 0 .9em;-webkit-overflow-scrolling:touch}
 table.mx{border-collapse:collapse;width:100%;min-width:600px;font-size:.84em}
@@ -202,11 +187,24 @@ figure.photo{margin:0 0 .9em}
 figure.photo figcaption{font-size:.68em;color:var(--faint);margin-top:.35em;line-height:1.35}
 .with-photo{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(12px,2.6vw,26px);align-items:start}
 @media (max-width:700px){.with-photo{grid-template-columns:1fr}}
-.node .ph{border-radius:6px;margin:0 0 .45em;aspect-ratio:3/2}
-.node .ph.missing::after{content:attr(data-alt);font-size:.75em;padding:.3em}
-.node-credit{font-size:.62em;color:var(--faint);margin:.1em 0 0}
+.cap .node-credit{display:block;font-size:.82em;color:var(--faint);margin-top:.2em}
 .hero{margin:1.1em 0 .2em}
 
+
+
+/* chain of transmission, vertical ladder */
+.slide .chainv{list-style:none;margin:.2em 0 .8em;padding:0}
+.chainv .vn{display:grid;grid-template-columns:5.4em minmax(0,1fr);gap:.8em;align-items:center;border:1px solid var(--accent);border-radius:10px;background:var(--accent-soft);padding:.28em .8em .28em .28em;margin:0;font-size:.9em;line-height:1.35}
+.chainv .vn b{color:var(--accent);margin-right:.45em}
+.chainv .ph{aspect-ratio:2/1;border-radius:6px;margin:0}
+.chainv .ph.missing::after{content:attr(data-alt);font-size:.75em;padding:.2em}
+.chainv .era{display:flex;align-items:center;justify-content:center;font-size:.78em;font-weight:700;color:var(--accent);background:var(--paper);border:1px dashed var(--accent)}
+.chainv .vl{position:relative;margin:0;padding:.1em 0 .1em 4.2em;font-size:.74em;font-style:italic;color:var(--muted);min-height:1.5em;display:flex;align-items:center}
+.chainv .vl::before{content:"";position:absolute;left:3.6em;top:0;bottom:.35em;border-left:2px solid var(--accent)}
+.chainv .vl::after{content:"";position:absolute;left:calc(3.6em - 4px);bottom:0;border:5px solid transparent;border-top:6px solid var(--accent);border-bottom:0}
+.chainv .vl.weak::before{border-left-style:dashed;opacity:.75}
+.chainv .vl span{padding-left:.6em}
+@media (max-width:520px){.chainv .vn{grid-template-columns:4.6em minmax(0,1fr)}}
 
 /* footnotes and IPA */
 .fn{font-size:.62em;font-weight:700;color:var(--accent);vertical-align:super;line-height:0;margin-left:.1em;font-style:normal}
@@ -513,19 +511,18 @@ body.presenting .present-nav{display:flex;position:fixed;left:0;right:0;bottom:0
   <span class="no">10</span>
   <p class="kicker">Evidence</p>
   <h2>The Proposed Chain of Transmission</h2>
-  <div class="chainx" aria-label="Timeline of the proposed transmission; each link labelled with its type of evidence">
-    <div class="node"><a class="ph" href="https://commons.wikimedia.org/wiki/File:Ben_ezra_synagogue_%282638677965%29.jpg" target="_blank" rel="noopener" data-alt="Cairo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ben_ezra_synagogue_%282638677965%29.jpg?width=640" alt="Cairo" loading="lazy" decoding="async"></a><b>Egypt</b>Abraham Maimoni (1186–1237), Egyptian pietists</div>
-    <div class="link"><span>personal proximity</span><span class="arrowhead" aria-hidden="true">▸</span></div>
-    <div class="node"><a class="ph" href="https://commons.wikimedia.org/wiki/File:View_over_Akko_%28Acre%29_from_Old_City_Walls_-_Akko_-_Israel_%285693252457%29.jpg" target="_blank" rel="noopener" data-alt="Acre"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/View_over_Akko_%28Acre%29_from_Old_City_Walls_-_Akko_-_Israel_%285693252457%29.jpg?width=640" alt="Acre" loading="lazy" decoding="async"></a><b>Acre, 13th c.</b>David HaNagid (1212–1300), Maimoni’s son; Isaac of Acre (1250–1340); Maimonidean Controversy of 1288</div>
-    <div class="link"><span>citation + manuscript testimony</span><span class="arrowhead" aria-hidden="true">▸</span></div>
-    <div class="node"><a class="ph" href="https://commons.wikimedia.org/wiki/File:Buildings_in_Tzfat%2C_Israel_-_panoramio.jpg" target="_blank" rel="noopener" data-alt="Safed"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Buildings_in_Tzfat%2C_Israel_-_panoramio.jpg?width=640" alt="Safed" loading="lazy" decoding="async"></a><b>Safed, 16th c.</b>Azkiri, Vital (1542–1620), and de Vidas cite Isaac; the <em>Kifayat</em> is still read in Safed (1571)</div>
-    <div class="link"><span>scholarly demonstration</span><span class="arrowhead" aria-hidden="true">▸</span></div>
-    <div class="node"><b>Ramchal</b>(1707–1746): influenced by Vital</div>
-    <div class="link weak"><span>resemblance noted by scholars</span><span class="arrowhead" aria-hidden="true">▸</span></div>
-    <div class="node"><b>18th-century Hasidism</b>Rabbi Nachman of Breslov</div>
-  </div>
-  <p class="cap">Solid line: documented link. Dashed line: the link rests on resemblance alone.</p>
-  <p class="node-credit">Photos (present-day places): Cairo, kmf164, CC BY-SA 2.0; Acre, Adam Jones, CC BY-SA 2.0; Safed, yfrimer, CC BY-SA 3.0; all via Wikimedia Commons.</p>
+  <ol class="chainv" aria-label="The proposed chain of transmission; each arrow labelled with its type of evidence">
+    <li class="vn"><a class="ph" href="https://commons.wikimedia.org/wiki/File:Ben_ezra_synagogue_%282638677965%29.jpg" target="_blank" rel="noopener" data-alt="Cairo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ben_ezra_synagogue_%282638677965%29.jpg?width=640" alt="Cairo" loading="lazy" decoding="async"></a><div><b>Egypt</b>Abraham Maimoni (1186–1237) and the Egyptian pietists</div></li>
+    <li class="vl"><span>personal proximity</span></li>
+    <li class="vn"><a class="ph" href="https://commons.wikimedia.org/wiki/File:View_over_Akko_%28Acre%29_from_Old_City_Walls_-_Akko_-_Israel_%285693252457%29.jpg" target="_blank" rel="noopener" data-alt="Acre"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/View_over_Akko_%28Acre%29_from_Old_City_Walls_-_Akko_-_Israel_%285693252457%29.jpg?width=640" alt="Acre" loading="lazy" decoding="async"></a><div><b>Acre, 13th c.</b>David HaNagid (1212–1300), Maimoni’s son; Isaac of Acre (1250–1340); Maimonidean Controversy of 1288</div></li>
+    <li class="vl"><span>citation + manuscript testimony</span></li>
+    <li class="vn"><a class="ph" href="https://commons.wikimedia.org/wiki/File:Buildings_in_Tzfat%2C_Israel_-_panoramio.jpg" target="_blank" rel="noopener" data-alt="Safed"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Buildings_in_Tzfat%2C_Israel_-_panoramio.jpg?width=640" alt="Safed" loading="lazy" decoding="async"></a><div><b>Safed, 16th c.</b>Azkiri, Vital (1542–1620) and de Vidas cite Isaac; the <em>Kifayat</em> is still read in Safed (1571)</div></li>
+    <li class="vl"><span>scholarly demonstration</span></li>
+    <li class="vn"><span class="ph era">18th c.</span><div><b>Ramchal</b>(1707–1746), influenced by Vital</div></li>
+    <li class="vl weak"><span>resemblance noted by scholars</span></li>
+    <li class="vn"><span class="ph era">18th c.</span><div><b>18th-century Hasidism</b>Rabbi Nachman of Breslov</div></li>
+  </ol>
+  <p class="cap">Solid arrow: documented link. Dashed arrow: the link rests on resemblance alone. <span class="node-credit">Photos (present-day places): Cairo, kmf164, CC BY-SA 2.0; Acre, Adam Jones, CC BY-SA 2.0; Safed, yfrimer, CC BY-SA 3.0; all via Wikimedia Commons.</span></p>
   <p class="src">Weil 2024, pp. 4, 8–9, 12, 14 (nn. 27, 29).</p>
   <aside class="notes"><div class="nh"><span>Speaker notes</span><span>1:30 · cum. 15:00</span></div>
     <ul>
