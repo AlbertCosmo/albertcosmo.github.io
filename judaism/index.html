@@ -158,17 +158,22 @@ table.mx thead .fn{color:var(--accent-ink)}
 .three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0 0 .9em}
 @media (max-width:700px){.three{grid-template-columns:1fr}}
 .icon{display:block;width:1.8em;height:1.8em;color:var(--accent);margin:0 0 .3em}
-.converge{display:flex;justify-content:center;color:var(--accent);margin:-.1em 0 .4em;font-size:1.3em;letter-spacing:2.5em;padding-left:2.5em}
-@media (max-width:700px){.converge{letter-spacing:0;padding-left:0}}
+.converge{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;color:var(--accent);margin:-.45em 0 .3em;font-size:1.5em;line-height:1}
+.converge span:nth-child(1){justify-self:end;padding-right:12%}
+.converge span:nth-child(2){justify-self:center}
+.converge span:nth-child(3){justify-self:start;padding-left:12%}
+@media (max-width:700px){.converge{display:flex;justify-content:center;margin:0 0 .3em}.converge span:not(:nth-child(2)){display:none}}
 
 /* numbered list */
 .slide ol.num{list-style:none;padding:0;counter-reset:n;margin:0 0 .9em}
 ol.num li{counter-increment:n;position:relative;padding-left:2em;margin:0 0 .6em}
 ol.num li::before{content:counter(n);position:absolute;left:0;top:0;width:1.45em;height:1.45em;border-radius:50%;background:var(--accent);color:var(--accent-ink);font-size:.82em;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:.12em}
 
+.pa-wrap{margin-top:0!important;margin-bottom:.5em!important}
 .label-pa{display:inline-block;border:1.5px solid var(--accent);color:var(--accent);border-radius:999px;padding:.12em .75em;font-size:.72em;letter-spacing:.12em;text-transform:uppercase;font-weight:700;margin:0 0 .6em}
 .thanks{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:.4em 1em;border-top:1px solid var(--rule);padding-top:.7em;margin-top:.4em}
-.thanks b{font-family:var(--serif);font-size:1.4em;font-weight:600}
+.thanks b{font-family:var(--serif);font-size:1.25em;font-weight:600}
+.slide .thanks{margin-top:.2em;padding-top:.45em}
 
 /* appendix */
 .appx{background:var(--paper);border:1px solid var(--rule);border-radius:14px;padding:clamp(20px,4.5vw,40px);margin:28px 0 14px;font-size:15px}
@@ -230,6 +235,8 @@ body.presenting .slide.dense{font-size:clamp(15px,min(calc(.85vw + 1vh),2.45vh),
 body.presenting .slide.xdense{font-size:clamp(14px,min(calc(.8vw + .95vh),2.3vh),28px)}
 body.presenting .slide .no{display:none}
 body.presenting .slide .src{margin-top:1.4em}
+body.presenting .slide.xdense .src{margin-top:.6em}
+body.presenting .slide.xdense{padding-top:clamp(18px,3.5vh,56px);padding-bottom:80px}
 body.presenting .hero .ph{aspect-ratio:auto!important;height:24vh}
 body.presenting figure.photo:not(.hero) .ph{max-height:30vh}
 body.presenting .slide.dense figure.photo .ph{max-height:25vh}
@@ -250,7 +257,7 @@ body.presenting .present-nav{display:flex;position:fixed;left:0;right:0;bottom:0
 <main>
 <p class="crumb"><a href="/">Albert Le Thanh Nhan</a> / Judaism</p>
 <h1>Jewish Meditation Reconsidered</h1>
-<p class="lede">A presentation on Matan Weil, <em>Religions</em> 15 (2024): 1232 · 17 slides · about 23 minutes</p>
+<p class="lede">A presentation on Matan Weil, <em>Religions</em> 15 (2024): 1232 · 18 slides · about 25 minutes</p>
 <div class="toolbar">
   <button class="btn primary" type="button" data-act="present">▶ Present</button>
   <button class="btn" type="button" data-act="notes" aria-pressed="false">Speaker notes</button>
@@ -284,8 +291,8 @@ body.presenting .present-nav{display:flex;position:fixed;left:0;right:0;bottom:0
     <li>Critique of Idel’s “concentration” consensus</li>
     <li>Method</li>
     <li>Reconstructing Hitbodedut</li>
-    <li>Comparative evidence</li>
-    <li>Posture, ethos and conclusions</li>
+    <li>Comparative evidence, posture and ethos</li>
+    <li>Conclusions and critique</li>
   </ol>
   <ol class="fns">
     <li><span class="k">1</span><b>Hitbodedut</b> <span class="ipa">/(h)itbodeˈdut/</span>: Hebrew, literally “self-seclusion” (p. 1). For Weil, a three-step solitary meditation ritual; the verb <em>lehitboded</em> <span class="ipa">/lehitboˈded/</span> can mean the whole ritual, physical seclusion alone, or concentration alone, depending on context (p. 7).</li>
@@ -730,21 +737,74 @@ body.presenting .present-nav{display:flex;position:fixed;left:0;right:0;bottom:0
 </section>
 
 <!-- 17 -->
-<section class="slide" aria-label="Slide 17: Weil’s Conclusions">
+<section class="slide dense xdense" aria-label="Slide 17: Weil’s Conclusions">
   <span class="no">17</span>
   <p class="kicker">Interpretation</p>
   <h2>Weil’s Conclusions</h2>
-  <p class="banner">Hitbodedut is a ritual of solitary meditation, practised “since at least the 12th century.”</p>
-  <ul>
-    <li>Proposed transmission: Egyptian pietists → Acre → Safed → Hasidic masters.</li>
-    <li>Methodological lesson: the limits of a strict phenomenology; reconstruct meaning within historical, sociological, and biographical context.</li>
-    <li>Posture and ethos are offered as further, suggestive evidence.</li>
-    <li>Stated application: the contemporary practice of “Indigenous Jewish meditation.”</li>
-  </ul>
+  <p class="banner">Hitbodedut is one continuous ritual of solitary meditation, practised “since at least the 12th century.”</p>
+  <div class="cols">
+    <div class="panel hi"><h3>What Weil concludes</h3>
+      <ul>
+        <li><strong>Practice:</strong> three steps (withdraw from stimuli, direct awareness, concentrate to cleave to God), aimed at Devekut and divine inspiration.</li>
+        <li><strong>Transmission:</strong> Egyptian pietists → Acre (13th c.) → Safed (16th c.) → Ramchal and Hasidism (18th c.).</li>
+        <li><strong>Differences</strong> come from language, individual description and authorial intention, not from separate traditions.</li>
+        <li><strong>Further evidence:</strong> a shared posture and the <em>Hasidim HaRishonim</em> ethos, offered as suggestive.</li>
+      </ul>
+    </div>
+    <div class="panel"><h3>What Weil rejects</h3>
+      <ul>
+        <li>The consensus that Jewish meditation is only “a collection of independent and unrelated techniques.”</li>
+        <li>Idel’s “concentration”: too narrow for a meditative ritual.</li>
+        <li>A strict phenomenology, which “could be crippling” for this field; read texts in historical, sociological and biographical context instead.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="small muted">Stated application: the contemporary practice of “Indigenous Jewish meditation.” A full comparison of the three manuals is left for future research.</p>
+  <p class="src">Weil 2024, pp. 1, 7, 10–13.</p>
+  <aside class="notes"><div class="nh"><span>Speaker notes</span><span>1:30 · cum. 24:00</span></div>
+    <ul>
+      <li>Present these as Weil’s claims, in his terms, before turning to the critique.</li>
+      <li>Weil’s own wording is hedged: “potential transmission” (abstract) and “likely connection” (p. 4).</li>
+    </ul>
+  </aside>
+</section>
+
+<!-- 18 -->
+<section class="slide dense xdense" aria-label="Slide 18: A Critique of Weil’s Argument">
+  <span class="no">18</span>
+  <p class="kicker">Critique</p>
+  <h2>A Critique of Weil’s Argument</h2>
+  <p class="pa-wrap"><span class="label-pa">Presenter’s critique · not Weil’s claims</span></p>
+  <div class="cols">
+    <div class="panel hi"><h3>Strengths</h3>
+      <ul>
+        <li>Brings Fenton’s work and the <em>Kifayat</em> into meditation studies.</li>
+        <li>Gives an explicit definition, so teachings can be compared step by step.</li>
+        <li>Asks about continuity, where earlier work stressed differences.</li>
+        <li>Explains variation by language, description and intention, not separate traditions.</li>
+      </ul>
+    </div>
+    <div class="panel"><h3>Open questions</h3>
+      <ul>
+        <li><strong>Uneven chain:</strong> Egypt → Acre → Safed is documented; Ramchal rests on Koch; Nachman rests on resemblance.</li>
+        <li><strong>Circularity:</strong> the yardstick comes from Maimoni, passages were chosen for resemblance, and the three-step template is broad.</li>
+        <li><strong>Falsifiability:</strong> the esoteric, oral argument explains away the very absence of evidence.</li>
+        <li><strong>Dating:</strong> “since at least the 12th century”, yet Weil’s Table 2 starts in the 13th century.</li>
+        <li><strong>Posture:</strong> the texts are silent on it, so that link is inferred.</li>
+      </ul>
+    </div>
+  </div>
   <div class="thanks"><b>Thank you</b><a href="https://doi.org/10.3390/rel15101232" target="_blank" rel="noopener">https://doi.org/10.3390/rel15101232</a></div>
-  <p class="src">Weil 2024, pp. 12–13.</p>
-  <aside class="notes"><div class="nh"><span>Speaker notes</span><span>0:45 · cum. 23:15</span></div>
-    <p>Present these as Weil’s claims, in his terms. Weil’s own wording is hedged: “potential transmission” (abstract) and “likely connection” (p. 4). Then open the floor for questions.</p>
+  <p class="src">Presenter’s evaluation, based on Weil 2024, pp. 2, 4, 7, 10–11.</p>
+  <aside class="notes"><div class="nh"><span>Speaker notes</span><span>1:30 · cum. 25:30</span></div>
+    <ul>
+      <li>Circularity, an example: Weil chose the Isaac of Acre passage that “strikes a close resemblance to the Kifayat’s Hitbodedut more than any other” (p. 7).</li>
+      <li>Step 3, the most distinctive element, is also the one that varies most: it is “rather distinct” across teachers, as Weil concedes (p. 11).</li>
+      <li>Dating tension: Weil says “since at least the 12th century”, but his principal source, Maimoni, is given as 1186–1237, and Table 2 is headed “13, 16, and 18th centuries” (p. 10). The only figure the article explicitly calls 12th-century is Hananel, cited for posture, not for a Hitbodedut teaching.</li>
+      <li>The posture link is inferential: Weil concedes the examined texts are silent on posture (p. 10).</li>
+      <li>“Meditation” versus “concentration” may be partly terminological, because Weil adopts Persico’s broad definition of meditation: “an intentional action initiated to bring about personal mental transformation of a therapeutic or soteriological nature” (p. 2).</li>
+      <li>Close by opening the floor: what evidence would establish transmission rather than resemblance?</li>
+    </ul>
   </aside>
 </section>
 
@@ -783,7 +843,7 @@ body.presenting .present-nav{display:flex;position:fixed;left:0;right:0;bottom:0
 
 <nav class="present-nav" aria-label="Slide navigation">
   <button class="btn" type="button" data-act="prev" aria-label="Previous slide">←</button>
-  <span class="count" aria-live="polite">1 / 17</span>
+  <span class="count" aria-live="polite">1 / 18</span>
   <button class="btn" type="button" data-act="next" aria-label="Next slide">→</button>
   <button class="btn" type="button" data-act="notes" aria-pressed="false">Notes</button>
   <button class="btn" type="button" data-act="exit">Exit</button>
