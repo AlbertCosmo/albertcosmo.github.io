@@ -215,6 +215,49 @@ footer{margin-top:36px;font-size:13px;color:var(--faint);border-top:1px solid va
 .facts li{padding-left:1em;position:relative}
 .facts li::before{content:"";position:absolute;left:0;top:.62em;width:.42em;height:.42em;border-radius:50%;background:var(--rose)}
 .deck.big .tl li{padding-bottom:.6em}
+/* ---------- deck: Debts Across Lives and Generations ---------- */
+.han{font-family:'Noto Serif CJK TC','Noto Serif TC','Source Han Serif TC','Songti TC','PMingLiU','MingLiU',serif;font-style:normal;font-weight:400}
+.vcols{display:flex;flex-direction:row-reverse;gap:.55em;margin:0;color:var(--rose);font-size:2.25em;line-height:1.2}
+.vcols span{display:flex;flex-direction:column}
+.vcols i{font-style:normal}
+@media (max-width:640px){.vcols{flex-direction:column;gap:.1em;font-size:1.45em;letter-spacing:.08em}.vcols span{flex-direction:row}}
+.slide ul.ladder{padding-left:0}
+.deck.presenting svg.fig.time{max-height:24vh}
+/* three directions of accounting */
+.dirs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0 0 .9em}
+@media (max-width:760px){.dirs{grid-template-columns:1fr}}
+.dir{border:1px solid var(--rule);border-radius:10px;padding:.65em .8em;background:var(--paper)}
+.dir .ic{display:block;font-size:1.5em;line-height:1;margin:0 0 .25em}
+.dir b{display:block;font-family:var(--serif);font-weight:500;font-size:1.08em;line-height:1.25}
+.dir span.s{display:block;font-size:.86em;color:var(--muted);line-height:1.4;margin-top:.25em}
+.dir.rose{border-color:var(--rose);background:var(--rose-soft)}.dir.rose .ic{color:var(--rose)}
+.dir.sea{border-color:var(--sea);background:var(--sea-soft)}.dir.sea .ic{color:var(--sea)}
+.dir.land{border-color:var(--land);background:var(--land-soft)}.dir.land .ic{color:var(--land)}
+/* three lifetimes */
+.lives{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:.5em .7em;align-items:stretch;margin:0 0 .9em}
+.lives .life{border:1px solid var(--rule);border-radius:10px;padding:.6em .75em;background:var(--paper);text-align:center}
+.lives .life.now{border-color:var(--rose);background:var(--rose-soft)}
+.lives .life b{display:block;font-family:var(--serif);font-weight:500;font-size:1.1em}
+.lives .life span{display:block;font-size:.84em;color:var(--muted);line-height:1.35}
+.lives .ar{align-self:center;color:var(--faint);font-size:1.3em}
+@media (max-width:640px){.lives{grid-template-columns:1fr}.lives .ar{transform:rotate(90deg);justify-self:center}}
+/* spectrum of positions */
+.spec{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0 0 .9em;position:relative}
+@media (max-width:760px){.spec{grid-template-columns:1fr}}
+.spec .pos{border:1px solid var(--rule);border-radius:10px;padding:.6em .8em;background:var(--paper)}
+.spec .pos.mid{border-color:var(--sea);background:var(--sea-soft)}
+.spec .pos .ref{display:block;font-size:.74em;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);font-weight:700}
+.spec .pos b{display:block;font-family:var(--serif);font-weight:500;font-size:1.08em;margin:.15em 0 .25em}
+.spec .pos p{font-size:.92em;margin:0}
+.scale{display:flex;justify-content:space-between;font-size:.74em;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);font-weight:700;border-bottom:2px solid var(--rule);padding-bottom:.25em;margin:0 0 .6em}
+/* pronoun ladder */
+.ladder{list-style:none;margin:0 0 .9em;padding:0;display:grid;gap:.5em}
+.ladder li{display:grid;grid-template-columns:7.5em minmax(0,1fr);gap:.8em;align-items:baseline;border-bottom:1px solid var(--rule);padding:.15em 0 .5em}
+.ladder .who2{font-size:.78em;letter-spacing:.06em;text-transform:uppercase;font-weight:700;color:var(--sea)}
+.ladder q{font-family:var(--serif);font-size:1.06em}
+.ladder .ref{font-size:.78em;color:var(--faint);white-space:nowrap}
+@media (max-width:560px){.ladder li{grid-template-columns:1fr;gap:.1em}}
+.han-gloss{display:block;font-size:.86em;color:var(--muted);margin-top:.2em}
 </style>
 </head>
 <body>
@@ -224,6 +267,331 @@ footer{margin-top:36px;font-size:13px;color:var(--faint);border-top:1px solid va
 <p class="lede">Presentations for the course. Select a title to open the full presentation.</p>
 
 <p class="list-head">Presentations</p>
+
+<!-- ===================================================================
+     PRESENTATION 3: Debts Across Lives and Generations
+     =================================================================== -->
+<article class="deck big" id="debts-across-lives">
+<h2><button class="deck-toggle" aria-expanded="false" aria-controls="debts-across-lives-body">
+  <span class="chev" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M4 2l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  <span>
+    <span class="deck-title">Debts Across Lives and Generations: Karma, Inheritance, and the Righteous Sufferer in the Book of Daniel</span>
+    <span class="deck-meta">Albert Le Thanh Nhan · 13 November 2026 · Daniel 5, 9, 12; Exodus 20; Ezekiel 18</span>
+    <span class="deck-hint">17 slides + works cited</span>
+  </span>
+</button></h2>
+
+<div class="deck-body" id="debts-across-lives-body" hidden>
+<div class="toolbar">
+  <button class="btn primary" data-act="present" type="button">▶ Present</button>
+  <button class="btn" data-act="collapse" type="button">Close</button>
+</div>
+
+<!-- 1 -->
+<section class="slide" aria-label="Slide 1">
+  <span class="no">1</span>
+  <div class="title-grid">
+    <div>
+      <p class="kicker">Bible · Comparative reading</p>
+      <h3 class="title">Debts Across Lives and Generations</h3>
+      <p class="claim">Karma, inheritance, and the righteous sufferer in the Book of Daniel</p>
+      <p class="muted">Albert Le Thanh Nhan<br><span class="small">The Bible as Literature · Prof. Koss · 13 November 2026</span></p>
+    </div>
+    <p class="vcols han" lang="vi-Hani" role="img" aria-label="三世因果, nhân quả ba đời, cause and effect across three lifetimes; 共業 別業, shared karma and separate karma"><span aria-hidden="true"><i>三</i><i>世</i><i>因</i><i>果</i></span><span aria-hidden="true"><i>共</i><i>業</i><i>別</i><i>業</i></span></p>
+  </div>
+</section>
+
+<!-- 2 -->
+<section class="slide" aria-label="Slide 2">
+  <span class="no">2</span>
+  <p class="kicker">The question</p>
+  <h3>Where do we look to explain suffering?</h3>
+  <p>Explanations of suffering can look in two directions: <strong>back to causes</strong>, or <strong>forward to an ending</strong>. The Vietnamese religious lens adds a third.</p>
+  <div class="dirs">
+    <div class="dir rose"><span class="ic" aria-hidden="true">⟲</span><b>Across lives</b><span class="s">Buddhist karma, <span class="vi">nghiệp</span> (<span class="han" lang="vi-Hani">業</span>, “deed”): present pain traced to past action, sometimes across many lives, and deeds now bearing fruit in lives to come.</span></div>
+    <div class="dir land"><span class="ic" aria-hidden="true">↓</span><b>Down the family line</b><span class="s">A blend of Buddhist, Confucian, and folk tradition: merit and debt pass from ancestors to descendants.</span></div>
+    <div class="dir sea"><span class="ic" aria-hidden="true">→</span><b>Forward to one end</b><span class="s">The final chapters of Daniel: a settlement at “the end of the days” (Dan. 12.13).</span></div>
+  </div>
+</section>
+
+<!-- 3 -->
+<section class="slide" aria-label="Slide 3">
+  <span class="no">3</span>
+  <p class="kicker">Thesis</p>
+  <h3>Shared debt, different creditors</h3>
+  <p class="claim">Daniel and Vietnamese karmic traditions overlap: both spread guilt beyond the individual, and both let a blameless person suffer with a community. They part on <strong>who</strong> settles the account, and <strong>when</strong>.</p>
+  <div class="cols">
+    <div class="q rose"><strong>Karmic thought.</strong> The account settles itself, through cause and effect across lives.</div>
+    <div class="q"><strong>Daniel.</strong> The account is settled by God, through judgment and mercy, at a single end.</div>
+  </div>
+  <p class="takeaway">They agree most closely not in explanation but in response: both treat inherited debt as a call to repair rather than a verdict on the heir.</p>
+</section>
+
+<!-- 4 -->
+<section class="slide" aria-label="Slide 4">
+  <span class="no">4</span>
+  <p class="kicker">Terms</p>
+  <h3>A vocabulary of deeds and debts</h3>
+  <div class="gloss">
+    <div class="gl"><span class="nom han" lang="vi-Hani">業</span><b>nghiệp</b><span>karma; literally “deed”</span></div>
+    <div class="gl key"><span class="nom han" lang="vi-Hani">三世因果</span><b>nhân quả ba đời</b><span>cause and effect across three lifetimes</span></div>
+    <div class="gl"><span class="nom han" lang="vi-Hani">輪迴</span><b>luân hồi</b><span>the wheel of rebirth</span></div>
+    <div class="gl"><span class="nom han" lang="vi-Hani">別業</span><b>biệt nghiệp</b><span>separate karma: what an individual makes and bears</span></div>
+    <div class="gl"><span class="nom han" lang="vi-Hani">共業</span><b>cộng nghiệp</b><span>shared karma: a group’s common fate</span></div>
+    <div class="gl"><span class="nom han" lang="vi-Hani">功德</span><b>công đức</b><span>merit and virtue, which can outweigh karma</span></div>
+    <div class="gl"><span class="nom han" lang="vi-Hani">盂蘭</span><b>Vu Lan</b><span>the Ullambana festival</span></div>
+    <div class="gl"><span class="nom han" lang="vi-Hani">目犍連</span><b>Mục Kiền Liên</b><span>Maudgalyāyana, the son in the Vu Lan story</span></div>
+    <div class="gl"><span class="nom han" lang="vi-Hani">迴向功德</span><b>hồi hướng công đức</b><span>transferring one’s merit to others</span></div>
+  </div>
+</section>
+
+<!-- 5 -->
+<section class="slide" aria-label="Slide 5">
+  <span class="no">5</span>
+  <p class="kicker">Background · Karma looks both ways</p>
+  <h3>Nhân quả ba đời: cause and effect across three lifetimes</h3>
+  <div class="lives" aria-label="Deeds in each lifetime bear fruit in what follows">
+    <div class="life"><b>Past</b><span>deeds already done</span></div>
+    <span class="ar" aria-hidden="true">→</span>
+    <div class="life now"><b>Present</b><span>receives their fruit, plants new seed</span></div>
+    <span class="ar" aria-hidden="true">→</span>
+    <div class="life"><b>Lives to come</b><span>receive the fruit of the present</span></div>
+  </div>
+  <p>Karma often looks <strong>backward</strong>, tracing present pain to past action. Yet it also looks <strong>forward</strong>: deeds done in the past, the present, and lives still to come each bear fruit in what follows.</p>
+  <p class="takeaway">Daniel also looks forward, but to something different: one settlement at the end.</p>
+</section>
+
+<!-- 6 -->
+<section class="slide" aria-label="Slide 6">
+  <span class="no">6</span>
+  <p class="kicker">Part I · Shared fate</p>
+  <h3>Separate karma and shared karma</h3>
+  <div class="cols wide-left">
+    <div>
+      <p><span class="tag rose">biệt nghiệp</span> <span class="han" lang="vi-Hani">別業</span>, the karma an individual makes and bears.</p>
+      <p><span class="tag rose">cộng nghiệp</span> <span class="han" lang="vi-Hani">共業</span>, the karma of a group, which shapes a common fate.</p>
+      <p>A person may be <strong>pure in individual karma</strong> and still share in the collective karma of a family, a village, or a nation.</p>
+      <p class="takeaway">Daniel 9 offers the closest biblical analogue to this case.</p>
+    </div>
+    <svg class="fig narrow" viewBox="0 0 320 320" role="img" aria-label="Nested circles: the individual at the center, inside a family, inside a village, inside a nation. Separate karma belongs to the center; shared karma to each larger circle.">
+      <circle cx="160" cy="160" r="150" fill="var(--rose-soft)" stroke="var(--rose)" stroke-width="1.5"/>
+      <circle cx="160" cy="175" r="112" fill="var(--paper)" stroke="var(--rose)" stroke-width="1.5" opacity=".9"/>
+      <circle cx="160" cy="190" r="74" fill="var(--rose-soft)" stroke="var(--rose)" stroke-width="1.5"/>
+      <circle cx="160" cy="205" r="36" fill="var(--paper)" stroke="var(--ink)" stroke-width="2"/>
+      <text x="160" y="42" text-anchor="middle" font-size="16" font-weight="700" class="t-muted">nation</text>
+      <text x="160" y="92" text-anchor="middle" font-size="16" font-weight="700" class="t-muted">village</text>
+      <text x="160" y="146" text-anchor="middle" font-size="16" font-weight="700" class="t-muted">family</text>
+      <text x="160" y="201" text-anchor="middle" font-size="13" font-weight="700">one</text>
+      <text x="160" y="217" text-anchor="middle" font-size="13" font-weight="700">person</text>
+    </svg>
+  </div>
+</section>
+
+<!-- 7 -->
+<section class="slide" aria-label="Slide 7">
+  <span class="no">7</span>
+  <p class="kicker">Part I · Daniel 9</p>
+  <h3>A blameless man prays in the first person plural</h3>
+  <ul class="ladder" aria-label="How Daniel's confession widens and narrows">
+    <li><span class="who2">We</span><span><q>We have sinned, and have committed iniquity, and have done wickedly, and have rebelled</q> <span class="ref">9.5</span></span></li>
+    <li><span class="who2">Our fathers</span><span><q>for our sins, and for the iniquities of our fathers, Jerusalem and thy people are become a reproach</q> <span class="ref">9.16</span></span></li>
+    <li><span class="who2">I, and my people</span><span><q>confessing my sin and the sin of my people Israel</q> <span class="ref">9.20</span></span></li>
+  </ul>
+  <p>The confession reaches back to earlier generations. Only the narrative frame (9.20) names Daniel’s own share, and the narrative names no particular sin of his.</p>
+</section>
+
+<!-- 8 -->
+<section class="slide" aria-label="Slide 8">
+  <span class="no">8</span>
+  <p class="kicker">Part I · Judgment from above</p>
+  <h3>The debt is not paid down; it is forgiven</h3>
+  <div class="q">“Therefore the curse is poured upon us, and the oath that is written in the law of Moses.”<cite>Dan. 9.11</cite></div>
+  <p>Collective suffering in Daniel is a <strong>judgment delivered from above</strong>. The difference matters:</p>
+  <div class="cols">
+    <div class="q rose"><strong>Karma</strong> can be outweighed by later merit, <span class="vi">công đức</span> (<span class="han" lang="vi-Hani">功德</span>). It cannot be forgiven without anyone paying the debt.</div>
+    <div class="q"><strong>Daniel’s petition</strong> depends on forgiveness: “we do not present our supplications before thee for our righteousnesses, but for thy great mercies” (9.18).</div>
+  </div>
+</section>
+
+<!-- 9 -->
+<section class="slide" aria-label="Slide 9">
+  <span class="no">9</span>
+  <p class="kicker">Part II · The family line</p>
+  <h3>Two proverbs, one symmetrical logic</h3>
+  <p>Vietnamese folk tradition, shaped by Confucian ancestor veneration as much as by Buddhism, holds that merit and debt pass down the family line.</p>
+  <div class="cols">
+    <div class="q land"><span class="vi-line">“Cha mẹ hiền lành để đức cho con.”</span>“Kind parents leave virtue to their children.”<span class="han-gloss"><span class="han" lang="zh-Hant">父母賢良，留德於子</span></span><cite>Merit passes down</cite></div>
+    <div class="q rose"><span class="vi-line">“Đời cha ăn mặn, đời con khát nước.”</span>“The father’s generation eats salt, the child’s generation thirsts.”<span class="han-gloss"><span class="han" lang="zh-Hant">父輩食鹹，子輩口渴</span></span><cite>Debt passes down</cite></div>
+  </div>
+  <p class="takeaway">If descendants inherit their ancestors’ merit, they also inherit their debts.</p>
+</section>
+
+<!-- 10 -->
+<section class="slide" aria-label="Slide 10">
+  <span class="no">10</span>
+  <p class="kicker">Part II · The Bible is divided</p>
+  <h3>Does guilt pass from father to son?</h3>
+  <div class="scale" aria-hidden="true"><span>Inherited</span><span>Not inherited</span></div>
+  <div class="spec">
+    <div class="pos"><span class="ref">Exodus 20.5–6</span><b>Both directions, unequally</b><p>God visits “the iniquity of the fathers upon the children unto the third and fourth [generation],” yet shows “mercy unto thousands.”</p></div>
+    <div class="pos mid"><span class="ref">Daniel 9</span><b>Between the two</b><p>Confesses the fathers’ iniquities without claiming to have committed them.</p></div>
+    <div class="pos"><span class="ref">Ezekiel 18.20</span><b>No transfer</b><p>“The son shall not bear the iniquity of the father.”</p></div>
+  </div>
+  <p class="small muted">Ezekiel argues against a proverb much like the Vietnamese one: “The fathers have eaten sour grapes, and the children’s teeth are set on edge” (Ezek. 18.2).</p>
+</section>
+
+<!-- 11 -->
+<section class="slide" aria-label="Slide 11">
+  <span class="no">11</span>
+  <p class="kicker">Part III · Debt as a task</p>
+  <h3>Vu Lan: a son who cannot free his mother alone</h3>
+  <div class="cols">
+    <div class="flow" aria-label="The Vu Lan story in four steps">
+      <div class="step">Mục Kiền Liên’s mother suffers after death.</div>
+      <div class="arrow" aria-hidden="true">↓</div>
+      <div class="step">He cannot free her by his own power.</div>
+      <div class="arrow" aria-hidden="true">↓</div>
+      <div class="step">Offerings are made to the monastic community.</div>
+      <div class="arrow" aria-hidden="true">↓</div>
+      <div class="step end-land">She is relieved.</div>
+    </div>
+    <div>
+      <p>Each year at Vu Lan (<span class="han" lang="vi-Hani">盂蘭</span>, Ullambana), descendants dedicate their own merit to their ancestors: <span class="vi">hồi hướng công đức</span> (<span class="han" lang="vi-Hani">迴向功德</span>).</p>
+      <p class="takeaway">Popular practice treats descendants as able to help settle an ancestor’s account.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 12 -->
+<section class="slide" aria-label="Slide 12">
+  <span class="no">12</span>
+  <p class="kicker">Part III · Daniel 9 works the same way</p>
+  <h3>Taking up a debt without claiming the guilt</h3>
+  <div class="cols">
+    <div class="q land"><strong>The Vu Lan offering.</strong> A son, and every descendant after him, gives merit for a mother’s suffering that he did not cause.</div>
+    <div class="q"><strong>Daniel’s prayer.</strong> Daniel does not claim his ancestors’ guilt as his own; he takes up their debt through <strong>confession</strong> and <strong>intercession</strong>.</div>
+  </div>
+  <div class="q">“O Lord, hear; O Lord, forgive; O Lord, hearken and do; defer not.”<cite>Dan. 9.19</cite></div>
+  <p class="takeaway">In both, the heir answers an inherited debt with an act of repair.</p>
+</section>
+
+<!-- 13 -->
+<section class="slide" aria-label="Slide 13">
+  <span class="no">13</span>
+  <p class="kicker">Part IV · Time</p>
+  <h3>Many births, or one life and one ending</h3>
+  <div class="cols">
+    <div>
+      <svg class="fig time" viewBox="0 0 300 190" role="img" aria-label="A wheel: birth, life, death and rebirth turning in a cycle">
+        <circle cx="150" cy="95" r="62" fill="none" stroke="var(--rose)" stroke-width="3"/>
+        <polygon points="203,88 221,88 212,103" fill="var(--rose)"/>
+        <polygon points="79,102 97,102 88,87" fill="var(--rose)"/>
+        <text x="150" y="91" text-anchor="middle" font-size="18" class="t-land serif">luân hồi</text>
+        <text x="150" y="113" text-anchor="middle" font-size="13" class="t-muted">the wheel of rebirth</text>
+        <text x="150" y="186" text-anchor="middle" font-size="13" class="t-muted">goal: to be freed from the cycle</text>
+      </svg>
+      <p class="small">In Buddhist thought, accounts can be settled across repeated births, <span class="vi">luân hồi</span> (<span class="han" lang="vi-Hani">輪迴</span>).</p>
+    </div>
+    <div>
+      <svg class="fig time" viewBox="0 0 300 190" role="img" aria-label="A single line running from life through the sleep of death to the end of the days">
+        <line x1="20" y1="95" x2="262" y2="95" stroke="var(--sea)" stroke-width="3"/>
+        <circle cx="20" cy="95" r="7" fill="var(--sea)"/>
+        <line x1="270" y1="70" x2="270" y2="120" stroke="var(--sea)" stroke-width="4"/>
+        <text x="20" y="75" font-size="14" class="t-muted">one life</text>
+        <text x="140" y="75" text-anchor="middle" font-size="14" class="t-muted">sleep in the dust</text>
+        <text x="270" y="145" text-anchor="end" font-size="15" class="t-sea serif">the end of the days</text>
+        <text x="150" y="186" text-anchor="middle" font-size="13" class="t-muted">goal: to stand in one’s lot</text>
+      </svg>
+      <p class="small">Daniel offers one life and one ending.</p>
+    </div>
+  </div>
+  <div class="q">“Many of them that sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt. And they that be wise shall shine as the brightness of the firmament.”<cite>Dan. 12.2–3</cite></div>
+</section>
+
+<!-- 14 -->
+<section class="slide" aria-label="Slide 14">
+  <span class="no">14</span>
+  <p class="kicker">Part IV · Grown or given</p>
+  <h3>“Thou shalt rest, and stand in thy lot”</h3>
+  <div class="q">“But go thou thy way till the end be: for thou shalt rest, and stand in thy lot at the end of the days.”<cite>Dan. 12.13, the last words to Daniel</cite></div>
+  <p>Resurrection addresses the same problem that rebirth addresses in karmic thought: <strong>suffering not repaid within a single lifetime</strong>. Both look forward, but differently.</p>
+  <div class="cols">
+    <div class="q rose"><strong>Grown.</strong> In <span class="vi">nhân quả ba đời</span>, the future grows out of deeds already done and still being done; each life receives the fruit of the last and plants the seed of the next.</div>
+    <div class="q"><strong>Given.</strong> A <strong>lot</strong> is assigned by God rather than produced by one’s deeds, though deeds are weighed in the assigning. It waits at the end rather than following from each prior act.</div>
+  </div>
+</section>
+
+<!-- 15 -->
+<section class="slide" aria-label="Slide 15">
+  <span class="no">15</span>
+  <p class="kicker">Part V · Responsibility</p>
+  <h3>Belshazzar inherits knowledge; Daniel inherits a debt</h3>
+  <div class="q">“And thou his son, O Belshazzar, hast not humbled thine heart, though thou knewest all this.”<cite>Dan. 5.22</cite></div>
+  <div class="cols">
+    <div>
+      <p><span class="tag ink">Belshazzar</span> Condemned not for his father’s pride but for failing to learn from it. What he inherits is <strong>knowledge</strong>, and his guilt lies in ignoring it.</p>
+    </div>
+    <div>
+      <p><span class="tag sea">Daniel</span> Suffers exile with Israel, yet the narrative never names a sin of his own, even as he includes himself in the confession (9.20).</p>
+    </div>
+  </div>
+  <p class="takeaway">In Vietnamese terms, Daniel’s <span class="vi">biệt nghiệp</span> is light, while he still bears the <span class="vi">cộng nghiệp</span> of his people.</p>
+</section>
+
+<!-- 16 -->
+<section class="slide" aria-label="Slide 16">
+  <span class="no">16</span>
+  <p class="kicker">Synthesis</p>
+  <h3>Where the two accounts agree and part</h3>
+  <div class="tw">
+  <table class="cmp">
+    <thead><tr><th scope="col"></th><th scope="col">Vietnamese karmic traditions</th><th scope="col">Book of Daniel</th></tr></thead>
+    <tbody>
+      <tr><th scope="row">Shared fate</th><td><span class="vi">Cộng nghiệp</span>: a family, village, or nation shares karma</td><td>“We have sinned”: Daniel confesses for Israel</td></tr>
+      <tr><th scope="row">Inheritance</th><td>Merit and debt pass down the family line</td><td>“The iniquities of our fathers” (9.16)</td></tr>
+      <tr><th scope="row">Who settles</th><td>The account settles itself, through cause and effect</td><td class="hl">God, through judgment and mercy</td></tr>
+      <tr><th scope="row">When</th><td>Across lives: past, present, and lives to come</td><td class="hl">At a single end: “the end of the days”</td></tr>
+      <tr><th scope="row">Relief</th><td>Outweighed by merit, which descendants can transfer</td><td>Forgiven: “for thy great mercies” (9.18)</td></tr>
+      <tr><th scope="row">Response</th><td>The Vu Lan offering for one’s mother</td><td>Confession and intercession for one’s fathers</td></tr>
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<!-- 17 -->
+<section class="slide" aria-label="Slide 17">
+  <span class="no">17</span>
+  <p class="kicker">Conclusion</p>
+  <h3>Different explanations, a shared duty of repair</h3>
+  <div class="cols">
+    <div class="q rose">Karma and the bloodline model read suffering as <strong>one link in a chain</strong> of cause and effect that runs from past lives through the present into lives to come.</div>
+    <div class="q">Daniel reads it as <strong>a judgment that only God can lift</strong>, by mercy now or at the end.</div>
+  </div>
+  <p class="takeaway">Daniel’s confession for his fathers and the Vu Lan offering for one’s mother both treat inherited debt as a duty of repair. That shared response may matter more than the competing explanations.</p>
+  <p class="kicker" style="margin-top:1.2em">For discussion</p>
+  <ol class="qs">
+    <li>Is confessing “the iniquities of our fathers” a way of accepting their guilt, or of refusing to repeat it?</li>
+    <li>Ezekiel rejects the sour-grapes proverb (18.2, 18.20). Does Daniel 9 reject it too, or quietly keep it?</li>
+    <li>If a lot is “given” rather than “grown,” why does Daniel still weigh deeds in the assigning?</li>
+  </ol>
+</section>
+
+<section class="slide wc" aria-label="Works cited">
+  <p class="kicker">Work cited</p>
+  <p><em>The Bible: Authorized King James Version</em>. Edited by Robert Carroll and Stephen Prickett, Oxford UP, 2008.</p>
+  <p class="kicker" style="margin-top:1.2em">Notes</p>
+  <p class="small">Chinese characters for Vietnamese terms and the classical Chinese renderings of the two proverbs (slide 9) follow the presenter’s essay. English translations of Vietnamese by the presenter. Diagrams were drawn for this presentation.</p>
+</section>
+
+<div class="present-nav">
+  <button class="btn" data-act="prev" type="button" aria-label="Previous slide">←</button>
+  <span class="count" aria-live="polite"></span>
+  <button class="btn" data-act="next" type="button" aria-label="Next slide">→</button>
+  <button class="btn" data-act="exit" type="button">Exit</button>
+</div>
+</div>
+</article>
+
 
 <!-- ===================================================================
      PRESENTATION 2: Kneaded, Beaten, and Unbowed
