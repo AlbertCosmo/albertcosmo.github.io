@@ -129,6 +129,33 @@
   .vocab dd{margin:0; font-size:16.5px; color:var(--mute); line-height:1.5}
   .vocab dd i{color:var(--ink)}
 
+  /* TRUE / FALSE / NOT GIVEN guide */
+  .guide{margin:4px 0 14px; padding:16px 18px; background:var(--bg); border:1px solid var(--rule); border-left:4px solid var(--accent);
+         border-radius:8px; font-size:16.5px; line-height:1.55; color:var(--mute)}
+  .guide .gh{margin:0 0 8px; font-size:14px; letter-spacing:.08em; text-transform:uppercase; font-weight:700; color:var(--ink)}
+  .guide .gh + .extext, .guide dl + .gh{margin-top:14px}
+  .tg{display:inline-block; min-width:92px; padding:1px 8px; border-radius:5px; font-size:13px; font-weight:700; letter-spacing:.04em;
+      text-align:center; border:1.5px solid currentColor; white-space:nowrap}
+  .tg.t{color:var(--ok)} .tg.f{color:var(--bad)} .tg.n{color:var(--faint)}
+  .tfdef{display:grid; grid-template-columns:auto 1fr; gap:8px 12px; margin:0; align-items:baseline}
+  .tfdef dt, .tfdef dd{margin:0}
+  .tfdef dt, .exs .tg{justify-self:start}
+  .tfdef dd b{color:var(--ink)}
+  .extext{margin:0 0 10px; padding:10px 14px; background:var(--card); border-radius:6px; color:var(--ink); font-style:italic}
+  .exs{list-style:none; margin:0; padding:0; display:grid; gap:10px}
+  .exs li{display:grid; grid-template-columns:auto 1fr; gap:2px 12px; align-items:baseline}
+  .exs .st{color:var(--ink); font-weight:500}
+  .exs .why{grid-column:2; font-size:15.5px}
+  .gtip{margin:12px 0 0}
+  .gtip b{color:var(--ink)}
+  @media (max-width:600px){
+    .guide{padding:14px; font-size:16px}
+    .tfdef{grid-template-columns:1fr; gap:2px}
+    .tfdef dd{margin-bottom:8px}
+    .exs li{grid-template-columns:1fr}
+    .exs .why{grid-column:1}
+  }
+
   /* Highlighting: student highlights (yellow) and answer evidence (accent) */
   .hint{font-size:15px; color:var(--faint); line-height:1.4; flex:1 1 220px}
   .ctl.sm{font-size:14.5px; padding:5px 12px; margin-top:10px}
@@ -305,6 +332,26 @@
     ['G','the introduced species may have less ecological significance than the original ones.']
   ];
 
+  // Shown before Questions 27-32. The example text is not from the test, so it gives nothing away.
+  var TFNG_GUIDE =
+    '<p class="gh">Before you start: TRUE, FALSE or NOT GIVEN?</p>' +
+    '<dl class="tfdef">' +
+      '<dt><span class="tg t">TRUE</span></dt><dd>The passage <b>says the same thing</b> as the statement, usually in different words.</dd>' +
+      '<dt><span class="tg f">FALSE</span></dt><dd>The passage <b>says the opposite</b>. The statement and the passage cannot both be right.</dd>' +
+      '<dt><span class="tg n">NOT GIVEN</span></dt><dd>The passage <b>does not say</b>. There is not enough information to decide whether the statement is right or wrong.</dd>' +
+    '</dl>' +
+    '<p class="gh">Example</p>' +
+    '<p class="extext">&ldquo;The city library opened in 1998. It is open every day except Sunday, and most of its visitors are students.&rdquo;</p>' +
+    '<ul class="exs">' +
+      '<li><span class="tg t">TRUE</span><span class="st">The library is closed on Sundays.</span><span class="why"><i>Every day except Sunday</i> means the same as <i>closed on Sundays</i>.</span></li>' +
+      '<li><span class="tg f">FALSE</span><span class="st">The library is open seven days a week.</span><span class="why">The passage says the opposite: it is <i>not</i> open on Sunday.</span></li>' +
+      '<li><span class="tg f">FALSE</span><span class="st">All of the library&rsquo;s visitors are students.</span><span class="why">The passage says <i>most</i>, not <i>all</i>. Small words like <i>all, only, always, never</i> often make a statement FALSE.</span></li>' +
+      '<li><span class="tg n">NOT GIVEN</span><span class="st">The library is the largest in the city.</span><span class="why">The passage says nothing about its size.</span></li>' +
+      '<li><span class="tg n">NOT GIVEN</span><span class="st">More students use the library now than in 1998.</span><span class="why">The passage mentions 1998, but it never compares the numbers then and now.</span></li>' +
+    '</ul>' +
+    '<p class="gtip"><b>FALSE or NOT GIVEN?</b> Find the part of the passage the statement is about and ask: <i>does the passage say the opposite?</i> If yes, the answer is FALSE. If the passage is simply silent, the answer is NOT GIVEN.</p>' +
+    '<p class="gtip"><b>Use only the passage.</b> Do not use what you know about the world. A statement that is true in real life is still NOT GIVEN if the passage does not say it.</p>';
+
   /* Question types:
      mcq   one letter from opts, buttons
      tfng  TRUE / FALSE / NOT GIVEN buttons
@@ -411,7 +458,7 @@
     },
     3: {
       groups: [
-        { h:'Questions 27–32', ins:'Do the following statements agree with the information given in the passage? Choose TRUE if the statement agrees with the information, FALSE if it contradicts the information, NOT GIVEN if there is no information on this.', qs:[
+        { h:'Questions 27–32', ins:'Do the following statements agree with the information given in the passage? Choose TRUE if the statement agrees with the information, FALSE if it contradicts the information, NOT GIVEN if there is no information on this.', guide:TFNG_GUIDE, qs:[
           { n:27, t:'tfng', q:'When Peter Osbeck visited Ascension, he found no inhabitants on the island.', a:'NOT GIVEN',
             ex:'Osbeck describes <q>a heap of ruinous rocks</q>, a bare mountain and a few plant species. He says nothing about whether people lived there. (The navy garrison is mentioned only for 1843, almost a century later.)' },
           { n:28, t:'tfng', q:'The natural vegetation on the island contained some species which were found nowhere else.', a:'TRUE',
@@ -627,6 +674,7 @@
       var gr = el('div','grp');
       gr.appendChild(el('h4', null, g.h));
       gr.appendChild(el('p','ins', g.ins));
+      if (g.guide) gr.appendChild(el('div','guide', g.guide));
       if (g.list){
         var l = el('div','list');
         g.list.forEach(function(it){ l.appendChild(el('div', null, '<b>' + it[0] + '</b>' + it[1])); });
@@ -654,10 +702,12 @@
 
     // Student highlighter controls in the top bar
     var topBar = box.querySelector('.bar');
+    var hb = el('button','ctl hlbar','Highlight'); hb.type = 'button';
     var clr = el('button','ctl','Clear highlights'); clr.type = 'button';
     clr.addEventListener('click', function(){ art.querySelectorAll('mark.hl').forEach(unwrap); });
+    topBar.appendChild(hb);
     topBar.appendChild(clr);
-    topBar.appendChild(el('span','hint','Select words in the passage, then press <b>Highlight</b>. Tap a highlight to remove it.'));
+    topBar.appendChild(el('span','hint','Select words in the passage, then press <b>Highlight</b>. Click or tap a highlight to remove it.'));
 
     // In the passage: tap a highlight to remove it; tap marked evidence to jump to its question
     art.addEventListener('click', function(e){
@@ -818,33 +868,71 @@
   document.body.appendChild(hlBtn);
   var pending = null, selTimer = null;
   function hideBtn(){ hlBtn.hidden = true; }
-  function checkSel(){
+  function inText(n){
+    if (!n) return null;
+    if (n.nodeType !== 1) n = n.parentNode;
+    return n && n.closest ? n.closest('.text') : null;
+  }
+  // The current selection, trimmed to a single passage. Browsers differ here:
+  // a Mac triple-click or a drag past the last paragraph ends the selection
+  // outside the passage, so clip it rather than reject it.
+  function passageRange(){
     var s = window.getSelection();
-    if (!s || !s.rangeCount || s.isCollapsed){ hideBtn(); return; }
-    var r = s.getRangeAt(0), c = r.commonAncestorContainer;
-    if (c.nodeType === 3) c = c.parentNode;
-    if (!c.closest || !c.closest('.text') || !r.toString().trim()){ hideBtn(); return; }
-    pending = r.cloneRange();
+    if (!s || !s.rangeCount || s.isCollapsed) return null;
+    var r = s.getRangeAt(0).cloneRange();
+    var a1 = inText(r.startContainer), a2 = inText(r.endContainer), a = a1 || a2;
+    if (!a) return null;
+    if (a1 !== a) r.setStart(a, 0);
+    if (a2 !== a) r.setEnd(a, a.childNodes.length);
+    if (!r.toString().trim()) return null;
+    return r;
+  }
+  function checkSel(){
+    var r = passageRange();
+    if (!r){ pending = null; hideBtn(); return; }
+    pending = r;
     var rect = r.getBoundingClientRect();
+    if (!rect.width && !rect.height){ var rs = r.getClientRects(); if (rs.length) rect = rs[rs.length - 1]; }
     hlBtn.hidden = false;
     var bw = hlBtn.offsetWidth, bh = hlBtn.offsetHeight;
     var top = rect.bottom + 10;
-    if (top + bh > window.innerHeight - 8) top = Math.max(8, rect.top - bh - 10);
+    if (top + bh > window.innerHeight - 8) top = rect.top - bh - 10;
+    top = Math.min(Math.max(8, top), window.innerHeight - bh - 8);  // always keep it on screen
     var left = Math.min(Math.max(8, rect.left + rect.width / 2 - bw / 2), window.innerWidth - bw - 8);
     hlBtn.style.top = top + 'px'; hlBtn.style.left = left + 'px';
   }
-  document.addEventListener('selectionchange', function(){ clearTimeout(selTimer); selTimer = setTimeout(checkSel, 150); });
+  // Several triggers, because browsers fire selection events differently:
+  // selectionchange (all modern browsers), plus mouseup / keyup / touchend as a backstop.
+  function soon(ms){ clearTimeout(selTimer); selTimer = setTimeout(checkSel, ms); }
+  document.addEventListener('selectionchange', function(){ soon(150); });
+  document.addEventListener('mouseup', function(){ soon(20); });
+  document.addEventListener('keyup', function(){ soon(20); });
+  document.addEventListener('touchend', function(){ soon(350); });
   document.addEventListener('scroll', function(){ if (!hlBtn.hidden) checkSel(); }, true);
   window.addEventListener('resize', hideBtn);
   function applyHL(){
-    if (!pending) return;
-    wrapRange(pending, function(){ var m = document.createElement('mark'); m.className = 'hl'; return m; });
+    var r = pending || passageRange();
+    if (!r) return false;
+    wrapRange(r, function(){ var m = document.createElement('mark'); m.className = 'hl'; return m; });
     pending = null; hideBtn();
     var s = window.getSelection(); if (s) s.removeAllRanges();
+    return true;
   }
-  // Act on pointerdown so the selection is still there (touch screens clear it on tap).
-  hlBtn.addEventListener('pointerdown', function(e){ e.preventDefault(); applyHL(); });
-  hlBtn.addEventListener('click', applyHL);
+  // Apply on press, before the browser can clear the selection: pointer events
+  // where supported, with mousedown / touchstart for older Safari and Android.
+  var pressed = 0;
+  function onPress(e){
+    if (e.type !== 'click'){ e.preventDefault(); pressed = Date.now(); applyHL(); }
+    else if (Date.now() - pressed > 600) applyHL();
+  }
+  function bindPress(btn){
+    if (window.PointerEvent) btn.addEventListener('pointerdown', onPress);
+    else { btn.addEventListener('mousedown', onPress); btn.addEventListener('touchstart', onPress); }
+    btn.addEventListener('click', onPress);
+  }
+  bindPress(hlBtn);
+  // The fixed "Highlight" button in each passage's top bar does the same thing.
+  document.querySelectorAll('.hlbar').forEach(bindPress);
 
   // Open a passage when linked as #passage-N.
   if (/^#passage-[123]$/.test(location.hash)){
