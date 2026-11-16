@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>TOEIC Final Exam</title>
+<meta name="theme-color" content="#fbfaf8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#141414" media="(prefers-color-scheme: dark)">
+<style>
+  :root{
+    --bg:#fbfaf8; --ink:#0d0d0d; --mute:#57554f; --faint:#7a776f;
+    --rule:#ddd9d3; --card:#ffffff; --accent:#6b1723; --accent-bg:#f6e9eb;
+    --ok:#1f6f43; --warn:#a3281a; --warn-bg:#fff4f2;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#141414; --ink:#f5f3f0; --mute:#c8c6c2; --faint:#9a9893;
+           --rule:#343434; --card:#1c1c1c; --accent:#eb9ba5; --accent-bg:#2c1c1f;
+           --ok:#6fd39a; --warn:#ff9c8c; --warn-bg:#2a1a18; }
+  }
+  *{box-sizing:border-box}
+  [hidden]{display:none !important}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0; background:var(--bg); color:var(--ink);
+       font:17px/1.5 ui-sans-serif,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans TC",sans-serif;
+       -webkit-font-smoothing:antialiased}
+  button,input{font:inherit; color:inherit}
+  .wrap{max-width:760px; margin:0 auto; padding:16px 16px 120px}
+  .panel{background:var(--card); border:1px solid var(--rule); border-radius:12px; padding:18px; margin:14px 0}
+  h1{font-size:22px; margin:8px 0 4px; letter-spacing:-.01em}
+  .sub{color:var(--mute); margin:0 0 8px; font-size:15px}
+  label{display:block; font-size:14px; font-weight:600; color:var(--mute); margin:14px 0 6px}
+  input[type=text]{width:100%; border:1px solid var(--rule); border-radius:10px; padding:12px;
+                   background:var(--bg); font-size:17px}
+  input:focus{outline:2px solid var(--accent); outline-offset:1px}
+  .btn{border:1px solid var(--rule); background:var(--card); border-radius:10px;
+       padding:12px 18px; cursor:pointer; font-weight:600; font-size:16px; min-height:46px}
+  .btn.primary{background:var(--accent); border-color:var(--accent); color:#fff}
+  @media (prefers-color-scheme: dark){ .btn.primary{color:#141414} }
+  .btn:disabled{opacity:.45; cursor:default}
+  .btn.wide{width:100%; margin-top:18px}
+  .err{color:var(--warn); background:var(--warn-bg); border-radius:8px; padding:10px 12px; margin-top:14px; font-size:15px}
+  .note{font-size:14px; color:var(--faint)}
+
+  /* exam header */
+  .top{position:sticky; top:0; z-index:5; background:var(--bg); border-bottom:1px solid var(--rule);
+       padding:10px 16px; padding-top:max(10px, env(safe-area-inset-top))}
+  .top .in{max-width:760px; margin:0 auto; display:flex; align-items:center; gap:10px}
+  .top .sec{font-weight:700; font-size:15px; margin-right:auto; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+  .timer{font-variant-numeric:tabular-nums; font-weight:700; font-size:17px; padding:4px 10px; border-radius:8px; background:var(--card); border:1px solid var(--rule)}
+  .timer.low{color:var(--warn); border-color:var(--warn)}
+  .chip{border:1px solid var(--rule); background:var(--card); border-radius:999px; padding:6px 12px;
+        font-size:14px; cursor:pointer; font-variant-numeric:tabular-nums; white-space:nowrap}
+
+  .dir{font-size:14px; color:var(--mute); background:var(--accent-bg); border-radius:10px; padding:10px 12px; margin:12px 0}
+  .passage{white-space:pre-wrap; background:var(--card); border:1px solid var(--rule); border-radius:12px;
+           padding:16px; margin:12px 0; font-size:16px; line-height:1.6}
+  .media img{max-width:100%; border-radius:10px; border:1px solid var(--rule); display:block; margin:12px auto}
+  .player{display:flex; align-items:center; gap:12px; background:var(--card); border:1px solid var(--rule);
+          border-radius:12px; padding:12px; margin:12px 0}
+  .player .bar{flex:1; height:6px; background:var(--rule); border-radius:3px; overflow:hidden}
+  .player .bar i{display:block; height:100%; width:0; background:var(--accent)}
+  .player .left{font-size:13px; color:var(--faint); white-space:nowrap}
+
+  .q{background:var(--card); border:1px solid var(--rule); border-radius:12px; padding:14px; margin:12px 0}
+  .q .qt{display:flex; gap:10px; font-weight:600; margin-bottom:10px}
+  .q .qn{flex:none; color:var(--accent); font-variant-numeric:tabular-nums}
+  .opts{display:grid; gap:8px}
+  .opts.letters{grid-template-columns:repeat(auto-fit, minmax(64px, 1fr))}
+  .opt{display:flex; align-items:center; gap:12px; text-align:left; width:100%; cursor:pointer;
+       border:1.5px solid var(--rule); background:var(--bg); border-radius:10px; padding:11px 12px; min-height:48px}
+  .opt b{flex:none; width:30px; height:30px; border-radius:50%; border:1.5px solid var(--rule);
+         display:grid; place-items:center; font-size:15px}
+  .opts.letters .opt{justify-content:center}
+  .opt[aria-checked=true]{border-color:var(--accent); background:var(--accent-bg)}
+  .opt[aria-checked=true] b{background:var(--accent); border-color:var(--accent); color:var(--bg)}
+
+  .nav{position:fixed; left:0; right:0; bottom:0; background:var(--bg); border-top:1px solid var(--rule);
+       padding:10px 16px; padding-bottom:max(10px, env(safe-area-inset-bottom)); z-index:5}
+  .nav .in{max-width:760px; margin:0 auto; display:flex; gap:10px}
+  .nav .btn{flex:1}
+
+  dialog{border:1px solid var(--rule); border-radius:14px; background:var(--card); color:var(--ink);
+         padding:18px; width:min(560px, calc(100vw - 32px)); max-height:85vh}
+  dialog::backdrop{background:rgba(0,0,0,.45)}
+  .grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(44px,1fr)); gap:6px; margin:10px 0}
+  .grid button{border:1px solid var(--rule); background:var(--bg); border-radius:8px; height:40px; cursor:pointer;
+               font-variant-numeric:tabular-nums; font-size:14px}
+  .grid button.done{background:var(--accent-bg); border-color:var(--accent); font-weight:700}
+  .grid button.here{outline:2px solid var(--ink)}
+  .ptitle{font-size:13px; font-weight:700; color:var(--mute); margin-top:10px}
+  .row{display:flex; gap:10px; margin-top:14px}
+  .row .btn{flex:1}
+  .big{font-size:40px; font-weight:750; letter-spacing:-.02em; margin:6px 0}
+  table.sc{border-collapse:collapse; width:100%; margin-top:8px}
+  table.sc td{padding:6px 0; border-bottom:1px solid var(--rule)}
+  table.sc td:last-child{text-align:right; font-variant-numeric:tabular-nums; font-weight:600}
+</style>
+</head>
+<body>
+
+<!-- ====== START ====== -->
+<main id="start" class="wrap">
+  <h1 id="title">TOEIC-format Final Exam</h1>
+  <p class="sub">Listening (Parts 1–4) · Reading (Parts 5–7)</p>
+  <form id="startForm" class="panel" autocomplete="off">
+    <label for="sid">Student ID</label>
+    <input id="sid" type="text" required inputmode="text" autocapitalize="characters">
+    <label for="name">Full name</label>
+    <input id="name" type="text" required>
+    <label for="cls">Class</label>
+    <input id="cls" type="text" placeholder="e.g. 89154">
+    <label for="code">Exam code</label>
+    <input id="code" type="text" required autocapitalize="characters">
+    <button class="btn primary wide" id="startBtn" type="submit">Start exam</button>
+    <div id="startErr" class="err" hidden></div>
+  </form>
+  <p class="note">Use headphones for the listening section. Do not close or reload this page during the exam —
+    if you do, re-enter the same details and your answers will be restored. The timer keeps running.</p>
+</main>
+
+<!-- ====== EXAM ====== -->
+<div id="exam" hidden>
+  <header class="top"><div class="in">
+    <span class="sec" id="secLabel"></span>
+    <button class="chip" id="mapBtn" type="button"></button>
+    <span class="timer" id="timer">--:--</span>
+  </div></header>
+  <main class="wrap" id="page"></main>
+  <nav class="nav"><div class="in">
+    <button class="btn" id="prevBtn" type="button">‹ Back</button>
+    <button class="btn primary" id="nextBtn" type="button">Next ›</button>
+  </div></nav>
+</div>
+
+<!-- ====== DONE ====== -->
+<main id="done" class="wrap" hidden>
+  <div class="panel">
+    <h1>Submitted ✓</h1>
+    <p class="sub" id="doneMsg">Your answers have been recorded. You may close this page.</p>
+    <div id="scoreBox" hidden></div>
+  </div>
+</main>
+
+<dialog id="mapDlg">
+  <strong>Questions</strong> <span class="note">— tap a number to go there</span>
+  <div id="mapGrid"></div>
+  <div class="row"><button class="btn" type="button" id="mapClose">Close</button>
+    <button class="btn primary" type="button" id="mapSubmit">Submit exam</button></div>
+</dialog>
+
+<dialog id="subDlg">
+  <strong>Submit exam?</strong>
+  <p id="subMsg"></p>
+  <div id="subErr" class="err" hidden></div>
+  <div class="row"><button class="btn" type="button" id="subCancel">Keep working</button>
+    <button class="btn primary" type="button" id="subOk">Submit</button></div>
+</dialog>
+
+<script>
+/* ====== CONFIG: paste your Apps Script Web App URL (ends in /exec) ====== */
+const API_URL = '';
+/* ======================================================================= */
+
+const PARTS = {
+  1: ['Listening · Part 1: Photographs', 'Look at the picture. You will hear four statements. Choose the one that best describes the picture.'],
+  2: ['Listening · Part 2: Question–Response', 'You will hear a question or statement and three responses. Choose the best response.'],
+  3: ['Listening · Part 3: Conversations', 'Listen to the conversation and answer the questions.'],
+  4: ['Listening · Part 4: Talks', 'Listen to the talk and answer the questions.'],
+  5: ['Reading · Part 5: Incomplete Sentences', 'Choose the word or phrase that best completes the sentence.'],
+  6: ['Reading · Part 6: Text Completion', 'Read the text and choose the best answer for each blank.'],
+  7: ['Reading · Part 7: Reading Comprehension', 'Read the text and answer the questions.'],
+};
+
+const $ = id => document.getElementById(id);
+const el = (tag, cls, text) => { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; };
+const store = {
+  get(k){ try { return JSON.parse(localStorage.getItem(k)); } catch { return null; } },
+  set(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
+};
+
+let exam, st, key, idx = 0, offset = 0, endAt = 0, tick, submitting = false, audio;
+
+// ---- restore form fields ----
+const last = store.get('toeic:last') || {};
+['sid','name','cls','code'].forEach(f => { if (last[f]) $(f).value = last[f]; });
+
+if (!API_URL) {
+  $('startErr').hidden = false;
+  $('startErr').textContent = 'Setup needed: the teacher must paste the Apps Script URL into API_URL in this page.';
+  $('startBtn').disabled = true;
+}
+
+$('startForm').addEventListener('submit', async ev => {
+  ev.preventDefault();
+  const who = { sid: $('sid').value.trim(), name: $('name').value.trim(), cls: $('cls').value.trim(), code: $('code').value.trim() };
+  store.set('toeic:last', who);
+  $('startBtn').disabled = true; $('startBtn').textContent = 'Loading…'; $('startErr').hidden = true;
+  try {
+    const q = new URLSearchParams({ action: 'exam', ...who });
+    const r = await fetch(API_URL + '?' + q, { cache: 'no-store' });
+    const data = await r.json();
+    if (!data.ok) throw new Error(data.error || 'Could not load exam.');
+    begin(who, data);
+  } catch (e) {
+    $('startErr').hidden = false;
+    $('startErr').textContent = e.message === 'Failed to fetch' ? 'Network error — check your connection and try again.' : e.message;
+    $('startBtn').disabled = false; $('startBtn').textContent = 'Start exam';
+  }
+});
+
+function begin(who, data) {
+  exam = data;
+  key = `toeic:${who.code.toUpperCase()}:${who.sid.toUpperCase()}:${data.startedAt}`;
+  st = Object.assign({ answers: {}, plays: {}, leaves: 0, idx: 0 }, store.get(key) || {}, { who });
+  idx = Math.min(st.idx || 0, exam.groups.length - 1);
+  offset = data.serverNow - Date.now();
+  endAt = data.startedAt + data.durationMinutes * 60000;
+  document.title = data.title;
+  $('start').hidden = true; $('exam').hidden = false;
+  render();
+  tick = setInterval(updateTimer, 1000); updateTimer();
+  document.addEventListener('visibilitychange', () => { if (document.hidden && !submitting) { st.leaves++; save(); } });
+  window.addEventListener('beforeunload', e => { if (!submitting) { e.preventDefault(); e.returnValue = ''; } });
+}
+
+function save(){ st.idx = idx; store.set(key, st); }
+const total = () => exam.groups.reduce((s, g) => s + g.questions.length, 0);
+const answered = () => Object.keys(st.answers).length;
+
+function updateTimer() {
+  const left = Math.max(0, endAt - (Date.now() + offset));
+  const m = Math.floor(left / 60000), s = Math.floor(left / 1000) % 60;
+  $('timer').textContent = `${m}:${String(s).padStart(2, '0')}`;
+  $('timer').classList.toggle('low', left < 5 * 60000);
+  if (left <= 0 && !submitting) { clearInterval(tick); doSubmit(true); }
+}
+
+function render() {
+  const g = exam.groups[idx];
+  if (audio) { audio.pause(); audio = null; }
+  const page = $('page'); page.replaceChildren();
+  $('secLabel').textContent = `Part ${g.part} · ${g.part <= 4 ? 'Listening' : 'Reading'}`;
+  $('mapBtn').textContent = `${answered()}/${total()} answered`;
+
+  const first = idx === 0 || exam.groups[idx - 1].part !== g.part;
+  if (first) page.append(el('div', 'dir', PARTS[g.part][1]));
+
+  if (g.audio) page.append(player(g));
+  if (g.image) { const m = el('div', 'media'); const img = el('img'); img.src = g.image; img.alt = 'Picture for this question'; m.append(img); page.append(m); }
+  if (g.passage) page.append(el('div', 'passage', g.passage));
+
+  g.questions.forEach(q => {
+    const box = el('section', 'q'); box.id = 'q' + q.n;
+    const qt = el('div', 'qt'); qt.append(el('span', 'qn', q.n + '.'), el('span', '', q.text || 'Mark your answer.'));
+    box.append(qt);
+    const lettersOnly = q.options.every(o => !o.text);
+    const opts = el('div', 'opts' + (lettersOnly ? ' letters' : '')); opts.setAttribute('role', 'radiogroup');
+    q.options.forEach(o => {
+      const b = el('button', 'opt'); b.type = 'button'; b.setAttribute('role', 'radio');
+      b.setAttribute('aria-checked', st.answers[q.n] === o.letter);
+      b.append(el('b', '', o.letter)); if (o.text) b.append(el('span', '', o.text));
+      b.onclick = () => {
+        st.answers[q.n] = o.letter; save();
+        opts.querySelectorAll('.opt').forEach(x => x.setAttribute('aria-checked', x === b));
+        $('mapBtn').textContent = `${answered()}/${total()} answered`;
+      };
+      opts.append(b);
+    });
+    box.append(opts); page.append(box);
+  });
+
+  $('prevBtn').disabled = idx === 0;
+  $('nextBtn').textContent = idx === exam.groups.length - 1 ? 'Finish' : 'Next ›';
+  window.scrollTo(0, 0);
+}
+
+function player(g) {
+  const id = String(idx), limit = exam.audioPlayLimit;
+  const wrap = el('div', 'player');
+  const btn = el('button', 'btn primary'); btn.type = 'button';
+  const bar = el('div', 'bar'), fill = el('i'); bar.append(fill);
+  const info = el('span', 'left');
+  const a = new Audio(); a.preload = 'auto'; a.src = g.audio; audio = a;
+  const used = () => st.plays[id] || 0;
+  const sync = () => {
+    const out = limit && used() >= limit;
+    btn.textContent = !a.paused ? 'Playing…' : out ? 'Played' : '▶ Play';
+    btn.disabled = !a.paused || out;
+    info.textContent = limit ? `${Math.max(0, limit - used())} play${limit - used() === 1 ? '' : 's'} left` : '';
+  };
+  btn.onclick = () => {
+    a.play().then(() => { st.plays[id] = used() + 1; save(); sync(); })
+            .catch(() => { info.textContent = 'Audio could not play — tell your teacher.'; });
+  };
+  a.ontimeupdate = () => { if (a.duration) fill.style.width = (100 * a.currentTime / a.duration) + '%'; };
+  a.onended = () => { fill.style.width = '100%'; sync(); };
+  a.onpause = sync;
+  sync(); wrap.append(btn, bar, info);
+  return wrap;
+}
+
+$('prevBtn').onclick = () => { if (idx > 0) { idx--; save(); render(); } };
+$('nextBtn').onclick = () => { if (idx < exam.groups.length - 1) { idx++; save(); render(); } else openSubmit(); };
+
+// ---- question map ----
+$('mapBtn').onclick = () => {
+  const grid = $('mapGrid'); grid.replaceChildren();
+  let part = 0, g;
+  exam.groups.forEach((grp, gi) => {
+    if (grp.part !== part) { part = grp.part; grid.append(el('div', 'ptitle', 'Part ' + part)); g = el('div', 'grid'); grid.append(g); }
+    grp.questions.forEach(q => {
+      const b = el('button', (st.answers[q.n] ? 'done' : '') + (gi === idx ? ' here' : ''), q.n); b.type = 'button';
+      b.onclick = () => { $('mapDlg').close(); idx = gi; save(); render(); setTimeout(() => $('q' + q.n)?.scrollIntoView({ block: 'center' }), 0); };
+      g.append(b);
+    });
+  });
+  $('mapDlg').showModal();
+};
+$('mapClose').onclick = () => $('mapDlg').close();
+$('mapSubmit').onclick = () => { $('mapDlg').close(); openSubmit(); };
+
+// ---- submit ----
+function openSubmit() {
+  const miss = total() - answered();
+  $('subMsg').textContent = miss ? `You have ${miss} unanswered question${miss > 1 ? 's' : ''}. You cannot change answers after submitting.` : 'All questions answered. You cannot change answers after submitting.';
+  $('subErr').hidden = true;
+  $('subDlg').showModal();
+}
+$('subCancel').onclick = () => $('subDlg').close();
+$('subDlg').addEventListener('cancel', e => { if ($('subCancel').hidden) e.preventDefault(); }); // no Esc after time-up
+$('subOk').onclick = () => doSubmit(false);
+
+async function doSubmit(auto) {
+  if (submitting) return;
+  submitting = true;
+  if (audio) audio.pause();
+  $('subOk').disabled = true; $('subOk').textContent = 'Submitting…';
+  if (auto && !$('subDlg').open) { $('subMsg').textContent = 'Time is up. Submitting your answers…'; $('subCancel').hidden = true; $('subDlg').showModal(); }
+  const body = { action: 'submit', ...st.who, answers: st.answers, leaves: st.leaves };
+  for (let attempt = 0; attempt < 4; attempt++) {
+    try {
+      const r = await fetch(API_URL, { method: 'POST', body: JSON.stringify(body) }); // text/plain: no CORS preflight
+      const data = await r.json();
+      if (!data.ok) throw Object.assign(new Error(data.error || 'Submit failed.'), { fatal: true });
+      return finish(data);
+    } catch (e) {
+      if (e.fatal || attempt === 3) {
+        $('subErr').hidden = false;
+        $('subErr').textContent = (e.fatal ? e.message : 'Network error.') + ' Your answers are saved on this device — tap Submit to try again.';
+        $('subOk').disabled = false; $('subOk').textContent = 'Submit';
+        submitting = false; return;
+      }
+      await new Promise(r => setTimeout(r, 1500 * (attempt + 1)));
+    }
+  }
+}
+
+function finish(data) {
+  clearInterval(tick);
+  st.submitted = true; save();
+  $('subDlg').close(); $('exam').hidden = true; $('done').hidden = false;
+  if (data.score) {
+    const s = data.score, box = $('scoreBox'); box.hidden = false;
+    box.append(el('div', 'big', String(s.total)));
+    const t = el('table', 'sc');
+    [['Listening', s.listening], ['Reading', s.reading], ['Correct', s.percent + '%']].forEach(([k, v]) => {
+      if (v === '' || v == null) return;
+      const tr = el('tr'); tr.append(el('td', '', k), el('td', '', String(v))); t.append(tr);
+    });
+    box.append(t, el('p', 'note', 'Scaled scores are a linear estimate on the TOEIC 10–990 scale, not an official TOEIC score.'));
+  }
+}
+</script>
+</body>
+</html>
