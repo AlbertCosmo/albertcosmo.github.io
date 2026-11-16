@@ -1,0 +1,660 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reading Test 12</title>
+<meta name="description" content="IELTS Academic Reading practice for English Enrichment (F26), class 89154: three passages, forty questions, with answer key, explanations and key vocabulary.">
+<style>
+  :root{
+    --bg:#fbfaf8; --ink:#0d0d0d; --mute:#3f3e3b; --faint:#67655f;
+    --rule:#ddd9d3; --accent:#6b1723; --card:#ffffff;
+    --ok:#1e7a3c; --okbg:rgba(30,122,60,.08); --bad:#b42318; --badbg:rgba(180,35,24,.07);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#141414; --ink:#f5f3f0; --mute:#c8c6c2; --faint:#a09e9a;
+           --rule:#343434; --accent:#eb9ba5; --card:#1c1c1c;
+           --ok:#7ed49b; --okbg:rgba(126,212,155,.12); --bad:#f28b82; --badbg:rgba(242,139,130,.12); }
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font:21px/1.66 ui-sans-serif,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans TC",sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:820px; margin:0 auto; padding:64px 30px 100px}
+  a{color:var(--accent)}
+  .back{display:inline-block; font-size:17px; font-weight:600; text-decoration:none;
+        border-bottom:1px solid currentColor; margin-bottom:26px}
+  .back:hover{opacity:.7}
+  header{padding-bottom:30px; border-bottom:1px solid var(--rule)}
+  .course{margin:0 0 8px; font-size:15px; color:var(--faint); letter-spacing:.05em; text-transform:uppercase; font-weight:600}
+  h1{margin:0 0 14px; font-size:42px; line-height:1.16; font-weight:650; letter-spacing:-.018em}
+  .lead{color:var(--mute); font-size:19.5px; margin:0 0 12px}
+  .lead:last-child{margin-bottom:0}
+
+  /* Passage blocks */
+  .psg{margin-top:26px; background:var(--card); border:1px solid var(--rule); border-radius:10px}
+  .psg > summary{cursor:pointer; list-style:none; display:flex; align-items:center; gap:14px; padding:20px 26px}
+  .psg > summary::-webkit-details-marker{display:none}
+  .psg > summary:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:10px}
+  .psg > summary::after{content:""; flex:0 0 auto; width:9px; height:9px; margin:-4px 4px 0 2px;
+         border-right:2px solid var(--faint); border-bottom:2px solid var(--faint); transform:rotate(45deg); transition:transform .15s}
+  .psg[open] > summary::after{margin-top:4px; transform:rotate(-135deg)}
+  .psg > summary:hover h2{color:var(--accent)}
+  .psg .ttl{flex:1 1 auto; min-width:0}
+  .psg .pn{display:block; font-size:14px; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); font-weight:700}
+  .psg h2{margin:2px 0 0; font-size:25px; font-weight:650; letter-spacing:-.01em; line-height:1.3}
+  .psg .meta{display:block; font-size:16px; color:var(--faint); margin-top:2px}
+  .score{flex:0 0 auto; white-space:nowrap; font-size:14px; letter-spacing:.08em; text-transform:uppercase; color:var(--faint); font-weight:700}
+  .score b{color:var(--accent); font-size:18px; letter-spacing:0; margin-left:6px}
+  .body{padding:0 26px 26px; border-top:1px solid var(--rule)}
+
+  .bar{display:flex; flex-wrap:wrap; align-items:center; gap:12px; padding:18px 0}
+  .clock{font:600 22px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; color:var(--ink); min-width:76px}
+  .clock.up{color:var(--bad)}
+  .ctl{font:inherit; font-size:16px; font-weight:600; padding:9px 18px; border-radius:7px; cursor:pointer;
+       background:var(--bg); color:var(--ink); border:1.5px solid var(--rule); -webkit-appearance:none; appearance:none; touch-action:manipulation}
+  .ctl:hover{opacity:.8}
+  .ctl:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+  .ctl.main{background:var(--accent); color:#fff; border-color:var(--accent)}
+  @media (prefers-color-scheme: dark){ .ctl.main{color:#141414} }
+  .ctl[hidden]{display:none}
+
+  .split{display:block}
+  .text{font-size:18.5px; line-height:1.7}
+  .text p{margin:0 0 14px}
+  .text .pl{font-weight:700; color:var(--accent); margin-right:6px}
+  .text h3{margin:0 0 12px; font-size:22px; font-weight:650; text-align:left}
+  .qs{margin-top:22px}
+
+  .grp{margin:0 0 6px; padding:18px 0 4px; border-top:2px solid var(--ink)}
+  .grp h4{margin:0 0 4px; font-size:15px; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); font-weight:700}
+  .grp .ins{margin:0 0 10px; font-size:17px; color:var(--mute)}
+  .list{margin:6px 0 12px; padding:12px 16px; background:var(--bg); border:1px solid var(--rule); border-radius:7px; font-size:16.5px; line-height:1.5}
+  .list div{padding:2px 0}
+  .list b{display:inline-block; min-width:30px; color:var(--accent)}
+
+  .q{padding:14px 0; border-bottom:1px solid var(--rule)}
+  .q:last-child{border-bottom:0}
+  .qt{margin:0 0 10px; font-size:18px; font-weight:500; line-height:1.5}
+  .qn{font-size:14px; letter-spacing:.06em; color:var(--accent); font-weight:700; margin-right:8px}
+  .opts{display:grid; gap:7px}
+  .opts.row{grid-template-columns:repeat(3,1fr)}
+  .opt{display:flex; align-items:flex-start; gap:12px; width:100%; margin:0; text-align:left;
+       font:inherit; font-size:17px; line-height:1.45; color:var(--ink); background:var(--bg);
+       border:1.5px solid var(--rule); border-radius:7px; padding:9px 13px; cursor:pointer;
+       -webkit-appearance:none; appearance:none; touch-action:manipulation}
+  .opts.row .opt{justify-content:center; font-weight:600; font-size:15.5px; letter-spacing:.03em}
+  .opt:hover:not(:disabled){border-color:var(--faint)}
+  .opt:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+  .opt:disabled{cursor:default}
+  .opt .k{flex:0 0 auto; width:25px; height:25px; margin-top:1px; border-radius:50%; border:1.5px solid var(--faint);
+          color:var(--mute); font-size:13.5px; font-weight:700; display:inline-flex; align-items:center; justify-content:center}
+  .opt .t{flex:1 1 0; min-width:0}
+  .opt.sel{border-color:var(--accent); box-shadow:inset 0 0 0 1px var(--accent)}
+  .opt.sel .k{background:var(--accent); border-color:var(--accent); color:var(--card)}
+  .opt.ok{border-color:var(--ok); background:var(--okbg); box-shadow:none}
+  .opt.ok .k{border-color:var(--ok); background:transparent; color:var(--ok)}
+  .opt.bad{border-color:var(--bad); background:var(--badbg); box-shadow:none}
+  .opt.bad .k{border-color:var(--bad); background:transparent; color:var(--bad)}
+
+  select, input[type=text]{font:inherit; font-size:17px; color:var(--ink); background:var(--bg);
+       border:1.5px solid var(--rule); border-radius:7px; padding:8px 11px; max-width:100%}
+  select{width:100%; cursor:pointer}
+  input[type=text]{width:min(100%,320px)}
+  select:focus-visible, input[type=text]:focus-visible{outline:2px solid var(--accent); outline-offset:2px; border-color:var(--accent)}
+  .field.ok{border-color:var(--ok); background:var(--okbg)}
+  .field.bad{border-color:var(--bad); background:var(--badbg)}
+  .gap{display:inline-block; min-width:2em; border-bottom:1.5px solid var(--faint); padding:0 4px; color:var(--accent); font-weight:700}
+
+  .fb{margin:10px 0 0; padding:10px 14px; border-left:3px solid var(--rule); font-size:16.5px; line-height:1.55; color:var(--mute)}
+  .fb[hidden]{display:none}
+  .fb .res{font-weight:700}
+  .fb .res.ok{color:var(--ok)}
+  .fb .res.bad{color:var(--bad)}
+  .fb q{font-style:italic; color:var(--ink)}
+  .fb q::before{content:"\201C"} .fb q::after{content:"\201D"}
+
+  .sum{margin:18px 0 0; padding:14px 18px; border-radius:8px; background:var(--bg); border:1px solid var(--rule); font-size:18px}
+  .sum[hidden]{display:none}
+  .sum b{color:var(--accent)}
+  .vocab{margin-top:22px}
+  .vocab[hidden]{display:none}
+  .vocab h4{margin:0 0 10px; font-size:15px; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); font-weight:700}
+  .vocab dl{margin:0; display:grid; gap:10px}
+  .vocab dt{font-weight:650; font-size:18px}
+  .vocab dt span{font-weight:400; font-size:15px; color:var(--faint); margin-left:6px}
+  .vocab dd{margin:0; font-size:16.5px; color:var(--mute); line-height:1.5}
+  .vocab dd i{color:var(--ink)}
+
+  footer{margin-top:60px; padding-top:22px; border-top:1px solid var(--rule); font-size:15.5px; color:var(--faint)}
+
+  /* Wide screens: passage and questions side by side, each scrolling on its own */
+  @media (min-width:1100px){
+    .wrap.wide{max-width:1320px}
+    .wrap.wide > header, .wrap.wide > footer{max-width:820px}
+    .split{display:grid; grid-template-columns:1fr 1fr; gap:34px; align-items:start}
+    .text, .qs{max-height:calc(100vh - 120px); overflow-y:auto; padding-right:12px; position:sticky; top:16px}
+    .qs{margin-top:0}
+  }
+  @media (max-width:600px){
+    .wrap{padding:40px 16px 80px}
+    h1{font-size:33px}
+    .psg > summary{padding:16px 18px}
+    .body{padding:0 18px 20px}
+    .psg h2{font-size:21px}
+    .score .lbl{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
+    .text{font-size:17.5px}
+    .opts.row{grid-template-columns:1fr}
+  }
+  @media print{
+    body{background:#fff; font-size:12pt}
+    .wrap{padding:0; max-width:none}
+    .bar, .back{display:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap wide">
+
+  <header>
+    <a class="back" href="./">&larr; Back to class 89154</a>
+    <p class="course">English Enrichment (F26) &nbsp;&middot;&nbsp; Academic Reading practice</p>
+    <h1>Reading Test 12</h1>
+    <p class="lead">Three passages, forty questions. Give yourself twenty minutes per passage. Answer every question, then press <b>Submit</b> to check your answers, read why each answer is right, and review the key vocabulary.</p>
+    <p class="lead">Nothing is recorded. Press <b>Try again</b> to clear a passage and start over.</p>
+  </header>
+
+  <!-- ============================== PASSAGE 1 ============================== -->
+  <details class="psg" id="passage-1" data-p="1">
+    <summary>
+      <span class="ttl"><span class="pn">Passage 1</span><h2>Sustainable architecture: lessons from the ant</h2><span class="meta">Questions 1&ndash;13 &middot; 20 minutes</span></span>
+      <span class="score" aria-live="polite"><span class="lbl">Score</span> <b>&ndash; / 13</b></span>
+    </summary>
+    <div class="body">
+      <div class="bar"><span class="clock" aria-live="off">20:00</span><button type="button" class="ctl timer">Start timer</button></div>
+      <div class="split">
+        <article class="text">
+          <h3>Sustainable architecture: lessons from the ant</h3>
+          <p>Africa owes its termite mounds a lot. Trees and shrubs take root in them. Prospectors mine them, looking for specks of gold carried up by termites from hundreds of metres below. And of course, they are a special treat to aardvarks and other insectivores. Now, Africa is paying an offbeat tribute to these towers of mud. The extraordinary Eastgate Building in Harare, Zimbabwe&rsquo;s capital city, is said to be the only one in the world to use the same cooling and heating principles as the termite mound.</p>
+          <p>Termites in Zimbabwe build gigantic mounds inside which they farm a fungus that is their primary food source. This must be kept at exactly 30.5&deg;C, while the temperatures on the African veld outside can range from 1.5&deg;C at night &ndash; only just above freezing &ndash; to a baking hot 40&deg;C during the day. The termites achieve this remarkable feat by building a system of vents in the mound. Those at the base lead down into chambers cooled by wet mud carried up from water tables far below, and others lead up through a flue to the peak of the mound. By constantly opening and closing these heating and cooling vents over the course of the day the termites succeed in keeping the temperature constant in spite of the wide fluctuations outside.</p>
+          <p>Architect Mick Pearce used precisely the same strategy when designing the Eastgate Building, which has no air conditioning and virtually no heating. The building &ndash; the country&rsquo;s largest commercial and shopping complex &ndash; uses less than 10% of the energy of a conventional building its size. These efficiencies translated directly to the bottom line: the Eastgate&rsquo;s owners saved $3.5 million on a $36 million building because an air-conditioning plant didn&rsquo;t have to be imported. These savings were also passed on to tenants: rents are 20% lower than in a new building next door. The complex is actually two buildings linked by bridges across a shady, glass-roofed atrium open to the breezes. Fans suck fresh air in from the atrium, blow it upstairs through hollow spaces under the floors and from there into each office through baseboard vents. As it rises and warms, it is drawn out via ceiling vents and finally exits through forty-eight brick chimneys. To keep the harsh, highveld sun from heating the interior, no more than 25% of the outside is glass, and all the windows are screened by cement arches that jut out more than a metre.</p>
+          <p>During summer&rsquo;s cool nights, big fans flush air through the building seven times an hour to chill the hollow floors. By day, smaller fans blow two changes of air an hour through the building, to circulate the air which has been in contact with the cool floors. For winter days, there are small heaters in the vents. This is all possible only because Harare is 1600 feet above sea level, has cloudless skies, little humidity and rapid temperature swings &ndash; days as warm as 31&deg;C commonly drop to 14&deg;C at night. &lsquo;You couldn&rsquo;t do this in New York, with its fantastically hot summers and fantastically cold winters,&rsquo; Pearce said. But then his eyes lit up at the challenge. &lsquo;Perhaps you could store the summer&rsquo;s heat in water somehow.&rsquo;</p>
+          <p>The engineering firm of Ove Arup &amp; Partners, which worked with him on the design, monitors daily temperatures outside, under the floors and at knee, desk and ceiling level. Ove Arup&rsquo;s graphs show that the temperature of the building has generally stayed between 23&deg;C and 25&deg;C, with the exception of the annual hot spell just before the summer rains in October, and three days in November, when a janitor accidentally switched off the fans at night. The atrium, which funnels the winds through, can be much cooler. And the air is fresh &ndash; far more so than in air-conditioned buildings, where up to 30% of the air is recycled.</p>
+          <p>Pearce, disdaining smooth glass skins as &lsquo;igloos in the Sahara&rsquo;, calls his building, with its exposed girders and pipes, &lsquo;spiky&rsquo;. The design of the entrances is based on the porcupine-quill headdresses of the local Shona tribe. Elevators are designed to look like the mineshaft cages used in Zimbabwe&rsquo;s diamond mines. The shape of the fan covers, and the stone used in their construction, are echoes of Great Zimbabwe, the ruins that give the country its name. Standing on a roof catwalk, peering down inside at people as small as termites below, Pearce said he hoped plants would grow wild in the atrium and pigeons and bats would move into it, like that termite fungus, further extending the whole &lsquo;organic machine&rsquo; metaphor. The architecture, he says, is a regionalised style that responds to the biosphere, to the ancient traditional stone architecture of Zimbabwe&rsquo;s past, and to local human resources.</p>
+        </article>
+        <div class="qs"></div>
+      </div>
+      <div class="bar"><button type="button" class="ctl main submit">Submit</button><button type="button" class="ctl reset" hidden>Try again</button></div>
+      <p class="sum" hidden></p>
+      <div class="vocab" hidden></div>
+    </div>
+  </details>
+
+  <!-- ============================== PASSAGE 2 ============================== -->
+  <details class="psg" id="passage-2" data-p="2">
+    <summary>
+      <span class="ttl"><span class="pn">Passage 2</span><h2>Inside the mind of the consumer</h2><span class="meta">Questions 14&ndash;26 &middot; 20 minutes</span></span>
+      <span class="score" aria-live="polite"><span class="lbl">Score</span> <b>&ndash; / 13</b></span>
+    </summary>
+    <div class="body">
+      <div class="bar"><span class="clock" aria-live="off">20:00</span><button type="button" class="ctl timer">Start timer</button></div>
+      <div class="split">
+        <article class="text">
+          <h3>Inside the mind of the consumer</h3>
+          <p><span class="pl">A</span>Marketing people are no longer prepared to take your word for it that you favour one product over another. They want to scan your brain to see which one you really prefer. Using the tools of neuroscientists, such as electroencephalogram (EEG) mapping and functional magnetic-resonance imaging (fMRI), they are trying to learn more about the mental processes behind purchasing decisions. The resulting fusion of neuroscience and marketing is, inevitably, being called &lsquo;neuromarketing&rsquo;.</p>
+          <p><span class="pl">B</span>The first person to apply brain-imaging technology in this way was Gerry Zaltman of Harvard University, in the late 1990s. The idea remained in obscurity until 2001, when BrightHouse, a marketing consultancy based in Atlanta, Georgia, set up a dedicated neuromarketing arm, BrightHouse Neurostrategies Group. (BrightHouse lists Coca-Cola, Delta Airlines and Home Depot among its clients.) But the company&rsquo;s name may itself simply be an example of clever marketing. BrightHouse does not scan people while showing them specific products or campaign ideas, but bases its work on the results of more general fMRI-based research into consumer preferences and decision-making carried out at Emory University in Atlanta.</p>
+          <p><span class="pl">C</span>Can brain scanning really be applied to marketing? The basic principle is not that different from focus groups and other traditional forms of market research. A volunteer lies in an fMRI machine and is shown images or video clips. In place of an interview or questionnaire, the subject&rsquo;s response is evaluated by monitoring brain activity. fMRI provides real-time images of brain activity, in which different areas &lsquo;light up&rsquo; depending on the level of blood flow. This provides clues to the subject&rsquo;s subconscious thought patterns. Neuroscientists know, for example, that the sense of self is associated with an area of the brain known as the medial prefrontal cortex. A flow of blood to that area while the subject is looking at a particular logo suggests that he or she identifies with that brand.</p>
+          <p><span class="pl">D</span>At first, it seemed that only companies in Europe were prepared to admit that they used neuromarketing. Two carmakers, DaimlerChrysler in Germany and Ford&rsquo;s European arm, ran pilot studies in 2003. But more recently, American companies have become more open about their use of neuromarketing. Lieberman Research Worldwide, a marketing firm based in Los Angeles, is collaborating with the California Institute of Technology (Caltech) to enable movie studios to market-test film trailers. More controversially, the <i>New York Times</i> recently reported that a political consultancy, FKF Research, has been studying the effectiveness of campaign commercials using neuromarketing techniques.</p>
+          <p><span class="pl">E</span>Whether all this is any more than a modern-day version of phrenology, the Victorian obsession with linking lumps and bumps in the skull to personality traits, is unclear. There have been no large-scale studies, so scans of a handful of subjects may not be a reliable guide to consumer behaviour in general. Of course, focus groups and surveys are flawed too: strong personalities can steer the outcomes of focus groups, and people do not always tell opinion pollsters the truth. And even honest people cannot always explain their preferences.</p>
+          <p><span class="pl">F</span>That is perhaps where neuromarketing has the most potential. When asked about cola drinks, most people claim to have a favourite brand, but cannot say why they prefer that brand&rsquo;s taste. An unpublished study of attitudes towards two well-known cola drinks, Brand A and Brand B, carried out last year in a college of medicine in the US found that most subjects preferred Brand B in a blind tasting. fMRI scanning showed that drinking Brand B lit up a region called the ventral putamen, which is one of the brain&rsquo;s &lsquo;reward centres&rsquo;, far more brightly than Brand A. But when told which drink was which, most subjects said they preferred Brand A, which suggests that its stronger brand outweighs the more pleasant taste of the other drink.</p>
+          <p><span class="pl">G</span>&lsquo;People form many unconscious attitudes that are obviously beyond traditional methods that utilise introspection,&rsquo; says Steven Quartz, a neuroscientist at Caltech who is collaborating with Lieberman Research. With over $100 billion spent each year on marketing in America alone, any firm that can more accurately analyse how customers respond to products, brands and advertising could make a fortune.</p>
+          <p><span class="pl">H</span>Consumer advocates are wary. Gary Ruskin of Commercial Alert, a lobby group, thinks existing marketing techniques are powerful enough. &lsquo;Already, marketing is deeply implicated in many serious pathologies,&rsquo; he says. &lsquo;That is especially true of children, who are suffering from an epidemic of marketing-related diseases, including obesity and type-2 diabetes. Neuromarketing is a tool to amplify these trends.&rsquo;</p>
+          <p><span class="pl">I</span>Dr Quartz counters that neuromarketing techniques could equally be used for benign purposes. &lsquo;There are ways to utilise these technologies to create more responsible advertising,&rsquo; he says. Brain-scanning could, for example, be used to determine when people are capable of making free choices, to ensure that advertising falls within those bounds.</p>
+          <p><span class="pl">J</span>Another worry is that brain-scanning is an invasion of privacy and that information on the preferences of specific individuals will be misused. But neuromarketing studies rely on small numbers of volunteer subjects, so that seems implausible. Critics also object to the use of medical equipment for frivolous rather than medical purposes. But as Tim Ambler, a neuromarketing researcher at the London Business School, says: &lsquo;A tool is a tool, and if the owner of the tool gets a decent rent for hiring it out, then that subsidises the cost of the equipment, and everybody wins.&rsquo; Perhaps more brain-scanning will some day explain why some people like the idea of neuromarketing, but others do not.</p>
+        </article>
+        <div class="qs"></div>
+      </div>
+      <div class="bar"><button type="button" class="ctl main submit">Submit</button><button type="button" class="ctl reset" hidden>Try again</button></div>
+      <p class="sum" hidden></p>
+      <div class="vocab" hidden></div>
+    </div>
+  </details>
+
+  <!-- ============================== PASSAGE 3 ============================== -->
+  <details class="psg" id="passage-3" data-p="3">
+    <summary>
+      <span class="ttl"><span class="pn">Passage 3</span><h2>The accidental rainforest</h2><span class="meta">Questions 27&ndash;40 &middot; 20 minutes</span></span>
+      <span class="score" aria-live="polite"><span class="lbl">Score</span> <b>&ndash; / 14</b></span>
+    </summary>
+    <div class="body">
+      <div class="bar"><span class="clock" aria-live="off">20:00</span><button type="button" class="ctl timer">Start timer</button></div>
+      <div class="split">
+        <article class="text">
+          <h3>The accidental rainforest</h3>
+          <p>When Peter Osbeck, a Swedish priest, stopped off at the mid-Atlantic island of Ascension in 1752 on his way home from China, he wrote of &lsquo;a heap of ruinous rocks&rsquo; with a bare, white mountain in the middle. All it boasted was a couple of dozen species of plant, most of them ferns and some of them unique to the island.</p>
+          <p>And so it might have remained. But in 1843 British plant collector Joseph Hooker made a brief call on his return from Antarctica. Surveying the bare earth, he concluded that the island had suffered some natural calamity that had denuded it of vegetation and triggered a decline in rainfall that was turning the place into a desert. The British Navy, which by then maintained a garrison on the island, was keen to improve the place and asked Hooker&rsquo;s advice. He suggested an ambitious scheme for planting trees and shrubs that would revive rainfall and stimulate a wider ecological recovery. And, perhaps lacking anything else to do, the sailors set to with a will.</p>
+          <p>In 1845, a naval transport ship from Argentina delivered a batch of seedlings. In the following years, more than 200 species of plant arrived from South Africa. From England came 700 packets of seeds, including those of two species that especially liked the place: bamboo and prickly pear. With sailors planting several thousand trees a year, the bare white mountain was soon cloaked in green and renamed Green Mountain, and by the early twentieth century the mountain&rsquo;s slopes were covered with a variety of trees and shrubs from all over the world.</p>
+          <p>Modern ecologists throw up their hands in horror at what they see as Hooker&rsquo;s environmental anarchy. The exotic species wrecked the indigenous ecosystem, squeezing out the island&rsquo;s endemic plants. In fact, Hooker knew well enough what might happen. However, he saw greater benefit in improving rainfall and encouraging more prolific vegetation on the island.</p>
+          <p>But there is a much deeper issue here than the relative benefits of sparse endemic species versus luxuriant imported ones. And as botanist David Wilkinson of Liverpool John Moores University in the UK pointed out after a recent visit to the island, it goes to the heart of some of the most dearly held tenets of ecology. Conservationists&rsquo; understandable concern for the fate of Ascension&rsquo;s handful of unique species has, he says, blinded them to something quite astonishing &ndash; the fact that the introduced species have been a roaring success.</p>
+          <p>Today&rsquo;s Green Mountain, says Wilkinson, is &lsquo;a fully functioning man-made tropical cloud forest&rsquo; that has grown from scratch from a ragbag of species collected more or less at random from all over the planet. But how could it have happened? Conventional ecological theory says that complex ecosystems such as cloud forests can emerge only through evolutionary processes in which each organism develops in concert with others to fill particular niches. Plants evolve with their pollinators and seed dispersers, while microbes in the soil evolve to deal with the leaf litter. But that&rsquo;s not what happened on Green Mountain. And the experience suggests that perhaps natural rainforests are constructed far more by chance than by evolution. Species, say some ecologists, don&rsquo;t so much evolve to create ecosystems as make the best of what they have. &lsquo;The Green Mountain system is a man-made system that has produced a tropical rainforest without any co-evolution between its constituent species,&rsquo; says Wilkinson.</p>
+          <p>Not everyone agrees. Alan Gray, an ecologist at the University of Edinburgh in the UK, argues that the surviving endemic species on Green Mountain, though small in number, may still form the framework of the &lsquo;new&rsquo; ecosystem. The new arrivals may just be an adornment, with little structural importance for the ecosystem. But to Wilkinson this sounds like clutching at straws. And the idea of the instant formation of rainforests sounds increasingly plausible as research reveals that supposedly pristine tropical rainforests from the Amazon to south-east Asia may in places be little more than the overgrown gardens of past rainforest civilisations.</p>
+          <p>The most surprising thing of all is that no ecologists have thought to conduct proper research into this human-made rainforest ecosystem. A survey of the island&rsquo;s flora conducted six years ago by the University of Edinburgh was concerned only with endemic species. They characterised everything else as a threat. And the Ascension authorities are currently turning Green Mountain into a national park where introduced species, at least the invasive ones, are earmarked for culling rather than conservation. Conservationists have understandable concerns, Wilkinson says. At least four endemic species have gone extinct on Ascension since the exotics started arriving. But in their urgency to protect endemics, ecologists are missing out on the study of a great enigma.</p>
+          <p>&lsquo;As you walk through the forest, you see lots of leaves that have had chunks taken out of them by various insects. There are caterpillars and beetles around,&rsquo; says Wilkinson. &lsquo;But where did they come from? Are they endemic or alien? If alien, did they come with the plant on which they feed or discover it on arrival?&rsquo; Such questions go to the heart of how rainforests happen. The Green Mountain forest holds many secrets. And the irony is that the most artificial rainforest in the world could tell us more about rainforest ecology than any number of natural forests.</p>
+        </article>
+        <div class="qs"></div>
+      </div>
+      <div class="bar"><button type="button" class="ctl main submit">Submit</button><button type="button" class="ctl reset" hidden>Try again</button></div>
+      <p class="sum" hidden></p>
+      <div class="vocab" hidden></div>
+    </div>
+  </details>
+
+  <footer>Passages and questions adapted from <i>IELTS Reading Test 12</i>; typing errors in the source PDF have been corrected. Answer key, explanations and vocabulary notes prepared for class 89154.</footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var ABCD = ['A','B','C','D'];
+  var TFNG = ['TRUE','FALSE','NOT GIVEN'];
+  var HEADINGS = [
+    ['i','A description of the procedure'], ['ii','An international research project'],
+    ['iii','An experiment to investigate consumer responses'], ['iv','Marketing an alternative name'],
+    ['v','A misleading name'], ['vi','A potentially profitable line of research'],
+    ['vii','Medical dangers of the technique'], ['viii','Drawbacks to marketing tools'],
+    ['ix','Broadening applications'], ['x','What is neuromarketing?']
+  ];
+  var OPINIONS = [
+    ['A','Neuromarketing could be used to contribute towards the cost of medical technology.'],
+    ['B','Neuromarketing could use introspection as a tool in marketing research.'],
+    ['C','Neuromarketing could be a means of treating medical problems.'],
+    ['D','Neuromarketing could make an existing problem worse.'],
+    ['E','Neuromarketing could lead to the misuse of medical equipment.'],
+    ['F','Neuromarketing could be used to prevent the exploitation of consumers.']
+  ];
+  var ENDINGS = [
+    ['A','other rainforests may have originally been planted by man.'],
+    ['B','many of the island’s original species were threatened with destruction.'],
+    ['C','the species in the original rainforest were more successful than the newer arrivals.'],
+    ['D','rainforests can only develop through a process of slow and complex evolution.'],
+    ['E','steps should be taken to prevent the destruction of the original ecosystem.'],
+    ['F','randomly introduced species can coexist together.'],
+    ['G','the introduced species may have less ecological significance than the original ones.']
+  ];
+
+  /* Question types:
+     mcq   one letter from opts, buttons
+     tfng  TRUE / FALSE / NOT GIVEN buttons
+     sel   dropdown from a shared list
+     gap   typed answer; acc = accepted answers, lim = word limit
+     multi choose N letters; each correct letter scores one mark */
+  var DATA = {
+    1: {
+      groups: [
+        { h:'Questions 1–5', ins:'Choose the correct letter, A, B, C or D.', qs:[
+          { n:1, t:'mcq', q:'Why do termite mounds have a system of vents?',
+            o:['to allow the termites to escape from predators','to enable the termites to produce food','to allow the termites to work efficiently','to enable the termites to survive at night'], a:'B',
+            ex:'The termites <q>farm a fungus that is their primary food source</q>, and it <q>must be kept at exactly 30.5°C</q>. The vents exist to hold that temperature, so their purpose is food production. Predators (A) and working efficiency (C) are never mentioned, and the vents work <q>over the course of the day</q>, not only at night (D).' },
+          { n:2, t:'mcq', q:'Why was Eastgate cheaper to build than a conventional building?',
+            o:['Very few materials were imported.','Its energy consumption was so low.','Its tenants contributed to the costs.','No air conditioners were needed.'], a:'D',
+            ex:'The owners <q>saved $3.5 million on a $36 million building because an air-conditioning plant didn’t have to be imported</q>. A reuses the word <i>imported</i> but changes the meaning. B is about the cost of <i>running</i> the building, not building it. C reverses the text: savings were <q>passed on to tenants</q>.' },
+          { n:3, t:'mcq', q:'Why would a building like Eastgate not work efficiently in New York?',
+            o:['Temperature change occurs seasonally rather than daily.','Pollution affects the storage of heat in the atmosphere.','Summer and winter temperatures are too extreme.','Levels of humidity affect cloud coverage.'], a:'C',
+            ex:'Pearce says: <q>You couldn’t do this in New York, with its fantastically hot summers and fantastically cold winters</q>. <i>Fantastically hot … fantastically cold</i> = <i>too extreme</i>. A is an inference the text never states; pollution (B) and cloud coverage in New York (D) are not mentioned.' },
+          { n:4, t:'mcq', q:'What does Ove Arup’s data suggest about Eastgate’s temperature control system?',
+            o:['It allows a relatively wide range of temperatures.','The only problems are due to human error.','It functions well for most of the year.','The temperature in the atrium may fall too low.'], a:'C',
+            ex:'The temperature <q>has generally stayed between 23°C and 25°C, with the exception of the annual hot spell</q> and three days in November. <i>Generally … with the exception of</i> = <i>for most of the year</i>. A two-degree range is narrow, not wide (A). B is wrong because the October hot spell was not human error; only the November days were. The atrium <q>can be much cooler</q>, but nothing says too cool (D).' },
+          { n:5, t:'mcq', q:'Pearce believes that his building would be improved by',
+            o:['becoming more of a habitat for wildlife.','even closer links with the history of Zimbabwe.','giving people more space to interact with nature.','better protection from harmful organisms.'], a:'A',
+            ex:'Pearce <q>hoped plants would grow wild in the atrium and pigeons and bats would move into it</q>. Plants, pigeons and bats living there = a habitat for wildlife. The history links (B) already exist; C and D are not mentioned.' }
+        ]},
+        { h:'Questions 6–10', ins:'Complete the sentences below with words taken from the passage. Use NO MORE THAN THREE WORDS for each answer.', qs:[
+          { n:6, t:'gap', lim:3, pre:'Warm air leaves the offices through', post:'.', acc:['ceiling vents'],
+            ex:'<q>As it rises and warms, it is drawn out via ceiling vents</q>. <i>Drawn out</i> = <i>leaves</i>.' },
+          { n:7, t:'gap', lim:3, pre:'The warm air leaves the building through', post:'.', acc:['brick chimneys','forty-eight brick chimneys','48 brick chimneys','chimneys'],
+            ex:'<q>… and finally exits through forty-eight brick chimneys</q>. Q6 is the first exit (from the offices); <i>finally exits</i> is the exit from the whole building.' },
+          { n:8, t:'gap', lim:3, pre:'Heat from the sun is prevented from reaching the windows by', post:'.', acc:['cement arches','arches'],
+            ex:'<q>All the windows are screened by cement arches that jut out more than a metre</q>. <i>Screened</i> = <i>prevented from reaching</i>.' },
+          { n:9, t:'gap', lim:3, pre:'When the outside temperature drops,', post:'bring air in from outside.', acc:['big fans'],
+            ex:'<q>During summer’s cool nights, big fans flush air through the building</q>. <i>Cool nights</i> = <i>when the temperature drops</i>. Not <i>smaller fans</i>: those work <q>by day</q>.' },
+          { n:10, t:'gap', lim:3, pre:'On cold days', post:'raise the temperature in the offices.', acc:['small heaters','heaters'],
+            ex:'<q>For winter days, there are small heaters in the vents.</q> <i>Winter days</i> = <i>cold days</i>.' }
+        ]},
+        { h:'Questions 11–13', ins:'Which THREE parts of the Eastgate Building reflect important features of Zimbabwe’s history and culture? Choose THREE letters, A–F.', qs:[
+          { n:'11–13', t:'multi', pick:3, marks:3, o:['entrances','quill','cages','elevators','fan covers','stone'], a:['A','D','E'],
+            ex:'<b>Entrances</b>: based on <q>the porcupine-quill headdresses of the local Shona tribe</q>. <b>Elevators</b>: designed to look like <q>the mineshaft cages used in Zimbabwe’s diamond mines</q>. <b>Fan covers</b>: their shape and stone <q>are echoes of Great Zimbabwe</q>. The traps: <i>quill</i> and <i>cages</i> are the cultural <i>sources</i>, not parts of the building, and <i>stone</i> is only the material the fan covers are made of. One mark for each correct letter.' }
+        ]}
+      ],
+      vocab: [
+        ['fluctuations','noun','repeated rises and falls in amount or level.','… in spite of the wide fluctuations outside.'],
+        ['conventional','adjective','ordinary; of the usual kind.','… less than 10% of the energy of a conventional building its size.'],
+        ['the bottom line','idiom','the final profit or loss of a business; by extension, the most important result.','These efficiencies translated directly to the bottom line.'],
+        ['tenant','noun','a person or company that rents a building or room from its owner.','These savings were also passed on to tenants.'],
+        ['atrium','noun','a large open space in the centre of a building, often with a glass roof.','… a shady, glass-roofed atrium open to the breezes.'],
+        ['flush','verb','to push a large amount of air or water quickly through something.','… big fans flush air through the building seven times an hour.'],
+        ['humidity','noun','the amount of water vapour in the air.','… cloudless skies, little humidity and rapid temperature swings.'],
+        ['disdain','verb','to regard something as not worth respect.','Pearce, disdaining smooth glass skins as ‘igloos in the Sahara’ …'],
+        ['metaphor','noun','describing one thing as if it were another to show a likeness.','… further extending the whole ‘organic machine’ metaphor.']
+      ]
+    },
+    2: {
+      groups: [
+        { h:'Questions 14–19', ins:'The passage has ten paragraphs, A–J. Choose the correct heading for paragraphs B–G from the list of headings below.', list:HEADINGS, qs:[
+          { n:14, t:'sel', q:'Paragraph B', list:HEADINGS, a:'v',
+            ex:'The key sentence is <q>the company’s name may itself simply be an example of clever marketing</q>: BrightHouse <q>does not scan people</q> at all, so its name misleads. <i>iv</i> reuses the words <i>marketing</i> and <i>name</i> but says something different.' },
+          { n:15, t:'sel', q:'Paragraph C', list:HEADINGS, a:'i',
+            ex:'The paragraph describes what happens step by step: <q>A volunteer lies in an fMRI machine and is shown images or video clips</q>, brain activity is monitored, areas <q>light up</q>. That is a procedure.' },
+          { n:16, t:'sel', q:'Paragraph D', list:HEADINGS, a:'ix',
+            ex:'The technique spreads from European carmakers to American firms, film trailers and even <q>campaign commercials</q>: it is being used in more and more fields. <i>ii</i> is a trap: the companies are separate and in different countries, not one international project.' },
+          { n:17, t:'sel', q:'Paragraph E', list:HEADINGS, a:'viii',
+            ex:'Neuromarketing has <q>no large-scale studies</q>, and <q>focus groups and surveys are flawed too</q>. The paragraph lists the weaknesses of both new and traditional marketing tools.' },
+          { n:18, t:'sel', q:'Paragraph F', list:HEADINGS, a:'iii',
+            ex:'<q>An unpublished study of attitudes towards two well-known cola drinks</q>, with a blind tasting and fMRI scanning, is an experiment on consumer responses.' },
+          { n:19, t:'sel', q:'Paragraph G', list:HEADINGS, a:'vi',
+            ex:'<q>With over $100 billion spent each year on marketing … any firm that can more accurately analyse how customers respond … could make a fortune.</q> <i>Make a fortune</i> = <i>potentially profitable</i>.' }
+        ]},
+        { h:'Questions 20–22', ins:'Match each person with the opinion credited to him. Choose the correct letter, A–F.', list:OPINIONS, qs:[
+          { n:20, t:'sel', q:'Steven Quartz', list:OPINIONS, a:'F',
+            ex:'In paragraph I, Quartz says brain-scanning could <q>determine when people are capable of making free choices, to ensure that advertising falls within those bounds</q>, which protects consumers from exploitation. B is a trap: in G he says unconscious attitudes are <i>beyond</i> methods that use introspection, the opposite of B.' },
+          { n:21, t:'sel', q:'Gary Ruskin', list:OPINIONS, a:'D',
+            ex:'Marketing already causes <q>an epidemic of marketing-related diseases</q>, and <q>Neuromarketing is a tool to amplify these trends</q>. <i>Amplify these trends</i> = <i>make an existing problem worse</i>. C is the opposite of his view.' },
+          { n:22, t:'sel', q:'Tim Ambler', list:OPINIONS, a:'A',
+            ex:'<q>If the owner of the tool gets a decent rent for hiring it out, then that subsidises the cost of the equipment.</q> <i>Subsidises the cost</i> = <i>contributes towards the cost</i>. E is the critics’ objection, which Ambler is answering.' }
+        ]},
+        { h:'Questions 23–26', ins:'Complete the summary below. Choose ONE WORD ONLY from the passage for each answer.', qs:[
+          { n:23, t:'gap', lim:1, pre:'Neuromarketing can provide valuable information on attitudes to particular', post:'.', acc:['brands'],
+            ex:'Paragraph C: blood flow while looking at a logo <q>suggests that he or she identifies with that brand</q>; paragraph F compares two cola brands. The summary says <i>particular …</i>, so the plural <i>brands</i> is needed.' },
+          { n:24, t:'gap', lim:1, pre:'It may be more reliable than surveys, where people can be', post:',', acc:['dishonest','untruthful'],
+            ex:'Paragraph E: <q>people do not always tell opinion pollsters the truth</q>. Not telling the truth = <i>dishonest</i>. <b>Teacher’s note:</b> the passage never uses <i>dishonest</i>, only <i>honest</i> (<q>even honest people …</q>), so this item does not strictly follow its own “word from the passage” rule. <i>Dishonest</i> and <i>untruthful</i> are both accepted here.' },
+          { n:25, t:'gap', lim:1, pre:'or focus groups, where they may be influenced by others. It also allows researchers to identify the subject’s', post:'thought patterns.', acc:['subconscious'],
+            ex:'Paragraph C: <q>This provides clues to the subject’s subconscious thought patterns.</q> The words <i>thought patterns</i> appear in exactly that phrase. (<i>Unconscious</i> in paragraph G describes <i>attitudes</i>, not thought patterns.)' },
+          { n:26, t:'gap', lim:1, pre:'However, some people are concerned that it could lead to problems such as an increase in disease among', post:'.', acc:['children'],
+            ex:'Paragraph H: <q>That is especially true of children, who are suffering from an epidemic of marketing-related diseases</q>.' }
+        ]}
+      ],
+      vocab: [
+        ['fusion','noun','the joining of two or more things into one.','The resulting fusion of neuroscience and marketing …'],
+        ['in obscurity','phrase','unknown; not noticed by many people.','The idea remained in obscurity until 2001.'],
+        ['subconscious','adjective','happening in the mind without your being aware of it.','… clues to the subject’s subconscious thought patterns.'],
+        ['pilot study','noun','a small first trial run before a full study.','Two carmakers … ran pilot studies in 2003.'],
+        ['flawed','adjective','having weaknesses or mistakes.','Of course, focus groups and surveys are flawed too.'],
+        ['introspection','noun','examining your own thoughts and feelings.','… beyond traditional methods that utilise introspection.'],
+        ['wary','adjective','careful because you think something may be harmful.','Consumer advocates are wary.'],
+        ['amplify','verb','to make something stronger or bigger.','Neuromarketing is a tool to amplify these trends.'],
+        ['benign','adjective','harmless; meant to do good.','… could equally be used for benign purposes.'],
+        ['frivolous','adjective','not serious; unimportant.','… the use of medical equipment for frivolous rather than medical purposes.'],
+        ['subsidise','verb','to pay part of the cost of something.','… that subsidises the cost of the equipment.']
+      ]
+    },
+    3: {
+      groups: [
+        { h:'Questions 27–32', ins:'Do the following statements agree with the information given in the passage? Choose TRUE if the statement agrees with the information, FALSE if it contradicts the information, NOT GIVEN if there is no information on this.', qs:[
+          { n:27, t:'tfng', q:'When Peter Osbeck visited Ascension, he found no inhabitants on the island.', a:'NOT GIVEN',
+            ex:'Osbeck describes <q>a heap of ruinous rocks</q>, a bare mountain and a few plant species. He says nothing about whether people lived there. (The navy garrison is mentioned only for 1843, almost a century later.)' },
+          { n:28, t:'tfng', q:'The natural vegetation on the island contained some species which were found nowhere else.', a:'TRUE',
+            ex:'<q>A couple of dozen species of plant, most of them ferns and some of them unique to the island.</q> <i>Unique to the island</i> = <i>found nowhere else</i>.' },
+          { n:29, t:'tfng', q:'Joseph Hooker assumed that human activity had caused the decline in the island’s plant life.', a:'FALSE',
+            ex:'Hooker <q>concluded that the island had suffered some natural calamity</q>. A natural disaster contradicts human activity.' },
+          { n:30, t:'tfng', q:'British sailors on the island took part in a major tree planting project.', a:'TRUE',
+            ex:'Hooker suggested <q>an ambitious scheme for planting trees</q>; <q>the sailors set to with a will</q>, <q>planting several thousand trees a year</q>. <i>Ambitious scheme</i> = <i>major project</i>.' },
+          { n:31, t:'tfng', q:'Hooker sent details of his planting scheme to a number of different countries.', a:'NOT GIVEN',
+            ex:'Plants arrived from Argentina, South Africa and England, but the passage never says who arranged this or that Hooker sent details anywhere.' },
+          { n:32, t:'tfng', q:'The bamboo and prickly pear seeds sent from England were unsuitable for Ascension.', a:'FALSE',
+            ex:'The seeds included <q>two species that especially liked the place: bamboo and prickly pear</q>. They grew well, which is the opposite of unsuitable.' }
+        ]},
+        { h:'Questions 33–37', ins:'Complete each sentence with the correct ending, A–G.', list:ENDINGS, qs:[
+          { n:33, t:'sel', q:'The reason for modern conservationists’ concern over Hooker’s tree planting programme is that', list:ENDINGS, a:'B',
+            ex:'<q>The exotic species wrecked the indigenous ecosystem, squeezing out the island’s endemic plants.</q> E is what conservationists want <i>done</i> now, not the <i>reason</i> for their concern.' },
+          { n:34, t:'sel', q:'David Wilkinson says the creation of the rainforest in Ascension is important because it shows that', list:ENDINGS, a:'F',
+            ex:'It is <q>a fully functioning man-made tropical cloud forest</q> grown <q>from a ragbag of species collected more or less at random</q>. <i>At random</i> + <i>fully functioning</i> = <i>randomly introduced species can coexist</i>.' },
+          { n:35, t:'sel', q:'Wilkinson says the existence of Ascension’s rainforest challenges the theory that', list:ENDINGS, a:'D',
+            ex:'<q>Conventional ecological theory says that complex ecosystems such as cloud forests can emerge only through evolutionary processes</q>, and <q>that’s not what happened on Green Mountain</q>.' },
+          { n:36, t:'sel', q:'Alan Gray questions Wilkinson’s theory, claiming that', list:ENDINGS, a:'G',
+            ex:'Gray argues the endemic species may <q>still form the framework</q> and <q>the new arrivals may just be an adornment, with little structural importance</q>. <i>Little structural importance</i> = <i>less ecological significance</i>. C is wrong: Gray says the originals may be more important, not more successful.' },
+          { n:37, t:'sel', q:'Additional support for Wilkinson’s theory comes from findings that', list:ENDINGS, a:'A',
+            ex:'<q>Supposedly pristine tropical rainforests … may in places be little more than the overgrown gardens of past rainforest civilisations.</q> Gardens planted by people = <i>originally planted by man</i>.' }
+        ]},
+        { h:'Questions 38–40', ins:'Choose the correct letter, A, B, C or D.', qs:[
+          { n:38, t:'mcq', q:'Wilkinson suggests that conservationists’ concern about the island is misguided because',
+            o:['it is based on economic rather than environmental principles.','it is not focusing on the most important question.','it is encouraging the destruction of endemic species.','it is not supported by the local authorities.'], a:'B',
+            ex:'Their concern <q>has … blinded them to something quite astonishing</q>, and <q>ecologists are missing out on the study of a great enigma</q>. They are looking at the wrong question. C reverses their aim (they protect endemics); D is wrong because the authorities are actively culling introduced species; A is never mentioned.' },
+          { n:39, t:'mcq', q:'According to Wilkinson, studies of insects on the island could demonstrate',
+            o:['the possibility of new ecological relationships.','a future threat to the ecosystem of the island.','the existence of previously unknown species.','a chance for the survival of rainforest ecology.'], a:'A',
+            ex:'Wilkinson asks whether the insects <q>came with the plant on which they feed or discover[ed] it on arrival</q>. If they found new food plants on arrival, new plant–insect relationships formed without co-evolution. That is why <q>such questions go to the heart of how rainforests happen</q>.' },
+          { n:40, t:'mcq', q:'Overall, what feature of the Ascension rainforest does the writer stress?',
+            o:['the conflict of natural and artificial systems','the unusual nature of its ecological structure','the harm done by interfering with nature','the speed and success of its development'], a:'B',
+            ex:'The passage keeps returning to how strange this forest is: built from random species <q>without any co-evolution</q>, <q>a great enigma</q>, and finally <q>the most artificial rainforest in the world could tell us more about rainforest ecology than any number of natural forests</q>. Its success is mentioned (D), but speed is not the writer’s focus; C is the ecologists’ view, which the writer questions.' }
+        ]}
+      ],
+      vocab: [
+        ['calamity','noun','a sudden disaster.','… the island had suffered some natural calamity.'],
+        ['denude (of)','verb','to strip something of its covering.','… that had denuded it of vegetation.'],
+        ['garrison','noun','a group of soldiers or sailors stationed in a place to guard it.','The British Navy … maintained a garrison on the island.'],
+        ['indigenous / endemic','adjectives','<i>indigenous</i>: native to a place; <i>endemic</i>: native and found only in that place.','The exotic species wrecked the indigenous ecosystem, squeezing out the island’s endemic plants.'],
+        ['prolific','adjective','producing a lot; growing in large amounts.','… encouraging more prolific vegetation on the island.'],
+        ['tenet','noun','a basic principle or belief.','… some of the most dearly held tenets of ecology.'],
+        ['niche','noun','in ecology, the particular role a species fills in its environment.','… each organism develops in concert with others to fill particular niches.'],
+        ['clutch at straws','idiom','to try any weak idea because you have nothing better.','But to Wilkinson this sounds like clutching at straws.'],
+        ['pristine','adjective','in its original condition; untouched.','… supposedly pristine tropical rainforests …'],
+        ['earmarked for','phrase','chosen or set aside for a particular purpose.','… introduced species … are earmarked for culling rather than conservation.'],
+        ['enigma','noun','a mystery; something hard to understand.','… ecologists are missing out on the study of a great enigma.']
+      ]
+    }
+  };
+
+  function el(tag, cls, html){
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (html != null) e.innerHTML = html;
+    return e;
+  }
+  function norm(s){
+    return String(s).toLowerCase().replace(/[‘’]/g,"'").replace(/[^a-z0-9' -]/g,' ')
+      .replace(/\s+/g,' ').trim().replace(/^(the|a|an) /,'');
+  }
+  function words(s){ var t = String(s).trim(); return t ? t.split(/\s+/).length : 0; }
+
+  function buildQ(q, uid){
+    var d = el('div','q'); d.qd = q;
+    var qid = 'q' + uid;
+    if (q.t === 'gap'){
+      var p = el('p','qt');
+      p.innerHTML = '<span class="qn">' + q.n + '</span>' + q.pre + ' ';
+      var inp = document.createElement('input');
+      inp.type = 'text'; inp.className = 'field'; inp.id = qid;
+      inp.setAttribute('aria-label','Answer ' + q.n); inp.autocomplete = 'off'; inp.spellcheck = false;
+      p.appendChild(inp);
+      p.appendChild(document.createTextNode(' ' + q.post));
+      d.appendChild(p);
+    } else {
+      var lab = el('p','qt','<span class="qn">' + q.n + '</span>' + (q.q || ''));
+      lab.id = qid;
+      d.appendChild(lab);
+      if (q.t === 'sel'){
+        var s = document.createElement('select');
+        s.className = 'field'; s.setAttribute('aria-labelledby', qid);
+        s.appendChild(new Option('Choose…',''));
+        q.list.forEach(function(it){ s.appendChild(new Option(it[0] + '  ' + it[1], it[0])); });
+        d.appendChild(s);
+      } else {
+        var g = el('div','opts' + (q.t === 'tfng' ? ' row' : ''));
+        g.setAttribute('role','group'); g.setAttribute('aria-labelledby', qid);
+        var labels = q.t === 'tfng' ? TFNG : q.o.map(function(_,i){ return 'ABCDEF'[i]; });
+        labels.forEach(function(k, i){
+          var b = el('button','opt');
+          b.type = 'button'; b.dataset.k = k;
+          b.setAttribute('aria-pressed','false');
+          b.innerHTML = q.t === 'tfng' ? k : '<span class="k">' + k + '</span> <span class="t">' + q.o[i] + '</span>';
+          g.appendChild(b);
+        });
+        d.appendChild(g);
+      }
+    }
+    d.appendChild(el('p','fb')).hidden = true;
+    return d;
+  }
+
+  function maxMarks(p){
+    var m = 0;
+    DATA[p].groups.forEach(function(g){ g.qs.forEach(function(q){ m += q.marks || 1; }); });
+    return m;
+  }
+
+  document.querySelectorAll('.psg').forEach(function(box){
+    var p = box.dataset.p, data = DATA[p], total = maxMarks(p);
+    var qsWrap = box.querySelector('.qs'), uid = 0;
+    data.groups.forEach(function(g){
+      var gr = el('div','grp');
+      gr.appendChild(el('h4', null, g.h));
+      gr.appendChild(el('p','ins', g.ins));
+      if (g.list){
+        var l = el('div','list');
+        g.list.forEach(function(it){ l.appendChild(el('div', null, '<b>' + it[0] + '</b>' + it[1])); });
+        gr.appendChild(l);
+      }
+      g.qs.forEach(function(q){ gr.appendChild(buildQ(q, p + '-' + (uid++))); });
+      qsWrap.appendChild(gr);
+    });
+
+    var vb = box.querySelector('.vocab');
+    vb.appendChild(el('h4', null, 'Key vocabulary'));
+    var dl = el('dl');
+    data.vocab.forEach(function(v){
+      dl.appendChild(el('dt', null, v[0] + '<span>' + v[1] + '</span>'));
+      dl.appendChild(el('dd', null, v[2] + ' <i>“' + v[3] + '”</i>'));
+    });
+    vb.appendChild(dl);
+
+    var scoreB = box.querySelector('.score b');
+    var sum = box.querySelector('.sum');
+    var subBtn = box.querySelector('.submit'), resetBtn = box.querySelector('.reset');
+    var done = false;
+
+    // Selecting options (no instant feedback; marking happens on Submit)
+    qsWrap.addEventListener('click', function(e){
+      var b = e.target.closest('.opt');
+      if (!b || done) return;
+      var q = b.closest('.q'), qd = q.qd;
+      if (qd.t === 'multi'){
+        var on = !b.classList.contains('sel');
+        if (on && q.querySelectorAll('.opt.sel').length >= qd.pick) return;
+        b.classList.toggle('sel', on); b.setAttribute('aria-pressed', String(on));
+      } else {
+        q.querySelectorAll('.opt').forEach(function(o){ o.classList.remove('sel'); o.setAttribute('aria-pressed','false'); });
+        b.classList.add('sel'); b.setAttribute('aria-pressed','true');
+      }
+    });
+
+    function setRes(fb, ok, text){
+      fb.innerHTML = '<span class="res ' + (ok ? 'ok' : 'bad') + '">' + text + '</span> ';
+    }
+
+    function submit(){
+      if (done) return;
+      var unanswered = 0;
+      qsWrap.querySelectorAll('.q').forEach(function(q){
+        var qd = q.qd;
+        if (qd.t === 'gap'){ if (!q.querySelector('input').value.trim()) unanswered++; }
+        else if (qd.t === 'sel'){ if (!q.querySelector('select').value) unanswered++; }
+        else if (qd.t === 'multi'){ if (q.querySelectorAll('.opt.sel').length < qd.pick) unanswered++; }
+        else if (!q.querySelector('.opt.sel')) unanswered++;
+      });
+      if (unanswered && !confirm(unanswered + (unanswered === 1 ? ' question is' : ' questions are') + ' still unanswered. Submit anyway?')) return;
+
+      done = true; stopTimer();
+      var got = 0;
+      qsWrap.querySelectorAll('.q').forEach(function(q){
+        var qd = q.qd, fb = q.querySelector('.fb'), ok;
+        if (qd.t === 'gap'){
+          var inp = q.querySelector('input'), v = inp.value, nv = norm(v);
+          var over = words(v) > qd.lim;
+          ok = !over && qd.acc.some(function(a){ return norm(a) === nv; });
+          inp.readOnly = true; inp.classList.add(ok ? 'ok' : 'bad');
+          if (ok) setRes(fb, true, '✓ Correct.');
+          else setRes(fb, false, (v.trim() ? (over ? '✗ Over the word limit.' : '✗ Incorrect.') : '✗ No answer.') + ' Answer: ' + qd.acc[0] + '.');
+          if (ok) got++;
+        } else if (qd.t === 'sel'){
+          var s = q.querySelector('select');
+          ok = s.value === qd.a;
+          s.disabled = true; s.classList.add(ok ? 'ok' : 'bad');
+          setRes(fb, ok, ok ? '✓ Correct.' : (s.value ? '✗ Incorrect.' : '✗ No answer.') + ' Answer: ' + qd.a + '.');
+          if (ok) got++;
+        } else if (qd.t === 'multi'){
+          var hits = 0;
+          q.querySelectorAll('.opt').forEach(function(b){
+            b.disabled = true;
+            var right = qd.a.indexOf(b.dataset.k) > -1, sel = b.classList.contains('sel');
+            b.classList.remove('sel');
+            if (right) b.classList.add('ok');
+            else if (sel) b.classList.add('bad');
+            if (right && sel) hits++;
+          });
+          got += hits;
+          setRes(fb, hits === qd.marks, (hits === qd.marks ? '✓ ' : '') + hits + ' / ' + qd.marks + ' marks. Answer: ' + qd.a.join(', ') + ' (any order).');
+        } else {
+          var pick = q.querySelector('.opt.sel');
+          ok = !!pick && pick.dataset.k === qd.a;
+          q.querySelectorAll('.opt').forEach(function(b){
+            b.disabled = true; b.classList.remove('sel');
+            if (b.dataset.k === qd.a) b.classList.add('ok');
+          });
+          if (pick && !ok) pick.classList.add('bad');
+          setRes(fb, ok, ok ? '✓ Correct.' : (pick ? '✗ Incorrect.' : '✗ No answer.') + ' Answer: ' + qd.a + '.');
+          if (ok) got++;
+        }
+        fb.insertAdjacentHTML('beforeend', qd.ex);
+        fb.hidden = false;
+      });
+      scoreB.textContent = got + ' / ' + total;
+      sum.innerHTML = 'You scored <b>' + got + ' / ' + total + '</b>. Read the explanation under each question: for every answer, find the words in the passage that mean the same as the words in the question. Then study the key vocabulary below.';
+      sum.hidden = false; vb.hidden = false;
+      subBtn.hidden = true; resetBtn.hidden = false;
+      sum.setAttribute('tabindex','-1'); sum.focus();
+    }
+
+    function reset(){
+      done = false;
+      qsWrap.querySelectorAll('.q').forEach(function(q){
+        q.querySelectorAll('.opt').forEach(function(b){ b.disabled = false; b.classList.remove('sel','ok','bad'); b.setAttribute('aria-pressed','false'); });
+        q.querySelectorAll('.field').forEach(function(f){ f.classList.remove('ok','bad'); f.disabled = false; f.readOnly = false; f.value = ''; });
+        var fb = q.querySelector('.fb'); fb.hidden = true; fb.innerHTML = '';
+      });
+      scoreB.textContent = '– / ' + total;
+      sum.hidden = true; vb.hidden = true;
+      subBtn.hidden = false; resetBtn.hidden = true;
+      resetTimer();
+    }
+
+    // 20-minute countdown; it only warns, it never locks the answers.
+    var clock = box.querySelector('.clock'), tBtn = box.querySelector('.timer');
+    var left = 1200, tick = null;
+    function show(){
+      var m = Math.floor(Math.abs(left) / 60), s = Math.abs(left) % 60;
+      clock.textContent = (left < 0 ? '+' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+      clock.classList.toggle('up', left <= 0);
+    }
+    function stopTimer(){ if (tick){ clearInterval(tick); tick = null; tBtn.textContent = 'Resume timer'; } }
+    function resetTimer(){ stopTimer(); left = 1200; show(); tBtn.textContent = 'Start timer'; }
+    tBtn.addEventListener('click', function(){
+      if (tick){ stopTimer(); tBtn.textContent = 'Resume timer'; return; }
+      tBtn.textContent = 'Pause timer';
+      tick = setInterval(function(){ left--; show(); if (left === 0) clock.setAttribute('aria-live','assertive'); }, 1000);
+    });
+
+    subBtn.addEventListener('click', submit);
+    resetBtn.addEventListener('click', reset);
+    show();
+  });
+
+  // Open a passage when linked as #passage-N.
+  if (/^#passage-[123]$/.test(location.hash)){
+    var t = document.getElementById(location.hash.slice(1));
+    if (t) t.open = true;
+  }
+})();
+</script>
+</body>
+</html>
