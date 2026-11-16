@@ -129,6 +129,26 @@
   .vocab dd{margin:0; font-size:16.5px; color:var(--mute); line-height:1.5}
   .vocab dd i{color:var(--ink)}
 
+  /* Highlighting: student highlights (yellow) and answer evidence (accent) */
+  .hint{font-size:15px; color:var(--faint); line-height:1.4; flex:1 1 220px}
+  .ctl.sm{font-size:14.5px; padding:5px 12px; margin-top:10px}
+  .text{--evbg:rgba(107,23,35,.09)}
+  mark.hl{background:#ffe680; color:inherit; border-radius:2px; cursor:pointer}
+  mark.ev{background:var(--evbg); color:inherit; border-bottom:2px solid var(--accent); cursor:pointer; scroll-margin:90px}
+  mark.ev[data-n]::before{content:attr(data-n); font-size:11.5px; font-weight:700; line-height:1; color:#fff; background:var(--accent);
+         border-radius:4px; padding:2px 5px; margin-right:4px; vertical-align:2px; font-style:normal}
+  mark.hl mark.ev, mark.ev mark.hl{background:#ffe680}
+  .flash{animation:flash 1.6s ease-out}
+  @keyframes flash{0%,40%{outline:3px solid var(--accent); outline-offset:2px} 100%{outline:3px solid transparent; outline-offset:2px}}
+  .hlbtn{position:fixed; z-index:50; font:inherit; font-size:15px; font-weight:700; padding:8px 16px; border-radius:7px; border:0;
+         background:var(--ink); color:var(--bg); box-shadow:0 4px 14px rgba(0,0,0,.25); cursor:pointer; -webkit-user-select:none; user-select:none}
+  .hlbtn[hidden]{display:none}
+  @media (prefers-color-scheme: dark){
+    .text{--evbg:rgba(235,155,165,.16)}
+    mark.hl, mark.hl mark.ev, mark.ev mark.hl{background:rgba(255,214,0,.34)}
+    mark.ev[data-n]::before{color:#141414}
+  }
+
   footer{margin-top:60px; padding-top:22px; border-top:1px solid var(--rule); font-size:15.5px; color:var(--faint)}
 
   /* Wide screens: passage and questions side by side, each scrolling on its own */
@@ -445,6 +465,103 @@
     }
   };
 
+  /* Evidence: the exact passage text that gives each answer, keyed by question number.
+     Matching ignores curly vs straight quotes and dash style. */
+  var EV = {
+    '1':'they farm a fungus that is their primary food source',
+    '2':"because an air-conditioning plant didn't have to be imported",
+    '3':'with its fantastically hot summers and fantastically cold winters',
+    '4':'has generally stayed between 23°C and 25°C, with the exception of the annual hot spell',
+    '5':'he hoped plants would grow wild in the atrium and pigeons and bats would move into it',
+    '6':'it is drawn out via ceiling vents',
+    '7':'finally exits through forty-eight brick chimneys',
+    '8':'all the windows are screened by cement arches',
+    '9':"During summer's cool nights, big fans flush air through the building",
+    '10':'For winter days, there are small heaters in the vents.',
+    '11–13':['The design of the entrances is based on the porcupine-quill headdresses of the local Shona tribe',
+                  "Elevators are designed to look like the mineshaft cages used in Zimbabwe's diamond mines",
+                  'The shape of the fan covers, and the stone used in their construction, are echoes of Great Zimbabwe'],
+    '14':"the company's name may itself simply be an example of clever marketing",
+    '15':'A volunteer lies in an fMRI machine and is shown images or video clips',
+    '16':'American companies have become more open about their use of neuromarketing',
+    '17':'focus groups and surveys are flawed too',
+    '18':'An unpublished study of attitudes towards two well-known cola drinks',
+    '19':'could make a fortune',
+    '20':'to ensure that advertising falls within those bounds',
+    '21':'Neuromarketing is a tool to amplify these trends',
+    '22':'that subsidises the cost of the equipment',
+    '23':'he or she identifies with that brand',
+    '24':'people do not always tell opinion pollsters the truth',
+    '25':"clues to the subject's subconscious thought patterns",
+    '26':'especially true of children',
+    '27':"he wrote of 'a heap of ruinous rocks' with a bare, white mountain in the middle",
+    '28':'some of them unique to the island',
+    '29':'the island had suffered some natural calamity',
+    '30':'the sailors set to with a will',
+    '31':'a naval transport ship from Argentina delivered a batch of seedlings',
+    '32':'two species that especially liked the place: bamboo and prickly pear',
+    '33':"The exotic species wrecked the indigenous ecosystem, squeezing out the island's endemic plants.",
+    '34':'grown from scratch from a ragbag of species collected more or less at random',
+    '35':'complex ecosystems such as cloud forests can emerge only through evolutionary processes',
+    '36':'The new arrivals may just be an adornment, with little structural importance for the ecosystem.',
+    '37':'may in places be little more than the overgrown gardens of past rainforest civilisations',
+    '38':'blinded them to something quite astonishing',
+    '39':'did they come with the plant on which they feed or discover it on arrival?',
+    '40':'the most artificial rainforest in the world could tell us more about rainforest ecology than any number of natural forests'
+  };
+
+  function nz(s){ return s.replace(/[‘’]/g,"'").replace(/[“”]/g,'"').replace(/[–—]/g,'-').replace(/ /g,' '); }
+
+  // Find a string in an element's text and return a Range over it.
+  function findRange(root, str){
+    var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT), t, nodes = [], full = '';
+    while ((t = w.nextNode())){ nodes.push([t, full.length]); full += t.data; }
+    var i = nz(full).indexOf(nz(str));
+    if (i < 0) return null;
+    var j = i + str.length, r = document.createRange();
+    for (var k = 0; k < nodes.length; k++){
+      var n = nodes[k][0], s = nodes[k][1], e = s + n.data.length;
+      if (i >= s && i < e) r.setStart(n, i - s);
+      if (j > s && j <= e){ r.setEnd(n, j - s); break; }
+    }
+    return r;
+  }
+
+  // Wrap every text node inside a Range in a new element; works across tags.
+  function wrapRange(range, make){
+    var root = range.commonAncestorContainer;
+    if (root.nodeType === 3) root = root.parentNode;
+    var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT), t, list = [], out = [];
+    while ((t = w.nextNode())) if (range.intersectsNode(t)) list.push(t);
+    var sc = range.startContainer, so = range.startOffset, ec = range.endContainer, eo = range.endOffset;
+    list.forEach(function(node){
+      var st = node === sc ? so : 0, en = node === ec ? eo : node.data.length;
+      if (en <= st || !node.data.slice(st, en).trim()) return;
+      if (en < node.data.length) node.splitText(en);
+      if (st > 0) node = node.splitText(st);
+      var m = make();
+      node.parentNode.insertBefore(m, node);
+      m.appendChild(node);
+      out.push(m);
+    });
+    return out;
+  }
+
+  function unwrap(m){
+    var p = m.parentNode;
+    if (!p) return;
+    while (m.firstChild) p.insertBefore(m.firstChild, m);
+    p.removeChild(m);
+    p.normalize();
+  }
+
+  function flash(nodes){
+    [].forEach.call(nodes, function(n){
+      n.classList.remove('flash'); void n.offsetWidth; n.classList.add('flash');
+      setTimeout(function(){ n.classList.remove('flash'); }, 1700);
+    });
+  }
+
   function el(tag, cls, html){
     var e = document.createElement(tag);
     if (cls) e.className = cls;
@@ -458,7 +575,7 @@
   function words(s){ var t = String(s).trim(); return t ? t.split(/\s+/).length : 0; }
 
   function buildQ(q, uid){
-    var d = el('div','q'); d.qd = q;
+    var d = el('div','q'); d.qd = q; d.dataset.n = String(q.n);
     var qid = 'q' + uid;
     if (q.t === 'gap'){
       var p = el('p','qt');
@@ -533,8 +650,50 @@
     var subBtn = box.querySelector('.submit'), resetBtn = box.querySelector('.reset');
     var done = false;
 
+    var art = box.querySelector('.text');
+
+    // Student highlighter controls in the top bar
+    var topBar = box.querySelector('.bar');
+    var clr = el('button','ctl','Clear highlights'); clr.type = 'button';
+    clr.addEventListener('click', function(){ art.querySelectorAll('mark.hl').forEach(unwrap); });
+    topBar.appendChild(clr);
+    topBar.appendChild(el('span','hint','Select words in the passage, then press <b>Highlight</b>. Tap a highlight to remove it.'));
+
+    // In the passage: tap a highlight to remove it; tap marked evidence to jump to its question
+    art.addEventListener('click', function(e){
+      var s = window.getSelection();
+      if (s && !s.isCollapsed) return;
+      var ev = e.target.closest('mark.ev');
+      if (ev){
+        var q = qsWrap.querySelector('.q[data-n="' + ev.dataset.q + '"]');
+        if (q){ q.scrollIntoView({block:'center', behavior:'smooth'}); flash([q]); }
+        return;
+      }
+      var h = e.target.closest('mark.hl');
+      if (h) unwrap(h);
+    });
+
+    function showEvidence(){
+      qsWrap.querySelectorAll('.q').forEach(function(q){
+        var key = q.dataset.n;
+        [].concat(EV[key] || []).forEach(function(str){
+          var r = findRange(art, str);
+          if (!r){ console.warn('Evidence not found for ' + key + ': ' + str); return; }
+          var ms = wrapRange(r, function(){ var m = document.createElement('mark'); m.className = 'ev'; m.dataset.q = key; return m; });
+          if (ms.length) ms[0].dataset.n = key;
+        });
+      });
+    }
+    function clearEvidence(){ art.querySelectorAll('mark.ev').forEach(unwrap); }
+
     // Selecting options (no instant feedback; marking happens on Submit)
     qsWrap.addEventListener('click', function(e){
+      var go = e.target.closest('.goto');
+      if (go){
+        var ms = art.querySelectorAll('mark.ev[data-q="' + go.closest('.q').dataset.n + '"]');
+        if (ms.length){ ms[0].scrollIntoView({block:'center', behavior:'smooth'}); flash(ms); }
+        return;
+      }
       var b = e.target.closest('.opt');
       if (!b || done) return;
       var q = b.closest('.q'), qd = q.qd;
@@ -606,10 +765,12 @@
           if (ok) got++;
         }
         fb.insertAdjacentHTML('beforeend', qd.ex);
+        if (EV[q.dataset.n]) fb.insertAdjacentHTML('beforeend', '<br><button type="button" class="ctl sm goto">Show in passage</button>');
         fb.hidden = false;
       });
+      showEvidence();
       scoreB.textContent = got + ' / ' + total;
-      sum.innerHTML = 'You scored <b>' + got + ' / ' + total + '</b>. Read the explanation under each question: for every answer, find the words in the passage that mean the same as the words in the question. Then study the key vocabulary below.';
+      sum.innerHTML = 'You scored <b>' + got + ' / ' + total + '</b>. The text that gives each answer is now marked in the passage with its question number. Read the explanation under each question, press <b>Show in passage</b>, and compare the words in the question with the words in the text. Then study the key vocabulary below.';
       sum.hidden = false; vb.hidden = false;
       subBtn.hidden = true; resetBtn.hidden = false;
       sum.setAttribute('tabindex','-1'); sum.focus();
@@ -622,6 +783,8 @@
         q.querySelectorAll('.field').forEach(function(f){ f.classList.remove('ok','bad'); f.disabled = false; f.readOnly = false; f.value = ''; });
         var fb = q.querySelector('.fb'); fb.hidden = true; fb.innerHTML = '';
       });
+      clearEvidence();
+      art.querySelectorAll('mark.hl').forEach(unwrap);
       scoreB.textContent = '– / ' + total;
       sum.hidden = true; vb.hidden = true;
       subBtn.hidden = false; resetBtn.hidden = true;
@@ -648,6 +811,40 @@
     resetBtn.addEventListener('click', reset);
     show();
   });
+
+  // Floating "Highlight" button that appears under a selection inside a passage.
+  var hlBtn = el('button','hlbtn','Highlight');
+  hlBtn.type = 'button'; hlBtn.hidden = true;
+  document.body.appendChild(hlBtn);
+  var pending = null, selTimer = null;
+  function hideBtn(){ hlBtn.hidden = true; }
+  function checkSel(){
+    var s = window.getSelection();
+    if (!s || !s.rangeCount || s.isCollapsed){ hideBtn(); return; }
+    var r = s.getRangeAt(0), c = r.commonAncestorContainer;
+    if (c.nodeType === 3) c = c.parentNode;
+    if (!c.closest || !c.closest('.text') || !r.toString().trim()){ hideBtn(); return; }
+    pending = r.cloneRange();
+    var rect = r.getBoundingClientRect();
+    hlBtn.hidden = false;
+    var bw = hlBtn.offsetWidth, bh = hlBtn.offsetHeight;
+    var top = rect.bottom + 10;
+    if (top + bh > window.innerHeight - 8) top = Math.max(8, rect.top - bh - 10);
+    var left = Math.min(Math.max(8, rect.left + rect.width / 2 - bw / 2), window.innerWidth - bw - 8);
+    hlBtn.style.top = top + 'px'; hlBtn.style.left = left + 'px';
+  }
+  document.addEventListener('selectionchange', function(){ clearTimeout(selTimer); selTimer = setTimeout(checkSel, 150); });
+  document.addEventListener('scroll', function(){ if (!hlBtn.hidden) checkSel(); }, true);
+  window.addEventListener('resize', hideBtn);
+  function applyHL(){
+    if (!pending) return;
+    wrapRange(pending, function(){ var m = document.createElement('mark'); m.className = 'hl'; return m; });
+    pending = null; hideBtn();
+    var s = window.getSelection(); if (s) s.removeAllRanges();
+  }
+  // Act on pointerdown so the selection is still there (touch screens clear it on tap).
+  hlBtn.addEventListener('pointerdown', function(e){ e.preventDefault(); applyHL(); });
+  hlBtn.addEventListener('click', applyHL);
 
   // Open a passage when linked as #passage-N.
   if (/^#passage-[123]$/.test(location.hash)){
