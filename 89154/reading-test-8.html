@@ -1,0 +1,2188 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reading Test 8</title>
+<meta name="description" content="IELTS Academic Reading practice: three passages, forty questions, with answer key, explanations, passage evidence and key vocabulary.">
+<style>
+  :root{
+    --bg:#fbfaf8; --ink:#0d0d0d; --mute:#3f3e3b; --faint:#67655f;
+    --rule:#ddd9d3; --accent:#6b1723; --card:#ffffff;
+    --ok:#1e7a3c; --okbg:rgba(30,122,60,.08); --bad:#b42318; --badbg:rgba(180,35,24,.07);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#141414; --ink:#f5f3f0; --mute:#c8c6c2; --faint:#a09e9a;
+           --rule:#343434; --accent:#eb9ba5; --card:#1c1c1c;
+           --ok:#7ed49b; --okbg:rgba(126,212,155,.12); --bad:#f28b82; --badbg:rgba(242,139,130,.12); }
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font:21px/1.66 ui-sans-serif,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans TC",sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:820px; margin:0 auto; padding:64px 30px 100px}
+  a{color:var(--accent)}
+  .back{display:inline-block; font-size:17px; font-weight:600; text-decoration:none;
+        border-bottom:1px solid currentColor; margin-bottom:26px}
+  .back:hover{opacity:.7}
+  header{padding-bottom:30px; border-bottom:1px solid var(--rule)}
+  .course{margin:0 0 8px; font-size:15px; color:var(--faint); letter-spacing:.05em; text-transform:uppercase; font-weight:600}
+  h1{margin:0 0 14px; font-size:42px; line-height:1.16; font-weight:650; letter-spacing:-.018em}
+  .lead{color:var(--mute); font-size:19.5px; margin:0 0 12px}
+  .lead:last-child{margin-bottom:0}
+
+  /* Passage blocks */
+  .psg{margin-top:26px; background:var(--card); border:1px solid var(--rule); border-radius:10px}
+  .psg > summary{cursor:pointer; list-style:none; display:flex; align-items:center; gap:14px; padding:20px 26px}
+  .psg > summary::-webkit-details-marker{display:none}
+  .psg > summary:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:10px}
+  .psg > summary::after{content:""; flex:0 0 auto; width:9px; height:9px; margin:-4px 4px 0 2px;
+         border-right:2px solid var(--faint); border-bottom:2px solid var(--faint); transform:rotate(45deg); transition:transform .15s}
+  .psg[open] > summary::after{margin-top:4px; transform:rotate(-135deg)}
+  .psg > summary:hover h2{color:var(--accent)}
+  .psg .ttl{flex:1 1 auto; min-width:0}
+  .psg .pn{display:block; font-size:14px; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); font-weight:700}
+  .psg h2{margin:2px 0 0; font-size:25px; font-weight:650; letter-spacing:-.01em; line-height:1.3}
+  .psg .meta{display:block; font-size:16px; color:var(--faint); margin-top:2px}
+  .score{flex:0 0 auto; white-space:nowrap; font-size:14px; letter-spacing:.08em; text-transform:uppercase; color:var(--faint); font-weight:700}
+  .score b{color:var(--accent); font-size:18px; letter-spacing:0; margin-left:6px}
+  .body{padding:0 26px 26px; border-top:1px solid var(--rule)}
+
+  .bar{display:flex; flex-wrap:wrap; align-items:center; gap:12px; padding:18px 0}
+  .clock{font:600 22px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; color:var(--ink); min-width:76px}
+  .clock.up{color:var(--bad)}
+  .ctl{font:inherit; font-size:16px; font-weight:600; padding:9px 18px; border-radius:7px; cursor:pointer;
+       background:var(--bg); color:var(--ink); border:1.5px solid var(--rule); -webkit-appearance:none; appearance:none; touch-action:manipulation}
+  .ctl:hover{opacity:.8}
+  .ctl:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+  .ctl.main{background:var(--accent); color:#fff; border-color:var(--accent)}
+  @media (prefers-color-scheme: dark){ .ctl.main{color:#141414} }
+  .ctl[hidden]{display:none}
+
+  .split{display:block}
+  .text{font-size:18.5px; line-height:1.7}
+  .text p{margin:0 0 14px}
+  .text .pl{font-weight:700; color:var(--accent); margin-right:6px}
+  .text h3{margin:0 0 12px; font-size:22px; font-weight:650; text-align:left}
+  .qs{margin-top:22px}
+
+  .grp{margin:0 0 6px; padding:18px 0 4px; border-top:2px solid var(--ink)}
+  .grp h4{margin:0 0 4px; font-size:15px; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); font-weight:700}
+  .grp .ins{margin:0 0 10px; font-size:17px; color:var(--mute)}
+  .list{margin:6px 0 12px; padding:12px 16px; background:var(--bg); border:1px solid var(--rule); border-radius:7px; font-size:16.5px; line-height:1.5}
+  .list div{padding:2px 0}
+  .list b{display:inline-block; min-width:30px; color:var(--accent)}
+
+  .q{padding:14px 0; border-bottom:1px solid var(--rule)}
+  .q:last-child{border-bottom:0}
+  .qt{margin:0 0 10px; font-size:18px; font-weight:500; line-height:1.5}
+  .qn{font-size:14px; letter-spacing:.06em; color:var(--accent); font-weight:700; margin-right:8px}
+  .opts{display:grid; gap:7px}
+  .opts.row{grid-template-columns:repeat(3,1fr)}
+  .opt{display:flex; align-items:flex-start; gap:12px; width:100%; margin:0; text-align:left;
+       font:inherit; font-size:17px; line-height:1.45; color:var(--ink); background:var(--bg);
+       border:1.5px solid var(--rule); border-radius:7px; padding:9px 13px; cursor:pointer;
+       -webkit-appearance:none; appearance:none; touch-action:manipulation}
+  .opts.row .opt{justify-content:center; font-weight:600; font-size:15.5px; letter-spacing:.03em}
+  .opt:hover:not(:disabled){border-color:var(--faint)}
+  .opt:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+  .opt:disabled{cursor:default}
+  .opt .k{flex:0 0 auto; width:25px; height:25px; margin-top:1px; border-radius:50%; border:1.5px solid var(--faint);
+          color:var(--mute); font-size:13.5px; font-weight:700; display:inline-flex; align-items:center; justify-content:center}
+  .opt .t{flex:1 1 0; min-width:0}
+  .opt.sel{border-color:var(--accent); box-shadow:inset 0 0 0 1px var(--accent)}
+  .opt.sel .k{background:var(--accent); border-color:var(--accent); color:var(--card)}
+  .opt.ok{border-color:var(--ok); background:var(--okbg); box-shadow:none}
+  .opt.ok .k{border-color:var(--ok); background:transparent; color:var(--ok)}
+  .opt.bad{border-color:var(--bad); background:var(--badbg); box-shadow:none}
+  .opt.bad .k{border-color:var(--bad); background:transparent; color:var(--bad)}
+
+  select, input[type=text]{font:inherit; font-size:17px; color:var(--ink); background:var(--bg);
+       border:1.5px solid var(--rule); border-radius:7px; padding:8px 11px; max-width:100%}
+  select{width:100%; cursor:pointer}
+  input[type=text]{width:min(100%,320px)}
+  select:focus-visible, input[type=text]:focus-visible{outline:2px solid var(--accent); outline-offset:2px; border-color:var(--accent)}
+  .field.ok{border-color:var(--ok); background:var(--okbg)}
+  .field.bad{border-color:var(--bad); background:var(--badbg)}
+  .gap{display:inline-block; min-width:2em; border-bottom:1.5px solid var(--faint); padding:0 4px; color:var(--accent); font-weight:700}
+
+  .fb{margin:10px 0 0; padding:10px 14px; border-left:3px solid var(--rule); font-size:16.5px; line-height:1.55; color:var(--mute)}
+  .fb[hidden]{display:none}
+  .fb .res{font-weight:700}
+  .fb .res.ok{color:var(--ok)}
+  .fb .res.bad{color:var(--bad)}
+  .fb q{font-style:italic; color:var(--ink)}
+  .fb q::before{content:"\201C"} .fb q::after{content:"\201D"}
+
+  .sum{margin:18px 0 0; padding:14px 18px; border-radius:8px; background:var(--bg); border:1px solid var(--rule); font-size:18px}
+  .sum[hidden]{display:none}
+  .sum b{color:var(--accent)}
+  .vocab{margin-top:22px}
+  .vocab[hidden]{display:none}
+  .vocab h4{margin:0 0 10px; font-size:15px; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); font-weight:700}
+  .vocab dl{margin:0; display:grid; gap:10px}
+  .vocab dt{font-weight:650; font-size:18px}
+  .vocab dt span{font-weight:400; font-size:15px; color:var(--faint); margin-left:6px}
+  .vocab dd{margin:0; font-size:16.5px; color:var(--mute); line-height:1.5}
+  .vocab dd i{color:var(--ink)}
+
+  /* TRUE / FALSE / NOT GIVEN guide */
+  .guide{margin:4px 0 14px; padding:16px 18px; background:var(--bg); border:1px solid var(--rule); border-left:4px solid var(--accent);
+         border-radius:8px; font-size:16.5px; line-height:1.55; color:var(--mute)}
+  .guide .gh{margin:0 0 8px; font-size:14px; letter-spacing:.08em; text-transform:uppercase; font-weight:700; color:var(--ink)}
+  .guide .gh + .extext, .guide dl + .gh, .guide .gtip + .gh{margin-top:14px}
+  .tg{display:inline-block; min-width:92px; padding:1px 8px; border-radius:5px; font-size:13px; font-weight:700; letter-spacing:.04em;
+      text-align:center; border:1.5px solid currentColor; white-space:nowrap}
+  .tg.t{color:var(--ok)} .tg.f{color:var(--bad)} .tg.n{color:var(--faint)}
+  .tfdef{display:grid; grid-template-columns:auto 1fr; gap:8px 12px; margin:0; align-items:baseline}
+  .tfdef dt, .tfdef dd{margin:0}
+  .tfdef dt, .exs .tg{justify-self:start}
+  .tfdef dd b{color:var(--ink)}
+  .extext{margin:0 0 10px; padding:10px 14px; background:var(--card); border-radius:6px; color:var(--ink); font-style:italic}
+  .exs{list-style:none; margin:0; padding:0; display:grid; gap:10px}
+  .exs li{display:grid; grid-template-columns:auto 1fr; gap:2px 12px; align-items:baseline}
+  .exs .st{color:var(--ink); font-weight:500}
+  .exs .why{grid-column:2; font-size:15.5px}
+  .gtip{margin:12px 0 0}
+  .gtip b{color:var(--ink)}
+  @media (max-width:600px){
+    .guide{padding:14px; font-size:16px}
+    .tfdef{grid-template-columns:1fr; gap:2px}
+    .tfdef dd{margin-bottom:8px}
+    .exs li{grid-template-columns:1fr}
+    .exs .why{grid-column:1}
+  }
+
+  .fig{margin:4px 0 12px}
+  .fig img{display:block; max-width:100%; height:auto; background:#fff; border:1px solid var(--rule); border-radius:6px}
+  .fig figcaption{font-size:14.5px; color:var(--faint); margin-top:6px}
+
+  /* Highlighting: student highlights (yellow) and answer evidence (accent) */
+  .hint{font-size:15px; color:var(--faint); line-height:1.4; flex:1 1 220px}
+  .ctl.sm{font-size:14.5px; padding:5px 12px; margin-top:10px}
+  .text{--evbg:rgba(107,23,35,.09)}
+  mark.hl{background:#ffe680; color:inherit; border-radius:2px; cursor:pointer}
+  mark.ev{background:var(--evbg); color:inherit; border-bottom:2px solid var(--accent); cursor:pointer; scroll-margin:90px}
+  mark.ev[data-n]::before{content:attr(data-n); font-size:11.5px; font-weight:700; line-height:1; color:#fff; background:var(--accent);
+         border-radius:4px; padding:2px 5px; margin-right:4px; vertical-align:2px; font-style:normal}
+  mark.hl mark.ev, mark.ev mark.hl{background:#ffe680}
+  .flash{animation:flash 1.6s ease-out}
+  @keyframes flash{0%,40%{outline:3px solid var(--accent); outline-offset:2px} 100%{outline:3px solid transparent; outline-offset:2px}}
+  .hlbtn{position:fixed; z-index:50; font:inherit; font-size:15px; font-weight:700; padding:8px 16px; border-radius:7px; border:0;
+         background:var(--ink); color:var(--bg); box-shadow:0 4px 14px rgba(0,0,0,.25); cursor:pointer; -webkit-user-select:none; user-select:none}
+  .hlbtn[hidden]{display:none}
+  @media (prefers-color-scheme: dark){
+    .text{--evbg:rgba(235,155,165,.16)}
+    mark.hl, mark.hl mark.ev, mark.ev mark.hl{background:rgba(255,214,0,.34)}
+    mark.ev[data-n]::before{color:#141414}
+  }
+
+  footer{margin-top:60px; padding-top:22px; border-top:1px solid var(--rule); font-size:15.5px; color:var(--faint)}
+
+  /* Wide screens: passage and questions side by side, each scrolling on its own */
+  @media (min-width:1100px){
+    .wrap.wide{max-width:1320px}
+    .wrap.wide > header, .wrap.wide > footer{max-width:820px}
+    .split{display:grid; grid-template-columns:1fr 1fr; gap:34px; align-items:start}
+    .text, .qs{max-height:calc(100vh - 120px); overflow-y:auto; padding-right:12px; position:sticky; top:16px}
+    .qs{margin-top:0}
+  }
+  @media (max-width:600px){
+    .wrap{padding:40px 16px 80px}
+    h1{font-size:33px}
+    .psg > summary{padding:16px 18px}
+    .body{padding:0 18px 20px}
+    .psg h2{font-size:21px}
+    .score .lbl{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
+    .text{font-size:17.5px}
+    .opts.row{grid-template-columns:1fr}
+  }
+  @media print{
+    body{background:#fff; font-size:12pt}
+    .wrap{padding:0; max-width:none}
+    .bar, .back{display:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap wide">
+
+  <header>
+    <a class="back" id="back" href="./">&larr; Back to class 89154</a>
+    <p class="course" id="course">English Enrichment (F26) &nbsp;&middot;&nbsp; Academic Reading practice</p>
+    <h1>Reading Test 8</h1>
+    <p class="lead">Three passages, forty questions. Give yourself twenty minutes per passage. Answer every question, then press <b>Submit</b> to check your answers, read why each answer is right, and review the key vocabulary.</p>
+    <p class="lead">Nothing is recorded. Press <b>Try again</b> to clear a passage and start over.</p>
+  </header>
+
+  <!-- ============================== PASSAGE 1 ============================== -->
+  <details class="psg" id="passage-1" data-p="1">
+    <summary>
+      <span class="ttl"><span class="pn">Passage 1</span><h2>Snow-makers</h2><span class="meta">Questions 1&ndash;13 &middot; 20 minutes</span></span>
+      <span class="score" aria-live="polite"><span class="lbl">Score</span> <b>&ndash; / 13</b></span>
+    </summary>
+    <div class="body">
+      <div class="bar"><span class="clock" aria-live="off">20:00</span><button type="button" class="ctl timer">Start timer</button></div>
+      <div class="split">
+        <article class="text">
+          <h3>Snow-makers</h3>
+          <p><span class="pl">A</span>In the early to mid-twentieth century, with the growing popularity of skiing, ski slopes became extremely profitable businesses. But ski resort owners were completely dependent on the weather: if it didn’t snow, or didn’t snow enough, they had to close everything down. Fortunately, a device called the snow gun can now provide snow whenever it is needed. These days such machines are standard equipment in the vast majority of ski resorts around the world, making it possible for many resorts to stay open for several months a year.</p>
+          <p><span class="pl">B</span>Snow formed by natural weather systems comes from water vapour in the atmosphere. The water vapour condenses into droplets, forming clouds. If the temperature is sufficiently low, the water droplets freeze into tiny ice crystals. More water particles then condense onto the crystal and join with it to form a snowflake. As the snowflake grows heavier, it falls towards the Earth.</p>
+          <p><span class="pl">C</span>The snow gun works very differently from a natural weather system, but it accomplishes exactly the same thing. The device basically works by combining water and air. Two different hoses are attached to the gun, one leading from a water pumping station which pumps water up from a lake or reservoir, and the other leading from an air compressor. When the compressed air passes through the hose into the gun, it atomises the water – that is, it disrupts the stream so that the water splits up into tiny droplets. The droplets are then blown out of the gun and, if the outside temperature is below 0°C, ice crystals will form, and will then make snowflakes in the same way as natural snow.</p>
+          <p><span class="pl">D</span>Snow-makers often talk about dry snow and wet snow. Dry snow has a relatively low amount of water, so it is very light and powdery. This type of snow is excellent for skiing because skis glide over it easily without getting stuck in wet slush. One of the advantages of using a snow-maker is that this powdery snow can be produced to give the ski slopes a level surface. However, on slopes which receive heavy use, resort owners also use denser, wet snow underneath the dry snow. Many resorts build up the snow depth this way once or twice a year, and then regularly coat the trails with a layer of dry snow throughout the winter.</p>
+          <p><span class="pl">E</span>The wetness of snow is dependent on the temperature and humidity outside, as well as the size of the water droplets launched by the gun. Snow-makers have to adjust the proportions of water and air in their snow guns to get the perfect snow consistency for the outdoor weather conditions. Many ski slopes now do this with a central computer system that is connected to weather-reading stations all over the slope.</p>
+          <p><span class="pl">F</span>But man-made snow makes heavy demands on the environment. It takes about 275,000 litres of water to create a blanket of snow covering a 60 × 60 metre area. Most resorts pump water from one or more reservoirs located in low-lying areas. The run-off water from the slopes feeds back into these reservoirs, so the resort can actually use the same water over and over again. However, considerable amounts of energy are needed to run the large air-compressing pumps, and the diesel engines which run them also cause air pollution.</p>
+          <p><span class="pl">G</span>Because of the expense of making snow, ski resorts have to balance the cost of running the machines with the benefits of extending the ski season, making sure they only make snow when it is really needed and when it will bring the maximum amount of profit in return for the investment. But man-made snow has a number of other uses as well. A layer of snow keeps a lot of the Earth’s heat from escaping into the atmosphere, so farmers often use man-made snow to provide insulation for winter crops. Snow-making machines have played a big part in many movie productions. Movie producers often take several months to shoot scenes that cover just a few days. If the movie takes place in a snowy setting, the set decorators have to get the right amount of snow for each day of shooting, either by adding man-made snow or by melting natural snow. And another important application of man-made snow is its use in the tests that aircraft must undergo in order to ensure that they can function safely in extreme conditions.</p>
+        </article>
+        <div class="qs"></div>
+      </div>
+      <div class="bar"><button type="button" class="ctl main submit">Submit</button><button type="button" class="ctl reset" hidden>Try again</button></div>
+      <p class="sum" hidden></p>
+      <div class="vocab" hidden></div>
+    </div>
+  </details>
+
+  <!-- ============================== PASSAGE 2 ============================== -->
+  <details class="psg" id="passage-2" data-p="2">
+    <summary>
+      <span class="ttl"><span class="pn">Passage 2</span><h2>Why are so few tigers man-eaters?</h2><span class="meta">Questions 14&ndash;26 &middot; 20 minutes</span></span>
+      <span class="score" aria-live="polite"><span class="lbl">Score</span> <b>&ndash; / 13</b></span>
+    </summary>
+    <div class="body">
+      <div class="bar"><span class="clock" aria-live="off">20:00</span><button type="button" class="ctl timer">Start timer</button></div>
+      <div class="split">
+        <article class="text">
+          <h3>Why are so few tigers man-eaters?</h3>
+          <p><span class="pl">A</span>As you leave the Bandhavgarh National Park in central India, there is a notice which shows a huge, placid tiger. The notice says, ‘You may not have seen me, but I have seen you.’ There are more than a billion people in India, and Indian tigers probably see humans every single day of their lives. Tigers can and do kill almost everything they meet in the jungle; they will even attack elephants and rhino. Surely, then, it is a little strange that attacks on humans are not more frequent.</p>
+          <p><span class="pl">B</span>Some people might argue that these attacks were in fact common in the past. British writers of adventure stories, such as Jim Corbett, gave the impression that village life in India in the early years of the twentieth century involved a state of constant siege by man-eating tigers. But they may have overstated the terror spread by tigers. There were also far more tigers around in those days (probably 60,000 in the subcontinent, compared to just 3,000 today). So in proportion, attacks appear to have been as rare then as they are today.</p>
+          <p><span class="pl">C</span>It is widely assumed that the constraint is fear; but what exactly are tigers afraid of? Can they really know that we may be even better armed than they are? Surely not. Has the species programmed the experiences of all tigers with humans into its genes to be inherited as instinct? Perhaps. But I think the explanation may be simpler and, in a way, more intriguing.</p>
+          <p><span class="pl">D</span>Since the growth of ethology in the 1950s, we have tried to understand animal behaviour from the animal’s point of view. Until the first elegant experiments by pioneers in the field such as Konrad Lorenz, naturalists wrote about animals as if they were slightly less intelligent humans. Jim Corbett’s breathless accounts of his duels with man-eaters in truth tell us more about Jim Corbett than they do about the animals. The principle of ethology, on the other hand, requires us to attempt to think in the same way as the animal we are studying thinks, and to observe every tiny detail of its behaviour without imposing our own human significances on its actions.</p>
+          <p><span class="pl">E</span>I suspect that a tiger’s fear of humans lies not in some preprogrammed ancestral logic but in the way he actually perceives us visually. If you think like a tiger, a human in a car might appear just to be a part of the car, and because tigers don’t eat cars the human is safe – unless the car is menacing the tiger or its cubs, in which case a brave or enraged tiger may charge. A human on foot is a different sort of puzzle. Imagine a tiger sees a man who is 1.8m tall. A tiger is less than 1m tall but may be up to 3m long from head to tail. So when a tiger sees the man face on, it might not be unreasonable for him to assume that the man is 6m long. If he meets a deer of this size, he might attack the animal by leaping on its back, but when he looks behind the man he can’t see a back. From the front the man is huge, but looked at from the side he all but disappears. This must be very disconcerting. A hunter has to be confident that it can tackle its prey, and no one is confident when they are disconcerted. This is especially true of a solitary hunter such as the tiger, and may explain why lions – particularly young lionesses, who tend to encourage one another to take risks – are more dangerous than tigers.</p>
+          <p><span class="pl">F</span>If the theory that a tiger is disconcerted to find that a standing human is both very big and yet somehow invisible is correct, the opposite should be true of a squatting human. A squatting human is half the size and presents twice the spread of back, and more closely resembles a medium-sized deer. If tigers were simply frightened of all humans, then a squatting person would be no more attractive as a target than a standing one. This, however, appears not to be the case. Many incidents of attacks on people involve villagers squatting or bending over to cut grass for fodder or building material.</p>
+          <p><span class="pl">G</span>The fact that humans stand upright may therefore not just be something that distinguishes them from nearly all other species, but also a factor that helped them to survive in a dangerous and unpredictable environment.</p>
+        </article>
+        <div class="qs"></div>
+      </div>
+      <div class="bar"><button type="button" class="ctl main submit">Submit</button><button type="button" class="ctl reset" hidden>Try again</button></div>
+      <p class="sum" hidden></p>
+      <div class="vocab" hidden></div>
+    </div>
+  </details>
+
+  <!-- ============================== PASSAGE 3 ============================== -->
+  <details class="psg" id="passage-3" data-p="3">
+    <summary>
+      <span class="ttl"><span class="pn">Passage 3</span><h2>Keep taking the tablets</h2><span class="meta">Questions 27&ndash;40 &middot; 20 minutes</span></span>
+      <span class="score" aria-live="polite"><span class="lbl">Score</span> <b>&ndash; / 14</b></span>
+    </summary>
+    <div class="body">
+      <div class="bar"><span class="clock" aria-live="off">20:00</span><button type="button" class="ctl timer">Start timer</button></div>
+      <div class="split">
+        <article class="text">
+          <h3>Keep taking the tablets</h3>
+          <p>The history of aspirin is a product of a rollercoaster ride through time, of accidental discoveries, intuitive reasoning and intense corporate rivalry.</p>
+          <p>In the opening pages of <i>Aspirin: The Remarkable Story of a Wonder Drug</i>, Diarmuid Jeffreys describes this little white pill as ‘one of the most amazing creations in medical history, a drug so astonishingly versatile that it can relieve headache, ease your aching limbs, lower your temperature and treat some of the deadliest human diseases’.</p>
+          <p>Its properties have been known for thousands of years. Ancient Egyptian physicians used extracts from the willow tree as an analgesic, or painkiller. Centuries later the Greek physician Hippocrates recommended the bark of the willow tree as a remedy for the pains of childbirth and as a fever reducer. But it wasn’t until the eighteenth and nineteenth centuries that salicylates – the chemical found in the willow tree – became the subject of serious scientific investigation. The race was on to identify the active ingredient and to replicate it synthetically. At the end of the nineteenth century a German company, Friedrich Bayer & Co, succeeded in creating a relatively safe and very effective chemical compound, acetylsalicylic acid, which was renamed aspirin.</p>
+          <p>The late nineteenth century was a fertile period for experimentation, partly because of the hunger among scientists to answer some of the great scientific questions, but also because those questions were within their means to answer. One scientist in a laboratory with some chemicals and a test tube could make significant breakthroughs, whereas today, in order to map the human genome, for instance, one needs ‘an army of researchers, a bank of computers and millions and millions of dollars’.</p>
+          <p>But an understanding of the nature of science and scientific inquiry is not enough on its own to explain how society innovates. In the nineteenth century, scientific advance was closely linked to the industrial revolution. This was a period when people frequently had the means, motive and determination to take an idea and turn it into reality. In the case of aspirin that happened piecemeal – a series of minor, often unrelated advances, fertilised by the century’s broader economic, medical and scientific developments, that led to one big final breakthrough.</p>
+          <p>The link between big money and pharmaceutical innovation is also a significant one. Aspirin’s continued shelf life was ensured because for the first 70 years of its life, huge amounts of money were put into promoting it as an ordinary everyday analgesic. In the 1970s other analgesics, such as ibuprofen and paracetamol, were entering the market, and the pharmaceutical companies then focused on publicising these new drugs. But just at the same time, discoveries were made regarding the beneficial role of aspirin in preventing heart attacks, strokes and other afflictions. Had it not been for these findings, this pharmaceutical marvel might well have disappeared.</p>
+          <p>So the relationship between big money and drugs is an odd one. Commercial markets are necessary for developing new products and ensuring that they remain around long enough for scientists to carry out research on them. But the commercial markets are just as likely to ‘kill off’ certain products when something more attractive comes along. In the case of aspirin, a potential ‘wonder drug’ was around for over 70 years without anybody investigating the way in which it achieved its effects, because they were making more than enough money out of it as it was. If ibuprofen or paracetamol had entered the market just a decade earlier, aspirin might not be here today. It would be just another forgotten drug that people hadn’t bothered to explore.</p>
+          <p>None of the recent discoveries of aspirin’s benefits were made by the big pharmaceutical companies; they were made by scientists working in the public sector. ‘The reason for that is very simple and straightforward,’ Jeffreys says in his book. ‘Drug companies will only pursue research that is going to deliver financial benefits. There’s no profit in aspirin any more. It is incredibly inexpensive with tiny profit margins and it has no patent any more, so anyone can produce it.’ In fact, there’s almost a disincentive for drug companies to further boost the drug, he argues, as it could possibly put them out of business by stopping them from selling their more expensive brands.</p>
+          <p>So what is the solution to a lack of commercial interest in further exploring the therapeutic benefits of aspirin? More public money going into clinical trials, says Jeffreys. ‘If I were the Department of Health, I would say “this is a very inexpensive drug. There may be a lot of other things we could do with it.” We should put a lot more money into trying to find out.’ Jeffreys’ book – which not only tells the tale of a ‘wonder drug’ but also explores the nature of innovation and the role of big business, public money and regulation – reminds us why such research is so important.</p>
+        </article>
+        <div class="qs"></div>
+      </div>
+      <div class="bar"><button type="button" class="ctl main submit">Submit</button><button type="button" class="ctl reset" hidden>Try again</button></div>
+      <p class="sum" hidden></p>
+      <div class="vocab" hidden></div>
+    </div>
+  </details>
+
+  <footer>Passages and questions adapted from <i>IELTS Reading Test 8</i>; typing and grammar errors in the source PDF have been corrected. Answer key, explanations and vocabulary notes prepared for classroom use.</footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  // The same test is linked from more than one class page; ?c=fju shows that course's name and back link.
+  var CTX = {
+    fju: { back:'../advanced/', backText:'\u2190 Back to Advanced English for Freshmen',
+           course:'Advanced English for Freshmen (F26) \u00b7 Academic Reading practice' }
+  };
+  var ctx = null;
+  try { ctx = CTX[new URLSearchParams(location.search).get('c')] || null; } catch (e) {}
+  if (ctx){
+    var bk = document.getElementById('back'), cs = document.getElementById('course');
+    bk.href = ctx.back; bk.textContent = ctx.backText; cs.textContent = ctx.course;
+  }
+  var ABCD = ['A','B','C','D'];
+  var TFNG = ['TRUE','FALSE','NOT GIVEN'];
+  var YNG = ['YES','NO','NOT GIVEN'];
+  // Shown before the YES / NO / NOT GIVEN questions (the writer's views).
+  var YNG_GUIDE = "<p class=\"gh\">Before you start: YES, NO or NOT GIVEN?</p><dl class=\"tfdef\"><dt><span class=\"tg t\">YES</span></dt><dd>The statement <b>agrees with the writer’s view</b> or claim.</dd><dt><span class=\"tg f\">NO</span></dt><dd>The statement <b>goes against the writer’s view</b>. The writer believes the opposite.</dd><dt><span class=\"tg n\">NOT GIVEN</span></dt><dd>You <b>cannot tell what the writer thinks</b> about this.</dd></dl><p class=\"gtip\"><b>Not the same as TRUE / FALSE / NOT GIVEN.</b> Those questions check facts. These check the writer’s <i>opinions and claims</i>. Look for opinion language such as <i>should, ought to, in fact, admittedly, there is every reason to believe</i>.</p><p class=\"gh\">Example</p><p class=\"extext\">“Many people believe that homework should be banned. In my view, a small amount helps students practise what they have learned, although long assignments do more harm than good.”</p><ul class=\"exs\"><li><span class=\"tg t\">YES</span><span class=\"st\">Some homework can be useful for students.</span><span class=\"why\">The writer says a small amount helps.</span></li><li><span class=\"tg f\">NO</span><span class=\"st\">Schools should stop giving homework.</span><span class=\"why\"><i>Many people</i> believe this, but the writer does not. Always check <i>whose</i> opinion a sentence gives.</span></li><li><span class=\"tg f\">NO</span><span class=\"st\">Long assignments are good for students.</span><span class=\"why\">The writer says they do more harm than good.</span></li><li><span class=\"tg n\">NOT GIVEN</span><span class=\"st\">Teachers give too much homework nowadays.</span><span class=\"why\">The writer never says how much homework teachers give.</span></li><li><span class=\"tg n\">NOT GIVEN</span><span class=\"st\">Homework is more useful for older students.</span><span class=\"why\">The writer does not compare students of different ages.</span></li></ul><p class=\"gtip\"><b>NO or NOT GIVEN?</b> Ask: <i>does the writer say, or clearly believe, the opposite?</i> If yes, the answer is NO. If the writer gives no opinion on this point, the answer is NOT GIVEN.</p>";
+
+  // Shown before TRUE / FALSE / NOT GIVEN questions (unused in this test). The example text is not from the test, so it gives nothing away.
+  var TFNG_GUIDE =
+    '<p class="gh">Before you start: TRUE, FALSE or NOT GIVEN?</p>' +
+    '<dl class="tfdef">' +
+      '<dt><span class="tg t">TRUE</span></dt><dd>The passage <b>says the same thing</b> as the statement, usually in different words.</dd>' +
+      '<dt><span class="tg f">FALSE</span></dt><dd>The passage <b>says the opposite</b>. The statement and the passage cannot both be right.</dd>' +
+      '<dt><span class="tg n">NOT GIVEN</span></dt><dd>The passage <b>does not say</b>. There is not enough information to decide whether the statement is right or wrong.</dd>' +
+    '</dl>' +
+    '<p class="gh">Example</p>' +
+    '<p class="extext">&ldquo;The city library opened in 1998. It is open every day except Sunday, and most of its visitors are students.&rdquo;</p>' +
+    '<ul class="exs">' +
+      '<li><span class="tg t">TRUE</span><span class="st">The library is closed on Sundays.</span><span class="why"><i>Every day except Sunday</i> means the same as <i>closed on Sundays</i>.</span></li>' +
+      '<li><span class="tg f">FALSE</span><span class="st">The library is open seven days a week.</span><span class="why">The passage says the opposite: it is <i>not</i> open on Sunday.</span></li>' +
+      '<li><span class="tg f">FALSE</span><span class="st">All of the library&rsquo;s visitors are students.</span><span class="why">The passage says <i>most</i>, not <i>all</i>. Small words like <i>all, only, always, never</i> often make a statement FALSE.</span></li>' +
+      '<li><span class="tg n">NOT GIVEN</span><span class="st">The library is the largest in the city.</span><span class="why">The passage says nothing about its size.</span></li>' +
+      '<li><span class="tg n">NOT GIVEN</span><span class="st">More students use the library now than in 1998.</span><span class="why">The passage mentions 1998, but it never compares the numbers then and now.</span></li>' +
+    '</ul>' +
+    '<p class="gtip"><b>FALSE or NOT GIVEN?</b> Find the part of the passage the statement is about and ask: <i>does the passage say the opposite?</i> If yes, the answer is FALSE. If the passage is simply silent, the answer is NOT GIVEN.</p>' +
+    '<p class="gtip"><b>Use only the passage.</b> Do not use what you know about the world. A statement that is true in real life is still NOT GIVEN if the passage does not say it.</p>';
+
+  /* Question types: mcq, tfng, sel (dropdown from a list), gap (typed; acc = accepted, lim = word limit). */
+  var DATA = {
+ "1": {
+  "groups": [
+   {
+    "h": "Questions 1–5",
+    "ins": "The passage has seven paragraphs, A–G. Choose the correct heading for paragraphs C–G from the list of headings below.",
+    "list": [
+     [
+      "i",
+      "Considering ecological costs"
+     ],
+     [
+      "ii",
+      "Modifications to the design of the snow gun"
+     ],
+     [
+      "iii",
+      "The need for different varieties of snow"
+     ],
+     [
+      "iv",
+      "Local concern over environmental issues"
+     ],
+     [
+      "v",
+      "A problem and a solution"
+     ],
+     [
+      "vi",
+      "Applications beyond the ski slopes"
+     ],
+     [
+      "vii",
+      "Converting wet snow to dry snow"
+     ],
+     [
+      "viii",
+      "New method for calculating modifications"
+     ],
+     [
+      "ix",
+      "Artificial process, natural product"
+     ],
+     [
+      "x",
+      "Snow formation in nature"
+     ]
+    ],
+    "qs": [
+     {
+      "n": 1,
+      "t": "sel",
+      "q": "Paragraph C",
+      "list": [
+       [
+        "i",
+        "Considering ecological costs"
+       ],
+       [
+        "ii",
+        "Modifications to the design of the snow gun"
+       ],
+       [
+        "iii",
+        "The need for different varieties of snow"
+       ],
+       [
+        "iv",
+        "Local concern over environmental issues"
+       ],
+       [
+        "v",
+        "A problem and a solution"
+       ],
+       [
+        "vi",
+        "Applications beyond the ski slopes"
+       ],
+       [
+        "vii",
+        "Converting wet snow to dry snow"
+       ],
+       [
+        "viii",
+        "New method for calculating modifications"
+       ],
+       [
+        "ix",
+        "Artificial process, natural product"
+       ],
+       [
+        "x",
+        "Snow formation in nature"
+       ]
+      ],
+      "a": "ix",
+      "ex": "<q>The snow gun works very differently from a natural weather system, but it accomplishes exactly the same thing</q>: the snowflakes form <q>in the same way as natural snow</q>. A machine (artificial process) makes real snow (natural product)."
+     },
+     {
+      "n": 2,
+      "t": "sel",
+      "q": "Paragraph D",
+      "list": [
+       [
+        "i",
+        "Considering ecological costs"
+       ],
+       [
+        "ii",
+        "Modifications to the design of the snow gun"
+       ],
+       [
+        "iii",
+        "The need for different varieties of snow"
+       ],
+       [
+        "iv",
+        "Local concern over environmental issues"
+       ],
+       [
+        "v",
+        "A problem and a solution"
+       ],
+       [
+        "vi",
+        "Applications beyond the ski slopes"
+       ],
+       [
+        "vii",
+        "Converting wet snow to dry snow"
+       ],
+       [
+        "viii",
+        "New method for calculating modifications"
+       ],
+       [
+        "ix",
+        "Artificial process, natural product"
+       ],
+       [
+        "x",
+        "Snow formation in nature"
+       ]
+      ],
+      "a": "iii",
+      "ex": "<q>Snow-makers often talk about dry snow and wet snow</q>, and resorts use each for a different job: dry for a level surface, wet underneath on busy slopes. <i>vii</i> is a trap: wet snow is not <i>converted</i> to dry snow."
+     },
+     {
+      "n": 3,
+      "t": "sel",
+      "q": "Paragraph E",
+      "list": [
+       [
+        "i",
+        "Considering ecological costs"
+       ],
+       [
+        "ii",
+        "Modifications to the design of the snow gun"
+       ],
+       [
+        "iii",
+        "The need for different varieties of snow"
+       ],
+       [
+        "iv",
+        "Local concern over environmental issues"
+       ],
+       [
+        "v",
+        "A problem and a solution"
+       ],
+       [
+        "vi",
+        "Applications beyond the ski slopes"
+       ],
+       [
+        "vii",
+        "Converting wet snow to dry snow"
+       ],
+       [
+        "viii",
+        "New method for calculating modifications"
+       ],
+       [
+        "ix",
+        "Artificial process, natural product"
+       ],
+       [
+        "x",
+        "Snow formation in nature"
+       ]
+      ],
+      "a": "viii",
+      "ex": "Snow-makers adjust water and air <q>with a central computer system that is connected to weather-reading stations</q>. A computer working out the adjustments = a new method for calculating modifications. <i>ii</i> is a trap: the gun’s design does not change."
+     },
+     {
+      "n": 4,
+      "t": "sel",
+      "q": "Paragraph F",
+      "list": [
+       [
+        "i",
+        "Considering ecological costs"
+       ],
+       [
+        "ii",
+        "Modifications to the design of the snow gun"
+       ],
+       [
+        "iii",
+        "The need for different varieties of snow"
+       ],
+       [
+        "iv",
+        "Local concern over environmental issues"
+       ],
+       [
+        "v",
+        "A problem and a solution"
+       ],
+       [
+        "vi",
+        "Applications beyond the ski slopes"
+       ],
+       [
+        "vii",
+        "Converting wet snow to dry snow"
+       ],
+       [
+        "viii",
+        "New method for calculating modifications"
+       ],
+       [
+        "ix",
+        "Artificial process, natural product"
+       ],
+       [
+        "x",
+        "Snow formation in nature"
+       ]
+      ],
+      "a": "i",
+      "ex": "<q>man-made snow makes heavy demands on the environment</q>: huge amounts of water and energy, and air pollution from diesel engines. <i>iv</i> is a trap: no local people express concern."
+     },
+     {
+      "n": 5,
+      "t": "sel",
+      "q": "Paragraph G",
+      "list": [
+       [
+        "i",
+        "Considering ecological costs"
+       ],
+       [
+        "ii",
+        "Modifications to the design of the snow gun"
+       ],
+       [
+        "iii",
+        "The need for different varieties of snow"
+       ],
+       [
+        "iv",
+        "Local concern over environmental issues"
+       ],
+       [
+        "v",
+        "A problem and a solution"
+       ],
+       [
+        "vi",
+        "Applications beyond the ski slopes"
+       ],
+       [
+        "vii",
+        "Converting wet snow to dry snow"
+       ],
+       [
+        "viii",
+        "New method for calculating modifications"
+       ],
+       [
+        "ix",
+        "Artificial process, natural product"
+       ],
+       [
+        "x",
+        "Snow formation in nature"
+       ]
+      ],
+      "a": "vi",
+      "ex": "<q>man-made snow has a number of other uses as well</q>: insulating winter crops, film sets and aircraft tests."
+     }
+    ]
+   },
+   {
+    "h": "Questions 6–8",
+    "ins": "Label the diagram. Choose NO MORE THAN TWO WORDS from the passage for each answer.",
+    "fig": "<img src=\"reading-test-8-diagram.png\" width=\"607\" height=\"441\" alt=\"Drawing of a snow gun. Water enters from a hose at the back; a second hose brings air labelled 6; inside the gun, water is atomized into 7; snow comes out of the front into air below 0 degrees C, where 8 are formed.\"><figcaption>The snow gun.</figcaption>",
+    "qs": [
+     {
+      "n": 6,
+      "t": "gap",
+      "lim": 2,
+      "pre": "",
+      "post": "air enters the back of the gun through a hose.",
+      "acc": [
+       "compressed"
+      ],
+      "ex": "Paragraph C: one hose leads <q>from an air compressor</q>, and <q>the compressed air passes through the hose into the gun</q>."
+     },
+     {
+      "n": 7,
+      "t": "gap",
+      "lim": 2,
+      "pre": "Water is atomized into",
+      "post": "",
+      "acc": [
+       "tiny droplets",
+       "droplets"
+      ],
+      "ex": "Paragraph C: the air <q>atomises the water – that is, it disrupts the stream so that the water splits up into tiny droplets</q>."
+     },
+     {
+      "n": 8,
+      "t": "gap",
+      "lim": 2,
+      "pre": "In air below 0°C,",
+      "post": "are formed.",
+      "acc": [
+       "ice crystals"
+      ],
+      "ex": "Paragraph C: <q>if the outside temperature is below 0°C, ice crystals will form</q>. The snowflakes come after that, and the diagram already labels the snow."
+     }
+    ]
+   },
+   {
+    "h": "Questions 9–13",
+    "ins": "Complete the sentences below. Choose NO MORE THAN THREE WORDS from the passage for each answer.",
+    "qs": [
+     {
+      "n": 9,
+      "t": "gap",
+      "lim": 3,
+      "pre": "Dry snow is used to give slopes a level surface, while wet snow is used to increase the",
+      "post": "on busy slopes.",
+      "acc": [
+       "snow depth",
+       "depth"
+      ],
+      "ex": "Paragraph D: on <q>slopes which receive heavy use</q>, resorts use wet snow underneath and <q>build up the snow depth this way</q>."
+     },
+     {
+      "n": 10,
+      "t": "gap",
+      "lim": 3,
+      "pre": "To calculate the required snow consistency, the",
+      "post": "of the atmosphere must first be measured.",
+      "acc": [
+       "temperature and humidity",
+       "humidity and temperature"
+      ],
+      "ex": "Paragraph E: <q>The wetness of snow is dependent on the temperature and humidity outside</q>, measured by <q>weather-reading stations</q>."
+     },
+     {
+      "n": 11,
+      "t": "gap",
+      "lim": 3,
+      "pre": "The machinery used in the process of making the snow consumes a lot of",
+      "post": "which is damaging to the environment.",
+      "acc": [
+       "energy"
+      ],
+      "ex": "Paragraph F: <q>considerable amounts of energy are needed to run the large air-compressing pumps</q>. <i>Considerable amounts</i> = <i>a lot</i>."
+     },
+     {
+      "n": 12,
+      "t": "gap",
+      "lim": 3,
+      "pre": "Artificial snow is used in agriculture as a type of",
+      "post": "for plants in cold conditions.",
+      "acc": [
+       "insulation"
+      ],
+      "ex": "Paragraph G: <q>farmers often use man-made snow to provide insulation for winter crops</q>."
+     },
+     {
+      "n": 13,
+      "t": "gap",
+      "lim": 3,
+      "pre": "Artificial snow may also be used in carrying out safety checks on",
+      "post": ".",
+      "acc": [
+       "aircraft"
+      ],
+      "ex": "Paragraph G: <q>the tests that aircraft must undergo in order to ensure that they can function safely in extreme conditions</q>."
+     }
+    ]
+   }
+  ],
+  "vocab": [
+   [
+    "profitable",
+    "adjective",
+    "making money.",
+    "extremely profitable businesses"
+   ],
+   [
+    "condense",
+    "verb",
+    "(of a gas) to change into a liquid.",
+    "The water vapour condenses into droplets"
+   ],
+   [
+    "compressor",
+    "noun",
+    "a machine that squeezes air into a smaller space, under pressure.",
+    "an air compressor"
+   ],
+   [
+    "atomise",
+    "verb",
+    "to break a liquid into very small drops.",
+    "it atomises the water"
+   ],
+   [
+    "disrupt",
+    "verb",
+    "to break up or interrupt.",
+    "it disrupts the stream"
+   ],
+   [
+    "slush",
+    "noun",
+    "snow that has partly melted and become wet.",
+    "without getting stuck in wet slush"
+   ],
+   [
+    "consistency",
+    "noun",
+    "how thick, firm or wet something is.",
+    "the perfect snow consistency"
+   ],
+   [
+    "run-off",
+    "noun",
+    "water that flows off the land into rivers or lakes.",
+    "The run-off water from the slopes"
+   ],
+   [
+    "insulation",
+    "noun",
+    "a layer that stops heat from escaping.",
+    "to provide insulation for winter crops"
+   ],
+   [
+    "undergo",
+    "verb",
+    "to experience something, often a test or a process.",
+    "the tests that aircraft must undergo"
+   ]
+  ]
+ },
+ "2": {
+  "groups": [
+   {
+    "h": "Questions 14–18",
+    "ins": "The passage has seven paragraphs, A–G. Which paragraph contains the following information?",
+    "qs": [
+     {
+      "n": 14,
+      "t": "sel",
+      "q": "a rejected explanation of why tiger attacks on humans are rare",
+      "list": [
+       [
+        "A",
+        "Paragraph A"
+       ],
+       [
+        "B",
+        "Paragraph B"
+       ],
+       [
+        "C",
+        "Paragraph C"
+       ],
+       [
+        "D",
+        "Paragraph D"
+       ],
+       [
+        "E",
+        "Paragraph E"
+       ],
+       [
+        "F",
+        "Paragraph F"
+       ],
+       [
+        "G",
+        "Paragraph G"
+       ]
+      ],
+      "a": "C",
+      "ex": "Paragraph C: <q>Can they really know that we may be even better armed than they are? Surely not.</q> <i>Surely not</i> rejects the idea."
+     },
+     {
+      "n": 15,
+      "t": "sel",
+      "q": "a reason why tiger attacks on humans might be expected to happen more often than they do",
+      "list": [
+       [
+        "A",
+        "Paragraph A"
+       ],
+       [
+        "B",
+        "Paragraph B"
+       ],
+       [
+        "C",
+        "Paragraph C"
+       ],
+       [
+        "D",
+        "Paragraph D"
+       ],
+       [
+        "E",
+        "Paragraph E"
+       ],
+       [
+        "F",
+        "Paragraph F"
+       ],
+       [
+        "G",
+        "Paragraph G"
+       ]
+      ],
+      "a": "A",
+      "ex": "Paragraph A: tigers <q>kill almost everything they meet in the jungle</q> and probably see humans every day, so <q>it is a little strange that attacks on humans are not more frequent</q>."
+     },
+     {
+      "n": 16,
+      "t": "sel",
+      "q": "examples of situations in which humans are more likely to be attacked by tigers",
+      "list": [
+       [
+        "A",
+        "Paragraph A"
+       ],
+       [
+        "B",
+        "Paragraph B"
+       ],
+       [
+        "C",
+        "Paragraph C"
+       ],
+       [
+        "D",
+        "Paragraph D"
+       ],
+       [
+        "E",
+        "Paragraph E"
+       ],
+       [
+        "F",
+        "Paragraph F"
+       ],
+       [
+        "G",
+        "Paragraph G"
+       ]
+      ],
+      "a": "F",
+      "ex": "Paragraph F: <q>Many incidents of attacks on people involve villagers squatting or bending over to cut grass</q>."
+     },
+     {
+      "n": 17,
+      "t": "sel",
+      "q": "a claim about the relative frequency of tiger attacks on humans",
+      "list": [
+       [
+        "A",
+        "Paragraph A"
+       ],
+       [
+        "B",
+        "Paragraph B"
+       ],
+       [
+        "C",
+        "Paragraph C"
+       ],
+       [
+        "D",
+        "Paragraph D"
+       ],
+       [
+        "E",
+        "Paragraph E"
+       ],
+       [
+        "F",
+        "Paragraph F"
+       ],
+       [
+        "G",
+        "Paragraph G"
+       ]
+      ],
+      "a": "B",
+      "ex": "Paragraph B: <q>So in proportion, attacks appear to have been as rare then as they are today.</q> <i>In proportion</i> = <i>relative</i>."
+     },
+     {
+      "n": 18,
+      "t": "sel",
+      "q": "an explanation of tiger behaviour based on the principles of ethology",
+      "list": [
+       [
+        "A",
+        "Paragraph A"
+       ],
+       [
+        "B",
+        "Paragraph B"
+       ],
+       [
+        "C",
+        "Paragraph C"
+       ],
+       [
+        "D",
+        "Paragraph D"
+       ],
+       [
+        "E",
+        "Paragraph E"
+       ],
+       [
+        "F",
+        "Paragraph F"
+       ],
+       [
+        "G",
+        "Paragraph G"
+       ]
+      ],
+      "a": "E",
+      "ex": "Paragraph E thinks <q>like a tiger</q>: the writer explains attacks by how a tiger <q>actually perceives us visually</q>. That is the ethology method described in D; D explains the principle, E applies it."
+     }
+    ]
+   },
+   {
+    "h": "Questions 19–23",
+    "ins": "Do the following statements agree with the information given in the passage? Choose TRUE if the statement agrees with the information, FALSE if it contradicts the information, NOT GIVEN if there is no information on this.",
+    "guide": TFNG_GUIDE,
+    "qs": [
+     {
+      "n": 19,
+      "t": "tfng",
+      "q": "Tigers in the Bandhavgarh National Park are a protected species.",
+      "a": "NOT GIVEN",
+      "ex": "The park is mentioned only for its notice. Nothing is said about whether its tigers are protected."
+     },
+     {
+      "n": 20,
+      "t": "tfng",
+      "q": "Some writers of fiction have exaggerated the danger of tigers to man.",
+      "a": "TRUE",
+      "ex": "<q>British writers of adventure stories, such as Jim Corbett</q>, <q>may have overstated the terror spread by tigers</q>. <i>Overstated</i> = <i>exaggerated</i>."
+     },
+     {
+      "n": 21,
+      "t": "tfng",
+      "q": "The fear of humans may be passed down in a tiger’s genes.",
+      "a": "TRUE",
+      "ex": "<q>Has the species programmed the experiences of all tigers with humans into its genes to be inherited as instinct? Perhaps.</q> <i>Perhaps</i> = <i>may</i>; <i>inherited</i> = <i>passed down</i>. The writer prefers another explanation, but does not rule this one out."
+     },
+     {
+      "n": 22,
+      "t": "tfng",
+      "q": "Konrad Lorenz claimed that some animals are more intelligent than humans.",
+      "a": "NOT GIVEN",
+      "ex": "Lorenz is mentioned only as a pioneer of ethology. It was earlier naturalists who wrote about animals as <q>slightly less intelligent humans</q>; no one in the passage claims animals are <i>more</i> intelligent."
+     },
+     {
+      "n": 23,
+      "t": "tfng",
+      "q": "Ethology involves applying principles of human behaviour to animals.",
+      "a": "FALSE",
+      "ex": "Ethology requires us to think as the animal thinks, <q>without imposing our own human significances on its actions</q>. That is the opposite of applying human principles."
+     }
+    ]
+   },
+   {
+    "h": "Questions 24–26",
+    "ins": "Choose the correct letter, A, B, C or D.",
+    "qs": [
+     {
+      "n": 24,
+      "t": "mcq",
+      "q": "Why do tigers rarely attack people in cars?",
+      "o": [
+       "They have learned that cars are not dangerous.",
+       "They realise that people in cars cannot be harmed.",
+       "They do not think people in cars are living creatures.",
+       "They do not want to put their cubs at risk."
+      ],
+      "a": "C",
+      "ex": "<q>a human in a car might appear just to be a part of the car, and because tigers don’t eat cars the human is safe</q>. The tiger sees the person as part of a machine, not as a living creature. D is a trap: cubs are the reason a tiger <i>might</i> charge."
+     },
+     {
+      "n": 25,
+      "t": "mcq",
+      "q": "The writer says that tigers rarely attack a man who is standing up because",
+      "o": [
+       "they are afraid of the man’s height.",
+       "they are confused by the man’s shape.",
+       "they are puzzled by the man’s lack of movement.",
+       "they are unable to look at the man directly."
+      ],
+      "a": "B",
+      "ex": "<q>From the front the man is huge, but looked at from the side he all but disappears. This must be very disconcerting.</q> <i>Disconcerting</i> = <i>confusing</i>; front versus side = <i>shape</i>."
+     },
+     {
+      "n": 26,
+      "t": "mcq",
+      "q": "A human is more vulnerable to tiger attack when squatting because",
+      "o": [
+       "he may be unaware of the tiger’s approach.",
+       "he cannot easily move his head to see behind him.",
+       "his head becomes a better target for the tiger.",
+       "his back appears longer in relation to his height."
+      ],
+      "a": "D",
+      "ex": "<q>A squatting human is half the size and presents twice the spread of back, and more closely resembles a medium-sized deer.</q>"
+     }
+    ]
+   }
+  ],
+  "vocab": [
+   [
+    "placid",
+    "adjective",
+    "calm and not easily excited.",
+    "a huge, placid tiger"
+   ],
+   [
+    "under siege",
+    "phrase",
+    "surrounded and constantly attacked.",
+    "a state of constant siege"
+   ],
+   [
+    "overstate",
+    "verb",
+    "to describe something as bigger or worse than it is.",
+    "they may have overstated the terror"
+   ],
+   [
+    "in proportion",
+    "phrase",
+    "compared with the size or number of something else.",
+    "So in proportion, attacks appear to have been as rare"
+   ],
+   [
+    "constraint",
+    "noun",
+    "something that limits what you can do.",
+    "It is widely assumed that the constraint is fear"
+   ],
+   [
+    "intriguing",
+    "adjective",
+    "very interesting because it is unusual.",
+    "more intriguing"
+   ],
+   [
+    "ethology",
+    "noun",
+    "the scientific study of animal behaviour in natural conditions.",
+    "Since the growth of ethology in the 1950s"
+   ],
+   [
+    "menace",
+    "verb",
+    "to threaten.",
+    "unless the car is menacing the tiger or its cubs"
+   ],
+   [
+    "disconcerting",
+    "adjective",
+    "making you feel confused and uneasy.",
+    "This must be very disconcerting"
+   ],
+   [
+    "solitary",
+    "adjective",
+    "living or hunting alone.",
+    "a solitary hunter such as the tiger"
+   ],
+   [
+    "squat",
+    "verb",
+    "to sit on your heels with your knees bent.",
+    "villagers squatting or bending over"
+   ],
+   [
+    "fodder",
+    "noun",
+    "food for farm animals, such as hay or grass.",
+    "to cut grass for fodder"
+   ]
+  ]
+ },
+ "3": {
+  "groups": [
+   {
+    "h": "Questions 27–32",
+    "ins": "Complete each sentence with the correct ending, A–H.",
+    "list": [
+     [
+      "A",
+      "the discovery of new medical applications."
+     ],
+     [
+      "B",
+      "the negative effects of publicity."
+     ],
+     [
+      "C",
+      "the large pharmaceutical companies."
+     ],
+     [
+      "D",
+      "the industrial revolution."
+     ],
+     [
+      "E",
+      "the medical uses of a particular tree."
+     ],
+     [
+      "F",
+      "the limited availability of new drugs."
+     ],
+     [
+      "G",
+      "the chemical found in the willow tree."
+     ],
+     [
+      "H",
+      "commercial advertising campaigns."
+     ]
+    ],
+    "qs": [
+     {
+      "n": 27,
+      "t": "sel",
+      "q": "Ancient Egyptian and Greek doctors were aware of",
+      "list": [
+       [
+        "A",
+        "the discovery of new medical applications."
+       ],
+       [
+        "B",
+        "the negative effects of publicity."
+       ],
+       [
+        "C",
+        "the large pharmaceutical companies."
+       ],
+       [
+        "D",
+        "the industrial revolution."
+       ],
+       [
+        "E",
+        "the medical uses of a particular tree."
+       ],
+       [
+        "F",
+        "the limited availability of new drugs."
+       ],
+       [
+        "G",
+        "the chemical found in the willow tree."
+       ],
+       [
+        "H",
+        "commercial advertising campaigns."
+       ]
+      ],
+      "a": "E",
+      "ex": "Egyptian physicians used <q>extracts from the willow tree as an analgesic</q>, and Hippocrates recommended <q>the bark of the willow tree</q>. G is a trap: the <i>chemical</i> was identified much later."
+     },
+     {
+      "n": 28,
+      "t": "sel",
+      "q": "Friedrich Bayer & Co were able to reproduce",
+      "list": [
+       [
+        "A",
+        "the discovery of new medical applications."
+       ],
+       [
+        "B",
+        "the negative effects of publicity."
+       ],
+       [
+        "C",
+        "the large pharmaceutical companies."
+       ],
+       [
+        "D",
+        "the industrial revolution."
+       ],
+       [
+        "E",
+        "the medical uses of a particular tree."
+       ],
+       [
+        "F",
+        "the limited availability of new drugs."
+       ],
+       [
+        "G",
+        "the chemical found in the willow tree."
+       ],
+       [
+        "H",
+        "commercial advertising campaigns."
+       ]
+      ],
+      "a": "G",
+      "ex": "The race was on <q>to identify the active ingredient and to replicate it synthetically</q>; Bayer succeeded in creating acetylsalicylic acid. The active ingredient = salicylates, <q>the chemical found in the willow tree</q>."
+     },
+     {
+      "n": 29,
+      "t": "sel",
+      "q": "The development of aspirin was partly due to the effects of",
+      "list": [
+       [
+        "A",
+        "the discovery of new medical applications."
+       ],
+       [
+        "B",
+        "the negative effects of publicity."
+       ],
+       [
+        "C",
+        "the large pharmaceutical companies."
+       ],
+       [
+        "D",
+        "the industrial revolution."
+       ],
+       [
+        "E",
+        "the medical uses of a particular tree."
+       ],
+       [
+        "F",
+        "the limited availability of new drugs."
+       ],
+       [
+        "G",
+        "the chemical found in the willow tree."
+       ],
+       [
+        "H",
+        "commercial advertising campaigns."
+       ]
+      ],
+      "a": "D",
+      "ex": "<q>In the nineteenth century, scientific advance was closely linked to the industrial revolution</q>, a period when people could <q>take an idea and turn it into reality</q>."
+     },
+     {
+      "n": 30,
+      "t": "sel",
+      "q": "The creation of a market for aspirin as a painkiller was achieved through",
+      "list": [
+       [
+        "A",
+        "the discovery of new medical applications."
+       ],
+       [
+        "B",
+        "the negative effects of publicity."
+       ],
+       [
+        "C",
+        "the large pharmaceutical companies."
+       ],
+       [
+        "D",
+        "the industrial revolution."
+       ],
+       [
+        "E",
+        "the medical uses of a particular tree."
+       ],
+       [
+        "F",
+        "the limited availability of new drugs."
+       ],
+       [
+        "G",
+        "the chemical found in the willow tree."
+       ],
+       [
+        "H",
+        "commercial advertising campaigns."
+       ]
+      ],
+      "a": "H",
+      "ex": "<q>huge amounts of money were put into promoting it as an ordinary everyday analgesic</q>. Promoting = advertising."
+     },
+     {
+      "n": 31,
+      "t": "sel",
+      "q": "Aspirin might have become unavailable without",
+      "list": [
+       [
+        "A",
+        "the discovery of new medical applications."
+       ],
+       [
+        "B",
+        "the negative effects of publicity."
+       ],
+       [
+        "C",
+        "the large pharmaceutical companies."
+       ],
+       [
+        "D",
+        "the industrial revolution."
+       ],
+       [
+        "E",
+        "the medical uses of a particular tree."
+       ],
+       [
+        "F",
+        "the limited availability of new drugs."
+       ],
+       [
+        "G",
+        "the chemical found in the willow tree."
+       ],
+       [
+        "H",
+        "commercial advertising campaigns."
+       ]
+      ],
+      "a": "A",
+      "ex": "New discoveries about aspirin preventing <q>heart attacks, strokes and other afflictions</q>: <q>Had it not been for these findings, this pharmaceutical marvel might well have disappeared.</q>"
+     },
+     {
+      "n": 32,
+      "t": "sel",
+      "q": "The way in which aspirin actually worked was not investigated by",
+      "list": [
+       [
+        "A",
+        "the discovery of new medical applications."
+       ],
+       [
+        "B",
+        "the negative effects of publicity."
+       ],
+       [
+        "C",
+        "the large pharmaceutical companies."
+       ],
+       [
+        "D",
+        "the industrial revolution."
+       ],
+       [
+        "E",
+        "the medical uses of a particular tree."
+       ],
+       [
+        "F",
+        "the limited availability of new drugs."
+       ],
+       [
+        "G",
+        "the chemical found in the willow tree."
+       ],
+       [
+        "H",
+        "commercial advertising campaigns."
+       ]
+      ],
+      "a": "C",
+      "ex": "Aspirin was around <q>for over 70 years without anybody investigating the way in which it achieved its effects</q>, and <q>None of the recent discoveries … were made by the big pharmaceutical companies</q>."
+     }
+    ]
+   },
+   {
+    "h": "Questions 33–37",
+    "ins": "Do the following statements agree with the views of the writer? Choose YES if the statement agrees with the views of the writer, NO if it contradicts the views of the writer, NOT GIVEN if it is impossible to say what the writer thinks about this.",
+    "guide": YNG_GUIDE,
+    "qs": [
+     {
+      "n": 33,
+      "t": "yng",
+      "q": "For nineteenth-century scientists, small-scale research was enough to make important discoveries.",
+      "a": "YES",
+      "ex": "<q>One scientist in a laboratory with some chemicals and a test tube could make significant breakthroughs</q>."
+     },
+     {
+      "n": 34,
+      "t": "yng",
+      "q": "The nineteenth-century industrial revolution caused a change in the focus of scientific research.",
+      "a": "NOT GIVEN",
+      "ex": "Science was <q>closely linked to the industrial revolution</q>, but the writer never says the revolution changed what scientists studied."
+     },
+     {
+      "n": 35,
+      "t": "yng",
+      "q": "The development of aspirin in the nineteenth century followed a structured pattern of development.",
+      "a": "NO",
+      "ex": "It <q>happened piecemeal – a series of minor, often unrelated advances</q>. Piecemeal and unrelated = the opposite of structured."
+     },
+     {
+      "n": 36,
+      "t": "yng",
+      "q": "In the 1970s sales of new analgesic drugs overtook sales of aspirin.",
+      "a": "NOT GIVEN",
+      "ex": "Companies <q>focused on publicising these new drugs</q>, but the writer gives no sales figures or comparison."
+     },
+     {
+      "n": 37,
+      "t": "yng",
+      "q": "Commercial companies may have both good and bad effects on the availability of pharmaceutical products.",
+      "a": "YES",
+      "ex": "<q>Commercial markets are necessary for developing new products</q> (good), but <q>are just as likely to ‘kill off’ certain products</q> (bad)."
+     }
+    ]
+   },
+   {
+    "h": "Questions 38–40",
+    "ins": "Complete the summary “Research into aspirin”. Choose the correct answer, A–I, from the list.",
+    "list": [
+     [
+      "A",
+      "useful"
+     ],
+     [
+      "B",
+      "cheap"
+     ],
+     [
+      "C",
+      "state"
+     ],
+     [
+      "D",
+      "international"
+     ],
+     [
+      "E",
+      "major drug companies"
+     ],
+     [
+      "F",
+      "profitable"
+     ],
+     [
+      "G",
+      "commercial"
+     ],
+     [
+      "H",
+      "public sector scientists"
+     ],
+     [
+      "I",
+      "health officials"
+     ]
+    ],
+    "qs": [
+     {
+      "n": 38,
+      "t": "sel",
+      "q": "Jeffreys argues that the reason why ___ did not find out about new uses of aspirin",
+      "list": [
+       [
+        "A",
+        "useful"
+       ],
+       [
+        "B",
+        "cheap"
+       ],
+       [
+        "C",
+        "state"
+       ],
+       [
+        "D",
+        "international"
+       ],
+       [
+        "E",
+        "major drug companies"
+       ],
+       [
+        "F",
+        "profitable"
+       ],
+       [
+        "G",
+        "commercial"
+       ],
+       [
+        "H",
+        "public sector scientists"
+       ],
+       [
+        "I",
+        "health officials"
+       ]
+      ],
+      "a": "E",
+      "ex": "<q>None of the recent discoveries of aspirin’s benefits were made by the big pharmaceutical companies</q>. H is the trap: public sector scientists <i>did</i> make the discoveries."
+     },
+     {
+      "n": 39,
+      "t": "sel",
+      "q": "is that aspirin is no longer a ___ drug.",
+      "list": [
+       [
+        "A",
+        "useful"
+       ],
+       [
+        "B",
+        "cheap"
+       ],
+       [
+        "C",
+        "state"
+       ],
+       [
+        "D",
+        "international"
+       ],
+       [
+        "E",
+        "major drug companies"
+       ],
+       [
+        "F",
+        "profitable"
+       ],
+       [
+        "G",
+        "commercial"
+       ],
+       [
+        "H",
+        "public sector scientists"
+       ],
+       [
+        "I",
+        "health officials"
+       ]
+      ],
+      "a": "F",
+      "ex": "<q>There’s no profit in aspirin any more.</q> B (<i>cheap</i>) is true of aspirin, but the reason companies ignore it is that it is no longer profitable."
+     },
+     {
+      "n": 40,
+      "t": "sel",
+      "q": "He therefore suggests that there should be ___ support for further research into the possible applications of the drug.",
+      "list": [
+       [
+        "A",
+        "useful"
+       ],
+       [
+        "B",
+        "cheap"
+       ],
+       [
+        "C",
+        "state"
+       ],
+       [
+        "D",
+        "international"
+       ],
+       [
+        "E",
+        "major drug companies"
+       ],
+       [
+        "F",
+        "profitable"
+       ],
+       [
+        "G",
+        "commercial"
+       ],
+       [
+        "H",
+        "public sector scientists"
+       ],
+       [
+        "I",
+        "health officials"
+       ]
+      ],
+      "a": "C",
+      "ex": "<q>More public money going into clinical trials</q>; <q>If I were the Department of Health</q>. Public money = <i>state</i> support."
+     }
+    ]
+   }
+  ],
+  "vocab": [
+   [
+    "rollercoaster",
+    "noun",
+    "an experience with many sudden changes.",
+    "a rollercoaster ride through time"
+   ],
+   [
+    "versatile",
+    "adjective",
+    "able to be used in many different ways.",
+    "a drug so astonishingly versatile"
+   ],
+   [
+    "analgesic",
+    "noun",
+    "a drug that reduces pain; a painkiller.",
+    "as an analgesic, or painkiller"
+   ],
+   [
+    "replicate",
+    "verb",
+    "to copy or reproduce exactly.",
+    "to replicate it synthetically"
+   ],
+   [
+    "synthetically",
+    "adverb",
+    "made by chemical processes, not natural ones.",
+    "to replicate it synthetically"
+   ],
+   [
+    "fertile",
+    "adjective",
+    "producing many new ideas or results.",
+    "a fertile period for experimentation"
+   ],
+   [
+    "piecemeal",
+    "adverb",
+    "a little at a time, not as one planned whole.",
+    "that happened piecemeal"
+   ],
+   [
+    "affliction",
+    "noun",
+    "an illness or condition that causes suffering.",
+    "strokes and other afflictions"
+   ],
+   [
+    "profit margin",
+    "noun",
+    "the difference between what something costs to make and the price it sells for.",
+    "tiny profit margins"
+   ],
+   [
+    "patent",
+    "noun",
+    "the legal right to be the only one who can make and sell an invention.",
+    "it has no patent any more"
+   ],
+   [
+    "disincentive",
+    "noun",
+    "something that discourages people from doing something.",
+    "almost a disincentive for drug companies"
+   ],
+   [
+    "therapeutic",
+    "adjective",
+    "helping to treat or cure illness.",
+    "the therapeutic benefits of aspirin"
+   ]
+  ]
+ }
+};
+
+  /* Evidence: the exact passage text that gives each answer, keyed by question number. */
+  var EV = {
+ "1": "The snow gun works very differently from a natural weather system, but it accomplishes exactly the same thing.",
+ "2": "Snow-makers often talk about dry snow and wet snow.",
+ "3": "Many ski slopes now do this with a central computer system that is connected to weather-reading stations all over the slope.",
+ "4": "But man-made snow makes heavy demands on the environment.",
+ "5": "But man-made snow has a number of other uses as well.",
+ "6": "When the compressed air passes through the hose into the gun",
+ "7": "the water splits up into tiny droplets",
+ "8": "ice crystals will form",
+ "9": "Many resorts build up the snow depth this way",
+ "10": "The wetness of snow is dependent on the temperature and humidity outside",
+ "11": "considerable amounts of energy are needed to run the large air-compressing pumps",
+ "12": "farmers often use man-made snow to provide insulation for winter crops",
+ "13": "the tests that aircraft must undergo in order to ensure that they can function safely in extreme conditions",
+ "14": "Can they really know that we may be even better armed than they are? Surely not.",
+ "15": "Tigers can and do kill almost everything they meet in the jungle",
+ "16": "Many incidents of attacks on people involve villagers squatting or bending over to cut grass",
+ "17": "So in proportion, attacks appear to have been as rare then as they are today.",
+ "18": "I suspect that a tiger’s fear of humans lies not in some preprogrammed ancestral logic but in the way he actually perceives us visually.",
+ "19": "there is a notice which shows a huge, placid tiger",
+ "20": "But they may have overstated the terror spread by tigers.",
+ "21": "Has the species programmed the experiences of all tigers with humans into its genes to be inherited as instinct? Perhaps.",
+ "22": "Until the first elegant experiments by pioneers in the field such as Konrad Lorenz, naturalists wrote about animals as if they were slightly less intelligent humans.",
+ "23": "without imposing our own human significances on its actions",
+ "24": "a human in a car might appear just to be a part of the car, and because tigers don’t eat cars the human is safe",
+ "25": "From the front the man is huge, but looked at from the side he all but disappears.",
+ "26": "A squatting human is half the size and presents twice the spread of back, and more closely resembles a medium-sized deer.",
+ "27": "Ancient Egyptian physicians used extracts from the willow tree as an analgesic",
+ "28": "succeeded in creating a relatively safe and very effective chemical compound, acetylsalicylic acid",
+ "29": "This was a period when people frequently had the means, motive and determination to take an idea and turn it into reality.",
+ "30": "huge amounts of money were put into promoting it as an ordinary everyday analgesic",
+ "31": "Had it not been for these findings, this pharmaceutical marvel might well have disappeared.",
+ "32": "was around for over 70 years without anybody investigating the way in which it achieved its effects",
+ "33": "One scientist in a laboratory with some chemicals and a test tube could make significant breakthroughs",
+ "34": "In the nineteenth century, scientific advance was closely linked to the industrial revolution.",
+ "35": "In the case of aspirin that happened piecemeal – a series of minor, often unrelated advances",
+ "36": "the pharmaceutical companies then focused on publicising these new drugs",
+ "37": [
+  "Commercial markets are necessary for developing new products",
+  "the commercial markets are just as likely to ‘kill off’ certain products"
+ ],
+ "38": "None of the recent discoveries of aspirin’s benefits were made by the big pharmaceutical companies",
+ "39": "There’s no profit in aspirin any more.",
+ "40": "More public money going into clinical trials"
+};
+
+  function nz(s){ return s.replace(/[‘’]/g,"'").replace(/[“”]/g,'"').replace(/[–—]/g,'-').replace(/ /g,' '); }
+
+  // Find a string in an element's text and return a Range over it.
+  function findRange(root, str){
+    var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT), t, nodes = [], full = '';
+    while ((t = w.nextNode())){ nodes.push([t, full.length]); full += t.data; }
+    var i = nz(full).indexOf(nz(str));
+    if (i < 0) return null;
+    var j = i + str.length, r = document.createRange();
+    for (var k = 0; k < nodes.length; k++){
+      var n = nodes[k][0], s = nodes[k][1], e = s + n.data.length;
+      if (i >= s && i < e) r.setStart(n, i - s);
+      if (j > s && j <= e){ r.setEnd(n, j - s); break; }
+    }
+    return r;
+  }
+
+  // Wrap every text node inside a Range in a new element; works across tags.
+  function wrapRange(range, make){
+    var root = range.commonAncestorContainer;
+    if (root.nodeType === 3) root = root.parentNode;
+    var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT), t, list = [], out = [];
+    while ((t = w.nextNode())) if (range.intersectsNode(t)) list.push(t);
+    var sc = range.startContainer, so = range.startOffset, ec = range.endContainer, eo = range.endOffset;
+    list.forEach(function(node){
+      var st = node === sc ? so : 0, en = node === ec ? eo : node.data.length;
+      if (en <= st || !node.data.slice(st, en).trim()) return;
+      if (en < node.data.length) node.splitText(en);
+      if (st > 0) node = node.splitText(st);
+      var m = make();
+      node.parentNode.insertBefore(m, node);
+      m.appendChild(node);
+      out.push(m);
+    });
+    return out;
+  }
+
+  function unwrap(m){
+    var p = m.parentNode;
+    if (!p) return;
+    while (m.firstChild) p.insertBefore(m.firstChild, m);
+    p.removeChild(m);
+    p.normalize();
+  }
+
+  function flash(nodes){
+    [].forEach.call(nodes, function(n){
+      n.classList.remove('flash'); void n.offsetWidth; n.classList.add('flash');
+      setTimeout(function(){ n.classList.remove('flash'); }, 1700);
+    });
+  }
+
+  function el(tag, cls, html){
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (html != null) e.innerHTML = html;
+    return e;
+  }
+  function norm(s){
+    return String(s).toLowerCase().replace(/[‘’]/g,"'").replace(/[^a-z0-9' -]/g,' ')
+      .replace(/\s+/g,' ').trim().replace(/^(the|a|an) /,'');
+  }
+  function words(s){ var t = String(s).trim(); return t ? t.split(/\s+/).length : 0; }
+
+  function buildQ(q, uid){
+    var d = el('div','q'); d.qd = q; d.dataset.n = String(q.n);
+    var qid = 'q' + uid;
+    if (q.t === 'gap'){
+      var p = el('p','qt');
+      p.innerHTML = '<span class="qn">' + q.n + '</span>' + q.pre + ' ';
+      var inp = document.createElement('input');
+      inp.type = 'text'; inp.className = 'field'; inp.id = qid;
+      inp.setAttribute('aria-label','Answer ' + q.n); inp.autocomplete = 'off'; inp.spellcheck = false;
+      p.appendChild(inp);
+      p.appendChild(document.createTextNode(' ' + q.post));
+      d.appendChild(p);
+    } else {
+      var lab = el('p','qt','<span class="qn">' + q.n + '</span>' + (q.q || ''));
+      lab.id = qid;
+      d.appendChild(lab);
+      if (q.t === 'sel'){
+        var s = document.createElement('select');
+        s.className = 'field'; s.setAttribute('aria-labelledby', qid);
+        s.appendChild(new Option('Choose…',''));
+        q.list.forEach(function(it){ s.appendChild(new Option(it[0] + '  ' + it[1], it[0])); });
+        d.appendChild(s);
+      } else {
+        var g = el('div','opts' + ((q.t === 'tfng' || q.t === 'yng') ? ' row' : ''));
+        g.setAttribute('role','group'); g.setAttribute('aria-labelledby', qid);
+        var labels = q.t === 'tfng' ? TFNG : q.t === 'yng' ? YNG : q.o.map(function(_,i){ return 'ABCDEF'[i]; });
+        labels.forEach(function(k, i){
+          var b = el('button','opt');
+          b.type = 'button'; b.dataset.k = k;
+          b.setAttribute('aria-pressed','false');
+          b.innerHTML = (q.t === 'tfng' || q.t === 'yng') ? k : '<span class="k">' + k + '</span> <span class="t">' + q.o[i] + '</span>';
+          g.appendChild(b);
+        });
+        d.appendChild(g);
+      }
+    }
+    d.appendChild(el('p','fb')).hidden = true;
+    return d;
+  }
+
+  function maxMarks(p){
+    var m = 0;
+    DATA[p].groups.forEach(function(g){ g.qs.forEach(function(q){ m += q.marks || 1; }); });
+    return m;
+  }
+
+  document.querySelectorAll('.psg').forEach(function(box){
+    var p = box.dataset.p, data = DATA[p], total = maxMarks(p);
+    var qsWrap = box.querySelector('.qs'), uid = 0;
+    data.groups.forEach(function(g){
+      var gr = el('div','grp');
+      gr.appendChild(el('h4', null, g.h));
+      gr.appendChild(el('p','ins', g.ins));
+      if (g.guide) gr.appendChild(el('div','guide', g.guide));
+      if (g.fig) gr.appendChild(el('figure','fig', g.fig));
+      if (g.list){
+        var l = el('div','list');
+        g.list.forEach(function(it){ l.appendChild(el('div', null, '<b>' + it[0] + '</b>' + it[1])); });
+        gr.appendChild(l);
+      }
+      g.qs.forEach(function(q){ gr.appendChild(buildQ(q, p + '-' + (uid++))); });
+      qsWrap.appendChild(gr);
+    });
+
+    var vb = box.querySelector('.vocab');
+    vb.appendChild(el('h4', null, 'Key vocabulary'));
+    var dl = el('dl');
+    data.vocab.forEach(function(v){
+      dl.appendChild(el('dt', null, v[0] + '<span>' + v[1] + '</span>'));
+      dl.appendChild(el('dd', null, v[2] + ' <i>“' + v[3] + '”</i>'));
+    });
+    vb.appendChild(dl);
+
+    var scoreB = box.querySelector('.score b');
+    var sum = box.querySelector('.sum');
+    var subBtn = box.querySelector('.submit'), resetBtn = box.querySelector('.reset');
+    var done = false;
+
+    var art = box.querySelector('.text');
+
+    // Student highlighter controls in the top bar
+    var topBar = box.querySelector('.bar');
+    var hb = el('button','ctl hlbar','Highlight'); hb.type = 'button';
+    var clr = el('button','ctl','Clear highlights'); clr.type = 'button';
+    clr.addEventListener('click', function(){ art.querySelectorAll('mark.hl').forEach(unwrap); });
+    topBar.appendChild(hb);
+    topBar.appendChild(clr);
+    topBar.appendChild(el('span','hint','Select words in the passage, then press <b>Highlight</b>. Click or tap a highlight to remove it.'));
+
+    // In the passage: tap a highlight to remove it; tap marked evidence to jump to its question
+    art.addEventListener('click', function(e){
+      var s = window.getSelection();
+      if (s && !s.isCollapsed) return;
+      var ev = e.target.closest('mark.ev');
+      if (ev){
+        var q = qsWrap.querySelector('.q[data-n="' + ev.dataset.q + '"]');
+        if (q){ q.scrollIntoView({block:'center', behavior:'smooth'}); flash([q]); }
+        return;
+      }
+      var h = e.target.closest('mark.hl');
+      if (h) unwrap(h);
+    });
+
+    function showEvidence(){
+      qsWrap.querySelectorAll('.q').forEach(function(q){
+        var key = q.dataset.n;
+        [].concat(EV[key] || []).forEach(function(str){
+          var r = findRange(art, str);
+          if (!r){ console.warn('Evidence not found for ' + key + ': ' + str); return; }
+          var ms = wrapRange(r, function(){ var m = document.createElement('mark'); m.className = 'ev'; m.dataset.q = key; return m; });
+          if (ms.length) ms[0].dataset.n = key;
+        });
+      });
+    }
+    function clearEvidence(){ art.querySelectorAll('mark.ev').forEach(unwrap); }
+
+    // Selecting options (no instant feedback; marking happens on Submit)
+    qsWrap.addEventListener('click', function(e){
+      var go = e.target.closest('.goto');
+      if (go){
+        var ms = art.querySelectorAll('mark.ev[data-q="' + go.closest('.q').dataset.n + '"]');
+        if (ms.length){ ms[0].scrollIntoView({block:'center', behavior:'smooth'}); flash(ms); }
+        return;
+      }
+      var b = e.target.closest('.opt');
+      if (!b || done) return;
+      var q = b.closest('.q'), qd = q.qd;
+      if (qd.t === 'multi'){
+        var on = !b.classList.contains('sel');
+        if (on && q.querySelectorAll('.opt.sel').length >= qd.pick) return;
+        b.classList.toggle('sel', on); b.setAttribute('aria-pressed', String(on));
+      } else {
+        q.querySelectorAll('.opt').forEach(function(o){ o.classList.remove('sel'); o.setAttribute('aria-pressed','false'); });
+        b.classList.add('sel'); b.setAttribute('aria-pressed','true');
+      }
+    });
+
+    function setRes(fb, ok, text){
+      fb.innerHTML = '<span class="res ' + (ok ? 'ok' : 'bad') + '">' + text + '</span> ';
+    }
+
+    function submit(){
+      if (done) return;
+      var unanswered = 0;
+      qsWrap.querySelectorAll('.q').forEach(function(q){
+        var qd = q.qd;
+        if (qd.t === 'gap'){ if (!q.querySelector('input').value.trim()) unanswered++; }
+        else if (qd.t === 'sel'){ if (!q.querySelector('select').value) unanswered++; }
+        else if (qd.t === 'multi'){ if (q.querySelectorAll('.opt.sel').length < qd.pick) unanswered++; }
+        else if (!q.querySelector('.opt.sel')) unanswered++;
+      });
+      if (unanswered && !confirm(unanswered + (unanswered === 1 ? ' question is' : ' questions are') + ' still unanswered. Submit anyway?')) return;
+
+      done = true; stopTimer();
+      var got = 0;
+      qsWrap.querySelectorAll('.q').forEach(function(q){
+        var qd = q.qd, fb = q.querySelector('.fb'), ok;
+        if (qd.t === 'gap'){
+          var inp = q.querySelector('input'), v = inp.value, nv = norm(v);
+          var over = words(v) > qd.lim;
+          ok = !over && qd.acc.some(function(a){ return norm(a) === nv; });
+          inp.readOnly = true; inp.classList.add(ok ? 'ok' : 'bad');
+          if (ok) setRes(fb, true, '✓ Correct.');
+          else setRes(fb, false, (v.trim() ? (over ? '✗ Over the word limit.' : '✗ Incorrect.') : '✗ No answer.') + ' Answer: ' + qd.acc[0] + '.');
+          if (ok) got++;
+        } else if (qd.t === 'sel'){
+          var s = q.querySelector('select');
+          ok = s.value === qd.a;
+          s.disabled = true; s.classList.add(ok ? 'ok' : 'bad');
+          setRes(fb, ok, ok ? '✓ Correct.' : (s.value ? '✗ Incorrect.' : '✗ No answer.') + ' Answer: ' + qd.a + '.');
+          if (ok) got++;
+        } else if (qd.t === 'multi'){
+          var hits = 0;
+          q.querySelectorAll('.opt').forEach(function(b){
+            b.disabled = true;
+            var right = qd.a.indexOf(b.dataset.k) > -1, sel = b.classList.contains('sel');
+            b.classList.remove('sel');
+            if (right) b.classList.add('ok');
+            else if (sel) b.classList.add('bad');
+            if (right && sel) hits++;
+          });
+          got += hits;
+          setRes(fb, hits === qd.marks, (hits === qd.marks ? '✓ ' : '') + hits + ' / ' + qd.marks + ' marks. Answer: ' + qd.a.join(', ') + ' (any order).');
+        } else {
+          var pick = q.querySelector('.opt.sel');
+          ok = !!pick && pick.dataset.k === qd.a;
+          q.querySelectorAll('.opt').forEach(function(b){
+            b.disabled = true; b.classList.remove('sel');
+            if (b.dataset.k === qd.a) b.classList.add('ok');
+          });
+          if (pick && !ok) pick.classList.add('bad');
+          setRes(fb, ok, ok ? '✓ Correct.' : (pick ? '✗ Incorrect.' : '✗ No answer.') + ' Answer: ' + qd.a + '.');
+          if (ok) got++;
+        }
+        fb.insertAdjacentHTML('beforeend', qd.ex);
+        if (EV[q.dataset.n]) fb.insertAdjacentHTML('beforeend', '<br><button type="button" class="ctl sm goto">Show in passage</button>');
+        fb.hidden = false;
+      });
+      showEvidence();
+      scoreB.textContent = got + ' / ' + total;
+      sum.innerHTML = 'You scored <b>' + got + ' / ' + total + '</b>. The text that gives each answer is now marked in the passage with its question number. Read the explanation under each question, press <b>Show in passage</b>, and compare the words in the question with the words in the text. Then study the key vocabulary below.';
+      sum.hidden = false; vb.hidden = false;
+      subBtn.hidden = true; resetBtn.hidden = false;
+      sum.setAttribute('tabindex','-1'); sum.focus();
+    }
+
+    function reset(){
+      done = false;
+      qsWrap.querySelectorAll('.q').forEach(function(q){
+        q.querySelectorAll('.opt').forEach(function(b){ b.disabled = false; b.classList.remove('sel','ok','bad'); b.setAttribute('aria-pressed','false'); });
+        q.querySelectorAll('.field').forEach(function(f){ f.classList.remove('ok','bad'); f.disabled = false; f.readOnly = false; f.value = ''; });
+        var fb = q.querySelector('.fb'); fb.hidden = true; fb.innerHTML = '';
+      });
+      clearEvidence();
+      art.querySelectorAll('mark.hl').forEach(unwrap);
+      scoreB.textContent = '– / ' + total;
+      sum.hidden = true; vb.hidden = true;
+      subBtn.hidden = false; resetBtn.hidden = true;
+      resetTimer();
+    }
+
+    // 20-minute countdown; it only warns, it never locks the answers.
+    var clock = box.querySelector('.clock'), tBtn = box.querySelector('.timer');
+    var left = 1200, tick = null;
+    function show(){
+      var m = Math.floor(Math.abs(left) / 60), s = Math.abs(left) % 60;
+      clock.textContent = (left < 0 ? '+' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+      clock.classList.toggle('up', left <= 0);
+    }
+    function stopTimer(){ if (tick){ clearInterval(tick); tick = null; tBtn.textContent = 'Resume timer'; } }
+    function resetTimer(){ stopTimer(); left = 1200; show(); tBtn.textContent = 'Start timer'; }
+    tBtn.addEventListener('click', function(){
+      if (tick){ stopTimer(); tBtn.textContent = 'Resume timer'; return; }
+      tBtn.textContent = 'Pause timer';
+      tick = setInterval(function(){ left--; show(); if (left === 0) clock.setAttribute('aria-live','assertive'); }, 1000);
+    });
+
+    subBtn.addEventListener('click', submit);
+    resetBtn.addEventListener('click', reset);
+    show();
+  });
+
+  // Floating "Highlight" button that appears under a selection inside a passage.
+  var hlBtn = el('button','hlbtn','Highlight');
+  hlBtn.type = 'button'; hlBtn.hidden = true;
+  document.body.appendChild(hlBtn);
+  var pending = null, selTimer = null;
+  function hideBtn(){ hlBtn.hidden = true; }
+  function inText(n){
+    if (!n) return null;
+    if (n.nodeType !== 1) n = n.parentNode;
+    return n && n.closest ? n.closest('.text') : null;
+  }
+  // The current selection, trimmed to a single passage. Browsers differ here:
+  // a Mac triple-click or a drag past the last paragraph ends the selection
+  // outside the passage, so clip it rather than reject it.
+  function passageRange(){
+    var s = window.getSelection();
+    if (!s || !s.rangeCount || s.isCollapsed) return null;
+    var r = s.getRangeAt(0).cloneRange();
+    var a1 = inText(r.startContainer), a2 = inText(r.endContainer), a = a1 || a2;
+    if (!a) return null;
+    if (a1 !== a) r.setStart(a, 0);
+    if (a2 !== a) r.setEnd(a, a.childNodes.length);
+    if (!r.toString().trim()) return null;
+    return r;
+  }
+  function checkSel(){
+    var r = passageRange();
+    if (!r){ pending = null; hideBtn(); return; }
+    pending = r;
+    var rect = r.getBoundingClientRect();
+    if (!rect.width && !rect.height){ var rs = r.getClientRects(); if (rs.length) rect = rs[rs.length - 1]; }
+    hlBtn.hidden = false;
+    var bw = hlBtn.offsetWidth, bh = hlBtn.offsetHeight;
+    var top = rect.bottom + 10;
+    if (top + bh > window.innerHeight - 8) top = rect.top - bh - 10;
+    top = Math.min(Math.max(8, top), window.innerHeight - bh - 8);  // always keep it on screen
+    var left = Math.min(Math.max(8, rect.left + rect.width / 2 - bw / 2), window.innerWidth - bw - 8);
+    hlBtn.style.top = top + 'px'; hlBtn.style.left = left + 'px';
+  }
+  // Several triggers, because browsers fire selection events differently:
+  // selectionchange (all modern browsers), plus mouseup / keyup / touchend as a backstop.
+  function soon(ms){ clearTimeout(selTimer); selTimer = setTimeout(checkSel, ms); }
+  document.addEventListener('selectionchange', function(){ soon(150); });
+  document.addEventListener('mouseup', function(){ soon(20); });
+  document.addEventListener('keyup', function(){ soon(20); });
+  document.addEventListener('touchend', function(){ soon(350); });
+  document.addEventListener('scroll', function(){ if (!hlBtn.hidden) checkSel(); }, true);
+  window.addEventListener('resize', hideBtn);
+  function applyHL(){
+    var r = pending || passageRange();
+    if (!r) return false;
+    wrapRange(r, function(){ var m = document.createElement('mark'); m.className = 'hl'; return m; });
+    pending = null; hideBtn();
+    var s = window.getSelection(); if (s) s.removeAllRanges();
+    return true;
+  }
+  // Apply on press, before the browser can clear the selection: pointer events
+  // where supported, with mousedown / touchstart for older Safari and Android.
+  var pressed = 0;
+  function onPress(e){
+    if (e.type !== 'click'){ e.preventDefault(); pressed = Date.now(); applyHL(); }
+    else if (Date.now() - pressed > 600) applyHL();
+  }
+  function bindPress(btn){
+    if (window.PointerEvent) btn.addEventListener('pointerdown', onPress);
+    else { btn.addEventListener('mousedown', onPress); btn.addEventListener('touchstart', onPress); }
+    btn.addEventListener('click', onPress);
+  }
+  bindPress(hlBtn);
+  // The fixed "Highlight" button in each passage's top bar does the same thing.
+  document.querySelectorAll('.hlbar').forEach(bindPress);
+
+  // Open a passage when linked as #passage-N.
+  if (/^#passage-[123]$/.test(location.hash)){
+    var t = document.getElementById(location.hash.slice(1));
+    if (t) t.open = true;
+  }
+})();
+</script>
+</body>
+</html>
