@@ -207,8 +207,8 @@
 <div class="wrap wide">
 
   <header>
-    <a class="back" href="./">&larr; Back to class 89154</a>
-    <p class="course">English Enrichment (F26) &nbsp;&middot;&nbsp; Academic Reading practice</p>
+    <a class="back" id="back" href="./">&larr; Back to class 89154</a>
+    <p class="course" id="course">English Enrichment (F26) &nbsp;&middot;&nbsp; Academic Reading practice</p>
     <h1>Reading Test 12</h1>
     <p class="lead">Three passages, forty questions. Give yourself twenty minutes per passage. Answer every question, then press <b>Submit</b> to check your answers, read why each answer is right, and review the key vocabulary.</p>
     <p class="lead">Nothing is recorded. Press <b>Try again</b> to clear a passage and start over.</p>
@@ -299,12 +299,23 @@
     </div>
   </details>
 
-  <footer>Passages and questions adapted from <i>IELTS Reading Test 12</i>; typing errors in the source PDF have been corrected. Answer key, explanations and vocabulary notes prepared for class 89154.</footer>
+  <footer>Passages and questions adapted from <i>IELTS Reading Test 12</i>; typing errors in the source PDF have been corrected. Answer key, explanations and vocabulary notes prepared for classroom use.</footer>
 </div>
 
 <script>
 (function(){
   "use strict";
+  // The same test is linked from more than one class page; ?c=fju shows that course's name and back link.
+  var CTX = {
+    fju: { back:'../advanced/', backText:'\u2190 Back to Advanced English for Freshmen',
+           course:'Advanced English for Freshmen (F26) \u00b7 Academic Reading practice' }
+  };
+  var ctx = null;
+  try { ctx = CTX[new URLSearchParams(location.search).get('c')] || null; } catch (e) {}
+  if (ctx){
+    var bk = document.getElementById('back'), cs = document.getElementById('course');
+    bk.href = ctx.back; bk.textContent = ctx.backText; cs.textContent = ctx.course;
+  }
   var ABCD = ['A','B','C','D'];
   var TFNG = ['TRUE','FALSE','NOT GIVEN'];
   var HEADINGS = [
