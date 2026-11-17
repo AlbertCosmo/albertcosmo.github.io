@@ -1,0 +1,2145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reading Test 11</title>
+<meta name="description" content="IELTS Academic Reading practice: three passages, forty questions, with answer key, explanations, passage evidence and key vocabulary.">
+<style>
+  :root{
+    --bg:#fbfaf8; --ink:#0d0d0d; --mute:#3f3e3b; --faint:#67655f;
+    --rule:#ddd9d3; --accent:#6b1723; --card:#ffffff;
+    --ok:#1e7a3c; --okbg:rgba(30,122,60,.08); --bad:#b42318; --badbg:rgba(180,35,24,.07);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#141414; --ink:#f5f3f0; --mute:#c8c6c2; --faint:#a09e9a;
+           --rule:#343434; --accent:#eb9ba5; --card:#1c1c1c;
+           --ok:#7ed49b; --okbg:rgba(126,212,155,.12); --bad:#f28b82; --badbg:rgba(242,139,130,.12); }
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font:21px/1.66 ui-sans-serif,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans TC",sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:820px; margin:0 auto; padding:64px 30px 100px}
+  a{color:var(--accent)}
+  .back{display:inline-block; font-size:17px; font-weight:600; text-decoration:none;
+        border-bottom:1px solid currentColor; margin-bottom:26px}
+  .back:hover{opacity:.7}
+  header{padding-bottom:30px; border-bottom:1px solid var(--rule)}
+  .course{margin:0 0 8px; font-size:15px; color:var(--faint); letter-spacing:.05em; text-transform:uppercase; font-weight:600}
+  h1{margin:0 0 14px; font-size:42px; line-height:1.16; font-weight:650; letter-spacing:-.018em}
+  .lead{color:var(--mute); font-size:19.5px; margin:0 0 12px}
+  .lead:last-child{margin-bottom:0}
+
+  /* Passage blocks */
+  .psg{margin-top:26px; background:var(--card); border:1px solid var(--rule); border-radius:10px}
+  .psg > summary{cursor:pointer; list-style:none; display:flex; align-items:center; gap:14px; padding:20px 26px}
+  .psg > summary::-webkit-details-marker{display:none}
+  .psg > summary:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:10px}
+  .psg > summary::after{content:""; flex:0 0 auto; width:9px; height:9px; margin:-4px 4px 0 2px;
+         border-right:2px solid var(--faint); border-bottom:2px solid var(--faint); transform:rotate(45deg); transition:transform .15s}
+  .psg[open] > summary::after{margin-top:4px; transform:rotate(-135deg)}
+  .psg > summary:hover h2{color:var(--accent)}
+  .psg .ttl{flex:1 1 auto; min-width:0}
+  .psg .pn{display:block; font-size:14px; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); font-weight:700}
+  .psg h2{margin:2px 0 0; font-size:25px; font-weight:650; letter-spacing:-.01em; line-height:1.3}
+  .psg .meta{display:block; font-size:16px; color:var(--faint); margin-top:2px}
+  .score{flex:0 0 auto; white-space:nowrap; font-size:14px; letter-spacing:.08em; text-transform:uppercase; color:var(--faint); font-weight:700}
+  .score b{color:var(--accent); font-size:18px; letter-spacing:0; margin-left:6px}
+  .body{padding:0 26px 26px; border-top:1px solid var(--rule)}
+
+  .bar{display:flex; flex-wrap:wrap; align-items:center; gap:12px; padding:18px 0}
+  .clock{font:600 22px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; color:var(--ink); min-width:76px}
+  .clock.up{color:var(--bad)}
+  .ctl{font:inherit; font-size:16px; font-weight:600; padding:9px 18px; border-radius:7px; cursor:pointer;
+       background:var(--bg); color:var(--ink); border:1.5px solid var(--rule); -webkit-appearance:none; appearance:none; touch-action:manipulation}
+  .ctl:hover{opacity:.8}
+  .ctl:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+  .ctl.main{background:var(--accent); color:#fff; border-color:var(--accent)}
+  @media (prefers-color-scheme: dark){ .ctl.main{color:#141414} }
+  .ctl[hidden]{display:none}
+
+  .split{display:block}
+  .text{font-size:18.5px; line-height:1.7}
+  .text p{margin:0 0 14px}
+  .text .pl{font-weight:700; color:var(--accent); margin-right:6px}
+  .text h3{margin:0 0 12px; font-size:22px; font-weight:650; text-align:left}
+  .qs{margin-top:22px}
+
+  .grp{margin:0 0 6px; padding:18px 0 4px; border-top:2px solid var(--ink)}
+  .grp h4{margin:0 0 4px; font-size:15px; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); font-weight:700}
+  .grp .ins{margin:0 0 10px; font-size:17px; color:var(--mute)}
+  .list{margin:6px 0 12px; padding:12px 16px; background:var(--bg); border:1px solid var(--rule); border-radius:7px; font-size:16.5px; line-height:1.5}
+  .list div{padding:2px 0}
+  .list b{display:inline-block; min-width:30px; color:var(--accent)}
+
+  .q{padding:14px 0; border-bottom:1px solid var(--rule)}
+  .q:last-child{border-bottom:0}
+  .qt{margin:0 0 10px; font-size:18px; font-weight:500; line-height:1.5}
+  .qn{font-size:14px; letter-spacing:.06em; color:var(--accent); font-weight:700; margin-right:8px}
+  .opts{display:grid; gap:7px}
+  .opts.row{grid-template-columns:repeat(3,1fr)}
+  .opt{display:flex; align-items:flex-start; gap:12px; width:100%; margin:0; text-align:left;
+       font:inherit; font-size:17px; line-height:1.45; color:var(--ink); background:var(--bg);
+       border:1.5px solid var(--rule); border-radius:7px; padding:9px 13px; cursor:pointer;
+       -webkit-appearance:none; appearance:none; touch-action:manipulation}
+  .opts.row .opt{justify-content:center; font-weight:600; font-size:15.5px; letter-spacing:.03em}
+  .opt:hover:not(:disabled){border-color:var(--faint)}
+  .opt:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+  .opt:disabled{cursor:default}
+  .opt .k{flex:0 0 auto; width:25px; height:25px; margin-top:1px; border-radius:50%; border:1.5px solid var(--faint);
+          color:var(--mute); font-size:13.5px; font-weight:700; display:inline-flex; align-items:center; justify-content:center}
+  .opt .t{flex:1 1 0; min-width:0}
+  .opt.sel{border-color:var(--accent); box-shadow:inset 0 0 0 1px var(--accent)}
+  .opt.sel .k{background:var(--accent); border-color:var(--accent); color:var(--card)}
+  .opt.ok{border-color:var(--ok); background:var(--okbg); box-shadow:none}
+  .opt.ok .k{border-color:var(--ok); background:transparent; color:var(--ok)}
+  .opt.bad{border-color:var(--bad); background:var(--badbg); box-shadow:none}
+  .opt.bad .k{border-color:var(--bad); background:transparent; color:var(--bad)}
+
+  select, input[type=text]{font:inherit; font-size:17px; color:var(--ink); background:var(--bg);
+       border:1.5px solid var(--rule); border-radius:7px; padding:8px 11px; max-width:100%}
+  select{width:100%; cursor:pointer}
+  input[type=text]{width:min(100%,320px)}
+  select:focus-visible, input[type=text]:focus-visible{outline:2px solid var(--accent); outline-offset:2px; border-color:var(--accent)}
+  .field.ok{border-color:var(--ok); background:var(--okbg)}
+  .field.bad{border-color:var(--bad); background:var(--badbg)}
+  .gap{display:inline-block; min-width:2em; border-bottom:1.5px solid var(--faint); padding:0 4px; color:var(--accent); font-weight:700}
+
+  .fb{margin:10px 0 0; padding:10px 14px; border-left:3px solid var(--rule); font-size:16.5px; line-height:1.55; color:var(--mute)}
+  .fb[hidden]{display:none}
+  .fb .res{font-weight:700}
+  .fb .res.ok{color:var(--ok)}
+  .fb .res.bad{color:var(--bad)}
+  .fb q{font-style:italic; color:var(--ink)}
+  .fb q::before{content:"\201C"} .fb q::after{content:"\201D"}
+
+  .sum{margin:18px 0 0; padding:14px 18px; border-radius:8px; background:var(--bg); border:1px solid var(--rule); font-size:18px}
+  .sum[hidden]{display:none}
+  .sum b{color:var(--accent)}
+  .vocab{margin-top:22px}
+  .vocab[hidden]{display:none}
+  .vocab h4{margin:0 0 10px; font-size:15px; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); font-weight:700}
+  .vocab dl{margin:0; display:grid; gap:10px}
+  .vocab dt{font-weight:650; font-size:18px}
+  .vocab dt span{font-weight:400; font-size:15px; color:var(--faint); margin-left:6px}
+  .vocab dd{margin:0; font-size:16.5px; color:var(--mute); line-height:1.5}
+  .vocab dd i{color:var(--ink)}
+
+  /* TRUE / FALSE / NOT GIVEN guide */
+  .guide{margin:4px 0 14px; padding:16px 18px; background:var(--bg); border:1px solid var(--rule); border-left:4px solid var(--accent);
+         border-radius:8px; font-size:16.5px; line-height:1.55; color:var(--mute)}
+  .guide .gh{margin:0 0 8px; font-size:14px; letter-spacing:.08em; text-transform:uppercase; font-weight:700; color:var(--ink)}
+  .guide .gh + .extext, .guide dl + .gh{margin-top:14px}
+  .tg{display:inline-block; min-width:92px; padding:1px 8px; border-radius:5px; font-size:13px; font-weight:700; letter-spacing:.04em;
+      text-align:center; border:1.5px solid currentColor; white-space:nowrap}
+  .tg.t{color:var(--ok)} .tg.f{color:var(--bad)} .tg.n{color:var(--faint)}
+  .tfdef{display:grid; grid-template-columns:auto 1fr; gap:8px 12px; margin:0; align-items:baseline}
+  .tfdef dt, .tfdef dd{margin:0}
+  .tfdef dt, .exs .tg{justify-self:start}
+  .tfdef dd b{color:var(--ink)}
+  .extext{margin:0 0 10px; padding:10px 14px; background:var(--card); border-radius:6px; color:var(--ink); font-style:italic}
+  .exs{list-style:none; margin:0; padding:0; display:grid; gap:10px}
+  .exs li{display:grid; grid-template-columns:auto 1fr; gap:2px 12px; align-items:baseline}
+  .exs .st{color:var(--ink); font-weight:500}
+  .exs .why{grid-column:2; font-size:15.5px}
+  .gtip{margin:12px 0 0}
+  .gtip b{color:var(--ink)}
+  @media (max-width:600px){
+    .guide{padding:14px; font-size:16px}
+    .tfdef{grid-template-columns:1fr; gap:2px}
+    .tfdef dd{margin-bottom:8px}
+    .exs li{grid-template-columns:1fr}
+    .exs .why{grid-column:1}
+  }
+
+  /* Highlighting: student highlights (yellow) and answer evidence (accent) */
+  .hint{font-size:15px; color:var(--faint); line-height:1.4; flex:1 1 220px}
+  .ctl.sm{font-size:14.5px; padding:5px 12px; margin-top:10px}
+  .text{--evbg:rgba(107,23,35,.09)}
+  mark.hl{background:#ffe680; color:inherit; border-radius:2px; cursor:pointer}
+  mark.ev{background:var(--evbg); color:inherit; border-bottom:2px solid var(--accent); cursor:pointer; scroll-margin:90px}
+  mark.ev[data-n]::before{content:attr(data-n); font-size:11.5px; font-weight:700; line-height:1; color:#fff; background:var(--accent);
+         border-radius:4px; padding:2px 5px; margin-right:4px; vertical-align:2px; font-style:normal}
+  mark.hl mark.ev, mark.ev mark.hl{background:#ffe680}
+  .flash{animation:flash 1.6s ease-out}
+  @keyframes flash{0%,40%{outline:3px solid var(--accent); outline-offset:2px} 100%{outline:3px solid transparent; outline-offset:2px}}
+  .hlbtn{position:fixed; z-index:50; font:inherit; font-size:15px; font-weight:700; padding:8px 16px; border-radius:7px; border:0;
+         background:var(--ink); color:var(--bg); box-shadow:0 4px 14px rgba(0,0,0,.25); cursor:pointer; -webkit-user-select:none; user-select:none}
+  .hlbtn[hidden]{display:none}
+  @media (prefers-color-scheme: dark){
+    .text{--evbg:rgba(235,155,165,.16)}
+    mark.hl, mark.hl mark.ev, mark.ev mark.hl{background:rgba(255,214,0,.34)}
+    mark.ev[data-n]::before{color:#141414}
+  }
+
+  footer{margin-top:60px; padding-top:22px; border-top:1px solid var(--rule); font-size:15.5px; color:var(--faint)}
+
+  /* Wide screens: passage and questions side by side, each scrolling on its own */
+  @media (min-width:1100px){
+    .wrap.wide{max-width:1320px}
+    .wrap.wide > header, .wrap.wide > footer{max-width:820px}
+    .split{display:grid; grid-template-columns:1fr 1fr; gap:34px; align-items:start}
+    .text, .qs{max-height:calc(100vh - 120px); overflow-y:auto; padding-right:12px; position:sticky; top:16px}
+    .qs{margin-top:0}
+  }
+  @media (max-width:600px){
+    .wrap{padding:40px 16px 80px}
+    h1{font-size:33px}
+    .psg > summary{padding:16px 18px}
+    .body{padding:0 18px 20px}
+    .psg h2{font-size:21px}
+    .score .lbl{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
+    .text{font-size:17.5px}
+    .opts.row{grid-template-columns:1fr}
+  }
+  @media print{
+    body{background:#fff; font-size:12pt}
+    .wrap{padding:0; max-width:none}
+    .bar, .back{display:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap wide">
+
+  <header>
+    <a class="back" id="back" href="./">&larr; Back to class 89154</a>
+    <p class="course" id="course">English Enrichment (F26) &nbsp;&middot;&nbsp; Academic Reading practice</p>
+    <h1>Reading Test 11</h1>
+    <p class="lead">Three passages, forty questions. Give yourself twenty minutes per passage. Answer every question, then press <b>Submit</b> to check your answers, read why each answer is right, and review the key vocabulary.</p>
+    <p class="lead">Nothing is recorded. Press <b>Try again</b> to clear a passage and start over.</p>
+  </header>
+
+  <!-- ============================== PASSAGE 1 ============================== -->
+  <details class="psg" id="passage-1" data-p="1">
+    <summary>
+      <span class="ttl"><span class="pn">Passage 1</span><h2>Green virtues of green sand</h2><span class="meta">Questions 1&ndash;14 &middot; 20 minutes</span></span>
+      <span class="score" aria-live="polite"><span class="lbl">Score</span> <b>&ndash; / 14</b></span>
+    </summary>
+    <div class="body">
+      <div class="bar"><span class="clock" aria-live="off">20:00</span><button type="button" class="ctl timer">Start timer</button></div>
+      <div class="split">
+        <article class="text">
+          <h3>Green virtues of green sand</h3>
+          <p><span class="pl">A</span>For the past 100 years special high-grade white sand dug from the ground at Leighton Buzzard in the UK has been used to filter tap water to remove bacteria and impurities, but this may no longer be necessary. A new factory that turns used wine bottles into green sand could revolutionise the recycling industry and help to filter Britain’s drinking water. Backed by $1.6m from the European Union and the Department for Environment, Food and Rural Affairs (Defra), a company based in Scotland is building the factory, which will turn beverage bottles back into the sand from which they were made in the first place. The green sand has already been successfully tested by water companies and is being used in 50 swimming pools in Scotland to keep the water clean.</p>
+          <p><span class="pl">B</span>The idea is not only to avoid using up an increasingly scarce natural resource, sand, but also to solve a crisis in the recycling industry. Britain uses 5.5m tonnes of glass a year, but recycles only 750,000 tonnes of it. The problem is that half the green bottle glass in Britain is originally from imported wine and beer bottles. Because there is so much of it, and it is used less in domestic production than other types, green glass is worth only $25 a tonne. Clear glass, which is melted down and used for whisky bottles, mainly for export, is worth double that amount.</p>
+          <p><span class="pl">C</span>Howard Dryden, a scientist and managing director of the company, Dryden Aqua, of Bonnyrigg, near Edinburgh, has spent six years working on the product he calls Active Filtration Media, or AFM. He concedes that he has given what is basically recycled glass a ‘fancy name’ to remove the stigma of what most people would regard as an inferior product. He says he needs bottles that have already contained drinkable liquids to be sure that drinking water filtered through the AFM would not be contaminated. Crushed-down beverage glass has fewer impurities than real sand and it performed better in trials. ‘The fact is that tests show that AFM does the job better than sand, it is easier to clean and reuse and has all sorts of properties that make it ideal for other applications,’ he claimed.</p>
+          <p><span class="pl">D</span>The factory is designed to produce 100 tonnes of AFM a day, although Mr Dryden regards this as a large-scale pilot project rather than full production. Current estimates of the UK market for this glass for filtering drinking water, sewage, industrial water, swimming pools and fish farming are between 175,000 and 217,000 tonnes a year, which will use up most of the glass available near the factory. So he intends to build five or six factories in cities where there are large quantities of bottles, in order to cut down on transport costs.</p>
+          <p><span class="pl">E</span>The current factory will be completed this month and is expected to go into full production on January 14th next year. Once it is providing a ‘regular’ product, the government’s drinking water inspectorate will be asked to perform tests and approve it for widespread use by water companies. A Defra spokesman said it was hoped that AFM could meet approval within six months. The only problem that they could foresee was possible contamination if some glass came from sources other than beverage bottles.</p>
+          <p><span class="pl">F</span>Among those who have tested the glass already is Caroline Fitzpatrick of the civil and environmental engineering department of University College London. ‘We have looked at a number of batches and it appears to do the job,’ she said. ‘Basically, sand is made of glass and Mr Dryden is turning bottles back into sand. It seems a straightforward idea and there is no reason we can think of why it would not work. Since glass from wine bottles and other beverages has no impurities and clearly did not leach any substances into the contents of the bottles, there was no reason to believe there would be a problem,’ Dr Fitzpatrick added.</p>
+          <p><span class="pl">G</span>Mr Dryden has set up a network of agents round the world to sell AFM. It is already in use in Central America to filter water on banana plantations where the fruit has to be washed before being despatched to European markets. It is also in use in sewage works to filter water before it is returned to rivers, something which is becoming legally necessary across the European Union because of tighter regulations on sewage works. So there are a great number of applications involving cleaning up water. Currently, however, AFM costs $670 a tonne, about four times as much as good-quality sand. ‘But that is because we haven’t got large-scale production. Obviously, when we get going it will cost a lot less, and be competitive with sand in price as well,’ Mr Dryden said. ‘I believe it performs better and lasts longer than sand, so it is going to be better value too.’</p>
+          <p><span class="pl">H</span>If AFM takes off as a product, it will be a big boost for the government agency which is charged with finding a market for recycled products. Crushed glass is already being used in road surfacing and in making tiles and bricks. Similarly, AFM could prove to have a widespread use and give green glass a cash value.</p>
+        </article>
+        <div class="qs"></div>
+      </div>
+      <div class="bar"><button type="button" class="ctl main submit">Submit</button><button type="button" class="ctl reset" hidden>Try again</button></div>
+      <p class="sum" hidden></p>
+      <div class="vocab" hidden></div>
+    </div>
+  </details>
+
+  <!-- ============================== PASSAGE 2 ============================== -->
+  <details class="psg" id="passage-2" data-p="2">
+    <summary>
+      <span class="ttl"><span class="pn">Passage 2</span><h2>Natural choice: coffee and chocolate</h2><span class="meta">Questions 15&ndash;27 &middot; 20 minutes</span></span>
+      <span class="score" aria-live="polite"><span class="lbl">Score</span> <b>&ndash; / 13</b></span>
+    </summary>
+    <div class="body">
+      <div class="bar"><span class="clock" aria-live="off">20:00</span><button type="button" class="ctl timer">Start timer</button></div>
+      <div class="split">
+        <article class="text">
+          <h3>Natural choice: coffee and chocolate</h3>
+          <p>When scientists from London’s Natural History Museum descended on the coffee farms of the tiny Central American republic of El Salvador, they were astonished to find such diversity of insect and plant species. During 18 months’ work on 12 farms, they found a third more species of parasitic wasp than are known to exist in the whole country of Costa Rica. They described four new species and are aware of a fifth. On 24 farms, they found nearly 300 species of tree when they had expected to find about 100.</p>
+          <p>El Salvador has lost much of its natural forest, with coffee farms covering nearly 10% of the country. Most of them use the ‘shade-grown’ method of production, which utilises a semi-natural forest ecosystem. Alex Munro, the museum’s botanist on the expedition, says: ‘Our findings amazed our insect specialist. There’s a very sophisticated food web present. The wasps, for instance, may depend on specific species of tree.’</p>
+          <p>It’s the same the world over. Species diversity is much higher where coffee is grown in shade conditions. In addition, coffee (and chocolate) is usually grown in tropical rainforest – regions that are biodiversity hotspots. ‘These habitats support up to 70% of the planet’s plant and animal species, and so the production methods of cocoa and coffee can have a hugely significant impact,’ explains Dr Paul Donald of the Royal Society for the Protection of Birds.</p>
+          <p>So what does ‘shade-grown’ mean, and why is it good for wildlife? Most of the world’s coffee is produced by poor farmers in the developing world. Traditionally they have grown coffee (and cocoa) under the shade of selectively thinned tracts of rainforest in a genuinely sustainable form of farming. Leaf fall from the canopy provides a supply of nutrients and acts as a mulch that suppresses weeds. The insects that live in the canopy pollinate the cocoa and coffee and prey on pests. The trees also provide farmers with fruit and wood for fuel.</p>
+          <p>‘Bird diversity in shade-grown coffee plantations rivals that found in natural forests in the same region,’ says Robert Rice from the Smithsonian Migratory Bird Center. In Ghana, West Africa – one of the world’s biggest producers of cocoa – 90% of the cocoa is grown under shade, and these forest plantations are a vital habitat for wintering European migrant birds. In the same way, the coffee forests of Central and South America are a refuge for wintering North American migrants.</p>
+          <p>More recently, a combination of the collapse in the world market for coffee and cocoa and a drive to increase yields by producer countries has led to huge swathes of shade-grown coffee and cocoa being cleared to make way for a highly intensive, monoculture pattern of production known as ‘full sun’. But this system not only reduces the diversity of flora and fauna, it also requires huge amounts of pesticides and fertilisers. In Côte d’Ivoire, which produces more than half the world’s cocoa, more than a third of the crop is now grown in full-sun conditions.</p>
+          <p>The loggers have been busy in the Americas too, where nearly 70% of all Colombian coffee is now produced using full-sun production. One study carried out in Colombia and Mexico found that, compared with shade coffee, full-sun plantations have 95% fewer species of birds.</p>
+          <p>In El Salvador, Alex Munro says shade-coffee farms have a cultural as well as ecological significance and people are not happy to see them go. But the financial pressures are great, and few of these coffee farms make much money. ‘One farm we studied, a cooperative of 100 families, made just $10,000 a year, $100 per family, and that’s not taking labour costs into account.’</p>
+          <p>The loss of shade-coffee forests has so alarmed a number of North American wildlife organisations that they are now harnessing consumer power to help save these threatened habitats. They are promoting a ‘certification’ system that can indicate to consumers that the beans have been grown on shade plantations. Bird-friendly coffee, for instance, is marketed by the Smithsonian Migratory Bird Center. The idea is that the small extra cost is passed directly on to the coffee farmers as a financial incentive to maintain their shade-coffee farms.</p>
+          <p>Not all conservationists agree with such measures, however. Some say certification could be leading to the loss, not the preservation, of natural forests. John Rappole of the Smithsonian Conservation and Research Center, for example, argues that shade-grown marketing provides ‘an incentive to convert existing areas of primary forest that are too remote or steep to be converted profitably to other forms of cultivation into shade-coffee plantations’.</p>
+          <p>Other conservationists, such as Stacey Philpott and colleagues, argue the case for shade coffee. But there are different types of shade growing. Those used by subsistence farmers are virtually identical to natural forest (and have a corresponding diversity), while systems that use coffee plants as the understorey and cacao or citrus trees as the overstorey may be no more diverse than full-sun farms. Certification procedures need to distinguish between the two, and Ms Philpott argues that as long as the process is rigorous and offers financial gains to the producers, shade growing does benefit the environment.</p>
+        </article>
+        <div class="qs"></div>
+      </div>
+      <div class="bar"><button type="button" class="ctl main submit">Submit</button><button type="button" class="ctl reset" hidden>Try again</button></div>
+      <p class="sum" hidden></p>
+      <div class="vocab" hidden></div>
+    </div>
+  </details>
+
+  <!-- ============================== PASSAGE 3 ============================== -->
+  <details class="psg" id="passage-3" data-p="3">
+    <summary>
+      <span class="ttl"><span class="pn">Passage 3</span><h2>Painters of time</h2><span class="meta">Questions 28&ndash;40 &middot; 20 minutes</span></span>
+      <span class="score" aria-live="polite"><span class="lbl">Score</span> <b>&ndash; / 13</b></span>
+    </summary>
+    <div class="body">
+      <div class="bar"><span class="clock" aria-live="off">20:00</span><button type="button" class="ctl timer">Start timer</button></div>
+      <div class="split">
+        <article class="text">
+          <h3>Painters of time</h3>
+          <p><span class="pl">A</span>The works of Aboriginal artists are now much in demand throughout the world, and not just in Australia, where they are already fully recognised: the National Museum of Australia, which opened in Canberra in 2001, designated 40% of its exhibition space to works by Aborigines. In Europe their art is being exhibited at a museum in Lyon, France, while the future Quai Branly museum in Paris, which will be devoted to arts and civilisations of Africa, Asia, Oceania and the Americas, plans to commission frescoes by artists from Australia.</p>
+          <p><span class="pl">B</span>Their artistic movement began about 30 years ago, but its roots go back to time immemorial. All the works refer to the founding myth of the Aboriginal culture, ‘the Dreaming’. That internal geography, which is rendered with a brush and colours, is also the expression of the Aborigines’ long quest to regain the land which was stolen from them when Europeans arrived in the nineteenth century. ‘Painting is nothing without history,’ says one such artist, Michael Nelson Tjakamarra.</p>
+          <p><span class="pl">C</span>There are now fewer than 400,000 Aborigines living in Australia. They have been swamped by the country’s 17.5 million immigrants. These original ‘natives’ have been living in Australia for 50,000 years, but they were undoubtedly maltreated by the newcomers. Driven back to the most barren lands or crammed into slums on the outskirts of cities, the Aborigines were subjected to a policy of ‘assimilation’, which involved kidnapping children to make them better ‘integrated’ into European society, and herding the nomadic Aborigines by force into settled communities.</p>
+          <p><span class="pl">D</span>It was in one such community, Papunya, near Alice Springs, in the central desert, that Aboriginal painting first came into its own. In 1971, a white schoolteacher, Geoffrey Bardon, suggested to a group of Aborigines that they should decorate the school walls with ritual motifs, so as to pass on to the younger generation the myths that were starting to fade from their collective memory. He gave them brushes, colours and surfaces to paint on cardboard and canvases. He was astounded by the result. But their art did not come like a bolt from the blue: for thousands of years Aborigines had been ‘painting’ on the ground using sands of different colours, and on rock faces. They had also been decorating their bodies for ceremonial purposes. So there existed a formal vocabulary.</p>
+          <p><span class="pl">E</span>This had already been noted by Europeans. In the early twentieth century, Aboriginal communities brought together by missionaries in northern Australia had been encouraged to reproduce on tree bark the motifs found on rock faces. Artists turned out a steady stream of works, supported by the churches, which helped to sell them to the public, and between 1950 and 1960 Aboriginal paintings began to reach overseas museums. Painting on bark persisted in the north, whereas the communities in the central desert increasingly used acrylic paint, and elsewhere in Western Australia women explored the possibilities of wax painting and dyeing processes, known as ‘batik’.</p>
+          <p><span class="pl">F</span>What Aborigines depict are always elements of the Dreaming, the collective history that each community is both part of and guardian of. The Dreaming is the story of their origins, of their ‘Great Ancestors’, who passed on their knowledge, their art and their skills (hunting, medicine, painting, music and dance) to man. ‘The Dreaming is not synonymous with the moment when the world was created,’ says Stéphane Jacob, one of the organisers of the Lyon exhibition. ‘For Aborigines, that moment has never ceased to exist. It is perpetuated by the cycle of the seasons and the religious ceremonies which the Aborigines organise. Indeed, the aim of those ceremonies is also to ensure the permanence of that golden age. The central function of Aboriginal painting, even in its contemporary manifestations, is to guarantee the survival of this world. The Dreaming is past, present and future.’</p>
+          <p><span class="pl">G</span>Each work is created individually, with a form peculiar to each artist, but it is created within and on behalf of a community who must approve it. An artist cannot use a ‘dream’ that does not belong to his or her community, since each community is the owner of its dreams, just as it is anchored to a territory marked out by its ancestors, so each painting can be interpreted as a kind of spiritual road map for that community.</p>
+          <p><span class="pl">H</span>Nowadays, each community is organised as a cooperative and draws on the services of an art adviser, a government-employed agent who provides the artists with materials, deals with galleries and museums and redistributes the proceeds from sales among the artists.</p>
+          <p><span class="pl">I</span>Today, Aboriginal painting has become a great success. Some works sell for more than $25,000, and exceptional items may fetch as much as $180,000 in Australia. ‘By exporting their paintings as though they were surfaces of their territory, by accompanying them to the temples of western art, the Aborigines have redrawn the map of their country, into whose depths they were exiled,’ says Yves Le Fur, of the Quai Branly museum. ‘Masterpieces have been created. Their undeniable power prompts a dialogue that has proved all too rare in the history of contacts between the two cultures.’</p>
+        </article>
+        <div class="qs"></div>
+      </div>
+      <div class="bar"><button type="button" class="ctl main submit">Submit</button><button type="button" class="ctl reset" hidden>Try again</button></div>
+      <p class="sum" hidden></p>
+      <div class="vocab" hidden></div>
+    </div>
+  </details>
+
+  <footer>Passages and questions adapted from <i>IELTS Reading Test 11</i>; typing errors in the source PDF have been corrected. Answer key, explanations and vocabulary notes prepared for classroom use.</footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  // The same test is linked from more than one class page; ?c=fju shows that course's name and back link.
+  var CTX = {
+    fju: { back:'../advanced/', backText:'\u2190 Back to Advanced English for Freshmen',
+           course:'Advanced English for Freshmen (F26) \u00b7 Academic Reading practice' }
+  };
+  var ctx = null;
+  try { ctx = CTX[new URLSearchParams(location.search).get('c')] || null; } catch (e) {}
+  if (ctx){
+    var bk = document.getElementById('back'), cs = document.getElementById('course');
+    bk.href = ctx.back; bk.textContent = ctx.backText; cs.textContent = ctx.course;
+  }
+  var ABCD = ['A','B','C','D'];
+  var TFNG = ['TRUE','FALSE','NOT GIVEN'];
+  // Shown before the TRUE / FALSE / NOT GIVEN questions. The example text is not from the test, so it gives nothing away.
+  var TFNG_GUIDE =
+    '<p class="gh">Before you start: TRUE, FALSE or NOT GIVEN?</p>' +
+    '<dl class="tfdef">' +
+      '<dt><span class="tg t">TRUE</span></dt><dd>The passage <b>says the same thing</b> as the statement, usually in different words.</dd>' +
+      '<dt><span class="tg f">FALSE</span></dt><dd>The passage <b>says the opposite</b>. The statement and the passage cannot both be right.</dd>' +
+      '<dt><span class="tg n">NOT GIVEN</span></dt><dd>The passage <b>does not say</b>. There is not enough information to decide whether the statement is right or wrong.</dd>' +
+    '</dl>' +
+    '<p class="gh">Example</p>' +
+    '<p class="extext">&ldquo;The city library opened in 1998. It is open every day except Sunday, and most of its visitors are students.&rdquo;</p>' +
+    '<ul class="exs">' +
+      '<li><span class="tg t">TRUE</span><span class="st">The library is closed on Sundays.</span><span class="why"><i>Every day except Sunday</i> means the same as <i>closed on Sundays</i>.</span></li>' +
+      '<li><span class="tg f">FALSE</span><span class="st">The library is open seven days a week.</span><span class="why">The passage says the opposite: it is <i>not</i> open on Sunday.</span></li>' +
+      '<li><span class="tg f">FALSE</span><span class="st">All of the library&rsquo;s visitors are students.</span><span class="why">The passage says <i>most</i>, not <i>all</i>. Small words like <i>all, only, always, never</i> often make a statement FALSE.</span></li>' +
+      '<li><span class="tg n">NOT GIVEN</span><span class="st">The library is the largest in the city.</span><span class="why">The passage says nothing about its size.</span></li>' +
+      '<li><span class="tg n">NOT GIVEN</span><span class="st">More students use the library now than in 1998.</span><span class="why">The passage mentions 1998, but it never compares the numbers then and now.</span></li>' +
+    '</ul>' +
+    '<p class="gtip"><b>FALSE or NOT GIVEN?</b> Find the part of the passage the statement is about and ask: <i>does the passage say the opposite?</i> If yes, the answer is FALSE. If the passage is simply silent, the answer is NOT GIVEN.</p>' +
+    '<p class="gtip"><b>Use only the passage.</b> Do not use what you know about the world. A statement that is true in real life is still NOT GIVEN if the passage does not say it.</p>';
+
+  /* Question types: mcq, tfng, sel (dropdown from a list), gap (typed; acc = accepted, lim = word limit). */
+  var DATA = {
+ "1": {
+  "groups": [
+   {
+    "h": "Questions 1–10",
+    "ins": "The passage has eight paragraphs, A–H. Which paragraph contains the following information? You may use any letter more than once.",
+    "qs": [
+     {
+      "n": 1,
+      "t": "sel",
+      "q": "a description of plans to expand production of AFM",
+      "list": [
+       [
+        "A",
+        "Paragraph A"
+       ],
+       [
+        "B",
+        "Paragraph B"
+       ],
+       [
+        "C",
+        "Paragraph C"
+       ],
+       [
+        "D",
+        "Paragraph D"
+       ],
+       [
+        "E",
+        "Paragraph E"
+       ],
+       [
+        "F",
+        "Paragraph F"
+       ],
+       [
+        "G",
+        "Paragraph G"
+       ],
+       [
+        "H",
+        "Paragraph H"
+       ]
+      ],
+      "a": "D",
+      "ex": "Paragraph D: the factory is only <q>a large-scale pilot project</q>, and Mr Dryden <q>intends to build five or six factories</q>. More factories = <i>expand production</i>."
+     },
+     {
+      "n": 2,
+      "t": "sel",
+      "q": "the identification of a potential danger in the raw material for AFM",
+      "list": [
+       [
+        "A",
+        "Paragraph A"
+       ],
+       [
+        "B",
+        "Paragraph B"
+       ],
+       [
+        "C",
+        "Paragraph C"
+       ],
+       [
+        "D",
+        "Paragraph D"
+       ],
+       [
+        "E",
+        "Paragraph E"
+       ],
+       [
+        "F",
+        "Paragraph F"
+       ],
+       [
+        "G",
+        "Paragraph G"
+       ],
+       [
+        "H",
+        "Paragraph H"
+       ]
+      ],
+      "a": "E",
+      "ex": "Paragraph E: <q>The only problem that they could foresee was possible contamination if some glass came from sources other than beverage bottles.</q> The raw material is the glass; the danger is contamination. Paragraph C mentions contamination too, but only as Dryden’s reason for choosing drinks bottles, not as a danger someone has identified."
+     },
+     {
+      "n": 3,
+      "t": "sel",
+      "q": "an example of AFM use in the export market",
+      "list": [
+       [
+        "A",
+        "Paragraph A"
+       ],
+       [
+        "B",
+        "Paragraph B"
+       ],
+       [
+        "C",
+        "Paragraph C"
+       ],
+       [
+        "D",
+        "Paragraph D"
+       ],
+       [
+        "E",
+        "Paragraph E"
+       ],
+       [
+        "F",
+        "Paragraph F"
+       ],
+       [
+        "G",
+        "Paragraph G"
+       ],
+       [
+        "H",
+        "Paragraph H"
+       ]
+      ],
+      "a": "G",
+      "ex": "Paragraph G: AFM <q>is already in use in Central America to filter water on banana plantations</q>. Selling it abroad = the export market."
+     },
+     {
+      "n": 4,
+      "t": "sel",
+      "q": "a comparison of the value of green glass and other types of glass",
+      "list": [
+       [
+        "A",
+        "Paragraph A"
+       ],
+       [
+        "B",
+        "Paragraph B"
+       ],
+       [
+        "C",
+        "Paragraph C"
+       ],
+       [
+        "D",
+        "Paragraph D"
+       ],
+       [
+        "E",
+        "Paragraph E"
+       ],
+       [
+        "F",
+        "Paragraph F"
+       ],
+       [
+        "G",
+        "Paragraph G"
+       ],
+       [
+        "H",
+        "Paragraph H"
+       ]
+      ],
+      "a": "B",
+      "ex": "Paragraph B: <q>green glass is worth only $25 a tonne. Clear glass … is worth double that amount.</q>"
+     },
+     {
+      "n": 5,
+      "t": "sel",
+      "q": "a list of potential applications of AFM in the domestic market",
+      "list": [
+       [
+        "A",
+        "Paragraph A"
+       ],
+       [
+        "B",
+        "Paragraph B"
+       ],
+       [
+        "C",
+        "Paragraph C"
+       ],
+       [
+        "D",
+        "Paragraph D"
+       ],
+       [
+        "E",
+        "Paragraph E"
+       ],
+       [
+        "F",
+        "Paragraph F"
+       ],
+       [
+        "G",
+        "Paragraph G"
+       ],
+       [
+        "H",
+        "Paragraph H"
+       ]
+      ],
+      "a": "D",
+      "ex": "Paragraph D lists the <q>UK market for this glass for filtering drinking water, sewage, industrial water, swimming pools and fish farming</q>. <i>UK</i> = <i>domestic</i>; the list of five uses = <i>a list of applications</i>."
+     },
+     {
+      "n": 6,
+      "t": "sel",
+      "q": "the conclusions drawn from laboratory checks on the process of AFM production",
+      "list": [
+       [
+        "A",
+        "Paragraph A"
+       ],
+       [
+        "B",
+        "Paragraph B"
+       ],
+       [
+        "C",
+        "Paragraph C"
+       ],
+       [
+        "D",
+        "Paragraph D"
+       ],
+       [
+        "E",
+        "Paragraph E"
+       ],
+       [
+        "F",
+        "Paragraph F"
+       ],
+       [
+        "G",
+        "Paragraph G"
+       ],
+       [
+        "H",
+        "Paragraph H"
+       ]
+      ],
+      "a": "F",
+      "ex": "Paragraph F: Caroline Fitzpatrick of University College London has <q>looked at a number of batches and it appears to do the job</q>, and sees <q>no reason to believe there would be a problem</q>. Those are the conclusions of her checks."
+     },
+     {
+      "n": 7,
+      "t": "sel",
+      "q": "identification of current funding for the production of green sand",
+      "list": [
+       [
+        "A",
+        "Paragraph A"
+       ],
+       [
+        "B",
+        "Paragraph B"
+       ],
+       [
+        "C",
+        "Paragraph C"
+       ],
+       [
+        "D",
+        "Paragraph D"
+       ],
+       [
+        "E",
+        "Paragraph E"
+       ],
+       [
+        "F",
+        "Paragraph F"
+       ],
+       [
+        "G",
+        "Paragraph G"
+       ],
+       [
+        "H",
+        "Paragraph H"
+       ]
+      ],
+      "a": "A",
+      "ex": "Paragraph A: the factory is <q>Backed by $1.6m from the European Union and the Department for Environment, Food and Rural Affairs (Defra)</q>."
+     },
+     {
+      "n": 8,
+      "t": "sel",
+      "q": "an explanation of the chosen brand name for crushed green glass",
+      "list": [
+       [
+        "A",
+        "Paragraph A"
+       ],
+       [
+        "B",
+        "Paragraph B"
+       ],
+       [
+        "C",
+        "Paragraph C"
+       ],
+       [
+        "D",
+        "Paragraph D"
+       ],
+       [
+        "E",
+        "Paragraph E"
+       ],
+       [
+        "F",
+        "Paragraph F"
+       ],
+       [
+        "G",
+        "Paragraph G"
+       ],
+       [
+        "H",
+        "Paragraph H"
+       ]
+      ],
+      "a": "C",
+      "ex": "Paragraph C: Dryden <q>has given what is basically recycled glass a ‘fancy name’ to remove the stigma</q> of an inferior product. That explains why it is called Active Filtration Media."
+     },
+     {
+      "n": 9,
+      "t": "sel",
+      "q": "a description of plans for exporting AFM",
+      "list": [
+       [
+        "A",
+        "Paragraph A"
+       ],
+       [
+        "B",
+        "Paragraph B"
+       ],
+       [
+        "C",
+        "Paragraph C"
+       ],
+       [
+        "D",
+        "Paragraph D"
+       ],
+       [
+        "E",
+        "Paragraph E"
+       ],
+       [
+        "F",
+        "Paragraph F"
+       ],
+       [
+        "G",
+        "Paragraph G"
+       ],
+       [
+        "H",
+        "Paragraph H"
+       ]
+      ],
+      "a": "G",
+      "ex": "Paragraph G: <q>Mr Dryden has set up a network of agents round the world to sell AFM.</q> Selling round the world = exporting. (G is also the answer to Q3; letters can be used more than once.)"
+     },
+     {
+      "n": 10,
+      "t": "sel",
+      "q": "a description of what has to happen before AFM is accepted for general use",
+      "list": [
+       [
+        "A",
+        "Paragraph A"
+       ],
+       [
+        "B",
+        "Paragraph B"
+       ],
+       [
+        "C",
+        "Paragraph C"
+       ],
+       [
+        "D",
+        "Paragraph D"
+       ],
+       [
+        "E",
+        "Paragraph E"
+       ],
+       [
+        "F",
+        "Paragraph F"
+       ],
+       [
+        "G",
+        "Paragraph G"
+       ],
+       [
+        "H",
+        "Paragraph H"
+       ]
+      ],
+      "a": "E",
+      "ex": "Paragraph E: the <q>drinking water inspectorate will be asked to perform tests and approve it for widespread use</q>. <i>Widespread use</i> = <i>general use</i>."
+     }
+    ]
+   },
+   {
+    "h": "Questions 11–14",
+    "ins": "Complete the summary below. Choose NO MORE THAN TWO WORDS from the passage for each answer.",
+    "qs": [
+     {
+      "n": 11,
+      "t": "gap",
+      "lim": 2,
+      "pre": "The use of crushed green glass (AFM) may have two significant impacts: it may help to save a diminishing",
+      "post": "",
+      "acc": [
+       "natural resource"
+      ],
+      "ex": "Paragraph B: <q>an increasingly scarce natural resource, sand</q>. <i>Increasingly scarce</i> = <i>diminishing</i>."
+     },
+     {
+      "n": 12,
+      "t": "gap",
+      "lim": 2,
+      "pre": "while at the same time solving a major problem for the",
+      "post": "in the UK.",
+      "acc": [
+       "recycling industry"
+      ],
+      "ex": "Paragraph B: <q>to solve a crisis in the recycling industry</q>. <i>Crisis</i> = <i>major problem</i>."
+     },
+     {
+      "n": 13,
+      "t": "gap",
+      "lim": 2,
+      "pre": "However, according to Howard Dryden, only glass from bottles that have been used for",
+      "post": "can be used in the production process.",
+      "acc": [
+       "drinkable liquids",
+       "beverages"
+      ],
+      "ex": "Paragraph C: <q>he needs bottles that have already contained drinkable liquids</q>. <i>Beverages</i> (paragraph F) is also accepted."
+     },
+     {
+      "n": 14,
+      "t": "gap",
+      "lim": 2,
+      "pre": "AFM is more effective than",
+      "post": "as a water filter, and also has other uses.",
+      "acc": [
+       "sand",
+       "real sand"
+      ],
+      "ex": "Paragraph C: <q>AFM does the job better than sand</q>, and crushed glass <q>performed better in trials</q> than <q>real sand</q>."
+     }
+    ]
+   }
+  ],
+  "vocab": [
+   [
+    "impurities",
+    "noun",
+    "unwanted substances that make something less clean or pure.",
+    "to remove bacteria and impurities"
+   ],
+   [
+    "revolutionise",
+    "verb",
+    "to change something completely, usually for the better.",
+    "could revolutionise the recycling industry"
+   ],
+   [
+    "scarce",
+    "adjective",
+    "difficult to find because there is not much of it.",
+    "an increasingly scarce natural resource"
+   ],
+   [
+    "concede",
+    "verb",
+    "to admit, often unwillingly, that something is true.",
+    "He concedes that he has given what is basically recycled glass a ‘fancy name’"
+   ],
+   [
+    "stigma",
+    "noun",
+    "a feeling that something is bad or shameful, which makes people avoid it.",
+    "to remove the stigma of what most people would regard as an inferior product"
+   ],
+   [
+    "contaminated",
+    "adjective",
+    "made dirty or harmful by an added substance.",
+    "would not be contaminated"
+   ],
+   [
+    "pilot project",
+    "noun",
+    "a smaller first version, run to test an idea before full production.",
+    "a large-scale pilot project rather than full production"
+   ],
+   [
+    "foresee",
+    "verb",
+    "to know or expect that something will happen.",
+    "The only problem that they could foresee"
+   ],
+   [
+    "leach",
+    "verb",
+    "(of a chemical) to pass out of a material into a liquid.",
+    "did not leach any substances into the contents of the bottles"
+   ],
+   [
+    "take off",
+    "phrasal verb",
+    "to suddenly become successful or popular.",
+    "If AFM takes off as a product"
+   ]
+  ]
+ },
+ "2": {
+  "groups": [
+   {
+    "h": "Questions 15–19",
+    "ins": "Do the following statements agree with the information given in the passage? Choose TRUE if the statement agrees with the information, FALSE if it contradicts the information, NOT GIVEN if there is no information on this.",
+    "guide": TFNG_GUIDE,
+    "qs": [
+     {
+      "n": 15,
+      "t": "tfng",
+      "q": "More species survive on the farms studied by the researchers than in the natural El Salvador forests.",
+      "a": "NOT GIVEN",
+      "ex": "The researchers found great diversity on the farms, and more wasp species than are known in <i>Costa Rica</i>. But the passage never counts the species in El Salvador’s own natural forests, so the comparison cannot be checked."
+     },
+     {
+      "n": 16,
+      "t": "tfng",
+      "q": "Nearly three-quarters of the Earth’s wildlife species can be found in shade-coffee plantations.",
+      "a": "FALSE",
+      "ex": "The figure is <q>up to 70% of the planet’s plant and animal species</q>, and it describes tropical rainforest <i>habitats</i> as a whole, not shade-coffee plantations. The statement changes both the place and the number (<i>up to 70%</i> is not <i>nearly three-quarters</i>), so it contradicts the passage. Published answer keys give FALSE."
+     },
+     {
+      "n": 17,
+      "t": "tfng",
+      "q": "Farmers in El Salvador who have tried both methods prefer shade-grown plantations.",
+      "a": "NOT GIVEN",
+      "ex": "The passage says <q>people are not happy to see them go</q>, but nothing about farmers who have <i>tried both methods</i> or which one they prefer."
+     },
+     {
+      "n": 18,
+      "t": "tfng",
+      "q": "Shade plantations are important for migrating birds in both Africa and the Americas.",
+      "a": "TRUE",
+      "ex": "In Ghana, shade cocoa plantations are <q>a vital habitat for wintering European migrant birds</q>, and in Central and South America the coffee forests are <q>a refuge for wintering North American migrants</q>."
+     },
+     {
+      "n": 19,
+      "t": "tfng",
+      "q": "Full-sun cultivation can increase the costs of farming.",
+      "a": "TRUE",
+      "ex": "Full sun <q>requires huge amounts of pesticides and fertilisers</q>. Farmers have to buy these, so the method adds to the cost of farming."
+     }
+    ]
+   },
+   {
+    "h": "Questions 20–23",
+    "ins": "Match each opinion with the person credited with it. You may use any letter more than once.",
+    "list": [
+     [
+      "A",
+      "Alex Munro"
+     ],
+     [
+      "B",
+      "Paul Donald"
+     ],
+     [
+      "C",
+      "Robert Rice"
+     ],
+     [
+      "D",
+      "John Rappole"
+     ],
+     [
+      "E",
+      "Stacey Philpott"
+     ]
+    ],
+    "qs": [
+     {
+      "n": 20,
+      "t": "sel",
+      "q": "Encouraging shade growing may lead to farmers using the natural forest for their plantations.",
+      "list": [
+       [
+        "A",
+        "Alex Munro"
+       ],
+       [
+        "B",
+        "Paul Donald"
+       ],
+       [
+        "C",
+        "Robert Rice"
+       ],
+       [
+        "D",
+        "John Rappole"
+       ],
+       [
+        "E",
+        "Stacey Philpott"
+       ]
+      ],
+      "a": "D",
+      "ex": "John Rappole says shade-grown marketing gives <q>an incentive to convert existing areas of primary forest</q> into shade-coffee plantations. <i>Primary forest</i> = <i>natural forest</i>."
+     },
+     {
+      "n": 21,
+      "t": "sel",
+      "q": "If shade-coffee farms match the right criteria, they can be good for wildlife.",
+      "list": [
+       [
+        "A",
+        "Alex Munro"
+       ],
+       [
+        "B",
+        "Paul Donald"
+       ],
+       [
+        "C",
+        "Robert Rice"
+       ],
+       [
+        "D",
+        "John Rappole"
+       ],
+       [
+        "E",
+        "Stacey Philpott"
+       ]
+      ],
+      "a": "E",
+      "ex": "Stacey Philpott argues that <q>as long as the process is rigorous and offers financial gains to the producers, shade growing does benefit the environment</q>. <i>As long as</i> = <i>if</i>; the conditions = <i>the right criteria</i>."
+     },
+     {
+      "n": 22,
+      "t": "sel",
+      "q": "There may be as many species of bird found on shade farms in a particular area as in natural habitats there.",
+      "list": [
+       [
+        "A",
+        "Alex Munro"
+       ],
+       [
+        "B",
+        "Paul Donald"
+       ],
+       [
+        "C",
+        "Robert Rice"
+       ],
+       [
+        "D",
+        "John Rappole"
+       ],
+       [
+        "E",
+        "Stacey Philpott"
+       ]
+      ],
+      "a": "C",
+      "ex": "Robert Rice: <q>Bird diversity in shade-grown coffee plantations rivals that found in natural forests in the same region.</q> <i>Rivals</i> = <i>is as great as</i>."
+     },
+     {
+      "n": 23,
+      "t": "sel",
+      "q": "Currently, many shade-coffee farmers earn very little.",
+      "list": [
+       [
+        "A",
+        "Alex Munro"
+       ],
+       [
+        "B",
+        "Paul Donald"
+       ],
+       [
+        "C",
+        "Robert Rice"
+       ],
+       [
+        "D",
+        "John Rappole"
+       ],
+       [
+        "E",
+        "Stacey Philpott"
+       ]
+      ],
+      "a": "A",
+      "ex": "Alex Munro says <q>few of these coffee farms make much money</q>; one cooperative made just <q>$100 per family</q> a year."
+     }
+    ]
+   },
+   {
+    "h": "Questions 24–27",
+    "ins": "Classify the following features as applying to A, B or C.",
+    "list": [
+     [
+      "A",
+      "the shade-grown method"
+     ],
+     [
+      "B",
+      "the full-sun method"
+     ],
+     [
+      "C",
+      "both shade-grown and full-sun methods"
+     ]
+    ],
+    "qs": [
+     {
+      "n": 24,
+      "t": "sel",
+      "q": "can be used on either coffee or cocoa plantations",
+      "list": [
+       [
+        "A",
+        "the shade-grown method"
+       ],
+       [
+        "B",
+        "the full-sun method"
+       ],
+       [
+        "C",
+        "both shade-grown and full-sun methods"
+       ]
+      ],
+      "a": "C",
+      "ex": "Farmers have grown <q>coffee (and cocoa)</q> under shade, and full sun is used for both too: <q>more than a third</q> of Côte d’Ivoire’s cocoa and <q>nearly 70% of all Colombian coffee</q>."
+     },
+     {
+      "n": 25,
+      "t": "sel",
+      "q": "is expected to produce bigger crops",
+      "list": [
+       [
+        "A",
+        "the shade-grown method"
+       ],
+       [
+        "B",
+        "the full-sun method"
+       ],
+       [
+        "C",
+        "both shade-grown and full-sun methods"
+       ]
+      ],
+      "a": "B",
+      "ex": "Shade forests were cleared for full sun because of <q>a drive to increase yields</q>. <i>Increase yields</i> = <i>bigger crops</i>."
+     },
+     {
+      "n": 26,
+      "t": "sel",
+      "q": "documentation may be used to encourage sales",
+      "list": [
+       [
+        "A",
+        "the shade-grown method"
+       ],
+       [
+        "B",
+        "the full-sun method"
+       ],
+       [
+        "C",
+        "both shade-grown and full-sun methods"
+       ]
+      ],
+      "a": "A",
+      "ex": "Wildlife groups promote <q>a ‘certification’ system</q> to show consumers that beans were grown on shade plantations. A certificate = <i>documentation</i>."
+     },
+     {
+      "n": 27,
+      "t": "sel",
+      "q": "can reduce wildlife diversity",
+      "list": [
+       [
+        "A",
+        "the shade-grown method"
+       ],
+       [
+        "B",
+        "the full-sun method"
+       ],
+       [
+        "C",
+        "both shade-grown and full-sun methods"
+       ]
+      ],
+      "a": "B",
+      "ex": "Full sun <q>reduces the diversity of flora and fauna</q>, and full-sun plantations have <q>95% fewer species of birds</q>. The trap is C: some shade systems <q>may be no more diverse than full-sun farms</q>, but the passage does not say that shade growing <i>reduces</i> diversity. Published answer keys give B."
+     }
+    ]
+   }
+  ],
+  "vocab": [
+   [
+    "diversity",
+    "noun",
+    "a wide range of different kinds of things, here species.",
+    "such diversity of insect and plant species"
+   ],
+   [
+    "parasitic",
+    "adjective",
+    "living on or in another animal and feeding on it.",
+    "a third more species of parasitic wasp"
+   ],
+   [
+    "canopy",
+    "noun",
+    "the top layer of branches and leaves in a forest.",
+    "Leaf fall from the canopy provides a supply of nutrients"
+   ],
+   [
+    "suppress",
+    "verb",
+    "to stop something from growing or developing.",
+    "acts as a mulch that suppresses weeds"
+   ],
+   [
+    "refuge",
+    "noun",
+    "a place that gives safety and protection.",
+    "a refuge for wintering North American migrants"
+   ],
+   [
+    "yield",
+    "noun",
+    "the amount of a crop that is produced.",
+    "a drive to increase yields"
+   ],
+   [
+    "swathe",
+    "noun",
+    "a large area of land.",
+    "huge swathes of shade-grown coffee and cocoa"
+   ],
+   [
+    "monoculture",
+    "noun",
+    "growing only one crop over a large area.",
+    "a highly intensive, monoculture pattern of production"
+   ],
+   [
+    "incentive",
+    "noun",
+    "something that encourages a person to do something.",
+    "a financial incentive to maintain their shade-coffee farms"
+   ],
+   [
+    "subsistence farmer",
+    "noun",
+    "a farmer who grows food mainly for their own family, not to sell.",
+    "Those used by subsistence farmers"
+   ],
+   [
+    "rigorous",
+    "adjective",
+    "careful, thorough and strict.",
+    "as long as the process is rigorous"
+   ]
+  ]
+ },
+ "3": {
+  "groups": [
+   {
+    "h": "Questions 28–33",
+    "ins": "The passage has nine paragraphs, A–I. Choose the correct heading for paragraphs A–F from the list of headings below.",
+    "list": [
+     [
+      "i",
+      "Amazing results from a project"
+     ],
+     [
+      "ii",
+      "New religious ceremonies"
+     ],
+     [
+      "iii",
+      "Community art centres"
+     ],
+     [
+      "iv",
+      "Early painting techniques and marketing systems"
+     ],
+     [
+      "v",
+      "Mythology and history combined"
+     ],
+     [
+      "vi",
+      "The increasing acclaim for Aboriginal art"
+     ],
+     [
+      "vii",
+      "Belief in continuity"
+     ],
+     [
+      "viii",
+      "Oppression of a minority people"
+     ]
+    ],
+    "qs": [
+     {
+      "n": 28,
+      "t": "sel",
+      "q": "Paragraph A",
+      "list": [
+       [
+        "i",
+        "Amazing results from a project"
+       ],
+       [
+        "ii",
+        "New religious ceremonies"
+       ],
+       [
+        "iii",
+        "Community art centres"
+       ],
+       [
+        "iv",
+        "Early painting techniques and marketing systems"
+       ],
+       [
+        "v",
+        "Mythology and history combined"
+       ],
+       [
+        "vi",
+        "The increasing acclaim for Aboriginal art"
+       ],
+       [
+        "vii",
+        "Belief in continuity"
+       ],
+       [
+        "viii",
+        "Oppression of a minority people"
+       ]
+      ],
+      "a": "vi",
+      "ex": "Aboriginal art is <q>now much in demand throughout the world</q>, with museums in Canberra, Lyon and Paris showing it. Growing demand and recognition = <i>increasing acclaim</i>."
+     },
+     {
+      "n": 29,
+      "t": "sel",
+      "q": "Paragraph B",
+      "list": [
+       [
+        "i",
+        "Amazing results from a project"
+       ],
+       [
+        "ii",
+        "New religious ceremonies"
+       ],
+       [
+        "iii",
+        "Community art centres"
+       ],
+       [
+        "iv",
+        "Early painting techniques and marketing systems"
+       ],
+       [
+        "v",
+        "Mythology and history combined"
+       ],
+       [
+        "vi",
+        "The increasing acclaim for Aboriginal art"
+       ],
+       [
+        "vii",
+        "Belief in continuity"
+       ],
+       [
+        "viii",
+        "Oppression of a minority people"
+       ]
+      ],
+      "a": "v",
+      "ex": "The works <q>refer to the founding myth</q> (the Dreaming) and also express <q>the Aborigines’ long quest to regain the land</q>. Myth + history: <q>Painting is nothing without history.</q>"
+     },
+     {
+      "n": 30,
+      "t": "sel",
+      "q": "Paragraph C",
+      "list": [
+       [
+        "i",
+        "Amazing results from a project"
+       ],
+       [
+        "ii",
+        "New religious ceremonies"
+       ],
+       [
+        "iii",
+        "Community art centres"
+       ],
+       [
+        "iv",
+        "Early painting techniques and marketing systems"
+       ],
+       [
+        "v",
+        "Mythology and history combined"
+       ],
+       [
+        "vi",
+        "The increasing acclaim for Aboriginal art"
+       ],
+       [
+        "vii",
+        "Belief in continuity"
+       ],
+       [
+        "viii",
+        "Oppression of a minority people"
+       ]
+      ],
+      "a": "viii",
+      "ex": "Aborigines <q>were undoubtedly maltreated by the newcomers</q>: driven to barren lands, children kidnapped, nomads forced into settlements. A minority (<q>fewer than 400,000</q>) treated harshly = <i>oppression</i>."
+     },
+     {
+      "n": 31,
+      "t": "sel",
+      "q": "Paragraph D",
+      "list": [
+       [
+        "i",
+        "Amazing results from a project"
+       ],
+       [
+        "ii",
+        "New religious ceremonies"
+       ],
+       [
+        "iii",
+        "Community art centres"
+       ],
+       [
+        "iv",
+        "Early painting techniques and marketing systems"
+       ],
+       [
+        "v",
+        "Mythology and history combined"
+       ],
+       [
+        "vi",
+        "The increasing acclaim for Aboriginal art"
+       ],
+       [
+        "vii",
+        "Belief in continuity"
+       ],
+       [
+        "viii",
+        "Oppression of a minority people"
+       ]
+      ],
+      "a": "i",
+      "ex": "Geoffrey Bardon’s school-wall project at Papunya: <q>He was astounded by the result.</q> <i>Astounded</i> = <i>amazing</i>."
+     },
+     {
+      "n": 32,
+      "t": "sel",
+      "q": "Paragraph E",
+      "list": [
+       [
+        "i",
+        "Amazing results from a project"
+       ],
+       [
+        "ii",
+        "New religious ceremonies"
+       ],
+       [
+        "iii",
+        "Community art centres"
+       ],
+       [
+        "iv",
+        "Early painting techniques and marketing systems"
+       ],
+       [
+        "v",
+        "Mythology and history combined"
+       ],
+       [
+        "vi",
+        "The increasing acclaim for Aboriginal art"
+       ],
+       [
+        "vii",
+        "Belief in continuity"
+       ],
+       [
+        "viii",
+        "Oppression of a minority people"
+       ]
+      ],
+      "a": "iv",
+      "ex": "Painting on <q>tree bark</q>, <q>acrylic paint</q> and <q>batik</q> are techniques; churches <q>helped to sell them to the public</q> and works reached overseas museums. That is marketing."
+     },
+     {
+      "n": 33,
+      "t": "sel",
+      "q": "Paragraph F",
+      "list": [
+       [
+        "i",
+        "Amazing results from a project"
+       ],
+       [
+        "ii",
+        "New religious ceremonies"
+       ],
+       [
+        "iii",
+        "Community art centres"
+       ],
+       [
+        "iv",
+        "Early painting techniques and marketing systems"
+       ],
+       [
+        "v",
+        "Mythology and history combined"
+       ],
+       [
+        "vi",
+        "The increasing acclaim for Aboriginal art"
+       ],
+       [
+        "vii",
+        "Belief in continuity"
+       ],
+       [
+        "viii",
+        "Oppression of a minority people"
+       ]
+      ],
+      "a": "vii",
+      "ex": "The moment of creation <q>has never ceased to exist</q>; ceremonies <q>ensure the permanence of that golden age</q>; <q>The Dreaming is past, present and future.</q> = <i>continuity</i>. <i>ii</i> is a trap: ceremonies are mentioned, but they are not new."
+     }
+    ]
+   },
+   {
+    "h": "Questions 34–37",
+    "ins": "Complete the flow chart below. Choose NO MORE THAN THREE WORDS from the passage for each answer.",
+    "qs": [
+     {
+      "n": 34,
+      "t": "gap",
+      "lim": 3,
+      "pre": "For",
+      "post": "Aborigines produced ground and rock paintings.",
+      "acc": [
+       "thousands of years"
+      ],
+      "ex": "Paragraph D: <q>for thousands of years Aborigines had been ‘painting’ on the ground using sands of different colours, and on rock faces</q>."
+     },
+     {
+      "n": 35,
+      "t": "gap",
+      "lim": 3,
+      "pre": "Early twentieth century: churches first promoted the use of",
+      "post": "for paintings.",
+      "acc": [
+       "tree bark",
+       "bark"
+      ],
+      "ex": "Paragraph E: communities were <q>encouraged to reproduce on tree bark the motifs found on rock faces</q>, and the work was <q>supported by the churches</q>."
+     },
+     {
+      "n": 36,
+      "t": "gap",
+      "lim": 3,
+      "pre": "Mid-twentieth century: Aboriginal paintings were seen in",
+      "post": ".",
+      "acc": [
+       "overseas museums"
+      ],
+      "ex": "Paragraph E: <q>between 1950 and 1960 Aboriginal paintings began to reach overseas museums</q>. 1950–1960 = mid-twentieth century."
+     },
+     {
+      "n": 37,
+      "t": "gap",
+      "lim": 3,
+      "pre": "Early 1970s: Aborigines painted traditional patterns on",
+      "post": "in one community.",
+      "acc": [
+       "school walls"
+      ],
+      "ex": "Paragraph D: in 1971 Bardon suggested they <q>decorate the school walls with ritual motifs</q>. <i>Ritual motifs</i> = <i>traditional patterns</i>."
+     }
+    ]
+   },
+   {
+    "h": "Questions 38–40",
+    "ins": "Choose the correct letter, A, B, C or D.",
+    "qs": [
+     {
+      "n": 38,
+      "t": "mcq",
+      "q": "In paragraph G, the writer suggests that an important feature of Aboriginal art is",
+      "o": [
+       "its historical context.",
+       "its significance to the group.",
+       "its religious content.",
+       "its message about the environment."
+      ],
+      "a": "B",
+      "ex": "Each work is created <q>within and on behalf of a community who must approve it</q>, and is <q>a kind of spiritual road map for that community</q>. The community = <i>the group</i>."
+     },
+     {
+      "n": 39,
+      "t": "mcq",
+      "q": "In Aboriginal beliefs, there is a significant relationship between",
+      "o": [
+       "communities and lifestyles.",
+       "images and techniques.",
+       "culture and form.",
+       "ancestors and territory."
+      ],
+      "a": "D",
+      "ex": "Paragraph G: each community <q>is anchored to a territory marked out by its ancestors</q>."
+     },
+     {
+      "n": 40,
+      "t": "mcq",
+      "q": "In paragraph I, the writer suggests that Aboriginal art invites Westerners to engage with",
+      "o": [
+       "the Australian land.",
+       "their own art.",
+       "Aboriginal culture.",
+       "their own history."
+      ],
+      "a": "C",
+      "ex": "The paintings’ <q>undeniable power prompts a dialogue that has proved all too rare in the history of contacts between the two cultures</q>. A dialogue with Aboriginal people = engaging with Aboriginal culture. A is a trap: the paintings are <i>like</i> surfaces of the land, but the point is the meeting of cultures."
+     }
+    ]
+   }
+  ],
+  "vocab": [
+   [
+    "in demand",
+    "phrase",
+    "wanted by many people.",
+    "now much in demand throughout the world"
+   ],
+   [
+    "time immemorial",
+    "phrase",
+    "a time so long ago that no one remembers it.",
+    "its roots go back to time immemorial"
+   ],
+   [
+    "swamp",
+    "verb",
+    "to be so much greater in number that others are overwhelmed.",
+    "They have been swamped by the country’s 17.5 million immigrants"
+   ],
+   [
+    "assimilation",
+    "noun",
+    "making a minority group take on the culture of the majority.",
+    "a policy of ‘assimilation’"
+   ],
+   [
+    "nomadic",
+    "adjective",
+    "moving from place to place rather than living in one place.",
+    "herding the nomadic Aborigines by force"
+   ],
+   [
+    "come into its own",
+    "idiom",
+    "to become successful and show its true value.",
+    "Aboriginal painting first came into its own"
+   ],
+   [
+    "like a bolt from the blue",
+    "idiom",
+    "completely unexpectedly.",
+    "their art did not come like a bolt from the blue"
+   ],
+   [
+    "motif",
+    "noun",
+    "a design or pattern used again and again in art.",
+    "ritual motifs"
+   ],
+   [
+    "perpetuate",
+    "verb",
+    "to make something continue for a long time.",
+    "It is perpetuated by the cycle of the seasons"
+   ],
+   [
+    "synonymous with",
+    "phrase",
+    "having the same meaning as.",
+    "not synonymous with the moment when the world was created"
+   ],
+   [
+    "proceeds",
+    "noun",
+    "the money received from selling something.",
+    "redistributes the proceeds from sales among the artists"
+   ]
+  ]
+ }
+};
+
+  /* Evidence: the exact passage text that gives each answer, keyed by question number. */
+  var EV = {
+ "1": "he intends to build five or six factories",
+ "2": "The only problem that they could foresee was possible contamination",
+ "3": "It is already in use in Central America to filter water on banana plantations",
+ "4": [
+  "green glass is worth only $25 a tonne",
+  "is worth double that amount"
+ ],
+ "5": "filtering drinking water, sewage, industrial water, swimming pools and fish farming",
+ "6": "We have looked at a number of batches and it appears to do the job",
+ "7": "Backed by $1.6m from the European Union and the Department for Environment, Food and Rural Affairs (Defra)",
+ "8": "he has given what is basically recycled glass a ‘fancy name’ to remove the stigma",
+ "9": "Mr Dryden has set up a network of agents round the world to sell AFM.",
+ "10": "the government’s drinking water inspectorate will be asked to perform tests and approve it for widespread use",
+ "11": "an increasingly scarce natural resource",
+ "12": "to solve a crisis in the recycling industry",
+ "13": "bottles that have already contained drinkable liquids",
+ "14": "AFM does the job better than sand",
+ "15": "they were astonished to find such diversity of insect and plant species",
+ "16": "These habitats support up to 70% of the planet’s plant and animal species",
+ "17": "people are not happy to see them go",
+ "18": [
+  "a vital habitat for wintering European migrant birds",
+  "a refuge for wintering North American migrants"
+ ],
+ "19": "it also requires huge amounts of pesticides and fertilisers",
+ "20": "an incentive to convert existing areas of primary forest",
+ "21": "as long as the process is rigorous and offers financial gains to the producers, shade growing does benefit the environment",
+ "22": "Bird diversity in shade-grown coffee plantations rivals that found in natural forests in the same region",
+ "23": "few of these coffee farms make much money",
+ "24": [
+  "Traditionally they have grown coffee (and cocoa) under the shade",
+  "more than a third of the crop is now grown in full-sun conditions"
+ ],
+ "25": "a drive to increase yields by producer countries",
+ "26": "They are promoting a ‘certification’ system",
+ "27": [
+  "this system not only reduces the diversity of flora and fauna",
+  "full-sun plantations have 95% fewer species of birds"
+ ],
+ "28": "The works of Aboriginal artists are now much in demand throughout the world",
+ "29": [
+  "All the works refer to the founding myth of the Aboriginal culture",
+  "the Aborigines’ long quest to regain the land"
+ ],
+ "30": "they were undoubtedly maltreated by the newcomers",
+ "31": "He was astounded by the result.",
+ "32": [
+  "Artists turned out a steady stream of works, supported by the churches, which helped to sell them to the public",
+  "increasingly used acrylic paint"
+ ],
+ "33": "For Aborigines, that moment has never ceased to exist.",
+ "34": "for thousands of years Aborigines had been ‘painting’ on the ground",
+ "35": "encouraged to reproduce on tree bark the motifs found on rock faces",
+ "36": "Aboriginal paintings began to reach overseas museums",
+ "37": "decorate the school walls with ritual motifs",
+ "38": "it is created within and on behalf of a community who must approve it",
+ "39": "anchored to a territory marked out by its ancestors",
+ "40": "Their undeniable power prompts a dialogue that has proved all too rare in the history of contacts between the two cultures"
+};
+
+  function nz(s){ return s.replace(/[‘’]/g,"'").replace(/[“”]/g,'"').replace(/[–—]/g,'-').replace(/ /g,' '); }
+
+  // Find a string in an element's text and return a Range over it.
+  function findRange(root, str){
+    var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT), t, nodes = [], full = '';
+    while ((t = w.nextNode())){ nodes.push([t, full.length]); full += t.data; }
+    var i = nz(full).indexOf(nz(str));
+    if (i < 0) return null;
+    var j = i + str.length, r = document.createRange();
+    for (var k = 0; k < nodes.length; k++){
+      var n = nodes[k][0], s = nodes[k][1], e = s + n.data.length;
+      if (i >= s && i < e) r.setStart(n, i - s);
+      if (j > s && j <= e){ r.setEnd(n, j - s); break; }
+    }
+    return r;
+  }
+
+  // Wrap every text node inside a Range in a new element; works across tags.
+  function wrapRange(range, make){
+    var root = range.commonAncestorContainer;
+    if (root.nodeType === 3) root = root.parentNode;
+    var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT), t, list = [], out = [];
+    while ((t = w.nextNode())) if (range.intersectsNode(t)) list.push(t);
+    var sc = range.startContainer, so = range.startOffset, ec = range.endContainer, eo = range.endOffset;
+    list.forEach(function(node){
+      var st = node === sc ? so : 0, en = node === ec ? eo : node.data.length;
+      if (en <= st || !node.data.slice(st, en).trim()) return;
+      if (en < node.data.length) node.splitText(en);
+      if (st > 0) node = node.splitText(st);
+      var m = make();
+      node.parentNode.insertBefore(m, node);
+      m.appendChild(node);
+      out.push(m);
+    });
+    return out;
+  }
+
+  function unwrap(m){
+    var p = m.parentNode;
+    if (!p) return;
+    while (m.firstChild) p.insertBefore(m.firstChild, m);
+    p.removeChild(m);
+    p.normalize();
+  }
+
+  function flash(nodes){
+    [].forEach.call(nodes, function(n){
+      n.classList.remove('flash'); void n.offsetWidth; n.classList.add('flash');
+      setTimeout(function(){ n.classList.remove('flash'); }, 1700);
+    });
+  }
+
+  function el(tag, cls, html){
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (html != null) e.innerHTML = html;
+    return e;
+  }
+  function norm(s){
+    return String(s).toLowerCase().replace(/[‘’]/g,"'").replace(/[^a-z0-9' -]/g,' ')
+      .replace(/\s+/g,' ').trim().replace(/^(the|a|an) /,'');
+  }
+  function words(s){ var t = String(s).trim(); return t ? t.split(/\s+/).length : 0; }
+
+  function buildQ(q, uid){
+    var d = el('div','q'); d.qd = q; d.dataset.n = String(q.n);
+    var qid = 'q' + uid;
+    if (q.t === 'gap'){
+      var p = el('p','qt');
+      p.innerHTML = '<span class="qn">' + q.n + '</span>' + q.pre + ' ';
+      var inp = document.createElement('input');
+      inp.type = 'text'; inp.className = 'field'; inp.id = qid;
+      inp.setAttribute('aria-label','Answer ' + q.n); inp.autocomplete = 'off'; inp.spellcheck = false;
+      p.appendChild(inp);
+      p.appendChild(document.createTextNode(' ' + q.post));
+      d.appendChild(p);
+    } else {
+      var lab = el('p','qt','<span class="qn">' + q.n + '</span>' + (q.q || ''));
+      lab.id = qid;
+      d.appendChild(lab);
+      if (q.t === 'sel'){
+        var s = document.createElement('select');
+        s.className = 'field'; s.setAttribute('aria-labelledby', qid);
+        s.appendChild(new Option('Choose…',''));
+        q.list.forEach(function(it){ s.appendChild(new Option(it[0] + '  ' + it[1], it[0])); });
+        d.appendChild(s);
+      } else {
+        var g = el('div','opts' + (q.t === 'tfng' ? ' row' : ''));
+        g.setAttribute('role','group'); g.setAttribute('aria-labelledby', qid);
+        var labels = q.t === 'tfng' ? TFNG : q.o.map(function(_,i){ return 'ABCDEF'[i]; });
+        labels.forEach(function(k, i){
+          var b = el('button','opt');
+          b.type = 'button'; b.dataset.k = k;
+          b.setAttribute('aria-pressed','false');
+          b.innerHTML = q.t === 'tfng' ? k : '<span class="k">' + k + '</span> <span class="t">' + q.o[i] + '</span>';
+          g.appendChild(b);
+        });
+        d.appendChild(g);
+      }
+    }
+    d.appendChild(el('p','fb')).hidden = true;
+    return d;
+  }
+
+  function maxMarks(p){
+    var m = 0;
+    DATA[p].groups.forEach(function(g){ g.qs.forEach(function(q){ m += q.marks || 1; }); });
+    return m;
+  }
+
+  document.querySelectorAll('.psg').forEach(function(box){
+    var p = box.dataset.p, data = DATA[p], total = maxMarks(p);
+    var qsWrap = box.querySelector('.qs'), uid = 0;
+    data.groups.forEach(function(g){
+      var gr = el('div','grp');
+      gr.appendChild(el('h4', null, g.h));
+      gr.appendChild(el('p','ins', g.ins));
+      if (g.guide) gr.appendChild(el('div','guide', g.guide));
+      if (g.list){
+        var l = el('div','list');
+        g.list.forEach(function(it){ l.appendChild(el('div', null, '<b>' + it[0] + '</b>' + it[1])); });
+        gr.appendChild(l);
+      }
+      g.qs.forEach(function(q){ gr.appendChild(buildQ(q, p + '-' + (uid++))); });
+      qsWrap.appendChild(gr);
+    });
+
+    var vb = box.querySelector('.vocab');
+    vb.appendChild(el('h4', null, 'Key vocabulary'));
+    var dl = el('dl');
+    data.vocab.forEach(function(v){
+      dl.appendChild(el('dt', null, v[0] + '<span>' + v[1] + '</span>'));
+      dl.appendChild(el('dd', null, v[2] + ' <i>“' + v[3] + '”</i>'));
+    });
+    vb.appendChild(dl);
+
+    var scoreB = box.querySelector('.score b');
+    var sum = box.querySelector('.sum');
+    var subBtn = box.querySelector('.submit'), resetBtn = box.querySelector('.reset');
+    var done = false;
+
+    var art = box.querySelector('.text');
+
+    // Student highlighter controls in the top bar
+    var topBar = box.querySelector('.bar');
+    var hb = el('button','ctl hlbar','Highlight'); hb.type = 'button';
+    var clr = el('button','ctl','Clear highlights'); clr.type = 'button';
+    clr.addEventListener('click', function(){ art.querySelectorAll('mark.hl').forEach(unwrap); });
+    topBar.appendChild(hb);
+    topBar.appendChild(clr);
+    topBar.appendChild(el('span','hint','Select words in the passage, then press <b>Highlight</b>. Click or tap a highlight to remove it.'));
+
+    // In the passage: tap a highlight to remove it; tap marked evidence to jump to its question
+    art.addEventListener('click', function(e){
+      var s = window.getSelection();
+      if (s && !s.isCollapsed) return;
+      var ev = e.target.closest('mark.ev');
+      if (ev){
+        var q = qsWrap.querySelector('.q[data-n="' + ev.dataset.q + '"]');
+        if (q){ q.scrollIntoView({block:'center', behavior:'smooth'}); flash([q]); }
+        return;
+      }
+      var h = e.target.closest('mark.hl');
+      if (h) unwrap(h);
+    });
+
+    function showEvidence(){
+      qsWrap.querySelectorAll('.q').forEach(function(q){
+        var key = q.dataset.n;
+        [].concat(EV[key] || []).forEach(function(str){
+          var r = findRange(art, str);
+          if (!r){ console.warn('Evidence not found for ' + key + ': ' + str); return; }
+          var ms = wrapRange(r, function(){ var m = document.createElement('mark'); m.className = 'ev'; m.dataset.q = key; return m; });
+          if (ms.length) ms[0].dataset.n = key;
+        });
+      });
+    }
+    function clearEvidence(){ art.querySelectorAll('mark.ev').forEach(unwrap); }
+
+    // Selecting options (no instant feedback; marking happens on Submit)
+    qsWrap.addEventListener('click', function(e){
+      var go = e.target.closest('.goto');
+      if (go){
+        var ms = art.querySelectorAll('mark.ev[data-q="' + go.closest('.q').dataset.n + '"]');
+        if (ms.length){ ms[0].scrollIntoView({block:'center', behavior:'smooth'}); flash(ms); }
+        return;
+      }
+      var b = e.target.closest('.opt');
+      if (!b || done) return;
+      var q = b.closest('.q'), qd = q.qd;
+      if (qd.t === 'multi'){
+        var on = !b.classList.contains('sel');
+        if (on && q.querySelectorAll('.opt.sel').length >= qd.pick) return;
+        b.classList.toggle('sel', on); b.setAttribute('aria-pressed', String(on));
+      } else {
+        q.querySelectorAll('.opt').forEach(function(o){ o.classList.remove('sel'); o.setAttribute('aria-pressed','false'); });
+        b.classList.add('sel'); b.setAttribute('aria-pressed','true');
+      }
+    });
+
+    function setRes(fb, ok, text){
+      fb.innerHTML = '<span class="res ' + (ok ? 'ok' : 'bad') + '">' + text + '</span> ';
+    }
+
+    function submit(){
+      if (done) return;
+      var unanswered = 0;
+      qsWrap.querySelectorAll('.q').forEach(function(q){
+        var qd = q.qd;
+        if (qd.t === 'gap'){ if (!q.querySelector('input').value.trim()) unanswered++; }
+        else if (qd.t === 'sel'){ if (!q.querySelector('select').value) unanswered++; }
+        else if (qd.t === 'multi'){ if (q.querySelectorAll('.opt.sel').length < qd.pick) unanswered++; }
+        else if (!q.querySelector('.opt.sel')) unanswered++;
+      });
+      if (unanswered && !confirm(unanswered + (unanswered === 1 ? ' question is' : ' questions are') + ' still unanswered. Submit anyway?')) return;
+
+      done = true; stopTimer();
+      var got = 0;
+      qsWrap.querySelectorAll('.q').forEach(function(q){
+        var qd = q.qd, fb = q.querySelector('.fb'), ok;
+        if (qd.t === 'gap'){
+          var inp = q.querySelector('input'), v = inp.value, nv = norm(v);
+          var over = words(v) > qd.lim;
+          ok = !over && qd.acc.some(function(a){ return norm(a) === nv; });
+          inp.readOnly = true; inp.classList.add(ok ? 'ok' : 'bad');
+          if (ok) setRes(fb, true, '✓ Correct.');
+          else setRes(fb, false, (v.trim() ? (over ? '✗ Over the word limit.' : '✗ Incorrect.') : '✗ No answer.') + ' Answer: ' + qd.acc[0] + '.');
+          if (ok) got++;
+        } else if (qd.t === 'sel'){
+          var s = q.querySelector('select');
+          ok = s.value === qd.a;
+          s.disabled = true; s.classList.add(ok ? 'ok' : 'bad');
+          setRes(fb, ok, ok ? '✓ Correct.' : (s.value ? '✗ Incorrect.' : '✗ No answer.') + ' Answer: ' + qd.a + '.');
+          if (ok) got++;
+        } else if (qd.t === 'multi'){
+          var hits = 0;
+          q.querySelectorAll('.opt').forEach(function(b){
+            b.disabled = true;
+            var right = qd.a.indexOf(b.dataset.k) > -1, sel = b.classList.contains('sel');
+            b.classList.remove('sel');
+            if (right) b.classList.add('ok');
+            else if (sel) b.classList.add('bad');
+            if (right && sel) hits++;
+          });
+          got += hits;
+          setRes(fb, hits === qd.marks, (hits === qd.marks ? '✓ ' : '') + hits + ' / ' + qd.marks + ' marks. Answer: ' + qd.a.join(', ') + ' (any order).');
+        } else {
+          var pick = q.querySelector('.opt.sel');
+          ok = !!pick && pick.dataset.k === qd.a;
+          q.querySelectorAll('.opt').forEach(function(b){
+            b.disabled = true; b.classList.remove('sel');
+            if (b.dataset.k === qd.a) b.classList.add('ok');
+          });
+          if (pick && !ok) pick.classList.add('bad');
+          setRes(fb, ok, ok ? '✓ Correct.' : (pick ? '✗ Incorrect.' : '✗ No answer.') + ' Answer: ' + qd.a + '.');
+          if (ok) got++;
+        }
+        fb.insertAdjacentHTML('beforeend', qd.ex);
+        if (EV[q.dataset.n]) fb.insertAdjacentHTML('beforeend', '<br><button type="button" class="ctl sm goto">Show in passage</button>');
+        fb.hidden = false;
+      });
+      showEvidence();
+      scoreB.textContent = got + ' / ' + total;
+      sum.innerHTML = 'You scored <b>' + got + ' / ' + total + '</b>. The text that gives each answer is now marked in the passage with its question number. Read the explanation under each question, press <b>Show in passage</b>, and compare the words in the question with the words in the text. Then study the key vocabulary below.';
+      sum.hidden = false; vb.hidden = false;
+      subBtn.hidden = true; resetBtn.hidden = false;
+      sum.setAttribute('tabindex','-1'); sum.focus();
+    }
+
+    function reset(){
+      done = false;
+      qsWrap.querySelectorAll('.q').forEach(function(q){
+        q.querySelectorAll('.opt').forEach(function(b){ b.disabled = false; b.classList.remove('sel','ok','bad'); b.setAttribute('aria-pressed','false'); });
+        q.querySelectorAll('.field').forEach(function(f){ f.classList.remove('ok','bad'); f.disabled = false; f.readOnly = false; f.value = ''; });
+        var fb = q.querySelector('.fb'); fb.hidden = true; fb.innerHTML = '';
+      });
+      clearEvidence();
+      art.querySelectorAll('mark.hl').forEach(unwrap);
+      scoreB.textContent = '– / ' + total;
+      sum.hidden = true; vb.hidden = true;
+      subBtn.hidden = false; resetBtn.hidden = true;
+      resetTimer();
+    }
+
+    // 20-minute countdown; it only warns, it never locks the answers.
+    var clock = box.querySelector('.clock'), tBtn = box.querySelector('.timer');
+    var left = 1200, tick = null;
+    function show(){
+      var m = Math.floor(Math.abs(left) / 60), s = Math.abs(left) % 60;
+      clock.textContent = (left < 0 ? '+' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+      clock.classList.toggle('up', left <= 0);
+    }
+    function stopTimer(){ if (tick){ clearInterval(tick); tick = null; tBtn.textContent = 'Resume timer'; } }
+    function resetTimer(){ stopTimer(); left = 1200; show(); tBtn.textContent = 'Start timer'; }
+    tBtn.addEventListener('click', function(){
+      if (tick){ stopTimer(); tBtn.textContent = 'Resume timer'; return; }
+      tBtn.textContent = 'Pause timer';
+      tick = setInterval(function(){ left--; show(); if (left === 0) clock.setAttribute('aria-live','assertive'); }, 1000);
+    });
+
+    subBtn.addEventListener('click', submit);
+    resetBtn.addEventListener('click', reset);
+    show();
+  });
+
+  // Floating "Highlight" button that appears under a selection inside a passage.
+  var hlBtn = el('button','hlbtn','Highlight');
+  hlBtn.type = 'button'; hlBtn.hidden = true;
+  document.body.appendChild(hlBtn);
+  var pending = null, selTimer = null;
+  function hideBtn(){ hlBtn.hidden = true; }
+  function inText(n){
+    if (!n) return null;
+    if (n.nodeType !== 1) n = n.parentNode;
+    return n && n.closest ? n.closest('.text') : null;
+  }
+  // The current selection, trimmed to a single passage. Browsers differ here:
+  // a Mac triple-click or a drag past the last paragraph ends the selection
+  // outside the passage, so clip it rather than reject it.
+  function passageRange(){
+    var s = window.getSelection();
+    if (!s || !s.rangeCount || s.isCollapsed) return null;
+    var r = s.getRangeAt(0).cloneRange();
+    var a1 = inText(r.startContainer), a2 = inText(r.endContainer), a = a1 || a2;
+    if (!a) return null;
+    if (a1 !== a) r.setStart(a, 0);
+    if (a2 !== a) r.setEnd(a, a.childNodes.length);
+    if (!r.toString().trim()) return null;
+    return r;
+  }
+  function checkSel(){
+    var r = passageRange();
+    if (!r){ pending = null; hideBtn(); return; }
+    pending = r;
+    var rect = r.getBoundingClientRect();
+    if (!rect.width && !rect.height){ var rs = r.getClientRects(); if (rs.length) rect = rs[rs.length - 1]; }
+    hlBtn.hidden = false;
+    var bw = hlBtn.offsetWidth, bh = hlBtn.offsetHeight;
+    var top = rect.bottom + 10;
+    if (top + bh > window.innerHeight - 8) top = rect.top - bh - 10;
+    top = Math.min(Math.max(8, top), window.innerHeight - bh - 8);  // always keep it on screen
+    var left = Math.min(Math.max(8, rect.left + rect.width / 2 - bw / 2), window.innerWidth - bw - 8);
+    hlBtn.style.top = top + 'px'; hlBtn.style.left = left + 'px';
+  }
+  // Several triggers, because browsers fire selection events differently:
+  // selectionchange (all modern browsers), plus mouseup / keyup / touchend as a backstop.
+  function soon(ms){ clearTimeout(selTimer); selTimer = setTimeout(checkSel, ms); }
+  document.addEventListener('selectionchange', function(){ soon(150); });
+  document.addEventListener('mouseup', function(){ soon(20); });
+  document.addEventListener('keyup', function(){ soon(20); });
+  document.addEventListener('touchend', function(){ soon(350); });
+  document.addEventListener('scroll', function(){ if (!hlBtn.hidden) checkSel(); }, true);
+  window.addEventListener('resize', hideBtn);
+  function applyHL(){
+    var r = pending || passageRange();
+    if (!r) return false;
+    wrapRange(r, function(){ var m = document.createElement('mark'); m.className = 'hl'; return m; });
+    pending = null; hideBtn();
+    var s = window.getSelection(); if (s) s.removeAllRanges();
+    return true;
+  }
+  // Apply on press, before the browser can clear the selection: pointer events
+  // where supported, with mousedown / touchstart for older Safari and Android.
+  var pressed = 0;
+  function onPress(e){
+    if (e.type !== 'click'){ e.preventDefault(); pressed = Date.now(); applyHL(); }
+    else if (Date.now() - pressed > 600) applyHL();
+  }
+  function bindPress(btn){
+    if (window.PointerEvent) btn.addEventListener('pointerdown', onPress);
+    else { btn.addEventListener('mousedown', onPress); btn.addEventListener('touchstart', onPress); }
+    btn.addEventListener('click', onPress);
+  }
+  bindPress(hlBtn);
+  // The fixed "Highlight" button in each passage's top bar does the same thing.
+  document.querySelectorAll('.hlbar').forEach(bindPress);
+
+  // Open a passage when linked as #passage-N.
+  if (/^#passage-[123]$/.test(location.hash)){
+    var t = document.getElementById(location.hash.slice(1));
+    if (t) t.open = true;
+  }
+})();
+</script>
+</body>
+</html>
