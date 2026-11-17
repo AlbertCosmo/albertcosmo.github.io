@@ -1,0 +1,2645 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reading Test 9</title>
+<meta name="description" content="IELTS Academic Reading practice: three passages, forty questions, with answer key, explanations, passage evidence and key vocabulary.">
+<style>
+  :root{
+    --bg:#fbfaf8; --ink:#0d0d0d; --mute:#3f3e3b; --faint:#67655f;
+    --rule:#ddd9d3; --accent:#6b1723; --card:#ffffff;
+    --ok:#1e7a3c; --okbg:rgba(30,122,60,.08); --bad:#b42318; --badbg:rgba(180,35,24,.07);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#141414; --ink:#f5f3f0; --mute:#c8c6c2; --faint:#a09e9a;
+           --rule:#343434; --accent:#eb9ba5; --card:#1c1c1c;
+           --ok:#7ed49b; --okbg:rgba(126,212,155,.12); --bad:#f28b82; --badbg:rgba(242,139,130,.12); }
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font:21px/1.66 ui-sans-serif,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans TC",sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:820px; margin:0 auto; padding:64px 30px 100px}
+  a{color:var(--accent)}
+  .back{display:inline-block; font-size:17px; font-weight:600; text-decoration:none;
+        border-bottom:1px solid currentColor; margin-bottom:26px}
+  .back:hover{opacity:.7}
+  header{padding-bottom:30px; border-bottom:1px solid var(--rule)}
+  .course{margin:0 0 8px; font-size:15px; color:var(--faint); letter-spacing:.05em; text-transform:uppercase; font-weight:600}
+  h1{margin:0 0 14px; font-size:42px; line-height:1.16; font-weight:650; letter-spacing:-.018em}
+  .lead{color:var(--mute); font-size:19.5px; margin:0 0 12px}
+  .lead:last-child{margin-bottom:0}
+
+  /* Passage blocks */
+  .psg{margin-top:26px; background:var(--card); border:1px solid var(--rule); border-radius:10px}
+  .psg > summary{cursor:pointer; list-style:none; display:flex; align-items:center; gap:14px; padding:20px 26px}
+  .psg > summary::-webkit-details-marker{display:none}
+  .psg > summary:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:10px}
+  .psg > summary::after{content:""; flex:0 0 auto; width:9px; height:9px; margin:-4px 4px 0 2px;
+         border-right:2px solid var(--faint); border-bottom:2px solid var(--faint); transform:rotate(45deg); transition:transform .15s}
+  .psg[open] > summary::after{margin-top:4px; transform:rotate(-135deg)}
+  .psg > summary:hover h2{color:var(--accent)}
+  .psg .ttl{flex:1 1 auto; min-width:0}
+  .psg .pn{display:block; font-size:14px; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); font-weight:700}
+  .psg h2{margin:2px 0 0; font-size:25px; font-weight:650; letter-spacing:-.01em; line-height:1.3}
+  .psg .meta{display:block; font-size:16px; color:var(--faint); margin-top:2px}
+  .score{flex:0 0 auto; white-space:nowrap; font-size:14px; letter-spacing:.08em; text-transform:uppercase; color:var(--faint); font-weight:700}
+  .score b{color:var(--accent); font-size:18px; letter-spacing:0; margin-left:6px}
+  .body{padding:0 26px 26px; border-top:1px solid var(--rule)}
+
+  .bar{display:flex; flex-wrap:wrap; align-items:center; gap:12px; padding:18px 0}
+  .clock{font:600 22px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; color:var(--ink); min-width:76px}
+  .clock.up{color:var(--bad)}
+  .ctl{font:inherit; font-size:16px; font-weight:600; padding:9px 18px; border-radius:7px; cursor:pointer;
+       background:var(--bg); color:var(--ink); border:1.5px solid var(--rule); -webkit-appearance:none; appearance:none; touch-action:manipulation}
+  .ctl:hover{opacity:.8}
+  .ctl:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+  .ctl.main{background:var(--accent); color:#fff; border-color:var(--accent)}
+  @media (prefers-color-scheme: dark){ .ctl.main{color:#141414} }
+  .ctl[hidden]{display:none}
+
+  .split{display:block}
+  .text{font-size:18.5px; line-height:1.7}
+  .text p{margin:0 0 14px}
+  .text .pl{font-weight:700; color:var(--accent); margin-right:6px}
+  .text h3{margin:0 0 12px; font-size:22px; font-weight:650; text-align:left}
+  .qs{margin-top:22px}
+
+  .grp{margin:0 0 6px; padding:18px 0 4px; border-top:2px solid var(--ink)}
+  .grp h4{margin:0 0 4px; font-size:15px; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); font-weight:700}
+  .grp .ins{margin:0 0 10px; font-size:17px; color:var(--mute)}
+  .list{margin:6px 0 12px; padding:12px 16px; background:var(--bg); border:1px solid var(--rule); border-radius:7px; font-size:16.5px; line-height:1.5}
+  .list div{padding:2px 0}
+  .list b{display:inline-block; min-width:30px; color:var(--accent)}
+
+  .q{padding:14px 0; border-bottom:1px solid var(--rule)}
+  .q:last-child{border-bottom:0}
+  .qt{margin:0 0 10px; font-size:18px; font-weight:500; line-height:1.5}
+  .qn{font-size:14px; letter-spacing:.06em; color:var(--accent); font-weight:700; margin-right:8px}
+  .opts{display:grid; gap:7px}
+  .opts.row{grid-template-columns:repeat(3,1fr)}
+  .opt{display:flex; align-items:flex-start; gap:12px; width:100%; margin:0; text-align:left;
+       font:inherit; font-size:17px; line-height:1.45; color:var(--ink); background:var(--bg);
+       border:1.5px solid var(--rule); border-radius:7px; padding:9px 13px; cursor:pointer;
+       -webkit-appearance:none; appearance:none; touch-action:manipulation}
+  .opts.row .opt{justify-content:center; font-weight:600; font-size:15.5px; letter-spacing:.03em}
+  .opt:hover:not(:disabled){border-color:var(--faint)}
+  .opt:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+  .opt:disabled{cursor:default}
+  .opt .k{flex:0 0 auto; width:25px; height:25px; margin-top:1px; border-radius:50%; border:1.5px solid var(--faint);
+          color:var(--mute); font-size:13.5px; font-weight:700; display:inline-flex; align-items:center; justify-content:center}
+  .opt .t{flex:1 1 0; min-width:0}
+  .opt.sel{border-color:var(--accent); box-shadow:inset 0 0 0 1px var(--accent)}
+  .opt.sel .k{background:var(--accent); border-color:var(--accent); color:var(--card)}
+  .opt.ok{border-color:var(--ok); background:var(--okbg); box-shadow:none}
+  .opt.ok .k{border-color:var(--ok); background:transparent; color:var(--ok)}
+  .opt.bad{border-color:var(--bad); background:var(--badbg); box-shadow:none}
+  .opt.bad .k{border-color:var(--bad); background:transparent; color:var(--bad)}
+
+  select, input[type=text]{font:inherit; font-size:17px; color:var(--ink); background:var(--bg);
+       border:1.5px solid var(--rule); border-radius:7px; padding:8px 11px; max-width:100%}
+  select{width:100%; cursor:pointer}
+  input[type=text]{width:min(100%,320px)}
+  select:focus-visible, input[type=text]:focus-visible{outline:2px solid var(--accent); outline-offset:2px; border-color:var(--accent)}
+  .field.ok{border-color:var(--ok); background:var(--okbg)}
+  .field.bad{border-color:var(--bad); background:var(--badbg)}
+  .gap{display:inline-block; min-width:2em; border-bottom:1.5px solid var(--faint); padding:0 4px; color:var(--accent); font-weight:700}
+
+  .fb{margin:10px 0 0; padding:10px 14px; border-left:3px solid var(--rule); font-size:16.5px; line-height:1.55; color:var(--mute)}
+  .fb[hidden]{display:none}
+  .fb .res{font-weight:700}
+  .fb .res.ok{color:var(--ok)}
+  .fb .res.bad{color:var(--bad)}
+  .fb q{font-style:italic; color:var(--ink)}
+  .fb q::before{content:"\201C"} .fb q::after{content:"\201D"}
+
+  .sum{margin:18px 0 0; padding:14px 18px; border-radius:8px; background:var(--bg); border:1px solid var(--rule); font-size:18px}
+  .sum[hidden]{display:none}
+  .sum b{color:var(--accent)}
+  .vocab{margin-top:22px}
+  .vocab[hidden]{display:none}
+  .vocab h4{margin:0 0 10px; font-size:15px; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); font-weight:700}
+  .vocab dl{margin:0; display:grid; gap:10px}
+  .vocab dt{font-weight:650; font-size:18px}
+  .vocab dt span{font-weight:400; font-size:15px; color:var(--faint); margin-left:6px}
+  .vocab dd{margin:0; font-size:16.5px; color:var(--mute); line-height:1.5}
+  .vocab dd i{color:var(--ink)}
+
+  /* TRUE / FALSE / NOT GIVEN guide */
+  .guide{margin:4px 0 14px; padding:16px 18px; background:var(--bg); border:1px solid var(--rule); border-left:4px solid var(--accent);
+         border-radius:8px; font-size:16.5px; line-height:1.55; color:var(--mute)}
+  .guide .gh{margin:0 0 8px; font-size:14px; letter-spacing:.08em; text-transform:uppercase; font-weight:700; color:var(--ink)}
+  .guide .gh + .extext, .guide dl + .gh, .guide .gtip + .gh{margin-top:14px}
+  .tg{display:inline-block; min-width:92px; padding:1px 8px; border-radius:5px; font-size:13px; font-weight:700; letter-spacing:.04em;
+      text-align:center; border:1.5px solid currentColor; white-space:nowrap}
+  .tg.t{color:var(--ok)} .tg.f{color:var(--bad)} .tg.n{color:var(--faint)}
+  .tfdef{display:grid; grid-template-columns:auto 1fr; gap:8px 12px; margin:0; align-items:baseline}
+  .tfdef dt, .tfdef dd{margin:0}
+  .tfdef dt, .exs .tg{justify-self:start}
+  .tfdef dd b{color:var(--ink)}
+  .extext{margin:0 0 10px; padding:10px 14px; background:var(--card); border-radius:6px; color:var(--ink); font-style:italic}
+  .exs{list-style:none; margin:0; padding:0; display:grid; gap:10px}
+  .exs li{display:grid; grid-template-columns:auto 1fr; gap:2px 12px; align-items:baseline}
+  .exs .st{color:var(--ink); font-weight:500}
+  .exs .why{grid-column:2; font-size:15.5px}
+  .gtip{margin:12px 0 0}
+  .gtip b{color:var(--ink)}
+  @media (max-width:600px){
+    .guide{padding:14px; font-size:16px}
+    .tfdef{grid-template-columns:1fr; gap:2px}
+    .tfdef dd{margin-bottom:8px}
+    .exs li{grid-template-columns:1fr}
+    .exs .why{grid-column:1}
+  }
+
+  .fig{margin:4px 0 12px}
+  .fig img{display:block; max-width:100%; height:auto; background:#fff; border:1px solid var(--rule); border-radius:6px}
+  .fig figcaption{font-size:14.5px; color:var(--faint); margin-top:6px}
+
+  /* Highlighting: student highlights (yellow) and answer evidence (accent) */
+  .hint{font-size:15px; color:var(--faint); line-height:1.4; flex:1 1 220px}
+  .ctl.sm{font-size:14.5px; padding:5px 12px; margin-top:10px}
+  .text{--evbg:rgba(107,23,35,.09)}
+  mark.hl{background:#ffe680; color:inherit; border-radius:2px; cursor:pointer}
+  mark.ev{background:var(--evbg); color:inherit; border-bottom:2px solid var(--accent); cursor:pointer; scroll-margin:90px}
+  mark.ev[data-n]::before{content:attr(data-n); font-size:11.5px; font-weight:700; line-height:1; color:#fff; background:var(--accent);
+         border-radius:4px; padding:2px 5px; margin-right:4px; vertical-align:2px; font-style:normal}
+  mark.hl mark.ev, mark.ev mark.hl{background:#ffe680}
+  .flash{animation:flash 1.6s ease-out}
+  @keyframes flash{0%,40%{outline:3px solid var(--accent); outline-offset:2px} 100%{outline:3px solid transparent; outline-offset:2px}}
+  .hlbtn{position:fixed; z-index:50; font:inherit; font-size:15px; font-weight:700; padding:8px 16px; border-radius:7px; border:0;
+         background:var(--ink); color:var(--bg); box-shadow:0 4px 14px rgba(0,0,0,.25); cursor:pointer; -webkit-user-select:none; user-select:none}
+  .hlbtn[hidden]{display:none}
+  @media (prefers-color-scheme: dark){
+    .text{--evbg:rgba(235,155,165,.16)}
+    mark.hl, mark.hl mark.ev, mark.ev mark.hl{background:rgba(255,214,0,.34)}
+    mark.ev[data-n]::before{color:#141414}
+  }
+
+  footer{margin-top:60px; padding-top:22px; border-top:1px solid var(--rule); font-size:15.5px; color:var(--faint)}
+
+  /* Wide screens: passage and questions side by side, each scrolling on its own */
+  @media (min-width:1100px){
+    .wrap.wide{max-width:1320px}
+    .wrap.wide > header, .wrap.wide > footer{max-width:820px}
+    .split{display:grid; grid-template-columns:1fr 1fr; gap:34px; align-items:start}
+    .text, .qs{max-height:calc(100vh - 120px); overflow-y:auto; padding-right:12px; position:sticky; top:16px}
+    .qs{margin-top:0}
+  }
+  @media (max-width:600px){
+    .wrap{padding:40px 16px 80px}
+    h1{font-size:33px}
+    .psg > summary{padding:16px 18px}
+    .body{padding:0 18px 20px}
+    .psg h2{font-size:21px}
+    .score .lbl{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
+    .text{font-size:17.5px}
+    .opts.row{grid-template-columns:1fr}
+  }
+  @media print{
+    body{background:#fff; font-size:12pt}
+    .wrap{padding:0; max-width:none}
+    .bar, .back{display:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap wide">
+
+  <header>
+    <a class="back" id="back" href="./">&larr; Back to class 89154</a>
+    <p class="course" id="course">English Enrichment (F26) &nbsp;&middot;&nbsp; Academic Reading practice</p>
+    <h1>Reading Test 9</h1>
+    <p class="lead">Three passages, forty questions. Give yourself twenty minutes per passage. Answer every question, then press <b>Submit</b> to check your answers, read why each answer is right, and review the key vocabulary.</p>
+    <p class="lead">Nothing is recorded. Press <b>Try again</b> to clear a passage and start over.</p>
+  </header>
+
+  <!-- ============================== PASSAGE 1 ============================== -->
+  <details class="psg" id="passage-1" data-p="1">
+    <summary>
+      <span class="ttl"><span class="pn">Passage 1</span><h2>Why risks can go wrong</h2><span class="meta">Questions 1&ndash;13 &middot; 20 minutes</span></span>
+      <span class="score" aria-live="polite"><span class="lbl">Score</span> <b>&ndash; / 13</b></span>
+    </summary>
+    <div class="body">
+      <div class="bar"><span class="clock" aria-live="off">20:00</span><button type="button" class="ctl timer">Start timer</button></div>
+      <div class="split">
+        <article class="text">
+          <h3>Why risks can go wrong</h3>
+          <p><span class="pl">A</span>People make terrible decisions about the future. The evidence is all around, from their investments in the stock markets to the way they run their businesses. In fact, people are consistently bad at dealing with uncertainty, underestimating some kinds of risk and overestimating others. Surely there must be a better way than using intuition?</p>
+          <p><span class="pl">B</span>In the 1960s a young Israeli research psychologist, Daniel Kahneman, became interested in people’s inability to make logical decisions. That launched him on a career to show just how irrationally people behave in practice. When Kahneman and his colleagues first started work, the idea of applying psychological insights to economics and business decisions was seen as rather bizarre. But in the past decade the fields of behavioural finance and behavioural economics have blossomed, and in 2002 Kahneman shared a Nobel prize in economics for his work. Today he is in demand by business organizations and international banking companies. But, he says, there are plenty of institutions that still fail to understand the roots of their poor decisions. He claims that, far from being random, these mistakes are systematic and predictable.</p>
+          <p><span class="pl">C</span>One common cause of problems in decision-making is over-optimism. Ask most people about the future, and they will see too much blue sky ahead, even if past experience suggests otherwise. Surveys have shown that people’s forecasts of future stock market movements are far more optimistic than past long-term returns would justify. The same goes for their hopes of ever-rising prices for their homes or doing well in games of chance. Such optimism can be useful for managers or sportsmen, and sometimes turns into a self-fulfilling prophecy. But most of the time it results in wasted effort and dashed hopes. Kahneman’s work points to three types of over-confidence. First, people tend to exaggerate their own skill and prowess; in polls, far fewer than half the respondents admit to having below-average skills in, say, driving. Second, they overestimate the amount of control they have over the future, forgetting about luck and chalking up success solely to skill. And third, in competitive pursuits such as dealing on shares, they forget that they have to judge their skills against those of the competition.</p>
+          <p><span class="pl">D</span>Another source of wrong decisions is related to the decisive effect of the initial meeting, particularly in negotiations over money. This is referred to as the ‘anchor effect’. Once a figure has been mentioned, it takes a strange hold over the human mind. The asking price quoted in a house sale, for example, tends to become accepted by all parties as the ‘anchor’ around which negotiations take place. Much the same goes for salary negotiations or mergers and acquisitions. If nobody has much information to go on, a figure can provide comfort – even though it may lead to a terrible mistake.</p>
+          <p><span class="pl">E</span>In addition, mistakes may arise due to stubbornness. No one likes to abandon a cherished belief, and the earlier a decision has been taken, the harder it is to abandon it. Drug companies must decide early to cancel a failing research project to avoid wasting money, but may find it difficult to admit they have made a mistake. In the same way, analysts may have become wedded early to a single explanation that coloured their perception. A fresh eye always helps.</p>
+          <p><span class="pl">F</span>People also tend to put a lot of emphasis on things they have seen and experienced themselves, which may not be the best guide to decision-making. For example, somebody may buy an overvalued share because a relative has made thousands on it, only to get his fingers burned. In finance, too much emphasis on information close at hand helps to explain the tendency by most investors to invest only within the country they live in. Even though they know that diversification is good for their portfolio, a large majority of both Americans and Europeans invest far too heavily in the shares of their home countries. They would be much better off spreading their risks more widely.</p>
+          <p><span class="pl">G</span>More information is helpful in making any decision but, says Kahneman, people spend proportionally too much time on small decisions and not enough on big ones. They need to adjust the balance. During the boom years, some companies put as much effort into planning their office party as into considering strategic mergers.</p>
+          <p><span class="pl">H</span>Finally, crying over spilled milk is not just a waste of time; it also often colours people’s perceptions of the future. Some stock market investors trade far too frequently because they are chasing the returns on shares they wish they had bought earlier.</p>
+          <p><span class="pl">I</span>Kahneman reckons that some types of businesses are much better than others at dealing with risk. Pharmaceutical companies, which are accustomed to many failures and a few big successes in their drug-discovery programmes, are fairly rational about their risk-taking. But banks, he says, have a long way to go. They may take big risks on a few huge loans, but are extremely cautious about their much more numerous loans to small businesses, many of which may be less risky than the big ones. And the research has implications for governments too. They face a whole range of sometimes conflicting political pressures, which means they are even more likely to take irrational decisions.</p>
+        </article>
+        <div class="qs"></div>
+      </div>
+      <div class="bar"><button type="button" class="ctl main submit">Submit</button><button type="button" class="ctl reset" hidden>Try again</button></div>
+      <p class="sum" hidden></p>
+      <div class="vocab" hidden></div>
+    </div>
+  </details>
+
+  <!-- ============================== PASSAGE 2 ============================== -->
+  <details class="psg" id="passage-2" data-p="2">
+    <summary>
+      <span class="ttl"><span class="pn">Passage 2</span><h2>Untitled passage (see Question 26)</h2><span class="meta">Questions 14&ndash;26 &middot; 20 minutes</span></span>
+      <span class="score" aria-live="polite"><span class="lbl">Score</span> <b>&ndash; / 13</b></span>
+    </summary>
+    <div class="body">
+      <div class="bar"><span class="clock" aria-live="off">20:00</span><button type="button" class="ctl timer">Start timer</button></div>
+      <div class="split">
+        <article class="text">
+          <h3>Untitled passage (see Question 26)</h3>
+          <p>There has always been a sense in which America and Europe owned film. They invented it at the end of the nineteenth century in unfashionable places like New Jersey, Leeds and the suburbs of Lyons. At first, they saw their clumsy new camera-projectors merely as more profitable versions of Victorian lantern shows, mechanical curiosities which might have a use as a sideshow at a funfair. Then the best of the pioneers looked beyond the fairground properties of their invention. A few directors, now mostly forgotten, saw that the flickering new medium was more than just a diversion. This crass commercial invention gradually began to evolve as an art. D W Griffith in California glimpsed its grace, German directors used it as an analogue to the human mind and the modernising city, Soviets emphasised its agitational and intellectual properties, and the Italians reconfigured it on an operatic scale.</p>
+          <p>So heady were these first decades of cinema that America and Europe can be forgiven for assuming that they were the only game in town. In less than twenty years western cinema had grown out of all recognition; its unknowns became the most famous people in the world; it made millions. It never occurred to its financial backers that another continent might borrow their magic box and make it its own. But film industries were emerging in Shanghai, Bombay and Tokyo, some of which would outgrow those in the west.</p>
+          <p>Between 1930 and 1935, China produced more than 500 films, mostly conventionally made in studios in Shanghai, without soundtracks. China’s best directors – Bu Wancang and Yuan Muzhi – introduced elements of realism to their stories. <i>The Peach Girl</i> (1931) and <i>Street Angel</i> (1937) are regularly voted among the best ever made in the country.</p>
+          <p>India followed a different course. In the west, the arrival of talkies gave birth to a new genre – the musical – but in India, every one of the 5,000 films made between 1931 and the mid-1950s had musical interludes. The films were stylistically more wide-ranging than the western musical, encompassing realism and escapist dance within individual sequences, and they were often three hours long rather than Hollywood’s 90 minutes. The cost of such productions resulted in a distinctive national style of cinema. They were often made in Bombay, the centre of what is now known as ‘Bollywood’. Performed in Hindi (rather than any of the numerous regional languages), they addressed social and peasant themes in an optimistic and romantic way and found markets in the Middle East, Africa and the Soviet Union.</p>
+          <p>In Japan, the film industry did not rival India’s in size but was unusual in other ways. Whereas in Hollywood the producer was the central figure, in Tokyo the director chose the stories and hired the producer and actors. The model was that of an artist and his studio of apprentices. Employed by a studio as an assistant, a future director worked with senior figures, learned his craft and gained authority, until he was promoted to director with the power to select screenplays and performers. In the 1930s and 40s, this freedom of the director led to the production of some of Asia’s finest films.</p>
+          <p>The films of Kenji Mizoguchi were among the greatest of these. Mizoguchi’s films were usually set in the nineteenth century and analysed the way in which the lives of the female characters whom he chose as his focus were constrained by the society of the time. From <i>Osaka Elegy</i> (1936) to <i>Ugetsu Monogatari</i> (1953) and beyond, he evolved a sinuous way of moving his camera in and around a scene, advancing towards significant details but often retreating at moments of confrontation or strong feeling. No one had used the camera with such finesse before.</p>
+          <p>Even more important for film history, however, is the work of the great Ozu. Where Hollywood cranked up drama, Ozu avoided it. His camera seldom moved. It nestled at seated height, framing people square on, listening quietly to their words. Ozu rejected the conventions of editing, cutting not on action, as is usually done in the west, but for visual balance. Even more strikingly, Ozu regularly cut away from his action to a shot of a tree or a kettle or clouds, not to establish a new location but as a moment of repose. Many historians now compare such ‘pillow shots’ to the Buddhist idea that <i>mu</i> – empty space or nothing – is itself an element of composition.</p>
+          <p>As the art form most swayed by money and market, cinema would appear to be too busy to bother with questions of philosophy. The Asian nations proved and are still proving that this is not the case. Just as deep ideas about individual freedom have led to the aspirational cinema of Hollywood, so it is the beliefs which underlie cultures such as those of China and Japan that explain the distinctiveness of Asian cinema at its best. Yes, these films are visually striking, but it is their different sense of what a person is, and what space and action are, which makes them new to the western eye.</p>
+        </article>
+        <div class="qs"></div>
+      </div>
+      <div class="bar"><button type="button" class="ctl main submit">Submit</button><button type="button" class="ctl reset" hidden>Try again</button></div>
+      <p class="sum" hidden></p>
+      <div class="vocab" hidden></div>
+    </div>
+  </details>
+
+  <!-- ============================== PASSAGE 3 ============================== -->
+  <details class="psg" id="passage-3" data-p="3">
+    <summary>
+      <span class="ttl"><span class="pn">Passage 3</span><h2>Quiet roads ahead</h2><span class="meta">Questions 27&ndash;40 &middot; 20 minutes</span></span>
+      <span class="score" aria-live="polite"><span class="lbl">Score</span> <b>&ndash; / 14</b></span>
+    </summary>
+    <div class="body">
+      <div class="bar"><span class="clock" aria-live="off">20:00</span><button type="button" class="ctl timer">Start timer</button></div>
+      <div class="split">
+        <article class="text">
+          <h3>Quiet roads ahead</h3>
+          <p><span class="pl">A</span>The noise produced by busy roads is a growing problem. While vehicle designers have worked hard to quieten engines, they have been less successful elsewhere. The sound created by the tyres on the surface of the road now accounts for more than half the noise that vehicles create, and as road building and car sales continue to boom – particularly in Asia and the US – this is turning into a global issue.</p>
+          <p><span class="pl">B</span>According to the World Health Organization, exposure to noise from road traffic over long periods can lead to stress-related health problems. And where traffic noise exceeds a certain threshold, road builders have to spend money erecting sound barriers and installing double glazing in blighted homes. Houses become harder to sell where environmental noise is high, and people are not as efficient or productive at work.</p>
+          <p><span class="pl">C</span>Already, researchers in the Netherlands – one of the most densely populated countries in the world – are working to develop techniques for silencing the roads. In the next five years the Dutch government aims to have reduced noise levels from the country’s road surfaces by six decibels overall. Dutch mechanical engineer Ard Kuijpers has come up with one of the most promising, and radical, ideas. He set out to tackle the three most important factors: surface texture, hardness and ability to absorb sound.</p>
+          <p><span class="pl">D</span>The rougher the surface, the more likely it is that a tyre will vibrate and create noise. Road builders usually eliminate bumps on freshly laid asphalt with heavy rollers, but Kuijpers has developed a method of road building that he thinks can create the ultimate quiet road. His secret is a special mould 3 metres wide and 50 metres long. Hot asphalt, mixed with small stones, is spread into the mould by a rail-mounted machine which flattens the asphalt mix with a roller. When it sets, the 10-millimetre-thick sheet has a surface smoother than anything that can be achieved by conventional methods.</p>
+          <p><span class="pl">E</span>To optimise the performance of his road surface – to make it hard-wearing yet soft enough to snuff out vibrations – he then adds another layer below the asphalt. This consists of a 30-millimetre-thick layer of rubber, mixed with stones which are larger than those in the layer above. ‘It’s like a giant mouse mat, making the road softer,’ says Kuijpers.</p>
+          <p><span class="pl">F</span>The size of the stones used in the two layers is important, since they create pores of a specific size in the road surface. Those used in the top layer are just 4 or 5 millimetres across, while the ones below are approximately twice that size – about 9 millimetres. Kuijpers says the surface can absorb any air that is passing through a tyre’s tread (the indentations or ridges on the surface of a tyre), damping oscillations that would otherwise create noise. In addition, the pores make it easier for water to drain away, which can make the road safer in wet weather.</p>
+          <p><span class="pl">G</span>Compared with the complex manufacturing process, laying the surface is quite simple. It emerges from the factory rolled, like a carpet, onto a drum 1.5 metres in diameter. On site, it is unrolled and stuck onto its foundation with bitumen. Even the white lines are applied in the factory.</p>
+          <p><span class="pl">H</span>The foundation itself uses an even more sophisticated technique to reduce noise further. It consists of a sound-absorbing concrete base containing flask-shaped slots up to 10 millimetres wide and 30 millimetres deep that are open at the top and sealed at the lower end. These cavities act like Helmholtz resonators – when sound waves of specific frequencies enter the top of a flask, they set up resonances inside and the energy of the sound dissipates into the concrete as heat. The cavities play another important role: they help to drain water that seeps through from the upper surface. This flow will help flush out waste material and keep the pores in the outer layers clear.</p>
+          <p><span class="pl">I</span>Kuijpers can even control the sounds that his resonators absorb, simply by altering their dimensions. This could prove especially useful since different vehicles produce noise at different frequencies. Car tyres peak at around 1000 hertz, for example, but trucks generate lower-frequency noise at around 600 hertz. By varying the size of the Kuijpers resonators, it is possible to control which frequencies the concrete absorbs. On large highways, trucks tend to use the inside lane, so resonators here could be tuned to absorb sounds at around 600 hertz while those in other lanes could deal with higher-frequency noise from cars.</p>
+          <p><span class="pl">J</span>Kuijpers believes he can cut noise by five decibels compared to the quietest of today’s roads. He has already tested a 100-metre-long section of his road on a motorway near Apeldoorn, and Dutch construction company Heijmans is discussing the location of the next roll-out road with the country’s government. The success of Kuijpers’ design will depend on how much it eventually costs. But for those affected by traffic noise there is hope of quieter times ahead.</p>
+        </article>
+        <div class="qs"></div>
+      </div>
+      <div class="bar"><button type="button" class="ctl main submit">Submit</button><button type="button" class="ctl reset" hidden>Try again</button></div>
+      <p class="sum" hidden></p>
+      <div class="vocab" hidden></div>
+    </div>
+  </details>
+
+  <footer>Passages and questions adapted from <i>IELTS Reading Test 9</i>; typing errors in the source PDF have been corrected, and one factual error (Kahneman’s nationality) has been fixed. Answer key, explanations and vocabulary notes prepared for classroom use.</footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  // The same test is linked from more than one class page; ?c=fju shows that course's name and back link.
+  var CTX = {
+    fju: { back:'../advanced/', backText:'\u2190 Back to Advanced English for Freshmen',
+           course:'Advanced English for Freshmen (F26) \u00b7 Academic Reading practice' }
+  };
+  var ctx = null;
+  try { ctx = CTX[new URLSearchParams(location.search).get('c')] || null; } catch (e) {}
+  if (ctx){
+    var bk = document.getElementById('back'), cs = document.getElementById('course');
+    bk.href = ctx.back; bk.textContent = ctx.backText; cs.textContent = ctx.course;
+  }
+  var ABCD = ['A','B','C','D'];
+  var TFNG = ['TRUE','FALSE','NOT GIVEN'];
+  var YNG = ['YES','NO','NOT GIVEN'];
+  // Shown before the YES / NO / NOT GIVEN questions (the writer's views).
+  var YNG_GUIDE = "<p class=\"gh\">Before you start: YES, NO or NOT GIVEN?</p><dl class=\"tfdef\"><dt><span class=\"tg t\">YES</span></dt><dd>The statement <b>agrees with the writer’s view</b> or claim.</dd><dt><span class=\"tg f\">NO</span></dt><dd>The statement <b>goes against the writer’s view</b>. The writer believes the opposite.</dd><dt><span class=\"tg n\">NOT GIVEN</span></dt><dd>You <b>cannot tell what the writer thinks</b> about this.</dd></dl><p class=\"gtip\"><b>Not the same as TRUE / FALSE / NOT GIVEN.</b> Those questions check facts. These check the writer’s <i>opinions and claims</i>. Look for opinion language such as <i>should, ought to, in fact, admittedly, there is every reason to believe</i>.</p><p class=\"gh\">Example</p><p class=\"extext\">“Many people believe that homework should be banned. In my view, a small amount helps students practise what they have learned, although long assignments do more harm than good.”</p><ul class=\"exs\"><li><span class=\"tg t\">YES</span><span class=\"st\">Some homework can be useful for students.</span><span class=\"why\">The writer says a small amount helps.</span></li><li><span class=\"tg f\">NO</span><span class=\"st\">Schools should stop giving homework.</span><span class=\"why\"><i>Many people</i> believe this, but the writer does not. Always check <i>whose</i> opinion a sentence gives.</span></li><li><span class=\"tg f\">NO</span><span class=\"st\">Long assignments are good for students.</span><span class=\"why\">The writer says they do more harm than good.</span></li><li><span class=\"tg n\">NOT GIVEN</span><span class=\"st\">Teachers give too much homework nowadays.</span><span class=\"why\">The writer never says how much homework teachers give.</span></li><li><span class=\"tg n\">NOT GIVEN</span><span class=\"st\">Homework is more useful for older students.</span><span class=\"why\">The writer does not compare students of different ages.</span></li></ul><p class=\"gtip\"><b>NO or NOT GIVEN?</b> Ask: <i>does the writer say, or clearly believe, the opposite?</i> If yes, the answer is NO. If the writer gives no opinion on this point, the answer is NOT GIVEN.</p>";
+
+  // Shown before TRUE / FALSE / NOT GIVEN questions (unused in this test). The example text is not from the test, so it gives nothing away.
+  var TFNG_GUIDE =
+    '<p class="gh">Before you start: TRUE, FALSE or NOT GIVEN?</p>' +
+    '<dl class="tfdef">' +
+      '<dt><span class="tg t">TRUE</span></dt><dd>The passage <b>says the same thing</b> as the statement, usually in different words.</dd>' +
+      '<dt><span class="tg f">FALSE</span></dt><dd>The passage <b>says the opposite</b>. The statement and the passage cannot both be right.</dd>' +
+      '<dt><span class="tg n">NOT GIVEN</span></dt><dd>The passage <b>does not say</b>. There is not enough information to decide whether the statement is right or wrong.</dd>' +
+    '</dl>' +
+    '<p class="gh">Example</p>' +
+    '<p class="extext">&ldquo;The city library opened in 1998. It is open every day except Sunday, and most of its visitors are students.&rdquo;</p>' +
+    '<ul class="exs">' +
+      '<li><span class="tg t">TRUE</span><span class="st">The library is closed on Sundays.</span><span class="why"><i>Every day except Sunday</i> means the same as <i>closed on Sundays</i>.</span></li>' +
+      '<li><span class="tg f">FALSE</span><span class="st">The library is open seven days a week.</span><span class="why">The passage says the opposite: it is <i>not</i> open on Sunday.</span></li>' +
+      '<li><span class="tg f">FALSE</span><span class="st">All of the library&rsquo;s visitors are students.</span><span class="why">The passage says <i>most</i>, not <i>all</i>. Small words like <i>all, only, always, never</i> often make a statement FALSE.</span></li>' +
+      '<li><span class="tg n">NOT GIVEN</span><span class="st">The library is the largest in the city.</span><span class="why">The passage says nothing about its size.</span></li>' +
+      '<li><span class="tg n">NOT GIVEN</span><span class="st">More students use the library now than in 1998.</span><span class="why">The passage mentions 1998, but it never compares the numbers then and now.</span></li>' +
+    '</ul>' +
+    '<p class="gtip"><b>FALSE or NOT GIVEN?</b> Find the part of the passage the statement is about and ask: <i>does the passage say the opposite?</i> If yes, the answer is FALSE. If the passage is simply silent, the answer is NOT GIVEN.</p>' +
+    '<p class="gtip"><b>Use only the passage.</b> Do not use what you know about the world. A statement that is true in real life is still NOT GIVEN if the passage does not say it.</p>';
+
+  /* Question types: mcq, tfng, sel (dropdown from a list), gap (typed; acc = accepted, lim = word limit). */
+  var DATA = {
+ "1": {
+  "groups": [
+   {
+    "h": "Questions 1–6",
+    "ins": "The passage has nine paragraphs, A–I. Choose the correct heading for paragraphs B and D–H from the list of headings below.",
+    "list": [
+     [
+      "i",
+      "Not identifying the correct priorities"
+     ],
+     [
+      "ii",
+      "A solution for the long term"
+     ],
+     [
+      "iii",
+      "The difficulty of changing your mind"
+     ],
+     [
+      "iv",
+      "Why looking back is unhelpful"
+     ],
+     [
+      "v",
+      "Strengthening inner resources"
+     ],
+     [
+      "vi",
+      "A successful approach to the study of decision-making"
+     ],
+     [
+      "vii",
+      "The danger of trusting a global market"
+     ],
+     [
+      "viii",
+      "Reluctance to go beyond the familiar"
+     ],
+     [
+      "ix",
+      "The power of the first number"
+     ],
+     [
+      "x",
+      "The need for more effective risk assessment"
+     ],
+     [
+      "xi",
+      "Underestimating the difficulties ahead"
+     ]
+    ],
+    "qs": [
+     {
+      "n": 1,
+      "t": "sel",
+      "q": "Paragraph B",
+      "list": [
+       [
+        "i",
+        "Not identifying the correct priorities"
+       ],
+       [
+        "ii",
+        "A solution for the long term"
+       ],
+       [
+        "iii",
+        "The difficulty of changing your mind"
+       ],
+       [
+        "iv",
+        "Why looking back is unhelpful"
+       ],
+       [
+        "v",
+        "Strengthening inner resources"
+       ],
+       [
+        "vi",
+        "A successful approach to the study of decision-making"
+       ],
+       [
+        "vii",
+        "The danger of trusting a global market"
+       ],
+       [
+        "viii",
+        "Reluctance to go beyond the familiar"
+       ],
+       [
+        "ix",
+        "The power of the first number"
+       ],
+       [
+        "x",
+        "The need for more effective risk assessment"
+       ],
+       [
+        "xi",
+        "Underestimating the difficulties ahead"
+       ]
+      ],
+      "a": "vi",
+      "ex": "Kahneman’s work, once <q>seen as rather bizarre</q>, launched new fields and won him <q>a Nobel prize in economics</q>. A study of decision-making that has succeeded = <i>vi</i>."
+     },
+     {
+      "n": 2,
+      "t": "sel",
+      "q": "Paragraph D",
+      "list": [
+       [
+        "i",
+        "Not identifying the correct priorities"
+       ],
+       [
+        "ii",
+        "A solution for the long term"
+       ],
+       [
+        "iii",
+        "The difficulty of changing your mind"
+       ],
+       [
+        "iv",
+        "Why looking back is unhelpful"
+       ],
+       [
+        "v",
+        "Strengthening inner resources"
+       ],
+       [
+        "vi",
+        "A successful approach to the study of decision-making"
+       ],
+       [
+        "vii",
+        "The danger of trusting a global market"
+       ],
+       [
+        "viii",
+        "Reluctance to go beyond the familiar"
+       ],
+       [
+        "ix",
+        "The power of the first number"
+       ],
+       [
+        "x",
+        "The need for more effective risk assessment"
+       ],
+       [
+        "xi",
+        "Underestimating the difficulties ahead"
+       ]
+      ],
+      "a": "ix",
+      "ex": "The ‘anchor effect’: <q>Once a figure has been mentioned, it takes a strange hold over the human mind.</q> The first figure = <i>the first number</i>. (<i>xi</i>, “Underestimating the difficulties ahead”, describes paragraph C, which is not asked.)"
+     },
+     {
+      "n": 3,
+      "t": "sel",
+      "q": "Paragraph E",
+      "list": [
+       [
+        "i",
+        "Not identifying the correct priorities"
+       ],
+       [
+        "ii",
+        "A solution for the long term"
+       ],
+       [
+        "iii",
+        "The difficulty of changing your mind"
+       ],
+       [
+        "iv",
+        "Why looking back is unhelpful"
+       ],
+       [
+        "v",
+        "Strengthening inner resources"
+       ],
+       [
+        "vi",
+        "A successful approach to the study of decision-making"
+       ],
+       [
+        "vii",
+        "The danger of trusting a global market"
+       ],
+       [
+        "viii",
+        "Reluctance to go beyond the familiar"
+       ],
+       [
+        "ix",
+        "The power of the first number"
+       ],
+       [
+        "x",
+        "The need for more effective risk assessment"
+       ],
+       [
+        "xi",
+        "Underestimating the difficulties ahead"
+       ]
+      ],
+      "a": "iii",
+      "ex": "<q>No one likes to abandon a cherished belief, and the earlier a decision has been taken, the harder it is to abandon it.</q> Stubbornness = difficulty changing your mind."
+     },
+     {
+      "n": 4,
+      "t": "sel",
+      "q": "Paragraph F",
+      "list": [
+       [
+        "i",
+        "Not identifying the correct priorities"
+       ],
+       [
+        "ii",
+        "A solution for the long term"
+       ],
+       [
+        "iii",
+        "The difficulty of changing your mind"
+       ],
+       [
+        "iv",
+        "Why looking back is unhelpful"
+       ],
+       [
+        "v",
+        "Strengthening inner resources"
+       ],
+       [
+        "vi",
+        "A successful approach to the study of decision-making"
+       ],
+       [
+        "vii",
+        "The danger of trusting a global market"
+       ],
+       [
+        "viii",
+        "Reluctance to go beyond the familiar"
+       ],
+       [
+        "ix",
+        "The power of the first number"
+       ],
+       [
+        "x",
+        "The need for more effective risk assessment"
+       ],
+       [
+        "xi",
+        "Underestimating the difficulties ahead"
+       ]
+      ],
+      "a": "viii",
+      "ex": "People trust what <q>they have seen and experienced themselves</q>, and investors keep their money <q>within the country they live in</q>. Staying with the familiar."
+     },
+     {
+      "n": 5,
+      "t": "sel",
+      "q": "Paragraph G",
+      "list": [
+       [
+        "i",
+        "Not identifying the correct priorities"
+       ],
+       [
+        "ii",
+        "A solution for the long term"
+       ],
+       [
+        "iii",
+        "The difficulty of changing your mind"
+       ],
+       [
+        "iv",
+        "Why looking back is unhelpful"
+       ],
+       [
+        "v",
+        "Strengthening inner resources"
+       ],
+       [
+        "vi",
+        "A successful approach to the study of decision-making"
+       ],
+       [
+        "vii",
+        "The danger of trusting a global market"
+       ],
+       [
+        "viii",
+        "Reluctance to go beyond the familiar"
+       ],
+       [
+        "ix",
+        "The power of the first number"
+       ],
+       [
+        "x",
+        "The need for more effective risk assessment"
+       ],
+       [
+        "xi",
+        "Underestimating the difficulties ahead"
+       ]
+      ],
+      "a": "i",
+      "ex": "<q>people spend proportionally too much time on small decisions and not enough on big ones</q>; companies planned office parties as carefully as mergers. Wrong priorities."
+     },
+     {
+      "n": 6,
+      "t": "sel",
+      "q": "Paragraph H",
+      "list": [
+       [
+        "i",
+        "Not identifying the correct priorities"
+       ],
+       [
+        "ii",
+        "A solution for the long term"
+       ],
+       [
+        "iii",
+        "The difficulty of changing your mind"
+       ],
+       [
+        "iv",
+        "Why looking back is unhelpful"
+       ],
+       [
+        "v",
+        "Strengthening inner resources"
+       ],
+       [
+        "vi",
+        "A successful approach to the study of decision-making"
+       ],
+       [
+        "vii",
+        "The danger of trusting a global market"
+       ],
+       [
+        "viii",
+        "Reluctance to go beyond the familiar"
+       ],
+       [
+        "ix",
+        "The power of the first number"
+       ],
+       [
+        "x",
+        "The need for more effective risk assessment"
+       ],
+       [
+        "xi",
+        "Underestimating the difficulties ahead"
+       ]
+      ],
+      "a": "iv",
+      "ex": "<q>crying over spilled milk is not just a waste of time; it also often colours people’s perceptions of the future</q>. Regretting the past = looking back."
+     }
+    ]
+   },
+   {
+    "h": "Questions 7–10",
+    "ins": "Choose the correct letter, A, B, C or D.",
+    "qs": [
+     {
+      "n": 7,
+      "t": "mcq",
+      "q": "People initially found Kahneman’s work unusual because he",
+      "o": [
+       "saw mistakes as following predictable patterns.",
+       "was unaware of behavioural approaches.",
+       "dealt with irrational types of practice.",
+       "applied psychology to finance and economics."
+      ],
+      "a": "D",
+      "ex": "<q>the idea of applying psychological insights to economics and business decisions was seen as rather bizarre</q>. <i>Bizarre</i> = <i>unusual</i>. A is true of his work, but it is not why people first found it strange."
+     },
+     {
+      "n": 8,
+      "t": "mcq",
+      "q": "The writer mentions house-owners’ attitudes towards the value of their homes to illustrate that",
+      "o": [
+       "past failures may destroy an optimistic attitude.",
+       "people tend to exaggerate their chances of success.",
+       "optimism may be justified in certain circumstances.",
+       "people are influenced by the success of others."
+      ],
+      "a": "B",
+      "ex": "Hopes of <q>ever-rising prices for their homes</q> are given as an example of over-optimism: people <q>see too much blue sky ahead, even if past experience suggests otherwise</q>."
+     },
+     {
+      "n": 9,
+      "t": "mcq",
+      "q": "Stubbornness and inflexibility can cause problems when people",
+      "o": [
+       "think their financial difficulties are just due to bad luck.",
+       "avoid seeking advice from experts and analysts.",
+       "refuse to invest in the early stages of a project.",
+       "are unwilling to give up unsuccessful activities or beliefs."
+      ],
+      "a": "D",
+      "ex": "<q>No one likes to abandon a cherished belief</q>, and drug companies find it hard <q>to cancel a failing research project</q>. Belief + failing project = <i>unsuccessful activities or beliefs</i>."
+     },
+     {
+      "n": 10,
+      "t": "mcq",
+      "q": "Why do many Americans and Europeans fail to spread their financial risks when investing?",
+      "o": [
+       "They feel safer dealing in a context which is close to home.",
+       "They do not understand the benefits of diversification.",
+       "They are over-influenced by the successes of their relatives.",
+       "They do not have sufficient knowledge of one another’s countries."
+      ],
+      "a": "A",
+      "ex": "They put <q>too much emphasis on information close at hand</q> and invest <q>within the country they live in</q>. B is wrong: <q>they know that diversification is good for their portfolio</q>. C is a separate example about one buyer."
+     }
+    ]
+   },
+   {
+    "h": "Questions 11–13",
+    "ins": "Answer the questions below. Choose NO MORE THAN THREE WORDS from the passage for each answer.",
+    "qs": [
+     {
+      "n": 11,
+      "t": "gap",
+      "lim": 3,
+      "pre": "Which two occupations may benefit from being over-optimistic?",
+      "post": "",
+      "acc": [
+       "managers and sportsmen",
+       "managers or sportsmen",
+       "sportsmen and managers",
+       "managers sportsmen",
+       "sportsmen managers"
+      ],
+      "ex": "<q>Such optimism can be useful for managers or sportsmen</q>. Both words are needed for the mark; <i>managers and sportsmen</i> is the usual way to write it."
+     },
+     {
+      "n": 12,
+      "t": "gap",
+      "lim": 3,
+      "pre": "Which practical skill are many people over-confident about?",
+      "post": "",
+      "acc": [
+       "driving"
+      ],
+      "ex": "<q>far fewer than half the respondents admit to having below-average skills in, say, driving</q>. If most people think they are above average, many must be over-confident."
+     },
+     {
+      "n": 13,
+      "t": "gap",
+      "lim": 3,
+      "pre": "Which type of business has a generally good attitude to dealing with uncertainty?",
+      "post": "",
+      "acc": [
+       "pharmaceutical companies",
+       "pharmaceutical company",
+       "pharmaceutical",
+       "pharmaceuticals"
+      ],
+      "ex": "Paragraph I: <q>Pharmaceutical companies … are fairly rational about their risk-taking.</q> (Banks, by contrast, <q>have a long way to go</q>.)"
+     }
+    ]
+   }
+  ],
+  "vocab": [
+   [
+    "intuition",
+    "noun",
+    "knowing or feeling something without thinking it through.",
+    "a better way than using intuition"
+   ],
+   [
+    "bizarre",
+    "adjective",
+    "very strange or unusual.",
+    "was seen as rather bizarre"
+   ],
+   [
+    "blossom",
+    "verb",
+    "to develop and become successful.",
+    "behavioural economics have blossomed"
+   ],
+   [
+    "systematic",
+    "adjective",
+    "following a fixed pattern; not random.",
+    "these mistakes are systematic and predictable"
+   ],
+   [
+    "self-fulfilling prophecy",
+    "noun",
+    "a prediction that comes true because people believe it.",
+    "sometimes turns into a self-fulfilling prophecy"
+   ],
+   [
+    "prowess",
+    "noun",
+    "great skill at doing something.",
+    "exaggerate their own skill and prowess"
+   ],
+   [
+    "chalk up to",
+    "phrasal verb",
+    "to say that something happened because of a particular cause.",
+    "chalking up success solely to skill"
+   ],
+   [
+    "cherished",
+    "adjective",
+    "loved and kept carefully.",
+    "abandon a cherished belief"
+   ],
+   [
+    "wedded to",
+    "phrase",
+    "strongly attached to an idea and unwilling to change.",
+    "wedded early to a single explanation"
+   ],
+   [
+    "get your fingers burned",
+    "idiom",
+    "to suffer a bad result, especially losing money, after taking a risk.",
+    "only to get his fingers burned"
+   ],
+   [
+    "diversification",
+    "noun",
+    "spreading money across many different investments to reduce risk.",
+    "diversification is good for their portfolio"
+   ],
+   [
+    "cry over spilled milk",
+    "idiom",
+    "to waste time regretting something that cannot be changed.",
+    "crying over spilled milk is not just a waste of time"
+   ]
+  ]
+ },
+ "2": {
+  "groups": [
+   {
+    "h": "Questions 14–18",
+    "ins": "Do the following statements agree with the information given in the passage? Choose TRUE if the statement agrees with the information, FALSE if it contradicts the information, NOT GIVEN if there is no information on this.",
+    "guide": TFNG_GUIDE,
+    "qs": [
+     {
+      "n": 14,
+      "t": "tfng",
+      "q": "The inventors of cinema regarded it as a minor attraction.",
+      "a": "TRUE",
+      "ex": "They saw it <q>merely as more profitable versions of Victorian lantern shows, mechanical curiosities which might have a use as a sideshow at a funfair</q>. A sideshow = a minor attraction."
+     },
+     {
+      "n": 15,
+      "t": "tfng",
+      "q": "Some directors were aware of cinema’s artistic possibilities from the very beginning.",
+      "a": "FALSE",
+      "ex": "<q>At first</q> the inventors saw only a curiosity; <q>Then</q> the best pioneers looked further, and the invention <q>gradually began to evolve as an art</q>. <i>Then</i> and <i>gradually</i> contradict <i>from the very beginning</i>."
+     },
+     {
+      "n": 16,
+      "t": "tfng",
+      "q": "The development of cinema’s artistic potential depended on technology.",
+      "a": "NOT GIVEN",
+      "ex": "The passage says cinema <q>gradually began to evolve as an art</q>, but it never says <i>why</i>, or whether technology was the reason."
+     },
+     {
+      "n": 17,
+      "t": "tfng",
+      "q": "Cinema’s possibilities were developed in varied ways in different western countries.",
+      "a": "TRUE",
+      "ex": "Griffith in America <q>glimpsed its grace</q>; German directors used it as <q>an analogue to the human mind</q>; Soviets stressed its <q>agitational and intellectual properties</q>; Italians made it <q>operatic</q>."
+     },
+     {
+      "n": 18,
+      "t": "tfng",
+      "q": "Western businessmen were concerned about the emergence of film industries in other parts of the world.",
+      "a": "FALSE",
+      "ex": "<q>It never occurred to its financial backers that another continent might borrow their magic box.</q> If it never occurred to them, they were not concerned."
+     }
+    ]
+   },
+   {
+    "h": "Questions 19–25",
+    "ins": "Complete the notes below. Choose the correct word, A–K, from the list.",
+    "list": [
+     [
+      "A",
+      "emotional"
+     ],
+     [
+      "B",
+      "negative"
+     ],
+     [
+      "C",
+      "expensive"
+     ],
+     [
+      "D",
+      "silent"
+     ],
+     [
+      "E",
+      "social"
+     ],
+     [
+      "F",
+      "outstanding"
+     ],
+     [
+      "G",
+      "little"
+     ],
+     [
+      "H",
+      "powerful"
+     ],
+     [
+      "I",
+      "realistic"
+     ],
+     [
+      "J",
+      "stylistic"
+     ],
+     [
+      "K",
+      "economic"
+     ]
+    ],
+    "qs": [
+     {
+      "n": 19,
+      "t": "sel",
+      "q": "Chinese cinema: a large number of ___ films produced in the 1930s",
+      "list": [
+       [
+        "A",
+        "emotional"
+       ],
+       [
+        "B",
+        "negative"
+       ],
+       [
+        "C",
+        "expensive"
+       ],
+       [
+        "D",
+        "silent"
+       ],
+       [
+        "E",
+        "social"
+       ],
+       [
+        "F",
+        "outstanding"
+       ],
+       [
+        "G",
+        "little"
+       ],
+       [
+        "H",
+        "powerful"
+       ],
+       [
+        "I",
+        "realistic"
+       ],
+       [
+        "J",
+        "stylistic"
+       ],
+       [
+        "K",
+        "economic"
+       ]
+      ],
+      "a": "D",
+      "ex": "More than 500 films were made <q>without soundtracks</q>. No sound = <i>silent</i>."
+     },
+     {
+      "n": 20,
+      "t": "sel",
+      "q": "Chinese cinema: some early films still generally regarded as ___",
+      "list": [
+       [
+        "A",
+        "emotional"
+       ],
+       [
+        "B",
+        "negative"
+       ],
+       [
+        "C",
+        "expensive"
+       ],
+       [
+        "D",
+        "silent"
+       ],
+       [
+        "E",
+        "social"
+       ],
+       [
+        "F",
+        "outstanding"
+       ],
+       [
+        "G",
+        "little"
+       ],
+       [
+        "H",
+        "powerful"
+       ],
+       [
+        "I",
+        "realistic"
+       ],
+       [
+        "J",
+        "stylistic"
+       ],
+       [
+        "K",
+        "economic"
+       ]
+      ],
+      "a": "F",
+      "ex": "<i>The Peach Girl</i> and <i>Street Angel</i> <q>are regularly voted among the best ever made in the country</q>. Among the best = <i>outstanding</i>."
+     },
+     {
+      "n": 21,
+      "t": "sel",
+      "q": "Indian cinema: films avoided ___ topics",
+      "list": [
+       [
+        "A",
+        "emotional"
+       ],
+       [
+        "B",
+        "negative"
+       ],
+       [
+        "C",
+        "expensive"
+       ],
+       [
+        "D",
+        "silent"
+       ],
+       [
+        "E",
+        "social"
+       ],
+       [
+        "F",
+        "outstanding"
+       ],
+       [
+        "G",
+        "little"
+       ],
+       [
+        "H",
+        "powerful"
+       ],
+       [
+        "I",
+        "realistic"
+       ],
+       [
+        "J",
+        "stylistic"
+       ],
+       [
+        "K",
+        "economic"
+       ]
+      ],
+      "a": "B",
+      "ex": "The films treated their themes <q>in an optimistic and romantic way</q>, so they avoided <i>negative</i> topics. E is a trap: they <i>did</i> address <q>social and peasant themes</q>."
+     },
+     {
+      "n": 22,
+      "t": "sel",
+      "q": "Japanese cinema: unusual because the film director was very ___",
+      "list": [
+       [
+        "A",
+        "emotional"
+       ],
+       [
+        "B",
+        "negative"
+       ],
+       [
+        "C",
+        "expensive"
+       ],
+       [
+        "D",
+        "silent"
+       ],
+       [
+        "E",
+        "social"
+       ],
+       [
+        "F",
+        "outstanding"
+       ],
+       [
+        "G",
+        "little"
+       ],
+       [
+        "H",
+        "powerful"
+       ],
+       [
+        "I",
+        "realistic"
+       ],
+       [
+        "J",
+        "stylistic"
+       ],
+       [
+        "K",
+        "economic"
+       ]
+      ],
+      "a": "H",
+      "ex": "<q>in Tokyo the director chose the stories and hired the producer and actors</q>. Choosing and hiring = being <i>powerful</i>."
+     },
+     {
+      "n": 23,
+      "t": "sel",
+      "q": "Mizoguchi: focused on the ___ restrictions faced by women",
+      "list": [
+       [
+        "A",
+        "emotional"
+       ],
+       [
+        "B",
+        "negative"
+       ],
+       [
+        "C",
+        "expensive"
+       ],
+       [
+        "D",
+        "silent"
+       ],
+       [
+        "E",
+        "social"
+       ],
+       [
+        "F",
+        "outstanding"
+       ],
+       [
+        "G",
+        "little"
+       ],
+       [
+        "H",
+        "powerful"
+       ],
+       [
+        "I",
+        "realistic"
+       ],
+       [
+        "J",
+        "stylistic"
+       ],
+       [
+        "K",
+        "economic"
+       ]
+      ],
+      "a": "E",
+      "ex": "Women’s lives <q>were constrained by the society of the time</q>. <i>Constrained by society</i> = <i>social restrictions</i>."
+     },
+     {
+      "n": 24,
+      "t": "sel",
+      "q": "Mizoguchi: camera movement related to the ___ content of the film",
+      "list": [
+       [
+        "A",
+        "emotional"
+       ],
+       [
+        "B",
+        "negative"
+       ],
+       [
+        "C",
+        "expensive"
+       ],
+       [
+        "D",
+        "silent"
+       ],
+       [
+        "E",
+        "social"
+       ],
+       [
+        "F",
+        "outstanding"
+       ],
+       [
+        "G",
+        "little"
+       ],
+       [
+        "H",
+        "powerful"
+       ],
+       [
+        "I",
+        "realistic"
+       ],
+       [
+        "J",
+        "stylistic"
+       ],
+       [
+        "K",
+        "economic"
+       ]
+      ],
+      "a": "A",
+      "ex": "The camera often retreated <q>at moments of confrontation or strong feeling</q>. Strong feeling = <i>emotional</i> content."
+     },
+     {
+      "n": 25,
+      "t": "sel",
+      "q": "Ozu: ___ camera movement",
+      "list": [
+       [
+        "A",
+        "emotional"
+       ],
+       [
+        "B",
+        "negative"
+       ],
+       [
+        "C",
+        "expensive"
+       ],
+       [
+        "D",
+        "silent"
+       ],
+       [
+        "E",
+        "social"
+       ],
+       [
+        "F",
+        "outstanding"
+       ],
+       [
+        "G",
+        "little"
+       ],
+       [
+        "H",
+        "powerful"
+       ],
+       [
+        "I",
+        "realistic"
+       ],
+       [
+        "J",
+        "stylistic"
+       ],
+       [
+        "K",
+        "economic"
+       ]
+      ],
+      "a": "G",
+      "ex": "<q>His camera seldom moved.</q> <i>Seldom</i> = <i>little</i>."
+     }
+    ]
+   },
+   {
+    "h": "Question 26",
+    "ins": "Choose the correct letter, A, B, C or D.",
+    "qs": [
+     {
+      "n": 26,
+      "t": "mcq",
+      "q": "Which of the following is the most suitable title for the passage?",
+      "o": [
+       "Blind to change: how is it that the west has ignored Asian cinema for so long?",
+       "A different basis: how has the cinema of Asian countries been shaped by their cultures and beliefs?",
+       "Outside Asia: how did the origins of cinema affect its development worldwide?",
+       "Two cultures: how has western cinema tried to come to terms with the challenge of the Asian market?"
+      ],
+      "a": "B",
+      "ex": "The conclusion: <q>it is the beliefs which underlie cultures such as those of China and Japan that explain the distinctiveness of Asian cinema at its best</q>. Most of the passage describes Chinese, Indian and Japanese cinema. A and D are not discussed; C is only the first two paragraphs."
+     }
+    ]
+   }
+  ],
+  "vocab": [
+   [
+    "curiosity",
+    "noun",
+    "an unusual and interesting object.",
+    "mechanical curiosities"
+   ],
+   [
+    "diversion",
+    "noun",
+    "an activity that entertains you for a short time.",
+    "more than just a diversion"
+   ],
+   [
+    "crass",
+    "adjective",
+    "showing no thought or taste; here, only interested in money.",
+    "This crass commercial invention"
+   ],
+   [
+    "heady",
+    "adjective",
+    "exciting, making you feel that anything is possible.",
+    "So heady were these first decades"
+   ],
+   [
+    "the only game in town",
+    "idiom",
+    "the only one that matters, with no competitors.",
+    "the only game in town"
+   ],
+   [
+    "outgrow",
+    "verb",
+    "to become bigger than something else.",
+    "some of which would outgrow those in the west"
+   ],
+   [
+    "escapist",
+    "adjective",
+    "helping people forget real life for a while.",
+    "realism and escapist dance"
+   ],
+   [
+    "constrain",
+    "verb",
+    "to limit or restrict.",
+    "were constrained by the society of the time"
+   ],
+   [
+    "finesse",
+    "noun",
+    "great skill and delicacy.",
+    "No one had used the camera with such finesse before"
+   ],
+   [
+    "repose",
+    "noun",
+    "rest; a state of calm.",
+    "as a moment of repose"
+   ],
+   [
+    "swayed by",
+    "phrase",
+    "influenced by.",
+    "the art form most swayed by money and market"
+   ]
+  ]
+ },
+ "3": {
+  "groups": [
+   {
+    "h": "Questions 27–32",
+    "ins": "The passage has ten paragraphs, A–J. Which paragraph contains the following information?",
+    "qs": [
+     {
+      "n": 27,
+      "t": "sel",
+      "q": "a description of the form in which Kuijpers’ road surface is taken to its destination",
+      "list": [
+       [
+        "A",
+        "Paragraph A"
+       ],
+       [
+        "B",
+        "Paragraph B"
+       ],
+       [
+        "C",
+        "Paragraph C"
+       ],
+       [
+        "D",
+        "Paragraph D"
+       ],
+       [
+        "E",
+        "Paragraph E"
+       ],
+       [
+        "F",
+        "Paragraph F"
+       ],
+       [
+        "G",
+        "Paragraph G"
+       ],
+       [
+        "H",
+        "Paragraph H"
+       ],
+       [
+        "I",
+        "Paragraph I"
+       ],
+       [
+        "J",
+        "Paragraph J"
+       ]
+      ],
+      "a": "G",
+      "ex": "Paragraph G: <q>It emerges from the factory rolled, like a carpet, onto a drum 1.5 metres in diameter.</q>"
+     },
+     {
+      "n": 28,
+      "t": "sel",
+      "q": "an explanation of how Kuijpers makes a smooth road surface",
+      "list": [
+       [
+        "A",
+        "Paragraph A"
+       ],
+       [
+        "B",
+        "Paragraph B"
+       ],
+       [
+        "C",
+        "Paragraph C"
+       ],
+       [
+        "D",
+        "Paragraph D"
+       ],
+       [
+        "E",
+        "Paragraph E"
+       ],
+       [
+        "F",
+        "Paragraph F"
+       ],
+       [
+        "G",
+        "Paragraph G"
+       ],
+       [
+        "H",
+        "Paragraph H"
+       ],
+       [
+        "I",
+        "Paragraph I"
+       ],
+       [
+        "J",
+        "Paragraph J"
+       ]
+      ],
+      "a": "D",
+      "ex": "Paragraph D: hot asphalt is spread into a special mould and flattened, giving <q>a surface smoother than anything that can be achieved by conventional methods</q>."
+     },
+     {
+      "n": 29,
+      "t": "sel",
+      "q": "something that has to be considered when evaluating Kuijpers’ proposal",
+      "list": [
+       [
+        "A",
+        "Paragraph A"
+       ],
+       [
+        "B",
+        "Paragraph B"
+       ],
+       [
+        "C",
+        "Paragraph C"
+       ],
+       [
+        "D",
+        "Paragraph D"
+       ],
+       [
+        "E",
+        "Paragraph E"
+       ],
+       [
+        "F",
+        "Paragraph F"
+       ],
+       [
+        "G",
+        "Paragraph G"
+       ],
+       [
+        "H",
+        "Paragraph H"
+       ],
+       [
+        "I",
+        "Paragraph I"
+       ],
+       [
+        "J",
+        "Paragraph J"
+       ]
+      ],
+      "a": "J",
+      "ex": "Paragraph J: <q>The success of Kuijpers’ design will depend on how much it eventually costs.</q>"
+     },
+     {
+      "n": 30,
+      "t": "sel",
+      "q": "various economic reasons for reducing road noise",
+      "list": [
+       [
+        "A",
+        "Paragraph A"
+       ],
+       [
+        "B",
+        "Paragraph B"
+       ],
+       [
+        "C",
+        "Paragraph C"
+       ],
+       [
+        "D",
+        "Paragraph D"
+       ],
+       [
+        "E",
+        "Paragraph E"
+       ],
+       [
+        "F",
+        "Paragraph F"
+       ],
+       [
+        "G",
+        "Paragraph G"
+       ],
+       [
+        "H",
+        "Paragraph H"
+       ],
+       [
+        "I",
+        "Paragraph I"
+       ],
+       [
+        "J",
+        "Paragraph J"
+       ]
+      ],
+      "a": "B",
+      "ex": "Paragraph B: money spent on <q>sound barriers</q> and <q>double glazing</q>, houses that are <q>harder to sell</q>, and people who are less <q>productive at work</q>. Three costs."
+     },
+     {
+      "n": 31,
+      "t": "sel",
+      "q": "a generalisation about the patterns of use of vehicles on major roads",
+      "list": [
+       [
+        "A",
+        "Paragraph A"
+       ],
+       [
+        "B",
+        "Paragraph B"
+       ],
+       [
+        "C",
+        "Paragraph C"
+       ],
+       [
+        "D",
+        "Paragraph D"
+       ],
+       [
+        "E",
+        "Paragraph E"
+       ],
+       [
+        "F",
+        "Paragraph F"
+       ],
+       [
+        "G",
+        "Paragraph G"
+       ],
+       [
+        "H",
+        "Paragraph H"
+       ],
+       [
+        "I",
+        "Paragraph I"
+       ],
+       [
+        "J",
+        "Paragraph J"
+       ]
+      ],
+      "a": "I",
+      "ex": "Paragraph I: <q>On large highways, trucks tend to use the inside lane</q>. <i>Tend to</i> signals a generalisation."
+     },
+     {
+      "n": 32,
+      "t": "sel",
+      "q": "a summary of the different things affecting levels of noise on roads",
+      "list": [
+       [
+        "A",
+        "Paragraph A"
+       ],
+       [
+        "B",
+        "Paragraph B"
+       ],
+       [
+        "C",
+        "Paragraph C"
+       ],
+       [
+        "D",
+        "Paragraph D"
+       ],
+       [
+        "E",
+        "Paragraph E"
+       ],
+       [
+        "F",
+        "Paragraph F"
+       ],
+       [
+        "G",
+        "Paragraph G"
+       ],
+       [
+        "H",
+        "Paragraph H"
+       ],
+       [
+        "I",
+        "Paragraph I"
+       ],
+       [
+        "J",
+        "Paragraph J"
+       ]
+      ],
+      "a": "C",
+      "ex": "Paragraph C: Kuijpers tackles <q>the three most important factors: surface texture, hardness and ability to absorb sound</q>."
+     }
+    ]
+   },
+   {
+    "h": "Questions 33–35",
+    "ins": "Label the diagram. Choose ONE WORD AND/OR A NUMBER from the passage for each answer.",
+    "fig": "<img src=\"reading-test-9-diagram.png\" width=\"588\" height=\"323\" alt=\"Cross-section of Kuijpers’ road: a top layer of small stones labelled 33; a middle layer of larger stones, approximately 34 mm in diameter; and a base labelled 35 containing flask-shaped slots.\"><figcaption>Kuijpers’ road, top layer to foundation.</figcaption>",
+    "qs": [
+     {
+      "n": 33,
+      "t": "gap",
+      "lim": 1,
+      "pre": "Top layer (with small stones):",
+      "post": "",
+      "acc": [
+       "asphalt"
+      ],
+      "ex": "Paragraph D: <q>Hot asphalt, mixed with small stones, is spread into the mould</q>. This is the top layer; the rubber layer goes <q>below the asphalt</q>."
+     },
+     {
+      "n": 34,
+      "t": "gap",
+      "lim": 1,
+      "pre": "Middle layer: stones approximately",
+      "post": "mm in diameter.",
+      "acc": [
+       "9",
+       "nine"
+      ],
+      "ex": "Paragraph F: the stones below are <q>approximately twice that size – about 9 millimetres</q>."
+     },
+     {
+      "n": 35,
+      "t": "gap",
+      "lim": 1,
+      "pre": "Foundation (containing flask-shaped slots):",
+      "post": "",
+      "acc": [
+       "concrete"
+      ],
+      "ex": "Paragraph H: <q>a sound-absorbing concrete base containing flask-shaped slots</q>."
+     }
+    ]
+   },
+   {
+    "h": "Questions 36–40",
+    "ins": "Complete the table “Kuijpers’ noise-reducing road: components and function”. Choose the correct answer, A–K, from the list.",
+    "list": [
+     [
+      "A",
+      "frequencies"
+     ],
+     [
+      "B",
+      "the engine"
+     ],
+     [
+      "C",
+      "rubbish"
+     ],
+     [
+      "D",
+      "resonators"
+     ],
+     [
+      "E",
+      "air flow"
+     ],
+     [
+      "F",
+      "dissipation"
+     ],
+     [
+      "G",
+      "sound energy"
+     ],
+     [
+      "H",
+      "pores"
+     ],
+     [
+      "I",
+      "lanes"
+     ],
+     [
+      "J",
+      "drainage"
+     ],
+     [
+      "K",
+      "sources"
+     ]
+    ],
+    "qs": [
+     {
+      "n": 36,
+      "t": "sel",
+      "q": "Upper and lower layers, stones: reduce oscillations caused by ___",
+      "list": [
+       [
+        "A",
+        "frequencies"
+       ],
+       [
+        "B",
+        "the engine"
+       ],
+       [
+        "C",
+        "rubbish"
+       ],
+       [
+        "D",
+        "resonators"
+       ],
+       [
+        "E",
+        "air flow"
+       ],
+       [
+        "F",
+        "dissipation"
+       ],
+       [
+        "G",
+        "sound energy"
+       ],
+       [
+        "H",
+        "pores"
+       ],
+       [
+        "I",
+        "lanes"
+       ],
+       [
+        "J",
+        "drainage"
+       ],
+       [
+        "K",
+        "sources"
+       ]
+      ],
+      "a": "E",
+      "ex": "Paragraph F: the surface <q>can absorb any air that is passing through a tyre’s tread</q>, <q>damping oscillations that would otherwise create noise</q>. Air passing through = <i>air flow</i>."
+     },
+     {
+      "n": 37,
+      "t": "sel",
+      "q": "Upper and lower layers, stones: create pores which help ___",
+      "list": [
+       [
+        "A",
+        "frequencies"
+       ],
+       [
+        "B",
+        "the engine"
+       ],
+       [
+        "C",
+        "rubbish"
+       ],
+       [
+        "D",
+        "resonators"
+       ],
+       [
+        "E",
+        "air flow"
+       ],
+       [
+        "F",
+        "dissipation"
+       ],
+       [
+        "G",
+        "sound energy"
+       ],
+       [
+        "H",
+        "pores"
+       ],
+       [
+        "I",
+        "lanes"
+       ],
+       [
+        "J",
+        "drainage"
+       ],
+       [
+        "K",
+        "sources"
+       ]
+      ],
+      "a": "J",
+      "ex": "Paragraph F: the pores <q>make it easier for water to drain away</q>."
+     },
+     {
+      "n": 38,
+      "t": "sel",
+      "q": "Foundation, slots: convert ___ to heat",
+      "list": [
+       [
+        "A",
+        "frequencies"
+       ],
+       [
+        "B",
+        "the engine"
+       ],
+       [
+        "C",
+        "rubbish"
+       ],
+       [
+        "D",
+        "resonators"
+       ],
+       [
+        "E",
+        "air flow"
+       ],
+       [
+        "F",
+        "dissipation"
+       ],
+       [
+        "G",
+        "sound energy"
+       ],
+       [
+        "H",
+        "pores"
+       ],
+       [
+        "I",
+        "lanes"
+       ],
+       [
+        "J",
+        "drainage"
+       ],
+       [
+        "K",
+        "sources"
+       ]
+      ],
+      "a": "G",
+      "ex": "Paragraph H: <q>the energy of the sound dissipates into the concrete as heat</q>. F (<i>dissipation</i>) is a trap: it is the process, not the thing converted."
+     },
+     {
+      "n": 39,
+      "t": "sel",
+      "q": "Foundation, slots: help to remove ___",
+      "list": [
+       [
+        "A",
+        "frequencies"
+       ],
+       [
+        "B",
+        "the engine"
+       ],
+       [
+        "C",
+        "rubbish"
+       ],
+       [
+        "D",
+        "resonators"
+       ],
+       [
+        "E",
+        "air flow"
+       ],
+       [
+        "F",
+        "dissipation"
+       ],
+       [
+        "G",
+        "sound energy"
+       ],
+       [
+        "H",
+        "pores"
+       ],
+       [
+        "I",
+        "lanes"
+       ],
+       [
+        "J",
+        "drainage"
+       ],
+       [
+        "K",
+        "sources"
+       ]
+      ],
+      "a": "C",
+      "ex": "Paragraph H: <q>This flow will help flush out waste material</q>. Waste material = <i>rubbish</i>."
+     },
+     {
+      "n": 40,
+      "t": "sel",
+      "q": "Foundation, slots: can be adapted to absorb different ___",
+      "list": [
+       [
+        "A",
+        "frequencies"
+       ],
+       [
+        "B",
+        "the engine"
+       ],
+       [
+        "C",
+        "rubbish"
+       ],
+       [
+        "D",
+        "resonators"
+       ],
+       [
+        "E",
+        "air flow"
+       ],
+       [
+        "F",
+        "dissipation"
+       ],
+       [
+        "G",
+        "sound energy"
+       ],
+       [
+        "H",
+        "pores"
+       ],
+       [
+        "I",
+        "lanes"
+       ],
+       [
+        "J",
+        "drainage"
+       ],
+       [
+        "K",
+        "sources"
+       ]
+      ],
+      "a": "A",
+      "ex": "Paragraph I: <q>By varying the size of the Kuijpers resonators, it is possible to control which frequencies the concrete absorbs.</q>"
+     }
+    ]
+   }
+  ],
+  "vocab": [
+   [
+    "quieten",
+    "verb",
+    "to make or become quieter.",
+    "worked hard to quieten engines"
+   ],
+   [
+    "threshold",
+    "noun",
+    "the level at which something starts to happen.",
+    "exceeds a certain threshold"
+   ],
+   [
+    "blighted",
+    "adjective",
+    "spoiled or damaged by something.",
+    "double glazing in blighted homes"
+   ],
+   [
+    "densely populated",
+    "phrase",
+    "having a lot of people in a small area.",
+    "one of the most densely populated countries"
+   ],
+   [
+    "eliminate",
+    "verb",
+    "to remove completely.",
+    "eliminate bumps on freshly laid asphalt"
+   ],
+   [
+    "mould",
+    "noun",
+    "a hollow container that gives a shape to a liquid as it sets.",
+    "a special mould 3 metres wide"
+   ],
+   [
+    "snuff out",
+    "phrasal verb",
+    "to stop or end something suddenly.",
+    "soft enough to snuff out vibrations"
+   ],
+   [
+    "damp",
+    "verb",
+    "to make a vibration or sound weaker.",
+    "damping oscillations"
+   ],
+   [
+    "cavity",
+    "noun",
+    "an empty space inside a solid object.",
+    "These cavities act like Helmholtz resonators"
+   ],
+   [
+    "dissipate",
+    "verb",
+    "(of energy) to spread out and disappear.",
+    "dissipates into the concrete as heat"
+   ],
+   [
+    "seep",
+    "verb",
+    "(of a liquid) to flow slowly through small holes.",
+    "water that seeps through from the upper surface"
+   ]
+  ]
+ }
+};
+
+  /* Evidence: the exact passage text that gives each answer, keyed by question number. */
+  var EV = {
+ "1": [
+  "That launched him on a career to show just how irrationally people behave in practice.",
+  "in 2002 Kahneman shared a Nobel prize in economics for his work"
+ ],
+ "2": "Once a figure has been mentioned, it takes a strange hold over the human mind.",
+ "3": "the earlier a decision has been taken, the harder it is to abandon it",
+ "4": "the tendency by most investors to invest only within the country they live in",
+ "5": "people spend proportionally too much time on small decisions and not enough on big ones",
+ "6": "crying over spilled milk is not just a waste of time; it also often colours people’s perceptions of the future",
+ "7": "the idea of applying psychological insights to economics and business decisions was seen as rather bizarre",
+ "8": "The same goes for their hopes of ever-rising prices for their homes",
+ "9": [
+  "No one likes to abandon a cherished belief",
+  "may find it difficult to admit they have made a mistake"
+ ],
+ "10": "too much emphasis on information close at hand",
+ "11": "Such optimism can be useful for managers or sportsmen",
+ "12": "far fewer than half the respondents admit to having below-average skills in, say, driving",
+ "13": "Pharmaceutical companies, which are accustomed to many failures and a few big successes in their drug-discovery programmes, are fairly rational about their risk-taking",
+ "14": "mechanical curiosities which might have a use as a sideshow at a funfair",
+ "15": [
+  "At first, they saw their clumsy new camera-projectors",
+  "Then the best of the pioneers looked beyond the fairground properties of their invention."
+ ],
+ "16": "This crass commercial invention gradually began to evolve as an art.",
+ "17": [
+  "D W Griffith in California glimpsed its grace",
+  "the Italians reconfigured it on an operatic scale"
+ ],
+ "18": "It never occurred to its financial backers that another continent might borrow their magic box",
+ "19": "mostly conventionally made in studios in Shanghai, without soundtracks",
+ "20": "are regularly voted among the best ever made in the country",
+ "21": "they addressed social and peasant themes in an optimistic and romantic way",
+ "22": "in Tokyo the director chose the stories and hired the producer and actors",
+ "23": "were constrained by the society of the time",
+ "24": "often retreating at moments of confrontation or strong feeling",
+ "25": "His camera seldom moved.",
+ "26": "it is the beliefs which underlie cultures such as those of China and Japan that explain the distinctiveness of Asian cinema at its best",
+ "27": "It emerges from the factory rolled, like a carpet, onto a drum 1.5 metres in diameter.",
+ "28": [
+  "His secret is a special mould",
+  "a surface smoother than anything that can be achieved by conventional methods"
+ ],
+ "29": "The success of Kuijpers’ design will depend on how much it eventually costs.",
+ "30": [
+  "road builders have to spend money erecting sound barriers and installing double glazing in blighted homes",
+  "Houses become harder to sell",
+  "people are not as efficient or productive at work"
+ ],
+ "31": "On large highways, trucks tend to use the inside lane",
+ "32": "surface texture, hardness and ability to absorb sound",
+ "33": "Hot asphalt, mixed with small stones, is spread into the mould",
+ "34": "approximately twice that size – about 9 millimetres",
+ "35": "a sound-absorbing concrete base containing flask-shaped slots",
+ "36": [
+  "the surface can absorb any air that is passing through a tyre’s tread",
+  "damping oscillations that would otherwise create noise"
+ ],
+ "37": "the pores make it easier for water to drain away",
+ "38": "the energy of the sound dissipates into the concrete as heat",
+ "39": "This flow will help flush out waste material",
+ "40": "By varying the size of the Kuijpers resonators, it is possible to control which frequencies the concrete absorbs."
+};
+
+  function nz(s){ return s.replace(/[‘’]/g,"'").replace(/[“”]/g,'"').replace(/[–—]/g,'-').replace(/ /g,' '); }
+
+  // Find a string in an element's text and return a Range over it.
+  function findRange(root, str){
+    var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT), t, nodes = [], full = '';
+    while ((t = w.nextNode())){ nodes.push([t, full.length]); full += t.data; }
+    var i = nz(full).indexOf(nz(str));
+    if (i < 0) return null;
+    var j = i + str.length, r = document.createRange();
+    for (var k = 0; k < nodes.length; k++){
+      var n = nodes[k][0], s = nodes[k][1], e = s + n.data.length;
+      if (i >= s && i < e) r.setStart(n, i - s);
+      if (j > s && j <= e){ r.setEnd(n, j - s); break; }
+    }
+    return r;
+  }
+
+  // Wrap every text node inside a Range in a new element; works across tags.
+  function wrapRange(range, make){
+    var root = range.commonAncestorContainer;
+    if (root.nodeType === 3) root = root.parentNode;
+    var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT), t, list = [], out = [];
+    while ((t = w.nextNode())) if (range.intersectsNode(t)) list.push(t);
+    var sc = range.startContainer, so = range.startOffset, ec = range.endContainer, eo = range.endOffset;
+    list.forEach(function(node){
+      var st = node === sc ? so : 0, en = node === ec ? eo : node.data.length;
+      if (en <= st || !node.data.slice(st, en).trim()) return;
+      if (en < node.data.length) node.splitText(en);
+      if (st > 0) node = node.splitText(st);
+      var m = make();
+      node.parentNode.insertBefore(m, node);
+      m.appendChild(node);
+      out.push(m);
+    });
+    return out;
+  }
+
+  function unwrap(m){
+    var p = m.parentNode;
+    if (!p) return;
+    while (m.firstChild) p.insertBefore(m.firstChild, m);
+    p.removeChild(m);
+    p.normalize();
+  }
+
+  function flash(nodes){
+    [].forEach.call(nodes, function(n){
+      n.classList.remove('flash'); void n.offsetWidth; n.classList.add('flash');
+      setTimeout(function(){ n.classList.remove('flash'); }, 1700);
+    });
+  }
+
+  function el(tag, cls, html){
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (html != null) e.innerHTML = html;
+    return e;
+  }
+  function norm(s){
+    return String(s).toLowerCase().replace(/[‘’]/g,"'").replace(/[^a-z0-9' -]/g,' ')
+      .replace(/\s+/g,' ').trim().replace(/^(the|a|an) /,'');
+  }
+  function words(s){ var t = String(s).trim(); return t ? t.split(/\s+/).length : 0; }
+
+  function buildQ(q, uid){
+    var d = el('div','q'); d.qd = q; d.dataset.n = String(q.n);
+    var qid = 'q' + uid;
+    if (q.t === 'gap'){
+      var p = el('p','qt');
+      p.innerHTML = '<span class="qn">' + q.n + '</span>' + q.pre + ' ';
+      var inp = document.createElement('input');
+      inp.type = 'text'; inp.className = 'field'; inp.id = qid;
+      inp.setAttribute('aria-label','Answer ' + q.n); inp.autocomplete = 'off'; inp.spellcheck = false;
+      p.appendChild(inp);
+      p.appendChild(document.createTextNode(' ' + q.post));
+      d.appendChild(p);
+    } else {
+      var lab = el('p','qt','<span class="qn">' + q.n + '</span>' + (q.q || ''));
+      lab.id = qid;
+      d.appendChild(lab);
+      if (q.t === 'sel'){
+        var s = document.createElement('select');
+        s.className = 'field'; s.setAttribute('aria-labelledby', qid);
+        s.appendChild(new Option('Choose…',''));
+        q.list.forEach(function(it){ s.appendChild(new Option(it[0] + '  ' + it[1], it[0])); });
+        d.appendChild(s);
+      } else {
+        var g = el('div','opts' + ((q.t === 'tfng' || q.t === 'yng') ? ' row' : ''));
+        g.setAttribute('role','group'); g.setAttribute('aria-labelledby', qid);
+        var labels = q.t === 'tfng' ? TFNG : q.t === 'yng' ? YNG : q.o.map(function(_,i){ return 'ABCDEF'[i]; });
+        labels.forEach(function(k, i){
+          var b = el('button','opt');
+          b.type = 'button'; b.dataset.k = k;
+          b.setAttribute('aria-pressed','false');
+          b.innerHTML = (q.t === 'tfng' || q.t === 'yng') ? k : '<span class="k">' + k + '</span> <span class="t">' + q.o[i] + '</span>';
+          g.appendChild(b);
+        });
+        d.appendChild(g);
+      }
+    }
+    d.appendChild(el('p','fb')).hidden = true;
+    return d;
+  }
+
+  function maxMarks(p){
+    var m = 0;
+    DATA[p].groups.forEach(function(g){ g.qs.forEach(function(q){ m += q.marks || 1; }); });
+    return m;
+  }
+
+  document.querySelectorAll('.psg').forEach(function(box){
+    var p = box.dataset.p, data = DATA[p], total = maxMarks(p);
+    var qsWrap = box.querySelector('.qs'), uid = 0;
+    data.groups.forEach(function(g){
+      var gr = el('div','grp');
+      gr.appendChild(el('h4', null, g.h));
+      gr.appendChild(el('p','ins', g.ins));
+      if (g.guide) gr.appendChild(el('div','guide', g.guide));
+      if (g.fig) gr.appendChild(el('figure','fig', g.fig));
+      if (g.list){
+        var l = el('div','list');
+        g.list.forEach(function(it){ l.appendChild(el('div', null, '<b>' + it[0] + '</b>' + it[1])); });
+        gr.appendChild(l);
+      }
+      g.qs.forEach(function(q){ gr.appendChild(buildQ(q, p + '-' + (uid++))); });
+      qsWrap.appendChild(gr);
+    });
+
+    var vb = box.querySelector('.vocab');
+    vb.appendChild(el('h4', null, 'Key vocabulary'));
+    var dl = el('dl');
+    data.vocab.forEach(function(v){
+      dl.appendChild(el('dt', null, v[0] + '<span>' + v[1] + '</span>'));
+      dl.appendChild(el('dd', null, v[2] + ' <i>“' + v[3] + '”</i>'));
+    });
+    vb.appendChild(dl);
+
+    var scoreB = box.querySelector('.score b');
+    var sum = box.querySelector('.sum');
+    var subBtn = box.querySelector('.submit'), resetBtn = box.querySelector('.reset');
+    var done = false;
+
+    var art = box.querySelector('.text');
+
+    // Student highlighter controls in the top bar
+    var topBar = box.querySelector('.bar');
+    var hb = el('button','ctl hlbar','Highlight'); hb.type = 'button';
+    var clr = el('button','ctl','Clear highlights'); clr.type = 'button';
+    clr.addEventListener('click', function(){ art.querySelectorAll('mark.hl').forEach(unwrap); });
+    topBar.appendChild(hb);
+    topBar.appendChild(clr);
+    topBar.appendChild(el('span','hint','Select words in the passage, then press <b>Highlight</b>. Click or tap a highlight to remove it.'));
+
+    // In the passage: tap a highlight to remove it; tap marked evidence to jump to its question
+    art.addEventListener('click', function(e){
+      var s = window.getSelection();
+      if (s && !s.isCollapsed) return;
+      var ev = e.target.closest('mark.ev');
+      if (ev){
+        var q = qsWrap.querySelector('.q[data-n="' + ev.dataset.q + '"]');
+        if (q){ q.scrollIntoView({block:'center', behavior:'smooth'}); flash([q]); }
+        return;
+      }
+      var h = e.target.closest('mark.hl');
+      if (h) unwrap(h);
+    });
+
+    function showEvidence(){
+      qsWrap.querySelectorAll('.q').forEach(function(q){
+        var key = q.dataset.n;
+        [].concat(EV[key] || []).forEach(function(str){
+          var r = findRange(art, str);
+          if (!r){ console.warn('Evidence not found for ' + key + ': ' + str); return; }
+          var ms = wrapRange(r, function(){ var m = document.createElement('mark'); m.className = 'ev'; m.dataset.q = key; return m; });
+          if (ms.length) ms[0].dataset.n = key;
+        });
+      });
+    }
+    function clearEvidence(){ art.querySelectorAll('mark.ev').forEach(unwrap); }
+
+    // Selecting options (no instant feedback; marking happens on Submit)
+    qsWrap.addEventListener('click', function(e){
+      var go = e.target.closest('.goto');
+      if (go){
+        var ms = art.querySelectorAll('mark.ev[data-q="' + go.closest('.q').dataset.n + '"]');
+        if (ms.length){ ms[0].scrollIntoView({block:'center', behavior:'smooth'}); flash(ms); }
+        return;
+      }
+      var b = e.target.closest('.opt');
+      if (!b || done) return;
+      var q = b.closest('.q'), qd = q.qd;
+      if (qd.t === 'multi'){
+        var on = !b.classList.contains('sel');
+        if (on && q.querySelectorAll('.opt.sel').length >= qd.pick) return;
+        b.classList.toggle('sel', on); b.setAttribute('aria-pressed', String(on));
+      } else {
+        q.querySelectorAll('.opt').forEach(function(o){ o.classList.remove('sel'); o.setAttribute('aria-pressed','false'); });
+        b.classList.add('sel'); b.setAttribute('aria-pressed','true');
+      }
+    });
+
+    function setRes(fb, ok, text){
+      fb.innerHTML = '<span class="res ' + (ok ? 'ok' : 'bad') + '">' + text + '</span> ';
+    }
+
+    function submit(){
+      if (done) return;
+      var unanswered = 0;
+      qsWrap.querySelectorAll('.q').forEach(function(q){
+        var qd = q.qd;
+        if (qd.t === 'gap'){ if (!q.querySelector('input').value.trim()) unanswered++; }
+        else if (qd.t === 'sel'){ if (!q.querySelector('select').value) unanswered++; }
+        else if (qd.t === 'multi'){ if (q.querySelectorAll('.opt.sel').length < qd.pick) unanswered++; }
+        else if (!q.querySelector('.opt.sel')) unanswered++;
+      });
+      if (unanswered && !confirm(unanswered + (unanswered === 1 ? ' question is' : ' questions are') + ' still unanswered. Submit anyway?')) return;
+
+      done = true; stopTimer();
+      var got = 0;
+      qsWrap.querySelectorAll('.q').forEach(function(q){
+        var qd = q.qd, fb = q.querySelector('.fb'), ok;
+        if (qd.t === 'gap'){
+          var inp = q.querySelector('input'), v = inp.value, nv = norm(v);
+          var over = words(v) > qd.lim;
+          ok = !over && qd.acc.some(function(a){ return norm(a) === nv; });
+          inp.readOnly = true; inp.classList.add(ok ? 'ok' : 'bad');
+          if (ok) setRes(fb, true, '✓ Correct.');
+          else setRes(fb, false, (v.trim() ? (over ? '✗ Over the word limit.' : '✗ Incorrect.') : '✗ No answer.') + ' Answer: ' + qd.acc[0] + '.');
+          if (ok) got++;
+        } else if (qd.t === 'sel'){
+          var s = q.querySelector('select');
+          ok = s.value === qd.a;
+          s.disabled = true; s.classList.add(ok ? 'ok' : 'bad');
+          setRes(fb, ok, ok ? '✓ Correct.' : (s.value ? '✗ Incorrect.' : '✗ No answer.') + ' Answer: ' + qd.a + '.');
+          if (ok) got++;
+        } else if (qd.t === 'multi'){
+          var hits = 0;
+          q.querySelectorAll('.opt').forEach(function(b){
+            b.disabled = true;
+            var right = qd.a.indexOf(b.dataset.k) > -1, sel = b.classList.contains('sel');
+            b.classList.remove('sel');
+            if (right) b.classList.add('ok');
+            else if (sel) b.classList.add('bad');
+            if (right && sel) hits++;
+          });
+          got += hits;
+          setRes(fb, hits === qd.marks, (hits === qd.marks ? '✓ ' : '') + hits + ' / ' + qd.marks + ' marks. Answer: ' + qd.a.join(', ') + ' (any order).');
+        } else {
+          var pick = q.querySelector('.opt.sel');
+          ok = !!pick && pick.dataset.k === qd.a;
+          q.querySelectorAll('.opt').forEach(function(b){
+            b.disabled = true; b.classList.remove('sel');
+            if (b.dataset.k === qd.a) b.classList.add('ok');
+          });
+          if (pick && !ok) pick.classList.add('bad');
+          setRes(fb, ok, ok ? '✓ Correct.' : (pick ? '✗ Incorrect.' : '✗ No answer.') + ' Answer: ' + qd.a + '.');
+          if (ok) got++;
+        }
+        fb.insertAdjacentHTML('beforeend', qd.ex);
+        if (EV[q.dataset.n]) fb.insertAdjacentHTML('beforeend', '<br><button type="button" class="ctl sm goto">Show in passage</button>');
+        fb.hidden = false;
+      });
+      showEvidence();
+      scoreB.textContent = got + ' / ' + total;
+      sum.innerHTML = 'You scored <b>' + got + ' / ' + total + '</b>. The text that gives each answer is now marked in the passage with its question number. Read the explanation under each question, press <b>Show in passage</b>, and compare the words in the question with the words in the text. Then study the key vocabulary below.';
+      sum.hidden = false; vb.hidden = false;
+      subBtn.hidden = true; resetBtn.hidden = false;
+      sum.setAttribute('tabindex','-1'); sum.focus();
+    }
+
+    function reset(){
+      done = false;
+      qsWrap.querySelectorAll('.q').forEach(function(q){
+        q.querySelectorAll('.opt').forEach(function(b){ b.disabled = false; b.classList.remove('sel','ok','bad'); b.setAttribute('aria-pressed','false'); });
+        q.querySelectorAll('.field').forEach(function(f){ f.classList.remove('ok','bad'); f.disabled = false; f.readOnly = false; f.value = ''; });
+        var fb = q.querySelector('.fb'); fb.hidden = true; fb.innerHTML = '';
+      });
+      clearEvidence();
+      art.querySelectorAll('mark.hl').forEach(unwrap);
+      scoreB.textContent = '– / ' + total;
+      sum.hidden = true; vb.hidden = true;
+      subBtn.hidden = false; resetBtn.hidden = true;
+      resetTimer();
+    }
+
+    // 20-minute countdown; it only warns, it never locks the answers.
+    var clock = box.querySelector('.clock'), tBtn = box.querySelector('.timer');
+    var left = 1200, tick = null;
+    function show(){
+      var m = Math.floor(Math.abs(left) / 60), s = Math.abs(left) % 60;
+      clock.textContent = (left < 0 ? '+' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+      clock.classList.toggle('up', left <= 0);
+    }
+    function stopTimer(){ if (tick){ clearInterval(tick); tick = null; tBtn.textContent = 'Resume timer'; } }
+    function resetTimer(){ stopTimer(); left = 1200; show(); tBtn.textContent = 'Start timer'; }
+    tBtn.addEventListener('click', function(){
+      if (tick){ stopTimer(); tBtn.textContent = 'Resume timer'; return; }
+      tBtn.textContent = 'Pause timer';
+      tick = setInterval(function(){ left--; show(); if (left === 0) clock.setAttribute('aria-live','assertive'); }, 1000);
+    });
+
+    subBtn.addEventListener('click', submit);
+    resetBtn.addEventListener('click', reset);
+    show();
+  });
+
+  // Floating "Highlight" button that appears under a selection inside a passage.
+  var hlBtn = el('button','hlbtn','Highlight');
+  hlBtn.type = 'button'; hlBtn.hidden = true;
+  document.body.appendChild(hlBtn);
+  var pending = null, selTimer = null;
+  function hideBtn(){ hlBtn.hidden = true; }
+  function inText(n){
+    if (!n) return null;
+    if (n.nodeType !== 1) n = n.parentNode;
+    return n && n.closest ? n.closest('.text') : null;
+  }
+  // The current selection, trimmed to a single passage. Browsers differ here:
+  // a Mac triple-click or a drag past the last paragraph ends the selection
+  // outside the passage, so clip it rather than reject it.
+  function passageRange(){
+    var s = window.getSelection();
+    if (!s || !s.rangeCount || s.isCollapsed) return null;
+    var r = s.getRangeAt(0).cloneRange();
+    var a1 = inText(r.startContainer), a2 = inText(r.endContainer), a = a1 || a2;
+    if (!a) return null;
+    if (a1 !== a) r.setStart(a, 0);
+    if (a2 !== a) r.setEnd(a, a.childNodes.length);
+    if (!r.toString().trim()) return null;
+    return r;
+  }
+  function checkSel(){
+    var r = passageRange();
+    if (!r){ pending = null; hideBtn(); return; }
+    pending = r;
+    var rect = r.getBoundingClientRect();
+    if (!rect.width && !rect.height){ var rs = r.getClientRects(); if (rs.length) rect = rs[rs.length - 1]; }
+    hlBtn.hidden = false;
+    var bw = hlBtn.offsetWidth, bh = hlBtn.offsetHeight;
+    var top = rect.bottom + 10;
+    if (top + bh > window.innerHeight - 8) top = rect.top - bh - 10;
+    top = Math.min(Math.max(8, top), window.innerHeight - bh - 8);  // always keep it on screen
+    var left = Math.min(Math.max(8, rect.left + rect.width / 2 - bw / 2), window.innerWidth - bw - 8);
+    hlBtn.style.top = top + 'px'; hlBtn.style.left = left + 'px';
+  }
+  // Several triggers, because browsers fire selection events differently:
+  // selectionchange (all modern browsers), plus mouseup / keyup / touchend as a backstop.
+  function soon(ms){ clearTimeout(selTimer); selTimer = setTimeout(checkSel, ms); }
+  document.addEventListener('selectionchange', function(){ soon(150); });
+  document.addEventListener('mouseup', function(){ soon(20); });
+  document.addEventListener('keyup', function(){ soon(20); });
+  document.addEventListener('touchend', function(){ soon(350); });
+  document.addEventListener('scroll', function(){ if (!hlBtn.hidden) checkSel(); }, true);
+  window.addEventListener('resize', hideBtn);
+  function applyHL(){
+    var r = pending || passageRange();
+    if (!r) return false;
+    wrapRange(r, function(){ var m = document.createElement('mark'); m.className = 'hl'; return m; });
+    pending = null; hideBtn();
+    var s = window.getSelection(); if (s) s.removeAllRanges();
+    return true;
+  }
+  // Apply on press, before the browser can clear the selection: pointer events
+  // where supported, with mousedown / touchstart for older Safari and Android.
+  var pressed = 0;
+  function onPress(e){
+    if (e.type !== 'click'){ e.preventDefault(); pressed = Date.now(); applyHL(); }
+    else if (Date.now() - pressed > 600) applyHL();
+  }
+  function bindPress(btn){
+    if (window.PointerEvent) btn.addEventListener('pointerdown', onPress);
+    else { btn.addEventListener('mousedown', onPress); btn.addEventListener('touchstart', onPress); }
+    btn.addEventListener('click', onPress);
+  }
+  bindPress(hlBtn);
+  // The fixed "Highlight" button in each passage's top bar does the same thing.
+  document.querySelectorAll('.hlbar').forEach(bindPress);
+
+  // Open a passage when linked as #passage-N.
+  if (/^#passage-[123]$/.test(location.hash)){
+    var t = document.getElementById(location.hash.slice(1));
+    if (t) t.open = true;
+  }
+})();
+</script>
+</body>
+</html>
