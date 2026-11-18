@@ -10,12 +10,15 @@
  *
  * One row per attempt (identified by Session). The row is created when the student starts,
  * updated each time they leave the page, and completed when the quiz is submitted.
+ * Started and Submitted are stamped with Google's clock when those reports arrive, so a wrong
+ * clock on the student's device does not matter. (If the "started" report is lost, the device's
+ * start time is used instead.)
  */
 
 var HEADERS = ['Last update', 'Status', 'Class', 'Test', 'Passage', 'Student name', 'Student no.', 'Score', 'Out of',
-               'Departures', 'Time away (s)', 'Auto-submitted', 'Started', 'Finished', 'Departure log',
+               'Departures', 'Time away (s)', 'Auto-submitted', 'Started', 'Submitted', 'Departure log',
                'Question results', 'Device', 'Session', 'Update no.'];
-var SESSION_COL = 18, SEQ_COL = 19;
+var STARTED_COL = 13, SUBMITTED_COL = 14, SESSION_COL = 18, SEQ_COL = 19;
 
 function doPost(e) {
   var lock = LockService.getScriptLock();
@@ -27,9 +30,12 @@ function doPost(e) {
     var sheet = SpreadsheetApp.getActiveSpreadsheet().getSheets()[0];
     if (sheet.getLastRow() === 0) sheet.appendRow(HEADERS);
 
+    var now = new Date();
     var row = [
-      new Date(), d.status, d.cls, d.test, d.passage, d.name, d.id, num(d.score), num(d.outOf),
-      num(d.departures), num(d.awaySec), d.auto ? 'yes' : '', time(d.started), time(d.finished),
+      now, d.status, d.cls, d.test, d.passage, d.name, d.id, num(d.score), num(d.outOf),
+      num(d.departures), num(d.awaySec), d.auto ? 'yes' : '',
+      d.status === 'started' ? now : time(d.started),
+      d.status === 'submitted' ? now : '',
       d.log, d.results, d.device, d.session, num(d.seq)
     ].map(clean);
 
@@ -43,6 +49,9 @@ function doPost(e) {
       var cur = sheet.getRange(at, 1, 1, SEQ_COL).getValues()[0];
       if (cur[1] === 'submitted' && d.status !== 'submitted') return out('ok');
       if (typeof cur[SEQ_COL - 1] === 'number' && typeof d.seq === 'number' && cur[SEQ_COL - 1] >= d.seq) return out('ok');
+      // keep the first recorded start and submit times
+      if (cur[STARTED_COL - 1] instanceof Date) row[STARTED_COL - 1] = cur[STARTED_COL - 1];
+      if (cur[SUBMITTED_COL - 1] instanceof Date) row[SUBMITTED_COL - 1] = cur[SUBMITTED_COL - 1];
       sheet.getRange(at, 1, 1, row.length).setValues([row]);
     } else {
       sheet.appendRow(row);
