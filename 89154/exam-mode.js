@@ -195,46 +195,29 @@
 
   // ---------- submitting
   // Never show the browser's own confirm() pop-up in exam mode: in full screen (notably Safari on a Mac)
-  // it can open out of sight, hide the page and freeze it. Submitting goes through our own box instead.
+  // it can open out of sight, hide the page and freeze it. Submitting with questions unanswered is allowed.
   var nativeConfirm = window.confirm, inNativeDialog = false;
   window.confirm = function (m) {
     if (autoSubmitting || state.started) return true;
     inNativeDialog = true;
     try { return nativeConfirm.call(window, m); } finally { inNativeDialog = false; ignoreUntil = Date.now() + 800; }
   };
-  function exitFs() {
-    if (!fsEl()) return;
-    try { var f = document.exitFullscreen || document.webkitExitFullscreen; var r = f && f.call(document); if (r && r.catch) r.catch(function () {}); } catch (e) {}
-  }
-  function unanswered(p) {
-    var n = 0;
-    p.querySelectorAll('.q').forEach(function (q) {
-      var inp = q.querySelector('input[type=text]'), sel = q.querySelector('select');
-      if (inp) { if (!inp.value.trim()) n++; }
-      else if (sel) { if (!sel.value) n++; }
-      else if (!q.querySelector('.opt.sel')) n++;
-    });
-    return n;
-  }
   function scoreCard() {
     var sc = scoreOf();
     return sc.score == null ? '' : '<p class="xm-score">Your score: <b>' + sc.score + ' / ' + sc.outOf + '</b></p>';
   }
-  function showResult() {
-    show('<h2>Quiz submitted</h2>' + scoreCard() +
-         (REPORT_URL ? '<p>Your result has been sent to your teacher.</p>' : '<p>Show your result to your teacher if asked.</p>') +
-         '<button type="button">Review my answers</button>', true, function () {
-      hide();
-      var s = active[0] && active[0].querySelector('.sum');
-      if (s) s.scrollIntoView({ block: 'center' });
-    });
+  // Show the result on the page, as in practice mode: the score, every answer marked, and the explanations.
+  function toResult() {
+    var s = active[0] && active[0].querySelector('.sum');
+    if (s) { try { s.scrollIntoView({ block: 'start' }); } catch (e) { s.scrollIntoView(); } }
   }
   function checkDone() {
     if (state.done || !active.every(submitted)) return;
-    state.done = true; state.finishedAt = Date.now(); save(); updateBadge(); renderReports();
+    var sc = scoreOf();
+    state.done = true; state.finishedAt = Date.now(); state.score = sc.score; state.outOf = sc.outOf;
+    save(); updateBadge(); renderReports();
     send('submitted');
-    exitFs();
-    if (awayStart === null) showResult();          // if submitted while away, back() shows it on return
+    if (awayStart === null) toResult();            // if submitted while away, back() explains it on return
   }
   function submitAll() {
     autoSubmitting = true;
@@ -242,18 +225,11 @@
     autoSubmitting = false;
     checkDone();
   }
+  // Submit works at once, unanswered questions included (no pop-up): the page marks the answers,
+  // then the result is recorded and sent.
   document.addEventListener('click', function (e) {
     var b = e.target.closest && e.target.closest('.submit');
-    if (!b) return;
-    if (autoSubmitting || !state.started || state.done) { setTimeout(checkDone, 0); return; }
-    e.preventDefault(); e.stopImmediatePropagation();
-    var n = unanswered(b.closest('.psg'));
-    show('<h2>Submit your answers?</h2>' +
-         (n ? '<p class="xm-warn">You have ' + n + ' unanswered question' + (n === 1 ? '' : 's') + '.</p>' : '') +
-         '<p>You cannot change your answers after submitting.</p>' +
-         '<button type="button">Submit</button><button type="button" class="xm-alt">Keep working</button>', true,
-      function () { hide(); autoSubmitting = true; try { b.click(); } finally { autoSubmitting = false; } checkDone(); },
-      function () { hide(); });
+    if (b) setTimeout(checkDone, 0);
   }, true);
   // a result re-rendered by the page keeps its record
   new MutationObserver(function () { if (state.started) renderReports(); })
@@ -280,8 +256,8 @@
     var n = state.events.length;
     if (state.done) {
       show('<h2>Your answers were submitted</h2><p class="xm-warn">You left the quiz page ' + n + ' times, so your answers were submitted automatically.</p>' + scoreCard() +
-           '<p>Your result and the record of when you left are on the page. Show them to your teacher if asked.</p><button type="button">See my result</button>', true, function () {
-        hide(); var s = active[0] && active[0].querySelector('.sum'); if (s) s.scrollIntoView({ block: 'center' });
+           '<p>Your result has been sent to your teacher.</p><button type="button">See my result</button>', true, function () {
+        hide(); toResult();
       });
     } else {
       var left = MAX - n;
@@ -355,7 +331,9 @@
   if (previous && previous.done) {
     state = previous;
     show('<h2>Already submitted</h2><p>This quiz was submitted on this device at ' + clock(previous.finishedAt || previous.startedAt) +
-         ' (left the page ' + previous.events.length + (previous.events.length === 1 ? ' time' : ' times') + ').</p><p>Ask your teacher if you need to take it again.</p>');
+         ' (Taipei time; left the page ' + previous.events.length + (previous.events.length === 1 ? ' time' : ' times') + ').</p>' +
+         (typeof previous.score === 'number' ? '<p class="xm-score">Your score: <b>' + previous.score + ' / ' + previous.outOf + '</b></p>' : '') +
+         '<p>Ask your teacher if you need to take it again.</p>');
     return;
   }
   if (previous && previous.started) {
