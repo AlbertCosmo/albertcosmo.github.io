@@ -69,6 +69,9 @@
     '.xm-err{color:var(--bad);font-size:15px;font-weight:650;margin:0 0 8px}' +
     '.xm-card button{font:inherit;font-size:17px;font-weight:650;padding:12px 24px;border-radius:8px;border:0;background:var(--accent);color:#fff;cursor:pointer;margin-top:6px}' +
     '@media (prefers-color-scheme: dark){.xm-card button{color:#141414}}' +
+    '.xm-card button.xm-alt{background:transparent;color:var(--ink);border:1.5px solid var(--rule);margin-left:10px}' +
+    '.xm-card .xm-score{font-size:22px;color:var(--ink);margin:4px 0 12px}' +
+    '.xm-card .xm-score b{color:var(--accent);font-size:28px}' +
     '.xm-badge{position:fixed;top:10px;right:10px;z-index:90;font-size:13.5px;font-weight:700;letter-spacing:.02em;padding:6px 12px;border-radius:999px;background:var(--card);color:var(--ink);border:1.5px solid var(--accent);box-shadow:0 2px 8px rgba(0,0,0,.15)}' +
     '.xm-badge.hot{border-color:var(--bad);color:var(--bad)}' +
     '.xm-report{margin-top:12px;padding-top:12px;border-top:1px solid var(--rule);font-size:16px;line-height:1.5}' +
@@ -148,14 +151,15 @@
   }
 
   var veil = null;
-  function show(html, dim, onBtn) {
+  function show(html, dim, onBtn, onAlt) {
     hide();
     veil = document.createElement('div');
     veil.className = 'xm-veil' + (dim ? ' dim' : '');
     veil.innerHTML = '<div class="xm-card" role="dialog" aria-modal="true">' + html + '</div>';
     document.body.appendChild(veil);
-    var b = veil.querySelector('button');
+    var b = veil.querySelector('button:not(.xm-alt)'), alt = veil.querySelector('button.xm-alt');
     if (b) { b.addEventListener('click', function () { if (onBtn) onBtn(); }); b.focus(); }
+    if (alt) alt.addEventListener('click', function () { if (onAlt) onAlt(); });
   }
   function hide() { if (veil) { veil.remove(); veil = null; } }
 
@@ -190,16 +194,47 @@
   }
 
   // ---------- submitting
-  var nativeConfirm = window.confirm;
+  // Never show the browser's own confirm() pop-up in exam mode: in full screen (notably Safari on a Mac)
+  // it can open out of sight, hide the page and freeze it. Submitting goes through our own box instead.
+  var nativeConfirm = window.confirm, inNativeDialog = false;
   window.confirm = function (m) {
-    if (autoSubmitting) return true;
-    ignoreUntil = Date.now() + 100000;
-    try { return nativeConfirm.call(window, m); } finally { ignoreUntil = Date.now() + 800; }
+    if (autoSubmitting || state.started) return true;
+    inNativeDialog = true;
+    try { return nativeConfirm.call(window, m); } finally { inNativeDialog = false; ignoreUntil = Date.now() + 800; }
   };
+  function exitFs() {
+    if (!fsEl()) return;
+    try { var f = document.exitFullscreen || document.webkitExitFullscreen; var r = f && f.call(document); if (r && r.catch) r.catch(function () {}); } catch (e) {}
+  }
+  function unanswered(p) {
+    var n = 0;
+    p.querySelectorAll('.q').forEach(function (q) {
+      var inp = q.querySelector('input[type=text]'), sel = q.querySelector('select');
+      if (inp) { if (!inp.value.trim()) n++; }
+      else if (sel) { if (!sel.value) n++; }
+      else if (!q.querySelector('.opt.sel')) n++;
+    });
+    return n;
+  }
+  function scoreCard() {
+    var sc = scoreOf();
+    return sc.score == null ? '' : '<p class="xm-score">Your score: <b>' + sc.score + ' / ' + sc.outOf + '</b></p>';
+  }
+  function showResult() {
+    show('<h2>Quiz submitted</h2>' + scoreCard() +
+         (REPORT_URL ? '<p>Your result has been sent to your teacher.</p>' : '<p>Show your result to your teacher if asked.</p>') +
+         '<button type="button">Review my answers</button>', true, function () {
+      hide();
+      var s = active[0] && active[0].querySelector('.sum');
+      if (s) s.scrollIntoView({ block: 'center' });
+    });
+  }
   function checkDone() {
     if (state.done || !active.every(submitted)) return;
     state.done = true; state.finishedAt = Date.now(); save(); updateBadge(); renderReports();
     send('submitted');
+    exitFs();
+    if (awayStart === null) showResult();          // if submitted while away, back() shows it on return
   }
   function submitAll() {
     autoSubmitting = true;
@@ -208,7 +243,17 @@
     checkDone();
   }
   document.addEventListener('click', function (e) {
-    if (e.target.closest && e.target.closest('.submit')) setTimeout(checkDone, 0);
+    var b = e.target.closest && e.target.closest('.submit');
+    if (!b) return;
+    if (autoSubmitting || !state.started || state.done) { setTimeout(checkDone, 0); return; }
+    e.preventDefault(); e.stopImmediatePropagation();
+    var n = unanswered(b.closest('.psg'));
+    show('<h2>Submit your answers?</h2>' +
+         (n ? '<p class="xm-warn">You have ' + n + ' unanswered question' + (n === 1 ? '' : 's') + '.</p>' : '') +
+         '<p>You cannot change your answers after submitting.</p>' +
+         '<button type="button">Submit</button><button type="button" class="xm-alt">Keep working</button>', true,
+      function () { hide(); autoSubmitting = true; try { b.click(); } finally { autoSubmitting = false; } checkDone(); },
+      function () { hide(); });
   }, true);
   // a result re-rendered by the page keeps its record
   new MutationObserver(function () { if (state.started) renderReports(); })
@@ -218,7 +263,7 @@
   // sure = the page was really hidden; focus and full-screen changes get a short grace period,
   // because the browser's own full-screen switch and our confirm dialog also move focus.
   function leave(kind, sure) {
-    if (!state.started || state.done || awayStart !== null) return;
+    if (!state.started || state.done || awayStart !== null || inNativeDialog) return;
     if (!sure && Date.now() < ignoreUntil) return;
     awayStart = Date.now();
     state.events.push({ at: awayStart, kind: kind, ms: null });
@@ -234,7 +279,10 @@
     send(state.done ? 'submitted' : 'in progress');
     var n = state.events.length;
     if (state.done) {
-      show('<h2>Your answers were submitted</h2><p class="xm-warn">You left the quiz page ' + n + ' times, so your answers were submitted automatically.</p><p>Your result and the record of when you left are on the page. Show them to your teacher if asked.</p><button type="button">See my result</button>', true, hide);
+      show('<h2>Your answers were submitted</h2><p class="xm-warn">You left the quiz page ' + n + ' times, so your answers were submitted automatically.</p>' + scoreCard() +
+           '<p>Your result and the record of when you left are on the page. Show them to your teacher if asked.</p><button type="button">See my result</button>', true, function () {
+        hide(); var s = active[0] && active[0].querySelector('.sum'); if (s) s.scrollIntoView({ block: 'center' });
+      });
     } else {
       var left = MAX - n;
       show('<h2>You left the quiz page</h2><p class="xm-warn">This has been recorded (' + n + ' of ' + MAX + ').</p><p>' +
