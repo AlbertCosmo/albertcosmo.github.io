@@ -169,7 +169,7 @@
     h += n === 0 ? '<span class="xm-ok">Stayed on the page the whole time.</span>'
                  : '<span class="xm-bad">Left the page ' + n + (n === 1 ? ' time' : ' times') + '</span>, ' + dur(totalAway()) + ' away in total.';
     if (state.auto) h += ' <span class="xm-bad">Submitted automatically.</span>';
-    if (state.startedAt) h += ' Started ' + clock(state.startedAt) + (state.finishedAt ? ', finished ' + clock(state.finishedAt) : '') + '.';
+    if (state.startedAt) h += ' Started ' + clock(state.startedAt) + (state.finishedAt ? ', submitted ' + clock(state.finishedAt) : '') + '.';
     if (n) {
       h += '<ol>' + state.events.map(function (e) { return '<li>' + clock(e.at) + ' – ' + e.kind + ' (' + dur(e.ms) + ')</li>'; }).join('') + '</ol>';
     }
