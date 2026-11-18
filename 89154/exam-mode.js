@@ -27,8 +27,9 @@
   var KEY = 'exam:' + location.pathname + (location.hash || '#all');
 
   // Where reports go: the Web app URL of the "Exam mode reports" Google Sheet (see exam-reports.gs).
-  // Empty = nothing is sent; the record still shows on the student's screen.
-  var REPORT_URL = window.EXAM_REPORT_URL || '';
+  // Set EXAM_REPORT_URL on the page to override (used in tests).
+  var REPORT_URL = window.EXAM_REPORT_URL ||
+    'https://script.google.com/macros/s/AKfycbw08J05Fj9jEsNT01fQOm4RlwwwjFEcPdpp2Gm5_F8ob_O7C_nhyWHHjiWb1T0AAb7w/exec';
   var CLASS = params.get('c') || (/\/89154\//.test(location.pathname) ? '89154' : '');
 
   // ---------- passages in this exam
