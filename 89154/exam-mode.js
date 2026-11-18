@@ -51,7 +51,7 @@
   // ---------- styles
   var css = document.createElement('style');
   css.textContent =
-    '.psg .reset{display:none!important}' +
+    '.psg .reset,.psg .timer{display:none!important}' +   // no Try again, no pausing the clock
     '@media print{body{display:none!important}}' +
     '.xm-veil{position:fixed;inset:0;z-index:100;background:var(--bg);display:flex;align-items:center;justify-content:center;padding:20px;overflow:auto}' +
     '.xm-veil.dim{background:rgba(0,0,0,.55)}' +
