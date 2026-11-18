@@ -87,7 +87,12 @@
       if (r && r.catch) r.catch(function () {});
     } catch (e) {}
   }
-  function clock(t) { var d = new Date(t); return d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' }); }
+  // Always Taipei time, whatever time zone the student's device is set to.
+  function clock(t) {
+    var o = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false, timeZone: 'Asia/Taipei' };
+    try { return new Date(t).toLocaleTimeString('en-GB', o); }
+    catch (e) { var d = new Date(t + 8 * 3600000); return d.toISOString().slice(11, 19); }
+  }
   function dur(ms) {
     if (ms == null) return 'still away';
     var s = Math.round(ms / 1000); if (s < 60) return s + ' s';
@@ -169,7 +174,7 @@
     h += n === 0 ? '<span class="xm-ok">Stayed on the page the whole time.</span>'
                  : '<span class="xm-bad">Left the page ' + n + (n === 1 ? ' time' : ' times') + '</span>, ' + dur(totalAway()) + ' away in total.';
     if (state.auto) h += ' <span class="xm-bad">Submitted automatically.</span>';
-    if (state.startedAt) h += ' Started ' + clock(state.startedAt) + (state.finishedAt ? ', submitted ' + clock(state.finishedAt) : '') + '.';
+    if (state.startedAt) h += ' Started ' + clock(state.startedAt) + (state.finishedAt ? ', submitted ' + clock(state.finishedAt) : '') + ' (Taipei time).';
     if (n) {
       h += '<ol>' + state.events.map(function (e) { return '<li>' + clock(e.at) + ' – ' + e.kind + ' (' + dur(e.ms) + ')</li>'; }).join('') + '</ol>';
     }
