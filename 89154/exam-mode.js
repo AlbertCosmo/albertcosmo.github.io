@@ -24,13 +24,16 @@
 
   var MAX = parseInt(params.get('exam'), 10);
   if (!(MAX >= 1 && MAX <= 20)) MAX = 3;
-  var KEY = 'exam:' + location.pathname + (location.hash || '#all');
+  var CLASS = params.get('c') || (/\/89154\//.test(location.pathname) ? '89154' : '');
+  // Kept per browser, per class and quiz link. Computers in a lab are shared, so a saved attempt
+  // expires STALE ms after its last activity: the next class on the same computer starts fresh.
+  var KEY = 'exam:' + CLASS + ':' + location.pathname + (location.hash || '#all');
+  var STALE = 2 * 3600 * 1000;
 
   // Where reports go: the Web app URL of the "Exam mode reports" Google Sheet (see exam-reports.gs).
   // Set EXAM_REPORT_URL on the page to override (used in tests).
   var REPORT_URL = window.EXAM_REPORT_URL ||
     'https://script.google.com/macros/s/AKfycbw08J05Fj9jEsNT01fQOm4RlwwwjFEcPdpp2Gm5_F8ob_O7C_nhyWHHjiWb1T0AAb7w/exec';
-  var CLASS = params.get('c') || (/\/89154\//.test(location.pathname) ? '89154' : '');
 
   // ---------- passages in this exam
   var only = /^#passage-[1-3]$/.test(location.hash) ? document.querySelector(location.hash) : null;
@@ -45,6 +48,17 @@
   var state = { started: false, done: false, auto: false, startedAt: null, finishedAt: null, events: [],
                 who: null, session: null, seq: 0 };
   var previous = load();
+  function lastActivity(st) {
+    var t = st.finishedAt || st.startedAt || 0;
+    (st.events || []).forEach(function (e) { t = Math.max(t, e.at + (e.ms || 0)); });
+    return t;
+  }
+  if (previous && !(Date.now() - lastActivity(previous) < STALE)) {
+    previous = null;
+    try { localStorage.removeItem(KEY); } catch (e) {}
+  }
+  // Earlier versions remembered the last student's name on this computer: forget it.
+  try { localStorage.removeItem('exam:who'); } catch (e) {}
 
   var awayStart = null, blurTimer = null, ignoreUntil = 0, autoSubmitting = false;
 
@@ -132,12 +146,16 @@
     });
     return r.join(', ');
   }
-  // Fire-and-forget: sendBeacon still delivers while the page is being hidden or closed.
+  // ---------- reports to the Sheet
+  // Each attempt has its own random session id and its own row, so students never overwrite each other.
+  // When a whole room submits at once Google may be busy, so a report is retried until the receiver
+  // answers "ok". Only the newest report matters (it carries everything), so it replaces an unsent one,
+  // and it is kept in this browser until delivered, even across a reload.
   function send(status) {
     if (!REPORT_URL || !state.who || !state.session) return;
-    state.seq++; save();
+    state.seq++;
     var sc = scoreOf();
-    var body = JSON.stringify({
+    state.outbox = JSON.stringify({
       session: state.session, seq: state.seq, status: status, cls: CLASS, test: document.title,
       passage: only ? only.id.replace('passage-', 'Passage ') : 'All passages',
       name: state.who.name, id: state.who.id, score: sc.score, outOf: sc.outOf,
@@ -146,9 +164,46 @@
       log: state.events.map(function (e) { return clock(e.at) + ' ' + e.kind + ' (' + dur(e.ms) + ')'; }).join('; '),
       results: results(), device: (navigator.userAgent || '').slice(0, 150)
     });
-    try { if (navigator.sendBeacon && navigator.sendBeacon(REPORT_URL, new Blob([body], { type: 'text/plain;charset=utf-8' }))) return; } catch (e) {}
-    try { fetch(REPORT_URL, { method: 'POST', mode: 'no-cors', keepalive: true, headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: body }); } catch (e) {}
+    save();
+    tries = 0; clearTimeout(retryTimer);
+    retryTimer = setTimeout(flush, Math.random() * 1500);   // spread a room's reports over a moment
   }
+  var tries = 0, retryTimer = null, inFlight = false, blind = false;
+  function delivered(body) { if (state.outbox === body) { state.outbox = null; save(); } }
+  function retry() {
+    tries++;
+    if (tries > 12) return;                                  // try again on the next page load
+    clearTimeout(retryTimer);
+    retryTimer = setTimeout(flush, Math.min(30000, 1000 * Math.pow(2, tries)) * (0.5 + Math.random()));
+  }
+  function flush() {
+    var body = state.outbox;
+    if (!body || inFlight || !window.fetch) { if (body && !window.fetch) beacon(); return; }
+    inFlight = true;
+    var opts = { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: body };
+    if (blind) opts.mode = 'no-cors';
+    fetch(REPORT_URL, opts).then(function (r) {
+      return blind ? 'ok' : r.text();
+    }).then(function (t) {
+      inFlight = false;
+      if (/^(ok|bad request)/.test(t)) { delivered(body); if (state.outbox) flush(); }
+      else retry();                                            // busy or error: try again shortly
+    }, function () {
+      inFlight = false;
+      // The answer could not be read: either the network failed, or this browser cannot read it.
+      // Send once without reading the answer; if even that fails, the network is down: retry later.
+      fetch(REPORT_URL, { method: 'POST', mode: 'no-cors', headers: opts.headers, body: body }).then(function () {
+        blind = true; delivered(body); if (state.outbox) flush();
+      }, retry);
+    });
+  }
+  function beacon() {
+    if (!state.outbox) return;
+    try { if (navigator.sendBeacon && navigator.sendBeacon(REPORT_URL, new Blob([state.outbox], { type: 'text/plain;charset=utf-8' }))) return; } catch (e) {}
+  }
+  // Closing or reloading the page: hand any unsent report to the browser to deliver.
+  window.addEventListener('pagehide', beacon);
+  window.addEventListener('online', function () { tries = 0; flush(); });
 
   var veil = null;
   function show(html, dim, onBtn, onAlt) {
@@ -305,7 +360,6 @@
       var nv = n ? n.value.trim() : '', iv = i ? i.value.trim() : '';
       if (!nv || !iv) { var er = veil.querySelector('.xm-err'); if (er) er.hidden = false; (nv ? i : n).focus(); return; }
       state.who = { name: nv.slice(0, 80), id: iv.slice(0, 40) };
-      try { localStorage.setItem('exam:who', JSON.stringify(state.who)); } catch (e) {}
     }
     if (!state.session) state.session = newSession();
     state.started = true;
@@ -330,6 +384,7 @@
 
   if (previous && previous.done) {
     state = previous;
+    if (state.outbox) flush();                     // a report not yet delivered goes now
     show('<h2>Already submitted</h2><p>This quiz was submitted on this device at ' + clock(previous.finishedAt || previous.startedAt) +
          ' (Taipei time; left the page ' + previous.events.length + (previous.events.length === 1 ? ' time' : ' times') + ').</p>' +
          (typeof previous.score === 'number' ? '<p class="xm-score">Your score: <b>' + previous.score + ' / ' + previous.outOf + '</b></p>' : '') +
@@ -349,10 +404,9 @@
     return;
   }
   var who = null;
-  try { who = JSON.parse(localStorage.getItem('exam:who')); } catch (e) {}
   show('<h2>Exam mode</h2><p>Read this before you begin.</p>' + rules +
        (canFs() ? '' : '<p>Full screen is not available on this device; leaving the page is still recorded.</p>') +
-       '<div class="xm-who"><label>Your name<input id="xm-name" autocomplete="name" maxlength="80" value="' + esc(who && who.name || '') + '"></label>' +
+       '<div class="xm-who"><label>Your name<input id="xm-name" autocomplete="off" maxlength="80" value="' + esc(who && who.name || '') + '"></label>' +
        '<label>Student number<input id="xm-id" autocomplete="off" maxlength="40" value="' + esc(who && who.id || '') + '"></label></div>' +
        '<p class="xm-err" hidden>Please enter your name and student number.</p>' +
        '<button type="button">Start the quiz' + (canFs() ? ' in full screen' : '') + '</button>', false, start);
