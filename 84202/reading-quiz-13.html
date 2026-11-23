@@ -1,0 +1,864 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reading Quiz, Week 13</title>
+<meta name="description" content="A short reading quiz at CEFR B2 level, with answer key, explanations, passage evidence and key vocabulary.">
+<style>
+  :root{
+    --bg:#fbfaf8; --ink:#0d0d0d; --mute:#3f3e3b; --faint:#67655f;
+    --rule:#ddd9d3; --accent:#6b1723; --card:#ffffff;
+    --ok:#1e7a3c; --okbg:rgba(30,122,60,.08); --bad:#b42318; --badbg:rgba(180,35,24,.07);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --bg:#141414; --ink:#f5f3f0; --mute:#c8c6c2; --faint:#a09e9a;
+           --rule:#343434; --accent:#eb9ba5; --card:#1c1c1c;
+           --ok:#7ed49b; --okbg:rgba(126,212,155,.12); --bad:#f28b82; --badbg:rgba(242,139,130,.12); }
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font:21px/1.66 ui-sans-serif,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans TC",sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:820px; margin:0 auto; padding:64px 30px 100px}
+  a{color:var(--accent)}
+  .back{display:inline-block; font-size:17px; font-weight:600; text-decoration:none;
+        border-bottom:1px solid currentColor; margin-bottom:26px}
+  .back:hover{opacity:.7}
+  header{padding-bottom:30px; border-bottom:1px solid var(--rule)}
+  .course{margin:0 0 8px; font-size:15px; color:var(--faint); letter-spacing:.05em; text-transform:uppercase; font-weight:600}
+  h1{margin:0 0 14px; font-size:42px; line-height:1.16; font-weight:650; letter-spacing:-.018em}
+  .lead{color:var(--mute); font-size:19.5px; margin:0 0 12px}
+  .lead:last-child{margin-bottom:0}
+
+  /* Passage blocks */
+  .psg{margin-top:26px; background:var(--card); border:1px solid var(--rule); border-radius:10px}
+  .psg > summary{cursor:pointer; list-style:none; display:flex; align-items:center; gap:14px; padding:20px 26px}
+  .psg > summary::-webkit-details-marker{display:none}
+  .psg > summary:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:10px}
+  .psg > summary::after{content:""; flex:0 0 auto; width:9px; height:9px; margin:-4px 4px 0 2px;
+         border-right:2px solid var(--faint); border-bottom:2px solid var(--faint); transform:rotate(45deg); transition:transform .15s}
+  .psg[open] > summary::after{margin-top:4px; transform:rotate(-135deg)}
+  .psg > summary:hover h2{color:var(--accent)}
+  .psg .ttl{flex:1 1 auto; min-width:0}
+  .psg .pn{display:block; font-size:14px; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); font-weight:700}
+  .psg h2{margin:2px 0 0; font-size:25px; font-weight:650; letter-spacing:-.01em; line-height:1.3}
+  .psg .meta{display:block; font-size:16px; color:var(--faint); margin-top:2px}
+  .score{flex:0 0 auto; white-space:nowrap; font-size:14px; letter-spacing:.08em; text-transform:uppercase; color:var(--faint); font-weight:700}
+  .score b{color:var(--accent); font-size:18px; letter-spacing:0; margin-left:6px}
+  .body{padding:0 26px 26px; border-top:1px solid var(--rule)}
+
+  .bar{display:flex; flex-wrap:wrap; align-items:center; gap:12px; padding:18px 0}
+  .clock{font:600 22px/1 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; color:var(--ink); min-width:76px}
+  .clock.up{color:var(--bad)}
+  .ctl{font:inherit; font-size:16px; font-weight:600; padding:9px 18px; border-radius:7px; cursor:pointer;
+       background:var(--bg); color:var(--ink); border:1.5px solid var(--rule); -webkit-appearance:none; appearance:none; touch-action:manipulation}
+  .ctl:hover{opacity:.8}
+  .ctl:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+  .ctl.main{background:var(--accent); color:#fff; border-color:var(--accent)}
+  @media (prefers-color-scheme: dark){ .ctl.main{color:#141414} }
+  .ctl[hidden]{display:none}
+
+  .split{display:block}
+  .text{font-size:18.5px; line-height:1.7}
+  .text p{margin:0 0 14px}
+  .text .pl{font-weight:700; color:var(--accent); margin-right:6px}
+  .text h3{margin:0 0 12px; font-size:22px; font-weight:650; text-align:left}
+  .qs{margin-top:22px}
+
+  .grp{margin:0 0 6px; padding:18px 0 4px; border-top:2px solid var(--ink)}
+  .grp h4{margin:0 0 4px; font-size:15px; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); font-weight:700}
+  .grp .ins{margin:0 0 10px; font-size:17px; color:var(--mute)}
+  .list{margin:6px 0 12px; padding:12px 16px; background:var(--bg); border:1px solid var(--rule); border-radius:7px; font-size:16.5px; line-height:1.5}
+  .list div{padding:2px 0}
+  .list b{display:inline-block; min-width:30px; color:var(--accent)}
+
+  .q{padding:14px 0; border-bottom:1px solid var(--rule)}
+  .q:last-child{border-bottom:0}
+  .qt{margin:0 0 10px; font-size:18px; font-weight:500; line-height:1.5}
+  .qn{font-size:14px; letter-spacing:.06em; color:var(--accent); font-weight:700; margin-right:8px}
+  .opts{display:grid; gap:7px}
+  .opts.row{grid-template-columns:repeat(3,1fr)}
+  .opt{display:flex; align-items:flex-start; gap:12px; width:100%; margin:0; text-align:left;
+       font:inherit; font-size:17px; line-height:1.45; color:var(--ink); background:var(--bg);
+       border:1.5px solid var(--rule); border-radius:7px; padding:9px 13px; cursor:pointer;
+       -webkit-appearance:none; appearance:none; touch-action:manipulation}
+  .opts.row .opt{justify-content:center; font-weight:600; font-size:15.5px; letter-spacing:.03em}
+  .opt:hover:not(:disabled){border-color:var(--faint)}
+  .opt:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+  .opt:disabled{cursor:default}
+  .opt .k{flex:0 0 auto; width:25px; height:25px; margin-top:1px; border-radius:50%; border:1.5px solid var(--faint);
+          color:var(--mute); font-size:13.5px; font-weight:700; display:inline-flex; align-items:center; justify-content:center}
+  .opt .t{flex:1 1 0; min-width:0}
+  .opt.sel{border-color:var(--accent); box-shadow:inset 0 0 0 1px var(--accent)}
+  .opt.sel .k{background:var(--accent); border-color:var(--accent); color:var(--card)}
+  .opt.ok{border-color:var(--ok); background:var(--okbg); box-shadow:none}
+  .opt.ok .k{border-color:var(--ok); background:transparent; color:var(--ok)}
+  .opt.bad{border-color:var(--bad); background:var(--badbg); box-shadow:none}
+  .opt.bad .k{border-color:var(--bad); background:transparent; color:var(--bad)}
+
+  select, input[type=text]{font:inherit; font-size:17px; color:var(--ink); background:var(--bg);
+       border:1.5px solid var(--rule); border-radius:7px; padding:8px 11px; max-width:100%}
+  select{width:100%; cursor:pointer}
+  input[type=text]{width:min(100%,320px)}
+  select:focus-visible, input[type=text]:focus-visible{outline:2px solid var(--accent); outline-offset:2px; border-color:var(--accent)}
+  .field.ok{border-color:var(--ok); background:var(--okbg)}
+  .field.bad{border-color:var(--bad); background:var(--badbg)}
+  .gap{display:inline-block; min-width:2em; border-bottom:1.5px solid var(--faint); padding:0 4px; color:var(--accent); font-weight:700}
+
+  .fb{margin:10px 0 0; padding:10px 14px; border-left:3px solid var(--rule); font-size:16.5px; line-height:1.55; color:var(--mute)}
+  .fb[hidden]{display:none}
+  .fb .res{font-weight:700}
+  .fb .res.ok{color:var(--ok)}
+  .fb .res.bad{color:var(--bad)}
+  .fb q{font-style:italic; color:var(--ink)}
+  .fb q::before{content:"\201C"} .fb q::after{content:"\201D"}
+
+  .sum{margin:18px 0 0; padding:14px 18px; border-radius:8px; background:var(--bg); border:1px solid var(--rule); font-size:18px}
+  .sum[hidden]{display:none}
+  .sum b{color:var(--accent)}
+  .vocab{margin-top:22px}
+  .vocab[hidden]{display:none}
+  .vocab h4{margin:0 0 10px; font-size:15px; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); font-weight:700}
+  .vocab dl{margin:0; display:grid; gap:10px}
+  .vocab dt{font-weight:650; font-size:18px}
+  .vocab dt span{font-weight:400; font-size:15px; color:var(--faint); margin-left:6px}
+  .vocab dd{margin:0; font-size:16.5px; color:var(--mute); line-height:1.5}
+  .vocab dd i{color:var(--ink)}
+
+  /* TRUE / FALSE / NOT GIVEN guide */
+  .guide{margin:4px 0 14px; padding:16px 18px; background:var(--bg); border:1px solid var(--rule); border-left:4px solid var(--accent);
+         border-radius:8px; font-size:16.5px; line-height:1.55; color:var(--mute)}
+  .guide .gh{margin:0 0 8px; font-size:14px; letter-spacing:.08em; text-transform:uppercase; font-weight:700; color:var(--ink)}
+  .guide .gh + .extext, .guide dl + .gh, .guide .gtip + .gh{margin-top:14px}
+  .tg{display:inline-block; min-width:92px; padding:1px 8px; border-radius:5px; font-size:13px; font-weight:700; letter-spacing:.04em;
+      text-align:center; border:1.5px solid currentColor; white-space:nowrap}
+  .tg.t{color:var(--ok)} .tg.f{color:var(--bad)} .tg.n{color:var(--faint)}
+  .tfdef{display:grid; grid-template-columns:auto 1fr; gap:8px 12px; margin:0; align-items:baseline}
+  .tfdef dt, .tfdef dd{margin:0}
+  .tfdef dt, .exs .tg{justify-self:start}
+  .tfdef dd b{color:var(--ink)}
+  .extext{margin:0 0 10px; padding:10px 14px; background:var(--card); border-radius:6px; color:var(--ink); font-style:italic}
+  .exs{list-style:none; margin:0; padding:0; display:grid; gap:10px}
+  .exs li{display:grid; grid-template-columns:auto 1fr; gap:2px 12px; align-items:baseline}
+  .exs .st{color:var(--ink); font-weight:500}
+  .exs .why{grid-column:2; font-size:15.5px}
+  .gtip{margin:12px 0 0}
+  .gtip b{color:var(--ink)}
+  @media (max-width:600px){
+    .guide{padding:14px; font-size:16px}
+    .tfdef{grid-template-columns:1fr; gap:2px}
+    .tfdef dd{margin-bottom:8px}
+    .exs li{grid-template-columns:1fr}
+    .exs .why{grid-column:1}
+  }
+
+  /* Highlighting: student highlights (yellow) and answer evidence (accent) */
+  .hint{font-size:15px; color:var(--faint); line-height:1.4; flex:1 1 220px}
+  .ctl.sm{font-size:14.5px; padding:5px 12px; margin-top:10px}
+  .text{--evbg:rgba(107,23,35,.09)}
+  mark.hl{background:#ffe680; color:inherit; border-radius:2px; cursor:pointer}
+  mark.ev{background:var(--evbg); color:inherit; border-bottom:2px solid var(--accent); cursor:pointer; scroll-margin:90px}
+  mark.ev[data-n]::before{content:attr(data-n); font-size:11.5px; font-weight:700; line-height:1; color:#fff; background:var(--accent);
+         border-radius:4px; padding:2px 5px; margin-right:4px; vertical-align:2px; font-style:normal}
+  mark.hl mark.ev, mark.ev mark.hl{background:#ffe680}
+  .flash{animation:flash 1.6s ease-out}
+  @keyframes flash{0%,40%{outline:3px solid var(--accent); outline-offset:2px} 100%{outline:3px solid transparent; outline-offset:2px}}
+  .hlbtn{position:fixed; z-index:50; font:inherit; font-size:15px; font-weight:700; padding:8px 16px; border-radius:7px; border:0;
+         background:var(--ink); color:var(--bg); box-shadow:0 4px 14px rgba(0,0,0,.25); cursor:pointer; -webkit-user-select:none; user-select:none}
+  .hlbtn[hidden]{display:none}
+  @media (prefers-color-scheme: dark){
+    .text{--evbg:rgba(235,155,165,.16)}
+    mark.hl, mark.hl mark.ev, mark.ev mark.hl{background:rgba(255,214,0,.34)}
+    mark.ev[data-n]::before{color:#141414}
+  }
+
+  footer{margin-top:60px; padding-top:22px; border-top:1px solid var(--rule); font-size:15.5px; color:var(--faint)}
+
+  /* Wide screens: passage and questions side by side, each scrolling on its own */
+  @media (min-width:1100px){
+    .wrap.wide{max-width:1320px}
+    .wrap.wide > header, .wrap.wide > footer{max-width:820px}
+    .split{display:grid; grid-template-columns:1fr 1fr; gap:34px; align-items:start}
+    .text, .qs{max-height:calc(100vh - 120px); overflow-y:auto; padding-right:12px; position:sticky; top:16px}
+    .qs{margin-top:0}
+  }
+  @media (max-width:600px){
+    .wrap{padding:40px 16px 80px}
+    h1{font-size:33px}
+    .psg > summary{padding:16px 18px}
+    .body{padding:0 18px 20px}
+    .psg h2{font-size:21px}
+    .score .lbl{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
+    .text{font-size:17.5px}
+    .opts.row{grid-template-columns:1fr}
+  }
+  @media print{
+    body{background:#fff; font-size:12pt}
+    .wrap{padding:0; max-width:none}
+    .bar, .back{display:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap wide">
+
+  <header>
+    <a class="back" id="back" href="./">&larr; Back to Sophomore English (I)</a>
+    <p class="course" id="course">Sophomore English (I) (F26) &nbsp;&middot;&nbsp; Reading quiz</p>
+    <h1>Reading Quiz, Week 13</h1>
+    <p class="lead">One passage and ten questions, with twenty minutes to answer. Read the passage, answer every question, then press <b>Submit</b> to check your answers, read why each answer is right, and review the key vocabulary.</p>
+
+  </header>
+
+  <!-- ============================== WEEK 13 ============================== -->
+  <details class="psg" id="passage-1" data-p="1">
+    <summary>
+      <span class="ttl"><span class="pn">Week 13</span><h2>Facing the audience</h2><span class="meta">Questions 1&ndash;10 &middot; 20 minutes</span></span>
+      <span class="score" aria-live="polite"><span class="lbl">Score</span> <b>&ndash; / 10</b></span>
+    </summary>
+    <div class="body">
+      <div class="bar"><span class="clock" aria-live="off">20:00</span><button type="button" class="ctl timer">Start timer</button></div>
+      <div class="split">
+        <article class="text">
+          <h3>Facing the audience</h3>
+          <p><span class="pl">A</span>Many people would rather do almost anything than speak in front of an audience. Surveys in several countries have found that public speaking is one of the most common fears that people report. Even experienced teachers, actors and business leaders admit that they still feel nervous before they go on stage.</p>
+          <p><span class="pl">B</span>The feelings are easy to recognise: a fast heartbeat, a dry mouth, shaking hands and a mind that suddenly goes blank. These reactions come from the body’s ‘fight or flight’ response. When the brain sees a threat, it releases adrenaline, a hormone that prepares the body to fight or to run away. This response was useful for our ancestors when they met a dangerous animal. Unfortunately, the brain reacts in a similar way to a room full of people looking at us. Yet the audience cannot actually hurt us.</p>
+          <p><span class="pl">C</span>Why should an audience feel so threatening? One explanation is that, for most of human history, people lived in small groups and depended on them to survive. Being rejected by the group was dangerous, so we became very sensitive to what others think of us. When we stand in front of a crowd, we feel that we are being judged, and the old alarm system switches on.</p>
+          <p><span class="pl">D</span>The good news is that nervousness does not have to stop us. Preparation is the most obvious help. Speakers who practise their talk out loud several times, ideally in front of a friend, are less likely to forget what they want to say. It also helps to arrive early and check the room and the equipment. Speakers can then chat with a few audience members before starting, so that the crowd feels friendlier.</p>
+          <p><span class="pl">E</span>Another useful technique concerns how we describe our feelings. Many people tell themselves to calm down, but this rarely works, because a racing heart cannot be slowed by an order. In a study at Harvard Business School, people gave a short speech. Before speaking, some said ‘I am excited’ and others said ‘I am calm’. Observers rated the ‘excited’ speakers as more confident and more persuasive. Nervousness and excitement feel very similar in the body. So it may be easier to change the name we give the feeling than to change the feeling itself.</p>
+          <p><span class="pl">F</span>Finally, it is worth remembering that audiences notice much less than speakers think. Psychologists call this the ‘illusion of transparency’: people tend to believe their nervousness is obvious to others. In fact, listeners often cannot see it. Most audiences want the speaker to succeed. A small mistake, a pause or a lost word is rarely as important to them as it feels to the person at the front of the room.</p>
+        </article>
+        <div class="qs"></div>
+      </div>
+      <div class="bar"><button type="button" class="ctl main submit">Submit</button><button type="button" class="ctl reset" hidden>Try again</button></div>
+      <p class="sum" hidden></p>
+      <div class="vocab" hidden></div>
+    </div>
+  </details>
+
+  <footer>Passages written for classroom use at CEFR level B2 or below; answer key, explanations and vocabulary notes prepared for this course. Sources for the facts in the passage: A. W. Brooks (2014), &ldquo;Get excited&rdquo;, <i>Journal of Experimental Psychology: General</i> 143(3); K. Savitsky and T. Gilovich (2003), on the illusion of transparency and public speaking, <i>Journal of Experimental Social Psychology</i> 39(6).</footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  // Linked from class 84202; ?c=44201 shows that class's name and back link instead.
+  var CTX = {
+    '44201': { back:'../44201/', backText:'\u2190 Back to Sophomore English (I), class 44201',
+               course:'Sophomore English (I), class 44201 (F26) \u00b7 Reading quiz' }
+  };
+  var ctx = null;
+  try { ctx = CTX[new URLSearchParams(location.search).get('c')] || null; } catch (e) {}
+  if (ctx){
+    var bk = document.getElementById('back'), cs = document.getElementById('course');
+    bk.href = ctx.back; bk.textContent = ctx.backText; cs.textContent = ctx.course;
+  }
+  var ABCD = ['A','B','C','D'];
+  var TFNG = ['TRUE','FALSE','NOT GIVEN'];
+  var YNG = ['YES','NO','NOT GIVEN'];
+  // Shown before the YES / NO / NOT GIVEN questions (the writer's views).
+  var YNG_GUIDE = "<p class=\"gh\">Before you start: YES, NO or NOT GIVEN?</p><dl class=\"tfdef\"><dt><span class=\"tg t\">YES</span></dt><dd>The statement <b>agrees with the writer’s view</b> or claim.</dd><dt><span class=\"tg f\">NO</span></dt><dd>The statement <b>goes against the writer’s view</b>. The writer believes the opposite.</dd><dt><span class=\"tg n\">NOT GIVEN</span></dt><dd>You <b>cannot tell what the writer thinks</b> about this.</dd></dl><p class=\"gtip\"><b>Not the same as TRUE / FALSE / NOT GIVEN.</b> Those questions check facts. These check the writer’s <i>opinions and claims</i>. Look for opinion language such as <i>should, ought to, in fact, admittedly, there is every reason to believe</i>.</p><p class=\"gh\">Example</p><p class=\"extext\">“Many people believe that homework should be banned. In my view, a small amount helps students practise what they have learned, although long assignments do more harm than good.”</p><ul class=\"exs\"><li><span class=\"tg t\">YES</span><span class=\"st\">Some homework can be useful for students.</span><span class=\"why\">The writer says a small amount helps.</span></li><li><span class=\"tg f\">NO</span><span class=\"st\">Schools should stop giving homework.</span><span class=\"why\"><i>Many people</i> believe this, but the writer does not. Always check <i>whose</i> opinion a sentence gives.</span></li><li><span class=\"tg f\">NO</span><span class=\"st\">Long assignments are good for students.</span><span class=\"why\">The writer says they do more harm than good.</span></li><li><span class=\"tg n\">NOT GIVEN</span><span class=\"st\">Teachers give too much homework nowadays.</span><span class=\"why\">The writer never says how much homework teachers give.</span></li><li><span class=\"tg n\">NOT GIVEN</span><span class=\"st\">Homework is more useful for older students.</span><span class=\"why\">The writer does not compare students of different ages.</span></li></ul><p class=\"gtip\"><b>NO or NOT GIVEN?</b> Ask: <i>does the writer say, or clearly believe, the opposite?</i> If yes, the answer is NO. If the writer gives no opinion on this point, the answer is NOT GIVEN.</p>";
+
+  // Shown before TRUE / FALSE / NOT GIVEN questions (unused in this test). The example text is not from the test, so it gives nothing away.
+  var TFNG_GUIDE =
+    '<p class="gh">Before you start: TRUE, FALSE or NOT GIVEN?</p>' +
+    '<dl class="tfdef">' +
+      '<dt><span class="tg t">TRUE</span></dt><dd>The passage <b>says the same thing</b> as the statement, usually in different words.</dd>' +
+      '<dt><span class="tg f">FALSE</span></dt><dd>The passage <b>says the opposite</b>. The statement and the passage cannot both be right.</dd>' +
+      '<dt><span class="tg n">NOT GIVEN</span></dt><dd>The passage <b>does not say</b>. There is not enough information to decide whether the statement is right or wrong.</dd>' +
+    '</dl>' +
+    '<p class="gh">Example</p>' +
+    '<p class="extext">&ldquo;The city library opened in 1998. It is open every day except Sunday, and most of its visitors are students.&rdquo;</p>' +
+    '<ul class="exs">' +
+      '<li><span class="tg t">TRUE</span><span class="st">The library is closed on Sundays.</span><span class="why"><i>Every day except Sunday</i> means the same as <i>closed on Sundays</i>.</span></li>' +
+      '<li><span class="tg f">FALSE</span><span class="st">The library is open seven days a week.</span><span class="why">The passage says the opposite: it is <i>not</i> open on Sunday.</span></li>' +
+      '<li><span class="tg f">FALSE</span><span class="st">All of the library&rsquo;s visitors are students.</span><span class="why">The passage says <i>most</i>, not <i>all</i>. Small words like <i>all, only, always, never</i> often make a statement FALSE.</span></li>' +
+      '<li><span class="tg n">NOT GIVEN</span><span class="st">The library is the largest in the city.</span><span class="why">The passage says nothing about its size.</span></li>' +
+      '<li><span class="tg n">NOT GIVEN</span><span class="st">More students use the library now than in 1998.</span><span class="why">The passage mentions 1998, but it never compares the numbers then and now.</span></li>' +
+    '</ul>' +
+    '<p class="gtip"><b>FALSE or NOT GIVEN?</b> Find the part of the passage the statement is about and ask: <i>does the passage say the opposite?</i> If yes, the answer is FALSE. If the passage is simply silent, the answer is NOT GIVEN.</p>' +
+    '<p class="gtip"><b>Use only the passage.</b> Do not use what you know about the world. A statement that is true in real life is still NOT GIVEN if the passage does not say it.</p>';
+
+  /* Question types: mcq, tfng, sel (dropdown from a list), gap (typed; acc = accepted, lim = word limit). */
+  var DATA = {
+ "1": {
+  "groups": [
+   {
+    "h": "Questions 1–3",
+    "ins": "Choose the correct letter, A, B, C or D.",
+    "qs": [
+     {
+      "n": 1,
+      "t": "mcq",
+      "q": "What does the writer say about experienced speakers in paragraph A?",
+      "o": [
+       "They never feel nervous.",
+       "They still feel nervous before speaking.",
+       "They prefer large audiences to small ones.",
+       "They are afraid of many other things."
+      ],
+      "a": "B",
+      "ex": "Paragraph A: <q>Even experienced teachers, actors and business leaders admit that they still feel nervous before they go on stage.</q>"
+     },
+     {
+      "n": 2,
+      "t": "mcq",
+      "q": "According to paragraph B, how does the body react to an audience?",
+      "o": [
+       "In a completely different way from its reaction to danger.",
+       "In a similar way to its reaction to a dangerous animal.",
+       "Only when the speaker has little experience.",
+       "In a way that helps the speaker remember the talk."
+      ],
+      "a": "B",
+      "ex": "Paragraph B: the response was useful when our ancestors <q>met a dangerous animal</q>, and <q>the brain reacts in a similar way to a room full of people looking at us</q>."
+     },
+     {
+      "n": 3,
+      "t": "mcq",
+      "q": "According to paragraph C, why may people care so much about what others think?",
+      "o": [
+       "Being rejected by the group was once dangerous.",
+       "People today live in very small groups.",
+       "Crowds are more dangerous than animals.",
+       "Most people dislike being alone."
+      ],
+      "a": "A",
+      "ex": "Paragraph C: <q>Being rejected by the group was dangerous, so we became very sensitive to what others think of us.</q> B is wrong: small groups were how people lived <i>for most of human history</i>, not today."
+     }
+    ]
+   },
+   {
+    "h": "Questions 4–7",
+    "ins": "Do the following statements agree with the information in the passage? Choose TRUE if the statement agrees with the information, FALSE if the statement contradicts the information, NOT GIVEN if there is no information on this.",
+    "guide": TFNG_GUIDE,
+    "qs": [
+     {
+      "n": 4,
+      "t": "tfng",
+      "q": "Practising a talk out loud makes speakers less likely to forget it.",
+      "a": "TRUE",
+      "ex": "Paragraph D: speakers who practise out loud <q>are less likely to forget what they want to say</q>."
+     },
+     {
+      "n": 5,
+      "t": "tfng",
+      "q": "Speakers should avoid talking to audience members before the talk begins.",
+      "a": "FALSE",
+      "ex": "Paragraph D says the opposite: it helps to <q>chat with a few audience members before starting</q>."
+     },
+     {
+      "n": 6,
+      "t": "tfng",
+      "q": "Telling yourself to calm down is usually an effective way to reduce nervousness.",
+      "a": "FALSE",
+      "ex": "Paragraph E: <q>Many people tell themselves to calm down, but this rarely works</q>. <i>Rarely works</i> is the opposite of <i>usually effective</i>."
+     },
+     {
+      "n": 7,
+      "t": "tfng",
+      "q": "All of the people in the Harvard study were university students.",
+      "a": "NOT GIVEN",
+      "ex": "Paragraph E describes the study, but it never says who the people in it were."
+     }
+    ]
+   },
+   {
+    "h": "Questions 8–10",
+    "ins": "Complete the sentences below. Choose ONE WORD ONLY from the passage for each answer.",
+    "qs": [
+     {
+      "n": 8,
+      "t": "gap",
+      "lim": 1,
+      "pre": "Observers rated the speakers who said ‘I am excited’ as more confident and more",
+      "post": ".",
+      "acc": [
+       "persuasive"
+      ],
+      "ex": "Paragraph E: <q>Observers rated the ‘excited’ speakers as more confident and more persuasive.</q>"
+     },
+     {
+      "n": 9,
+      "t": "gap",
+      "lim": 1,
+      "pre": "Nervousness and",
+      "post": "feel very similar in the body.",
+      "acc": [
+       "excitement"
+      ],
+      "ex": "Paragraph E: <q>Nervousness and excitement feel very similar in the body</q>."
+     },
+     {
+      "n": 10,
+      "t": "gap",
+      "lim": 1,
+      "pre": "Speakers often believe that their nervousness is",
+      "post": "to others, but listeners often cannot see it.",
+      "acc": [
+       "obvious"
+      ],
+      "ex": "Paragraph F: <q>people tend to believe their nervousness is obvious to others</q>."
+     }
+    ]
+   }
+  ],
+  "vocab": [
+   [
+    "go blank",
+    "phrase",
+    "(of your mind) suddenly be unable to think or remember anything.",
+    "a mind that suddenly goes blank"
+   ],
+   [
+    "adrenaline",
+    "noun",
+    "a hormone the body produces when you are afraid or excited.",
+    "it releases adrenaline"
+   ],
+   [
+    "ancestor",
+    "noun",
+    "a person in your family who lived a long time ago.",
+    "useful for our ancestors"
+   ],
+   [
+    "threatening",
+    "adjective",
+    "seeming likely to cause harm or danger.",
+    "Why should an audience feel so threatening?"
+   ],
+   [
+    "reject",
+    "verb",
+    "to refuse to accept someone or something.",
+    "Being rejected by the group"
+   ],
+   [
+    "ideally",
+    "adverb",
+    "in the best possible situation.",
+    "ideally in front of a friend"
+   ],
+   [
+    "persuasive",
+    "adjective",
+    "good at making people agree with you.",
+    "more confident and more persuasive"
+   ],
+   [
+    "illusion",
+    "noun",
+    "an idea or belief that seems true but is not.",
+    "the ‘illusion of transparency’"
+   ]
+  ]
+ }
+};
+
+  /* Evidence: the exact passage text that gives each answer, keyed by passage, then question number. */
+  var EV = {
+ "1": {
+  "1": "Even experienced teachers, actors and business leaders admit that they still feel nervous before they go on stage.",
+  "2": "the brain reacts in a similar way to a room full of people looking at us",
+  "3": "Being rejected by the group was dangerous, so we became very sensitive to what others think of us.",
+  "4": "are less likely to forget what they want to say",
+  "5": "chat with a few audience members before starting",
+  "6": "Many people tell themselves to calm down, but this rarely works",
+  "8": "Observers rated the ‘excited’ speakers as more confident and more persuasive.",
+  "9": "Nervousness and excitement feel very similar in the body",
+  "10": "people tend to believe their nervousness is obvious to others"
+ }
+};
+
+  function nz(s){ return s.replace(/[‘’]/g,"'").replace(/[“”]/g,'"').replace(/[–—]/g,'-').replace(/ /g,' '); }
+
+  // Find a string in an element's text and return a Range over it.
+  function findRange(root, str){
+    var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT), t, nodes = [], full = '';
+    while ((t = w.nextNode())){ nodes.push([t, full.length]); full += t.data; }
+    var i = nz(full).indexOf(nz(str));
+    if (i < 0) return null;
+    var j = i + str.length, r = document.createRange();
+    for (var k = 0; k < nodes.length; k++){
+      var n = nodes[k][0], s = nodes[k][1], e = s + n.data.length;
+      if (i >= s && i < e) r.setStart(n, i - s);
+      if (j > s && j <= e){ r.setEnd(n, j - s); break; }
+    }
+    return r;
+  }
+
+  // Wrap every text node inside a Range in a new element; works across tags.
+  function wrapRange(range, make){
+    var root = range.commonAncestorContainer;
+    if (root.nodeType === 3) root = root.parentNode;
+    var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT), t, list = [], out = [];
+    while ((t = w.nextNode())) if (range.intersectsNode(t)) list.push(t);
+    var sc = range.startContainer, so = range.startOffset, ec = range.endContainer, eo = range.endOffset;
+    list.forEach(function(node){
+      var st = node === sc ? so : 0, en = node === ec ? eo : node.data.length;
+      if (en <= st || !node.data.slice(st, en).trim()) return;
+      if (en < node.data.length) node.splitText(en);
+      if (st > 0) node = node.splitText(st);
+      var m = make();
+      node.parentNode.insertBefore(m, node);
+      m.appendChild(node);
+      out.push(m);
+    });
+    return out;
+  }
+
+  function unwrap(m){
+    var p = m.parentNode;
+    if (!p) return;
+    while (m.firstChild) p.insertBefore(m.firstChild, m);
+    p.removeChild(m);
+    p.normalize();
+  }
+
+  function flash(nodes){
+    [].forEach.call(nodes, function(n){
+      n.classList.remove('flash'); void n.offsetWidth; n.classList.add('flash');
+      setTimeout(function(){ n.classList.remove('flash'); }, 1700);
+    });
+  }
+
+  function el(tag, cls, html){
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (html != null) e.innerHTML = html;
+    return e;
+  }
+  function norm(s){
+    return String(s).toLowerCase().replace(/[‘’]/g,"'").replace(/[^a-z0-9' -]/g,' ')
+      .replace(/\s+/g,' ').trim().replace(/^(the|a|an) /,'');
+  }
+  function words(s){ var t = String(s).trim(); return t ? t.split(/\s+/).length : 0; }
+
+  function buildQ(q, uid){
+    var d = el('div','q'); d.qd = q; d.dataset.n = String(q.n);
+    var qid = 'q' + uid;
+    if (q.t === 'gap'){
+      var p = el('p','qt');
+      p.innerHTML = '<span class="qn">' + q.n + '</span>' + q.pre + ' ';
+      var inp = document.createElement('input');
+      inp.type = 'text'; inp.className = 'field'; inp.id = qid;
+      inp.setAttribute('aria-label','Answer ' + q.n); inp.autocomplete = 'off'; inp.spellcheck = false;
+      p.appendChild(inp);
+      p.appendChild(document.createTextNode(' ' + q.post));
+      d.appendChild(p);
+    } else {
+      var lab = el('p','qt','<span class="qn">' + q.n + '</span>' + (q.q || ''));
+      lab.id = qid;
+      d.appendChild(lab);
+      if (q.t === 'sel'){
+        var s = document.createElement('select');
+        s.className = 'field'; s.setAttribute('aria-labelledby', qid);
+        s.appendChild(new Option('Choose…',''));
+        q.list.forEach(function(it){ s.appendChild(new Option(it[0] + '  ' + it[1], it[0])); });
+        d.appendChild(s);
+      } else {
+        var g = el('div','opts' + ((q.t === 'tfng' || q.t === 'yng') ? ' row' : ''));
+        g.setAttribute('role','group'); g.setAttribute('aria-labelledby', qid);
+        var labels = q.t === 'tfng' ? TFNG : q.t === 'yng' ? YNG : q.o.map(function(_,i){ return 'ABCDEF'[i]; });
+        labels.forEach(function(k, i){
+          var b = el('button','opt');
+          b.type = 'button'; b.dataset.k = k;
+          b.setAttribute('aria-pressed','false');
+          b.innerHTML = (q.t === 'tfng' || q.t === 'yng') ? k : '<span class="k">' + k + '</span> <span class="t">' + q.o[i] + '</span>';
+          g.appendChild(b);
+        });
+        d.appendChild(g);
+      }
+    }
+    d.appendChild(el('p','fb')).hidden = true;
+    return d;
+  }
+
+  function maxMarks(p){
+    var m = 0;
+    DATA[p].groups.forEach(function(g){ g.qs.forEach(function(q){ m += q.marks || 1; }); });
+    return m;
+  }
+
+  document.querySelectorAll('.psg').forEach(function(box){
+    var p = box.dataset.p, data = DATA[p], total = maxMarks(p);
+    var qsWrap = box.querySelector('.qs'), uid = 0;
+    data.groups.forEach(function(g){
+      var gr = el('div','grp');
+      gr.appendChild(el('h4', null, g.h));
+      gr.appendChild(el('p','ins', g.ins));
+      if (g.guide) gr.appendChild(el('div','guide', g.guide));
+      if (g.list){
+        var l = el('div','list');
+        g.list.forEach(function(it){ l.appendChild(el('div', null, '<b>' + it[0] + '</b>' + it[1])); });
+        gr.appendChild(l);
+      }
+      g.qs.forEach(function(q){ gr.appendChild(buildQ(q, p + '-' + (uid++))); });
+      qsWrap.appendChild(gr);
+    });
+
+    var vb = box.querySelector('.vocab');
+    vb.appendChild(el('h4', null, 'Key vocabulary'));
+    var dl = el('dl');
+    data.vocab.forEach(function(v){
+      dl.appendChild(el('dt', null, v[0] + '<span>' + v[1] + '</span>'));
+      dl.appendChild(el('dd', null, v[2] + ' <i>“' + v[3] + '”</i>'));
+    });
+    vb.appendChild(dl);
+
+    var scoreB = box.querySelector('.score b');
+    var sum = box.querySelector('.sum');
+    var subBtn = box.querySelector('.submit'), resetBtn = box.querySelector('.reset');
+    var done = false;
+
+    var art = box.querySelector('.text');
+
+    // Student highlighter controls in the top bar
+    var topBar = box.querySelector('.bar');
+    var hb = el('button','ctl hlbar','Highlight'); hb.type = 'button';
+    var clr = el('button','ctl','Clear highlights'); clr.type = 'button';
+    clr.addEventListener('click', function(){ art.querySelectorAll('mark.hl').forEach(unwrap); });
+    topBar.appendChild(hb);
+    topBar.appendChild(clr);
+    topBar.appendChild(el('span','hint','Select words in the passage, then press <b>Highlight</b>. Click or tap a highlight to remove it.'));
+
+    // In the passage: tap a highlight to remove it; tap marked evidence to jump to its question
+    art.addEventListener('click', function(e){
+      var s = window.getSelection();
+      if (s && !s.isCollapsed) return;
+      var ev = e.target.closest('mark.ev');
+      if (ev){
+        var q = qsWrap.querySelector('.q[data-n="' + ev.dataset.q + '"]');
+        if (q){ q.scrollIntoView({block:'center', behavior:'smooth'}); flash([q]); }
+        return;
+      }
+      var h = e.target.closest('mark.hl');
+      if (h) unwrap(h);
+    });
+
+    function showEvidence(){
+      qsWrap.querySelectorAll('.q').forEach(function(q){
+        var key = q.dataset.n;
+        [].concat((EV[p] || {})[key] || []).forEach(function(str){
+          var r = findRange(art, str);
+          if (!r){ console.warn('Evidence not found for ' + key + ': ' + str); return; }
+          var ms = wrapRange(r, function(){ var m = document.createElement('mark'); m.className = 'ev'; m.dataset.q = key; return m; });
+          if (ms.length) ms[0].dataset.n = key;
+        });
+      });
+    }
+    function clearEvidence(){ art.querySelectorAll('mark.ev').forEach(unwrap); }
+
+    // Selecting options (no instant feedback; marking happens on Submit)
+    qsWrap.addEventListener('click', function(e){
+      var go = e.target.closest('.goto');
+      if (go){
+        var ms = art.querySelectorAll('mark.ev[data-q="' + go.closest('.q').dataset.n + '"]');
+        if (ms.length){ ms[0].scrollIntoView({block:'center', behavior:'smooth'}); flash(ms); }
+        return;
+      }
+      var b = e.target.closest('.opt');
+      if (!b || done) return;
+      var q = b.closest('.q'), qd = q.qd;
+      if (qd.t === 'multi'){
+        var on = !b.classList.contains('sel');
+        if (on && q.querySelectorAll('.opt.sel').length >= qd.pick) return;
+        b.classList.toggle('sel', on); b.setAttribute('aria-pressed', String(on));
+      } else {
+        q.querySelectorAll('.opt').forEach(function(o){ o.classList.remove('sel'); o.setAttribute('aria-pressed','false'); });
+        b.classList.add('sel'); b.setAttribute('aria-pressed','true');
+      }
+    });
+
+    function setRes(fb, ok, text){
+      fb.innerHTML = '<span class="res ' + (ok ? 'ok' : 'bad') + '">' + text + '</span> ';
+    }
+
+    function submit(){
+      if (done) return;
+      var unanswered = 0;
+      qsWrap.querySelectorAll('.q').forEach(function(q){
+        var qd = q.qd;
+        if (qd.t === 'gap'){ if (!q.querySelector('input').value.trim()) unanswered++; }
+        else if (qd.t === 'sel'){ if (!q.querySelector('select').value) unanswered++; }
+        else if (qd.t === 'multi'){ if (q.querySelectorAll('.opt.sel').length < qd.pick) unanswered++; }
+        else if (!q.querySelector('.opt.sel')) unanswered++;
+      });
+      if (unanswered && !confirm(unanswered + (unanswered === 1 ? ' question is' : ' questions are') + ' still unanswered. Submit anyway?')) return;
+
+      done = true; stopTimer();
+      var got = 0;
+      qsWrap.querySelectorAll('.q').forEach(function(q){
+        var qd = q.qd, fb = q.querySelector('.fb'), ok;
+        if (qd.t === 'gap'){
+          var inp = q.querySelector('input'), v = inp.value, nv = norm(v);
+          var over = words(v) > qd.lim;
+          ok = !over && qd.acc.some(function(a){ return norm(a) === nv; });
+          inp.readOnly = true; inp.classList.add(ok ? 'ok' : 'bad');
+          if (ok) setRes(fb, true, '✓ Correct.');
+          else setRes(fb, false, (v.trim() ? (over ? '✗ Over the word limit.' : '✗ Incorrect.') : '✗ No answer.') + ' Answer: ' + qd.acc[0] + '.');
+          if (ok) got++;
+        } else if (qd.t === 'sel'){
+          var s = q.querySelector('select');
+          ok = s.value === qd.a;
+          s.disabled = true; s.classList.add(ok ? 'ok' : 'bad');
+          setRes(fb, ok, ok ? '✓ Correct.' : (s.value ? '✗ Incorrect.' : '✗ No answer.') + ' Answer: ' + qd.a + '.');
+          if (ok) got++;
+        } else if (qd.t === 'multi'){
+          var hits = 0;
+          q.querySelectorAll('.opt').forEach(function(b){
+            b.disabled = true;
+            var right = qd.a.indexOf(b.dataset.k) > -1, sel = b.classList.contains('sel');
+            b.classList.remove('sel');
+            if (right) b.classList.add('ok');
+            else if (sel) b.classList.add('bad');
+            if (right && sel) hits++;
+          });
+          got += hits;
+          setRes(fb, hits === qd.marks, (hits === qd.marks ? '✓ ' : '') + hits + ' / ' + qd.marks + ' marks. Answer: ' + qd.a.join(', ') + ' (any order).');
+        } else {
+          var pick = q.querySelector('.opt.sel');
+          ok = !!pick && pick.dataset.k === qd.a;
+          q.querySelectorAll('.opt').forEach(function(b){
+            b.disabled = true; b.classList.remove('sel');
+            if (b.dataset.k === qd.a) b.classList.add('ok');
+          });
+          if (pick && !ok) pick.classList.add('bad');
+          setRes(fb, ok, ok ? '✓ Correct.' : (pick ? '✗ Incorrect.' : '✗ No answer.') + ' Answer: ' + qd.a + '.');
+          if (ok) got++;
+        }
+        fb.insertAdjacentHTML('beforeend', qd.ex);
+        if ((EV[p] || {})[q.dataset.n]) fb.insertAdjacentHTML('beforeend', '<br><button type="button" class="ctl sm goto">Show in passage</button>');
+        fb.hidden = false;
+      });
+      showEvidence();
+      scoreB.textContent = got + ' / ' + total;
+      sum.innerHTML = 'You scored <b>' + got + ' / ' + total + '</b>. The text that gives each answer is now marked in the passage with its question number. Read the explanation under each question, press <b>Show in passage</b>, and compare the words in the question with the words in the text. Then study the key vocabulary below.';
+      sum.hidden = false; vb.hidden = false;
+      subBtn.hidden = true; resetBtn.hidden = false;
+      sum.setAttribute('tabindex','-1'); sum.focus();
+    }
+
+    function reset(){
+      done = false;
+      qsWrap.querySelectorAll('.q').forEach(function(q){
+        q.querySelectorAll('.opt').forEach(function(b){ b.disabled = false; b.classList.remove('sel','ok','bad'); b.setAttribute('aria-pressed','false'); });
+        q.querySelectorAll('.field').forEach(function(f){ f.classList.remove('ok','bad'); f.disabled = false; f.readOnly = false; f.value = ''; });
+        var fb = q.querySelector('.fb'); fb.hidden = true; fb.innerHTML = '';
+      });
+      clearEvidence();
+      art.querySelectorAll('mark.hl').forEach(unwrap);
+      scoreB.textContent = '– / ' + total;
+      sum.hidden = true; vb.hidden = true;
+      subBtn.hidden = false; resetBtn.hidden = true;
+      resetTimer();
+    }
+
+    // 20-minute countdown; it only warns, it never locks the answers.
+    var clock = box.querySelector('.clock'), tBtn = box.querySelector('.timer');
+    var left = 1200, tick = null;
+    function show(){
+      var m = Math.floor(Math.abs(left) / 60), s = Math.abs(left) % 60;
+      clock.textContent = (left < 0 ? '+' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+      clock.classList.toggle('up', left <= 0);
+    }
+    function stopTimer(){ if (tick){ clearInterval(tick); tick = null; tBtn.textContent = 'Resume timer'; } }
+    function resetTimer(){ stopTimer(); left = 1200; show(); tBtn.textContent = 'Start timer'; }
+    tBtn.addEventListener('click', function(){
+      if (tick){ stopTimer(); tBtn.textContent = 'Resume timer'; return; }
+      tBtn.textContent = 'Pause timer';
+      tick = setInterval(function(){ left--; show(); if (left === 0) clock.setAttribute('aria-live','assertive'); }, 1000);
+    });
+
+    subBtn.addEventListener('click', submit);
+    resetBtn.addEventListener('click', reset);
+    show();
+  });
+
+  // Floating "Highlight" button that appears under a selection inside a passage.
+  var hlBtn = el('button','hlbtn','Highlight');
+  hlBtn.type = 'button'; hlBtn.hidden = true;
+  document.body.appendChild(hlBtn);
+  var pending = null, selTimer = null;
+  function hideBtn(){ hlBtn.hidden = true; }
+  function inText(n){
+    if (!n) return null;
+    if (n.nodeType !== 1) n = n.parentNode;
+    return n && n.closest ? n.closest('.text') : null;
+  }
+  // The current selection, trimmed to a single passage. Browsers differ here:
+  // a Mac triple-click or a drag past the last paragraph ends the selection
+  // outside the passage, so clip it rather than reject it.
+  function passageRange(){
+    var s = window.getSelection();
+    if (!s || !s.rangeCount || s.isCollapsed) return null;
+    var r = s.getRangeAt(0).cloneRange();
+    var a1 = inText(r.startContainer), a2 = inText(r.endContainer), a = a1 || a2;
+    if (!a) return null;
+    if (a1 !== a) r.setStart(a, 0);
+    if (a2 !== a) r.setEnd(a, a.childNodes.length);
+    if (!r.toString().trim()) return null;
+    return r;
+  }
+  function checkSel(){
+    var r = passageRange();
+    if (!r){ pending = null; hideBtn(); return; }
+    pending = r;
+    var rect = r.getBoundingClientRect();
+    if (!rect.width && !rect.height){ var rs = r.getClientRects(); if (rs.length) rect = rs[rs.length - 1]; }
+    hlBtn.hidden = false;
+    var bw = hlBtn.offsetWidth, bh = hlBtn.offsetHeight;
+    var top = rect.bottom + 10;
+    if (top + bh > window.innerHeight - 8) top = rect.top - bh - 10;
+    top = Math.min(Math.max(8, top), window.innerHeight - bh - 8);  // always keep it on screen
+    var left = Math.min(Math.max(8, rect.left + rect.width / 2 - bw / 2), window.innerWidth - bw - 8);
+    hlBtn.style.top = top + 'px'; hlBtn.style.left = left + 'px';
+  }
+  // Several triggers, because browsers fire selection events differently:
+  // selectionchange (all modern browsers), plus mouseup / keyup / touchend as a backstop.
+  function soon(ms){ clearTimeout(selTimer); selTimer = setTimeout(checkSel, ms); }
+  document.addEventListener('selectionchange', function(){ soon(150); });
+  document.addEventListener('mouseup', function(){ soon(20); });
+  document.addEventListener('keyup', function(){ soon(20); });
+  document.addEventListener('touchend', function(){ soon(350); });
+  document.addEventListener('scroll', function(){ if (!hlBtn.hidden) checkSel(); }, true);
+  window.addEventListener('resize', hideBtn);
+  function applyHL(){
+    var r = pending || passageRange();
+    if (!r) return false;
+    wrapRange(r, function(){ var m = document.createElement('mark'); m.className = 'hl'; return m; });
+    pending = null; hideBtn();
+    var s = window.getSelection(); if (s) s.removeAllRanges();
+    return true;
+  }
+  // Apply on press, before the browser can clear the selection: pointer events
+  // where supported, with mousedown / touchstart for older Safari and Android.
+  var pressed = 0;
+  function onPress(e){
+    if (e.type !== 'click'){ e.preventDefault(); pressed = Date.now(); applyHL(); }
+    else if (Date.now() - pressed > 600) applyHL();
+  }
+  function bindPress(btn){
+    if (window.PointerEvent) btn.addEventListener('pointerdown', onPress);
+    else { btn.addEventListener('mousedown', onPress); btn.addEventListener('touchstart', onPress); }
+    btn.addEventListener('click', onPress);
+  }
+  bindPress(hlBtn);
+  // The fixed "Highlight" button in each passage's top bar does the same thing.
+  document.querySelectorAll('.hlbar').forEach(bindPress);
+
+  // Open a passage when linked as #passage-N.
+  if (/^#passage-1$/.test(location.hash)){
+    var t = document.getElementById(location.hash.slice(1));
+    if (t) t.open = true;
+  }
+})();
+</script>
+<script src="../89154/exam-mode.js?v=20261118d"></script>
+</body>
+</html>
