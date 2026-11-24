@@ -247,10 +247,12 @@
 <script>
 (function(){
   "use strict";
-  // Linked from class 84202; ?c=44201 shows that class's name and back link instead.
+  // Linked from class 84202; ?c=44201 or ?c=19203 shows that class's name and back link instead.
   var CTX = {
     '44201': { back:'../44201/', backText:'\u2190 Back to Sophomore English (I), class 44201',
-               course:'Sophomore English (I), class 44201 (F26) \u00b7 Reading quiz' }
+               course:'Sophomore English (I), class 44201 (F26) \u00b7 Reading quiz' },
+    '19203': { back:'../19203/', backText:'\u2190 Back to Sophomore English (I), class 19203',
+               course:'Sophomore English (I), class 19203 (F26) \u00b7 Reading quiz' }
   };
   var ctx = null;
   try { ctx = CTX[new URLSearchParams(location.search).get('c')] || null; } catch (e) {}

@@ -247,16 +247,25 @@
 <script>
 (function(){
   "use strict";
-  // Linked from class 84202; ?c=44201 shows that class's name and back link instead.
+  // Linked from class 84202; ?c=44201 or ?c=19203 shows that class's name and back link instead.
   var CTX = {
     '44201': { back:'../44201/', backText:'\u2190 Back to Sophomore English (I), class 44201',
-               course:'Sophomore English (I), class 44201 (F26) \u00b7 Reading quiz' }
+               course:'Sophomore English (I), class 44201 (F26) \u00b7 Reading quiz', week:13 },
+    '19203': { back:'../19203/', backText:'\u2190 Back to Sophomore English (I), class 19203',
+               course:'Sophomore English (I), class 19203 (F26) \u00b7 Reading quiz', week:13 }
   };
   var ctx = null;
   try { ctx = CTX[new URLSearchParams(location.search).get('c')] || null; } catch (e) {}
   if (ctx){
     var bk = document.getElementById('back'), cs = document.getElementById('course');
     bk.href = ctx.back; bk.textContent = ctx.backText; cs.textContent = ctx.course;
+    // This class has the quiz in a different week. The tab title keeps the original name,
+    // so exam reports from every class name the same quiz the same way.
+    if (ctx.week){
+      var h1 = document.querySelector('h1'), pn = document.querySelector('.pn');
+      if (h1) h1.textContent = 'Reading Quiz, Week ' + ctx.week;
+      if (pn) pn.textContent = 'Week ' + ctx.week;
+    }
   }
   var ABCD = ['A','B','C','D'];
   var TFNG = ['TRUE','FALSE','NOT GIVEN'];
