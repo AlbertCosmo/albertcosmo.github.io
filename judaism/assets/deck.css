@@ -273,3 +273,17 @@ table.mx.zebra tbody th{white-space:normal;width:17%}
 .tag.nofit{background:transparent;color:var(--faint);border:1.5px dashed var(--faint)}
 table.mx td .tag{margin:0 .45em .15em 0;font-size:.66em;vertical-align:.12em}
 table.mx .stepq{display:block;font-family:var(--serif);font-weight:400;font-style:italic;font-size:.86em;color:var(--muted);margin-top:.15em;text-transform:none;letter-spacing:0}
+
+/* ---------- image trio (presentation 2) ---------- */
+.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1em;margin:.4em 0 .9em}
+.trio figure{margin:0;display:flex;flex-direction:column}
+.trio .im{display:block;height:15em;border-radius:10px;overflow:hidden;border:1px solid var(--rule);background:var(--accent-soft)}
+.trio .im img{display:block;width:100%;height:100%}
+.trio .im.contain img{object-fit:contain}
+.trio .im.top img{object-fit:cover;object-position:50% 20%}
+.trio .im.right img{object-fit:cover;object-position:78% 40%}
+.trio figcaption{font-size:.8em;line-height:1.4;margin-top:.5em}
+.trio figcaption b{display:block;font-family:var(--serif);font-size:1.12em;color:var(--accent);margin-bottom:.1em}
+.trio figcaption small{display:block;font-size:.82em;color:var(--faint);margin-top:.25em}
+body.presenting .trio .im{height:25vh}
+@media (max-width:700px){.trio{grid-template-columns:1fr}.trio .im{height:14em}}
