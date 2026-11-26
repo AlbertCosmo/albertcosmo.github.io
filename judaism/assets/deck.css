@@ -270,3 +270,6 @@ table.mx.zebra tbody th{white-space:normal;width:17%}
 .deck-nav span{font-family:var(--serif);font-weight:600}
 .deck-nav .next{text-align:right}
 @media print{.deck-nav{display:none}}
+.tag.nofit{background:transparent;color:var(--faint);border:1.5px dashed var(--faint)}
+table.mx td .tag{margin:0 .45em .15em 0;font-size:.66em;vertical-align:.12em}
+table.mx .stepq{display:block;font-family:var(--serif);font-weight:400;font-style:italic;font-size:.86em;color:var(--muted);margin-top:.15em;text-transform:none;letter-spacing:0}
