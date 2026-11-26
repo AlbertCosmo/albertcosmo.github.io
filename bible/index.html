@@ -259,6 +259,39 @@ footer{margin-top:36px;font-size:13px;color:var(--faint);border-top:1px solid va
 #debts-across-lives .gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,2vw,24px);align-items:start}
 @media (max-width:760px){#debts-across-lives .gallery{grid-template-columns:1fr}}
 #debts-across-lives.presenting .gallery figure.art img{max-height:42vh}
+/* ---------- deck: Ignorance in the Gospel of Luke ---------- */
+/* who vs. what */
+.panel{border:1px solid var(--rule);border-radius:10px;padding:.65em .85em;background:var(--paper)}
+.panel.agree{border-color:var(--rose);background:var(--rose-soft)}
+.panel .who{margin-top:0}
+.panel .q{margin-bottom:0}
+.expect{list-style:none;margin:0;padding:0;display:grid;gap:.55em}
+.expect li{display:grid;grid-template-columns:7.2em minmax(0,1fr);gap:.7em;align-items:baseline}
+.expect b{font-family:var(--serif);font-weight:500;font-size:1.06em;color:var(--rose)}
+.expect q{font-family:var(--serif)}
+.expect .ref{font-size:.78em;color:var(--faint);white-space:nowrap}
+@media (max-width:560px){.expect li{grid-template-columns:1fr;gap:.05em}}
+/* two outcomes */
+.paths{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 .9em}
+@media (max-width:640px){.paths{grid-template-columns:1fr}}
+.paths .path{border:1px solid var(--rule);border-radius:10px;padding:.55em .8em;background:var(--paper)}
+.paths .path .who{margin-top:0}
+.paths .chain{margin-bottom:0}
+/* voices converging on one definition */
+.converge{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:0 0 .3em}
+@media (max-width:760px){.converge{grid-template-columns:1fr}}
+.converge .v{border:1px solid var(--rule);border-radius:10px;padding:.55em .8em;background:var(--paper)}
+.converge .v .who{margin-top:0}
+.converge .v q{font-family:var(--serif);font-size:1.05em}
+.converge .v .ref{display:block;font-size:.76em;color:var(--faint);margin-top:.3em}
+.funnel{text-align:center;color:var(--faint);font-size:1.3em;line-height:1;margin:.15em 0 .35em}
+.verdict{border:1.5px solid var(--rose);background:var(--rose-soft);border-radius:10px;padding:.55em .9em;text-align:center;font-family:var(--serif);font-size:1.18em;margin:0 0 .9em}
+.slide ul.expect{padding-left:0}
+#ignorance-in-luke .flow{margin-bottom:.9em}
+#ignorance-in-luke .dir span.s{color:var(--ink);font-size:.92em}
+#ignorance-in-luke .dir b{margin-bottom:.15em}
+#ignorance-in-luke .dir q{font-family:var(--serif)}
+#ignorance-in-luke.presenting .slide{padding-bottom:72px}
 </style>
 </head>
 <body>
@@ -268,6 +301,301 @@ footer{margin-top:36px;font-size:13px;color:var(--faint);border-top:1px solid va
 <p class="lede">Presentations for the course. Select a title to open the full presentation.</p>
 
 <p class="list-head">Presentations</p>
+
+<!-- ===================================================================
+     PRESENTATION 4: Ignorance in the Gospel of Luke
+     =================================================================== -->
+<article class="deck big" id="ignorance-in-luke">
+<h2><button class="deck-toggle" aria-expanded="false" aria-controls="ignorance-in-luke-body">
+  <span class="chev" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 12 12"><path d="M4 2l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+  <span>
+    <span class="deck-title">Ignorance in the Gospel of Luke: Misrecognition, Not Villainy, in the Passion Narrative</span>
+    <span class="deck-meta">Albert Le Thanh Nhan · 27 November 2026 · Luke 2, 9, 18–19, 22–23; Acts 13</span>
+    <span class="deck-hint">17 slides + works cited</span>
+  </span>
+</button></h2>
+
+<div class="deck-body" id="ignorance-in-luke-body" hidden>
+<div class="toolbar">
+  <button class="btn primary" data-act="present" type="button">▶ Present</button>
+  <button class="btn" data-act="collapse" type="button">Close</button>
+</div>
+
+<!-- 1 -->
+<section class="slide" aria-label="Slide 1">
+  <span class="no">1</span>
+  <p class="kicker">Bible · Close reading</p>
+  <h3 class="title">Ignorance in the Gospel of Luke</h3>
+  <p class="claim">Misrecognition, not villainy, in Luke’s passion narrative</p>
+  <p class="muted">Albert Le Thanh Nhan</p>
+</section>
+
+<!-- 2 -->
+<section class="slide" aria-label="Slide 2">
+  <span class="no">2</span>
+  <p class="kicker">Opening</p>
+  <h3>“A sign which shall be spoken against”</h3>
+  <div class="q">“Behold, this [child] is set for the fall and rising again of many in Israel; and for a sign which shall be spoken against”<cite>Luke 2.34: Simeon to Mary, after taking the child in his arms (2.28)</cite></div>
+  <div class="q land">On Mark: Jesus teaches his disciples that “although they know him as messiah, he will not be the messiah they were expecting.”<cite>“The Gospel of Mark,” National Catholic Education Commission</cite></div>
+  <p class="takeaway">Luke extends that insight beyond the disciples, to friends, rulers, and mockers alike.</p>
+</section>
+
+<!-- 3 -->
+<section class="slide" aria-label="Slide 3">
+  <span class="no">3</span>
+  <p class="kicker">The problem</p>
+  <h3>They disagree about <em>who</em>; they agree about <em>what</em></h3>
+  <div class="cols">
+    <div class="panel">
+      <p class="who">Is he the one? · disagreement</p>
+      <div class="q">“Art thou he that should come? or look we for another?”<cite>Luke 7.19, John the Baptist, through two of his disciples</cite></div>
+    </div>
+    <div class="panel agree">
+      <p class="who">What must a messiah do? · agreement</p>
+      <ul class="expect">
+        <li><b>Rule now</b><span><q>the kingdom of God should immediately appear</q> <span class="ref">19.11</span></span></li>
+        <li><b>Restore Israel</b><span><q>we trusted that it had been he which should have redeemed Israel</q> <span class="ref">24.21</span></span></li>
+        <li><b>Save himself</b><span><q>let him save himself, if he be Christ</q> <span class="ref">23.35</span></span></li>
+      </ul>
+    </div>
+  </div>
+  <p class="takeaway">That shared expectation is exactly what Jesus refuses to fulfill.</p>
+</section>
+
+<!-- 4 -->
+<section class="slide" aria-label="Slide 4">
+  <span class="no">4</span>
+  <p class="kicker">Thesis</p>
+  <h3>A story less of villainy than of misrecognition</h3>
+  <div class="q">“If thou hadst known, even thou, at least in this thy day, the things [which belong] unto thy peace! but now they are hid from thine eyes . . . because thou knewest not the time of thy visitation.”<cite>Luke 19.42, 44, as Jesus weeps over Jerusalem (19.41)</cite></div>
+  <div class="paths">
+    <div class="path">
+      <p class="who">Among the disciples</p>
+      <div class="chain"><span class="chip act">expectation</span><span class="ar" aria-hidden="true">→</span><span class="chip">disagreement</span><span class="ar" aria-hidden="true">→</span><span class="chip keep">disappointment</span></div>
+    </div>
+    <div class="path">
+      <p class="who">Among rulers and mockers</p>
+      <div class="chain"><span class="chip act">expectation</span><span class="ar" aria-hidden="true">→</span><span class="chip keep">rejection</span></div>
+    </div>
+  </div>
+  <p class="takeaway">Fixed preconceptions, held sincerely and sometimes lovingly, help bring the Messiah down.</p>
+</section>
+
+<!-- 5 -->
+<section class="slide" aria-label="Slide 5">
+  <span class="no">5</span>
+  <p class="kicker">Part I · The disciples</p>
+  <h3>The right title, unexpected content</h3>
+  <div class="arc">
+    <div class="pt"><span class="ref">Luke 9.20 · Peter</span><q>The Christ of God</q></div>
+    <span class="mid" aria-hidden="true">→</span>
+    <div class="pt end"><span class="ref">Luke 9.22 · Jesus, at once</span><q>The Son of man must suffer many things, and be rejected . . . and be slain, and be raised the third day</q></div>
+  </div>
+  <p>The disciples call Jesus the Christ, yet they try to fit the title within the narrow scope of their own expectations. Luke places the confession directly beside its unexpected content.</p>
+  <p class="takeaway">What the title means exceeds what the disciples can hold, and the gap produces disagreement.</p>
+</section>
+
+<!-- 6 -->
+<section class="slide" aria-label="Slide 6">
+  <span class="no">6</span>
+  <p class="kicker">Part I · The disciples</p>
+  <h3>Each prediction meets a failure to understand</h3>
+  <ul class="tl">
+    <li class="up"><span class="ref">9.20–22</span>Peter: “The Christ of God.” First prediction: “The Son of man must suffer many things.”</li>
+    <li class="down"><span class="ref">9.44–46</span>Second prediction. “They understood not this saying,” and at once “there arose a reasoning among them, which of them should be greatest.”</li>
+    <li class="down"><span class="ref">18.31–34</span>Third prediction. Luke’s narrator: “they understood none of these things.”</li>
+    <li class="down"><span class="ref">19.11</span>Near Jerusalem, his hearers “thought that the kingdom of God should immediately appear.”</li>
+    <li class="down"><span class="ref">22.24</span>At the Last Supper: “a strife among them, which of them should be accounted the greatest.”</li>
+  </ul>
+  <p class="takeaway">A suffering messiah has no place in a framework built around a kingdom of rank.</p>
+</section>
+
+<!-- 7 -->
+<section class="slide" aria-label="Slide 7">
+  <span class="no">7</span>
+  <p class="kicker">Part I · Sight and blindness</p>
+  <h3>A blind beggar sees what the disciples miss</h3>
+  <div class="arc">
+    <div class="pt"><span class="ref">Luke 18.34 · the Twelve</span><q>this saying was hid from them, neither knew they the things which were spoken</q></div>
+    <span class="mid" aria-hidden="true">→</span>
+    <div class="pt end"><span class="ref">Luke 18.38, 42 · near Jericho, directly after</span><q>Jesus, [thou] son of David, have mercy on me</q> · <q>Receive thy sight: thy faith hath saved thee</q></div>
+  </div>
+  <p>A blind man sitting “by the way side begging” (18.35) hails Jesus as son of David, receives his sight, and follows him (18.43).</p>
+  <p class="takeaway">If faith heals and lets the blind see, are the disciples, who have their sight, blinded by a fixed “sight” of a physically glorious messiah?</p>
+</section>
+
+<!-- 8 -->
+<section class="slide" aria-label="Slide 8">
+  <span class="no">8</span>
+  <p class="kicker">Part II · Devotion</p>
+  <h3>Loyalty to the warrior they imagine</h3>
+  <ul class="ladder" aria-label="Devotion at the Last Supper and the arrest">
+    <li><span class="who2">The vow</span><span><q>Lord, I am ready to go with thee, both into prison, and to death</q> <span class="ref">22.33</span></span></li>
+    <li><span class="who2">The sword</span><span><q>Lord, shall we smite with the sword?</q> One of them cuts off the servant’s right ear before Jesus answers. <span class="ref">22.49–50</span></span></li>
+    <li><span class="who2">The answer</span><span><q>Suffer ye thus far.</q> Jesus touches the ear and heals him. <span class="ref">22.51</span></span></li>
+  </ul>
+  <p>Ironically, this blindness coexists with genuine devotion. Peter’s vow is sincere.</p>
+  <p class="takeaway">Their loyalty is real, but it is loyalty to the warrior they imagine.</p>
+</section>
+
+<!-- 9 -->
+<section class="slide" aria-label="Slide 9">
+  <span class="no">9</span>
+  <p class="kicker">Part II · Denial</p>
+  <h3>“The Lord turned, and looked upon Peter”</h3>
+  <div class="cols">
+    <div class="flow" aria-label="Peter from vow to tears">
+      <div class="step"><strong>The vow.</strong> “I am ready to go with thee . . . to death” <span class="muted">(22.33)</span></div>
+      <div class="arrow" aria-hidden="true">↓ within hours</div>
+      <div class="step"><strong>The denial.</strong> “Woman, I know him not” <span class="muted">(22.57)</span></div>
+      <div class="arrow" aria-hidden="true">↓</div>
+      <div class="step end-land"><strong>The look.</strong> “And the Lord turned, and looked upon Peter . . . And Peter went out, and wept bitterly” <span class="muted">(22.61–62)</span></div>
+    </div>
+    <div>
+      <p>Good intentions do not protect him.</p>
+      <p class="takeaway">The preconception does not make Peter wicked; it leaves him unprepared for the Messiah who actually arrives, the one whom God intends.</p>
+      <p class="small muted">Of the four Gospels, only Luke records the look (compare Matt. 26.75; Mark 14.72; John 18.27).</p>
+    </div>
+  </div>
+</section>
+
+<!-- 10 -->
+<section class="slide" aria-label="Slide 10">
+  <span class="no">10</span>
+  <p class="kicker">Part III · The rejectors</p>
+  <h3>Those who reject Jesus work within the same model</h3>
+  <div class="flow" aria-label="The charge from the council to the cross">
+    <div class="step"><h4>Before the council</h4>“Art thou the Christ? tell us.” Jesus: “If I tell you, ye will not believe” <span class="muted">(22.67)</span></div>
+    <div class="arrow" aria-hidden="true">↓</div>
+    <div class="step"><h4>Before Pilate</h4>The charge becomes political: “saying that he himself is Christ a King” <span class="muted">(23.2)</span></div>
+    <div class="arrow" aria-hidden="true">↓</div>
+    <div class="step end-land"><h4>At the cross</h4>The preconception is finally spoken aloud <span class="muted">(23.35–39)</span></div>
+  </div>
+  <p class="takeaway">Friends and opponents share one definition of the Messiah; they differ only on whether Jesus meets it.</p>
+</section>
+
+<!-- 11 -->
+<section class="slide" aria-label="Slide 11">
+  <span class="no">11</span>
+  <p class="kicker">Part III · At the cross</p>
+  <h3>Three voices, one definition</h3>
+  <div class="converge">
+    <div class="v"><p class="who">The rulers</p><q>He saved others; let him save himself, if he be Christ, the chosen of God.</q><span class="ref">23.35</span></div>
+    <div class="v"><p class="who">The soldiers</p><q>If thou be the king of the Jews, save thyself.</q><span class="ref">23.37</span></div>
+    <div class="v"><p class="who">One criminal</p><q>If thou be Christ, save thyself and us.</q><span class="ref">23.39</span></div>
+  </div>
+  <div class="funnel" aria-hidden="true">↓</div>
+  <p class="verdict">A true messiah saves himself.</p>
+  <p>Repetition is one of the “narrative and artistic patterns” Leland Ryken asks readers of the Gospels to notice. By that standard the crucified Jesus cannot be the Christ, and the logic remains persuasive today.</p>
+</section>
+
+<!-- 12 -->
+<section class="slide" aria-label="Slide 12">
+  <span class="no">12</span>
+  <p class="kicker">Part III · The second criminal</p>
+  <h3>A voice from the margin sees past it</h3>
+  <div class="q">“Dost not thou fear God . . . this man hath done nothing amiss.”<cite>Luke 23.40–41</cite></div>
+  <div class="q rose">“Lord, remember me when thou comest into thy kingdom.”<cite>Luke 23.42</cite></div>
+  <p>He asks not to be saved from the cross but to be remembered in the kingdom, and Jesus answers: “To day shalt thou be with me in paradise” (23.43).</p>
+  <p class="takeaway">He is one of Luke’s marginal figures, who in Ryken’s account are “the ones who receive God’s grace.”</p>
+</section>
+
+<!-- 13 -->
+<section class="slide" aria-label="Slide 13">
+  <span class="no">13</span>
+  <p class="kicker">Part IV · Guilt and ignorance</p>
+  <h3>They know they are killing a man, but not whom</h3>
+  <div class="cols">
+    <div>
+      <p class="who">What they intend</p>
+      <div class="q land">“And the chief priests and scribes sought how they might kill him; for they feared the people.”<cite>Luke 22.2: a deliberate plot, driven by fear</cite></div>
+    </div>
+    <div>
+      <p class="who">What they understand</p>
+      <div class="q">“Father, forgive them; for they know not what they do.”<cite>Luke 23.34: perhaps aimed first at those who crucify him</cite></div>
+    </div>
+  </div>
+  <p class="takeaway">Luke does not make the authorities innocent. Their guilt is real, but its root, in Luke’s telling, is ignorance and fixed preconception.</p>
+  <p class="small muted">Several early manuscripts lack this sentence of 23.34; the KJV, following later manuscripts, includes it.</p>
+</section>
+
+<!-- 14 -->
+<section class="slide" aria-label="Slide 14">
+  <span class="no">14</span>
+  <p class="kicker">Part V · A question for readers</p>
+  <h3>When does an expectation harden into a fixed idea?</h3>
+  <div class="cols">
+    <div>
+      <p class="who">Leadership, redefined</p>
+      <div class="q land">Earthly kings “are called benefactors. But ye [shall] not [be] so . . . I am among you as he that serveth.”<cite>Luke 22.25–27, as the disciples quarrel over rank</cite></div>
+    </div>
+    <div>
+      <p class="who">Salvation is God’s before it is the Messiah’s</p>
+      <div class="q">Mary rejoices “in God my Saviour,” whose mercy runs “from generation to generation.”<cite>Luke 1.47, 50</cite></div>
+      <div class="q">God “is not a God of the dead, but of the living.”<cite>Luke 20.38</cite></div>
+    </div>
+  </div>
+  <p>A messiah, through whom God graces the world, is formed by the divine will, not by mundane visions.</p>
+  <p class="takeaway">Expectation becomes blindness only when it fixes in advance the form the answer must take.</p>
+</section>
+
+<!-- 15 -->
+<section class="slide" aria-label="Slide 15">
+  <span class="no">15</span>
+  <p class="kicker">Part V · Discernment</p>
+  <h3>How can readers know they are not speaking against the one God sends?</h3>
+  <div class="dirs">
+    <div class="dir sea"><b>Openness: deeds before titles</b><span class="s">To John’s disciples, Jesus points to what they have seen: <q>the blind see, the lame walk</q> (7.22). <q>For every tree is known by his own fruit</q> (6.44).</span></div>
+    <div class="dir land"><b>Caution against credulity</b><span class="s"><q>many shall come in my name, saying, I am [Christ] . . . go ye not therefore after them</q> (21.8).</span></div>
+    <div class="dir rose"><b>Humility above all</b><span class="s"><q>every one that exalteth himself shall be abased; and he that humbleth himself shall be exalted</q> (18.14).</span></div>
+  </div>
+  <p class="takeaway">Discernment, in Luke, joins openness to caution, and judgment to humility.</p>
+</section>
+
+<!-- 16 -->
+<section class="slide" aria-label="Slide 16">
+  <span class="no">16</span>
+  <p class="kicker">Conclusion · A final irony</p>
+  <h3>A fall and a rising</h3>
+  <div class="arc">
+    <div class="pt"><span class="ref">Luke 9.22</span><q>The Son of man must suffer</q></div>
+    <span class="mid" aria-hidden="true">→</span>
+    <div class="pt end"><span class="ref">Acts 13.27 · Paul at Antioch in Pisidia</span><q>because they knew him not . . . they have fulfilled [them] in condemning [him]</q></div>
+  </div>
+  <p>The preconceptions that brought the Messiah down do not defeat the divine plan; they carry it out. Simeon’s words name that reversal: “the fall and rising again of many” (2.34).</p>
+  <p class="takeaway">Luke’s point is not that the expectants were wicked, but that sincerity offers no defense against a fixed idea.</p>
+</section>
+
+<!-- 17 -->
+<section class="slide" aria-label="Slide 17">
+  <span class="no">17</span>
+  <p class="kicker">Conclusion · The reader’s turn</p>
+  <h3>Examine our own expectations before condemning anyone else’s</h3>
+  <p>Readers can repeat the error by casting Jesus’s opponents as a single villainous group. Yet Luke also records:</p>
+  <ul class="facts">
+    <li>women who “bewailed and lamented him” on the way to the cross <span class="muted">(23.27)</span></li>
+    <li>a crowd who, “beholding the things which were done, smote their breasts” <span class="muted">(23.48)</span></li>
+  </ul>
+  <p class="takeaway">The narrative asks us to examine our own expectations, and so to avoid the ignorance for which Jesus was killed: an ignorance he sought to awaken humanity from.</p>
+</section>
+
+<section class="slide wc" aria-label="Works cited">
+  <p class="kicker">Works cited</p>
+  <p><em>The Bible</em>. Authorized King James Version, Oxford UP, 1998.</p>
+  <p>“The Gospel of Mark.” <em>National Catholic Education Commission</em>, <a href="https://ncec.catholic.edu.au/faith/scripture-resources/commentaries/the-gospel-of-mark/" target="_blank" rel="noopener">ncec.catholic.edu.au/faith/scripture-resources/commentaries/the-gospel-of-mark/</a>.</p>
+  <p>Ryken, Leland. <em>How to Read the Bible as Literature</em>. Zondervan, 1984.</p>
+  <p class="small muted" style="margin-top:1.2em">Words in square brackets in Bible quotations are printed in italics in the KJV, marking words the translators supplied. All diagrams were drawn for this presentation.</p>
+</section>
+
+<div class="present-nav">
+  <button class="btn" data-act="prev" type="button" aria-label="Previous slide">←</button>
+  <span class="count" aria-live="polite"></span>
+  <button class="btn" data-act="next" type="button" aria-label="Next slide">→</button>
+  <button class="btn" data-act="exit" type="button">Exit</button>
+</div>
+</div>
+</article>
+
 
 <!-- ===================================================================
      PRESENTATION 3: Debts Across Lives and Generations
