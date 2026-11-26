@@ -17,7 +17,32 @@
     deck.scrollTop = 0;
     count.textContent = (idx + 1) + ' / ' + slides.length;
     if (history.replaceState) history.replaceState(null, '', '#' + (idx + 1));
+    fit();
   }
+  // Present mode: give the current slide the largest text that still fits the screen
+  function fit() {
+    if (!presenting) return;
+    var s = slides[idx], room = deck.clientHeight + 1;
+    var top = Math.max(16, Math.min(window.innerHeight * 0.04, window.innerWidth * 0.024, 48));
+    s.style.fontSize = top + 'px';
+    if (s.scrollHeight <= room) return;
+    var lo = 12, hi = top;
+    for (var k = 0; k < 10; k++) {
+      var mid = (lo + hi) / 2;
+      s.style.fontSize = mid + 'px';
+      if (s.scrollHeight <= room) lo = mid; else hi = mid;
+    }
+    s.style.fontSize = lo + 'px';
+  }
+  var fitQueued = false;
+  function refit() {
+    if (fitQueued) return;
+    fitQueued = true;
+    requestAnimationFrame(function () { fitQueued = false; fit(); });
+  }
+  window.addEventListener('resize', refit);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(refit);
+  Array.prototype.forEach.call(deck.querySelectorAll('img'), function (img) { img.addEventListener('load', refit); });
   function present(start) {
     presenting = true;
     document.body.classList.add('presenting');
@@ -28,7 +53,7 @@
     if (!presenting) return;
     presenting = false;
     document.body.classList.remove('presenting');
-    slides.forEach(function (el) { el.classList.remove('current'); });
+    slides.forEach(function (el) { el.classList.remove('current'); el.style.fontSize = ''; });
     if (document.fullscreenElement && document.exitFullscreen) { document.exitFullscreen().catch(function () {}); }
     if (history.replaceState) history.replaceState(null, '', location.pathname + location.search);
     slides[idx].scrollIntoView({ block: 'start' });
